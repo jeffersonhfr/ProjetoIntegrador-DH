@@ -1,0 +1,49 @@
+- Projeto Git
+- Trello
+
+- Conteúdo do Site
+  - Categorias:
+    - Romantico
+    - Balada
+    - Aventura
+    - Neve
+    - Praia
+  
+  - Cadastros
+    - Cliente
+      - Nome 
+      - Sobrenome
+      - CPF
+      - Endereço
+      - E-mail
+      - Minhas Viagens
+      - Dados Financeiros
+    
+ - Categoria   
+   - Pacotes
+      - Nome do Pacote
+      - Passagem Aerea
+        - Destino
+        - Data Ida
+        - Data Volta
+      - Hotel
+        - Nome do Hotel
+        - Endereço do Hotel
+        - Fotos do Hotel
+        - Refeições
+
+      - País
+        - Estado 
+          - Cidade
+            - Detalhes da Cidade
+            - Fotos da Cidades (Pontos Turisticos)
+            - COVID (Status)
+
+- Nome do Site: 
+
+- XD
+
+
+- COVID - Avisos sobre o local, comércio aberto ou não, fases(vermelha, amarela, verde) cancelamento grátis.
+- Sistema de avaliação
+- Filtros por data
