@@ -4,10 +4,12 @@ header{
     justify-content: space-around;
     background: #3e50bf;
     flex-flow: row nowrap;
-    width: 100vw;
-    height: 10vh;
+    width: 1280px;
+    height: 58px;
     align-items: center;
-    
+    padding-left: 18px;
+    padding-right: 18px;
+    margin: 0px;
     
 
 }
@@ -26,11 +28,12 @@ header nav {
     list-style: none;
     white-space: nowrap;
     justify-content: flex-end;
-
+    padding-left:0px;
+    padding-right: 24px;
 
 } 
 #Atalhos li{
-    padding: 10%;
+    padding-right: 34px;
 
 }
 #LogoTopo{
@@ -42,7 +45,7 @@ header nav {
 #LogoTopo p{
     background-color: white;
     text-align:center;
-    width: 20vh;
-    height: 3vh;
+    width: 112px;
+    height: 20px;
 
 }

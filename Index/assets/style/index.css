@@ -9,10 +9,12 @@
 h2{
     font-family: 'Fonte-Principal',sans-serif;
     margin-bottom: 0px;
+    font-size: 18px;
 }
 h3{
     font-family: 'Fonte-Secundaria';
     margin-top:0px;
+    font-size: 12px;
 }
 
 a{
@@ -21,8 +23,4 @@ a{
 }
 #root{
     padding:0px;
-}
-main{
-    
-    background-color: #91919144;
 }
