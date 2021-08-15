@@ -1,0 +1,46 @@
+header{
+
+    display:flex;
+    justify-content: space-around;
+    background: #3e50bf;
+    flex-flow: row nowrap;
+    width: 100vw;
+    
+    
+
+}
+header > a {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 80px;
+}
+header nav {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+  }
+#Atalhos{
+    display:flex;
+    list-style: none;
+    white-space: nowrap;
+    justify-content: flex-end;
+
+
+} 
+#Atalhos li{
+    padding: 10%;
+
+}
+#LogoTopo{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+#LogoTopo p{
+    background-color: white;
+    text-align:center;
+    width: 20vh;
+    height: 3vh;
+
+}

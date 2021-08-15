@@ -13,3 +13,11 @@ h2{
 h3{
     font-family: 'Fonte-Secundaria';
 }
+
+a{
+    text-decoration:none;
+    color: black;
+}
+#root{
+    padding:0px;
+}
