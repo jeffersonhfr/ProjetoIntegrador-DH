@@ -1,0 +1,24 @@
+#Search{
+
+    display: flex;
+    flex: 0 1 auto;
+    justify-content: center;
+    
+    position:absolute;
+    left:12.5vw;
+    
+    background-color: white;
+    border-radius: 100px;
+    width: 75vw;
+
+}
+#Search > form{
+
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: space-around;
+
+    
+}
