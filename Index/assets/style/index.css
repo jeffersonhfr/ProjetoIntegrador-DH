@@ -8,10 +8,11 @@
 }
 h2{
     font-family: 'Fonte-Principal',sans-serif;
-
+    margin-bottom: 0px;
 }
 h3{
     font-family: 'Fonte-Secundaria';
+    margin-top:0px;
 }
 
 a{
@@ -22,5 +23,6 @@ a{
     padding:0px;
 }
 main{
+    
     background-color: #91919144;
 }

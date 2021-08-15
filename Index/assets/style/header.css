@@ -5,6 +5,8 @@ header{
     background: #3e50bf;
     flex-flow: row nowrap;
     width: 100vw;
+    height: 10vh;
+    align-items: center;
     
     
 
