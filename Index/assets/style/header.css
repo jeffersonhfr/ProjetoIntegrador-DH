@@ -10,6 +10,7 @@ header{
     padding-left: 18px;
     padding-right: 18px;
     margin: 0px;
+    font-size: 12px;
     
 
 }
@@ -17,7 +18,9 @@ header > a {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: 80px;
+    
 }
+
 header nav {
     flex-grow: 0;
     flex-shrink: 1;

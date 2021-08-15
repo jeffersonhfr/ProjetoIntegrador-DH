@@ -5,3 +5,23 @@ main{
     padding-left: 156px;
 
 }
+.Categorias{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.ListaDePacotes{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left:0px;
+
+}
+.ViagensTematicas img{
+    width: 208px;
+    height: 191px;
+    border-radius: 10px;
+    margin-left: 8px;
+
+}

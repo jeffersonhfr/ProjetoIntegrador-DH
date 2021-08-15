@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="./Index/assets/style/search.css">
   <link rel="stylesheet" href="./Index/assets/style/main.css">
   <title>Viagens.com</title>
+  <script src = "./Index/src/index.js" ></script>
+
 </head>
     <header>
         <a id="LogoTopo" href="/" rel="noopener noreferrer" target="_blank" title="Ir para homepage">
@@ -26,6 +28,7 @@
     </nav>
     </header>
     <nav id = "Search">
+      
         <form action="/buscar" method="GET" >
             <nav class = "campo" id="CampoDestino">
                 <h2>Para onde deseja ir?</h2>
@@ -46,17 +49,20 @@
     </nav>
     <main>
         <section class = "Categorias">
+            <article>
             <h2>Viagens Temáticas</h2>
             <h3>Escolha os pacotes que fazem mais o seu estilo </h3>
-            
-            <ul id = "ViagensTematicas" class = "ListaDePacotes">
+            </article>
+            <ul  class = "ListaDePacotes ViagensTematicas ExibeIcone">
             </ul>
 
         </section>
         <section class = "Categorias">
+            <article>
             <h2>Pacotes Promocionais</h2>
             <h3>Confira nossos pacotes Promocionais e embarque na sua próxima viagem :)</h3>
-            <ul id = "PacotesPromocionais" class = "ListaDePacotes">         
+        </article>
+            <ul  class = "ListaDePacotes PacotesPromocionais">         
             </ul>
 
         </section>
@@ -66,27 +72,23 @@
 
     </main>
     <footer>
-            <ul class= "ViagensTematicas FooterContent">
+            <ul class= "FooterContent ViagensTematicas ">
             
             </ul>
-            <ul class= "PacotesPromocionais FooterContent"></ul>>
+            <ul class= "FooterContent PacotesPromocionais"></ul>>
                 
             </ul>
            
-            <ul class= "Sobre FooterContent">
+            <ul class= "FooterContent Sobre">
                
             </ul>
-            <ul class= "Ajuda FooterContent">
+            <ul class= "FooterContent Ajuda">
     
             </ul>
 
 
     </footer>
 <body>
-
-
-
-
 
 
 </body>
