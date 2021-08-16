@@ -10,12 +10,13 @@ main{
     flex-direction: column;
     align-items: flex-start;
 }
-.ListaDePacotes{
+.MainContent{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding-left:0px;
+    list-style: none;
 
 }
 .ViagensTematicas img{
