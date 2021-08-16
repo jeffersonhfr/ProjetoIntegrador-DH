@@ -26,3 +26,19 @@ main{
     margin-left: 8px;
 
 }
+
+.PacotesPromocionais li{
+    background-color:white;
+    margin-left:8px;
+    border-radius: 20px 20px 0px 0px;
+   
+}
+.PacotesPromocionais {
+    margin-left: 8px;
+    
+}
+.PacotesPromocionais img{
+    width:274px;
+    height:191px;
+    border-radius: 20px 20px 0px 0px;
+}
