@@ -1,12 +1,4 @@
-let ViagensTematicas = document.getElementsByClassName("ViagensTematicas");
-let viagens = []
+///let ViagensTematicas = document.getElementsByClassName("ViagensTematicas");
 
 
 
-
-function adicionarTemaI(Tema) {
-    for (let i = 0; i<ViagensTematicas.length; i++){
-        ViagensTematicas.item(i).innerHTML += `<li><img src= "${Tema.src}"/><li>`
-    }
-    
-}
