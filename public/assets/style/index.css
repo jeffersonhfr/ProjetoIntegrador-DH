@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'fonte-primaria';
+    src: url(../fonts/Epilogue/Epilogue-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: 'fonte-secundaria';
+    src: url(../fonts/Mukta/Mukta-Regular.ttf);
+}
+h1{
+    font-family: 'fonte-primaria';
+}
+h2{
+    font-family: 'fonte-secundaria';
+}
