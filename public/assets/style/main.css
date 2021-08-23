@@ -1,3 +1,13 @@
 main{
     background-color: #91919150;
 }
+
+nav.Categoria > h1{
+    margin: 0px;
+    font-size: 18px;
+}
+
+nav.Categoria > h2{
+    margin: 0px;
+    font-size: 12px;
+}
