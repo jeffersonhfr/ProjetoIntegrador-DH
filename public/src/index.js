@@ -12,13 +12,12 @@ class Temas {
     putTemas(tema) {
  
         this.temas.forEach((u, i) => {
-            console.log(tema.getId());
             if (u.getId() === tema.getId()) {
                 
                    this.temas[i].setNome(tema.getNome());
                     this.temas[i].setImg(tema.getImg());
 
-                    console.log(tema.getNome());
+                    
                 }
             }
         );
@@ -46,11 +45,12 @@ class Tema {
     id;
     nome;
     img;
-    
-    constructor(id, nome,img) {
+    classe;
+    constructor(id, nome,img,classe) {
         this.id = id;
         this.nome = nome;
         this.img = img;
+        this.classe = classe;
     }
     getId() {
         return this.id;
@@ -61,6 +61,12 @@ class Tema {
     setNome(nome) {
         this.nome = nome;
     }
+    getClass() {
+        return this.classe;
+    }
+    getClasse(classe) {
+        this.classe = classe;
+    }
     getImg() {
         return this.img;
     }
@@ -68,6 +74,20 @@ class Tema {
         this.img = img;
     }
 }
-let list = new Temas([new Tema(1, 'Aventura', '../assets/img/Aventura.jpg'), new Tema(2, 'Aventura', '../assets/img/Romantico.jpg'), new Tema(3, 'Balada', '../assets/img/Balada.jpg')]);
+let list = new Temas([new Tema(1, 'Aventura', 'img/Aventura.jpg'), new Tema(2, 'Aventura', '../assets/img/Romantico.jpg'), new Tema(3, 'Balada', '../assets/img/Balada.jpg')]);
 
 
+function exibirIconesDeTemas() {
+
+    let temas = list.getTemas();
+    let viagensTematicas = document.getElementsByClassName("Main ViagensTematicas");
+
+    for (let i = 0; i < viagensTematicas.length; i++) {
+        for (let tema of temas) {
+            viagensTematicas[i].innerHTML +=
+                `<li class = "Tema ${tema.getClasse()}">
+                     <a href = "/"><img icone"src="${tema.getImg()}"/></a>
+                <li>` 
+        }
+    }
+}
