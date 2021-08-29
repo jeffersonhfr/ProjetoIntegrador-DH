@@ -1,0 +1,87 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.container-busca {
+  background: #fff;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.16));
+  width: 967px;
+  border-radius: 30px;
+  height: 80px;
+}
+
+.container-busca__form {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.container-busca__form__campos {
+  width: 967px;
+  justify-content: space-around;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.container-busca__form__campos__itens {
+  padding: 25px 0;
+}
+
+.container-busca__form__campos__itens--primeiro {
+  margin-left: 15px;
+}
+
+.busca__input input {
+  color: #919191;
+  border: 0px !important;
+  outline: none;
+}
+
+.busca__input {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.busca__input #onde {
+  width: 260px;
+}
+
+.busca__input #quando {
+  width: 160px;
+}
+
+.busca__input #quantos {
+  width: 215px;
+}
+
+.busca__input label {
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.busca__input input {
+  font-family: 'Mukta', sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+.busca__input__submit {
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: 30px;
+  background: #3e60bf;
+  height: 80px;
+  width: 100px;
+  padding: 10px;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  transition: all .4s;
+}
+
+.busca__input__submit:hover {
+  background: #1B3EA1;
+}
