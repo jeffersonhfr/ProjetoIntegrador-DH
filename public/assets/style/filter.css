@@ -131,6 +131,10 @@ body {
     width: 260px;
   }
 
+  .busca__input #quantos {
+    width: 220px;
+  }
+
   .busca__input__submit {
     border-radius: 0 30px 30px 0;
     height: 80px;
