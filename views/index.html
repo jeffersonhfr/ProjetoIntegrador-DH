@@ -3,9 +3,10 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/index.css">
   <link rel="stylesheet" href="style/header.css">
-  <link rel="stylesheet" href="style/filter.css">
+  <link rel="stylesheet" href="../public/assets/style/filter.css">
   <link rel="stylesheet" href="style/main.css">
   <link rel="stylesheet" href="style/newsletters.css">
   <link rel="stylesheet" href="style/footer.css">
@@ -25,95 +26,7 @@
     </nav>
   </header>
   <!-- Alan -->
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-    }
 
-    .container-busca {
-      background: #fff;
-      filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.16));
-      width: 967px;
-      border-radius: 30px;
-      height: 80px;
-    }
-
-    .container-busca__form {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
-    }
-
-    .container-busca__form__campos {
-      width: 967px;
-      justify-content: space-around;
-      display: flex;
-      flex-flow: row nowrap;
-    }
-
-    .container-busca__form__campos__itens {
-      padding: 25px 0;
-    }
-
-    .container-busca__form__campos__itens--primeiro {
-      margin-left: 15px;
-    }
-
-    .busca__input input {
-      color: #919191;
-      border: 0px !important;
-      outline: none;
-    }
-
-    .busca__input {
-      display: flex;
-      flex-flow: column nowrap;
-    }
-
-    .busca__input #onde {
-      width: 260px;
-    }
-
-    .busca__input #quando {
-      width: 160px;
-    }
-
-    .busca__input #quantos {
-      width: 215px;
-    }
-
-    .busca__input label {
-      font-family: 'Epilogue', sans-serif;
-      font-weight: 600;
-      font-size: 13px;
-    }
-
-    .busca__input input {
-      font-family: 'Mukta', sans-serif;
-      font-weight: 200;
-      font-size: 16px;
-    }
-
-    .busca__input__submit {
-      font-family: 'Epilogue', sans-serif;
-      font-weight: 600;
-      font-size: 13px;
-      border-radius: 30px;
-      background: #3e60bf;
-      height: 80px;
-      width: 100px;
-      padding: 10px;
-      color: #fff;
-      border: 0;
-      cursor: pointer;
-      transition: all .4s;
-    }
-
-    .busca__input__submit:hover {
-      background: #1B3EA1;
-    }
-  </style>
   <!-- Jefferson -->
   <section class="container-busca">
     <form class="container-busca__form">
@@ -124,15 +37,15 @@
             <input type="text" id="onde" name="onde" placeholder="Escreva aqui o local para onde deseja ir" />
           </div>
         </div>
-        <div class="container-busca__form__campos__itens">|</div>
-        <div class="container-busca__form__campos__itens">
+        <div class="container-busca__form__campos__itens container-busca__form__campos__itens--separador">|</div>
+        <div class="container-busca__form__campos__itens container-busca__form__campos__itens--segundo">
           <div class="busca__input">
             <label for="quando">Quando deseja viajar?</label>
             <input type="date" id="quando" name="quando" placeholder="Escolha o período desejado para viajar" />
           </div>
         </div>
-        <div class="container-busca__form__campos__itens">|</div>
-        <div class="container-busca__form__campos__itens">
+        <div class="container-busca__form__campos__itens container-busca__form__campos__itens--separador">|</div>
+        <div class="container-busca__form__campos__itens container-busca__form__campos__itens--terceiro">
           <div class="busca__input">
             <label for="quantos">Para quantas pessoas?</label>
             <input type="number" id="quantos" name="quantos" placeholder="Escolha o número de viajantes" />

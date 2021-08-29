@@ -6,30 +6,37 @@ body {
 .container-busca {
   background: #fff;
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.16));
-  width: 967px;
+  width: 100%;
   border-radius: 30px;
-  height: 80px;
+  height: auto;
 }
 
 .container-busca__form {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  flex-flow: column nowrap;
 }
 
 .container-busca__form__campos {
-  width: 967px;
-  justify-content: space-around;
   display: flex;
-  flex-flow: row nowrap;
+  padding: 20px 10px 10px;
+  flex-flow: row wrap;
+  justify-content: flex-start;
 }
 
 .container-busca__form__campos__itens {
-  padding: 25px 0;
+  padding: 10px 0;
 }
 
 .container-busca__form__campos__itens--primeiro {
-  margin-left: 15px;
+  margin-right: 20px;
+}
+
+.container-busca__form__campos__itens--segundo {
+  margin-right: 15px;
+}
+
+.container-busca__form__campos__itens--separador {
+  display: none;
 }
 
 .busca__input input {
@@ -44,7 +51,7 @@ body {
 }
 
 .busca__input #onde {
-  width: 260px;
+  width: 245px;
 }
 
 .busca__input #quando {
@@ -52,7 +59,7 @@ body {
 }
 
 .busca__input #quantos {
-  width: 215px;
+  width: 190px;
 }
 
 .busca__input label {
@@ -65,16 +72,17 @@ body {
   font-family: 'Mukta', sans-serif;
   font-weight: 200;
   font-size: 16px;
+  padding: 0;
 }
 
 .busca__input__submit {
   font-family: 'Epilogue', sans-serif;
   font-weight: 600;
   font-size: 13px;
-  border-radius: 30px;
+  border-radius: 0px 0px 20px 20px;
   background: #3e60bf;
-  height: 80px;
-  width: 100px;
+  height: 50px;
+  width: 100%;
   padding: 10px;
   color: #fff;
   border: 0;
@@ -84,4 +92,48 @@ body {
 
 .busca__input__submit:hover {
   background: #1B3EA1;
+}
+
+@media (min-width: 720px) {
+  .container-busca__form__campos {
+    justify-content: space-around;
+  }
+
+  .container-busca__form__campos__itens--separador {
+    display: block;
+  }
+}
+
+@media (min-width: 980px) {
+  .container-busca {
+    width: 967px;
+    height: 80px;
+  }
+
+  .container-busca__form {
+    flex-flow: row nowrap;
+  }
+
+  .container-busca__form__campos {
+    width: 967px;
+    padding: inherit;
+  }
+
+  .container-busca__form__campos__itens {
+    padding: 25px 0;
+  }
+
+  .container-busca__form__campos__itens--primeiro {
+    margin-left: 15px;
+  }
+
+  .busca__input #onde {
+    width: 260px;
+  }
+
+  .busca__input__submit {
+    border-radius: 0 30px 30px 0;
+    height: 80px;
+    width: 100px;
+  }
 }
