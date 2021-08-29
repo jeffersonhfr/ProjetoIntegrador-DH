@@ -58,8 +58,9 @@ body {
   width: 160px;
 }
 
+
 .busca__input #quantos {
-  width: 190px;
+  width: 220px;
 }
 
 .busca__input label {
@@ -131,9 +132,7 @@ body {
     width: 260px;
   }
 
-  .busca__input #quantos {
-    width: 220px;
-  }
+
 
   .busca__input__submit {
     border-radius: 0 30px 30px 0;
