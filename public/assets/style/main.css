@@ -1,14 +1,77 @@
+
 main{
-    background-color: #91919150;
+    background-color:#9191915b;
+    width: 100vw;
+    padding-top: 112px;
+    padding-left: 12.5vw;
+
+}
+nav.Categorias{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+ul.Main{
+    
+    display:flex;
+    flex-direction: row;
+    align-items: stretch; 
+    list-style: none;
+    overflow-x:scroll;
+    
+
+}
+.ViagensTematicas div.Container.Img{
+
+   
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 208px;
+    height: 191px;
+    border-radius: 10px;
+    margin-left: 8px;
+    background-size:cover;
+    background-repeat: no-repeat;
+
+}
+li.Tema{
+    display: flex;
+}
+li.Tema a{
+    display:flex;
+    flex: 1 0 auto;
+    width: 208px;
+    height: 191px;
+    align-items: center;
+    color:white;
+    font-size: 26px;
+    border-radius: 10px;
 }
 
-nav.Categoria > h1{
-    margin: 0px;
-    font-size: 18px;
+.PacotesPromocionais li.promo{
+    background-color:white;
+    margin:10px;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 1px 0px 8px rgba(0,0,0,0.25);
 }
+ul.Main::-webkit-scrollbar{
+    display:none;
 
-nav.Categoria > h2{
-    margin: 0px;
-    font-size: 12px;
 }
+.PacotesPromocionais ul.Propriedades{
+    list-style:none;
+}
+.PacotesPromocionais li.ValorInicial{
+    text-decoration:line-through;
+}
+.PacotesPromocionais h2.Nome{
 
+    margin-left: 12px;
+
+  }
+.PacotesPromocionais img{
+    width:274px;
+    height:191px;
+    border-radius: 20px 20px 0px 0px;
+}

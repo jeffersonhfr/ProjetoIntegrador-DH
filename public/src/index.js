@@ -44,13 +44,16 @@ class Temas {
 class Tema {
     id;
     nome;
-    img;
     classe;
-    constructor(id, nome,img,classe) {
+    img;
+    cor;
+    constructor(id, nome, classe, img, cor) {
         this.id = id;
         this.nome = nome;
-        this.img = img;
         this.classe = classe;
+        this.img = img;
+        this.cor = cor;
+        
     }
     getId() {
         return this.id;
@@ -73,11 +76,17 @@ class Tema {
     setImg(img) {
         this.img = img;
     }
+    getCor() {
+        return this.cor;
+    }
+    setCor(cor) {
+        this.cor = cor;
+    }
 }
-let list = new Temas([new Tema(1, 'Aventura', 'img/Aventura.jpg'), new Tema(2, 'Aventura', '../assets/img/Romantico.jpg'), new Tema(3, 'Balada', '../assets/img/Balada.jpg')]);
+let list = new Temas([new Tema(1, 'Aventura', 'Aventura', 'img/Aventura.jpg', '#69C862aa'), new Tema(2, 'Romântico', 'Romantico', 'img/Romantico.jpg', '#c42e92aa',), new Tema(3, 'Balada', 'Balada', '../assets/img/Balada.jpg', '#373737aa'), new Tema(4, 'Praia', 'Praia', 'img/Praia.jpg', '#34e87daa'), new Tema(5, 'Neve', 'Neve', 'img/Neve.jpg', '#d2d2d2aa')]);
 
 
-function exibirIconesDeTemas() {
+ function exibirIconesDeTemas() {
 
     let temas = list.getTemas();
     let viagensTematicas = document.getElementsByClassName("Main ViagensTematicas");
@@ -86,8 +95,16 @@ function exibirIconesDeTemas() {
         for (let tema of temas) {
             viagensTematicas[i].innerHTML +=
                 `<li class = "Tema ${tema.getClasse()}">
-                     <a href = "/"><img icone"src="${tema.getImg()}"/></a>
-                <li>` 
+                    
+                    <div class="Container Img" style = " background-image: url(${tema.getImg()});">
+                        
+                        <a href = "/" style= "
+                        background-color: ${tema.getCor()}
+                        ">${tema.getNome()}</a>
+                        </div>
+                    </div>
+                <li>`   
         }
     }
 }
+exibirIconesDeTemas();
