@@ -100,10 +100,10 @@ let list = new Temas([new Tema(1, 'Aventura', 'Aventura', 'img/Aventura.jpg', '#
                         
                         <a href = "/" style= "
                         background-color: ${tema.getCor()}
-                        ">${tema.getNome()}</a>
+                        "><h1>${tema.getNome()}</h1></a>
                         </div>
                     </div>
-                <li>`   
+                <li>`     
         }
     }
 }
