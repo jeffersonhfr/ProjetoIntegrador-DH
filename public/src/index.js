@@ -136,13 +136,15 @@ class Pacote{
     passagemAerea;
     bonus;
     valor;
-    constructor(id,nome,diarias,passagemAerea,bonus,valor) {
+    constructor(id,nome,img,diarias,hotel,passagemAerea,bonus,valor) {
         this.id = id;
         this.nome = nome;
+        this.img = img;
         this.diarias = diarias;
         this.passagemAerea = passagemAerea;
         this.bonus = bonus;
         this.valor = valor;
+        this.hotel = hotel;
         
      }
     getId() { 
@@ -194,8 +196,8 @@ class Pacote{
 class Promo extends Pacote{
     valorPromocional;
     desconto;
-    constructor(id,nome,diarias,passagemAerea,bonus,valor,desconto) {
-        super(id,nome,diarias,passagemAerea,bonus,valor);
+    constructor(id,nome,img,diarias,hotel,passagemAerea,bonus,valor,desconto) {
+        super(id,nome,img,diarias,hotel,passagemAerea,bonus,valor);
         this.desconto = desconto;
         this.setValorPromocional(desconto);
     }
@@ -203,7 +205,7 @@ class Promo extends Pacote{
         return this.valorPromocional;
     }
     setValorPromocional(desconto) {
-        this.valorPromocional = ((this.valor * (desconto / 100)) + this.valor);
+        this.valorPromocional = ((this.valor - this.valor * (desconto / 100)) );
     }
     getDesconto() {
         return this.desconto;
@@ -212,10 +214,15 @@ class Promo extends Pacote{
         this.desconto = desconto;
     }
 }
+let promo1 = new Promo(1, 'Egito Histórico', 'img/Egito.jpg', 10, true, true, 'Translado e City Tour', 18800, 25);
+let promo2 = new Promo(2, 'Egito Histórico', 'img/Egito.jpg', 10, true, true, 'Translado e City Tour', 18800, 25);
+let promo3 = new Promo(3, 'Egito Histórico', 'img/Egito.jpg', 10, true, true, 'Translado e City Tour', 18800, 25);
+let promo4 = new Promo(4, 'Egito Histórico', 'img/Egito.jpg', 10, true, true, 'Translado e City Tour', 18800, 25);
+let promo5 = new Promo(5, 'Egito Histórico', 'img/Egito.jpg', 10, true, true, 'Translado e City Tour', 18800, 25);
 
 
-let list = new Temas([new Tema(1, 'Aventura', 'Aventura', 'img/Aventura.jpg', '#69C862aa'), new Tema(2, 'Romântico', 'Romantico', 'img/Romantico.jpg', '#c42e92aa',), new Tema(3, 'Balada', 'Balada', '../assets/img/Balada.jpg', '#373737aa'), new Tema(4, 'Praia', 'Praia', 'img/Praia.jpg', '#34e87daa'), new Tema(5, 'Neve', 'Neve', 'img/Neve.jpg', '#d2d2d2aa')]);
-
+let list = new Temas([new Tema(1, 'Aventura', 'Aventura', 'img/Aventura.jpg', '#69C862aa'), new Tema(2, 'Romântico', 'Romantico', 'img/Romantico.jpg', '#c42e92aa',), new Tema(3, 'Balada', 'Balada', '../assets/img/Balada.jpg', '#373737aa'), new Tema(4, 'Praia', 'Praia', 'img/Praia.jpg', '#4e87dbaa'), new Tema(5, 'Neve', 'Neve', 'img/Neve.jpg', '#d2d2d2aa')]);
+let list2 = new Promocoes([promo1,promo2,promo3,promo4,promo5]);
 
  function exibirIconesDeTemas() {
 
@@ -238,4 +245,49 @@ let list = new Temas([new Tema(1, 'Aventura', 'Aventura', 'img/Aventura.jpg', '#
         }
     }
 }
+
+function exibirCardsPromocionais() {
+    let promocoes = list2.getPromocoes();
+    let viagensPromocionais = document.getElementsByClassName("PacotesPromocionais ExibeIcone");
+    for (let i = 0; i < viagensPromocionais.length; i++) {
+        viagensPromocionais[i].innerHTML += " ";
+    }
+    
+    for (let i = 0; i < viagensPromocionais.length; i++) {
+        for (let promo of promocoes) {
+            viagensPromocionais[i].innerHTML +=
+                `<li class= "promo">
+                     <a href = "/">
+                     <img src="${promo.getImg()}"/>
+                     <h2 class="Propriedade Nome">${promo.getNome()}</h2>
+                     <ul class= "Propriedades">
+                        <li class= "Propriedade Hotel">
+                        <p><img src="img/calendar.png"/> ${promo.getDiarias()} Diárias</p>
+                        </li>
+                        <li class= "Propriedade Hotel">
+                        <p><img src="img/check.png"/> Hotel</p>
+                        </li>
+                        <li class= "Propriedade PassagemAerea" >
+                        <p><img src="img/check.png"/>Passagem Aerea</p>
+                        </li>
+                        <li class= "Propriedade Bonus"><p><img src="img/check.png"/>${promo.getBonus()}</p>
+                        </li>
+                        <li class= "Propriedade ValorPromocional"><h1>${(promo.getValorPromocional()).toLocaleString('pt-BR',{
+                            style: 'currency',
+                            currency:'BRL'
+                        })}</h1>
+                        </li>
+                        <li class= "Propriedade ValorInicial"><h2>${(promo.getValor()).toLocaleString('pt-BR',{
+                            style: 'currency',
+                            currency:'BRL'
+                        })}</h1>
+                        </li>
+                     </ul>
+                     </a>
+                <li>`
+        }
+    }
+    
+}
 exibirIconesDeTemas();
+exibirCardsPromocionais();

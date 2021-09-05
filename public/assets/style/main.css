@@ -1,11 +1,15 @@
 
 
 main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     background-color:#9191915b;
     width: 100vw;
     padding-top: 112px;
-    padding-left: 12.5vw;
-
+    
 }
 nav.Categorias{
     display: flex;
@@ -35,13 +39,15 @@ ul.Main{
     width: 208px;
     height: 191px;
     border-radius: 10px;
-    margin-left: 8px;
+    box-shadow: 1px 0px 6px rgba(0,0,0,0.5);
+    margin: 6px;
     background-size:cover;
     background-repeat: no-repeat;
 
 }
 li.Tema{
     display: flex;
+    
 }
 li.Tema a{
     display:flex;
@@ -76,12 +82,14 @@ ul.Main::-webkit-scrollbar{
 }
 .PacotesPromocionais ul.Propriedades{
     list-style:none;
+    margin-left: 12px;
+    padding-inline-start: 0px;
 }
 .PacotesPromocionais li.ValorInicial{
     text-decoration:line-through;
 }
 .PacotesPromocionais h2.Nome{
-
+    font-size: 26px;
     margin-left: 12px;
 
   }
@@ -89,4 +97,14 @@ ul.Main::-webkit-scrollbar{
     width:274px;
     height:191px;
     border-radius: 20px 20px 0px 0px;
+}
+.Propriedades img{
+    margin-right:5px;
+    width:16px;
+    height:16px;
+}
+li.Propriedade {
+   display:flex;
+   flex-direction: row;
+   align-items: center;
 }
