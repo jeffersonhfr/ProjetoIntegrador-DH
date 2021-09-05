@@ -83,6 +83,114 @@ class Tema {
         this.cor = cor;
     }
 }
+
+class Promocoes{
+    promocoes= [];
+    constructor(promocoes) {
+        this.promocoes = promocoes;
+    }
+
+    postPromocoes(tema) {
+        this.getpromocoes().push(tema);
+    }
+    putPromocoes(tema) {
+ 
+        this.promocoes.forEach((u, i) => {
+            if (u.getId() === tema.getId()) {
+                
+                   this.promocoes[i].setNome(tema.getNome());
+                    this.promocoes[i].setImg(tema.getImg());
+
+                    
+                }
+            }
+        );
+
+        
+    }
+        
+    getPromocoesById(id) {
+        for (let tema of this.getpromocoes()) {
+            if (tema.getId === id) {
+                return tema;
+            }
+            return false;
+        }
+    }
+    getPromocoes() {
+        return this.promocoes;
+    }
+
+    setPromocoes(lista){
+        this.promocoes = lista;
+    }
+}
+
+class Pacote{
+    id;
+    nome;
+    img;
+    hotel;
+    diarias;
+    passagemAerea;
+    bonus;
+    valor;
+    constructor(id,nome,diarias,passagemAerea,bonus,valor) {
+        this.id = id;
+        this.nome = nome;
+        this.diarias = diarias;
+        this.passagemAerea = passagemAerea;
+        this.bonus = bonus;
+        this.valor = valor;
+        
+     }
+    getId() { 
+        return this.id;
+    }
+    getNome() {
+        return this.nome;
+    }
+    setNome(nome) {
+        this.nome = nome;
+    }
+    getImg() {
+        return this.img;
+    }
+    setImg(img) {
+        this.img = img;
+    }
+    getHotel() {
+        return this.hotel;
+    }
+    setHotel(hotel) {
+        this.hotel = hotel;
+    }
+    getDiarias() {
+        return this.diarias;
+    }
+    setDiarias(diarias){
+        this.diarias = diarias;
+    }
+    getPassagemAerea() {
+        return this.passagemAerea;
+    }
+    setPassagemAerea(passagemAerea) {
+        return this.passagemAerea;
+    }
+    getBonus() {
+        return this.bonus;
+    }
+    setBonus(bonus) {
+        this.bonus = bonus;
+    }
+    getValor() {
+        return this.valor;
+    }
+    setValor(valor) {
+        this.valor = valor;
+    }
+ }
+
 let list = new Temas([new Tema(1, 'Aventura', 'Aventura', 'img/Aventura.jpg', '#69C862aa'), new Tema(2, 'Romântico', 'Romantico', 'img/Romantico.jpg', '#c42e92aa',), new Tema(3, 'Balada', 'Balada', '../assets/img/Balada.jpg', '#373737aa'), new Tema(4, 'Praia', 'Praia', 'img/Praia.jpg', '#34e87daa'), new Tema(5, 'Neve', 'Neve', 'img/Neve.jpg', '#d2d2d2aa')]);
 
 
