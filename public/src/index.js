@@ -126,6 +126,7 @@ class Promocoes{
     }
 }
 
+
 class Pacote{
     id;
     nome;
@@ -189,7 +190,29 @@ class Pacote{
     setValor(valor) {
         this.valor = valor;
     }
- }
+}
+class Promo extends Pacote{
+    valorPromocional;
+    desconto;
+    constructor(id,nome,diarias,passagemAerea,bonus,valor,desconto) {
+        super(id,nome,diarias,passagemAerea,bonus,valor);
+        this.desconto = desconto;
+        this.setValorPromocional(desconto);
+    }
+    getValorPromocional() {
+        return this.valorPromocional;
+    }
+    setValorPromocional(desconto) {
+        this.valorPromocional = ((this.valor * (desconto / 100)) + this.valor);
+    }
+    getDesconto() {
+        return this.desconto;
+    }
+    setDesconto(desconto) {
+        this.desconto = desconto;
+    }
+}
+
 
 let list = new Temas([new Tema(1, 'Aventura', 'Aventura', 'img/Aventura.jpg', '#69C862aa'), new Tema(2, 'Romântico', 'Romantico', 'img/Romantico.jpg', '#c42e92aa',), new Tema(3, 'Balada', 'Balada', '../assets/img/Balada.jpg', '#373737aa'), new Tema(4, 'Praia', 'Praia', 'img/Praia.jpg', '#34e87daa'), new Tema(5, 'Neve', 'Neve', 'img/Neve.jpg', '#d2d2d2aa')]);
 
