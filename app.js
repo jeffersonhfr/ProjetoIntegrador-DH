@@ -1,7 +1,9 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-app.listen(3000, ()=>{
-    console.log("Ta rodando");
+
+app.listen(3000, () => {
+    
+    console.log('Ta rodando');
 });
 
 app.use(express.static('public'));
@@ -10,6 +12,10 @@ app.use('/fonts', express.static(__dirname + '/public/assets/fonts'));
 app.use('/img', express.static(__dirname + '/public/assets/img'));
 app.use('/src', express.static(__dirname + '/public/src'));
 
-app.get('/', (req, res) => res.sendFile(__dirname+'/views/index.html'));
+app.get('/', (req, res) => {
+
+    res.sendFile(__dirname + '/views/index.html')
+});
+
 
 module.exports = app;
