@@ -1,7 +1,7 @@
-body {
+/* body {
   display: flex;
   justify-content: center;
-}
+} */
 
 .container-busca {
   background: #fff;
@@ -64,13 +64,15 @@ body {
 }
 
 .busca__input label {
-  font-family: 'Epilogue', sans-serif;
+  /* font-family: 'Epilogue', sans-serif; */
+  font-family: 'fonte-primaria', sans-serif;
   font-weight: 600;
   font-size: 13px;
 }
 
 .busca__input input {
   font-family: 'Mukta', sans-serif;
+  font-family: 'fonte-secundaria', sans-serif;
   font-weight: 200;
   font-size: 16px;
   padding: 0;
@@ -78,6 +80,7 @@ body {
 
 .busca__input__submit {
   font-family: 'Epilogue', sans-serif;
+  font-family: 'fonte-primaria', sans-serif;
   font-weight: 600;
   font-size: 13px;
   border-radius: 0px 0px 20px 20px;
@@ -131,8 +134,6 @@ body {
   .busca__input #onde {
     width: 260px;
   }
-
-
 
   .busca__input__submit {
     border-radius: 0 30px 30px 0;
