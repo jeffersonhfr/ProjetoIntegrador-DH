@@ -1,104 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style/index.css">
-  <link rel="stylesheet" href="style/header.css">
-  <link rel="stylesheet" href="style/filter.css">
-  <link rel="stylesheet" href="style/main.css">
-  <link rel="stylesheet" href="style/newsletters.css">
-  <link rel="stylesheet" href="style/footer.css">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/filter.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/newsletters.css">
+    <link rel="stylesheet" href="style/footer.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100;300;400;500;600;700;800;900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100;300;400;500;600;700;800;900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <title>Viagens.com</title>
+  </head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="style/index.css" />
+  <link rel="stylesheet" href="style/header.css" />
+  <link rel="stylesheet" href="style/filter.css" />
+  <link rel="stylesheet" href="style/main.css" />
+  <link rel="stylesheet" href="style/newsletters.css" />
+  <link rel="stylesheet" href="style/footer.css" />
+
 
   <title>Viagens.com</title>
-</head>
+  </head>
 
-<body>
-  <!-- Alan -->
-  <header>
-    <img>
-    <nav>
-    </nav>
-  </header>
-  <!-- Alan -->
+  <body>
 
-  <!-- Jefferson -->
-  <div class="container">
-    <section class="container-busca">
-      <form class="container-busca__form">
-        <div class="container-busca__form__campos">
-          <div class="container-busca__form__campos__itens container-busca__form__campos__itens--primeiro">
-            <div class=" busca__input">
-              <label for="onde">Para onde desejar viajar?</label>
-              <input type="text" id="onde" name="onde" placeholder="Escreva aqui o local para onde deseja ir" />
+    <main>
+      <!-- Jefferson -->
+      <div class="container">
+        <section class="container-busca">
+          <form class="container-busca__form">
+            <div class="container-busca__form__campos">
+              <div class="container-busca__form__campos__itens container-busca__form__campos__itens--primeiro">
+                <div class=" busca__input">
+                  <label for="onde">Para onde desejar viajar?</label>
+                  <input type="text" id="onde" name="onde" placeholder="Escreva aqui o local para onde deseja ir" />
+                </div>
+              </div>
+              <div class="container-busca__form__campos__itens container-busca__form__campos__itens--separador">|</div>
+              <div class="container-busca__form__campos__itens container-busca__form__campos__itens--segundo">
+                <div class="busca__input">
+                  <label for="quando">Quando deseja viajar?</label>
+                  <input type="date" id="quando" name="quando" placeholder="Escolha o período desejado para viajar" />
+                </div>
+              </div>
+              <div class="container-busca__form__campos__itens container-busca__form__campos__itens--separador">|</div>
+              <div class="container-busca__form__campos__itens container-busca__form__campos__itens--terceiro">
+                <div class="busca__input">
+                  <label for="quantos">Para quantas pessoas?</label>
+                  <input type="number" id="quantos" name="quantos" placeholder="Escolha o número de viajantes" />
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="container-busca__form__campos__itens container-busca__form__campos__itens--separador">|</div>
-          <div class="container-busca__form__campos__itens container-busca__form__campos__itens--segundo">
-            <div class="busca__input">
-              <label for="quando">Quando deseja viajar?</label>
-              <input type="date" id="quando" name="quando" placeholder="Escolha o período desejado para viajar" />
-            </div>
-          </div>
-          <div class="container-busca__form__campos__itens container-busca__form__campos__itens--separador">|</div>
-          <div class="container-busca__form__campos__itens container-busca__form__campos__itens--terceiro">
-            <div class="busca__input">
-              <label for="quantos">Para quantas pessoas?</label>
-              <input type="number" id="quantos" name="quantos" placeholder="Escolha o número de viajantes" />
-            </div>
-          </div>
-        </div>
-        <input type="submit" value="Buscar" class="busca__input__submit">
-      </form>
-    </section>
-  </div>
-  <!-- Jefferson -->
+            <input type="submit" value="Buscar" class="busca__input__submit">
+          </form>
+        </section>
+      </div>
+      <!-- Jefferson -->
 
-  <!-- ALYSON -->
-  <main>
+      <nav class="Categoria">
+        <article>
+          <h1 class="title"> Viagens Temáticas</h1>
+          <h2>Separamos os melhores pacotes por temas, escolha o que faz mais o seu estilo</h2>
+        </article>
+        <div class="Main Button PreviousButton" display="none"></div>
+        <ul class="Main ViagensTematicas">
 
-  </main>
-  <!--ALYSON -->
-  <br>
-  <br>
-  <br>
-  <!-- Danilo -->
-  <!-- <h1>Fique por dentro!</h1>
-  <p>Cadastre seus dados abaixo e fique sabendo em primeira mão das melhores ofertas para sua próxima viagem!</p>
-  <div class="container">
-    <section class="container-fiquepordentro">
-      <form class="container-fiquepordentro__form">
-        <div class="container-fiquepordentro__form__campos">
-          <div class="container-fiquepordentro__form__campos__itens container-fiquepordentro__form__campos__itens--primeiro">
-            <div class=" fiquepordentro__input">
-              <label for="onde">Nome</label>
-              <input type="text" id="onde" name="onde" placeholder="Insira aqui o seu nome" />
-            </div>
-          </div>
-          <div class="container-fiquepordentro__form__campos__itens container-fiquepordentro__form__campos__itens--separador">|</div>
-          <div class="container-fiquepordentro__form__campos__itens container-fiquepordentro__form__campos__itens--segundo">
-            <div class="fiquepordentro__input">
-              <label for="quando">E-mail</label>
-              <input type="email" id="quando" name="quando" placeholder="Coloquei aqui o seu melhor e-mail" />
-            </div>
-          </div>
-        </div>
-        <input type="submit" value="Enviar" class="fiquepordentro__input__submit">
-      </form>
-    </section>
-  </div> -->
-  <!-- Danilo -->
+        </ul>
+        <div class="Main Button NextButton"></div>
+      </nav>
 
-  <!-- Anna Raphaela -->
-  <footer>
-  </footer>
-  <!-- Anna Raphaela -->
-</body>
+
+
+      <!-- ALYSON -->
+      <main>
+
+      </main>
+      <!--ALYSON -->
+      <br>
+      <br>
+      <br>
+      <!-- Danilo -->
+
+      <!-- Danilo -->
+
+      <!-- Anna Raphaela -->
+      <footer>
+      </footer>
+      <!-- Anna Raphaela -->
+      <nav class="Categoria">
+
+        <article>
+          <h1>Pacotes Promocionais</h2>
+            <h2>Confira nossos pacotes Promocionais e embarque na sua próxima viagem :)</h3>
+        </article>
+        <div class="Main Button PreviousButton" display="none"></div>
+        <ul class="Main PacotesPromocionais ExibeIcone">
+        </ul>
+      </nav>
+
+    </main>
+    <script src="src/index.js"></script>
+  </body>
 
 </html>
 
