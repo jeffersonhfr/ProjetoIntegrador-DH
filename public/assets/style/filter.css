@@ -1,0 +1,143 @@
+/* body {
+  display: flex;
+  justify-content: center;
+} */
+
+.container-busca {
+  background: #fff;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.16));
+  width: 100%;
+  border-radius: 30px;
+  height: auto;
+}
+
+.container-busca__form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.container-busca__form__campos {
+  display: flex;
+  padding: 20px 10px 10px;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.container-busca__form__campos__itens {
+  padding: 10px 0;
+}
+
+.container-busca__form__campos__itens--primeiro {
+  margin-right: 20px;
+}
+
+.container-busca__form__campos__itens--segundo {
+  margin-right: 15px;
+}
+
+.container-busca__form__campos__itens--separador {
+  display: none;
+}
+
+.busca__input input {
+  color: #919191;
+  border: 0px !important;
+  outline: none;
+}
+
+.busca__input {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.busca__input #onde {
+  width: 245px;
+}
+
+.busca__input #quando {
+  width: 160px;
+}
+
+
+.busca__input #quantos {
+  width: 220px;
+}
+
+.busca__input label {
+  /* font-family: 'Epilogue', sans-serif; */
+  font-family: 'fonte-primaria', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.busca__input input {
+  font-family: 'Mukta', sans-serif;
+  font-family: 'fonte-secundaria', sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  padding: 0;
+}
+
+.busca__input__submit {
+  font-family: 'Epilogue', sans-serif;
+  font-family: 'fonte-primaria', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: 0px 0px 20px 20px;
+  background: #3e60bf;
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  transition: all .4s;
+}
+
+.busca__input__submit:hover {
+  background: #1B3EA1;
+}
+
+@media (min-width: 720px) {
+  .container-busca__form__campos {
+    justify-content: space-around;
+  }
+
+  .container-busca__form__campos__itens--separador {
+    display: block;
+  }
+}
+
+@media (min-width: 980px) {
+  .container-busca {
+    width: 967px;
+    height: 80px;
+  }
+
+  .container-busca__form {
+    flex-flow: row nowrap;
+  }
+
+  .container-busca__form__campos {
+    width: 967px;
+    padding: inherit;
+  }
+
+  .container-busca__form__campos__itens {
+    padding: 25px 0;
+  }
+
+  .container-busca__form__campos__itens--primeiro {
+    margin-left: 15px;
+  }
+
+  .busca__input #onde {
+    width: 260px;
+  }
+
+  .busca__input__submit {
+    border-radius: 0 30px 30px 0;
+    height: 80px;
+    width: 100px;
+  }
+}
