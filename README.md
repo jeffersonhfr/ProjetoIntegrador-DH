@@ -1,2 +1,2 @@
-# ProjetoIntegrador-DH
-Projeto Integrador - Cursos Desenvolvimento Web FullStack
+# ProjetoIntegrador-v2
+Projeto Integrador - Refatorado

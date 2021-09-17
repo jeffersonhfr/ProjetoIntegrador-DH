@@ -1,0 +1,190 @@
+.container {
+  display: flex;
+  justify-content: center;
+} 
+
+.texto-topo{
+font-family: Epilogue;
+font-style: normal;
+font-weight: 600;
+font-size: 26px;
+line-height: 27px;
+text-align: center;
+color: #4D4D4D;
+}
+
+.section-newsletter{
+  width: 100vw;
+}
+
+.newsletter-overlay{
+  background-color: rgb(173 216 235 / 70%);
+  padding: 51px 0 30px;
+}
+
+.section-imagem{
+  background-image: url(../img/pexels-asad-photo-maldives-3155666.jpg);
+  width: 100vw;
+  background-position-y: -360px;
+  background-size: 120%;
+  background-position-x: 0;
+  background-repeat: no-repeat;
+}
+
+.box-newsletter{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+input#email {
+  width: 220px;
+}
+
+.texto-subtitulo{
+  text-align: center;
+  font-family: 'fonte-secundaria', sans-serif;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 17px;
+}
+.container-fiquepordentro {
+  display: block;
+  background: #fff;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.16));
+  width: 100%;
+  border-radius: 30px;
+  height: auto;
+}
+
+.container-fiquepordentro__form {
+  display: flex;
+  flex-flow: column nowrap;
+  }
+
+.container-fiquepordentro__form__campos {
+  display: flex;
+  padding: 20px 10px 10px;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.container-fiquepordentro__form__campos__itens {
+  padding: 10px 0;
+}
+
+.container-fiquepordentro__form__campos__itens--primeiro {
+  margin-right: 20px;
+}
+
+.container-fiquepordentro__form__campos__itens--segundo {
+  margin-right: 15px;
+}
+
+.container-fiquepordentro__form__campos__itens--separador {
+  display: none;
+}
+
+.fiquepordentro__input input {
+  color: #919191;
+  border: 0px !important;
+  outline: none;
+}
+
+.fiquepordentro__input {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.fiquepordentro__input #onde {
+  width: 245px;
+}
+
+.fiquepordentro__input #quando {
+  width: 160px;
+}
+
+
+.fiquepordentro__input #quantos {
+  width: 220px;
+}
+
+.fiquepordentro__input label {
+  /* font-family: 'Epilogue', sans-serif; */
+  font-family: 'fonte-primaria', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.fiquepordentro__input input {
+  font-family: 'Mukta', sans-serif;
+  font-family: 'fonte-secundaria', sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  padding: 0;
+}
+
+.fiquepordentro__input__submit {
+  font-family: 'Epilogue', sans-serif;
+  font-family: 'fonte-primaria', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: 0px 0px 20px 20px;
+  background: #3e60bf;
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  transition: all .4s;
+}
+
+.fiquepordentro__input__submit:hover {
+  background: #1B3EA1;
+}
+
+@media (min-width: 720px) {
+  .container-fiquepordentro__form__campos {
+    justify-content: space-around;
+  }
+
+  .container-fiquepordentro__form__campos__itens--separador {
+    display: block;
+  }
+}
+
+@media (min-width: 980px) {
+  .container-fiquepordentro {
+    width: 615px;
+    height: 80px;
+  }
+
+  .container-fiquepordentro__form {
+    flex-flow: row nowrap;
+  }
+
+  .container-fiquepordentro__form__campos {
+    width: 967px;
+    padding: inherit;
+  }
+
+  .container-fiquepordentro__form__campos__itens {
+    padding: 20px 0;
+  }
+
+  .container-fiquepordentro__form__campos__itens--primeiro {
+    margin-left: 15px;
+  }
+
+  .fiquepordentro__input #onde {
+    width: 260px;
+  }
+
+  .fiquepordentro__input__submit {
+    border-radius: 0 30px 30px 0;
+    height: 80px;
+    width: 100px;
+  }
+}

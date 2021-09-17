@@ -1,0 +1,116 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#f6f6f6;
+    width: 100vw;
+    padding-top: 40px;    
+}
+
+nav.Categorias{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+nav.Main.Button{
+    background-color: white;
+}
+
+ul.Main{
+    display:flex;
+    flex-direction: row;
+    align-items: stretch; 
+    list-style: none;
+    overflow-x:scroll;
+    max-width: 967px;;
+    padding-inline-start: 0px;
+    flex-flow: row nowrap;
+}
+
+.viagem-tematica{
+    margin-top: 80px;
+}
+
+.categoria-promocional{
+    margin: 80px 0;
+}
+.ViagensTematicas div.Container.Img{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 208px;
+    height: 191px;
+    border-radius: 10px;
+    box-shadow: 1px 0px 6px rgba(0,0,0,0.5);
+    margin: 6px;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+li.Tema{
+    display: flex;
+}
+
+li.Tema a{
+    display:flex;
+    flex: 1 0 auto;
+    width: 208px;
+    height: 191px;
+    align-items:center;
+
+    color:white;
+    font-size: 26px;
+    border-radius: 10px;
+}
+
+li.Tema h1{
+    display:flex;
+    flex: 1 0 auto;
+    align-items:center;
+    justify-content:center;
+}
+
+.PacotesPromocionais li.promo{
+    background-color:white;
+    margin:10px;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 1px 0px 8px rgba(0,0,0,0.25);
+}
+
+ul.Main::-webkit-scrollbar{
+    display:none;
+}
+
+.PacotesPromocionais ul.Propriedades{
+    list-style:none;
+    margin-left: 12px;
+    padding-inline-start: 0px;
+}
+
+.PacotesPromocionais li.ValorInicial{
+    text-decoration:line-through;
+}
+
+.PacotesPromocionais h2.Nome{
+    font-size: 26px;
+    margin-left: 12px;
+}
+
+.PacotesPromocionais img{
+    width:274px;
+    height:191px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.Propriedades img{
+    margin-right:5px;
+    width:16px;
+    height:16px;
+}
+
+li.Propriedade {
+   display:flex;
+   flex-direction: row;
+   align-items: center;
+}
