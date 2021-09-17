@@ -4,6 +4,11 @@ const controller = {
       title: '| Pacotes',
     });
   },
+  show:(req,res,next)=>{
+    res.render('pacote',{
+      title: '| Pacote'
+    })
+  }
 };
 
 module.exports = controller;
