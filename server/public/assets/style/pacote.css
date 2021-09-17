@@ -74,3 +74,12 @@
     background-color: #3e40bf;
     
 }
+.Pacote-Descricao{
+    margin-top: 35px;
+}
+.Pacote-Decricao__Titulo{
+    font-weight: bold;
+}
+.Pacote-Descricao__Paragrafo{
+    color:black;
+}
