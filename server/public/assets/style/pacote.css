@@ -23,14 +23,21 @@
     width: 80vw;
     border-radius: 10px;
 }
-.Pacote-ImgContainer__Img{
+.Pacote-ImgContainer__Img-list{
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+.Pacote-ImgContainer__Img-list img{
     width: 15vw;
     height: 15vw;
     border-radius: 10px;
+    margin: 5px 5px 0px 0px;
 }
 .Pacote-Propriedades__Item-Img{
     width: 16px;
     margin-right: 5px;
+    
 }
 .Pacote-Propriedades__Item{
     display: flex;
@@ -68,6 +75,22 @@
     border-radius: 10px;
     margin: 0px;
     height: 40px;
+}
+.Pacote-Propriedades__Item.Destaques{
+    display: flex;
+    flex-direction: row;
+    margin: 15px 0px;
+}
+.Pacote-Propriedades__Item.Destaques div{
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+    margin-right: 10px;
+    
+    word-wrap: break-word;
+}
+.Pacote-Propriedades__Item.Destaques img{
+    margin-right: 10px;
 }
 .Pacote__Button-Comprar:hover{
     transition: 0.5s;
