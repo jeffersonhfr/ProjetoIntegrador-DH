@@ -1,7 +1,46 @@
 <%- include('./partials/head') %>
   <%- include('./partials/header') %>
-    <h1>
-      <%= title %>
-    </h1>
-    <p>SOBRE</p>
+  <body>
+
+    <div class="texto">
+
+     <h1>SOBRE NÓS</h1>
+
+     <h2>História da Empresa</h2>
+
+     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras molestie laoreet massa. Cras non dapibus est, dictum tempus turpis. Sed dictum imperdiet diam, vel venenatis mauris ultrices ut. Curabitur ut varius dolor. Aenean convallis malesuada turpis, a elementum diam porttitor at.<br>
+
+     <br>Fusce sed tellus eget metus aliquet vulputate. Morbi rhoncus, mi sed imperdiet imperdiet, dui metus ullamcorper orci, et  vestibulum nunc tortor quis purus. Duis arcu nunc, posuere sed ante<br>
+     </p><br>
+
+      <div class="formulario">
+        <h2>Fale Conosco:</h2>
+        <form action="enviar.php" method="POST" name="form">
+
+       <div>
+         <label for="nome">Nome</label>
+         <input id="nome" type="text" required>
+       </div>
+
+        <div>
+         <label for="email">E-mail</label>
+         <input id="email" type="text" required>
+        </di>
+
+        <div class="box_text">
+          <label for="mensagem" >Mensagem</label>
+          <textarea id="mensagem" name="mensagem"></textarea>
+          <button type="submit">Enviar</button>
+        </div>
+
+    
+        <div>
+         <ul>
+         <li><a href="index.html"> VOLTAR</a></li>
+         </ul>
+        </div>
+      </div>
+    </div>
+    
+  </body>
     <%- include('./partials/footer') %>
