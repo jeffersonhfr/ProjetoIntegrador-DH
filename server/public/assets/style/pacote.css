@@ -1,0 +1,76 @@
+.Pacote{
+    display: flex;
+    flex-direction: column;
+    padding: 5vw 10vw;
+}
+.Pacote-TitleContainer{
+
+    margin-bottom: 5px;
+
+}
+.Pacote-TitleContainer__Subtitle{
+    color: #919191;
+    
+}
+.Pacote-TitleContainer__Title{
+    font-weight: bold;
+    font-size: 16px;
+}
+.Pacote-ImgContainer{
+
+}
+.Pacote-ImgContainer__Img-first{
+    width: 80vw;
+    border-radius: 10px;
+}
+.Pacote-ImgContainer__Img{
+    width: 15vw;
+    height: 15vw;
+    border-radius: 10px;
+}
+.Pacote-Propriedades__Item-Img{
+    width: 16px;
+    margin-right: 5px;
+}
+.Pacote-Propriedades__Item{
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+.Pacote-Propriedades__Item p{
+    font-size: 16px;
+    color:#919191;
+}
+.Pacote-Propriedades__Item__Valor{
+    display: flex;
+    flex-direction: column;
+
+    font-size: 16px;
+    color:#919191;
+
+}
+.Pacote-Propriedades__Item__Valor-Inicial{
+
+    padding-top: 10px;
+
+    font-size: 16px;
+    color:#919191;
+    text-decoration: line-through;
+}
+.Pacote-Propriedades__Item__Valor-Promocional{
+    font-weight: bold;
+    color:#3e60bf;
+}
+.Pacote__Button-Comprar{
+    color: white;
+    background-color: #3e60bf;
+    border-style: none;
+    border-radius: 10px;
+    margin: 0px;
+    height: 40px;
+}
+.Pacote__Button-Comprar:hover{
+    transition: 0.5s;
+    background-color: #3e40bf;
+    
+}

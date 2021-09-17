@@ -2,12 +2,38 @@
 <%- include('./partials/header') %>
 
 <body>
-      <div class='Produto'>
-            <ul class='Produto__imgCountainer'>
-                  <li><img src='/assets/img/Egito.png' class='Produto__img-first'></li>
-                  <li><img src=''></li>
+      <div class='Pacote'>
+            <article class='Pacote-TitleContainer'>
+                  <h2 class='Pacote-TitleContainer__Subtitle'>Pacotes Internacionais</h2>
+                  <h1 class='Pacote-TItleContainer__Title'>Egito Histórico</h1>
+            </article>
+            <ul class='Pacote-ImgCountainer'>
+                  <li><img src='/assets/img/Egito.jpg' class='Pacote-ImgContainer__Img-first'></li>
+                  <li><img src='/assets/img/Egito.jpg' class='Pacote-ImgContainer__Img'></li>
             </ul>
             </ul>
+            <ul class="Pacote-Propriedades">
+                  <li class="Pacote-Propriedades__Item Dias">
+                        <img class="Pacote-Propriedades__Item-Img" src="/img/calendar.png">
+                        <p> 10 Diárias</p>
+                  </li>
+                  <li class="Pacote-Propriedades__Item Hotel">
+                        <img class="Pacote-Propriedades__Item-Img" src="/img/check.png"> <p>Hotel</p>
+                  </li>
+                  <li class="Pacote-Propriedades__Item PassagemAerea">
+                        <img class="Pacote-Propriedades__Item-Img" src="/img/check.png"><p>Passagem Aerea</p>
+                  </li>
+                  <li class="Pacote-Propriedades__Item Bonus">
+                        <img class="Pacote-Propriedades__Item-Img" src="/img/check.png"><p>Translado e City Tour</p>
+                  </li>
+                  <li class="Pacote-Propriedades__Item__Valor">
+                        <h2 class="Pacote-Propriedades__Item__Valor-Inicial">R$&nbsp;18.800,00</h2>
+                  </li>
+                  <li class="Pacote-Propriedades__Item__Valor">
+                        <h1 class="Pacote-Propriedades__Item__Valor-Promocional">R$&nbsp;14.100,00</h1>
+                        <p>em até 10x no cartão</p>
+                  </li>
+               </ul>
+               <button class="Pacote__Button-Comprar">Comprar</button>
       </div>
 </body>
-<%- include('./partials/footer') %>
