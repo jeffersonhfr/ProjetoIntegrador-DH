@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "epilogue";
+  src: url(/ProjetoIntegrador-DH/server/public/assets/fonts/Epilogue/Epilogue-Italic-VariableFont_wght.ttf);
+}
+
+div {
+  font-family: epilogue;
+  font-weight: bold;
+  color: #4d4d4d;
+}
+
+div p {
+  margin: 10px 0 10px 20px;
+}
+
+div h1 {
+  font-size: 26px;
+  padding: 30px;
+  font-weight: bold;
+}
+
+div h2 {
+  font-size: 20px;
+  margin: 10px 0 10px 20px;
+  font-weight: bold;
+}
