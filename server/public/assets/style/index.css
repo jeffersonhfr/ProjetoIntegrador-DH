@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Fonte-Principal';
+    src: url('../fonts/Epilogue/Epilogue-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'Fonte-Secundaria';
+    src: url('../fonts/Mukta/Mukta-Light.ttf');
+}
+
+body{
+    margin:0px;
+    margin-bottom: 0px;
+    overflow-x:hidden;
+}
+
+h1{
+    font-family: 'Fonte-Principal',sans-serif;
+    margin-bottom: 0px;
+    font-size: 22px;
+}
+p{
+    font-family: 'Fonte-Secundaria';
+    margin-top:0px;
+    margin-bottom: 0px;
+    font-size: 12px;
+}
+h2{
+    font-family: 'Fonte-Secundaria';
+    margin-top:0px;
+    font-size: 16px; 
+    margin-bottom: 0px;
+}
+
+a{
+    text-decoration:none;
+    color: black;
+}
+
