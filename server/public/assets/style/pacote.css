@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: column;
     padding: 5vw 10vw;
+    justify-content: center;
 }
 .Pacote-TitleContainer{
-
+    font-size: 26px;
     margin-bottom: 5px;
 
 }
@@ -14,18 +15,20 @@
 }
 .Pacote-TitleContainer__Title{
     font-weight: bold;
-    font-size: 16px;
+    
 }
 .Pacote-ImgContainer{
-
+    display: flex;
+    flex-direction: column;
 }
 .Pacote-ImgContainer__Img-first{
     width: 80vw;
+    flex: 0 1 auto;
     border-radius: 10px;
 }
 .Pacote-ImgContainer__Img-list{
     display: flex;
-    flex-direction: row;
+    flex: 1 0 auto;
     overflow-x: hidden;
 }
 .Pacote-ImgContainer__Img-list img{
@@ -48,6 +51,11 @@
     font-size: 16px;
     color:#919191;
 }
+.Pacote-Propriedades__Item.Titulo{
+    position: absolute;
+    visibility: hidden;
+    font-weight: bold;
+}
 .Pacote-Propriedades__Item__Valor{
     display: flex;
     flex-direction: column;
@@ -66,6 +74,7 @@
 }
 .Pacote-Propriedades__Item__Valor-Promocional{
     font-weight: bold;
+    font-size: 33px;
     color:#3e60bf;
 }
 .Pacote__Button-Comprar{
@@ -105,4 +114,83 @@
 }
 .Pacote-Descricao__Paragrafo{
     color:black;
+}
+@media(min-width: 720px) and (max-width:991px ){
+
+}
+
+@media(min-width: 992px ){
+    .Pacote{
+        
+        position: relative;
+        display: grid;
+        grid-gap:20px;
+        grid-template-columns: min-content;
+
+    }
+    .Pacote-TitleContainer{
+        grid-column: 1/3;
+    }
+    .Pacote-TitleContainer__Title{
+        position: absolute;
+        visibility: hidden;
+        
+        
+    }
+    .Pacote-TitleContainer__Subtitle{
+
+        font-size: 26px;
+        font-weight: bold;
+        color: black;
+    }
+    .Pacote-ImgContainer{
+       
+        
+        grid-column: 1;
+        grid-row: 2/4;
+        
+        width: 43.75vw; 
+        max-width: 480px;
+        margin-right: 20px;
+    }
+    .Pacote-ImgContainer__Img-first{  
+       
+        flex: 0 1 auto; 
+        width: 100%;
+
+        
+    }
+    .Pacote-ImgContainer__Img-list img{
+        width: 6.25vw;
+        height: 6.25vw;
+        max-width: 95px;
+        min-height: 95px;
+    }
+    .Pacote-Propriedades{
+        grid-column: 2;
+        grid-row: 2;
+        margin: 10px;
+    }
+    .Pacote-Propriedades__Item.Titulo{
+        position: relative;
+        visibility: visible;
+    }
+    .Pacote__Button-Comprar{
+        grid-column: 2;
+        grid-row: 3;
+
+        width: 15vw;
+        height: 6.25vw;
+        max-width: 220px;
+        max-height: 95px;
+    }
+    .Pacote-Descricao-Sobre{
+        grid-row: 4;
+        grid-column: 1;
+    }
+    .Pacote-Descricao-PontosTuristicos{
+        grid-column: 1;
+        grid-row: 5;
+    }
+    
 }
