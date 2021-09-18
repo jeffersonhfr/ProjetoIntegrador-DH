@@ -42,8 +42,8 @@ ul.Main{
     display:flex;
     justify-content: center;
     align-items: center;
-    width: 208px;
-    height: 191px;
+    width: 195px;
+    height: 180px;
     border-radius: 10px;
     box-shadow: 1px 0px 6px rgba(0,0,0,0.5);
     margin: 6px;
@@ -58,8 +58,8 @@ li.Tema{
 li.Tema a{
     display:flex;
     flex: 1 0 auto;
-    width: 208px;
-    height: 191px;
+    width: 195px;
+    height: 180px;
     align-items:center;
 
     color:white;
