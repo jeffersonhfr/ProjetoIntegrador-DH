@@ -19,16 +19,17 @@ h1{
     font-size: 22px;
 }
 p{
-    font-family: 'Fonte-Secundaria';
+    font-family: 'Mukta', sans-serif;
     margin-top:0px;
     margin-bottom: 0px;
     font-size: 12px;
 }
 h2{
-    font-family: 'Fonte-Secundaria';
+    font-family: 'Mukta', sans-serif;
     margin-top:0px;
     font-size: 16px; 
     margin-bottom: 0px;
+    color: #919191;
 }
 
 a{
