@@ -8,8 +8,14 @@ text-align: center;
 color: #4D4D4D;
 }
 
+.division{
+  display: none;
+}
+
 .section-newsletter{
   width: 100vw;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .newsletter-overlay{
@@ -20,9 +26,7 @@ color: #4D4D4D;
 .section-imagem{
   background-image: url(../img/pexels-asad-photo-maldives-3155666.jpg);
   width: 100vw;
-  background-position-y: -360px;
-  background-size: 120%;
-  background-position-x: 0;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -62,7 +66,7 @@ input#email {
   display: flex;
   padding: 20px 10px 10px;
   flex-flow: row wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .container-fiquepordentro__form__campos__itens {
@@ -140,7 +144,14 @@ input#email {
   background: #1B3EA1;
 }
 
+@media (min-width: 510px) {
+  .division{
+    display: block;
+  }
+}
+
 @media (min-width: 720px) {
+  
   .container-fiquepordentro__form__campos {
     justify-content: space-around;
   }
@@ -151,6 +162,15 @@ input#email {
 }
 
 @media (min-width: 980px) {
+  .section-imagem{
+    background-image: url(../img/pexels-asad-photo-maldives-3155666.jpg);
+    width: 100vw;
+    background-position-y: -220px;
+    background-size: 120%;
+    background-position-x: 0;
+    background-repeat: no-repeat;
+  }
+
   .container-fiquepordentro {
     width: 615px;
     height: 80px;
@@ -173,13 +193,32 @@ input#email {
     margin-left: 15px;
   }
 
-  .fiquepordentro__input #onde {
-    width: 260px;
-  }
 
   .fiquepordentro__input__submit {
     border-radius: 0 30px 30px 0;
     height: 80px;
     width: 100px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .section-imagem{
+      width: 100vw;
+      background-position-y: -300px;
+      background-size: 120%;
+      background-position-x: 0;
+      background-repeat: no-repeat;
+      max-width: 1600px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .section-imagem{
+    width: 100vw;
+    background-position-y: -400px;
+    background-size: 120%;
+    background-position-x: 0;
+    background-repeat: no-repeat;
+    max-width: 1600px;
   }
 }
