@@ -17,6 +17,14 @@
   gap: var(--space-grid);
 }
 
+.container-cards{
+  width: 90vw;
+  margin: 0px;
+}
+
+.flex{
+  display: flex;
+}
 
 @media (min-width: 576px) {
   .container{

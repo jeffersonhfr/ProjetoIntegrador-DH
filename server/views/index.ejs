@@ -4,25 +4,45 @@
     <header class="header">
       <div class="header-overlay">
         <div class="header_container">
-          <a href="index.html">
-            <img class="header_logo" src="assets/img/logo01.png" alt="logo" width="234px" height="51px">
-          </a>
+          <div class="container container__header">
+            <a href="/">
+              <img class="header_logo" src="assets/img/logo01.png" alt="logo" width="234px" height="51px">
+            </a>
 
-          <nav class="header_menu">
-            <ul>
-              <li><a href="viagenstematicas.html">Viagens Temáticas</a></li>
-              <li><a href="pacotespromocionais.html">Pacotes Promocionais</a></li>
-              <li><a href="sobrenos.html">Sobre Nós</a></li>
-              <li><a href="ajuda.html">Ajuda</a></li>
-              <li><a href="login.html">Login</a></li>
-            </ul>
-          </nav>
+            <nav class="header_menu menu_mobile">
+              <input id="menu-hamburguer" type="checkbox" class="input-menu" />
+              <label for="menu-hamburguer">
+                <div class="menu">
+                  <span class="hamburguer"></span>
+                  <div class="content_menu_mob">
+                    <ul>
+                      <li><a href="viagenstematicas">Viagens Temáticas</a></li>
+                      <li><a href="pacotespromocionais">Pacotes Promocionais</a></li>
+                      <li><a href="sobrenos">Sobre Nós</a></li>
+                      <li><a href="ajuda">Ajuda</a></li>
+                      <li><a href="login">Login</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </label>
+            </nav>
+
+            <nav class="header_menu menu_desk">
+              <ul class="flex">
+                <li><a href="viagenstematicas">Viagens Temáticas</a></li>
+                <li><a href="pacotespromocionais">Pacotes Promocionais</a></li>
+                <li><a href="sobrenos">Sobre Nós</a></li>
+                <li><a href="ajuda">Ajuda</a></li>
+                <li><a href="login">Login</a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </header>
 
     <main>
-      <div class="container">
+      <div class="container" style="justify-content: center;">
         <section class="container-busca">
           <form class="container-busca__form">
             <div class="container-busca__form__campos">
@@ -52,30 +72,32 @@
         </section>
       </div>
 
+      <div class="container">
+        <nav class="Categoria viagem-tematica">
+          <article>
+            <h1 class="title"> Viagens Temáticas</h1>
+            <h2>Separamos os melhores pacotes por temas, escolha o que faz mais o seu estilo</h2>
+          </article>
 
-      <nav class="Categoria viagem-tematica">
-        <article>
-          <h1 class="title"> Viagens Temáticas</h1>
-          <h2>Separamos os melhores pacotes por temas, escolha o que faz mais o seu estilo</h2>
-        </article>
+          <div class="Main Button PreviousButton" display="none"></div>
+          <div class="container container-cards">
+            <ul class="Main ViagensTematicas"></ul>
+          </div>
+          <div class="Main Button NextButton"></div>
+        </nav>
+      </div>
 
-        <div class="Main Button PreviousButton" display="none"></div>
-        <ul class="Main ViagensTematicas">
-
-        </ul>
-        <div class="Main Button NextButton"></div>
-      </nav>
-
-
-      <nav class="Categoria categoria-promocional">
-        <article>
-          <h1>Pacotes Promocionais</h2>
-            <h2>Confira nossos pacotes Promocionais e embarque na sua próxima viagem :)</h3>
-        </article>
-        <div class="Main Button PreviousButton" display="none"></div>
-        <ul class="Main PacotesPromocionais ExibeIcone">
-        </ul>
-      </nav>
+      <div class="container container-cards">
+        <nav class="Categoria categoria-promocional">
+          <article>
+            <h1>Pacotes Promocionais</h2>
+              <h2>Confira nossos pacotes Promocionais e embarque na sua próxima viagem :)</h3>
+          </article>
+          <div class="Main Button PreviousButton" display="none"></div>
+          <ul class="Main PacotesPromocionais ExibeIcone">
+          </ul>
+        </nav>
+      </div>
 
       <section class="section-newsletter">
         <div class="section-imagem">

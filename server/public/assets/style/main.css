@@ -4,8 +4,9 @@ main{
     justify-content: center;
     align-items: center;
     background-color:#f6f6f6;
-    width: 100vw;
-    padding-top: 40px;    
+    width: 100vw; 
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 nav.Categorias{
@@ -19,7 +20,6 @@ nav.Main.Button{
 
 ul.Main{
     display:flex;
-    flex-direction: row;
     align-items: stretch; 
     list-style: none;
     overflow-x:scroll;
@@ -29,12 +29,14 @@ ul.Main{
 }
 
 .viagem-tematica{
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
 .categoria-promocional{
     margin: 80px 0;
+    width: inherit;
 }
+
 .ViagensTematicas div.Container.Img{
     display:flex;
     justify-content: center;
@@ -113,4 +115,33 @@ li.Propriedade {
    display:flex;
    flex-direction: row;
    align-items: center;
+}
+
+@media (min-width: 1100px) {
+    ul.Main{
+        max-width: 100%;
+    }
+
+    .ViagensTematicas div.Container.Img{
+        width: 240px;
+        height: 240px;
+    }
+
+    li.Tema a {
+        width: 240px;
+        height: 240px;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    .ViagensTematicas div.Container.Img{
+        width: 270px;
+        height: 270px;
+    }
+
+    li.Tema a {
+        width: 270px;
+        height: 270px;
+    }
 }

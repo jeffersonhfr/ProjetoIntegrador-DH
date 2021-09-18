@@ -28,22 +28,6 @@ footer h5 {
   text-align: center;
 }
 
-ul {
-  list-style: none;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
- 
-li {
-  list-style: none;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
 
 footer {
   align-items:flex-start;
