@@ -164,7 +164,7 @@
         width: 6.25vw;
         height: 6.25vw;
         max-width: 95px;
-        min-height: 95px;
+        max-height: 95px;
     }
     .Pacote-Propriedades{
         grid-column: 2;
