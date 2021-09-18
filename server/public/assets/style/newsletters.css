@@ -26,8 +26,10 @@ color: #4D4D4D;
 .section-imagem{
   background-image: url(../img/pexels-asad-photo-maldives-3155666.jpg);
   width: 100vw;
-  background-size: cover;
+  background-size: 250%;
   background-repeat: no-repeat;
+  background-position-x: 59%;
+  background-position-y: 45%;
 }
 
 .box-newsletter{
@@ -163,12 +165,11 @@ input#email {
 
 @media (min-width: 980px) {
   .section-imagem{
-    background-image: url(../img/pexels-asad-photo-maldives-3155666.jpg);
-    width: 100vw;
-    background-position-y: -220px;
-    background-size: 120%;
-    background-position-x: 0;
+    background-size: 170%;
     background-repeat: no-repeat;
+    background-position-y: 43%;
+    background-position-x: 46%;
+    max-width: 1600px;
   }
 
   .container-fiquepordentro {
@@ -198,27 +199,5 @@ input#email {
     border-radius: 0 30px 30px 0;
     height: 80px;
     width: 100px;
-  }
-}
-
-@media (min-width: 1100px) {
-  .section-imagem{
-      width: 100vw;
-      background-position-y: -300px;
-      background-size: 120%;
-      background-position-x: 0;
-      background-repeat: no-repeat;
-      max-width: 1600px;
-  }
-}
-
-@media (min-width: 1100px) {
-  .section-imagem{
-    width: 100vw;
-    background-position-y: -400px;
-    background-size: 120%;
-    background-position-x: 0;
-    background-repeat: no-repeat;
-    max-width: 1600px;
   }
 }

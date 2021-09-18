@@ -2,8 +2,8 @@
   background: url(../img/logo02.jpg) no-repeat center center;
   width: 100vw;
   height: 280px;
-  background-size: 120%;
-  background-position-y: center;
+  background-size: 150%;
+  background-position-y: 75%;
 }
 
 .header-overlay{
@@ -27,7 +27,7 @@
   width: 100%;
   background-color: #fff;
   right: 1280px;
-  top: 80px;
+  top: 100px;
   text-align: center;
   font-size: 16px;
   padding: 15px 0;
@@ -38,7 +38,7 @@
 }
 
 input:checked ~ label .content_menu_mob {
-  top:80px;
+  top:100px;
   right: 0px;
   transition: 0.5s ease-in-out;
 }
@@ -58,7 +58,7 @@ input:checked ~ label .content_menu_mob {
 .container__header {
   justify-content: space-between;
   align-items: center;
-  padding-top: 6px;
+  padding-top: 30px;
 }
 .menu {
   width: 60px;
@@ -131,7 +131,7 @@ input:checked ~ label .hamburguer:after {
     height: 466px;
     border: 40px;
     background-size: 160%;
-    background-position-y: -480px;
+    background-position-y: 75%;
     max-width: 1600px;
     margin: 0 auto;
   }
@@ -158,3 +158,38 @@ input:checked ~ label .hamburguer:after {
     color: black;
   }
 }
+/* 
+@media (min-width: 1100px){
+  .header {
+    background-size: 150%;
+    background-position-y: -600px;
+  }
+}
+
+@media (min-width: 1200px){
+  .header {
+    background-size: 150%;
+    background-position-y: -650px;
+  }
+}
+
+@media (min-width: 1300px){
+  .header {
+    background-size: 150%;
+    background-position-y: -650px;
+  }
+}
+
+@media (min-width: 1400px){
+  .header {
+    background-size: 150%;
+    background-position-y: -650px;
+  }
+}
+
+@media (min-width: 1500px){
+  .header {
+    background-size: 150%;
+    background-position-y: -850px;
+  }
+} */
