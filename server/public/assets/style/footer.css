@@ -28,6 +28,13 @@ footer h5 {
   text-align: left;
 }
 
+footer li {
+  padding: 2px 0;
+}
+
+footer ul {
+  margin: 12px 0 15px;
+}
 
 footer {
   align-items:flex-start;
@@ -37,6 +44,8 @@ footer {
   background: #D6D6D6;
   padding: 30px 0;
   margin-top: 30px;
+  font-family: 'Mukta', sans-serif;
+  font-size: 14px;
 }
 
 article.footer_list {

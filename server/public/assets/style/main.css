@@ -10,11 +10,11 @@ main{
 }
 
 .Container.Img:hover {
-    transform: scale(1.03);
+    transform: scale(1.04);
 }
 
 li.promo:hover {
-    transform: scale(1.03);
+    transform: scale(1.04);
 }
 
 nav.Categorias{
