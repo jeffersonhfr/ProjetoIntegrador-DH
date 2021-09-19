@@ -103,7 +103,8 @@
 }
 .Pacote__Button-Comprar:hover{
     transition: 0.5s;
-    background-color: #3e40bf;
+    background-color: #1b1ed8;
+    cursor:pointer;
     
 }
 .Pacote-Descricao{
