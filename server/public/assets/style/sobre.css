@@ -1,20 +1,65 @@
-.texto p {
-  font-weight: normal;
-  margin: 20px 0 20px 20px;
-}
-
-.texto h1 {
+.sobre {
+  font-family: 'Epilogue', sans-serif;
   font-weight: bold;
-  padding: 20px;
+  color: #4d4d4d;
+  padding: 30px 0;
 }
 
-.texto h2 {
+.sobre-container{
+  display: flex;
+  flex-flow: column;
+}
+
+.sobre p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #4D4D4D;
+  margin: 5px 0;
+}
+
+.sobre h1 {
+  font-size: 40px;
   font-weight: bold;
-  margin: 20px 0 20px 20px;
+  margin: 40px 0 30px;
+  color: #4D4D4D;
 }
 
-.formulario div {
-  padding: 25px;
+.sobre h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 40px 0 15px;
+  color: #4D4D4D;
+}
+
+.sobre .formulario  {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1 1 100%;
+}
+
+.btao-enviar {
+  background: #3E60BF;
+  color: #FFFF;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 11px;
+  margin-top: 13px;
+  margin-bottom: 20px;
+  padding: 12px 130px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+}
+
+.sobre form {
+  width: 100%;
+  max-width: 600px;
+}
+
+.campos_form {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 20px 0;
 }
 
 .box_text label {
