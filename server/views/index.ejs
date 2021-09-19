@@ -1,58 +1,76 @@
 <%- include('./partials/head') %>
-  <%- include('./partials/header') %>
-
-    <header class="header">
-      <div class="header-overlay">
-        <div class="header_container">
-          <a href="index.html">
+  <header class="header">
+    <div class="header-overlay">
+      <div class="header_container">
+        <div class="container container__header">
+          <a href="/">
             <img class="header_logo" src="assets/img/logo01.png" alt="logo" width="234px" height="51px">
           </a>
 
-          <nav class="header_menu">
-            <ul>
-              <li><a href="viagenstematicas.html">Viagens Temáticas</a></li>
-              <li><a href="pacotespromocionais.html">Pacotes Promocionais</a></li>
-              <li><a href="sobrenos.html">Sobre Nós</a></li>
-              <li><a href="ajuda.html">Ajuda</a></li>
-              <li><a href="login.html">Login</a></li>
+          <nav class="header_menu menu_mobile">
+            <input id="menu-hamburguer" type="checkbox" class="input-menu" />
+            <label for="menu-hamburguer">
+              <div class="menu">
+                <span class="hamburguer"></span>
+                <div class="content_menu_mob">
+                  <ul>
+                    <li><a href="viagenstematicas">Viagens Temáticas</a></li>
+                    <li><a href="pacotespromocionais">Pacotes Promocionais</a></li>
+                    <li><a href="sobre">Sobre Nós</a></li>
+                    <li><a href="ajuda">Ajuda</a></li>
+                    <li class="login"><a href="login">Login</a></li>
+                  </ul>
+                </div>
+              </div>
+            </label>
+          </nav>
+
+          <nav class="header_menu menu_desk">
+            <ul class="flex">
+              <li><a href="viagenstematicas">Viagens Temáticas</a></li>
+              <li><a href="pacotespromocionais">Pacotes Promocionais</a></li>
+              <li><a href="sobre">Sobre Nós</a></li>
+              <li><a href="ajuda">Ajuda</a></li>
+              <li><a href="login">Login</a></li>
             </ul>
           </nav>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <div class="container">
-        <section class="container-busca">
-          <form class="container-busca__form">
-            <div class="container-busca__form__campos">
-              <div class="container-busca__form__campos__itens container-busca__form__campos__itens--primeiro">
-                <div class=" busca__input">
-                  <label for="onde">Para onde desejar viajar?</label>
-                  <input type="text" id="onde" name="onde" placeholder="Escreva aqui o local para onde deseja ir" />
-                </div>
-              </div>
-              <div class="container-busca__form__campos__itens container-busca__form__campos__itens--separador">|</div>
-              <div class="container-busca__form__campos__itens container-busca__form__campos__itens--segundo">
-                <div class="busca__input">
-                  <label for="quando">Quando deseja viajar?</label>
-                  <input type="date" id="quando" name="quando" placeholder="Escolha o período desejado para viajar" />
-                </div>
-              </div>
-              <div class="container-busca__form__campos__itens container-busca__form__campos__itens--separador">|</div>
-              <div class="container-busca__form__campos__itens container-busca__form__campos__itens--terceiro">
-                <div class="busca__input">
-                  <label for="quantos">Para quantas pessoas?</label>
-                  <input type="number" id="quantos" name="quantos" placeholder="Escolha o número de viajantes" />
-                </div>
+  <main>
+    <div class="container" style="justify-content: center;">
+      <section class="container-busca">
+        <form class="container-busca__form">
+          <div class="container-busca__form__campos">
+            <div class="container-busca__form__campos__itens container-busca__form__campos__itens--primeiro">
+              <div class=" busca__input">
+                <label for="onde">Para onde desejar viajar?</label>
+                <input type="text" id="onde" name="onde" placeholder="Escreva aqui o local para onde deseja ir" />
               </div>
             </div>
-            <input type="submit" value="Buscar" class="busca__input__submit">
-          </form>
-        </section>
-      </div>
+            <div class="container-busca__form__campos__itens container-busca__form__campos__itens--separador">|</div>
+            <div class="container-busca__form__campos__itens container-busca__form__campos__itens--segundo">
+              <div class="busca__input">
+                <label for="quando">Quando deseja viajar?</label>
+                <input type="date" id="quando" name="quando" placeholder="Escolha o período desejado para viajar" />
+              </div>
+            </div>
+            <div class="container-busca__form__campos__itens container-busca__form__campos__itens--separador">|</div>
+            <div class="container-busca__form__campos__itens container-busca__form__campos__itens--terceiro">
+              <div class="busca__input">
+                <label for="quantos">Para quantas pessoas?</label>
+                <input type="number" id="quantos" name="quantos" placeholder="Escolha o número de viajantes" />
+              </div>
+            </div>
+          </div>
+          <input type="submit" value="Buscar" class="busca__input__submit">
+        </form>
+      </section>
+    </div>
 
-
+    <div class="container">
       <nav class="Categoria viagem-tematica">
         <article>
           <h1 class="title"> Viagens Temáticas</h1>
@@ -60,13 +78,14 @@
         </article>
 
         <div class="Main Button PreviousButton" display="none"></div>
-        <ul class="Main ViagensTematicas">
-
-        </ul>
+        <div class="container container-cards">
+          <ul class="Main ViagensTematicas"></ul>
+        </div>
         <div class="Main Button NextButton"></div>
       </nav>
+    </div>
 
-
+    <div class="container container-cards">
       <nav class="Categoria categoria-promocional">
         <article>
           <h1>Pacotes Promocionais</h2>
@@ -76,10 +95,12 @@
         <ul class="Main PacotesPromocionais ExibeIcone">
         </ul>
       </nav>
+    </div>
 
-      <section class="section-newsletter">
-        <div class="section-imagem">
-          <div class="newsletter-overlay">
+    <section class="section-newsletter">
+      <div class="section-imagem">
+        <div class="newsletter-overlay">
+          <div class="container" style="justify-content: center;">
             <div class="box-newsletter">
               <h2 class="texto-topo"> Fique por dentro!</h2>
               <p class="texto-subtitulo"> Cadastre seus dados abaixo e fique sabendo em primeira mão das melhores ofertas para sua próxima viagem.
@@ -94,11 +115,11 @@
                         <input type="text" id="nome" name="nome" placeholder="Insira aqui o seu nome" />
                       </div>
                     </div>
-                    <div class="container-fiquepordentro__form__campos__itens container-fiquepordentro__form__campos__itens">|</div>
-                    <div class="container-busca__form__campos__itens container-busca__form__campos__itens--segundo">
+                    <div class="container-fiquepordentro__form__campos__itens container-fiquepordentro__form__campos__itens division">|</div>
+                    <div class="container-fiquepordentro__form__campos__itens container-fiquepordentro__form__campos__itens--segundo">
                       <div class="fiquepordentro__input">
                         <label for="E-mail">E-mail</label>
-                        <input type="email" id="email" name="email" placeholder="Insira aqui o seu melhor e-mail" />
+                        <input type="email" id="emailNews" name="email" placeholder="Insira aqui o seu melhor e-mail" />
                       </div>
                     </div>
                   </div>
@@ -108,10 +129,11 @@
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-    </main>
+  </main>
 
 
-    <script src="src/index.js"></script>
-    <%- include('./partials/footer') %>
+  <script src="src/index.js"></script>
+  <%- include('./partials/footer') %>

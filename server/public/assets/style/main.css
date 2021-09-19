@@ -4,8 +4,17 @@ main{
     justify-content: center;
     align-items: center;
     background-color:#f6f6f6;
-    width: 100vw;
-    padding-top: 40px;    
+    width: 100vw; 
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.Container.Img:hover {
+    transform: scale(1.04);
+}
+
+li.promo:hover {
+    transform: scale(1.04);
 }
 
 nav.Categorias{
@@ -19,33 +28,35 @@ nav.Main.Button{
 
 ul.Main{
     display:flex;
-    flex-direction: row;
     align-items: stretch; 
     list-style: none;
     overflow-x:scroll;
     max-width: 967px;;
     padding-inline-start: 0px;
     flex-flow: row nowrap;
+    margin-top: 15px;
 }
 
 .viagem-tematica{
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
 .categoria-promocional{
-    margin: 80px 0;
+    margin: 80px 0 40px;
+    width: inherit;
 }
+
 .ViagensTematicas div.Container.Img{
     display:flex;
     justify-content: center;
     align-items: center;
-    width: 208px;
-    height: 191px;
+    width: 195px;
+    height: 180px;
     border-radius: 10px;
-    box-shadow: 1px 0px 6px rgba(0,0,0,0.5);
     margin: 6px;
     background-size:cover;
     background-repeat: no-repeat;
+    border: 1px solid #d6d6d6;
 }
 
 li.Tema{
@@ -55,8 +66,8 @@ li.Tema{
 li.Tema a{
     display:flex;
     flex: 1 0 auto;
-    width: 208px;
-    height: 191px;
+    width: 195px;
+    height: 180px;
     align-items:center;
 
     color:white;
@@ -75,7 +86,7 @@ li.Tema h1{
     background-color:white;
     margin:10px;
     border-radius: 20px 20px 0px 0px;
-    box-shadow: 1px 0px 8px rgba(0,0,0,0.25);
+    border: 1px solid #d6d6d6;
 }
 
 ul.Main::-webkit-scrollbar{
@@ -86,21 +97,44 @@ ul.Main::-webkit-scrollbar{
     list-style:none;
     margin-left: 12px;
     padding-inline-start: 0px;
-}
-
-.PacotesPromocionais li.ValorInicial{
-    text-decoration:line-through;
+    margin-top: 20px;
 }
 
 .PacotesPromocionais h2.Nome{
     font-size: 26px;
     margin-left: 12px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #4D4D4D;
+}
+
+h2.emAte {
+    margin-bottom: 16px;
 }
 
 .PacotesPromocionais img{
     width:274px;
     height:191px;
     border-radius: 20px 20px 0px 0px;
+}
+
+li.Propriedade.ValorPromocional.preco {
+    margin: 10px 0;
+    color: #3E60BF;
+    font-weight: bold;
+}
+
+li.Propriedade.ValorInicial.preco {
+    margin-top: 10px;
+}
+.preco h1 {
+    font-family: 'Mukta';
+    margin-bottom: 0px;
+    font-size: 30px;
+}
+
+.ValorInicial h2 span {
+    text-decoration: line-through;
 }
 
 .Propriedades img{
@@ -113,4 +147,33 @@ li.Propriedade {
    display:flex;
    flex-direction: row;
    align-items: center;
+}
+
+@media (min-width: 1100px) {
+    ul.Main{
+        max-width: 100%;
+    }
+
+    .ViagensTematicas div.Container.Img{
+        width: 240px;
+        height: 240px;
+    }
+
+    li.Tema a {
+        width: 240px;
+        height: 240px;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    .ViagensTematicas div.Container.Img{
+        width: 270px;
+        height: 270px;
+    }
+
+    li.Tema a {
+        width: 270px;
+        height: 270px;
+    }
 }

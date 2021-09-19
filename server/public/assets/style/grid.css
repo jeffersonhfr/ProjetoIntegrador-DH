@@ -8,6 +8,9 @@
   --col-width-grid: 72px;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
 .container{
   display: flex;
   flex-flow: row wrap;
@@ -17,6 +20,14 @@
   gap: var(--space-grid);
 }
 
+.container-cards{
+  width: 88vw;
+  margin: 0px;
+}
+
+.flex{
+  display: flex;
+}
 
 @media (min-width: 576px) {
   .container{
