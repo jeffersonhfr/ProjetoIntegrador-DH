@@ -1,39 +1,51 @@
-body{
-  text-decoration: none;
-  font-family: 'Mukta';
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 200;
-  line-height: 23px;
-  letter-spacing: 0em;
-  text-align: center;
+section.fundo {
+  background-color: rgb(0 0 0 / 53%);
   width: 100vw;
+  height: 100vh;
 }
 
-a{
-  text-decoration: none;
+.dados i{
+  position: absolute;
+  font-size: 14px;
+  left: 250px;
+  padding: 9px 8px;
+  color:#919191;
 }
 
+.recuperar-senha{
+  color: #919191;
+  text-align: center;
+}
+
+.cadastro {
+  text-align: center;
+}
+
+.link-cadastro{
+  text-align: center;
+}
+
+.link-cadastro a {
+  color: #3E60BF;
+  text-align: center;
+  font-weight: bold;
+}
+
+img.img-login {
+  height: 270px;
+}
 
 .box-login{
- 
- position: absolute;
- top: 50%; /* posiciona na metade da tela */
- left: 50%; /* posiciona na metade da tela */
-
- width: 297px;
- height: 569px;
- /*margin: 0 auto;*/
+ width: 310px;
+ height: 550px;
  background: #FFFFFF;
  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
-
 }
 
 .imagem-login{
-align-self: center;
-width: 297px;
-height: 290px;
-
+  align-self: flex-start;
+  width: 310px;
+  height: 270px;
 }
 
 
@@ -41,18 +53,31 @@ height: 290px;
   align-self: center;
   align-items: flex-start;
   justify-content: flex-start;
-  margin: 30px;
-
+  margin: 30px 10px;
 }
 
 .dados{
   position: relative;
+  display: flex;
+}
+
+::placeholder { 
+  color: #BCBCBC;
+  opacity: 1; 
+}
+
+:-ms-input-placeholder { 
+  color: #BCBCBC;
+}
+
+::-ms-input-placeholder { 
+  color: #BCBCBC;
 }
 
 .dados input[type=text]{
-  width:224px;
-  margin-left: 0;
-  margin: 5px;
+  font-family: 'Mukta', sans-serif;
+  width:275px;
+  margin: 5px 0;
   margin-top: 2px;
   margin-bottom: 17px;
   border-style: solid;
@@ -60,70 +85,254 @@ height: 290px;
   border-top-width: 0;
   border-right-width: 0;
   border-left-width: 0;
+  border-color: #BCBCBC;
 }
+
 .dados input[type=email]{
-  width:224px;
-  margin-left: 0;
-  margin: 5px;
+  font-family: 'Mukta', sans-serif;
+  width:275px;
+  margin: 5px 0;
   margin-bottom: 17px;
-  border-style: solid;
-  border-bottom-width: 1px  #BCBCBC;
-  border-top-width: 0;
-  border-right-width: 0;
-  border-left-width: 0;
-}
-.dados input[type=password]{
-  display: flex;
-  float: left;
-  width: 105px;
   border-style: solid;
   border-bottom-width: 1px;
   border-top-width: 0;
   border-right-width: 0;
   border-left-width: 0;
-  margin-bottom: 20px;
-  width:224px;
+  border-color: #BCBCBC;
+}
 
+.dados input[type=password]{
+  font-family: 'Mukta', sans-serif;
+  display: flex;
+  border-style: solid;
+  border-bottom-width: 1px;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-color: #BCBCBC;
+  margin-bottom: 20px;
+  margin-right: 11px;
+  width:130px;
+}
+
+input.senha-login {
+  width: 273px !important;
+}
+
+.dados-check {
+  display: flex;
+  color: #919191;
+}
+
+.termosServico{
+  color: #585858;
+  text-decoration: underline;
+}
+
+.btn-login {
+  display: flex;
+  justify-content: center;
 }
 
 .dados-check input[type=checkbox]{
-
-background: #FFFFFF;
-border: 1px solid #919191;
-box-sizing: border-box;
-position:relative;
-
-vertical-align: middle;
-display: block;
-
-  
+  font-family: 'Mukta', sans-serif;
+  background: #FFFFFF;
+  border: 1px solid #919191;
+  box-sizing: border-box;
+  position:relative;
+  display: block;
 }
-
-.dados-check label{
-
-}
-
-
 
 .dados input:focus{
-outline: none;
-
+  outline: none;
 }
 
-
-.btn-cadastrar{
-height: 22.546939849853516px;
-width: 163.9453125px;
-left: 91px;
-top: 677px;
-border-radius: 5px;
-background: #3E60BF;
-color:#FFFF;
-font-size: 11px;
-font-weight: 500;
-line-height: 11px;
-margin-top: 13px;
-margin-bottom: 20px;
+.btao-login{
+  background: #3E60BF;
+  color: #FFFF;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 11px;
+  margin-top: 13px;
+  margin-bottom: 20px;
+  padding: 12px 90px;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
 }
 
+.btao-login:hover{
+  background: #2a4182;
+}
 
+.cadastro p {
+  text-align: center;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+p.link-cadastro {
+  font-size: 17px;
+}
+
+@media (min-width: 768px){
+
+  .dados i {
+    position: absolute;
+    font-size: 14px;
+    left: 300px;
+    padding: 9px 8px;
+    color: #919191;
+}
+
+  .imagem-login{
+    align-self: flex-start;
+    width: 310px;
+    height: 290px;
+  }
+
+  .box-login{
+    width: 720px;
+    height: 327px;
+    background: #FFFFFF;
+    box-shadow: none;
+    border: 0;
+    display: flex;
+    justify-content: space-between;
+   }
+   
+  .img-login{
+    width: 320px;
+    height: fit-content !important;
+  }
+   
+  .login{
+    display: flex;
+    flex-flow: column nowrap;
+    order: -1;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 10px;
+    width: 390px;
+  }
+
+
+   
+  form#formulario-cadastro {
+    padding: 0 20px;
+    width: 350px;
+    margin-top: 20px;
+  }
+
+   .dados{
+     position: relative;
+     display: flex;
+   }
+   
+   ::placeholder { 
+     color: #BCBCBC;
+     opacity: 1; 
+   }
+   
+   :-ms-input-placeholder { 
+     color: #BCBCBC;
+   }
+   
+   ::-ms-input-placeholder { 
+     color: #BCBCBC;
+   }
+   
+   .dados input[type=text]{
+     width:325px;
+     margin: 5px 0 ;
+     margin-top: 2px;
+     margin-bottom: 17px;
+     border-style: solid;
+     border-bottom-width: 1px;
+     border-top-width: 0;
+     border-right-width: 0;
+     border-left-width: 0;
+     border-color: #BCBCBC;
+   }
+   
+   .dados input[type=email]{
+     width:325px;
+     margin: 5px 0;
+     margin-bottom: 17px;
+     border-style: solid;
+     border-bottom-width: 1px;
+     border-top-width: 0;
+     border-right-width: 0;
+     border-left-width: 0;
+     border-color: #BCBCBC;
+   }
+   .dados input[type=password]{
+     display: flex;
+     border-style: solid;
+     border-bottom-width: 1px;
+     border-top-width: 0;
+     border-right-width: 0;
+     border-left-width: 0;
+     border-color: #BCBCBC;
+     margin-bottom: 20px;
+     width:155px;
+     margin-right: 15px;
+   }
+   
+   .dados-check {
+     display: flex;
+     color: #919191;
+   }
+   
+   .termosServico{
+     color: #585858;
+     text-decoration: underline;
+   }
+   
+   .btn-login {
+     display: flex;
+     justify-content: center;
+     margin-top: 20px;
+   }
+   
+   .dados-check input[type=checkbox]{
+     background: #FFFFFF;
+     border: 1px solid #919191;
+     box-sizing: border-box;
+     position:relative;
+     display: block;
+   }
+   
+   .dados input:focus{
+     outline: none;
+   }
+   
+   .btao-login{
+     background: #3E60BF;
+     color: #FFFF;
+     font-size: 11px;
+     font-weight: 500;
+     line-height: 11px;
+     margin-top: 13px;
+     margin-bottom: 20px;
+     padding: 12px 130px;
+     border-radius: 10px;
+     border: 0;
+     cursor: pointer;
+   }
+   
+   .btao-login:hover{
+     background: #2a4182;
+   }
+
+   input.senha-login {
+    width: 325px !important;
+}
+
+form#formulario-login {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+}
