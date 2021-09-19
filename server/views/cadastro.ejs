@@ -1,0 +1,57 @@
+<%- include('./partials/head') %>
+  <%- include('./partials/header') %>
+
+  
+    <h1>
+      <%= title %>
+    </h1>
+    <section class="fundo">
+      <section class="box-login">
+        
+        <div class="imagem-login" >
+          <img class="img-login" src="/img/imagem-login.jpeg" alt="imagem login" width="297px" height="290px" >
+        </div>
+
+        <div class="login">
+            <form action="" id="formulario-cadastro" method="POST">
+              <fieldset>
+
+                <div class="dados">
+                  <input type="text" id="nome" name="nome" placeholder="Nome"  required >
+                </div>
+
+                <div class="dados">
+                  <input type="email" id="email" name="email" placeholder="E-mail"  required >
+                </div>
+
+                <div class="dados">
+                  <input type="password" id="senha" name="senha" placeholder="Senha:"  required>
+                </div>
+
+                <div class="dados">
+                  <input type="password" id="confimar-senha" name="confirmar-senha" placeholder="Confirmar senha:"  required>
+                </div>
+
+              </fieldset>
+
+              <div class="dados-check" >
+                <input type="checkbox" id="aceite" name="aceite" required>
+                <label for="aceite">Li e aceito os <a href="/termos-de-servico"> Termos e condições</a> de serviço </label>
+              </div>
+
+              <div class="dados-check" >
+                <input type="checkbox" id="novidades" name="novidades" checked>
+                <label for="novidades">Desejo receber as promoções, novidades e dicas.</label>
+              </div>
+            </form> 
+
+            <div class="btn-login">
+              <button class="btn-cadastrar" type="submit">CADASTRAR-SE</button>
+            </div> 
+            
+          </div>
+      </section>
+    </section>  
+
+   
+ 
