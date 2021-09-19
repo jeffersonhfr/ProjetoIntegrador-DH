@@ -13,27 +13,10 @@ body{
 a{
   text-decoration: none;
 }
-/*
-.fundo {
-  background-color: black;
-  position: absolute;
-width: 360px;
-height: 1467px;
-left: 0px;
-top: 0px;
 
-background: rgba(38, 38, 38, 0.9);
-box-shadow: 1px 5px 4px rgba(0, 0, 0, 0.45);
-
-}
-*/
 
 .box-login{
- /*flex-direction: column;
- flex-wrap: wrap;
- flex-flow: column nowrap;
- justify-content: flex-start;
- align-content: center;*/
+ 
  position: absolute;
  top: 50%; /* posiciona na metade da tela */
  left: 50%; /* posiciona na metade da tela */
@@ -50,8 +33,7 @@ box-shadow: 1px 5px 4px rgba(0, 0, 0, 0.45);
 align-self: center;
 width: 297px;
 height: 290px;
-/*left: 26px;
-top: 172px;*/
+
 }
 
 
@@ -60,9 +42,7 @@ top: 172px;*/
   align-items: flex-start;
   justify-content: flex-start;
   margin: 30px;
-  /* background: coral;
-  height: 221.76467895507812px;
-  width: 236.1990966796875px;*/
+
 }
 
 .dados{
@@ -102,6 +82,7 @@ top: 172px;*/
   border-right-width: 0;
   border-left-width: 0;
   margin-bottom: 20px;
+  width:224px;
 
 }
 
