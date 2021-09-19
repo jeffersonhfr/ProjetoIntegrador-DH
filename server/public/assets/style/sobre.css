@@ -1,0 +1,22 @@
+.texto p {
+  font-weight: normal;
+  margin: 20px 0 20px 20px;
+}
+
+.texto h1 {
+  font-weight: bold;
+  padding: 20px;
+}
+
+.texto h2 {
+  font-weight: bold;
+  margin: 20px 0 20px 20px;
+}
+
+.formulario div {
+  padding: 25px;
+}
+
+.box_text label {
+  padding: 5px;
+}
