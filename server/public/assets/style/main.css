@@ -9,6 +9,14 @@ main{
     margin: 0 auto;
 }
 
+.Container.Img:hover {
+    transform: scale(1.03);
+}
+
+li.promo:hover {
+    transform: scale(1.03);
+}
+
 nav.Categorias{
     display: flex;
     flex-direction: column;
