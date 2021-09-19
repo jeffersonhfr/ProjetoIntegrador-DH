@@ -1,26 +1,27 @@
-@font-face {
-  font-family: "epilogue";
-  src: url(/ProjetoIntegrador-DH/server/public/assets/fonts/Epilogue/Epilogue-Italic-VariableFont_wght.ttf);
-}
-
-div {
-  font-family: epilogue;
+.ajuda {
+  font-family: 'Epilogue', sans-serif;
   font-weight: bold;
   color: #4d4d4d;
+  padding: 30px 0;
 }
 
-div p {
-  margin: 10px 0 10px 20px;
+.ajuda-container{
+  display: flex;
+  flex-flow: column;
 }
 
-div h1 {
+.ajuda p {
+ 
+}
+
+.ajuda h1 {
   font-size: 26px;
-  padding: 30px;
   font-weight: bold;
+  margin: 20px 0 10px;
 }
 
-div h2 {
+.ajuda h2 {
   font-size: 20px;
-  margin: 10px 0 10px 20px;
   font-weight: bold;
+  margin: 30px 0 10px;
 }

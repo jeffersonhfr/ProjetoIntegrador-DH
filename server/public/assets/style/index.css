@@ -11,13 +11,16 @@ body{
     margin:0px;
     margin-bottom: 0px;
     overflow-x:hidden;
+    background-color: #F6F6F6;
+    font-family: 'Mukta', sans-serif;
 }
 
 h1{
-    font-family: 'Fonte-Principal',sans-serif;
+    font-family: 'Epilogue', sans-serif;
     margin-bottom: 0px;
     font-size: 22px;
 }
+
 p{
     font-family: 'Mukta', sans-serif;
     margin-top:0px;

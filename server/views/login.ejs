@@ -5,42 +5,40 @@
     <h1>
       <%= title %>
     </h1>
-    <section class="fundo">
-      <section class="box-login">
+    <section class="box-login">
 
-        <div class="imagem-login">
-          <img class="img-login" src="/img/imagem-login.jpeg" alt="imagem login" width="310px" height="290px">
-        </div>
+      <div class="imagem-login">
+        <img class="img-login" src="/img/imagem-login.jpeg" alt="imagem login" width="310px" height="290px">
+      </div>
 
-        <div class="login">
-          <form action="" id="formulario-login" method="POST">
-            <fieldset>
-              <div class="dados">
-                <input type="email" id="email" name="email" placeholder="Usuário" required>
-                <i class="fa fa-user" aria-hidden="true"></i>
-              </div>
-              <div class="dados">
-                <input type="password" class="senha-login" id="senha" name="senha" placeholder="Senha" required>
-                <i class="fa fa-eye-slash" aria-hidden="true"></i>
-                </button>
-              </div>
-            </fieldset>
+      <div class="login">
+        <form action="" id="formulario-login" method="POST">
+          <fieldset>
+            <div class="dados">
+              <input type="email" id="email" name="email" placeholder="Usuário" required>
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </div>
+            <div class="dados">
+              <input type="password" class="senha-login" id="senha" name="senha" placeholder="Senha" required>
+              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+              </button>
+            </div>
+          </fieldset>
 
-            <div class="recuperar-senha">
-              <a href="/recuperar-senha">Esqueceu sua senha?
-            </div>
-            <div class="btn-login">
-              <button class="btao-login" type="submit">ENTRAR</button>
-            </div>
-            <div class="cadastro">
-              <p>Ainda não é cadastrado? </p>
-            </div>
-            <div>
-              <p class="link-cadastro"><a href="/cadastro">Cadastre-se</a></p>
-            </div>
-          </form>
-        </div>
-      </section>
+          <div class="recuperar-senha">
+            <a href="/recuperar-senha">Esqueceu sua senha?
+          </div>
+          <div class="btn-login">
+            <button class="btao-login" type="submit">ENTRAR</button>
+          </div>
+          <div class="cadastro">
+            <p>Ainda não é cadastrado? </p>
+          </div>
+          <div>
+            <p class="link-cadastro"><a href="/cadastro">Cadastre-se</a></p>
+          </div>
+        </form>
+      </div>
     </section>
 
     <%- include('./partials/footer') %>
