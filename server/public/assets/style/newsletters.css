@@ -38,7 +38,7 @@ color: #4D4D4D;
   align-items: center;
 }
 
-input#email {
+input#emailNews {
   width: 220px;
 }
 
@@ -193,7 +193,6 @@ input#email {
   .container-fiquepordentro__form__campos__itens--primeiro {
     margin-left: 15px;
   }
-
 
   .fiquepordentro__input__submit {
     border-radius: 0 30px 30px 0;

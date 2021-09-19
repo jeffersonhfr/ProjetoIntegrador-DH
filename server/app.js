@@ -9,6 +9,7 @@ var pacotesRouter = require('./routes/pacotes');
 var sobreRouter = require('./routes/sobre');
 var ajudaRouter = require('./routes/ajuda');
 var loginRouter = require('./routes/login');
+var cadastroRouter = require('./routes/cadastro');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use('/pacotes', pacotesRouter);
 app.use('/sobre', sobreRouter);
 app.use('/ajuda', ajudaRouter);
 app.use('/login', loginRouter);
+app.use('/cadastro', cadastroRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
