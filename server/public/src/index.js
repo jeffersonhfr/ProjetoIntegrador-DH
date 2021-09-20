@@ -257,7 +257,7 @@ function exibirCardsPromocionais() {
         for (let promo of promocoes) {
             viagensPromocionais[i].innerHTML +=
                 `<li class= "promo">
-                     <a href = "/">
+                     <a href = "/pacotes/1">
                      <img src="${promo.getImg()}"/>
                      <h2 class="Propriedade Nome">${promo.getNome()}</h2>
                      <ul class= "Propriedades">
