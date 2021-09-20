@@ -3,3 +3,22 @@
     font-size: 26px;
     font-weight: 600;
 }
+
+.container.paginacao {
+    justify-content: center;
+}
+
+.nav-pag:hover{
+    color: black;
+}
+
+.title-bar{
+    margin: 40px 0 20px;
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+}
+
+.travel-cards {
+    margin-bottom: 20px;
+}
