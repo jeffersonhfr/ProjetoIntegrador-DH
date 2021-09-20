@@ -8,11 +8,10 @@
 }
 
 body{
-    margin:0px;
-    margin-bottom: 0px;
     overflow-x:hidden;
     background-color: #F6F6F6;
     font-family: 'Mukta', sans-serif;
+    line-height: 22px;
 }
 
 h1{

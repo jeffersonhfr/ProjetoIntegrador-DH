@@ -1,7 +1,7 @@
 .Pacote{
     display: flex;
     flex-direction: column;
-    padding: 5vw 10vw;
+    padding: 3vw 10vw;
     justify-content: center;
 }
 
@@ -132,21 +132,20 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
 }
 
 @media(min-width: 992px ){
-
     aside.info_container {
         position: sticky;
         top: 20px;
-        margin-left: 10px;
     }
 
     article.Pacote-Descricao-Sobre {
         margin: 0;
+        max-width: 480px;
     }
 
     .Pacote{
         position: relative;
         display: grid;
-        grid-gap:20px;
+        grid-gap: 0 15px;
         grid-template-columns: min-content;
 
     }
@@ -205,6 +204,7 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
         height: 6.25vw;
         max-width: 220px;
         max-height: 95px;
+        margin: 15px 10px;
     }
 
     .Pacote-Descricao-Sobre{
@@ -215,6 +215,7 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
     .Pacote-Descricao-PontosTuristicos{
         grid-column: 1;
         grid-row: 5;
+        max-width: 480px;
     }
 
 }
