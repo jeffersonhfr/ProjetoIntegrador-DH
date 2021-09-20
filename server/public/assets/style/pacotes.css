@@ -1,3 +1,6 @@
+.container.container-pacotes {
+    max-width: 775px;
+}
 .container-pacotes h1{
     font-family: "Epilogue" sans-serif;
     font-size: 26px;
@@ -13,7 +16,7 @@
 }
 
 .title-bar{
-    margin: 40px 0 20px;
+    margin: 40px 0 10px;
     width: inherit;
     display: flex;
     justify-content: space-between;
@@ -21,4 +24,92 @@
 
 .travel-cards {
     margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.travel-card__content {
+    margin: 10px 0;
+    width: inherit;
+    justify-content: center;
+    height: max-content;
+    flex-flow: column nowrap;
+    display: flex;
+}
+
+.travel-card__imagem-box {
+    width: 100%;
+    overflow: hidden;
+    height: 180px;
+}
+
+img.travel-card__imagem {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+}
+
+.travel-card__infoDesc .Propriedade {
+    margin: 5px 0;
+}
+
+.travel-card__infoDesc h2 {
+    font-size: 22px;
+    color: #4D4D4D;
+    font-weight: 600;
+    margin-bottom: 16px !important;
+}
+
+.travel-card__info-box {
+    border: 1px solid #d6d6d6;
+    border-radius: 0 0 10px 10px;
+    padding: 20px 30px;
+}
+
+.btao-pacote {
+    background-color: #3E60BF;
+    color: #FFFF;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 11px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btao-pacote:hover {
+    background-color: #2a4182;
+}
+
+@media (min-width:992px){
+    .travel-card__imagem-box {
+        width: 300px;
+        overflow: hidden;
+        height: 180px;
+    }
+
+    .travel-card__content {
+        flex-flow: row nowrap;
+    }
+
+    img.travel-card__imagem {
+        border-radius: 10px 0 0 10px;
+    }
+
+    .travel-card__info-box {
+        border: 1px solid #d6d6d6;
+        border-radius: 0 10px 10px 0;
+        padding: 10px;
+        width: 475px;
+        box-sizing: border-box;
+        display: flex;
+    }
+
+    .travel-card__infoDesc {
+        width: 200px;
+    }
 }
