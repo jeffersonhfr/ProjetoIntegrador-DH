@@ -4,7 +4,7 @@ section.fundo {
   height: 100vh;
 }
 
-.dados i{
+.formulario-login__dados i{
   position: absolute;
   font-size: 14px;
   left: 250px;
@@ -12,52 +12,52 @@ section.fundo {
   color:#919191;
 }
 
-.recuperar-senha{
+.container-recuperar-senha{
   color: #919191;
   text-align: center;
 }
 
-.cadastro {
+.container-cadastro {
   text-align: center;
 }
 
-.link-cadastro{
+.cadastro__link-cadastro{
   text-align: center;
 }
 
-.link-cadastro a {
+.cadastro__link-cadastro a {
   color: #3E60BF;
   text-align: center;
   font-weight: bold;
 }
 
-img.img-login {
+img.imagem-login{
   height: 270px;
 }
 
-.box-login{
+.container-login{
  width: 310px;
  height: 590px;
  background: #FFFFFF;
  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
  margin: 0 auto;
 }
-
-.imagem-login{
+.container-login
+.container-imagem-login{
   align-self: flex-start;
   width: 310px;
   height: 270px;
 }
 
 
-.login{
+.container-formulario-login{
   align-self: center;
   align-items: flex-start;
   justify-content: flex-start;
   margin: 30px 10px;
 }
 
-.dados{
+.formulario-login__dados{
   position: relative;
   display: flex;
 }
@@ -75,7 +75,7 @@ img.img-login {
   color: #BCBCBC;
 }
 
-.dados input[type=text]{
+.formulario-login__dados input[type=text]{
   font-family: 'Mukta', sans-serif;
   width:275px;
   margin: 5px 0;
@@ -89,7 +89,7 @@ img.img-login {
   border-color: #BCBCBC;
 }
 
-.dados input[type=email]{
+.formulario-login__dados input[type=email]{
   font-family: 'Mukta', sans-serif;
   width:275px;
   margin: 5px 0;
@@ -102,7 +102,7 @@ img.img-login {
   border-color: #BCBCBC;
 }
 
-.dados input[type=password]{
+.formulario-login__dados input[type=password]{
   font-family: 'Mukta', sans-serif;
   display: flex;
   border-style: solid;
@@ -120,22 +120,22 @@ input.senha-login {
   width: 273px !important;
 }
 
-.dados-check {
+.container-aceite {
   display: flex;
   color: #919191;
 }
 
-.termosServico{
+.aceite__termos-servico{
   color: #585858;
   text-decoration: underline;
 }
 
-.btn-login {
+.container-botao-login {
   display: flex;
   justify-content: center;
 }
 
-.dados-check input[type=checkbox]{
+.container-aceite input[type=checkbox]{
   font-family: 'Mukta', sans-serif;
   background: #FFFFFF;
   border: 1px solid #919191;
@@ -144,11 +144,11 @@ input.senha-login {
   display: block;
 }
 
-.dados input:focus{
+.formulario-login__dados input:focus{
   outline: none;
 }
 
-.btao-login{
+.botao-login{
   background: #3E60BF;
   color: #FFFF;
   font-size: 13px;
@@ -162,23 +162,23 @@ input.senha-login {
   cursor: pointer;
 }
 
-.btao-login:hover{
+.botao-login:hover{
   background: #2a4182;
 }
 
-.cadastro p {
+.container-cadastro p {
   text-align: center;
   font-size: 15px;
   line-height: 20px;
 }
 
-p.link-cadastro {
+p.cadastro__link-cadastro {
   font-size: 17px;
 }
 
 @media (min-width: 768px){
 
-  .dados i {
+  .formulario-login__dados i {
     position: absolute;
     font-size: 14px;
     left: 300px;
@@ -186,13 +186,13 @@ p.link-cadastro {
     color: #919191;
 }
 
-  .imagem-login{
+  .container-imagem-login{
     align-self: flex-start;
     width: 310px;
     height: 290px;
   }
 
-  .box-login{
+  .container-login{
     width: 720px;
     height: 327px;
     background: #FFFFFF;
@@ -203,12 +203,12 @@ p.link-cadastro {
     margin: 60px auto;
    }
    
-  .img-login{
+  .imagem-login{
     width: 320px;
     height: fit-content !important;
   }
    
-  .login{
+  .container-formulario-login{
     display: flex;
     flex-flow: column nowrap;
     order: -1;
@@ -227,7 +227,7 @@ p.link-cadastro {
     margin-top: 20px;
   }
 
-   .dados{
+   .formulario-login__dados{
      position: relative;
      display: flex;
    }
@@ -245,7 +245,7 @@ p.link-cadastro {
      color: #BCBCBC;
    }
    
-   .dados input[type=text]{
+   .formulario-login__dados input[type=text]{
      width:325px;
      margin: 5px 0 ;
      margin-top: 2px;
@@ -258,7 +258,7 @@ p.link-cadastro {
      border-color: #BCBCBC;
    }
    
-   .dados input[type=email]{
+   .formulario-login__dados input[type=email]{
      width:325px;
      margin: 5px 0;
      margin-bottom: 17px;
@@ -269,7 +269,7 @@ p.link-cadastro {
      border-left-width: 0;
      border-color: #BCBCBC;
    }
-   .dados input[type=password]{
+   .formulario-login__dados input[type=password]{
      display: flex;
      border-style: solid;
      border-bottom-width: 1px;
@@ -282,17 +282,17 @@ p.link-cadastro {
      margin-right: 15px;
    }
    
-   .dados-check {
+   .container-aceite{
      display: flex;
      color: #919191;
    }
    
-   .termosServico{
+   .aceite__termos-servico{
      color: #585858;
      text-decoration: underline;
    }
    
-   .btn-login {
+   .container-botao-login {
      display: flex;
      justify-content: center;
      margin-top: 20px;
@@ -306,11 +306,11 @@ p.link-cadastro {
      display: block;
    }
    
-   .dados input:focus{
+   .formulario-login__dados input:focus{
      outline: none;
    }
    
-   .btao-login{
+   .botao-login{
      background: #3E60BF;
      color: #FFFF;
      font-size: 11px;
@@ -324,7 +324,7 @@ p.link-cadastro {
      cursor: pointer;
    }
    
-   .btao-login:hover{
+   .botao-login:hover{
      background: #2a4182;
    }
 
