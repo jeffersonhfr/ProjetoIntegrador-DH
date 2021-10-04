@@ -95,33 +95,33 @@
       </nav>
     </div>
 
-    <section class="section-newsletter">
-      <div class="section-imagem">
-        <div class="newsletter-overlay">
+    <section class="newsletter">
+      <div class="newsletter__imagem">
+        <div class="newsletter__sobreposicao">
           <div class="container" style="justify-content: center;">
-            <div class="box-newsletter">
-              <h2 class="texto-topo"> Fique por dentro!</h2>
-              <p class="texto-subtitulo"> Cadastre seus dados abaixo e fique sabendo em primeira mão das melhores ofertas para sua próxima viagem.
+            <div class="newsletter__box">
+              <h2 class="newsletter__titulo"> Fique por dentro!</h2>
+              <p class="newsletter__subtitulo"> Cadastre seus dados abaixo e fique sabendo em primeira mão das melhores ofertas para sua próxima viagem.
               </p>
 
-              <section class="container-fiquepordentro">
-                <form class="container-fiquepordentro__form">
-                  <div class="container-fiquepordentro__form__campos">
-                    <div class="container-fiquepordentro__form__campos__itens container-fiquepordentro__form__campos__itens--primeiro">
-                      <div class=" fiquepordentro__input">
+              <section class="fique-por-dentro">
+                <form class="fique-por-dentro__form">
+                  <div class="fique-por-dentro__form__campos">
+                    <div class="fique-por-dentro__form__campos__itens fique-por-dentro__form__campos__itens--primeiro">
+                      <div class="fique-por-dentro__input">
                         <label for="nome">Nome</label>
                         <input type="text" id="nome" name="nome" placeholder="Insira aqui o seu nome" />
                       </div>
                     </div>
-                    <div class="container-fiquepordentro__form__campos__itens container-fiquepordentro__form__campos__itens division">|</div>
-                    <div class="container-fiquepordentro__form__campos__itens container-fiquepordentro__form__campos__itens--segundo">
-                      <div class="fiquepordentro__input">
+                    <div class="fique-por-dentro__form__campos__itens fique-por-dentro__form__campos__itens divisao">|</div>
+                    <div class="fique-por-dentro__form__campos__itens fique-por-dentro__form__campos__itens--segundo">
+                      <div class="fique-por-dentro__input">
                         <label for="E-mail">E-mail</label>
                         <input type="email" id="emailNews" name="email" placeholder="Insira aqui o seu melhor e-mail" />
                       </div>
                     </div>
                   </div>
-                  <input type="submit" value="Enviar" class="fiquepordentro__input__submit">
+                  <input type="submit" value="Enviar" class="fique-por-dentro__input__submit">
                 </form>
               </section>
             </div>
@@ -129,9 +129,7 @@
         </div>
       </div>
     </section>
-
   </main>
-
 
   <script src="src/index.js"></script>
   <%- include('./partials/footer') %>
