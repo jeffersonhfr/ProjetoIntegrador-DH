@@ -6,7 +6,7 @@
   background-position-y: 75%; 
 }
 
-.header-pages {
+.cabecalho-paginas {
   background-color: #3E60BF;
   width: 100vw;
   height: 105px;
@@ -30,7 +30,7 @@
 .cabecalho__menu-desk{
   display: none;
 }
-.content_menu_mob{
+.conteudo-menu-mobile{
   position: absolute;
   width: 100%;
   background-color: #fff;
@@ -44,9 +44,14 @@
   transition: 0.5s ease-in-out;
 }
 
-.content_menu_mob{
+.conteudo-menu-mobile{
   font-family: 'Epilogue';
   font-weight: 400;
+}
+
+li.\/login a {
+  background-color: #4D4D4D;
+  color: #fff;
 }
 
 li.login a {
@@ -54,22 +59,30 @@ li.login a {
   color: #fff;
 }
 
-input:checked ~ label .content_menu_mob {
+input:checked ~ label .conteudo-menu-mobile {
   top:100px;
   right: 0px;
   transition: 0.5s ease-in-out;
 }
 
-.content_menu_mob a {
+.conteudo-menu-mobile a {
   color: #000;
 }
 
-.content_menu_mob a:hover {
+.conteudo-menu-mobile a:hover {
   color: #cecece;
 }
 
-.content_menu_mob li {
+.conteudo-menu-mobile li {
   margin: 20px 0;
+}
+
+li.\/login {
+  background-color: #4D4D4D;
+  color: #fff;
+  padding: 10px 0;
+  margin: 0;
+  width: 100%;
 }
 
 li.login {
