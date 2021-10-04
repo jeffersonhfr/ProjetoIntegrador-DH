@@ -1,8 +1,3 @@
-/* body {
-  display: flex;
-  justify-content: center;
-} */
-
 .container-busca {
   background: #fff;
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.16));
@@ -41,38 +36,38 @@
   display: none;
 }
 
-.busca__input input {
+.busca__campo input {
   color: #919191;
   border: 0px !important;
   outline: none;
 }
 
-.busca__input {
+.busca__campo {
   display: flex;
   flex-flow: column nowrap;
 }
 
-.busca__input #onde {
+.busca__campo #onde {
   width: 255px;
 }
 
-.busca__input #quando {
+.busca__campo #quando {
   width: 160px;
 }
 
 
-.busca__input #quantos {
+.busca__campo #quantos {
   width: 220px;
 }
 
-.busca__input label {
+.busca__campo label {
   /* font-family: 'Epilogue', sans-serif; */
   font-family: 'fonte-primaria', sans-serif;
   font-weight: 600;
   font-size: 13px;
 }
 
-.busca__input input {
+.busca__campo input {
   font-family: 'Mukta', sans-serif;
   font-family: 'fonte-secundaria', sans-serif;
   font-weight: 200;
@@ -80,7 +75,7 @@
   padding: 0;
 }
 
-.busca__input__submit {
+.busca__campo__submit {
   font-family: 'Epilogue', sans-serif;
   font-family: 'fonte-primaria', sans-serif;
   font-weight: 600;
@@ -96,7 +91,7 @@
   transition: all .4s;
 }
 
-.busca__input__submit:hover {
+.busca__campo__submit:hover {
   background: #1B3EA1;
 }
 
@@ -140,11 +135,11 @@
     margin-left: 15px;
   }
 
-  .busca__input #onde {
+  .busca__campo #onde {
     width: 260px;
   }
 
-  .busca__input__submit {
+  .busca__campo__submit {
     border-radius: 0 30px 30px 0;
     height: 80px;
     width: 100px;

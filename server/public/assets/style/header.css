@@ -1,35 +1,36 @@
-.header {
+.cabecalho {
   background: url(../img/logo02.jpg) no-repeat center center;
   width: 100vw;
   height: 280px;
   background-size: 150%;
-  background-position-y: 75%;
+  background-position-y: 75%; 
 }
 
-.header-pages {
+.cabecalho-paginas {
   background-color: #3E60BF;
   width: 100vw;
   height: 105px;
   margin-bottom: 20px;
 }
 
-.header-overlay{
+.cabecalho__sobreposicao{
   background: linear-gradient(180deg, #000000 -43.35%, rgba(116, 116, 116, 0.2) 56.65%);
   height: 280px;
 }
-.header_logo {
+
+.cabecalho_logo {
   width: 200px;
   height: auto
 }
 
-.menu_mobile{
+.cabecalho__menu-mobile{
   display: block;
 }
 
-.menu_desk{
+.cabecalho__menu-desk{
   display: none;
 }
-.content_menu_mob{
+.conteudo-menu-mobile{
   position: absolute;
   width: 100%;
   background-color: #fff;
@@ -43,9 +44,14 @@
   transition: 0.5s ease-in-out;
 }
 
-.content_menu_mob{
+.conteudo-menu-mobile{
   font-family: 'Epilogue';
   font-weight: 400;
+}
+
+li.\/login a {
+  background-color: #4D4D4D;
+  color: #fff;
 }
 
 li.login a {
@@ -53,22 +59,30 @@ li.login a {
   color: #fff;
 }
 
-input:checked ~ label .content_menu_mob {
+input:checked ~ label .conteudo-menu-mobile {
   top:100px;
   right: 0px;
   transition: 0.5s ease-in-out;
 }
 
-.content_menu_mob a {
+.conteudo-menu-mobile a {
   color: #000;
 }
 
-.content_menu_mob a:hover {
+.conteudo-menu-mobile a:hover {
   color: #cecece;
 }
 
-.content_menu_mob li {
+.conteudo-menu-mobile li {
   margin: 20px 0;
+}
+
+li.\/login {
+  background-color: #4D4D4D;
+  color: #fff;
+  padding: 10px 0;
+  margin: 0;
+  width: 100%;
 }
 
 li.login {
@@ -79,7 +93,7 @@ li.login {
   width: 100%;
 }
 
-.container__header {
+.cabecalho__navegacao {
   justify-content: space-between;
   align-items: center;
   padding-top: 30px;
@@ -139,18 +153,18 @@ input:checked ~ label .hamburguer:after {
 }
 
 @media (min-width: 992px){
-  .menu_desk{
+  .cabecalho__menu-desk{
     display: flex;
   }
-  .menu_mobile{
+  .cabecalho__menu-mobile{
     display: none;
   }
 
-  .header_logo {
+  .cabecalho_logo {
     width: 234px;
   }
 
-  .header {
+  .cabecalho {
     background: url(../img/logo02.jpg) no-repeat center center;
     width: 100vw;
     height: 466px;
@@ -161,25 +175,36 @@ input:checked ~ label .hamburguer:after {
     margin: 0 auto;
   }
 
-  .header-overlay{
+  .cabecalho__sobreposicao{
     background: linear-gradient(180deg, #000000 -43.35%, rgba(116, 116, 116, 0.2) 56.65%);
     height: 466px;
   }
   
 
   /* MENU */
-  .header_menu ul li a {
+  .cabecalho__menu-mobile ul li a {
     font-weight:normal;
     font-size: 16px;
     padding-right: 10px;
-  }
-
-  .header_menu ul li a {
     color: white;
     font-family: "Epilogue";
   }
 
-  .header_menu ul li a:hover {
+  .cabecalho__menu-mobile ul li a:hover {
+    color: black;
+  }
+
+
+
+  .cabecalho__menu-desk ul li a {
+    font-weight:normal;
+    font-size: 16px;
+    padding-right: 10px;
+    color: white;
+    font-family: "Epilogue";
+  }
+
+  .cabecalho__menu-desk ul li a:hover {
     color: black;
   }
 }
