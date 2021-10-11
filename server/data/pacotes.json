@@ -1,0 +1,26 @@
+  [
+    {
+      "id": 1,
+      "nome": "Egito Histórico",
+      "src": "./index/assets/img/promo-EgitoHistorico-icon.jpg",
+      "diarias": 10,
+      "hotel": true,
+      "passagemAerea": true,
+      "bônus": "Translado e city tour",
+      "valor": 18000,
+      "valorPromocional": 15800
+      },
+      {
+        "id": 2,
+        "nome": "Roma",
+        "src": "./index/assets/img/promo-EgitoHistorico-icon.jpg",
+        "diarias": 10,
+        "hotel": true,
+        "passagemAerea": true,
+        "bônus": "Translado e city tour",
+        "valor": 18000,
+        "valorPromocional": 15800
+        }
+  ]
+
+  
