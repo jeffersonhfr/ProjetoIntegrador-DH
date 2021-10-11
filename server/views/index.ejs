@@ -6,33 +6,7 @@
           <img class="cabecalho_logo" src="assets/img/logo01.png" alt="logo" width="234px" height="51px">
         </a>
 
-        <nav class="cabecalho__menu-mobile">
-          <input id="menu-hamburguer" type="checkbox" class="input-menu" />
-          <label for="menu-hamburguer">
-            <div class="menu">
-              <span class="hamburguer"></span>
-              <div class="conteudo-menu-mobile">
-                <ul>
-                  <li><a href="pacotes">Viagens Temáticas</a></li>
-                  <li><a href="pacotes">Pacotes Promocionais</a></li>
-                  <li><a href="sobre">Sobre Nós</a></li>
-                  <li><a href="ajuda">Ajuda</a></li>
-                  <li class="login"><a href="login">Login</a></li>
-                </ul>
-              </div>
-            </div>
-          </label>
-        </nav>
-
-        <nav class="cabecalho__menu-desk">
-          <ul class="flex">
-            <li><a href="pacotes">Viagens Temáticas</a></li>
-            <li><a href="pacotes">Pacotes Promocionais</a></li>
-            <li><a href="sobre">Sobre Nós</a></li>
-            <li><a href="ajuda">Ajuda</a></li>
-            <li><a href="login">Login</a></li>
-          </ul>
-        </nav>
+        <%- include('./partials/menu_nav.ejs') %>
       </div>
     </div>
   </header>
