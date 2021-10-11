@@ -257,7 +257,7 @@ function exibirCardsPromocionais() {
         for (let promo of promocoes) {
             viagensPromocionais[i].innerHTML +=
                 `<li class= "promo">
-                     <a href = "/">
+                     <a href = "/pacotes/1">
                      <img src="${promo.getImg()}"/>
                      <h2 class="Propriedade Nome">${promo.getNome()}</h2>
                      <ul class= "Propriedades">
@@ -272,17 +272,18 @@ function exibirCardsPromocionais() {
                         </li>
                         <li class= "Propriedade Bonus"><p><img src="img/check.png"/>${promo.getBonus()}</p>
                         </li>
-                        <li class= "Propriedade ValorPromocional"><h1>${(promo.getValorPromocional()).toLocaleString('pt-BR',{
+                        </li>
+                        <li class= "Propriedade ValorInicial preco"><h2> A partir de <span>${(promo.getValor()).toLocaleString('pt-BR',{
+                            style: 'currency',
+                            currency:'BRL'
+                        })}</span></h2>
+                        <li class= "Propriedade ValorPromocional preco"><h1>${(promo.getValorPromocional()).toLocaleString('pt-BR',{
                             style: 'currency',
                             currency:'BRL'
                         })}</h1>
                         </li>
-                        <li class= "Propriedade ValorInicial"><h2>${(promo.getValor()).toLocaleString('pt-BR',{
-                            style: 'currency',
-                            currency:'BRL'
-                        })}</h1>
-                        </li>
-                     </ul>
+                        <h2 class="emAte">em até 10x no cartão de crédito</h2>
+                        </ul>
                      </a>
                 <li>`
         }

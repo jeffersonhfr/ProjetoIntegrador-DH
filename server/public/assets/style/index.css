@@ -8,27 +8,30 @@
 }
 
 body{
-    margin:0px;
-    margin-bottom: 0px;
     overflow-x:hidden;
+    background-color: #F6F6F6;
+    font-family: 'Mukta', sans-serif;
+    line-height: 22px;
 }
 
 h1{
-    font-family: 'Fonte-Principal',sans-serif;
+    font-family: 'Epilogue', sans-serif;
     margin-bottom: 0px;
     font-size: 22px;
 }
+
 p{
-    font-family: 'Fonte-Secundaria';
+    font-family: 'Mukta', sans-serif;
     margin-top:0px;
     margin-bottom: 0px;
     font-size: 12px;
 }
 h2{
-    font-family: 'Fonte-Secundaria';
+    font-family: 'Mukta', sans-serif;
     margin-top:0px;
     font-size: 16px; 
     margin-bottom: 0px;
+    color: #919191;
 }
 
 a{

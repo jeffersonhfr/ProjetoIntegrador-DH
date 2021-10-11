@@ -1,7 +1,49 @@
 <%- include('./partials/head') %>
   <%- include('./partials/header') %>
-    <h1>
-      <%= title %>
-    </h1>
-    <p>SOBRE</p>
+
+    <section class="sobre">
+      <div class="container">
+        <div class="sobre-container">
+          <h1>SOBRE NÓS</h1>
+
+          <h2>História da Empresa</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit risus quis turpis porta, at hendrerit enim cursus. Mauris hendrerit dapibus felis in fringilla. Morbi eu convallis tellus, et pretium leo. Maecenas imperdiet ipsum a libero facilisis, ac ultrices lacus suscipit. Vestibulum elit turpis, faucibus ac lacus ac, dapibus gravida leo.</p>
+
+          <p>In hac habitasse platea dictumst. Ut nisi sem, cursus ac consectetur eget, lobortis et turpis. Morbi ac nulla libero. Phasellus tincidunt accumsan dapibus. Etiam tincidunt vitae lectus a feugiat. Sed iaculis egestas ornare. Praesent vehicula bibendum ullamcorper. Etiam aliquet pretium nulla ac semper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit risus quis turpis porta, at hendrerit enim cursus. Mauris hendrerit dapibus felis in fringilla. Morbi eu convallis tellus, et pretium leo.</p>
+
+          <p>Maecenas imperdiet ipsum a libero facilisis, ac ultrices lacus suscipit. Vestibulum elit turpis, faucibus ac lacus ac, dapibus gravida leo. In hac habitasse platea dictumst. Ut nisi sem, cursus ac consectetur eget, lobortis et turpis. Morbi ac nulla libero. Phasellus tincidunt accumsan dapibus. Etiam tincidunt vitae lectus a feugiat. Sed iaculis egestas ornare. Praesent vehicula bibendum ullamcorper. Etiam aliquet pretium nulla ac semper.</p>
+
+          <p>Vestibulum blandit mi ac dictum malesuada. Proin quis mauris eu lorem venenatis lobortis. Nam vel felis et augue porta rutrum et et odio. Proin ac lacus posuere, iaculis massa eu, blandit neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum commodo turpis ut tortor gravida blandit. Sed aliquet, erat a vehicula facilisis, purus purus molestie ex, a fringilla erat ipsum ultrices quam. Nunc lacinia tincidunt odio eget sollicitudin. In luctus sodales auctor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque auctor, velit et dictum interdum, turpis arcu tincidunt libero, et egestas nunc dolor eu nulla. Nam tincidunt ex eget ante egestas egestas.</p>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit risus quis turpis porta, at hendrerit enim cursus. Mauris hendrerit dapibus felis in fringilla. Morbi eu convallis tellus, et pretium leo. Maecenas imperdiet ipsum a libero facilisis, ac ultrices lacus suscipit. Vestibulum elit turpis, faucibus ac lacus ac, dapibus gravida leo.</p>
+        </div>
+
+        <div class="formulario">
+          <h2>Fale Conosco:</h2>
+          <form name="form">
+
+            <div class="campos_form">
+              <label for="nome">Nome</label>
+              <input id="nome" type="text" required>
+            </div>
+
+            <div class="campos_form">
+              <label for="email">E-mail</label>
+              <input id="email" type="email" required>
+            </div>
+
+            <div class="campos_form">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" rows="14" cols="50"></textarea>
+            </div>
+
+            <div class="campos_form">
+              <button type="submit" class="btao-enviar">Enviar</button>
+            </div>
+        </div>
+      </div>
+
+      </div>
+    </section>
+
     <%- include('./partials/footer') %>

@@ -1,7 +1,7 @@
 const controller = {
   index: (req, res, next) => {
-    res.render('login', {
-      title: '| Login',
+    res.render('cadastro', {
+      title: '| Cadastre-se',
     });
   },
 };

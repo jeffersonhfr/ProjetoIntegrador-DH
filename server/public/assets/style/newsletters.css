@@ -1,9 +1,24 @@
-.container {
-  display: flex;
-  justify-content: center;
-} 
+.newsletter{
+  width: 100vw;
+  max-width: 1600px;
+  margin: 0 auto;
+}
 
-.texto-topo{
+.newsletter__sobreposicao{
+  background-color: rgb(173 216 235 / 70%);
+  padding: 51px 0 30px;
+}
+
+.newsletter__imagem{
+  background-image: url(../img/pexels-asad-photo-maldives-3155666.jpg);
+  width: 100vw;
+  background-size: 250%;
+  background-repeat: no-repeat;
+  background-position-x: 59%;
+  background-position-y: 45%;
+}
+
+.newsletter__titulo{
 font-family: Epilogue;
 font-style: normal;
 font-weight: 600;
@@ -13,35 +28,7 @@ text-align: center;
 color: #4D4D4D;
 }
 
-.section-newsletter{
-  width: 100vw;
-}
-
-.newsletter-overlay{
-  background-color: rgb(173 216 235 / 70%);
-  padding: 51px 0 30px;
-}
-
-.section-imagem{
-  background-image: url(../img/pexels-asad-photo-maldives-3155666.jpg);
-  width: 100vw;
-  background-position-y: -360px;
-  background-size: 120%;
-  background-position-x: 0;
-  background-repeat: no-repeat;
-}
-
-.box-newsletter{
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-}
-
-input#email {
-  width: 220px;
-}
-
-.texto-subtitulo{
+.newsletter__subtitulo{
   text-align: center;
   font-family: 'fonte-secundaria', sans-serif;
   font-family: 'Mukta', sans-serif;
@@ -49,7 +36,23 @@ input#email {
   font-size: 16px;
   margin-bottom: 17px;
 }
-.container-fiquepordentro {
+
+.divisao{
+  display: none;
+}
+
+.newsletter__box{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+input#emailNews {
+  width: 220px;
+}
+
+
+.fique-por-dentro {
   display: block;
   background: #fff;
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.16));
@@ -58,66 +61,66 @@ input#email {
   height: auto;
 }
 
-.container-fiquepordentro__form {
+.fique-por-dentro__form {
   display: flex;
   flex-flow: column nowrap;
   }
 
-.container-fiquepordentro__form__campos {
+.fique-por-dentro__form__campos {
   display: flex;
   padding: 20px 10px 10px;
   flex-flow: row wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
-.container-fiquepordentro__form__campos__itens {
+.fique-por-dentro__form__campos__itens {
   padding: 10px 0;
 }
 
-.container-fiquepordentro__form__campos__itens--primeiro {
+.fique-por-dentro__form__campos__itens--primeiro {
   margin-right: 20px;
 }
 
-.container-fiquepordentro__form__campos__itens--segundo {
+.fique-por-dentro__form__campos__itens--segundo {
   margin-right: 15px;
 }
 
-.container-fiquepordentro__form__campos__itens--separador {
+.fique-por-dentro__form__campos__itens--separador {
   display: none;
 }
 
-.fiquepordentro__input input {
+.fique-por-dentro__input input {
   color: #919191;
   border: 0px !important;
   outline: none;
 }
 
-.fiquepordentro__input {
+.fique-por-dentro__input {
   display: flex;
   flex-flow: column nowrap;
 }
 
-.fiquepordentro__input #onde {
+.fique-por-dentro__input #onde {
   width: 245px;
 }
 
-.fiquepordentro__input #quando {
+.fique-por-dentro__input #quando {
   width: 160px;
 }
 
 
-.fiquepordentro__input #quantos {
+.fique-por-dentro__input #quantos {
   width: 220px;
 }
 
-.fiquepordentro__input label {
+.fique-por-dentro__input label {
   /* font-family: 'Epilogue', sans-serif; */
   font-family: 'fonte-primaria', sans-serif;
   font-weight: 600;
   font-size: 13px;
 }
 
-.fiquepordentro__input input {
+.fique-por-dentro__input input {
   font-family: 'Mukta', sans-serif;
   font-family: 'fonte-secundaria', sans-serif;
   font-weight: 200;
@@ -125,7 +128,7 @@ input#email {
   padding: 0;
 }
 
-.fiquepordentro__input__submit {
+.fique-por-dentro__input__submit {
   font-family: 'Epilogue', sans-serif;
   font-family: 'fonte-primaria', sans-serif;
   font-weight: 600;
@@ -141,48 +144,59 @@ input#email {
   transition: all .4s;
 }
 
-.fiquepordentro__input__submit:hover {
+.fique-por-dentro__input__submit:hover {
   background: #1B3EA1;
 }
 
+@media (min-width: 510px) {
+  .divisao{
+    display: block;
+  }
+}
+
 @media (min-width: 720px) {
-  .container-fiquepordentro__form__campos {
+  
+  .fique-por-dentro__form__campos {
     justify-content: space-around;
   }
 
-  .container-fiquepordentro__form__campos__itens--separador {
+  .fique-por-dentro__form__campos__itens--separador {
     display: block;
   }
 }
 
 @media (min-width: 980px) {
-  .container-fiquepordentro {
+  .newsletter__imagem{
+    background-size: 170%;
+    background-repeat: no-repeat;
+    background-position-y: 43%;
+    background-position-x: 46%;
+    max-width: 1600px;
+  }
+
+  .fique-por-dentro {
     width: 615px;
     height: 80px;
   }
 
-  .container-fiquepordentro__form {
+  .fique-por-dentro__form {
     flex-flow: row nowrap;
   }
 
-  .container-fiquepordentro__form__campos {
+  .fique-por-dentro__form__campos {
     width: 967px;
     padding: inherit;
   }
 
-  .container-fiquepordentro__form__campos__itens {
+  .fique-por-dentro__form__campos__itens {
     padding: 20px 0;
   }
 
-  .container-fiquepordentro__form__campos__itens--primeiro {
+  .fique-por-dentro__form__campos__itens--primeiro {
     margin-left: 15px;
   }
 
-  .fiquepordentro__input #onde {
-    width: 260px;
-  }
-
-  .fiquepordentro__input__submit {
+  .fique-por-dentro__input__submit {
     border-radius: 0 30px 30px 0;
     height: 80px;
     width: 100px;

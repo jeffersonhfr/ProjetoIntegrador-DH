@@ -1,9 +1,14 @@
 .Pacote{
     display: flex;
     flex-direction: column;
-    padding: 5vw 10vw;
+    padding: 3vw 10vw;
     justify-content: center;
 }
+
+article.Pacote-Descricao-Sobre {
+    margin: 30px 0;
+}
+
 .Pacote-TitleContainer{
     font-size: 26px;
     margin-bottom: 5px;
@@ -20,6 +25,7 @@
 .Pacote-ImgContainer{
     display: flex;
     flex-direction: column;
+    margin: 10px 0;
 }
 .Pacote-ImgContainer__Img-first{
     width: 80vw;
@@ -45,7 +51,7 @@
 .Pacote-Propriedades__Item{
     display: flex;
     align-items: center;
-    margin-top: 5px;
+    margin: 10px 0;
 }
 .Pacote-Propriedades__Item p{
     font-size: 16px;
@@ -62,12 +68,14 @@
 
     font-size: 16px;
     color:#919191;
-
 }
+
+h1.Pacote-Propriedades__Item__Valor-Promocional {
+    margin: 10px 0 2px;
+}
+
 .Pacote-Propriedades__Item__Valor-Inicial{
-
     padding-top: 10px;
-
     font-size: 16px;
     color:#919191;
     text-decoration: line-through;
@@ -82,9 +90,11 @@
     background-color: #3e60bf;
     border-style: none;
     border-radius: 10px;
-    margin: 0px;
+    margin: 15px 0px;
     height: 40px;
+    width: 100%;
 }
+
 .Pacote-Propriedades__Item.Destaques{
     display: flex;
     flex-direction: row;
@@ -112,6 +122,7 @@
 }
 .Pacote-Decricao__Titulo{
     font-weight: bold;
+    margin: 10px 0;
 }
 .Pacote-Descricao__Paragrafo{
     color:black;
@@ -121,11 +132,20 @@
 }
 
 @media(min-width: 992px ){
+    aside.info_container {
+        position: sticky;
+        top: 20px;
+    }
+
+    article.Pacote-Descricao-Sobre {
+        margin: 0;
+        max-width: 480px;
+    }
+
     .Pacote{
-        
         position: relative;
         display: grid;
-        grid-gap:20px;
+        grid-gap: 0 15px;
         grid-template-columns: min-content;
 
     }
@@ -135,18 +155,15 @@
     .Pacote-TitleContainer__Title{
         position: absolute;
         visibility: hidden;
-        
-        
     }
-    .Pacote-TitleContainer__Subtitle{
 
+    .Pacote-TitleContainer__Subtitle{
         font-size: 26px;
         font-weight: bold;
         color: black;
     }
+
     .Pacote-ImgContainer{
-       
-        
         grid-column: 1;
         grid-row: 2/4;
         
@@ -154,28 +171,31 @@
         max-width: 480px;
         margin-right: 20px;
     }
+
     .Pacote-ImgContainer__Img-first{  
-       
         flex: 0 1 auto; 
         width: 100%;
-
-        
     }
+
     .Pacote-ImgContainer__Img-list img{
         width: 6.25vw;
         height: 6.25vw;
         max-width: 95px;
         max-height: 95px;
     }
+
     .Pacote-Propriedades{
         grid-column: 2;
         grid-row: 2;
-        margin: 10px;
+        margin: 0 10px;
     }
+
     .Pacote-Propriedades__Item.Titulo{
         position: relative;
         visibility: visible;
+        margin-bottom: 20px;
     }
+
     .Pacote__Button-Comprar{
         grid-column: 2;
         grid-row: 3;
@@ -184,14 +204,18 @@
         height: 6.25vw;
         max-width: 220px;
         max-height: 95px;
+        margin: 15px 10px;
     }
+
     .Pacote-Descricao-Sobre{
         grid-row: 4;
         grid-column: 1;
     }
+
     .Pacote-Descricao-PontosTuristicos{
         grid-column: 1;
         grid-row: 5;
+        max-width: 480px;
     }
-    
+
 }
