@@ -9,7 +9,12 @@
           <li><a href="/pacotes">Pacotes Promocionais</a></li>
           <li><a href="/sobre">Sobre Nós</a></li>
           <li><a href="/ajuda">Ajuda</a></li>
-          <li class="/login"><a href="login">Login</a></li>
+
+          <% if(locals.usuarioLogado) { %>
+            <li class="/logout"><a href="login">Logout</a></li>
+            <% } else { %>
+              <li class="/login"><a href="login">Login</a></li>
+              <% }%>
         </ul>
       </div>
     </div>
@@ -22,6 +27,10 @@
     <li><a href="/pacotes">Pacotes Promocionais</a></li>
     <li><a href="/sobre">Sobre Nós</a></li>
     <li><a href="/ajuda">Ajuda</a></li>
-    <li><a href="/login">Login</a></li>
+    <% if(locals.usuarioLogado) { %>
+      <li><a href="/logout">Logout</a></li>
+      <% } else { %>
+        <li><a href="/login">Login</a></li>
+        <% }%>
   </ul>
 </nav>
