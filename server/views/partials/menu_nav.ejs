@@ -9,20 +9,20 @@
           <li><a href="/pacotes">Pacotes Promocionais</a></li>
           <li><a href="/sobre">Sobre Nós</a></li>
           <li><a href="/ajuda">Ajuda</a></li>
- <!-- Menu mobile usuário logado   -->
-          <% if(locals.usuarioLogado) { %>
-          <li class="separador"></li>
-          <li><a href="/perfil">Meu Perfil</a></li>
-          <li><a href="/viagens">Histórico de viagens </a></li>
-          <li><a href="/compras">Carrinho de Compras</a></li>
-          <li class="logout"><a href="logout">Logout</a></li>
-        <% }if(locals.usuarioLogado && locals.usuarioAdmin === "true") { %>
-          <li class="separador"></li>
-          <li><a href="/painel">Painel Administrativo</a></li>
-          <li class="logout"><a href="logout">Logout</a></li>
-        <% } else { %>
-           <li class="login"><a href="login">Login</a></li>
-          <% }%>
+
+          <% if(locals.usuarioLogado && locals.usuarioAdmin==='false' ) { %>
+            <li class="separador"></li>
+            <li><a href="/perfil">Meu Perfil</a></li>
+            <li><a href="/viagens">Histórico de viagens </a></li>
+            <li><a href="/compras">Carrinho de Compras</a></li>
+            <li class="login"><a href="/logout">Logout User</a></li>
+            <% } else if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
+              <li class="separador"></li>
+              <li><a href="/painel">Painel Administrativo</a></li>
+              <li class="login"><a href="/logout">Logout Admin</a></li>
+              <% } else { %>
+                <li class="login"><a href="/login">Login</a></li>
+                <% }%>
         </ul>
       </div>
     </div>
@@ -36,10 +36,13 @@
     <li><a href="/pacotes">Pacotes Promocionais</a></li>
     <li><a href="/sobre">Sobre Nós</a></li>
     <li><a href="/ajuda">Ajuda</a></li>
-    <% if(locals.usuarioLogado) { %>
-      <li><a href="/logout">Logout</a></li>
-      <% } else { %>
-        <li><a href="/login">Login</a></li>
-        <% }%>
+
+    <% if(locals.usuarioLogado && locals.usuarioAdmin==='false' ) { %>
+      <li><a href="/logout">Logout User</a></li>
+      <% } else if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
+        <li><a href="/logout">Logout Admin</a></li>
+        <% } else { %>
+          <li><a href="/login">Login</a></li>
+          <% }%>
   </ul>
 </nav>

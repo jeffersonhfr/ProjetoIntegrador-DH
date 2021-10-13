@@ -20,8 +20,8 @@ const auth = async (req, res, next) => {
   // CASO NÃO ENCONTREMOS UM USUÁRIO COM ESSES DADOS
   if (!usuarioLogado.length) {
     res.render('login', {
-      // titulo: 'Ops!',
-      // subtitulo: 'Algo de errado não deu certo...',
+      title: '| Login',
+      erro: 'Usuário ou senha inválida!',
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin
     })

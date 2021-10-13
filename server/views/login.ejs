@@ -9,13 +9,16 @@
 
       <div class="container-formulario-login">
         <form action="" id="formulario-login" method="POST">
+          <div class="container-formulario-login__erro">
+            <%= erro %>
+          </div>
           <fieldset>
             <div class="formulario-login__dados">
               <input type="email" id="email" name="email" placeholder="Usuário" required>
               <i class="fa fa-user" aria-hidden="true"></i>
             </div>
             <div class="formulario-login__dados">
-              
+
               <input type="password" class="login__senha" id="senha" name="senha" placeholder="Senha" required placeholder="Senha" required>
               <i class="bi bi-eye-slash" id="togglePassword"></i>
               </button>
@@ -23,7 +26,7 @@
           </fieldset>
 
           <div class="container-recuperar-senha">
-            <a href="/recuperar-senha">Esqueceu sua senha?
+            <a href="#">Esqueceu sua senha?
           </div>
           <div class="container-botao-login">
             <button class="botao-login" type="submit">ENTRAR</button>
@@ -39,4 +42,4 @@
     </section>
 
     <%- include('./partials/footer') %>
-    <script src="src/ver-senha.js"></script>
+      <script src="src/ver-senha.js"></script>

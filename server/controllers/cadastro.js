@@ -5,6 +5,8 @@ const controller = {
   index: (req, res, next) => {
     res.render('cadastro', {
       title: '| Cadastre-se',
+      usuarioLogado: req.cookies.usuario,
+      usuarioAdmin: req.cookies.admin
     });
   },
   cadastro: (req, res, next) => {
@@ -25,7 +27,7 @@ const controller = {
     newUsuario.id = newId
     usuariosNew.push(newUsuario)
     fs.writeFileSync(path.join(__dirname, '..', 'data', 'usuariosPlaceholder.json'), JSON.stringify(usuariosNew))
-    res.redirect('../../')
+    res.redirect('../../login')
   }
 };
 
