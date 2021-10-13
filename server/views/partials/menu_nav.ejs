@@ -11,9 +11,9 @@
           <li><a href="/ajuda">Ajuda</a></li>
 
           <% if(locals.usuarioLogado && locals.usuarioAdmin==='false' ) { %>
-            <li class="login"><a href="login">Logout User</a></li>
+            <li class="login"><a href="/logout">Logout User</a></li>
             <% } else if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
-              <li class="login"><a href="login">Logout Admin</a></li>
+              <li class="login"><a href="/logout">Logout Admin</a></li>
               <% } else { %>
                 <li class="login"><a href="login">Login</a></li>
                 <% }%>
