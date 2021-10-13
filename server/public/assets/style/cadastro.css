@@ -11,7 +11,13 @@ section.fundo {
   padding: 9px 8px;
   color:#919191;
 }
-
+.formulario-login__dados .bi-eye-slash{
+  position: absolute;
+  font-size: 14px;
+  left: 250px;
+  padding: 0px 8px;
+  color:#919191;
+}
 .container-recuperar-senha{
   color: #919191;
   text-align: center;
@@ -104,7 +110,6 @@ img.imagem-login{
 
 .formulario-login__dados input[type=password]{
   font-family: 'Mukta', sans-serif;
-  display: flex;
   border-style: solid;
   border-bottom-width: 1px;
   border-top-width: 0;
@@ -117,6 +122,9 @@ img.imagem-login{
 }
 
 input.senha-login {
+  width: 273px !important;
+}
+input.login__senha {
   width: 273px !important;
 }
 
@@ -185,6 +193,13 @@ p.cadastro__link-cadastro {
     padding: 9px 8px;
     color: #919191;
 }
+  .formulario-login__dados .bi-eye-slash {
+    position: absolute;
+    font-size: 14px;
+    left: 300px;
+    padding: 0px 8px;
+    color: #919191;
+  }
 
   .container-imagem-login{
     align-self: flex-start;
@@ -330,6 +345,9 @@ p.cadastro__link-cadastro {
 
    input.senha-login {
     width: 325px !important;
+   }
+   input.login__senha {
+    width: 325px !important;
 }
 
 form#formulario-login {
@@ -337,4 +355,5 @@ form#formulario-login {
   flex-flow: column nowrap;
   justify-content: center;
 }
+
 }
