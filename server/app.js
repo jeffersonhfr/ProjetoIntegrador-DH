@@ -10,6 +10,7 @@ const pacotesRouter = require('./routes/pacotes');
 const sobreRouter = require('./routes/sobre');
 const ajudaRouter = require('./routes/ajuda');
 const loginRouter = require('./routes/login');
+const cadastroRouter = require('./routes/cadastro');
 
 
 var app = express();
@@ -35,8 +36,7 @@ app.use('/pacotes', pacotesRouter);
 app.use('/sobre', sobreRouter);
 app.use('/ajuda', ajudaRouter);
 app.use('/login', loginRouter);
-
-
+app.use('/cadastro', cadastroRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
