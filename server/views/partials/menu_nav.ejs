@@ -9,10 +9,14 @@
           <li><a href="/pacotes">Pacotes Promocionais</a></li>
           <li><a href="/sobre">Sobre Nós</a></li>
           <li><a href="/ajuda">Ajuda</a></li>
-
+ <!-- Menu mobile usuário logado   -->
           <% if(locals.usuarioLogado) { %>
-            <li class="/logout"><a href="login">Logout</a></li>
-            <% } else { %>
+            <li class="separador"></li>
+            <li><a href="/perfil">Meu Perfil</a></li>
+            <li><a href="/viagens">Histórico de viagens </a></li>
+            <li><a href="/compras">Carrinho de Compras</a></li>
+            <li class="logout"><a href="logout">Logout</a></li>
+          <% } else { %>
               <li class="/login"><a href="login">Login</a></li>
               <% }%>
         </ul>
@@ -20,6 +24,7 @@
     </div>
   </label>
 </nav>
+
 
 <nav class="cabecalho__menu-desk">
   <ul class="flex">
