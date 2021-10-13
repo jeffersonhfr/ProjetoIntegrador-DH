@@ -1,8 +1,8 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
 const logoutRouter = require('./routes/logout');
 const indexRouter = require('./routes/index');
@@ -11,6 +11,8 @@ const sobreRouter = require('./routes/sobre');
 const ajudaRouter = require('./routes/ajuda');
 const loginRouter = require('./routes/login');
 const cadastroRouter = require('./routes/cadastro');
+const adminRouter = require('./routes/admin');
+const adminMiddleware = require('./middlewares/admin');
 
 
 var app = express();
@@ -31,6 +33,7 @@ app.use('/src', express.static(__dirname + '/public/src'));
 
 
 app.use('/', indexRouter);
+app.use('/admin', adminRouter)
 app.use('/logout', logoutRouter);
 app.use('/pacotes', pacotesRouter);
 app.use('/sobre', sobreRouter);
