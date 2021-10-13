@@ -27,7 +27,7 @@ const controller = {
     newUsuario.id = newId
     usuariosNew.push(newUsuario)
     fs.writeFileSync(path.join(__dirname, '..', 'data', 'usuariosPlaceholder.json'), JSON.stringify(usuariosNew))
-    res.redirect('../../')
+    res.redirect('../../login')
   }
 };
 
