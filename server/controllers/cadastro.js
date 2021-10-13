@@ -5,6 +5,8 @@ const controller = {
   index: (req, res, next) => {
     res.render('cadastro', {
       title: '| Cadastre-se',
+      usuarioLogado: req.cookies.usuario,
+      usuarioAdmin: req.cookies.admin
     });
   },
   cadastro: (req, res, next) => {
