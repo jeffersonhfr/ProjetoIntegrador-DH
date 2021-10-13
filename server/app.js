@@ -4,12 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var pacotesRouter = require('./routes/pacotes');
-var sobreRouter = require('./routes/sobre');
-var ajudaRouter = require('./routes/ajuda');
-var loginRouter = require('./routes/login');
-var cadastroRouter = require('./routes/cadastro');
+const logoutRouter = require('./routes/logout');
+const indexRouter = require('./routes/index');
+const pacotesRouter = require('./routes/pacotes');
+const sobreRouter = require('./routes/sobre');
+const ajudaRouter = require('./routes/ajuda');
+const loginRouter = require('./routes/login');
+
 
 var app = express();
 
@@ -27,12 +28,15 @@ app.use('/fonts', express.static(__dirname + '/public/assets/fonts'));
 app.use('/img', express.static(__dirname + '/public/assets/img'));
 app.use('/src', express.static(__dirname + '/public/src'));
 
+
 app.use('/', indexRouter);
+app.use('/logout', logoutRouter);
 app.use('/pacotes', pacotesRouter);
 app.use('/sobre', sobreRouter);
 app.use('/ajuda', ajudaRouter);
 app.use('/login', loginRouter);
-app.use('/cadastro', cadastroRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

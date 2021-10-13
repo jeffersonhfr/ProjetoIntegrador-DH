@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "nome": "Adriana",
+    "sobrenome": "Santos",
+    "nascimento": "1951-10-31",
+    "senha": "123456",
+    "avatar": "/images/adriana.png",
+    "email": "adrianas@viagem.com",
+    "telefone": "+55 11 123456789",
+    "admin": true,
+    "criadoEm": "2021-09-13T00:55:49.130Z",
+    "modificadoEm": "2021-09-30T00:40:53.344Z"
+  },
+  {
+    "id": 2,
+    "nome": "Fabio",
+    "sobrenome": "Santos",
+    "nascimento": "1951-10-31",
+    "senha": "123456",
+    "avatar": "/images/adriana.png",
+    "email": "fabio@viagem.com",
+    "telefone": "+55 11 123456789",
+    "admin": false,
+    "criadoEm": "2021-09-13T00:55:49.130Z",
+    "modificadoEm": "2021-09-30T00:40:53.344Z"
+  }
+]

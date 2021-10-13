@@ -1,40 +1,12 @@
 <%- include('./partials/head') %>
-  <header class="header">
-    <div class="header-overlay">
-      <div class="header_container">
-        <div class="container container__header">
-          <a href="/">
-            <img class="header_logo" src="assets/img/logo01.png" alt="logo" width="234px" height="51px">
-          </a>
+  <header class="cabecalho">
+    <div class="cabecalho__sobreposicao">
+      <div class="container cabecalho__navegacao">
+        <a href="/">
+          <img class="cabecalho_logo" src="assets/img/logo01.png" alt="logo" width="234px" height="51px">
+        </a>
 
-          <nav class="header_menu menu_mobile">
-            <input id="menu-hamburguer" type="checkbox" class="input-menu" />
-            <label for="menu-hamburguer">
-              <div class="menu">
-                <span class="hamburguer"></span>
-                <div class="content_menu_mob">
-                  <ul>
-                    <li><a href="pacotes">Viagens Temáticas</a></li>
-                    <li><a href="pacotes">Pacotes Promocionais</a></li>
-                    <li><a href="sobre">Sobre Nós</a></li>
-                    <li><a href="ajuda">Ajuda</a></li>
-                    <li class="login"><a href="login">Login</a></li>
-                  </ul>
-                </div>
-              </div>
-            </label>
-          </nav>
-
-          <nav class="header_menu menu_desk">
-            <ul class="flex">
-              <li><a href="pacotes">Viagens Temáticas</a></li>
-              <li><a href="pacotes">Pacotes Promocionais</a></li>
-              <li><a href="sobre">Sobre Nós</a></li>
-              <li><a href="ajuda">Ajuda</a></li>
-              <li><a href="login">Login</a></li>
-            </ul>
-          </nav>
-        </div>
+        <%- include('./partials/menu_nav.ejs') %>
       </div>
     </div>
   </header>
@@ -45,27 +17,27 @@
         <form class="container-busca__form">
           <div class="container-busca__form__campos">
             <div class="container-busca__form__campos__itens container-busca__form__campos__itens--primeiro">
-              <div class=" busca__input">
+              <div class="busca__campo">
                 <label for="onde">Para onde desejar viajar?</label>
                 <input type="text" id="onde" name="onde" placeholder="Escreva aqui o local para onde deseja ir" />
               </div>
             </div>
             <div class="container-busca__form__campos__itens container-busca__form__campos__itens--separador">|</div>
             <div class="container-busca__form__campos__itens container-busca__form__campos__itens--segundo">
-              <div class="busca__input">
+              <div class="busca__campo">
                 <label for="quando">Quando deseja viajar?</label>
                 <input type="date" id="quando" name="quando" placeholder="Escolha o período desejado para viajar" />
               </div>
             </div>
             <div class="container-busca__form__campos__itens container-busca__form__campos__itens--separador">|</div>
             <div class="container-busca__form__campos__itens container-busca__form__campos__itens--terceiro">
-              <div class="busca__input">
+              <div class="busca__campo">
                 <label for="quantos">Para quantas pessoas?</label>
                 <input type="number" id="quantos" name="quantos" placeholder="Escolha o número de viajantes" />
               </div>
             </div>
           </div>
-          <input type="submit" value="Buscar" class="busca__input__submit">
+          <input type="submit" value="Buscar" class="busca__campo__submit">
         </form>
       </section>
     </div>
@@ -97,33 +69,33 @@
       </nav>
     </div>
 
-    <section class="section-newsletter">
-      <div class="section-imagem">
-        <div class="newsletter-overlay">
+    <section class="newsletter">
+      <div class="newsletter__imagem">
+        <div class="newsletter__sobreposicao">
           <div class="container" style="justify-content: center;">
-            <div class="box-newsletter">
-              <h2 class="texto-topo"> Fique por dentro!</h2>
-              <p class="texto-subtitulo"> Cadastre seus dados abaixo e fique sabendo em primeira mão das melhores ofertas para sua próxima viagem.
+            <div class="newsletter__box">
+              <h2 class="newsletter__titulo"> Fique por dentro!</h2>
+              <p class="newsletter__subtitulo"> Cadastre seus dados abaixo e fique sabendo em primeira mão das melhores ofertas para sua próxima viagem.
               </p>
 
-              <section class="container-fiquepordentro">
-                <form class="container-fiquepordentro__form">
-                  <div class="container-fiquepordentro__form__campos">
-                    <div class="container-fiquepordentro__form__campos__itens container-fiquepordentro__form__campos__itens--primeiro">
-                      <div class=" fiquepordentro__input">
+              <section class="fique-por-dentro">
+                <form class="fique-por-dentro__form">
+                  <div class="fique-por-dentro__form__campos">
+                    <div class="fique-por-dentro__form__campos__itens fique-por-dentro__form__campos__itens--primeiro">
+                      <div class="fique-por-dentro__input">
                         <label for="nome">Nome</label>
                         <input type="text" id="nome" name="nome" placeholder="Insira aqui o seu nome" />
                       </div>
                     </div>
-                    <div class="container-fiquepordentro__form__campos__itens container-fiquepordentro__form__campos__itens division">|</div>
-                    <div class="container-fiquepordentro__form__campos__itens container-fiquepordentro__form__campos__itens--segundo">
-                      <div class="fiquepordentro__input">
+                    <div class="fique-por-dentro__form__campos__itens fique-por-dentro__form__campos__itens divisao">|</div>
+                    <div class="fique-por-dentro__form__campos__itens fique-por-dentro__form__campos__itens--segundo">
+                      <div class="fique-por-dentro__input">
                         <label for="E-mail">E-mail</label>
                         <input type="email" id="emailNews" name="email" placeholder="Insira aqui o seu melhor e-mail" />
                       </div>
                     </div>
                   </div>
-                  <input type="submit" value="Enviar" class="fiquepordentro__input__submit">
+                  <input type="submit" value="Enviar" class="fique-por-dentro__input__submit">
                 </form>
               </section>
             </div>
@@ -131,9 +103,7 @@
         </div>
       </div>
     </section>
-
   </main>
-
 
   <script src="src/index.js"></script>
   <%- include('./partials/footer') %>
