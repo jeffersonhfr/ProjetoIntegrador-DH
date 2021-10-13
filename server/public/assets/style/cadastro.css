@@ -63,6 +63,13 @@ img.imagem-login{
   margin: 30px 10px;
 }
 
+.container-formulario-login__erro {
+  justify-content: center;
+  display: flex;
+  margin-bottom: 20px;
+  color: #cc0000;
+}
+
 .formulario-login__dados{
   position: relative;
   display: flex;
