@@ -3,8 +3,7 @@
   index: (req, res, next) => {
     res.render('login', {
       title: '| Login',
-      titulo:'Teste',
-      subtitulo:'Teste',
+      erro:'',
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin
     });
