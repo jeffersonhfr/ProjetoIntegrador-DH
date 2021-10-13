@@ -15,8 +15,9 @@
               <i class="fa fa-user" aria-hidden="true"></i>
             </div>
             <div class="formulario-login__dados">
-              <input type="password" class="senha-login" id="senha" name="senha" placeholder="Senha" required>
-              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+              
+              <input type="password" class="login__senha" id="senha" name="senha" placeholder="Senha" required placeholder="Senha" required>
+              <i class="bi bi-eye-slash" id="togglePassword"></i>
               </button>
             </div>
           </fieldset>
@@ -38,3 +39,4 @@
     </section>
 
     <%- include('./partials/footer') %>
+    <script src="src/ver-senha.js"></script>
