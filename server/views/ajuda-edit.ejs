@@ -1,0 +1,40 @@
+<%- include('./partials/head') %>
+  <%- include('./partials/header') %>
+
+    <section class="ajuda ajuda-edit">
+      <div class="container">
+        <div class="ajuda-container">
+          <h1 contenteditable="true" id="editor-titulo">
+            <%= tituloAjuda %>
+          </h1>
+          <span id="texto" style="display: none; position: absolute; top: -300vw;">
+            <%= textoAjuda %>
+          </span>
+          <span id="editor-texto" contenteditable="true"></span>
+          <script>
+            const texto3 = document.querySelector('#texto').textContent;
+            document.getElementById('editor-texto').innerHTML = texto3;
+          </script>
+          <script>
+            document.getElementById("editor-titulo").addEventListener("input", function () {
+              let titulo = document.querySelector("#editor-titulo").innerText;
+              document.getElementById("titulo-input").setAttribute('value', titulo);
+            }, false);
+
+            document.getElementById("editor-texto").addEventListener("input", function () {
+              let textocopiado = document.querySelector('#editor-texto').innerHTML;
+              document.querySelector("#texto-input").innerText = textocopiado;
+            }, false);
+          </script>
+
+          <form action="" method="post">
+            <input id="titulo-input" type="text" value="<%= tituloAjuda %>" hidden>
+            <textarea id="texto-input" hidden><%= textoAjuda %></textarea>
+            <button type="submit">Confirmar alterações</button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <%- include('./partials/footer') %>
