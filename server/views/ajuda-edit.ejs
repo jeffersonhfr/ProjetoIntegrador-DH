@@ -1,0 +1,26 @@
+<%- include('./partials/head') %>
+  <%- include('./partials/header') %>
+
+    <section class="ajuda ajuda-edit">
+      <div class="container">
+        <div class="ajuda-container">
+          <form action="" method="post">
+            <input type="text" name="tituloPrincipal" value="<%= tituloPrincipal %>">
+
+            <input type="text" name="tituloDuvidas" value="<%= tituloDuvidas %>">
+            <textarea name="textoDuvidas"><%= textoDuvidas %></textarea>
+
+            <input type="text" name="tituloCancelamentos" value="<%= tituloCancelamentos %>">
+            <textarea name="textoCancelamentos"><%= textoCancelamentos %></textarea>
+
+            <input type="text" name="tituloPolítica" value="<%= tituloPolítica %>">
+            <textarea name="textoPolítica"><%= textoPolítica %></textarea>
+
+            <button type="submit">Confirmar alterações</button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <%- include('./partials/footer') %>

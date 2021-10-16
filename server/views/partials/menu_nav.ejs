@@ -11,17 +11,24 @@
           <li><a href="/ajuda">Ajuda</a></li>
 
           <% if(locals.usuarioLogado && locals.usuarioAdmin==='false' ) { %>
-            <li class="login"><a href="/logout">Logout User</a></li>
+            <li class="separador"></li>
+            <li><a href="/perfil">Meu Perfil</a></li>
+            <li><a href="/viagens">Histórico de viagens </a></li>
+            <li><a href="/compras">Carrinho de Compras</a></li>
+            <li class="login"><a href="/logout">Logout</a></li>
             <% } else if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
-              <li class="login"><a href="/logout">Logout Admin</a></li>
+              <li class="separador"></li>
+              <li><a href="/painel">Painel Administrativo</a></li>
+              <li class="login"><a href="/logout">Logout</a></li>
               <% } else { %>
-                <li class="login"><a href="login">Login</a></li>
+                <li class="login"><a href="/login">Login</a></li>
                 <% }%>
         </ul>
       </div>
     </div>
   </label>
 </nav>
+
 
 <nav class="cabecalho__menu-desk">
   <ul class="flex">
@@ -31,9 +38,9 @@
     <li><a href="/ajuda">Ajuda</a></li>
 
     <% if(locals.usuarioLogado && locals.usuarioAdmin==='false' ) { %>
-      <li><a href="/logout">Logout User</a></li>
+      <li><a href="/logout">Logout</a></li>
       <% } else if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
-        <li><a href="/logout">Logout Admin</a></li>
+        <li><a href="/logout">Logout</a></li>
         <% } else { %>
           <li><a href="/login">Login</a></li>
           <% }%>
