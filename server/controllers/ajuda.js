@@ -1,7 +1,9 @@
 const usuariosPlaceholder = require('../data/usuariosPlaceholder.json');
 const ajudaPlaceholder = require('../data/ajuda.json');
+const fs = require('fs');
+const path = require('path');
 
-let {tituloAjuda, textoAjuda} = ajudaPlaceholder;
+let {tituloPrincipal, tituloDuvidas, textoDuvidas, tituloCancelamentos, textoCancelamentos, tituloPolítica, textoPolítica} = ajudaPlaceholder;
 
 const controller = {
   index: (req, res, next) => {
@@ -9,8 +11,13 @@ const controller = {
       title: '| Ajuda',
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
-      tituloAjuda, 
-      textoAjuda
+      tituloPrincipal, 
+      tituloDuvidas,
+      textoDuvidas,
+      tituloCancelamentos,
+      textoCancelamentos,
+      tituloPolítica,
+      textoPolítica
     });
   },
   list: (req, res, next) => {
@@ -30,10 +37,22 @@ const controller = {
         usuarios: usuariosPlaceholder,
         usuarioLogado: req.cookies.usuario,
         usuarioAdmin: admin,
-        tituloAjuda, 
-        textoAjuda
+        tituloPrincipal, 
+        tituloDuvidas,
+        textoDuvidas,
+        tituloCancelamentos,
+        textoCancelamentos,
+        tituloPolítica,
+        textoPolítica
       });
     }
+  },
+  update: (req, res, next) => {
+    let ajuda = req.body;
+    fs.writeFileSync(path.join(__dirname, '..', 'data', 'ajuda.json'), JSON.stringify(ajuda))
+    
+    res.redirect('../ajuda')
+  
   }
 };
 

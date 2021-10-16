@@ -7,5 +7,6 @@ const  ajudaController = require('../controllers/ajuda');
 
 //ROTAS ADMINISTRATIVAS (REQUEREM QUE O USUÁRIO AUTENTICADO SEJA ADMIN)
 router.get('/ajuda', adminMiddleware, ajudaController.list);
+router.post('/ajuda', adminMiddleware, ajudaController.update);
 
 module.exports = router

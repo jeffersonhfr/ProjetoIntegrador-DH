@@ -5,19 +5,29 @@
       <div class="container">
         <div class="ajuda-container">
           <h1>
-            <%= tituloAjuda %>
+            <%= tituloPrincipal %>
           </h1>
           <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
             <a href="/admin/ajuda">EDITAR</a>
             <% }%>
-              <span id="texto" style="display: none; position: absolute; top: -300vw;">
-                <%= textoAjuda %>
-              </span>
-              <span id="texto1"></span>
-              <script>
-                const texto3 = document.querySelector('#texto').textContent;
-                document.getElementById('texto1').innerHTML = texto3;
-              </script>
+              <h2>
+                <%= tituloDuvidas %>
+              </h2>
+              <p>
+                <%= textoDuvidas %>
+              </p>
+              <h2>
+                <%= tituloCancelamentos %>
+              </h2>
+              <p>
+                <%= textoCancelamentos %>
+              </p>
+              <h2>
+                <%= tituloPolítica %>
+              </h2>
+              <p>
+                <%= textoPolítica %>
+              </p>
         </div>
       </div>
     </section>
