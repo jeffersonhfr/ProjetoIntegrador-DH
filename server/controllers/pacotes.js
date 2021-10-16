@@ -12,7 +12,7 @@ const controller = {
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin
     })
-  }
+  },
 };
 
 module.exports = controller;
