@@ -152,6 +152,30 @@ input:checked ~ label .menu-hamburguer__icone:after {
   bottom: 0;
 }
 
+/* Menu logado  */
+.separador:after {
+  content: "";
+  display: block;
+  width: 400px;
+  height: 0px;
+  top: 197px;
+  border: 1px solid #E3E3E3;
+  margin: 10px auto; 
+}
+li.logout a {
+  background-color: #4D4D4D;
+  color: #fff;
+}
+li.logout {
+  background-color: #4D4D4D;
+  color: #fff;
+  padding: 10px 0;
+  margin: 0;
+  width: 100%;
+}
+
+
+
 @media (min-width: 992px){
   .cabecalho__menu-desk{
     display: flex;

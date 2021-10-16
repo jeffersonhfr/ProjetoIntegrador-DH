@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+const adminMiddleware = require('./middlewares/admin');
 const logoutRouter = require('./routes/logout');
 const indexRouter = require('./routes/index');
 const pacotesRouter = require('./routes/pacotes');
@@ -12,7 +13,6 @@ const ajudaRouter = require('./routes/ajuda');
 const loginRouter = require('./routes/login');
 const cadastroRouter = require('./routes/cadastro');
 const adminRouter = require('./routes/admin');
-const adminMiddleware = require('./middlewares/admin');
 
 
 var app = express();
@@ -33,13 +33,18 @@ app.use('/src', express.static(__dirname + '/public/src'));
 
 
 app.use('/', indexRouter);
-app.use('/admin', adminRouter)
 app.use('/logout', logoutRouter);
 app.use('/pacotes', pacotesRouter);
 app.use('/sobre', sobreRouter);
 app.use('/ajuda', ajudaRouter);
 app.use('/login', loginRouter);
 app.use('/cadastro', cadastroRouter);
+
+// A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
+app.use(adminMiddleware)
+
+// ROTAS ADMINISTRATIVAS
+app.use('/admin', adminRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

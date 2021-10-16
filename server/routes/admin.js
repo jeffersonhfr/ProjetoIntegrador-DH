@@ -1,10 +1,15 @@
-const express = require('express'),
-  router = express.Router()
-   //usersController = require('../controllers/users'),
-   admin = require('../controllers/admin'),
-   adminMiddleware = require('../middlewares/admin')
+const express = require('express');
+const  router = express.Router()
+const  adminMiddleware = require('../middlewares/admin');
+const  ajudaController = require('../controllers/ajuda');
+const  sobreController = require('../controllers/sobre');
+// const  pacotesController = require('../controllers/pacotes');
 
-// ROTAS ADMINISTRATIVAS (REQUEREM QUE O USUÁRIO AUTENTICADO SEJA ADMIN)
- router.get('/pacotes', adminMiddleware, admin.pacotes) 
- //router.get('/pacotes/:id/editar', adminMiddleware, acessoController.update) 
+//ROTAS ADMINISTRATIVAS (REQUEREM QUE O USUÁRIO AUTENTICADO SEJA ADMIN)
+router.get('/ajuda', adminMiddleware, ajudaController.list);
+router.post('/ajuda', adminMiddleware, ajudaController.update);
+
+router.get('/sobre', adminMiddleware, sobreController.list);
+router.post('/sobre', adminMiddleware, sobreController.update);
+
 module.exports = router
