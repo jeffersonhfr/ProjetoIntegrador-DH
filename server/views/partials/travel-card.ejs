@@ -1,33 +1,33 @@
-<% for (let i=0; i < 10; i++) { %>
+<% for (let i=0; i < pacotes.length; i++) { %>
   <a href="/pacotes/1">
     <div class="travel-card travel-card__content">
       <div class="travel-card__imagem-box">
-        <img src="img/Egito.jpg" class="travel-card__imagem">
+        <img src="<%= pacotes[i].src%>" class="travel-card__imagem">
       </div>
       <div class="travel-card__info-box">
 
         <div class="travel-card__infoDesc">
-          <h2 class="Propriedade Nome">Egito histórico</h2>
+          <h2 class="Propriedade Nome"><%= pacotes[i].nome%></h2>
           <ul class="Propriedades">
             <li class="Propriedade Hotel">
-              <p><img src="img/calendar.png" /> 10 Diárias</p>
+              <p><img src="/assets/img/calendar.png" /> <%= pacotes[i].diarias%> diárias</p>
             </li>
             <li class="Propriedade Hotel">
-              <p><img src="img/check.png" /> Hotel</p>
+              <p><img src="/assets/img/check.png" /> Hotel</p>
             </li>
             <li class="Propriedade PassagemAerea">
-              <p><img src="img/check.png" />Passagem Aérea</p>
+              <p><img src="/assets/img/check.png" />Passagem Aérea</p>
             </li>
             <li class="Propriedade Bonus">
-              <p><img src="img/check.png" />Translado e City Tour</p>
+              <p><img src="/assets/img/check.png" /><%= pacotes[i].bonus%></p>
             </li>
             </li>
         </div>
         <div class="travel-card__infoPrice">
           <li class="Propriedade ValorInicial preco">
-            <h2> A partir de <span>R$ 18.999,00</span></h2>
+            <h2> A partir de <span><%= valor(pacotes[i].valor)%></span></h2>
           <li class="Propriedade ValorPromocional preco">
-            <h1>R$ 15.800,00</h1>
+            <h1><%= valor(pacotes[i].valorPromocional)%></h1>
           </li>
           <h2 class="emAte">em até 10x no cartão de crédito</h2>
           <button class="btao-pacote">Comprar</button>
