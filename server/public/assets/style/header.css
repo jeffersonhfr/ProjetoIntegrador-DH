@@ -252,6 +252,7 @@ li.logout {
 
  .menu__desk-conteudo li {
   margin: 20px 0;
+  align-items: center;
 }
 
  .menu__desk-conteudo {
