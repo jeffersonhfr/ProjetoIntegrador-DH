@@ -6,7 +6,7 @@
       "diarias": 10,
       "hotel": true,
       "passagemAerea": true,
-      "bônus": "Translado e city tour",
+      "bonus": "Translado e city tour",
       "valor": 18000,
       "valorPromocional": 15800
       },
@@ -17,7 +17,7 @@
         "diarias": 10,
         "hotel": true,
         "passagemAerea": true,
-        "bônus": "Translado e city tour",
+        "bonus": "Translado e city tour",
         "valor": 18000,
         "valorPromocional": 15800
         },
@@ -28,7 +28,7 @@
           "diarias": 10,
           "hotel": true,
           "passagemAerea": true,
-          "bônus": "Translado e city tour",
+          "bonus": "Translado e city tour",
           "valor": 18000,
           "valorPromocional": 15800
           },
@@ -39,7 +39,7 @@
             "diarias": 10,
             "hotel": true,
             "passagemAerea": true,
-            "bônus": "Translado e city tour",
+            "bonus": "Translado e city tour",
             "valor": 18000,
             "valorPromocional": 15800
             }

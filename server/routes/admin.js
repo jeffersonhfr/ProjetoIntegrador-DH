@@ -13,7 +13,7 @@ router.post('/ajuda', adminMiddleware, ajudaController.update);
 router.get('/sobre', adminMiddleware, sobreController.list);
 router.post('/sobre', adminMiddleware, sobreController.update);
 
-router.get('/pacotes',pacotesController.admin)
+router.get('/pacotes',adminMiddleware, pacotesController.admin)
 
 
 

@@ -36,6 +36,8 @@
     height: max-content;
     flex-flow: column nowrap;
     display: flex;
+    border: 1px solid #d6d6d6;
+    border-radius: 10px;
 }
 
 .travel-card__imagem-box {
@@ -63,8 +65,6 @@ img.travel-card__imagem {
 }
 
 .travel-card__info-box {
-    border: 1px solid #d6d6d6;
-    border-radius: 0 0 10px 10px;
     padding: 20px 30px;
 }
 
@@ -84,6 +84,49 @@ img.travel-card__imagem {
 .btao-pacote:hover {
     background-color: #2a4182;
 }
+.btao-Container__btao-deletar{
+    background-color: #CC0000;
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 0px 0px 10px 0px;
+
+}
+.btao-Container{
+    display: flex;
+    flex-direction: row;
+}
+.btao-Container__btao-editar{
+    background-color:  #28B025;
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius:0px 0px 0px 10px;
+}
+.btao-Container__btao-deletar> p,.btao-Container__btao-editar>p{
+    color:white;
+    font-size: medium;
+    cursor: pointer;
+}
+.btao-Container__btao-deletar:hover{
+    background-color: rgb(177, 0, 0);
+    
+}
+.btao-Container__btao-editar:hover{
+    background-color: rgb(0,177, 0);
+    cursor: pointer;
+}
+.travel-cards__btao{
+
+    height: max-content;
+    min-height: 34px;
+    width: 156px;
+    left: 872px;
+    top: 188px;
+    color: #3E60BF;
+    border: 1px solid #3E60BF;
+    border-radius: 10px;
+}
 
 @media (min-width:992px){
     .travel-card__imagem-box {
@@ -101,8 +144,6 @@ img.travel-card__imagem {
     }
 
     .travel-card__info-box {
-        border: 1px solid #d6d6d6;
-        border-radius: 0 10px 10px 0;
         padding: 10px;
         width: 475px;
         box-sizing: border-box;
@@ -111,5 +152,28 @@ img.travel-card__imagem {
 
     .travel-card__infoDesc {
         width: 200px;
+    }
+    .btao-Container{
+        flex-direction:column;
+        justify-content: space-between;
+    }
+    .btao-Container__btao-editar{
+        border-radius: 0px 10px 0px 0px;
+    }
+    .btao-Container__btao-deletar{
+        border-radius: 0px 0px 10px 0px;
+    }
+    .btao-Container__btao-deletar> p,.btao-Container__btao-editar>p{
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        color:white;
+        font-size: medium;
+    }
+    .travel-card__infoPrice{
+        
+        margin:10px;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
     }
 }

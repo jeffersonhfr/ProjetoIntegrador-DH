@@ -22,15 +22,16 @@ const controller = {
     })
   },
   admin:(req,res,next)=>{
-      res.render('admin',{
-        title: '| admin',
-        pacotes: pacotes,
-        valor: (valor) => {
-          return valor.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-          })
-        },
+    res.render('admin', {
+      title: '| admin',
+      pacotes: pacotes,
+      valor: (valor) => {
+        return valor.toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL'
+        })
+      }
+      ,
         usuarioLogado: req.cookies.usuario,
         usuarioAdmin: req.cookies.admin
       })
