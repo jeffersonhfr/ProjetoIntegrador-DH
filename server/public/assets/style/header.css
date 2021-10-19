@@ -175,7 +175,6 @@ li.logout {
 }
 
 
-
 @media (min-width: 992px){
   .cabecalho__menu-desk{
     display: flex;
@@ -218,9 +217,7 @@ li.logout {
     color: black;
   }
 
-
-
-  .cabecalho__menu-desk ul li a {
+  .cabecalho__menu-desk a{
     font-weight:normal;
     font-size: 16px;
     padding-right: 10px;
@@ -230,5 +227,45 @@ li.logout {
 
   .cabecalho__menu-desk ul li a:hover {
     color: black;
+  } 
+
+  /* menu desk usuario*/
+  .menu__desk div{
+    position: absolute;
+    visibility: hidden;
   }
+
+  .menu__desk:hover div{
+  visibility: visible;
+  } 
+
+ .menu__desk-conteudo a{
+  font-family: Epilogue;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  color: #575656;
+ } 
+
+ .menu__desk-conteudo li {
+  margin: 20px 0;
+}
+
+ .menu__desk-conteudo {
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 249px;
+  height: 165px;
+  transition: 0.5s ease-in-out; 
+  background-color: #fff;
+  line-height: 16px;
+ }
+
+ .menu__desk:hover{
+   color:#000;
+ }
 }
