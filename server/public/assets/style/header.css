@@ -20,7 +20,7 @@
 
 .cabecalho_logo {
   width: 200px;
-  height: auto
+  height: auto;
 }
 
 .cabecalho__menu-mobile{
@@ -95,8 +95,8 @@ li.login {
 
 .cabecalho__navegacao {
   justify-content: space-between;
-  align-items: center;
-  padding-top: 30px;
+  align-items:center;
+  padding-top: 50px;
 }
 
 .menu-hamburguer__conteudo {
@@ -178,6 +178,7 @@ li.logout {
 @media (min-width: 992px){
   .cabecalho__menu-desk{
     display: flex;
+    align-items: center;
   }
   .cabecalho__menu-mobile{
     display: none;
