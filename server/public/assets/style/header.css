@@ -258,12 +258,21 @@ li.logout {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  width: 249px;
-  height: 165px;
+  width: 250px;
+  height: 250px;
   transition: 0.5s ease-in-out; 
   background-color: #fff;
   line-height: 16px;
  }
+ .separador:after {
+  content: "";
+  display: block;
+  width: 250px;
+  height: 0px;
+  top: 197px;
+  border: 1px solid #E3E3E3;
+  margin: 10px auto; 
+}
 
  .menu__desk:hover{
    color:#000;
