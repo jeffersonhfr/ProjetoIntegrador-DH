@@ -1,0 +1,20 @@
+<%- include('./partials/head') %>
+  <%- include('./partials/header') %>
+
+    <section class="ajuda ajuda-edit">
+      <div class="container">
+        <div class="ajuda-container">
+          <form action="" method="post">
+            <input type="text" name="tituloPrincipal" value="<%= tituloPrincipal %>">
+
+            <input type="text" name="tituloHistoria" value="<%= tituloHistoria %>">
+            <textarea name="textoHistoria"><%= textoHistoria %></textarea>
+
+            <button type="submit">Confirmar alterações</button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <%- include('./partials/footer') %>

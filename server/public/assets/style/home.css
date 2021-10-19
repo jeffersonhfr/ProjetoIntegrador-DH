@@ -119,7 +119,7 @@ h2.emAte {
 }
 
 li.Propriedade.ValorPromocional.preco {
-    margin: 10px 0;
+    margin: 1px 0;
     color: #3E60BF;
     font-weight: bold;
 }
@@ -176,4 +176,5 @@ li.Propriedade {
         width: 270px;
         height: 270px;
     }
+    
 }
