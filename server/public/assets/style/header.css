@@ -23,6 +23,7 @@
   height: auto;
 }
 
+
 .cabecalho__menu-mobile{
   display: block;
 }
@@ -184,7 +185,7 @@ li.logout {
     display: none;
   }
 
-  .cabecalho_logo {
+  .cabecalho_ {
     width: 234px;
   }
 
@@ -238,7 +239,11 @@ li.logout {
 
   .menu__desk:hover div{
   visibility: visible;
-  } 
+  }
+  /* left:auto;
+  right:0;
+  margin-right:-10px; */
+  
 
  .menu__desk-conteudo a{
   font-family: Epilogue;
@@ -265,6 +270,8 @@ li.logout {
   transition: 0.5s ease-in-out; 
   background-color: #fff;
   line-height: 16px;
+  left: 810px;
+  right:auto;
  }
  .separador:after {
   content: "";
@@ -274,9 +281,15 @@ li.logout {
   top: 197px;
   border: 1px solid #E3E3E3;
   margin: 10px auto; 
-}
+  }
 
  .menu__desk:hover{
    color:#000;
  }
+ .menu__desk-foto{
+  display: flex;
+  width: 40px;
+  height: 40px;
+ }
+ 
 }

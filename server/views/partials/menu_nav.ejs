@@ -36,8 +36,8 @@
       <li><a href="/pacotes">Pacotes Promocionais</a></li>
       <li><a href="/sobre">Sobre Nós</a></li>
       <li><a href="/ajuda">Ajuda</a></li>
-      <li class="menu__desk"> <img class="menu__desk-foto" src="/img/foto-usuario.png" alt="foto de perfil" width="50px" height="50px">
       <% if(locals.usuarioLogado && locals.usuarioAdmin==='false' ) { %>
+        <li class="menu__desk"> <img class="menu__desk-foto" src="/img/foto-usuario.png" alt="foto de perfil" width="50px" height="50px">
         <div class="menu__desk-conteudo">
             <ul >
               <li><a href="/perfil">Meu Perfil</a></li>
@@ -49,6 +49,7 @@
           </li>
         <!-- Menu desk admin -->
         <% } else if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
+          <li class="menu__desk"> <img class="menu__desk-foto" src="/img/foto-usuario.png" alt="foto de perfil" width="50px" height="50px">
           <div class="menu__desk-conteudo">
             <ul >
               <li><a href="/perfil">Meu Perfil</a></li>
