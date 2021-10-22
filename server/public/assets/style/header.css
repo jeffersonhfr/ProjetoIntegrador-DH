@@ -95,8 +95,10 @@ li.login {
 }
 
 .cabecalho__navegacao {
+  display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-content: center;
+  align-items: center;
   padding-top: 50px;
 }
 
@@ -287,6 +289,7 @@ li.logout {
   display: flex;
   width: 40px;
   height: 40px;
+  margin-top: -13px;
  }
 
 }
