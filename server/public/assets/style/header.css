@@ -239,11 +239,7 @@ li.logout {
 
   .menu__desk:hover div{
   visibility: visible;
-  }
-  /* left:auto;
-  right:0;
-  margin-right:-10px; */
-  
+  }  
 
  .menu__desk-conteudo a{
   font-family: Epilogue;
@@ -272,6 +268,7 @@ li.logout {
   line-height: 16px;
   left: 810px;
   right:auto;
+  margin-top: 10px;
  }
  .separador:after {
   content: "";
@@ -291,5 +288,5 @@ li.logout {
   width: 40px;
   height: 40px;
  }
- 
+
 }
