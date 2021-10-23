@@ -99,7 +99,7 @@ li.login {
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .menu-hamburguer__conteudo {
@@ -177,6 +177,9 @@ li.logout {
   width: 100%;
 }
 
+.menu__desk-conteudo {
+  display: none;
+ }
 
 @media (min-width: 992px){
   .cabecalho__menu-desk{
@@ -258,20 +261,32 @@ li.logout {
   align-items: center;
 }
 
+li.login {
+  margin: 0;
+}
+
+.mostrar-menu{
+  display: block;
+}
+
  .menu__desk-conteudo {
-  position: relative;
-  justify-content: space-between;
-  align-items: center;
   text-align: center;
   width: 250px;
-  height: 250px;
+  height: auto;
   transition: 0.5s ease-in-out; 
   background-color: #fff;
   line-height: 16px;
-  left: 810px;
-  right:auto;
-  margin-top: 10px;
  }
+
+ .menu__desk {
+   cursor: pointer;
+ }
+
+ .flex-end{
+  display: flex;
+  justify-content: end;
+ }
+
  .separador:after {
   content: "";
   display: block;
