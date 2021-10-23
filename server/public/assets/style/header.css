@@ -20,8 +20,9 @@
 
 .cabecalho_logo {
   width: 200px;
-  height: auto
+  height: auto;
 }
+
 
 .cabecalho__menu-mobile{
   display: block;
@@ -94,7 +95,9 @@ li.login {
 }
 
 .cabecalho__navegacao {
+  display: flex;
   justify-content: space-between;
+  align-content: center;
   align-items: center;
   padding-top: 30px;
 }
@@ -174,17 +177,20 @@ li.logout {
   width: 100%;
 }
 
-
+.menu__desk-conteudo {
+  display: none;
+ }
 
 @media (min-width: 992px){
   .cabecalho__menu-desk{
     display: flex;
+    align-items: center;
   }
   .cabecalho__menu-mobile{
     display: none;
   }
 
-  .cabecalho_logo {
+  .cabecalho_ {
     width: 234px;
   }
 
@@ -218,9 +224,7 @@ li.logout {
     color: black;
   }
 
-
-
-  .cabecalho__menu-desk ul li a {
+  .cabecalho__menu-desk a{
     font-weight:normal;
     font-size: 16px;
     padding-right: 10px;
@@ -230,5 +234,77 @@ li.logout {
 
   .cabecalho__menu-desk ul li a:hover {
     color: black;
+  } 
+
+  /* menu desk usuario*/
+  .menu__desk div{
+    position: absolute;
+    visibility: hidden;
   }
+
+  .menu__desk:hover div{
+  visibility: visible;
+  }  
+
+ .menu__desk-conteudo a{
+  font-family: Epilogue;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  color: #575656;
+ } 
+
+ .menu__desk-conteudo li {
+  margin: 20px 0;
+  align-items: center;
+}
+
+li.login {
+  margin: 0;
+}
+
+.mostrar-menu{
+  display: block;
+}
+
+ .menu__desk-conteudo {
+  text-align: center;
+  width: 250px;
+  height: auto;
+  transition: 0.5s ease-in-out; 
+  background-color: #fff;
+  line-height: 16px;
+ }
+
+ .menu__desk {
+   cursor: pointer;
+ }
+
+ .flex-end{
+  display: flex;
+  justify-content: end;
+ }
+
+ .separador:after {
+  content: "";
+  display: block;
+  width: 250px;
+  height: 0px;
+  top: 197px;
+  border: 1px solid #E3E3E3;
+  margin: 10px auto; 
+  }
+
+ .menu__desk:hover{
+   color:#000;
+ }
+ .menu__desk-foto{
+  display: flex;
+  width: 40px;
+  height: 40px;
+  margin-top: -13px;
+ }
+
 }
