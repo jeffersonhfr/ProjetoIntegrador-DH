@@ -13,7 +13,7 @@ const ajudaRouter = require('./routes/ajuda');
 const loginRouter = require('./routes/login');
 const cadastroRouter = require('./routes/cadastro');
 const adminRouter = require('./routes/admin');
-
+const usuarioRouter = require('./routes/usuario');
 
 var app = express();
 
@@ -39,6 +39,7 @@ app.use('/sobre', sobreRouter);
 app.use('/ajuda', ajudaRouter);
 app.use('/login', loginRouter);
 app.use('/cadastro', cadastroRouter);
+app.use('/perfil',usuarioRouter)
 
 // A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
 app.use(adminMiddleware)
