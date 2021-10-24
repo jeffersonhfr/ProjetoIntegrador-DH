@@ -4,19 +4,23 @@
     <section class="ajuda ajuda-edit">
       <div class="container">
         <div class="ajuda-container">
-          <form action="" method="post">
-            <input type="text" name="tituloPrincipal" value="<%= tituloPrincipal %>">
+          <form action="" method="post" class="form-edit">
+            <input type="text" name="tituloPrincipal" class="form-titulo" value="<%= tituloPrincipal %>">
 
-            <input type="text" name="tituloDuvidas" value="<%= tituloDuvidas %>">
-            <textarea name="textoDuvidas"><%= textoDuvidas %></textarea>
+            <hr class="form-hr">
 
-            <input type="text" name="tituloCancelamentos" value="<%= tituloCancelamentos %>">
-            <textarea name="textoCancelamentos"><%= textoCancelamentos %></textarea>
+            <input type="text" name="tituloDuvidas" class="form-titulo" value="<%= tituloDuvidas %>">
+            <textarea name="textoDuvidas" class="form-campos form-textarea"><%= textoDuvidas %></textarea>
+            <hr class="form-hr">
 
-            <input type="text" name="tituloPolítica" value="<%= tituloPolítica %>">
-            <textarea name="textoPolítica"><%= textoPolítica %></textarea>
+            <input type="text" name="tituloCancelamentos" class="form-titulo" value="<%= tituloCancelamentos %>">
+            <textarea name="textoCancelamentos" class="form-campos form-textarea"><%= textoCancelamentos %></textarea>
+            <hr class="form-hr">
 
-            <button type="submit">Confirmar alterações</button>
+            <input type="text" name="tituloPolítica" class="form-titulo" value="<%= tituloPolítica %>">
+            <textarea name="textoPolítica" class="form-campos form-textarea"><%= textoPolítica %></textarea>
+
+            <button type="submit" class="form-btn">Confirmar alterações</button>
           </form>
 
         </div>
