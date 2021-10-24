@@ -40,16 +40,22 @@ app.use('/ajuda', ajudaRouter);
 app.use('/login', loginRouter);
 app.use('/cadastro', cadastroRouter);
 
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+ res.status(404).render('404', {
+  title: '| Página não encontrada',
+  usuarioLogado: req.cookies.usuario,
+  usuarioAdmin: req.cookies.admin
+})
+});
+
 // A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
 app.use(adminMiddleware)
 
 // ROTAS ADMINISTRATIVAS
 app.use('/admin', adminRouter)
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+
 
 // error handler
 app.use(function(err, req, res, next) {

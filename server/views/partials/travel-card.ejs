@@ -1,48 +1,62 @@
 <% for (let i=0; i < pacotes.length; i++) { %>
 
-    <div class="travel-card travel-card__content">
-      <div class="travel-card__imagem-box">
-        <img src="<%= pacotes[i].src%>" class="travel-card__imagem">
-      </div>
-      <div class="travel-card__info-box">
+  <div class="travel-card travel-card__content">
+    <div class="travel-card__imagem-box">
+      <img src="<%= pacotes[i].src%>" class="travel-card__imagem">
+    </div>
+    <div class="travel-card__info-box">
 
-        <div class="travel-card__infoDesc">
-          <h2 class="Propriedade Nome"><%= pacotes[i].nome%></h2>
-          <ul class="Propriedades">
-            <li class="Propriedade Hotel">
-              <p><img src="/assets/img/calendar.png" /> <%= pacotes[i].diarias%> diárias</p>
-            </li>
-            <li class="Propriedade Hotel">
-              <p><img src="/assets/img/check.png" /> Hotel</p>
-            </li>
-            <li class="Propriedade PassagemAerea">
-              <p><img src="/assets/img/check.png" />Passagem Aérea</p>
-            </li>
-            <li class="Propriedade Bonus">
-              <p><img src="/assets/img/check.png" /><%= pacotes[i].bonus%></p>
-            </li>
-            </li>
-        </div>
-        <div>
-          <div class="travel-card__infoPrice">
-            <li class="Propriedade ValorInicial preco">
-             <h3> A partir de <span><%= valor(pacotes[i].valor)%></span></h3>
-            <li class="Propriedade ValorPromocional preco">
-              <h1><%= valor(pacotes[i].valorPromocional)%></h1>
-            </li>
-            <h3 class="emAte">em até 10x no cartão</h3>  
-          </div>
-          <a href="/pacotes/<%pacotes[i].id%>"><button class="btao-pacote">Detalhes</button></a>
-        </div>
-      </ul> 
-      
+      <div class="travel-card__infoDesc">
+        <h2 class="Propriedade Nome">
+          <%= pacotes[i].nome%>
+        </h2>
+        <ul class="Propriedades">
+          <li class="Propriedade Hotel">
+            <p><img src="/assets/img/calendar.png" />
+              <%= pacotes[i].diarias%> diárias
+            </p>
+          </li>
+          <li class="Propriedade Hotel">
+            <p><img src="/assets/img/check.png" /> Hotel</p>
+          </li>
+          <li class="Propriedade PassagemAerea">
+            <p><img src="/assets/img/check.png" />Passagem Aérea</p>
+          </li>
+          <li class="Propriedade Bonus">
+            <p><img src="/assets/img/check.png" />
+              <%= pacotes[i].bonus%>
+            </p>
+          </li>
+          </li>
       </div>
-      <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
+      <div>
+        <div class="travel-card__infoPrice">
+          <li class="Propriedade ValorInicial preco">
+            <h3> A partir de <span>
+                <%= valor(pacotes[i].valor)%>
+              </span></h3>
+          <li class="Propriedade ValorPromocional preco">
+            <h1>
+              <%= valor(pacotes[i].valorPromocional)%>
+            </h1>
+          </li>
+          <h3 class="emAte">em até 10x no cartão</h3>
+        </div>
+        <a href="/pacotes/<%pacotes[i].id%>"><button class="btao-pacote">Detalhes</button></a>
+      </div>
+      </ul>
+
+    </div>
+    <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
       <div class="btao-Container">
-      <button class="btao-Container__btao-editar"><p>Editar</p></button>
-        <button class="btao-Container__btao-deletar"><p>Saiba mais</p></button>
+        <button class="btao-Container__btao-editar">
+          <p>Editar</p>
+        </button>
+        <button class="btao-Container__btao-deletar">
+          <p>Deletar</p>
+        </button>
       </div>
       <% } %>
-    </div>  
-    
+  </div>
+
   <% } %>
