@@ -10,6 +10,12 @@
   flex-flow: column;
 }
 
+.ajuda-container__nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .ajuda p {
   font-size: 14px;
   font-weight: 400;

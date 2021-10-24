@@ -10,6 +10,25 @@
   flex-flow: column;
 }
 
+.sobre-container__nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bt-edit{
+  border: 1px solid #3E60BF;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 13px;
+  color: #3E60BF;
+}
+
+.bt-edit:hover{
+  border: 1px solid #4D4D4D;
+  color: #4D4D4D;
+}
+
 .sobre p {
   font-size: 14px;
   font-weight: 400;
