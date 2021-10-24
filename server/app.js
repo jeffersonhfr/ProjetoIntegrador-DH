@@ -43,7 +43,7 @@ app.use('/cadastro', cadastroRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
  res.status(404).render('404', {
-  title: '| Aproveite nossas ofertas',
+  title: '| Página não encontrada',
   usuarioLogado: req.cookies.usuario,
   usuarioAdmin: req.cookies.admin
 })
