@@ -8,6 +8,7 @@
 .sobre-container{
   display: flex;
   flex-flow: column;
+  width: 100%;
 }
 
 .sobre-container__nav{
@@ -29,6 +30,54 @@
   color: #4D4D4D;
 }
 
+.form-edit{
+  display: flex;
+  flex-flow: column;
+  width: 90%;
+}
+
+.form-titulo{
+  margin: 10px 0px;
+  padding: 10px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.form-campos{
+  margin: 10px 0px;
+  padding: 10px;
+  width: 90%;
+  max-width: 1000px;
+}
+
+.form-textarea{
+  height: 200px;
+}
+
+.form-hr {
+  width: 70%;
+  margin: 20px auto;
+  border-color: #3e60bf;
+  opacity: 0.2;
+}
+
+.form-btn{
+  background-color: #3E60BF;
+  color: #FFFF;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 11px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  width: 250px;
+  margin-top: 20px;
+}
+
+.form-btn:hover{
+  background-color: #2a4182;
+}
 .sobre p {
   font-size: 14px;
   font-weight: 400;
