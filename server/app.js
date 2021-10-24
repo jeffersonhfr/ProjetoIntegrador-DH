@@ -42,6 +42,12 @@ app.use('/login', loginRouter);
 app.use('/cadastro', cadastroRouter);
 app.use('/historico', historicoRouter);
 
+// A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
+app.use(adminMiddleware)
+
+// ROTAS ADMINISTRATIVAS
+app.use('/admin', adminRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -51,13 +57,6 @@ app.use(function(req, res, next) {
   usuarioAdmin: req.cookies.admin
 })
 });
-
-// A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
-app.use(adminMiddleware)
-
-// ROTAS ADMINISTRATIVAS
-app.use('/admin', adminRouter)
-
 
 
 // error handler
