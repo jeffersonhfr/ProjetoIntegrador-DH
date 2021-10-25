@@ -13,7 +13,7 @@
         <div class="dados-do-usuario__info nome">
             <h2 class="info__titulo">Nome Completo</h2>
             <div class="info__usuario"><p><%= usuario.nome %></p>
-                <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
+                <% if(usuarioAdmin) { %>
                 <div class="usuario__tag-admin">Admin</div>
                 <%}%></div>
         </div>

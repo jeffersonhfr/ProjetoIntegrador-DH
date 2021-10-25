@@ -1,18 +1,26 @@
 const usuarios = require('../data/usuariosPlaceholder.json')
-  
+
 const controller = {
-  index: (req, res, next) => {
-    res.render('usuario', {
-        title: '|' + req.cookies.usuario.nome,
-        usuario: usuarios.find(u => {
-            if (u.id === req.cookies.usuario.id) {
-               return u
-           }
-        }),
-        usuarioLogado: req.cookies.usuario,
-        usuarioAdmin: req.cookies.admin
-    });
+    index: (req, res, next) => {
+        let usuarioLogado = req.cookies.usuario;
+        let usuarioAdmin = req.cookies.admin;
+        if (usuarioAdmin || usuarioLogado) {
+            res.render('usuario', {
+                title: '|' + usuarioLogado.nome,
+                usuario: usuarios.find(u => {
+                    if (u.id === usuarioLogado.id) {
+                        return u
+                    }
+                }),
+                usuarioLogado: usuarioLogado,
+                usuarioAdmin: usuarioAdmin
+
+            });
+        } else {
+            res.redirect('../login')
+        }   
     }
+
 
 };
 
