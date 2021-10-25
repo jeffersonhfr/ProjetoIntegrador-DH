@@ -14,7 +14,7 @@ const loginRouter = require('./routes/login');
 const cadastroRouter = require('./routes/cadastro');
 const historicoRouter = require('./routes/historico');
 const adminRouter = require('./routes/admin');
-
+const usuarioRouter = require('./routes/usuario');
 
 var app = express();
 
@@ -40,6 +40,7 @@ app.use('/sobre', sobreRouter);
 app.use('/ajuda', ajudaRouter);
 app.use('/login', loginRouter);
 app.use('/cadastro', cadastroRouter);
+app.use('/perfil',usuarioRouter)
 app.use('/historico', historicoRouter);
 
 // A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
