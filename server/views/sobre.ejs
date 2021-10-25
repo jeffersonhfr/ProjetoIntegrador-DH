@@ -4,20 +4,21 @@
     <section class="sobre">
       <div class="container">
         <div class="sobre-container">
-          <h1>
-            <%= tituloPrincipal %>
-          </h1>
+          <div class="sobre-container__nav">
+            <h1>
+              <%= tituloPrincipal %>
+            </h1>
 
-          <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
-            <a href="/admin/sobre">EDITAR</a>
-            <% }%>
-
-              <h2>
-                <%= tituloHistoria %>
-              </h2>
-              <p>
-                <%= textoHistoria %>
-              </p>
+            <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
+              <a href="/admin/sobre" class="bt-edit">EDITAR</a>
+              <% }%>
+          </div>
+          <h2>
+            <%= tituloHistoria %>
+          </h2>
+          <p>
+            <%= textoHistoria %>
+          </p>
         </div>
 
         <div class="formulario">

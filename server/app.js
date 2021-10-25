@@ -12,6 +12,7 @@ const sobreRouter = require('./routes/sobre');
 const ajudaRouter = require('./routes/ajuda');
 const loginRouter = require('./routes/login');
 const cadastroRouter = require('./routes/cadastro');
+const historicoRouter = require('./routes/historico');
 const adminRouter = require('./routes/admin');
 const usuarioRouter = require('./routes/usuario');
 
@@ -40,6 +41,7 @@ app.use('/ajuda', ajudaRouter);
 app.use('/login', loginRouter);
 app.use('/cadastro', cadastroRouter);
 app.use('/perfil',usuarioRouter)
+app.use('/historico', historicoRouter);
 
 // A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
 app.use(adminMiddleware)
@@ -47,10 +49,16 @@ app.use(adminMiddleware)
 // ROTAS ADMINISTRATIVAS
 app.use('/admin', adminRouter)
 
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+ res.status(404).render('404', {
+  title: '| Página não encontrada',
+  usuarioLogado: req.cookies.usuario,
+  usuarioAdmin: req.cookies.admin
+})
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {

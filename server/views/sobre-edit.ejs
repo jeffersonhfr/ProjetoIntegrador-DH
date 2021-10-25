@@ -4,13 +4,13 @@
     <section class="ajuda ajuda-edit">
       <div class="container">
         <div class="ajuda-container">
-          <form action="" method="post">
-            <input type="text" name="tituloPrincipal" value="<%= tituloPrincipal %>">
+          <form action="" method="post" class="form-edit">
+            <input type="text" name="tituloPrincipal" value="<%= tituloPrincipal %>" class="form-titulo">
+            <hr class="form-hr">
+            <input type="text" name="tituloHistoria" value="<%= tituloHistoria %>" class="form-campos">
+            <textarea name="textoHistoria" class="form-campos form-textarea"><%= textoHistoria %></textarea>
 
-            <input type="text" name="tituloHistoria" value="<%= tituloHistoria %>">
-            <textarea name="textoHistoria"><%= textoHistoria %></textarea>
-
-            <button type="submit">Confirmar alterações</button>
+            <button type="submit" class="form-btn">Confirmar alterações</button>
           </form>
 
         </div>

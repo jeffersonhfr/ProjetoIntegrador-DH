@@ -1,6 +1,7 @@
 const usuariosPlaceholder = require('../data/usuariosPlaceholder.json');
 const ajudaPlaceholder = require('../data/ajuda.json');
 const fs = require('fs');
+const util = require('util');
 const path = require('path');
 
 let {tituloPrincipal, tituloDuvidas, textoDuvidas, tituloCancelamentos, textoCancelamentos, tituloPolítica, textoPolítica} = ajudaPlaceholder;
@@ -47,12 +48,16 @@ const controller = {
       });
     }
   },
-  update: (req, res, next) => {
-    let ajuda = req.body;
-    fs.writeFileSync(path.join(__dirname, '..', 'data', 'ajuda.json'), JSON.stringify(ajuda))
+  update: async (req, res, next) => {
+    let ajuda = await req.body;
+
+    fs.writeFile(path.join(__dirname, '..', 'data', 'ajuda.json'), JSON.stringify(ajuda), (error) => {
+      if (error) throw error;
+      console.log('The file2.js has been saved!');
+      res.redirect('../ajuda')
+    }
+    )
     
-    res.redirect('../ajuda')
-  
   }
 };
 

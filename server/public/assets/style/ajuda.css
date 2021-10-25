@@ -8,6 +8,13 @@
 .ajuda-container{
   display: flex;
   flex-flow: column;
+  width: 100%;
+}
+
+.ajuda-container__nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .ajuda p {
