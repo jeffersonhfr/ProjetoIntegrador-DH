@@ -4,7 +4,6 @@ var historicoContoller = require('../controllers/historico')
 
 /* GET home page. */
 router.get('/', historicoContoller.index);
-// router.get('/', historicoContoller.cadastro); // Exibe rota cadastro
-// router.post('/', historicoContoller.add) // Execução de cadastro
+router.get('/:id', historicoContoller.details);
 
 module.exports = router;
