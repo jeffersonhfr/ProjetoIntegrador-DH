@@ -5,7 +5,7 @@
       <div class="container">
         <div class="sobre-container">
           <div class="sobre-container__nav">
-            <h1>
+            <h1 id="sobre">
               <%= tituloPrincipal %>
             </h1>
 
@@ -13,6 +13,7 @@
               <a href="/admin/sobre" class="bt-edit">EDITAR</a>
               <% }%>
           </div>
+          <span id="historia"></span>
           <h2>
             <%= tituloHistoria %>
           </h2>
@@ -21,7 +22,7 @@
           </p>
         </div>
 
-        <div class="formulario">
+        <div class="formulario" id="fale">
           <h2>Fale Conosco:</h2>
           <form name="form">
 
