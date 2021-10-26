@@ -12,60 +12,93 @@ article.Pacote-Descricao-Sobre {
 .Pacote-TitleContainer{
     font-size: 26px;
     margin-bottom: 5px;
-
 }
+
 .Pacote-TitleContainer__Subtitle{
     color: #919191;
-    
 }
+
 .Pacote-TitleContainer__Title{
     font-weight: bold;
-    
 }
+
 .Pacote-ImgContainer{
     display: flex;
     flex-direction: column;
     margin: 10px 0;
 }
+
 .Pacote-ImgContainer__Img-first{
     width: 80vw;
     flex: 0 1 auto;
     border-radius: 10px;
 }
+
 .Pacote-ImgContainer__Img-list{
     display: flex;
     flex: 1 0 auto;
     overflow-x: hidden;
 }
+
 .Pacote-ImgContainer__Img-list img{
     width: 15vw;
     height: 15vw;
     border-radius: 10px;
     margin: 5px 5px 0px 0px;
 }
+
 .Pacote-Propriedades__Item-Img{
     width: 16px;
     margin-right: 5px;
-    
 }
+
 .Pacote-Propriedades__Item{
     display: flex;
     align-items: center;
     margin: 10px 0;
 }
+
 .Pacote-Propriedades__Item p{
     font-size: 16px;
     color:#919191;
 }
+
+.Pacote-Propriedades__Item p span{
+    font-weight: bold;
+    color:#1e1e1e;
+}
+
+.Pacote__Button-Cancelar {
+    grid-column: 2;
+    grid-row: 3;
+    width: 15vw;
+    max-width: 220px;
+    margin: 5px 10px;
+    background-color: #cc0000;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.Pacote__Button-Cancelar:hover {
+    background-color: #9c0101;
+}
+
+.Pacote-Propriedades__divisao{
+    margin-top: 30px;
+}
+
 .Pacote-Propriedades__Item.Titulo{
     position: absolute;
     visibility: hidden;
     font-weight: bold;
 }
+
 .Pacote-Propriedades__Item__Valor{
     display: flex;
     flex-direction: column;
-
     font-size: 16px;
     color:#919191;
 }
@@ -80,11 +113,13 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
     color:#919191;
     text-decoration: line-through;
 }
+
 .Pacote-Propriedades__Item__Valor-Promocional{
     font-weight: bold;
     font-size: 33px;
     color:#3e60bf;
 }
+
 .Pacote__Button-Comprar{
     color: white;
     background-color: #3e60bf;
@@ -100,40 +135,40 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
     flex-direction: row;
     margin: 15px 0px;
 }
+
 .Pacote-Propriedades__Item.Destaques div{
     display: flex;
     flex-direction: row;
     width: 100px;
     margin-right: 10px;
-    
     word-wrap: break-word;
 }
+
 .Pacote-Propriedades__Item.Destaques img{
     margin-right: 10px;
 }
+
 .Pacote__Button-Comprar:hover{
     transition: 0.5s;
     background-color: #1b1ed8;
     cursor:pointer;
-    
 }
+
 .Pacote-Descricao{
     margin-top: 35px;
 }
+
 .Pacote-Decricao__Titulo{
     font-weight: bold;
     margin: 10px 0;
 }
+
 .Pacote-Descricao__Paragrafo{
     color:black;
-}
-@media(min-width: 720px) and (max-width:991px ){
-
 }
 
 @media(min-width: 992px ){
     aside.info_container {
-        position: sticky;
         top: 20px;
     }
 
@@ -147,11 +182,12 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
         display: grid;
         grid-gap: 0 15px;
         grid-template-columns: min-content;
-
     }
+
     .Pacote-TitleContainer{
         grid-column: 1/3;
     }
+
     .Pacote-TitleContainer__Title{
         position: absolute;
         visibility: hidden;
@@ -166,7 +202,6 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
     .Pacote-ImgContainer{
         grid-column: 1;
         grid-row: 2/4;
-        
         width: 43.75vw; 
         max-width: 480px;
         margin-right: 20px;
@@ -199,7 +234,6 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
     .Pacote__Button-Comprar{
         grid-column: 2;
         grid-row: 3;
-
         width: 15vw;
         height: 6.25vw;
         max-width: 220px;
@@ -217,5 +251,4 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
         grid-row: 5;
         max-width: 480px;
     }
-
 }
