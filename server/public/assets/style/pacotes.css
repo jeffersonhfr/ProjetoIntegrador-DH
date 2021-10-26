@@ -83,6 +83,7 @@ img.travel-card__imagem {
 
 .btao-pacote:hover {
     background-color: #2a4182;
+    transition: 150ms;
 }
 .btao-Container__btao-deletar{
     background-color: #CC0000;

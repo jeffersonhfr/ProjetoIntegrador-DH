@@ -5,11 +5,11 @@
     
     display: grid;
     grid-template-columns: 0fr 0fr 1fr;
-    grid-template-rows: 0fr 0fr 0fr 0fr 0fr;
+    grid-template-rows: 0fr 0fr 0fr 0fr 0fr 0fr 0fr;
     column-gap: 54px;
     row-gap: 34px;
     width: 630px;
-    height: 432px;
+    height: max-content;
 }
 .perfil__container-top{
     display: flex;
@@ -121,7 +121,21 @@
     grid-column: 3/4;
     grid-row: 5/6;
 }
-
+.dados-do-usuario__btn-submit{
+    grid-column: 1/2;
+    grid-row: 7;
+    background-color: #3E60BF;
+    color: white;
+    width: 100%;
+    height: 37px;
+    border-radius: 10px;
+    border:0px;
+}
+.dados-do-usuario__btn-submit:hover{
+    background-color: #2a4182;
+    cursor: pointer;
+    transition: 150ms;
+}
 .info__usuario{
     display: flex;
 }
@@ -138,4 +152,22 @@
     line-height: 25px;
     color: #FFFFFF;
     margin-left: 24px;
+}
+.dados-do-usuario__info input{
+    background: #FFFFFF;
+    border: 1px solid #DEDEDE;
+    box-sizing: border-box;
+    
+    color: #4D4D4D;
+    width: 200px;
+    font-style: normal;
+    font-weight: 250;
+    font-size: 24px;
+    line-height: 20px;
+    
+}
+.dados-do-usuario__info.nome input,
+.dados-do-usuario__info.email input,
+.dados-do-usuario__info.endereco input{
+    width: 100%;
 }

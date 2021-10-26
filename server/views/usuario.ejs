@@ -1,4 +1,71 @@
 <%- include('./partials/head') %>
 <%- include('./partials/header') %>
 
+<main class= "perfil">
+    <div class="perfil__container-top">
+    <h1 class= "perfil__title">Meu Perfil</h1> <button class="perfil__btn-editar">Editar</button>
+    </div>
+    <div class="perfil__dados-do-usuario">
+    
+        <div class="dados-do-usuario__img-container">
+            <img class="img-container__avatar"src="<%= usuario.avatar %>">
+        </div>
+        <div class="dados-do-usuario__info nome">
+            <h2 class="info__titulo">Nome Completo</h2>
+            <div class="info__usuario"><p><%= usuario.nome %></p>
+                <% if(usuarioAdmin) { %>
+                <div class="usuario__tag-admin">Admin</div>
+                <%}%></div>
+        </div>
+        <div class="dados-do-usuario__info email">
+            <h2 class="info__titulo">E-mail</h2>
+            <p><%= usuario.email %></p>
+
+        </div>
+        <div class="dados-do-usuario__info nascimento">
+            <h2 class="info__titulo">Data de Nascimento</h2>
+            <p><%= usuario.nascimento %></p>
+        </div>
+        <div class="dados-do-usuario__info telefone">
+            <h2 class="info__titulo">Telefone</h2>
+            <p><%= usuario.telefone[0] %></p>
+        </div>
+        <div class="dados-do-usuario__info cpf">
+            <h2 class="info__titulo">CPF</h2>
+            <p><%= usuario.cpf %></p>
+
+        </div>
+        <div class="dados-do-usuario__info cep">
+            <h2 class="info__titulo">CEP</h2>
+            <p><%= usuario.cep %></p>
+
+        </div>
+        <div class="dados-do-usuario__info endereco">
+            <h2 class="info__titulo">Endereço</h2>
+            <p><%= usuario.endereco[0] %></p>
+
+        </div>
+        <div class="dados-do-usuario__info">
+            <h2 class="info__titulo" >Complemento</h2>
+            <p><%= usuario.complemento %></p>
+        </div>
+        <div class="dados-do-usuario__info">
+            <h2 class="info__titulo" >Cidade</h2>
+            <p><%= usuario.cidade %></p>
+        </div>
+        <div class="dados-do-usuario__info">
+            <h2 class="info__titulo">Estado</h2>
+            <p><%= usuario.uf %></p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</main>
+
 <%- include('./partials/footer') %>
