@@ -6,9 +6,9 @@
 
 <main class= "perfil">
     <div class="perfil__container-top">
-    <h1 class= "perfil__title">Meu Perfil</h1> <button class="perfil__btn-editar">Editar</button>
+    <h1 class= "perfil__title">Meu Perfil</h1>
     </div>
-    <form class="perfil__dados-do-usuario">
+    <form class="perfil__dados-do-usuario" action="/Perfil/edit?_method=PUT" method="POST">
     
         <div class="dados-do-usuario__img-container">
             <img class="img-container__avatar"src="<%= usuario.avatar %>">
@@ -25,7 +25,7 @@
         </div>
         <div class="dados-do-usuario__info nascimento">
             <label for="nascimento"><h2 class="info__titulo">Data de Nascimento</h2></label>
-            <input id="nascimento" name="nascimento" type="date"/>
+            <input id="nascimento" name="nascimento" type="date" value="<%= usuario.nascimento%>"/>
         </div>
         <div class="dados-do-usuario__info telefone">
             <label for="telefone"><h2 class="info__titulo">Telefone</h2></label>
