@@ -12,6 +12,7 @@
     
         <div class="dados-do-usuario__img-container">
             <img class="img-container__avatar"src="<%= usuario.avatar %>">
+            <button class="img-container__btn-enviar-img">Alterar Imagem</button>
         </div>
         <div class="dados-do-usuario__info nome">
             <label for="nome"><h2 class="info__titulo">Nome Completo</h2></label>
@@ -32,12 +33,12 @@
         </div>
         <div class="dados-do-usuario__info cpf">
             <label for="cpf"><h2 class="info__titulo">CPF</h2></label>
-            <input id="cpf" name="cpf" type="number" value="<%= usuario.cpf%>"/>
+            <input id="cpf" name="cpf" type="text" value="<%= usuario.cpf%>"/>
 
         </div>
         <div class="dados-do-usuario__info cep">
             <label for="cep"><h2 class="info__titulo">CEP</h2></label>
-            <input id="cep" name="cep" type="number" value="<%= usuario.cep%>"/>
+            <input id="cep" name="cep" type="text" value="<%= usuario.cep%>"/>
 
         </div>
         <div class="dados-do-usuario__info endereco">
