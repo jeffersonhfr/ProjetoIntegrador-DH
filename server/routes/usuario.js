@@ -2,8 +2,10 @@ const express = require('express');
 const router = express.Router()
 
 const usuarioController = require('../controllers/usuario');
-const  adminMiddleware = require('../middlewares/admin');
 
-router.get('/',adminMiddleware, usuarioController.index);
+router.get('/', usuarioController.index);
+
+router.get('/edit', usuarioController.form_edit);
+router.put('/edit', usuarioController.edit);
 
 module.exports = router;

@@ -3,7 +3,7 @@
 
 <main class= "perfil">
     <div class="perfil__container-top">
-    <h1 class= "perfil__title">Meu Perfil</h1> <button class="perfil__btn-editar">Editar</button>
+    <h1 class= "perfil__title">Meu Perfil</h1> <div class="perfil__btn-editar"><a href='/perfil/edit'>Editar</a></div>
     </div>
     <div class="perfil__dados-do-usuario">
     
@@ -13,7 +13,7 @@
         <div class="dados-do-usuario__info nome">
             <h2 class="info__titulo">Nome Completo</h2>
             <div class="info__usuario"><p><%= usuario.nome %></p>
-                <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
+                <% if(usuarioAdmin) { %>
                 <div class="usuario__tag-admin">Admin</div>
                 <%}%></div>
         </div>
@@ -28,7 +28,7 @@
         </div>
         <div class="dados-do-usuario__info telefone">
             <h2 class="info__titulo">Telefone</h2>
-            <p><%= usuario.telefone[0] %></p>
+            <p><%= usuario.telefone %></p>
         </div>
         <div class="dados-do-usuario__info cpf">
             <h2 class="info__titulo">CPF</h2>
@@ -42,7 +42,7 @@
         </div>
         <div class="dados-do-usuario__info endereco">
             <h2 class="info__titulo">Endereço</h2>
-            <p><%= usuario.endereco[0] %></p>
+            <p><%= usuario.endereco %></p>
 
         </div>
         <div class="dados-do-usuario__info">
