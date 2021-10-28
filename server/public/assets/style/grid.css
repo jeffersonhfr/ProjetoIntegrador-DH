@@ -30,6 +30,10 @@
   display: flex;
 }
 
+button{
+  cursor: pointer;
+}
+
 @media (min-width: 576px) {
   .container{
     display: flex;

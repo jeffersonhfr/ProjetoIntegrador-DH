@@ -6,6 +6,6 @@ const sobreController = require('../controllers/sobre');
 const pacotesController = require('../controllers/pacotes');
 // const  pacotesController = require('../controllers/pacotes');
 
-router.get('/pacotes', adminMiddleware, pacotesController.admin);
+// router.get('/pacotes', adminMiddleware, pacotesController.admin);
 
 module.exports = router;

@@ -15,16 +15,9 @@ const controller = {
       usuarioAdmin: req.cookies.admin,
     });
   },
-  show: (req, res, next) => {
-    res.render('pacote', {
-      title: '| Pacote',
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-    });
-  },
-  admin: (req, res, next) => {
-    res.render('admin', {
-      title: '| admin',
+  add: (req, res, next) => {
+    res.render('adicionar-pacote', {
+      title: '| Adicionar Pacote',
       pacotes: pacotes,
       valor: (valor) => {
         return valor.toLocaleString('pt-BR', {
@@ -35,6 +28,23 @@ const controller = {
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
     });
+  },
+  show: (req, res, next) => {
+    res.render('pacote', {
+      title: '| Pacote',
+      usuarioLogado: req.cookies.usuario,
+      usuarioAdmin: req.cookies.admin,
+    });
+  },
+  edit: (req, res, next) => {
+    res.render('pacote-edit', {
+      title: '| Pacote',
+      usuarioLogado: req.cookies.usuario,
+      usuarioAdmin: req.cookies.admin,
+    });
+  },
+  delete: (req, res, next) => {
+    res.redirect('../../pacotes');
   },
 };
 

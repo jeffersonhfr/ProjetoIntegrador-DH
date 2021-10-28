@@ -116,19 +116,32 @@ img.travel-card__imagem {
     background-color: rgb(0,177, 0);
     cursor: pointer;
 }
-.travel-cards__btao{
 
-    height: max-content;
-    min-height: 34px;
-    width: 156px;
-    left: 872px;
-    top: 188px;
+.travel-cards__btao{
     color: #3E60BF;
     border: 1px solid #3E60BF;
     border-radius: 10px;
+    padding: 10px;
+    background-color: #f6f6f6;
+}
+
+.travel-cards__btao:hover{
+    color: #fff;
+    background-color: #3E60BF;
+}
+
+.btao-form{
+    width: 50%;
+    height: initial;
 }
 
 @media (min-width:992px){
+
+    .btao-form{
+        height: 50%;
+        width: initial;
+    }
+
     .travel-card__imagem-box {
         width: 300px;
         overflow: hidden;
