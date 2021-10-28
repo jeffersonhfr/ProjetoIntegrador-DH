@@ -43,13 +43,15 @@
           <h2>Separamos os melhores pacotes por temas, escolha o que faz mais o seu estilo</h2>
         </article>
 
-        <div class="Main Button PreviousButton" display="none"></div>
         <div class="container container-cards">
-          <ul class="Main ViagensTematicas"></ul>
+          <ul class=" Main ViagensTematicas itemsTema">
+            <%- include('./partials/temas-card') %>
+          </ul>
         </div>
-        <div class="Main Button NextButton"></div>
+
       </nav>
     </div>
+
 
     <div class="container container-cards">
       <nav class="Categoria categoria-promocional">
@@ -57,8 +59,8 @@
           <h1>Pacotes Promocionais</h2>
             <h2>Confira nossos pacotes Promocionais e embarque na sua próxima viagem :)</h2>
         </article>
-        <div class="Main Button PreviousButton" display="none"></div>
-        <ul class="Main PacotesPromocionais ExibeIcone">
+        <ul class="Main PacotesPromocionais ExibeIcone itemsPromo">
+          <%- include('./partials/pacotes-card') %>
         </ul>
       </nav>
     </div>
@@ -99,5 +101,5 @@
     </section>
   </main>
 
-  <script src="src/index.js"></script>
+  <script src="src/carrossel.js"></script>
   <%- include('./partials/footer') %>
