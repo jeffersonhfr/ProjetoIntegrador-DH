@@ -1,0 +1,42 @@
+.filtro__box{
+  margin-left: 15px;
+  width: 100px;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+}
+
+/* select.select__filtro {
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+} */
+
+
+
+@media (min-width:768px){
+  .filtro__box{
+    width: 120px;
+    flex-flow: row nowrap;
+  }
+
+  /* select.select__filtro {
+    margin-left: 10px;
+  } */
+}
+
+select {
+  background-color: #f6f6f6;
+  border-style: none;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border:0px dashed;
+  outline:0px;
+}
+
+select option{
+  background-color: #f6f6f6;
+  border-style: none;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border:0px dashed;
+  outline:0px;
+}

@@ -1,0 +1,16 @@
+<div class="filtro__box">
+  <select name="select" class="select__filtro">
+    <option selected>Ordernar por:</option>
+    <option value="?filtro=menorpreco">Menor Preço</option>
+    <option value="?filtro=maiorpreco">Maior Preço</option>
+    <option value="?filtro=az">A-Z</option>
+    <option value="?filtro=za">Z-A</option>
+  </select>
+</div>
+
+<script>
+  let selectEl = document.getElementsByClassName('select__filtro');
+  selectEl[0].addEventListener('change', function () {
+    location.href = this.value;
+  });
+</script>

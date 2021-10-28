@@ -3,10 +3,12 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const methodOverride = require('method-override');
 
 const adminMiddleware = require('./middlewares/admin');
 const logoutRouter = require('./routes/logout');
 const indexRouter = require('./routes/index');
+const pesquisaRouter = require('./routes/pesquisa');
 const pacotesRouter = require('./routes/pacotes');
 const sobreRouter = require('./routes/sobre');
 const ajudaRouter = require('./routes/ajuda');
@@ -14,7 +16,7 @@ const loginRouter = require('./routes/login');
 const cadastroRouter = require('./routes/cadastro');
 const historicoRouter = require('./routes/historico');
 const adminRouter = require('./routes/admin');
-
+const perfilRouter = require('./routes/usuario');
 var app = express();
 
 // view engine setup
@@ -25,6 +27,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/style', express.static(__dirname + '/public/assets/style'));
 app.use('/fonts', express.static(__dirname + '/public/assets/fonts'));
@@ -32,6 +35,7 @@ app.use('/img', express.static(__dirname + '/public/assets/img'));
 app.use('/src', express.static(__dirname + '/public/src'));
 
 app.use('/', indexRouter);
+app.use('/pesquisa', pesquisaRouter);
 app.use('/logout', logoutRouter);
 app.use('/pacotes', pacotesRouter);
 app.use('/sobre', sobreRouter);
@@ -39,7 +43,7 @@ app.use('/ajuda', ajudaRouter);
 app.use('/login', loginRouter);
 app.use('/cadastro', cadastroRouter);
 app.use('/historico', historicoRouter);
-
+app.use('/perfil', perfilRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   res.status(404).render('404', {
