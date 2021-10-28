@@ -48,7 +48,7 @@
 }
 
 .busca__campo #onde {
-  width: 255px;
+  width: 270px;
 }
 
 .busca__campo #quando {
@@ -96,12 +96,12 @@
 }
 
 @media (min-width: 720px) {
-  .container-busca__form__campos {
-    justify-content: space-around;
-  }
-
   .container-busca__form__campos__itens--separador {
     display: block;
+  }
+
+  .busca__campo #onde {
+    width: 500px;
   }
 }
 
@@ -132,16 +132,16 @@
   }
 
   .container-busca__form__campos__itens--primeiro {
-    margin-left: 15px;
+    margin-left: 45px;
   }
 
   .busca__campo #onde {
-    width: 260px;
+    width: 500px;
   }
 
   .busca__campo__submit {
     border-radius: 0 30px 30px 0;
     height: 80px;
-    width: 100px;
+    width: 200px;
   }
 }

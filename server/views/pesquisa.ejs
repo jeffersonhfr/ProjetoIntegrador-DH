@@ -1,0 +1,76 @@
+<%- include('./partials/head') %>
+  <%- include('./partials/header') %>
+
+    <div class="container container-pacotes">
+      <div class="title-bar">
+        <h1>Resultados da pesquisa: Egito</h2>
+          <%- include('./partials/filtro') %>
+      </div>
+      <div class="travel-cards">
+
+
+        <div class="travel-card travel-card__content">
+          <div class="travel-card__imagem-box">
+            <img src="assets/img/Egito.jpg" class="travel-card__imagem">
+          </div>
+          <div class="travel-card__info-box">
+
+            <div class="travel-card__infoDesc">
+              <h2 class="Propriedade Nome">
+                Egito Histórico
+              </h2>
+              <ul class="Propriedades">
+                <li class="Propriedade Hotel">
+                  <p><img src="/assets/img/calendar.png" />
+                    10 diárias
+                  </p>
+                </li>
+                <li class="Propriedade Hotel">
+                  <p><img src="/assets/img/check.png" /> Hotel</p>
+                </li>
+                <li class="Propriedade PassagemAerea">
+                  <p><img src="/assets/img/check.png" />Passagem Aérea</p>
+                </li>
+                <li class="Propriedade Bonus">
+                  <p><img src="/assets/img/check.png" />
+                    Translado
+                  </p>
+                </li>
+                </li>
+            </div>
+            <div>
+              <div class="travel-card__infoPrice">
+                <li class="Propriedade ValorInicial preco">
+                  <h3> A partir de <span>
+                      R$ 18.800,00
+                    </span></h3>
+                <li class="Propriedade ValorPromocional preco">
+                  <h1>
+                    R$ 14.000,00
+                  </h1>
+                </li>
+                <h3 class="emAte">em até 10x no cartão</h3>
+              </div>
+              <a href="/pacotes/<%pacotes.id%>"><button class="btao-pacote">Detalhes</button></a>
+            </div>
+            </ul>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container paginacao">
+      <a href="" class="nav-pag">
+        Anterior </a>
+      <a href="" class="nav-pag">1</a>
+      <a href="" class="nav-pag">2</a>
+      <a href="" class="nav-pag">3</a>
+      <a href="" class="nav-pag">4</a>
+      <a href="" class="nav-pag">5</a>
+      <a href="" class="nav-pag">Próxima</a>
+    </div>
+
+    <%- include('./partials/footer') %>

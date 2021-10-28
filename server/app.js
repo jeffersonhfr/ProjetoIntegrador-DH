@@ -8,6 +8,7 @@ const methodOverride = require('method-override');
 const adminMiddleware = require('./middlewares/admin');
 const logoutRouter = require('./routes/logout');
 const indexRouter = require('./routes/index');
+const pesquisaRouter = require('./routes/pesquisa');
 const pacotesRouter = require('./routes/pacotes');
 const sobreRouter = require('./routes/sobre');
 const ajudaRouter = require('./routes/ajuda');
@@ -34,6 +35,7 @@ app.use('/img', express.static(__dirname + '/public/assets/img'));
 app.use('/src', express.static(__dirname + '/public/src'));
 
 app.use('/', indexRouter);
+app.use('/pesquisa', pesquisaRouter);
 app.use('/logout', logoutRouter);
 app.use('/pacotes', pacotesRouter);
 app.use('/sobre', sobreRouter);
