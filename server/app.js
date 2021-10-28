@@ -14,7 +14,7 @@ const loginRouter = require('./routes/login');
 const cadastroRouter = require('./routes/cadastro');
 const historicoRouter = require('./routes/historico');
 const adminRouter = require('./routes/admin');
-
+const perfilRouter = require('./routes/usuario');
 var app = express();
 
 // view engine setup
@@ -39,7 +39,7 @@ app.use('/ajuda', ajudaRouter);
 app.use('/login', loginRouter);
 app.use('/cadastro', cadastroRouter);
 app.use('/historico', historicoRouter);
-
+app.use('/perfil', perfilRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   res.status(404).render('404', {
