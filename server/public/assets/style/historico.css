@@ -4,10 +4,10 @@
 
 .title-bar{
     margin: 40px 0 10px;
-    width: inherit;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .container-historico h1{

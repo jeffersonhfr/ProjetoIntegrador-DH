@@ -5,6 +5,7 @@
     font-family: "Epilogue" sans-serif;
     font-size: 26px;
     font-weight: 600;
+    line-height: 30px;
 }
 
 .container.paginacao {
@@ -17,7 +18,6 @@
 
 .title-bar{
     margin: 40px 0 10px;
-    width: inherit;
     display: flex;
     justify-content: space-between;
 }
