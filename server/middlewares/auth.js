@@ -1,4 +1,5 @@
 const usuariosPlaceholder = require('../data/usuariosPlaceholder.json')
+const bcrypt = require('bcrypt')
 
 const auth = async (req, res, next) => {
   // LIMPEZA DE COOKIES
@@ -11,7 +12,7 @@ const auth = async (req, res, next) => {
   // BUSCA POR USUÁRIO RELACIONADO AOS DADOS ENVIADOS
   const usuarioLogado = usuariosPlaceholder.filter(usuario => {
     if (usuario.email === email) {
-      if (usuario.senha === senha) {
+      if (bcrypt.compareSync (senha, usuario.senha)) {
         return usuario
       }
     }
