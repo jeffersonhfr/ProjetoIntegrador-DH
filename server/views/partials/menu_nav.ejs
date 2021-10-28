@@ -25,7 +25,7 @@
               <li class="login"><a href="/logout">Logout</a></li>
               <% } else if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
                 <li class="separador"></li>
-                <li><a href="/painel">Painel Administrativo</a></li>
+                <li><a href="/usuarios">Gestão de Usuários</a></li>
                 <li class="login"><a href="/logout">Logout</a></li>
                 <% } else { %>
                   <li class="login"><a href="/login">Login</a></li>
@@ -77,7 +77,7 @@
           <li><a href="/historico">Histórico de viagens </a></li>
           <li><a href="/compras">Carrinho de Compras</a></li>
           <li class="separador"></li>
-          <li><a href="/painel">Painel Administrativo</a></li>
+          <li><a href="/usuarios">Gestão de Usuários</a></li>
           <li class="login"><a href="/logout">Logout</a></li>
         </ul>
       </div>

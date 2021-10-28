@@ -15,7 +15,6 @@ const cadastroRouter = require('./routes/cadastro');
 const historicoRouter = require('./routes/historico');
 const adminRouter = require('./routes/admin');
 
-
 var app = express();
 
 // view engine setup
@@ -27,11 +26,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/style',express.static(__dirname + '/public/assets/style'));
+app.use('/style', express.static(__dirname + '/public/assets/style'));
 app.use('/fonts', express.static(__dirname + '/public/assets/fonts'));
 app.use('/img', express.static(__dirname + '/public/assets/img'));
 app.use('/src', express.static(__dirname + '/public/src'));
-
 
 app.use('/', indexRouter);
 app.use('/logout', logoutRouter);
@@ -42,26 +40,23 @@ app.use('/login', loginRouter);
 app.use('/cadastro', cadastroRouter);
 app.use('/historico', historicoRouter);
 
-
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
- res.status(404).render('404', {
-  title: '| Página não encontrada',
-  usuarioLogado: req.cookies.usuario,
-  usuarioAdmin: req.cookies.admin
-})
+app.use(function (req, res, next) {
+  res.status(404).render('404', {
+    title: '| Página não encontrada',
+    usuarioLogado: req.cookies.usuario,
+    usuarioAdmin: req.cookies.admin,
+  });
 });
 
 // A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
-app.use(adminMiddleware)
+app.use(adminMiddleware);
 
 // ROTAS ADMINISTRATIVAS
-app.use('/admin', adminRouter)
-
-
+app.use('/admin', adminRouter);
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
