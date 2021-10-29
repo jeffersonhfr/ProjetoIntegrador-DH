@@ -2,7 +2,7 @@
     {
       "id": 1,
       "nome": "Egito Histórico",
-      "src": "/assets/img/Egito.jpg",
+      "imagens": ["/assets/img/Egito.jpg"],
       "diarias": 10,
       "hotel": true,
       "passagemAerea": true,
@@ -13,7 +13,7 @@
       {
         "id": 2,
         "nome": "Roma",
-        "src": "/assets/img/Egito.jpg",
+        "imagens": "/assets/img/Egito.jpg",
         "diarias": 10,
         "hotel": true,
         "passagemAerea": true,
@@ -24,7 +24,7 @@
         {
           "id": 3,
           "nome": "Egito Histórico",
-          "src": "/assets/img/Egito.jpg",
+          "imagens": "/assets/img/Egito.jpg",
           "diarias": 10,
           "hotel": true,
           "passagemAerea": true,
@@ -35,7 +35,7 @@
           {
             "id": 4,
             "nome": "Roma",
-            "src": "/assets/img/Egito.jpg",
+            "imagens": "/assets/img/Egito.jpg",
             "diarias": 10,
             "hotel": true,
             "passagemAerea": true,

@@ -28,7 +28,15 @@ const controller = {
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
     });
-  },
+  },add_form:(req, res, next) => {
+    res.render('adicionar-pacote', {
+      title: '| Adicionar Pacote',
+      pacotes: pacotes,
+      usuarioLogado: req.cookies.usuario,
+      usuarioAdmin: req.cookies.admin,
+    });
+  }
+  ,
   show: (req, res, next) => {
     res.render('pacote', {
       title: '| Pacote',

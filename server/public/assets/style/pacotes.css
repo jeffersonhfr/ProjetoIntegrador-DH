@@ -124,6 +124,8 @@ img.travel-card__imagem {
     border-radius: 10px;
     padding: 10px;
     background-color: #f6f6f6;
+    width: max-content;
+;
 }
 
 .travel-cards__btao:hover{
@@ -189,5 +191,6 @@ img.travel-card__imagem {
         display: flex;
         flex-direction: column;
         align-items: baseline;
+        
     }
 }
