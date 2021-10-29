@@ -30,6 +30,8 @@ article.Pacote-Descricao-Sobre {
 
 .Pacote-ImgContainer__Img-first{
     width: 80vw;
+    height: 55vh;
+    max-height: 320px;
     flex: 0 1 auto;
     border-radius: 10px;
 }
