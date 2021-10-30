@@ -32,6 +32,7 @@ article.Pacote-Descricao-Sobre {
     width: 80vw;
     height: 55vh;
     max-height: 320px;
+    max-width: 480px;
     flex: 0 1 auto;
     border-radius: 10px;
 }
@@ -44,7 +45,7 @@ article.Pacote-Descricao-Sobre {
 
 .Pacote-ImgContainer__Img-list img{
     width: 15vw;
-    height: 15vw;
+    height: 8vh;
     border-radius: 10px;
     margin: 5px 5px 0px 0px;
 }
