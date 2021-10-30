@@ -2,7 +2,7 @@
     {
       "id": 1,
       "nome": "Egito Histórico",
-      "imagens": ["/assets/img/Egito.jpg"],
+      "imagens": ["/assets/img/Egito.jpg","/assets/img/Egito_2.jpg","/assets/img/Egito_3.jpg"],
       "diarias": 10,
       "hotel": true,
       "passagemAerea": true,
