@@ -1,5 +1,5 @@
 <%- include('./partials/head') %>
-  <%- include('./partials/header') %>
+   <%- include('./partials/header') %>
             <div>
                   <form class='Pacote'>
                         <article class='Pacote-TitleContainer'>
@@ -9,12 +9,16 @@
                         
                         <nav class='Pacote-ImgContainer' style='position: relative;'>
                               
-                              <label for='upload-img'><img src='/assets/img/Upload.png' class='Pacote-ImgContainer__Img-first upload'></label>
-                                
+                              <label for='upload-img' id="noImgInput"><img src='/assets/img/Upload.png' class='Pacote-ImgContainer__Img-first upload'></label>
+                              <img src='/assets/img/Upload.png' id="noInputImg" class='Pacote-ImgContainer__Img-first' style="display : none;" >
                                 <ul class='Pacote-ImgContainer__Img-list'>    
                                     
-                                    <input name='upload-img' id='upload-img' type='file' style='display: none;' onchange='uploadPreview(event)'/>
-
+                                    <input name='upload-img' id='upload-img' type='file' style='display: none;' onchange='uploadPreview(event)' accept ='.jpg' multiple/>
+                                    <li id='input' style='display: none;'>
+                                          <label for='upload-img'>
+                                                <img src='/assets/img/Upload.png' class='Pacote-ImgContainer__Img upload' >
+                                          </label>
+                                    </li>
                                 </ul>
                                 
                             </nav>
