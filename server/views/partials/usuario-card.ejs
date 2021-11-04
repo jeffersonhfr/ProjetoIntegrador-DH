@@ -1,0 +1,62 @@
+<% for (let i=0; i < usuario.length; i++) { %>
+
+  <div class="travel-card travel-card__content">
+    <div class="travel-card__imagem-box">
+      <img src="<%= usuario[i].src%>" class="travel-card__imagem">
+    </div>
+    <div class="travel-card__info-box">
+
+      <div class="travel-card__infoDesc">
+        <h2 class="Propriedade Nome">
+          <%= usuario[i].nome%>
+        </h2>
+        <ul class="Propriedades">
+          <li class="Propriedade Hotel">
+            <p><img src="/assets/img/calendar.png" />
+            </p>
+          </li>
+          <li class="Propriedade Hotel">
+            <p><img src="/assets/img/check.png" /> Hotel</p>
+          </li>
+          <li class="Propriedade PassagemAerea">
+            <p><img src="/assets/img/check.png" />Passagem Aérea</p>
+          </li>
+          <li class="Propriedade Bonus">
+            <p><img src="/assets/img/check.png" />
+            </p>
+          </li>
+          </li>
+      </div>
+      <div>
+        <div class="travel-card__infoPrice">
+          <li class="Propriedade ValorInicial preco">
+            <h3> A partir de <span>
+              </span></h3>
+          <li class="Propriedade ValorPromocional preco">
+            <h1>
+            </h1>
+          </li>
+          <h3 class="emAte">em até 10x no cartão</h3>
+        </div>
+
+      </div>
+      </ul>
+
+    </div>
+    <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
+      <div class="btao-Container">
+        <a href="usuario/1/editar" class="btao-form">
+          <button class="btao-Container__btao-editar">
+            <p>Editar</p>
+          </button>
+        </a>
+        <a href="usuario/1/delete" class="btao-form">
+          <button class="btao-Container__btao-deletar">
+            <p>Deletar</p>
+          </button>
+        </a>
+      </div>
+      <% } %>
+  </div>
+
+  <% } %>
