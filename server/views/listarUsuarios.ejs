@@ -1,33 +1,13 @@
 <%- include('./partials/head') %>
   <%- include('./partials/header') %>
-    <div class="container container-pacotes">
+
+    <section class="container container-pacotes">
+      <h1> Listagem de usuários </h1>
 
 
-      <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
-        <div class="title-bar">
-          <h1>Usuários</h2>
-            <a href="/listarUsuarios" class="travel-cards__btao">Adicionar Pacote</a>
-        </div>
-        <% } else {%>
-          <div class="title-bar">
-            <h1>Pacotes Promocionais</h2>
-              <%- include('./partials/filtro') %>
-          </div>
-          <% } %>
-            <div class="travel-cards">
-              <%- include('./partials/travel-card') %>
-            </div>
-    </div>
+      <div class="travel-cards">
+        <%- include('./partials/usuario-card') %>
+      </div>
 
-    <div class="container paginacao">
-      <a href="" class="nav-pag">
-        Anterior </a>
-      <a href="" class="nav-pag">1</a>
-      <a href="" class="nav-pag">2</a>
-      <a href="" class="nav-pag">3</a>
-      <a href="" class="nav-pag">4</a>
-      <a href="" class="nav-pag">5</a>
-      <a href="" class="nav-pag">Próxima</a>
-    </div>
-
+    </section>
     <%- include('./partials/footer') %>
