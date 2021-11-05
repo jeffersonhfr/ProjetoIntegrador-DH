@@ -2,17 +2,17 @@
 
   <div class="travel-card travel-card__content">
     <div class="travel-card__imagem-box">
-      <img src="/server/public/assets/img/user.png" class="travel-card__imagem">
+      <img src="/assets/img/user.png" class="travel-card__imagem">
     </div>
     <div class="travel-card__info-box">
       <div class="travel-card__infoDesc">
         <ul class="Propriedades">
-          <li>Nome</li>
-          <li>
+          <li class="usuario-card__propriedade"> Nome</li>
+          <li class="usuario-card__dado">
             <%= usuario[i].nome%>
           </li>
-          <li>Email </li>
-          <li>
+          <li class="usuario-card__propriedade">Email </li>
+          <li class="usuario-card__dado">
             <%= usuario[i].email%>
           </li>
         </ul>
