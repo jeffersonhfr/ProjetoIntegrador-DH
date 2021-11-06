@@ -152,6 +152,10 @@ select#ano {
     flex-flow: row wrap;
 }
 
+.pagamento__box__detalhes__paragrafo{
+    font-size: 15px;
+}
+
 
 @media (min-width:992px){
     .pagamento__box {
@@ -190,5 +194,10 @@ select#ano {
 
     .pagamento__confirmacao {
         margin-top: 15px;
+    }
+
+    .pagamento__box__sucesso {
+        display: flex;
+        align-items: center;
     }
 }

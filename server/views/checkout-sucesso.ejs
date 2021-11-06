@@ -1,10 +1,28 @@
 <%- include('./partials/head') %>
   <%- include('./partials/header') %>
 
-    <div class="container container-checkout">
-      <div class="title-bar">
-        <h1>SUCESSO</h2>
+    <main class="container container-checkout">
+      <div class="titulo-checkout">
+        <h1>Minha Compra</h2>
       </div>
-    </div>
+      <div class="pagamento__box">
+        <div class="pagamento__box__content">
+          <div class="pagamento__box__imagem">
+            <img src="../assets/img/Egito.jpg" alt="" width="100%">
+          </div>
+          <div class="pagamento__box__detalhes pagamento__box__sucesso">
+            <ul>
+              <li>
+                <h2 class="pagamento__box__detalhes__titulo">Compra realizada com sucesso!</h2>
+              </li>
+              <li>
+                <p class="pagamento__box__detalhes__paragrafo">Para maiores informações acesse o painel minhas viagens</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </main>
 
     <%- include('./partials/footer') %>
