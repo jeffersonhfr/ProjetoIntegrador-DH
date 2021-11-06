@@ -1,10 +1,123 @@
 <%- include('./partials/head') %>
   <%- include('./partials/header') %>
 
-    <div class="container container-checkout">
-      <div class="title-bar">
-        <h1>CHECKOUT</h2>
+    <main class="container container-checkout">
+      <div class="titulo-checkout">
+        <h1>Minha Compra</h2>
       </div>
-    </div>
+      <div class="pagamento__box">
+        <div class="pagamento__box__content">
+          <div class="pagamento__box__imagem">
+            <img src="assets/img/Egito.jpg" alt="" width="100%">
+          </div>
+          <div class="pagamento__box__detalhes">
+            <ul>
+              <li>
+                <h2 class="pagamento__box__detalhes__titulo">Pacote:</h2><span>Egito histórico</span>
+              </li>
+              <li>
+                <h2 class="pagamento__box__detalhes__titulo">Valor:</h2><span>R$ 15.800,00</span>
+              </li>
+              <li>
+                <h2 class="pagamento__box__detalhes__titulo pagamento__box__detalhes__titulo--pagamento">Forma de Pagamento:</h2>
+              </li>
+              <li class="metodo__pagamento">
+                <div class="metodo__pagamento__item">
+                  <img class="metodo__pagamento__icone" src="assets/img/boletoBancario.png" alt="Boleto Bancário">
+                  <input class="metodo__pagamento__input" type="radio" id="boletoBancario" name="toggle" value="boleto">
+                  <label for="boletoBancario">Boleto Bancário</label>
+                </div>
+                <div class="metodo__pagamento__item">
+                  <img class="metodo__pagamento__icone" src="assets/img/cartaoCredito.png" alt="Cartão de Crédito">
+                  <input class="metodo__pagamento__input" type="radio" id="cartaoCredito" name="toggle" value="boleto">
+                  <label for="cartaoCredito">Cartão de Crédito</label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <form action="/checkout/sucesso" method="POST">
+          <div class="metodo__pagamento__boleto"></div>
+
+          <hr class="metodo__pagamento__divisao">
+          <div class="metodo__pagamento__cartao">
+            <div class="metodo__pagamento__cartao-itens">
+              <label for="nomecartao" class="label-checkout">Nome do Cartão:</label><br>
+              <input type="text" id="nomecartao" name="nomecartao">
+            </div>
+
+            <div class="metodo__pagamento__cartao-itens">
+              <label for="numerocartao" class="label-checkout">Número do Cartão:</label><br>
+              <input type="number" id="numerocartao" name="numerocartao">
+            </div>
+
+            <div class="metodo__pagamento__cartao-itens">
+              <label for="parcelas" class="label-checkout">Opções de Parcelas:</label><br>
+              <select name="parcelas" id="parcelas">
+                <option>Em quantas parcelas deseja pagar?</option>
+                <option value="1">1x</option>
+                <option value="2">2x</option>
+                <option value="3">3x</option>
+                <option value="4">4x</option>
+                <option value="4">5x</option>
+                <option value="4">6x</option>
+                <option value="4">7x</option>
+                <option value="4">8x</option>
+                <option value="4">9x</option>
+                <option value="4">10x</option>
+              </select>
+            </div>
+
+            <div class="metodo__pagamento__cartao-itens">
+              <label for="mes" class="label-checkout">Validade (MM/AA):</label><br>
+
+              <div class="cartao__dados">
+                <div class="cartao__mes">
+                  <select name="mes" id="mes">
+                    <option>Mês</option>
+                    <option value="01">01 - Janeiro</option>
+                    <option value="02">02 -Fevereiro</option>
+                    <option value="03">03 - Março</option>
+                    <option value="04">04 - Abril</option>
+                    <option value="05">05 - Maio</option>
+                    <option value="06">06 - Junho</option>
+                    <option value="07">07 - Julho</option>
+                    <option value="08">08 - Agosto</option>
+                    <option value="09">09 - Setembo</option>
+                    <option value="10">10 - Outubro</option>
+                    <option value="11">11 - Novembro</option>
+                    <option value="12">12 - Dezembro</option>
+                  </select>
+                </div>
+
+                <div class="cartao__ano">
+                  <select name="ano" id="ano">
+                    <option>Ano</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                  </select>
+                </div>
+                <div class="cartao__cvv">
+                  <input type="text" id="cvv" name="cvv" placeholder="Código CVV">
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="pagamento__confirmacao">
+            <button class="btao-confirmar" type="submit">Confirmar Pedido</button>
+          </div>
+          <script src="src/checkout.js"></script>
+        </form>
+      </div>
+    </main>
 
     <%- include('./partials/footer') %>
