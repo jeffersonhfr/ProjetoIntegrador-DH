@@ -1,0 +1,194 @@
+.container-checkout{
+    margin-top: 50px;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+} 
+
+.titulo-checkout h1{
+    font-family: 'Epilogue', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.pagamento__box{
+    border: 1px solid #d6d6d6;
+    padding: 16px;
+    width: 90%;
+    margin-top: 30px;
+}
+
+.pagamento__box__imagem{
+    width: 100%;
+    margin-right: 0;
+}
+
+.pagamento__box__detalhes{
+    padding: 20px 10px;
+}
+
+.pagamento__box__detalhes span{
+    padding: 10px 5px;
+}
+
+h2.pagamento__box__detalhes__titulo {
+    display: inline-block;
+    font-family: 'Epilogue';
+    font-weight: 600;
+    color: #4d4d4d;
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.pagamento__box__detalhes__titulo--pagamento{
+    margin-top: 20px;
+}
+
+.metodo__pagamento {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.metodo__pagamento__item{
+    margin-right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.metodo__pagamento__icone{
+    order: -2;
+}
+
+.metodo__pagamento label {
+    font-family: 'Mukta', sans-serif;
+    font-size: 15px;
+    order: -1;
+    text-align: center;
+    line-height: 15px;
+    margin: 8px 0;
+}
+
+.metodo__pagamento__divisao{
+    margin: 40px 0;
+    display: none;
+}
+
+.metodo__pagamento__boleto{
+    margin: 10px 0;
+    display: none;   
+}
+
+.metodo__pagamento__cartao{
+    display: none;
+    margin: 10px 0;
+}
+
+.mostrar{
+    display: block;
+}
+
+.pagamento__confirmacao {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.btao-confirmar {
+    background-color: #3E60BF;
+    color: #FFFF;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 11px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+.metodo__pagamento__cartao-itens {
+    margin: 15px 0;
+}
+
+input#nomecartao, input#numerocartao, input#numerocartao, select#parcelas, input#cvv, select#mes, select#ano  {
+    width: 95%;
+    padding: 4px 0px;
+    height: 30px;
+    font-size: 12px;
+    margin: 10px;
+}
+
+.label-checkout {
+    margin: 10px;
+}
+
+input, select {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+select#parcelas {
+    border: 1px solid;
+    background-color: #fff;
+}
+
+select#mes {
+    border: 1px solid;
+    background-color: #fff;
+    width: 120px;
+}
+
+select#ano {
+    border: 1px solid;
+    background-color: #fff;
+    width: 120px;
+}
+
+.cartao__dados {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
+@media (min-width:992px){
+    .pagamento__box {
+        border: 1px solid #d6d6d6;
+        padding: 16px;
+        width: initial;
+        margin-top: 30px;
+    }
+
+    .metodo__pagamento__cartao.mostrar {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .pagamento__box__content {
+        display: flex;
+    }
+
+    .pagamento__box__imagem {
+        width: 50%;
+        margin-right: 40px;
+    }
+
+    input#nomecartao, input#numerocartao, input#numerocartao, select#parcelas, input#cvv, select#mes, select#ano {
+        width: 280px;
+        padding: 4px  0px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .btao-confirmar {
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .pagamento__confirmacao {
+        margin-top: 15px;
+    }
+}
