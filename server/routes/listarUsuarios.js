@@ -5,4 +5,13 @@ const adminMiddleware = require("../middlewares/admin");
 
 /* GET home page. */
 router.get("/", listarUsuariosContoller.index);
+
+router.get("/:id", listarUsuariosContoller.show);
+
+router.get(
+  "/listarUsuarios/:id/editar",
+  adminMiddleware,
+  listarUsuariosContoller.edit
+); // Dados do usuário para edição
+
 module.exports = router;
