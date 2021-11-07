@@ -156,6 +156,14 @@ select#ano {
     font-size: 15px;
 }
 
+.pagamento-link{
+    text-decoration: underline;
+}
+
+.pagamento-link:hover{
+    color: #3E60BF;
+    text-decoration: underline;
+}
 
 @media (min-width:992px){
     .pagamento__box {

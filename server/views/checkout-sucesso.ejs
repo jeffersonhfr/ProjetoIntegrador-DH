@@ -18,6 +18,12 @@
               <li>
                 <p class="pagamento__box__detalhes__paragrafo">Para maiores informações acesse o painel minhas viagens</p>
               </li>
+              <% if(locals.pagamento) { %>
+                <br>
+                <li>
+                  <a href="#"><span class="pagamento-link">Clique aqui</span></a>para imprimir o seu boleto
+                </li>
+                <% }%>
             </ul>
           </div>
         </div>
