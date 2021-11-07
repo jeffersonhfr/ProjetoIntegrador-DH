@@ -20,7 +20,7 @@
     </div>
     <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
       <div class="btao-Container">
-        <a href="pacotes/1/editar" class="btao-form">
+        <a href="/listarUsuarios/:<%= usuario[i].id %>/editar" class="btao-form">
           <button class="btao-Container__btao-editar">
             <p>Editar</p>
           </button>
@@ -28,6 +28,11 @@
         <a href="pacotes/1/delete" class="btao-form">
           <button class="btao-Container__btao-deletar">
             <p>Deletar</p>
+          </button>
+        </a>
+        <a href="/listarUsuarios/<%= usuario[i].id %>" class="btao-form">
+          <button class="btao-Container__btao-visualizar">
+            <p>Visualizar</p>
           </button>
         </a>
       </div>

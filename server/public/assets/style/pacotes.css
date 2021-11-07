@@ -103,8 +103,17 @@ img.travel-card__imagem {
   border: none;
   border-radius: 0px 0px 0px 10px;
 }
+.btao-Container__btao-visualizar {
+  background-color: #41aee0;
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 0px 0px 0px 10px;
+}
+
 .btao-Container__btao-deletar > p,
-.btao-Container__btao-editar > p {
+.btao-Container__btao-editar > p,
+.btao-Container__btao-visualizar > p {
   color: white;
   font-size: medium;
   cursor: pointer;
@@ -116,7 +125,10 @@ img.travel-card__imagem {
   background-color: rgb(0, 177, 0);
   cursor: pointer;
 }
-
+.btao-Container__btao-visualizar:hover {
+  background-color: rgb(0, 177, 0);
+  cursor: pointer;
+}
 .travel-cards__btao {
   color: #3e60bf;
   border: 1px solid #3e60bf;
@@ -192,11 +204,15 @@ img.travel-card__imagem {
   .btao-Container__btao-editar {
     border-radius: 0px 10px 0px 0px;
   }
+  .btao-Container__btao-visualizar {
+    border-radius: 0px 10px 0px 0px;
+  }
   .btao-Container__btao-deletar {
     border-radius: 0px 0px 10px 0px;
   }
   .btao-Container__btao-deletar > p,
-  .btao-Container__btao-editar > p {
+  .btao-Container__btao-editar > p,
+  .btao-Container__btao-visualizar > p {
     writing-mode: vertical-rl;
     text-orientation: mixed;
     color: white;
