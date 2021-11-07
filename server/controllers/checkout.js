@@ -7,11 +7,21 @@ const controller = {
     });
   },
   sucesso: (req, res, next) => {
-    res.render('checkout-sucesso', {
-      title: '| Pacote adquirido com sucesso',
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-    });
+    const { pagamento } = req.body;
+    if (pagamento === 'boleto') {
+      res.render('checkout-sucesso', {
+        title: '| Pacote adquirido com sucesso',
+        usuarioLogado: req.cookies.usuario,
+        usuarioAdmin: req.cookies.admin,
+        pagamento,
+      });
+    } else {
+      res.render('checkout-sucesso', {
+        title: '| Pacote adquirido com sucesso',
+        usuarioLogado: req.cookies.usuario,
+        usuarioAdmin: req.cookies.admin,
+      });
+    }
   },
 };
 

@@ -5,45 +5,44 @@
       <div class="titulo-checkout">
         <h1>Minha Compra</h2>
       </div>
-      <div class="pagamento__box">
-        <div class="pagamento__box__content">
-          <div class="pagamento__box__imagem">
-            <img src="assets/img/Egito.jpg" alt="" width="100%">
+      <form action="/checkout/sucesso" method="POST">
+        <div class="pagamento__box">
+          <div class="pagamento__box__content">
+            <div class="pagamento__box__imagem">
+              <img src="assets/img/Egito.jpg" alt="" width="100%">
+            </div>
+            <div class="pagamento__box__detalhes">
+              <ul>
+                <li>
+                  <h2 class="pagamento__box__detalhes__titulo">Pacote:</h2><span>Egito histórico</span>
+                </li>
+                <li>
+                  <h2 class="pagamento__box__detalhes__titulo">Valor:</h2><span>R$ 15.800,00</span>
+                </li>
+                <li>
+                  <h2 class="pagamento__box__detalhes__titulo pagamento__box__detalhes__titulo--pagamento">Forma de Pagamento:</h2>
+                </li>
+                <li class="metodo__pagamento">
+                  <div class="metodo__pagamento__item">
+                    <img class="metodo__pagamento__icone" src="assets/img/boletoBancario.png" alt="Boleto Bancário">
+                    <input class="metodo__pagamento__input" type="radio" id="boletoBancario" name="pagamento" value="boleto" required="required">
+                    <label for="boletoBancario">Boleto Bancário</label>
+                  </div>
+                  <div class="metodo__pagamento__item">
+                    <input class="metodo__pagamento__input" type="radio" id="cartaoCredito" name="pagamento" value="cartao">
+                    <label for="cartaoCredito">Cartão de Crédito</label>
+                    <img class="metodo__pagamento__icone" src="assets/img/cartaoCredito.png" alt="Cartão de Crédito">
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="pagamento__box__detalhes">
-            <ul>
-              <li>
-                <h2 class="pagamento__box__detalhes__titulo">Pacote:</h2><span>Egito histórico</span>
-              </li>
-              <li>
-                <h2 class="pagamento__box__detalhes__titulo">Valor:</h2><span>R$ 15.800,00</span>
-              </li>
-              <li>
-                <h2 class="pagamento__box__detalhes__titulo pagamento__box__detalhes__titulo--pagamento">Forma de Pagamento:</h2>
-              </li>
-              <li class="metodo__pagamento">
-                <div class="metodo__pagamento__item">
-                  <img class="metodo__pagamento__icone" src="assets/img/boletoBancario.png" alt="Boleto Bancário">
-                  <input class="metodo__pagamento__input" type="radio" id="boletoBancario" name="toggle" value="boleto">
-                  <label for="boletoBancario">Boleto Bancário</label>
-                </div>
-                <div class="metodo__pagamento__item">
-                  <img class="metodo__pagamento__icone" src="assets/img/cartaoCredito.png" alt="Cartão de Crédito">
-                  <input class="metodo__pagamento__input" type="radio" id="cartaoCredito" name="toggle" value="boleto">
-                  <label for="cartaoCredito">Cartão de Crédito</label>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
 
-        <form action="/checkout/sucesso" method="GET">
           <div class="metodo__pagamento__boleto"></div>
-
           <hr class="metodo__pagamento__divisao">
           <div class="metodo__pagamento__cartao">
             <div class="metodo__pagamento__cartao-itens">
-              <label for="nomecartao" class="label-checkout">Nome do Cartão:</label><br>
+              <label for="nomecartao" class="label-checkout">Nome no Cartão:</label><br>
               <input type="text" id="nomecartao" name="nomecartao">
             </div>
 
@@ -116,8 +115,9 @@
             <button class="btao-confirmar" type="submit">Confirmar Pedido</button>
           </div>
           <script src="src/checkout.js"></script>
-        </form>
-      </div>
+
+        </div>
+      </form>
     </main>
 
     <%- include('./partials/footer') %>

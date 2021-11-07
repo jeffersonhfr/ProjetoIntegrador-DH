@@ -1,14 +1,14 @@
-const usuarios = require("../data/usuariosPlaceholder.json");
-const fs = require("fs"),
-  path = require("path"),
-  bcrypt = require("bcrypt");
+const usuarios = require('../data/usuariosPlaceholder.json');
+const fs = require('fs'),
+  path = require('path'),
+  bcrypt = require('bcrypt');
 const controller = {
   index: (req, res, next) => {
     let usuarioLogado = req.cookies.usuario;
     let usuarioAdmin = req.cookies.admin;
     if (usuarioAdmin || usuarioLogado) {
-      res.render("usuario", {
-        title: "|" + usuarioLogado.nome,
+      res.render('usuario', {
+        title: '| ' + usuarioLogado.nome,
         usuario: usuarios.find((u) => {
           if (u.id === usuarioLogado.id) {
             return u;
@@ -18,7 +18,7 @@ const controller = {
         usuarioAdmin: usuarioAdmin,
       });
     } else {
-      res.redirect("../login");
+      res.redirect('../login');
     }
   },
   edit: (req, res, next) => {
@@ -43,14 +43,14 @@ const controller = {
     usuario.modificadoEm = new Date();
     usuarios.push(usuario);
 
-    res.redirect("../perfil");
+    res.redirect('../perfil');
   },
   form_edit: (req, res, next) => {
     let usuarioLogado = req.cookies.usuario;
     let usuarioAdmin = req.cookies.admin;
     if (usuarioAdmin || usuarioLogado) {
-      res.render("usuario-edit", {
-        title: "|" + usuarioLogado.nome,
+      res.render('usuario-edit', {
+        title: '|' + usuarioLogado.nome,
         usuario: usuarios.find((u) => {
           if (u.id === usuarioLogado.id) {
             return u;
@@ -60,7 +60,7 @@ const controller = {
         usuarioAdmin: usuarioAdmin,
       });
     } else {
-      res.redirect("../login");
+      res.redirect('../login');
     }
   },
 };

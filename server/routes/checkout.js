@@ -4,6 +4,7 @@ var checkoutContoller = require('../controllers/checkout');
 
 /* GET home page. */
 router.get('/', checkoutContoller.index);
+router.post('/sucesso', checkoutContoller.sucesso);
 router.get('/sucesso', checkoutContoller.sucesso);
 
 module.exports = router;

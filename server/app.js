@@ -45,7 +45,7 @@ app.use('/ajuda', ajudaRouter);
 app.use('/recuperarSenha', recuperarSenhaRouter);
 app.use('/login', loginRouter);
 app.use('/cadastro', cadastroRouter);
-app.use('/historico', historicoRouter);
+app.use('/minhas-viagens', historicoRouter);
 app.use('/checkout', checkoutRouter);
 app.use('/perfil', perfilRouter);
 // catch 404 and forward to error handler
