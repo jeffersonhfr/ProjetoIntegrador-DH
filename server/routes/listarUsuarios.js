@@ -8,10 +8,6 @@ router.get("/", listarUsuariosContoller.index);
 
 router.get("/:id", listarUsuariosContoller.show);
 
-router.get(
-  "/listarUsuarios/:id/editar",
-  adminMiddleware,
-  listarUsuariosContoller.edit
-); // Dados do usuário para edição
+router.get("/:id/editar", adminMiddleware, listarUsuariosContoller.edit); // Dados do usuário para edição
 
 module.exports = router;
