@@ -19,6 +19,7 @@ const cadastroRouter = require("./routes/cadastro");
 const historicoRouter = require("./routes/historico");
 const adminRouter = require("./routes/admin");
 const perfilRouter = require("./routes/usuario");
+const visualizarUsuarioRouter = require("./routes/visualizarUsuario");
 var app = express();
 
 // view engine setup
@@ -51,6 +52,7 @@ app.use("/perfil", perfilRouter);
 // A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
 app.use(adminMiddleware);
 app.use("/listarUsuarios", listarUsuariosRouter);
+app.use("/visualizarUsuario", visualizarUsuarioRouter);
 
 // ROTAS ADMINISTRATIVAS
 app.use("/admin", adminRouter);
