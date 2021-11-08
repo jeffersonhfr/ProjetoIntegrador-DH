@@ -59,6 +59,7 @@ app.use(function (req, res, next) {
 
 // A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
 app.use(adminMiddleware);
+app.use("/listarUsuarios", listarUsuariosRouter);
 
 // ROTAS ADMINISTRATIVAS
 app.use("/admin", adminRouter);
