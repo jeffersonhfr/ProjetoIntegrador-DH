@@ -21,11 +21,10 @@
               <li class="separador"></li>
               <li><a href="/perfil">Meu Perfil</a></li>
               <li><a href="/minhas-viagens">Minhas Viagens</a></li>
-              <li><a href="/compras">Carrinho de Compras</a></li>
               <li class="login"><a href="/logout">Logout</a></li>
               <% } else if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
                 <li class="separador"></li>
-                <li><a href="/usuarios">Gestão de Usuários</a></li>
+                <li><a href="/listarUsuarios">Gestão de Usuários</a></li>
                 <li class="login"><a href="/logout">Logout</a></li>
                 <% } else { %>
                   <li class="login"><a href="/login">Login</a></li>
@@ -64,7 +63,6 @@
       <ul>
         <li><a href="/perfil">Meu Perfil</a></li>
         <li><a href="/minhas-viagens">Minhas Viagens </a></li>
-        <li><a href="/compras">Carrinho de Compras</a></li>
         <li class="login"><a href="/logout">Logout</a></li>
       </ul>
     </div>
@@ -75,9 +73,8 @@
         <ul>
           <li><a href="/perfil">Meu Perfil</a></li>
           <li><a href="/minhas-viagens">Minhas Viagens</a></li>
-          <li><a href="/compras">Carrinho de Compras</a></li>
           <li class="separador"></li>
-          <li><a href="/usuarios">Gestão de Usuários</a></li>
+          <li><a href="/listarUsuarios">Gestão de Usuários</a></li>
           <li class="login"><a href="/logout">Logout</a></li>
         </ul>
       </div>

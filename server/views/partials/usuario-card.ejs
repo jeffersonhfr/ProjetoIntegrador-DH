@@ -1,0 +1,42 @@
+<% for (let i=0; i < usuario.length; i++) { %>
+
+  <div class="travel-card travel-card__content">
+    <div class="travel-card__imagem-box">
+      <img src="/assets/img/user.png" class="travel-card__imagem">
+    </div>
+    <div class="travel-card__info-box">
+      <div class="travel-card__infoDesc">
+        <ul class="Propriedades">
+          <li class="usuario-card__propriedade"> Nome</li>
+          <li class="usuario-card__dado">
+            <%= usuario[i].nome%>
+          </li>
+          <li class="usuario-card__propriedade">Email </li>
+          <li class="usuario-card__dado">
+            <%= usuario[i].email%>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
+      <div class="btao-Container">
+        <a href="/listarUsuarios/<%= usuario[i].id %>/editar" class="btao-form">
+          <button class="btao-Container__btao-editar">
+            <p>Editar</p>
+          </button>
+        </a>
+        <a href="pacotes/1/delete" class="btao-form">
+          <button class="btao-Container__btao-deletar">
+            <p>Deletar</p>
+          </button>
+        </a>
+        <a href="/visualizarUsuario/<%= usuario[i].id %>" class="btao-form">
+          <button class="btao-Container__btao-visualizar">
+            <p>Visualizar</p>
+          </button>
+        </a>
+      </div>
+      <% } %>
+  </div>
+
+  <% } %>

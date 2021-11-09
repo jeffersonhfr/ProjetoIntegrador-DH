@@ -18,10 +18,11 @@
 }
 
 .ajuda p {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: #4D4D4D;
   margin: 5px 0;
+  line-height: 27px;
 }
 
 .ajuda h1 {
