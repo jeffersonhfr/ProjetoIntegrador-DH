@@ -13,9 +13,12 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "method-override": "^3.0.0",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "mysql2": "^2.3.3-rc.0",
+    "sequelize": "^6.9.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "sequelize-cli": "^6.3.0"
   }
 }
