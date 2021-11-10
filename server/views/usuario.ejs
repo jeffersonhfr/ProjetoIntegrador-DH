@@ -17,7 +17,9 @@
                         <p>
                             <%= usuario.nome %>
                         </p>
-
+                        <% if(usuario.admin==true ) { %>
+                            <div class="usuario__tag-admin">Admin</div>
+                            <%}%>
                     </div>
                 </div>
                 <div class="dados-do-usuario__info email">
