@@ -61,7 +61,7 @@ img.travel-card__imagem {
   font-size: 22px;
   color: #4d4d4d;
   font-weight: 600;
-  margin-bottom: 16px !important;
+  margin-bottom: 20px !important;
 }
 
 .travel-card__info-box {
@@ -190,7 +190,7 @@ img.travel-card__imagem {
   }
 
   .travel-card__info-box {
-    padding: 10px;
+    padding: 10px 0 10px 25px;
     width: 475px;
     box-sizing: border-box;
     display: flex;
