@@ -179,7 +179,7 @@ input#emailNews {
   }
 
   .fique-por-dentro {
-    width: 615px;
+    width: 700px;
     height: 80px;
   }
 
@@ -203,6 +203,6 @@ input#emailNews {
   .fique-por-dentro__input__submit {
     border-radius: 0 30px 30px 0;
     height: 80px;
-    width: 120px;
+    width: 200px;
   }
 }
