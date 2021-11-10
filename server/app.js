@@ -53,9 +53,8 @@ app.use('/checkout', checkoutRouter);
 app.use('/perfil', perfilRouter);
 
 // A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
-app.use(adminMiddleware);
-app.use('/listarUsuarios', listarUsuariosRouter);
-app.use('/visualizarUsuario', visualizarUsuarioRouter);
+app.use('/listarUsuarios', adminMiddleware, listarUsuariosRouter);
+app.use('/visualizarUsuario', adminMiddleware, visualizarUsuarioRouter);
 
 // ROTAS ADMINISTRATIVAS
 app.use('/admin', adminRouter);
