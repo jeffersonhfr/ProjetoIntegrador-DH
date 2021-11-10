@@ -67,11 +67,15 @@ input:checked ~ label .menu-hamburguer__menu-mobile {
 }
 
 .menu-hamburguer__menu-mobile a {
+  padding-bottom: 5px;
+  border-bottom: 0px solid #fff;
+  transition: all 100ms ease-in-out;
   color: #000;
 }
 
 .menu-hamburguer__menu-mobile a:hover {
-  color: #cecece;
+  /* color: #cecece; */
+  border-bottom: 4px solid #000;
 }
 
 .menu-hamburguer__menu-mobile li {
@@ -92,6 +96,10 @@ li.login {
   padding: 10px 0;
   margin: 0;
   width: 100%;
+}
+
+li.login a:hover {
+  border-bottom: 4px solid #fff;
 }
 
 .cabecalho__navegacao {
@@ -224,16 +232,22 @@ li.logout {
     color: black;
   }
 
+  .cabecalho__menu-desk li{
+    padding: 0 14px;
+  }
+
   .cabecalho__menu-desk a{
     font-weight:normal;
     font-size: 16px;
-    padding-right: 10px;
     color: white;
     font-family: "Epilogue";
+    padding-bottom: 5px;
+    border-bottom: 0px solid #fff;
+    transition: all 100ms ease-in-out;
   }
 
-  .cabecalho__menu-desk ul li a:hover {
-    color: black;
+  .cabecalho__menu-desk a:hover {
+    border-bottom: 4px solid #fff;
   } 
 
   /* menu desk usuario*/
