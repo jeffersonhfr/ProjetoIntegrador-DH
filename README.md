@@ -18,9 +18,16 @@ cd server
 # Instalando as dependências
 npm install
 ```
+
 <br>
 
-## Levantando o servidor na pasta `server` executar o comando via terminal <br>
+## Levantando o servidor
+
+Na pasta `server` executar o comando via terminal <br>
+
 ```sh
 npm start
 ```
+
+Depois basta abrir o navegador no endereço:
+http://localhost:3000/
