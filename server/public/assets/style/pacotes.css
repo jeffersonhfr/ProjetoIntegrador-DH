@@ -2,7 +2,7 @@
   max-width: 775px;
 }
 .container-pacotes h1 {
-  font-family: "Epilogue" sans-serif;
+  font-family: "Epilogue", sans-serif;
   font-size: 26px;
   font-weight: 600;
   line-height: 30px;
@@ -86,50 +86,72 @@ img.travel-card__imagem {
   background-color: #2a4182;
   transition: 150ms;
 }
-.btao-Container__btao-deletar {
-  background-color: #cc0000;
-  height: 100%;
-  width: 100%;
-  border: none;
-  border-radius: 0px 0px 10px 0px;
-}
+
 .btao-Container {
   display: flex;
   flex-direction: row;
 }
-.btao-Container__btao-editar {
-  background-color: #28b025;
-  height: 100%;
+
+button.btao-Container__btao-editar.listarPacotes{
+  background-color: #3e60bf;
+  font-size: 25px;
+  color: #f6f6f6;
+  height: 50px;
   width: 100%;
   border: none;
   border-radius: 0px 0px 0px 10px;
+
 }
-.btao-Container__btao-visualizar {
-  background-color: #41aee0;
-  height: 100%;
+
+button.btao-Container__btao-deletar.listarPacotes{
+  background-color: #cc0000;
+  font-size: 25px;
+  color: #f6f6f6;
+  height: 50px;
+  width: 100%;
+  border: none;
+  border-radius: 0px 0px 10px 0px;
+}
+
+button.btao-Container__btao-editar.listarPacotes:hover,button.btao-Container__btao-deletar.listarPacotes:hover{
+  filter: opacity(0.7) saturate(1.3);
+}
+
+
+
+button.btao-Container__btao-visualizar.listarUsuarios{
+  background-color: #3e60bf;
+  font-size: 25px;
+  color: #f6f6f6;
+  height: 50px;
   width: 100%;
   border: none;
   border-radius: 0px 0px 0px 10px;
 }
 
-.btao-Container__btao-deletar > p,
-.btao-Container__btao-editar > p,
-.btao-Container__btao-visualizar > p {
-  color: white;
-  font-size: medium;
-  cursor: pointer;
+button.btao-Container__btao-editar.listarUsuarios{
+  background-color: #214097;
+  font-size: 25px;
+  color: #f6f6f6;
+  height: 50px;
+  width: 100%;
+  border: none;
 }
-.btao-Container__btao-deletar:hover {
-  background-color: rgb(177, 0, 0);
+
+button.btao-Container__btao-deletar.listarUsuarios{
+  background-color: #cc0000;
+  font-size: 25px;
+  color: #f6f6f6;
+  height: 50px;
+  width: 100%;
+  border: none;
+  border-radius: 0px 0px 10px 0px;
 }
-.btao-Container__btao-editar:hover {
-  background-color: rgb(0, 177, 0);
-  cursor: pointer;
+
+button.btao-Container__btao-visualizar.listarUsuarios:hover, button.btao-Container__btao-editar.listarUsuarios:hover,button.btao-Container__btao-deletar.listarUsuarios:hover{
+  filter: opacity(0.7) saturate(1.3);
 }
-.btao-Container__btao-visualizar:hover {
-  background-color: rgb(58, 139, 214);
-  cursor: pointer;
-}
+
 .travel-cards__btao {
   color: #3e60bf;
   border: 1px solid #3e60bf;
@@ -161,7 +183,7 @@ img.travel-card__imagem {
 }
 
 .usuario-card__dado {
-  font-family: Epilogue;
+  font-family: "Epilogue";
   font-style: normal;
   font-size: 16px;
   line-height: 27px;
@@ -202,24 +224,55 @@ img.travel-card__imagem {
   .btao-Container {
     flex-direction: column;
     justify-content: space-between;
+    width: 60px;
   }
-  .btao-Container__btao-editar {
+
+  button.btao-Container__btao-visualizar.listarUsuarios{
+    background-color: #3e60bf;
+    font-size: 25px;
+    color: #f6f6f6;
+    height: 100%;
+    border: none;
     border-radius: 0px 10px 0px 0px;
   }
-  .btao-Container__btao-visualizar {
-    border-radius: 0px 10px 0px 0px;
+  
+  button.btao-Container__btao-editar.listarUsuarios{
+    background-color: #214097;
+    font-size: 25px;
+    color: #f6f6f6;
+    height: 100%;
+    border: none;
   }
-  .btao-Container__btao-deletar {
+  
+  button.btao-Container__btao-deletar.listarUsuarios{
+    background-color: #cc0000;
+    font-size: 25px;
+    color: #f6f6f6;
+    height: 100%;
+    border: none;
     border-radius: 0px 0px 10px 0px;
   }
-  .btao-Container__btao-deletar > p,
-  .btao-Container__btao-editar > p,
-  .btao-Container__btao-visualizar > p {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    color: white;
-    font-size: medium;
+
+  button.btao-Container__btao-editar.listarPacotes{
+    background-color: #3e60bf;
+    font-size: 25px;
+    color: #f6f6f6;
+    height: 100%;
+    border: none;
+    border-radius: 0px 10px 0px 0px;
+  
   }
+  
+  button.btao-Container__btao-deletar.listarPacotes{
+    background-color: #cc0000;
+    font-size: 25px;
+    color: #f6f6f6;
+    height: 100%;
+    border: none;
+    border-radius: 0px 0px 10px 0px;
+  }
+  
+
   .travel-card__infoPrice {
     margin: 10px;
     display: flex;
