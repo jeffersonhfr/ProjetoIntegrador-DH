@@ -148,8 +148,11 @@
     width: 200px;
     font-style: normal;
     font-weight: 250;
-    font-size: 24px;
+    font-size: 16px;
     line-height: 20px;
+    padding: 8px;
+    font-family: 'Mukta';
+    font-weight: 400;
 }
 
 .dados-do-usuario__info.nome input,

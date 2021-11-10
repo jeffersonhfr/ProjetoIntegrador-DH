@@ -60,11 +60,8 @@
   height: 200px;
 }
 
-.form-hr {
-  width: 70%;
-  margin: 20px auto;
-  border-color: #3e60bf;
-  opacity: 0.2;
+.sobre label {
+  margin-top: 30px;
 }
 
 .form-btn{
