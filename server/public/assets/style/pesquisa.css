@@ -2,7 +2,7 @@
   background: #fff;
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.16));
   width: 100%;
-  border-radius: 30px;
+  border-radius: 30px 50px 50px 30px;
   height: auto;
   margin-top: -110px;
   /* margin-left: 20px; */
@@ -77,10 +77,8 @@
 
 .busca__campo__submit {
   font-family: 'Epilogue', sans-serif;
-  font-family: 'fonte-primaria', sans-serif;
-  font-weight: 600;
-  font-size: 13px;
-  border-radius: 0px 0px 20px 20px;
+
+  border-radius: 0px 0px 30px 30px;
   background: #3e60bf;
   height: 50px;
   width: 100%;
@@ -88,7 +86,10 @@
   color: #fff;
   border: 0;
   cursor: pointer;
-  transition: all .4s;
+  transition: all 0.5s;
+  font-size: 16px;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 400;
 }
 
 .busca__campo__submit:hover {

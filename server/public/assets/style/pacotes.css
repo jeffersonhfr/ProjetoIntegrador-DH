@@ -79,6 +79,7 @@ img.travel-card__imagem {
   border: 0;
   cursor: pointer;
   width: 100%;
+  transition: all 0.5s;
 }
 
 .btao-pacote:hover {
@@ -135,6 +136,7 @@ img.travel-card__imagem {
   border-radius: 5px;
   padding: 10px;
   background-color: #f6f6f6;
+  transition: all 0.5s;
 }
 
 .travel-cards__btao:hover {

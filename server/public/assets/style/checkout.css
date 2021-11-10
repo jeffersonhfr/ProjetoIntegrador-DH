@@ -96,18 +96,24 @@ h2.pagamento__box__detalhes__titulo {
 }
 
 .btao-confirmar {
-    background-color: #3E60BF;
-    color: #FFFF;
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 11px;
-    padding: 15px;
-    border-radius: 5px;
-    border: 0;
-    cursor: pointer;
+    color: white;
+    background-color: #3e60bf;
+    margin: 15px 0px;
     width: 100%;
+    transition: 0.5s;
+    border: 1px solid #3e60bf;
+    border-radius: 5px;
+    padding: 10px;        
+    font-size: 16px;
+    font-family: 'Mukta', sans-serif;
+    font-weight: 400;
+    min-width: 115px;
+    text-align: center;
 }
 
+.btao-confirmar:hover {
+    background-color: #2a4182;
+}
 .metodo__pagamento__cartao-itens {
     margin: 15px 0;
 }

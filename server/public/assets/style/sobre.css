@@ -28,6 +28,7 @@
   font-weight: 400;
   min-width: 115px;
   text-align: center;
+  transition: 0.5s;
 }
 
 .bt-edit:hover{
@@ -67,17 +68,19 @@
 }
 
 .form-btn{
-  background-color: #3E60BF;
-  color: #FFFF;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 11px;
-  padding: 15px;
+  color: #f6f6f6;
+  border: 1px solid #3E60BF;
   border-radius: 5px;
-  border: 0;
+  padding: 10px;
+  background: #3E60BF;
+  font-size: 16px;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 400;
+  min-width: 115px;
+  width: 300px;
+  text-align: center;
   cursor: pointer;
-  width: 250px;
-  margin-top: 20px;
+  transition: 0.5s;
 }
 
 .form-btn:hover{
@@ -123,6 +126,7 @@
   min-width: 115px;
   text-align: center;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .btao-enviar:hover {

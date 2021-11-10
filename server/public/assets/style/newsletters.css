@@ -141,7 +141,11 @@ input#emailNews {
   color: #fff;
   border: 0;
   cursor: pointer;
-  transition: all .4s;
+  transition: all 0.5s;
+
+  font-size: 16px;
+        font-family: 'Mukta', sans-serif;
+        font-weight: 400;
 }
 
 .fique-por-dentro__input__submit:hover {
@@ -199,6 +203,6 @@ input#emailNews {
   .fique-por-dentro__input__submit {
     border-radius: 0 30px 30px 0;
     height: 80px;
-    width: 100px;
+    width: 120px;
   }
 }

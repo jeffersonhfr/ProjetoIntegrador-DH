@@ -80,6 +80,11 @@ article.Pacote-Descricao-Sobre {
     color: #fff;
     padding: 10px;
     cursor: pointer;
+    font-size: 16px;
+    font-family: 'Mukta', sans-serif;
+    font-weight: 400;
+    min-width: 115px;
+    transition: 0.5s;
 }
 
 .Pacote__Button-Cancelar:hover {
@@ -123,11 +128,9 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
 .Pacote__Button-Comprar{
     color: white;
     background-color: #3e60bf;
-    border-style: none;
-    border-radius: 10px;
     margin: 15px 0px;
-    height: 40px;
     width: 100%;
+    transition: 0.5s;
 }
 
 .Pacote-Propriedades__Item.Destaques{
@@ -149,8 +152,7 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
 }
 
 .Pacote__Button-Comprar:hover{
-    transition: 0.5s;
-    background-color: #1b1ed8;
+    background-color: #2a4182;
     cursor:pointer;
 }
 
@@ -233,12 +235,15 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
 
     .Pacote__Button-Comprar{
         grid-column: 2;
-        grid-row: 3;
-        width: 15vw;
-        height: 6.25vw;
-        max-width: 220px;
-        max-height: 95px;
-        margin: 15px 10px;
+        grid-row: 3;    
+        border: 1px solid #3e60bf;
+        border-radius: 5px;
+        padding: 10px;        
+        font-size: 16px;
+        font-family: 'Mukta', sans-serif;
+        font-weight: 400;
+        min-width: 115px;
+        text-align: center;
     }
 
     .Pacote-Descricao-Sobre{
