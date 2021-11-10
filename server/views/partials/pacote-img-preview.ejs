@@ -1,0 +1,24 @@
+
+
+
+
+<nav class='Pacote-ImgContainer'>
+  <% if(pacote.imagens != null){%>
+    <img src='/assets/img/Egito.jpg' class='Pacote-ImgContainer__Img-first'>
+    <ul class='Pacote-ImgContainer__Img-list'>    
+        <% for (let i=0; i < pacote.imagens.length; i++) { %>
+          <li><img src='<%= pacote.imagens[i] %>' class='Pacote-ImgContainer__Img'></li>
+        <%}%>
+      <%}else{%>
+        <img src='/assets/img/Upload.png' class='Pacote-ImgContainer__Img-first'>
+        <ul class='Pacote-ImgContainer__Img-list'>    
+
+        </ul>
+      <%}%>
+    </ul>
+    
+</nav>
+
+<script src="/src/imagens-preview.js">
+
+</script>

@@ -3,18 +3,14 @@
 
     <div class="container container-pacotes">
 
-
-      <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
-        <div class="title-bar">
-          <h1>Pacotes Promocionais</h2>
-            <a href="pacotes/adicionar" class="travel-cards__btao">Adicionar Pacote</a>
-        </div>
-        <% } else {%>
-          <div class="title-bar">
+      <div class="title-bar">
             <h1>Pacotes Promocionais</h2>
               <%- include('./partials/filtro') %>
-          </div>
-          <% } %>
+     </div>
+      <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
+            <a href="pacotes/adicionar" class="travel-cards__btao">Adicionar Pacote</a>          
+      <% } %> 
+    
             <div class="travel-cards">
               <%- include('./partials/travel-card') %>
             </div>
