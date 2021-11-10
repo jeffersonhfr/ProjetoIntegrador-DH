@@ -2,6 +2,7 @@ const usuarios = require('../data/usuariosPlaceholder.json');
 const fs = require('fs'),
   path = require('path'),
   bcrypt = require('bcrypt');
+
 const controller = {
   index: (req, res, next) => {
     let usuarioLogado = req.cookies.usuario;
@@ -50,7 +51,7 @@ const controller = {
     let usuarioAdmin = req.cookies.admin;
     if (usuarioAdmin || usuarioLogado) {
       res.render('usuario-edit', {
-        title: '|' + usuarioLogado.nome,
+        title: '| ' + usuarioLogado.nome,
         usuario: usuarios.find((u) => {
           if (u.id === usuarioLogado.id) {
             return u;

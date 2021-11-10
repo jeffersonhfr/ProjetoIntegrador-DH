@@ -18,8 +18,8 @@ const loginRouter = require('./routes/login');
 const cadastroRouter = require('./routes/cadastro');
 const historicoRouter = require('./routes/historico');
 const checkoutRouter = require('./routes/checkout');
-const adminRouter = require('./routes/admin');
 const perfilRouter = require('./routes/usuario');
+const adminRouter = require('./routes/admin');
 
 const visualizarUsuarioRouter = require('./routes/visualizarUsuario');
 var app = express();
