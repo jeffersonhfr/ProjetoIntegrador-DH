@@ -18,16 +18,22 @@
 }
 
 .bt-edit{
-  border: 1px solid #3E60BF;
-  border-radius: 10px;
-  padding: 10px 20px;
-  font-size: 13px;
-  color: #3E60BF;
+  color: #3e60bf;
+  border: 1px solid #3e60bf;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f6f6f6;
+  font-size: 16px;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 400;
+  min-width: 115px;
+  text-align: center;
+  transition: 0.5s;
 }
 
 .bt-edit:hover{
-  border: 1px solid #4D4D4D;
-  color: #4D4D4D;
+  color: #fff;
+  background-color: #3e60bf;
 }
 
 .form-edit{
@@ -54,25 +60,24 @@
   height: 200px;
 }
 
-.form-hr {
-  width: 70%;
-  margin: 20px auto;
-  border-color: #3e60bf;
-  opacity: 0.2;
+.sobre label {
+  margin-top: 30px;
 }
 
 .form-btn{
-  background-color: #3E60BF;
-  color: #FFFF;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 11px;
-  padding: 15px;
+  color: #f6f6f6;
+  border: 1px solid #3E60BF;
   border-radius: 5px;
-  border: 0;
+  padding: 10px;
+  background: #3E60BF;
+  font-size: 16px;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 400;
+  min-width: 115px;
+  width: 300px;
+  text-align: center;
   cursor: pointer;
-  width: 250px;
-  margin-top: 20px;
+  transition: 0.5s;
 }
 
 .form-btn:hover{
@@ -107,17 +112,22 @@
 }
 
 .btao-enviar {
+  color: #f6f6f6;
+  border: 1px solid #3E60BF;
+  border-radius: 5px;
+  padding: 10px;
   background: #3E60BF;
-  color: #FFFF;
-  font-size: 11px;
-  font-weight: 500;
-  line-height: 11px;
-  margin-top: 13px;
-  margin-bottom: 20px;
-  padding: 12px 130px;
-  border-radius: 10px;
-  border: 0;
+  font-size: 16px;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 400;
+  min-width: 115px;
+  text-align: center;
   cursor: pointer;
+  transition: 0.5s;
+}
+
+.btao-enviar:hover {
+  background:#2a4182;
 }
 
 .sobre form {
@@ -131,6 +141,17 @@
   margin: 20px 0;
 }
 
+.sobre .campos_form label {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Mukta', sans-serif;
+}
+
 .box_text label {
   padding: 5px;
+}
+
+.campos_form input {
+  padding: 7px;
+  min-height: 30px;
 }
