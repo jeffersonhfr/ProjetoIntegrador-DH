@@ -1,6 +1,6 @@
 .footer__lista__link{
   text-decoration: none;
-  color: #919191;
+  color: #424242;
 }
 
 .footer__lista__titulo{
@@ -11,7 +11,7 @@
   line-height: 14px;
   letter-spacing: 0em;
   text-align: left;  
-  color: #4D4D4D;
+  color: #424242;
 }
 
 footer .footer__lista__titulo {
@@ -67,8 +67,17 @@ section.footer__conteudo {
   margin: 0 auto;
 }
 
+.footer__conteudo a{
+  border-bottom:0px solid #424242;
+  transition: all 100ms ease-in-out;
+}
+
 .footer__conteudo a:hover{
-  color: #ffffff;
+  border-bottom:3px solid #424242;
+}
+
+a.footer__lista__link.social:hover{
+  border-bottom:0px;
 }
 
 .footer__conteudo .footer__lista .footer__lista__contato {
