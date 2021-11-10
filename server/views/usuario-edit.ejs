@@ -9,7 +9,7 @@
             <form class="perfil__dados-do-usuario" action="/Perfil/edit?_method=PUT" method="POST">
 
                 <div class="dados-do-usuario__img-container">
-                    <img class="img-container__avatar">
+                    <img class="img-container__avatar" src="<%= usuario.avatar%>">
                     <button class="img-container__btn-enviar-img">Alterar Imagem</button>
                 </div>
                 <div class="dados-do-usuario__info nome">
@@ -78,13 +78,13 @@
                     <label for="senha">
                         <h2 class="info__titulo">Senha</h2>
                     </label>
-                    <input id="senha" name="senha" type="password" value="<%= usuario.senha%>" />
+                    <input id="senha" name="senha" type="password" value="" placeholder="Insira somente para troca" />
                 </div>
                 <div class="dados-do-usuario__info confirmar">
                     <label for="confirmar">
                         <h2 class="info__titulo">Confirmar Senha</h2>
                     </label>
-                    <input id="confirmar" name="confirmar" type="password" value="" />
+                    <input id="confirmar" name="confirmar" type="password" value="" placeholder="Insira somente para troca" />
                 </div>
                 <input class="dados-do-usuario__btn-submit" type="submit" value="Salvar Alterações">
             </form>
