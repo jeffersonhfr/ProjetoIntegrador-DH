@@ -268,15 +268,31 @@ li.logout {
   line-height: 16px;
   letter-spacing: 0em;
   color: #575656;
+  transition: all 100ms ease-in-out;
  } 
 
  .menu__desk-conteudo li {
   margin: 20px 0;
   align-items: center;
+  transition: all 100ms ease-in-out;
+}
+
+.menu__desk-conteudo li a {
+  border-bottom: 0px solid #fff;
+  transition: all 100ms ease-in-out;
+}
+
+.menu__desk-conteudo li a:hover {
+  border-bottom: 4px solid #000;
+  transition: all 100ms ease-in-out;
 }
 
 li.login {
   margin: 0;
+}
+
+li.login a:hover {
+  border-bottom: 4px solid #fff;
 }
 
 .mostrar-menu{
