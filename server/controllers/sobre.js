@@ -3,7 +3,7 @@ const sobrePlaceholder = require('../data/sobrenos.json');
 const fs = require('fs');
 const path = require('path');
 
-let {tituloPrincipal, tituloHistoria, textoHistoria} = sobrePlaceholder;
+let { tituloPrincipal, tituloHistoria, textoHistoria } = sobrePlaceholder;
 
 const controller = {
   index: (req, res, next) => {
@@ -11,19 +11,21 @@ const controller = {
       title: '| Sobre',
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
-      tituloPrincipal, 
+      usuarioAvatar: req.cookies.avatar,
+      tituloPrincipal,
       tituloHistoria,
-      textoHistoria
+      textoHistoria,
     });
   },
   list: (req, res, next) => {
-    let admin = req.cookies.admin
+    let admin = req.cookies.admin;
     if (!admin || admin == 'false') {
       res.render('login', {
         title: '| Ajuda',
         erro: 'Você não tem autorização para visualizar essa página',
         usuarios: usuariosPlaceholder,
         usuarioLogado: req.cookies.usuario,
+        usuarioAvatar: req.cookies.avatar,
         usuarioAdmin: admin,
       });
     } else {
@@ -32,18 +34,22 @@ const controller = {
         erro: '',
         usuarios: usuariosPlaceholder,
         usuarioLogado: req.cookies.usuario,
+        usuarioAvatar: req.cookies.avatar,
         usuarioAdmin: admin,
-        tituloPrincipal, 
+        tituloPrincipal,
         tituloHistoria,
-        textoHistoria
+        textoHistoria,
       });
     }
   },
   update: (req, res, next) => {
     let ajuda = req.body;
-    fs.writeFileSync(path.join(__dirname, '..', 'data', 'sobrenos.json'), JSON.stringify(ajuda))
-    res.redirect('../sobre')
-  }
+    fs.writeFileSync(
+      path.join(__dirname, '..', 'data', 'sobrenos.json'),
+      JSON.stringify(ajuda),
+    );
+    res.redirect('../sobre');
+  },
 };
 
 module.exports = controller;

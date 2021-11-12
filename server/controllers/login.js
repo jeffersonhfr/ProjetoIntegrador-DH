@@ -1,22 +1,22 @@
- 
-  const controller = {
+const controller = {
   index: (req, res, next) => {
     let usuarioLogado = req.cookies.usuario;
     let usuarioAdmin = req.cookies.admin;
-    if (usuarioAdmin || usuarioLogado){
-      res.redirect('../../')
+    if (usuarioAdmin || usuarioLogado) {
+      res.redirect('../../');
     } else {
       res.render('login', {
         title: '| Login',
-        erro:'',
+        erro: '',
         usuarioLogado: req.cookies.usuario,
-        usuarioAdmin: req.cookies.admin
+        usuarioAdmin: req.cookies.admin,
+        usuarioAvatar: req.cookies.avatar,
       });
     }
-    },
+  },
   auth: (req, res, next) => {
-    res.redirect('../../')
-  }
+    res.redirect('../../');
+  },
 };
 
 module.exports = controller;
