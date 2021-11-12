@@ -6,6 +6,7 @@ const controller = {
       title: '| Pesquisa',
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
+      usuarioAvatar: req.cookies.avatar,
       pacotes: pacotes,
       valor: (valor) => {
         return valor.toLocaleString('pt-BR', {

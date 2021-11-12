@@ -17,6 +17,7 @@ const controller = {
         }),
         usuarioLogado: usuarioLogado,
         usuarioAdmin: usuarioAdmin,
+        usuarioAvatar: req.cookies.avatar,
       });
     } else {
       res.redirect('../login');
@@ -59,6 +60,7 @@ const controller = {
         }),
         usuarioLogado: usuarioLogado,
         usuarioAdmin: usuarioAdmin,
+        usuarioAvatar: req.cookies.avatar,
       });
     } else {
       res.redirect('../login');

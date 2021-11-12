@@ -13,6 +13,7 @@ const controller = {
       },
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
+      usuarioAvatar: req.cookies.avatar,
     });
   },
   add: (req, res, next) => {
@@ -27,6 +28,7 @@ const controller = {
       },
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
+      usuarioAvatar: req.cookies.avatar,
     });
   },
   show: (req, res, next) => {
@@ -34,6 +36,7 @@ const controller = {
       title: '| Pacote',
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
+      usuarioAvatar: req.cookies.avatar,
     });
   },
   edit: (req, res, next) => {
@@ -41,6 +44,7 @@ const controller = {
       title: '| Pacote',
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
+      usuarioAvatar: req.cookies.avatar,
     });
   },
   delete: (req, res, next) => {

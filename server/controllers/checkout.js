@@ -4,6 +4,7 @@ const controller = {
       title: '| Checkout',
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
+      usuarioAvatar: req.cookies.avatar,
     });
   },
   sucesso: (req, res, next) => {
@@ -13,6 +14,7 @@ const controller = {
         title: '| Pacote adquirido com sucesso',
         usuarioLogado: req.cookies.usuario,
         usuarioAdmin: req.cookies.admin,
+        usuarioAvatar: req.cookies.avatar,
         pagamento,
       });
     } else {
@@ -20,6 +22,7 @@ const controller = {
         title: '| Pacote adquirido com sucesso',
         usuarioLogado: req.cookies.usuario,
         usuarioAdmin: req.cookies.admin,
+        usuarioAvatar: req.cookies.avatar,
       });
     }
   },

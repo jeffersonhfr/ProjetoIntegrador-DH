@@ -3,7 +3,8 @@ const controller = {
     res.render('index', {
       title: '| Aproveite nossas ofertas',
       usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin
+      usuarioAdmin: req.cookies.admin,
+      usuarioAvatar: req.cookies.avatar,
     });
   },
 };

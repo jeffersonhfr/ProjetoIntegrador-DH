@@ -8,6 +8,7 @@ const controller = {
       title: '| Cadastre-se',
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
+      usuarioAvatar: req.cookies.avatar,
     });
   },
   cadastro: (req, res, next) => {
@@ -15,6 +16,7 @@ const controller = {
       title: '| Cadastre-se',
       titulo: 'Teste',
       subtitulo: 'Teste',
+      usuarioAvatar: req.cookies.avatar,
     });
   },
   add: (req, res, next) => {
