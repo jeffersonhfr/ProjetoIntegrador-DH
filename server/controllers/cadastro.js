@@ -32,7 +32,7 @@ const controller = {
     newUsuario.criadoEm = new Date();
     newUsuario.modificadoEm = new Date();
     newUsuario.admin = false;
-    newUsuario.avatar = '/assets/img/user.png';
+    newUsuario.avatar = '/assets/img/Aventura.jpg';
     newUsuario.id = newId;
     usuariosNew.push(newUsuario);
     fs.writeFileSync(
