@@ -1,5 +1,7 @@
 'use strict';
-const { Model } = require('sequelize');
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Pacote extends Model {
     /**
@@ -8,30 +10,23 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Pacote.belongsTo(models.Adicional, {
-        foreignKey: 'adicionalId',
-        as: 'adicional',
-      });
+      // define association here
     }
-  }
-  Pacote.init(
-    {
-      nome: DataTypes.STRING,
-      diarias: DataTypes.SMALLINT,
-      hotel: DataTypes.STRING,
-      nacional: DataTypes.SMALLINT,
-      passagem_aerea: DataTypes.SMALLINT,
-      imagem_url: DataTypes.STRING,
-      promocao_percent: DataTypes.INTEGER,
-      preco: DataTypes.FLOAT,
-      parcelas: DataTypes.SMALLINT,
-      adicionalId: DataTypes.INTEGER,
-    },
-    {
-      sequelize,
-      timestamps: true,
-      modelName: 'Pacote',
-    },
-  );
+  };
+  Pacote.init({
+    nomePacote: DataTypes.STRING,
+    nomeHotel: DataTypes.STRING,
+    diarias: DataTypes.INTEGER,
+    passagemAerea: DataTypes.INTEGER,
+    nacional: DataTypes.INTEGER,
+    preco: DataTypes.INTEGER,
+    promocaoPorcentagem: DataTypes.INTEGER,
+    parcelas: DataTypes.INTEGER,
+    sobre: DataTypes.STRING,
+    pontoTuristico: DataTypes.STRING
+  }, {
+    sequelize,
+    modelName: 'Pacote',
+  });
   return Pacote;
 };
