@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'pacoteId',
         as: 'pacote',
       });
-      AdicionalPacote.hasMany(models.Adicional, {
+      AdicionalPacote.belongsTo(models.Pacote, {
+        foreignKey: 'adicionalId',
         as: 'adicional',
       });
     }

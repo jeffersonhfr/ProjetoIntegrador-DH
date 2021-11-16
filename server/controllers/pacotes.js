@@ -1,7 +1,12 @@
 const pacotes = require('../data/pacotes.json');
 
+const { getAllPacotes } = require('../services/pacotes');
+
 const controller = {
-  index: (req, res, next) => {
+  index: async (req, res, next) => {
+    const pack = await getAllPacotes();
+    console.log(pack);
+
     res.render('pacotes', {
       title: '| Pacote',
       pacotes: pacotes,

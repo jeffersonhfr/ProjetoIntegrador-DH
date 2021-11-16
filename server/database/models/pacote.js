@@ -9,6 +9,9 @@ module.exports = (sequelize, DataTypes) => {
       Pacote.hasMany(models.AdicionalPacote, {
         as: 'adicional',
       });
+      Pacote.hasMany(models.ImagensPacote, {
+        as: 'imagens',
+      });
     }
   }
   Pacote.init(

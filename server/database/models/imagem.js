@@ -3,8 +3,7 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Imagem extends Model {
     static associate(models) {
-      Imagem.belongsTo(models.ImagensPacote, {
-        foreignKey: 'imagemId',
+      Imagem.hasMany(models.ImagensPacote, {
         as: 'imagem',
       });
     }

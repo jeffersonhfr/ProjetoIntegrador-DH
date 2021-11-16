@@ -3,7 +3,7 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Adicional extends Model {
     static associate(models) {
-      Adicional.hasMany(models.Pacote, {
+      Adicional.hasMany(models.AdicionalPacote, {
         as: 'pacote',
       });
     }
@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       timestamps: true,
-      modelName: 'Adicionals',
+      modelName: 'Adicional',
     },
   );
   return Adicional;
