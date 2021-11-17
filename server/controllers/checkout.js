@@ -1,5 +1,9 @@
+const { getAllOrders } = require('../services/orders');
+
 const controller = {
-  index: (req, res, next) => {
+  index: async (req, res, next) => {
+    const orders = await getAllOrders();
+    console.log(orders);
     res.render('checkout', {
       title: '| Checkout',
       usuarioLogado: req.cookies.usuario,
