@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Pacotes', {
+    await queryInterface.createTable('Packages', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -9,40 +9,30 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       nomePacote: {
-        allowNull: false,
         type: Sequelize.STRING,
       },
       nomeHotel: {
-        allowNull: false,
         type: Sequelize.STRING,
       },
       diarias: {
-        allowNull: false,
         type: Sequelize.INTEGER,
       },
       passagemAerea: {
-        allowNull: false,
         type: Sequelize.BOOLEAN,
       },
       nacional: {
-        allowNull: false,
         type: Sequelize.BOOLEAN,
       },
       preco: {
-        allowNull: false,
         type: Sequelize.INTEGER,
       },
       promocaoPorcentagem: {
-        allowNull: false,
         type: Sequelize.INTEGER,
-        defaultValue: 0,
       },
       parcelas: {
-        allowNull: false,
         type: Sequelize.INTEGER,
       },
       imagemCapa: {
-        allowNull: false,
         type: Sequelize.STRING,
       },
       imagem01: {
@@ -64,12 +54,26 @@ module.exports = {
         type: Sequelize.STRING,
       },
       sobre: {
-        allowNull: false,
         type: Sequelize.STRING,
       },
       pontoTuristico: {
-        allowNull: false,
         type: Sequelize.STRING,
+      },
+      addtionalId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'addtionals',
+          key: 'id',
+        },
+      },
+      categoryId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'categories',
+          key: 'id',
+        },
       },
       createdAt: {
         allowNull: false,
@@ -82,6 +86,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Pacotes');
+    await queryInterface.dropTable('Packages');
   },
 };

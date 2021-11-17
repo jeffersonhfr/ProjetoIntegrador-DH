@@ -1,17 +1,19 @@
 'use strict';
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Pacotes extends Model {
+  class Package extends Model {
     static associate(models) {
-      Pacotes.hasMany(models.Adicionalpacotes, {
-        foreignKey: 'adicionalPacoteId',
+      Package.belongsTo(models.Category, {
+        foreignKey: 'categoryId',
+        as: 'categorias',
       });
-      Pacotes.hasMany(models.Categoriapacotes, {
-        foreignKey: 'categoriaPacoteId',
+      Package.belongsTo(models.Addtional, {
+        foreignKey: 'addtionalId',
+        as: 'adicionais',
       });
     }
   }
-  Pacotes.init(
+  Package.init(
     {
       nomePacote: DataTypes.STRING,
       nomeHotel: DataTypes.STRING,
@@ -30,12 +32,14 @@ module.exports = (sequelize, DataTypes) => {
       imagem06: DataTypes.STRING,
       sobre: DataTypes.STRING,
       pontoTuristico: DataTypes.STRING,
+      packageId: DataTypes.INTEGER,
+      categoryId: DataTypes.INTEGER,
     },
     {
       sequelize,
       timestamps: true,
-      modelName: 'Pacotes',
+      modelName: 'Package',
     },
   );
-  return Pacotes;
+  return Package;
 };
