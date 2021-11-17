@@ -11,6 +11,9 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'addtionalId',
         as: 'adicionais',
       });
+      Package.hasMany(models.Order, {
+        as: 'pacote',
+      });
     }
   }
   Package.init(
