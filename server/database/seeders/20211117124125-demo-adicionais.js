@@ -3,40 +3,25 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert(
-      'Categorias',
+      'Adicionais',
       [
         {
-          nome: 'Romântico',
+          nomeAdicional: 'City Tour',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          nome: 'Neve',
+          nomeAdicional: 'Piscina Aquecida',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          nome: 'Praia',
+          nomeAdicional: 'Passeio Cultural',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          nome: 'Aventura',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nome: 'Histórico',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nome: 'Balada',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nome: 'Familia',
+          nomeAdicional: 'Jantar no Palacio Real',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -46,6 +31,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('Categorias', null, {});
+    await queryInterface.bulkDelete('Adicionais', null, {});
   },
 };

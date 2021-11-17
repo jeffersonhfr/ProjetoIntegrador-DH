@@ -1,16 +1,25 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Adicionals', {
+    await queryInterface.createTable('Adicionalpacotes', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      nome: {
+      adicionalAtivo: {
+        type: Sequelize.BOOLEAN,
+      },
+      adicionalPacoteId: {
         allowNull: false,
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
+        references: { model: 'Pacotes', key: 'id' },
+      },
+      adicionalId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: 'Adicionais', key: 'id' },
       },
       createdAt: {
         allowNull: false,
@@ -23,6 +32,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Adicionals');
+    await queryInterface.dropTable('Adicionalpacotes');
   },
 };

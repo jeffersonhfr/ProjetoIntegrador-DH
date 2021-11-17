@@ -3,35 +3,33 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert(
-      'AdicionalPacotes',
+      'Categoriapacotes',
       [
         {
-          pacoteId: 1,
-          adicionalId: 1,
+          categoriaAtiva: 1,
+          categoriaPacoteId: 1,
+          categoriaId: 4,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          pacoteId: 1,
-          adicionalId: 2,
+          categoriaAtiva: 1,
+          categoriaPacoteId: 2,
+          categoriaId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          pacoteId: 2,
-          adicionalId: 3,
+          categoriaAtiva: 1,
+          categoriaPacoteId: 3,
+          categoriaId: 3,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          pacoteId: 3,
-          adicionalId: 4,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          pacoteId: 3,
-          adicionalId: 1,
+          categoriaAtiva: 1,
+          categoriaPacoteId: 3,
+          categoriaId: 4,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -41,6 +39,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('AdicionalPacotes', null, {});
+    await queryInterface.bulkDelete('Categoriapacotes', null, {});
   },
 };

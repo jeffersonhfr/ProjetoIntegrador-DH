@@ -3,41 +3,40 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert(
-      'Imagems',
+      'Adicionalpacotes',
       [
         {
-          url: '/assets/img/Egito.jpg',
-          capa: 1,
+          adicionalAtivo: 1,
+          adicionalPacoteId: 1,
+          adicionalId: 4,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          url: '/assets/img/floripa.jpg',
-          capa: 1,
+          adicionalAtivo: 1,
+          adicionalPacoteId: 2,
+          adicionalId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          url: '/assets/img/paris.jpg',
-          capa: 1,
+          adicionalAtivo: 1,
+          adicionalPacoteId: 3,
+          adicionalId: 3,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          url: '/assets/img/Aventura.jpg',
-          capa: 0,
+          adicionalAtivo: 1,
+          adicionalPacoteId: 3,
+          adicionalId: 4,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          url: '/assets/img/Las-Vegas.jpg',
-          capa: 0,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          url: '/assets/img/Maldivas.jpg',
-          capa: 0,
+          adicionalAtivo: 1,
+          adicionalPacoteId: 2,
+          adicionalId: 4,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -47,6 +46,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('Imagems', null, {});
+    await queryInterface.bulkDelete('Adicionalpacotes', null, {});
   },
 };
