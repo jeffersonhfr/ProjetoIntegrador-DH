@@ -1,15 +1,10 @@
-const { Pacotes } = require('../database/models');
+const { Package } = require('../database/models');
 
 const pacotesServices = {};
 
 pacotesServices.getAllPacotes = async () => {
-  const pacotes = await Pacotes.findAll({
-    include: [
-      { association: 'categoriaPacotes' },
-      { association: 'categorias' },
-      { association: 'adicionalPacotes' },
-      { association: 'adicionais' },
-    ],
+  const pacotes = await Package.findAll({
+    include: [{ association: 'categorias' }, { association: 'adicionais' }],
   });
   return pacotes;
 };

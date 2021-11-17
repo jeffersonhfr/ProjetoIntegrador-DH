@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       imagem06: DataTypes.STRING,
       sobre: DataTypes.STRING,
       pontoTuristico: DataTypes.STRING,
-      packageId: DataTypes.INTEGER,
+      addtionalId: DataTypes.INTEGER,
       categoryId: DataTypes.INTEGER,
     },
     {
