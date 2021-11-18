@@ -21,7 +21,22 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          nomeCategoria: 'Romântico',
+          nomeCategoria: 'Romance',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          nomeCategoria: 'Família',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          nomeCategoria: 'História',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          nomeCategoria: 'Cultura',
           createdAt: new Date(),
           updatedAt: new Date(),
         },

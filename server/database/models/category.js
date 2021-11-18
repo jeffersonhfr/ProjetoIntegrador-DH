@@ -3,9 +3,7 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Category extends Model {
     static associate(models) {
-      Category.hasMany(models.Package, {
-        as: 'pacotes',
-      });
+      Category.belongsToMany(Package, { through: 'CategoryPackage' });
     }
   }
   Category.init(
