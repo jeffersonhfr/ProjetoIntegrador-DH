@@ -6,9 +6,14 @@ module.exports = (sequelize, DataTypes) => {
       Package.hasMany(models.Order, {
         as: 'pacote',
       });
-      Package.belongsToMany(Category, { through: 'CategoryPackage' });
+      Package.belongsToMany(models.Category, {
+        as: 'categorias',
+        through: 'Category_Packages',
+        foreignKey: 'categoryId',
+      });
     }
   }
+
   Package.init(
     {
       nomePacote: DataTypes.STRING,

@@ -3,7 +3,11 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Category extends Model {
     static associate(models) {
-      Category.belongsToMany(Package, { through: 'CategoryPackage' });
+      Category.belongsToMany(models.Package, {
+        as: 'pacote',
+        through: 'Category_Packages',
+        foreignKey: 'packageId',
+      });
     }
   }
   Category.init(

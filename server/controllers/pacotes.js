@@ -7,6 +7,7 @@ const controller = {
     console.log(pack);
     res.render('pacotes', {
       title: '| Pacote',
+      pack,
       pacotes: pacotes,
       valor: (valor) => {
         return valor.toLocaleString('pt-BR', {

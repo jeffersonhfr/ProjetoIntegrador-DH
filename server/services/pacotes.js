@@ -4,8 +4,13 @@ const pacotesServices = {};
 
 pacotesServices.getAllPacotes = async () => {
   const pacotes = await Package.findAll({
-    include: [{ association: 'categorias' }, { association: 'adicionais' }],
+    include: [
+      { association: 'categorias' },
+      // { association: 'categoria' },
+      // { association: 'pacote' },
+    ],
   });
+
   return pacotes;
 };
 
