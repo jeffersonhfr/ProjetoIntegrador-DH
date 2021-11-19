@@ -14,7 +14,7 @@ module.exports = {
         },
         {
           nomeCategoria: 'Praia',
-          corCategoria: '#34d3e8aa',
+          corCategoria: '#25abbdaa',
           imagemCategoria: 'img/Praia.jpg',
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -35,14 +35,14 @@ module.exports = {
         },
         {
           nomeCategoria: 'Família',
-          corCategoria: '#c42e92aa',
+          corCategoria: '#5b4a70aa',
           imagemCategoria: 'img/familia.jpg',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           nomeCategoria: 'Histórico',
-          corCategoria: '#c42e92aa',
+          corCategoria: '#896d15aa',
           imagemCategoria: 'img/historico.jpg',
           createdAt: new Date(),
           updatedAt: new Date(),
