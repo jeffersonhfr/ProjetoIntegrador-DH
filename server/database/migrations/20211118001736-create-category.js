@@ -12,6 +12,14 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
+      corCategoria: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
+      imagemCategoria: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

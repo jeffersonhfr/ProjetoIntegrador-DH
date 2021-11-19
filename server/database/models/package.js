@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         as: 'pacote',
       });
       Package.belongsToMany(models.Category, {
-        as: 'categorias',
+        as: 'categoria',
         through: 'Category_Packages',
         foreignKey: 'categoryId',
       });
