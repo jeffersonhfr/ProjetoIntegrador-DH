@@ -1,6 +1,6 @@
 <% for (let i=0; i < pack.length; i++) { %>
   <li class="promo">
-    <a href="/pacotes/1">
+    <a href="/pacotes/<%= pack[i].id%>">
       <img alt="Imagem do destino" src="<%= pack[i].imagemCapa%>" />
       <h2 class="Propriedade Nome">
         <%= pack[i].nomePacote%>

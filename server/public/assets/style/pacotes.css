@@ -1,5 +1,5 @@
 .container.container-pacotes {
-  max-width: 775px;
+  max-width: 900px;
 }
 .container-pacotes h1 {
   font-family: "Epilogue", sans-serif;
@@ -218,13 +218,13 @@ button.btao-Container__btao-visualizar.listarUsuarios:hover, button.btao-Contain
 
   .travel-card__info-box {
     padding: 10px 0 10px 25px;
-    width: 475px;
+    width: 600px;
     box-sizing: border-box;
     display: flex;
   }
 
   .travel-card__infoDesc {
-    width: 200px;
+    width: 350px;
   }
   .btao-Container {
     flex-direction: column;
