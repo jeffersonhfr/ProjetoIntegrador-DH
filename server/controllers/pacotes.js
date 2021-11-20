@@ -1,16 +1,12 @@
-const pacotes = require('../data/pacotes.json');
+// const pacotes = require('../data/pacotes.json');
 const { getAllPacotes } = require('../services/pacotes');
 
 const controller = {
   index: async (req, res, next) => {
     const pack = await getAllPacotes();
-    const jsonPack = JSON.stringify(pack);
-    console.log(pack);
-    console.log(jsonPack);
     res.render('pacotes', {
       title: '| Pacote',
       pack,
-      pacotes: pacotes,
       valor: (valor) => {
         return valor.toLocaleString('pt-BR', {
           style: 'currency',

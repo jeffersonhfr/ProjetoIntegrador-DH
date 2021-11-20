@@ -35,25 +35,7 @@ module.exports = {
       },
       {
         packageId: 2,
-        addtionalId: 1,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      },
-      {
-        packageId: 2,
-        addtionalId: 2,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      },
-      {
-        packageId: 2,
         addtionalId: 7,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      },
-      {
-        packageId: 3,
-        addtionalId: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },

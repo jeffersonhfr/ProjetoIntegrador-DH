@@ -7,10 +7,9 @@ const controller = {
     const categorias = await getAllCategorias();
     const add = await getAllAddtionals();
     const pack = await getAllPacotes();
-    console.log(add, pack, categorias);
+
     res.render('index', {
       title: '| Aproveite nossas ofertas',
-      add,
       categorias,
       pack,
       valor: (valor) => {
