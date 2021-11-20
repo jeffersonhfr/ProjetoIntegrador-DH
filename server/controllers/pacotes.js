@@ -1,9 +1,9 @@
-// const pacotes = require('../data/pacotes.json');
-const { getAllPacotes } = require('../services/pacotes');
+const { getAllPackages } = require('../services/pacotes');
+const { getPackagesById } = require('../services/pacotes');
 
 const controller = {
   index: async (req, res, next) => {
-    const pack = await getAllPacotes();
+    const pack = await getAllPackages();
     res.render('pacotes', {
       title: '| Pacote',
       pack,
@@ -21,7 +21,6 @@ const controller = {
   add: (req, res, next) => {
     res.render('adicionar-pacote', {
       title: '| Adicionar Pacote',
-      pacotes: pacotes,
       valor: (valor) => {
         return valor.toLocaleString('pt-BR', {
           style: 'currency',
@@ -33,9 +32,14 @@ const controller = {
       usuarioAvatar: req.cookies.avatar,
     });
   },
-  show: (req, res, next) => {
+  show: async (req, res, next) => {
+    const { id } = req.params;
+    const pack = await getPackagesById(id);
+    console.log(pack);
+
     res.render('pacote', {
       title: '| Pacote',
+      pack,
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
       usuarioAvatar: req.cookies.avatar,
