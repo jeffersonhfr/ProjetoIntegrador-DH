@@ -25,35 +25,38 @@
 
         </li>
 
-
-        <p><img alt="Icone Check" src="img/check.png" />
-          <%=pack[i].adicional[0].nomeAdicional %>
-        </p>
-
-
-        <% if ((pack[i].preco-((pack[i].preco * pack[i].promocaoPorcentagem)/100)==pack[i].preco )) {%>
-
-          <li class="Propriedade ValorInicial preco">
-            <h2> A partir de </h2>
-          </li>
-
+        <% if (pack[i].adicional[0] ) { %>
+          <p><img alt="Icone Check" src="img/check.png" />
+            <%=pack[i].adicional[0].nomeAdicional %>
+          </p>
           <% } else {%>
-
-            <li class="Propriedade ValorInicial preco">
-              <h2> A partir de <span>
-                  <%= valor(pack[i].preco)%>
-                </span></h2>
-            </li>
-
-            <% }%>
+            <p>&nbsp;</p>
+            <% } %>
 
 
-              <li class="Propriedade ValorPromocional preco">
-                <h1>
-                  <%=valor(pack[i].preco-((pack[i].preco * pack[i].promocaoPorcentagem)/100))%>
-                </h1>
-              </li>
-              <h2 class="emAte">em até <%= pack[i].parcelas%>x no cartão de crédito</h2>
+              <% if ((pack[i].preco-((pack[i].preco * pack[i].promocaoPorcentagem)/100)==pack[i].preco )) {%>
+
+                <li class="Propriedade ValorInicial preco">
+                  <h2> A partir de </h2>
+                </li>
+
+                <% } else {%>
+
+                  <li class="Propriedade ValorInicial preco">
+                    <h2> A partir de <span>
+                        <%= valor(pack[i].preco)%>
+                      </span></h2>
+                  </li>
+
+                  <% }%>
+
+
+                    <li class="Propriedade ValorPromocional preco">
+                      <h1>
+                        <%=valor(pack[i].preco-((pack[i].preco * pack[i].promocaoPorcentagem)/100))%>
+                      </h1>
+                    </li>
+                    <h2 class="emAte">em até <%= pack[i].parcelas%>x no cartão de crédito</h2>
       </ul>
     </a>
   <li>

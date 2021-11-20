@@ -45,6 +45,7 @@ article.Pacote-Descricao-Sobre {
     height: 15vw;
     border-radius: 10px;
     margin: 5px 5px 0px 0px;
+    object-fit: cover;
 }
 
 .Pacote-Propriedades__Item-Img{
@@ -131,6 +132,14 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
     margin: 15px 0px;
     width: 100%;
     transition: 0.5s;
+    border: 1px solid #3e60bf;
+    border-radius: 5px;
+    padding: 10px;        
+    font-size: 16px;
+    font-family: 'Mukta', sans-serif;
+    font-weight: 400;
+    min-width: 115px;
+    text-align: center;
 }
 
 .Pacote-Propriedades__Item.Destaques{
@@ -172,6 +181,7 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
 @media(min-width: 992px ){
     aside.info_container {
         top: 20px;
+        position: sticky;
     }
 
     article.Pacote-Descricao-Sobre {
@@ -205,7 +215,7 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
         grid-column: 1;
         grid-row: 2/4;
         width: 43.75vw; 
-        max-width: 480px;
+        /* max-width: 480px; */
         margin-right: 20px;
     }
 
@@ -219,6 +229,7 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
         height: 6.25vw;
         max-width: 95px;
         max-height: 95px;
+        object-fit: cover;
     }
 
     .Pacote-Propriedades{

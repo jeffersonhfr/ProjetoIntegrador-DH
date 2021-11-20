@@ -27,10 +27,10 @@
               <p><img alt="Icone Check" src="img/notcheck.png" />Passagem Aérea </p>
               <% } %>
 
-                <% if (pack[i] ) { %>
+                <% if (pack[i].adicional[0] ) { %>
                   <li class="Propriedade Bonus">
-                    <p><img alt="Icone Check" src="/assets/img/check.png" />
-
+                    <p><img alt="Icone Check" src="img/check.png" />
+                      <%=pack[i].adicional[0].nomeAdicional %>
                     </p>
                   </li>
                   <% } %>

@@ -4,59 +4,85 @@
             <body>
                   <div class='Pacote'>
                         <article class='Pacote-TitleContainer'>
-                              <h2 class='Pacote-TitleContainer__Subtitle'>Pacotes Internacionais</h2>
-                              <h1 class='Pacote-TitleContainer__Title'>Egito Histórico</h1>
+
+                              <% if (pack[0].nacional==true) {%>
+                                    <h2 class='Pacote-TitleContainer__Subtitle'>
+                                          Pacote Nacional
+                                    </h2>
+                                    <% } else {%>
+
+                                          <h2 class='Pacote-TitleContainer__Subtitle'>
+                                                Pacote Internacional
+                                          </h2>
+                                          <% } %>
+
+                                                <h1 class='Pacote-TitleContainer__Title'>
+                                                      <%= pack[0].nomePacote %>
+                                                </h1>
                         </article>
                         <nav class='Pacote-ImgContainer'>
-                              <img src='/assets/img/Egito.jpg' class='Pacote-ImgContainer__Img-first'>
-                              <ul class='Pacote-ImgContainer__Img-list'>
-                                    <li><img src='/assets/img/Egito.jpg' class='Pacote-ImgContainer__Img'></li>
-                                    <li><img src='/assets/img/Egito.jpg' class='Pacote-ImgContainer__Img'></li>
-                                    <li><img src='/assets/img/Egito.jpg' class='Pacote-ImgContainer__Img'></li>
-                                    <li><img src='/assets/img/Egito.jpg' class='Pacote-ImgContainer__Img'></li>
-                                    <li><img src='/assets/img/Egito.jpg' class='Pacote-ImgContainer__Img'></li>
-
-                              </ul>
+                              <%- include('./partials/travel-images') %>
                         </nav>
                         </ul>
                         <aside class="info_container">
                               <ul class="Pacote-Propriedades">
                                     <li class="Pacote-Propriedades__Item Titulo">
-                                          <h1>Egito Histórico</h1>
+                                          <h1>
+                                                <%= pack[0].nomePacote %>
+                                          </h1>
                                     </li>
                                     <li class="Pacote-Propriedades__Item Dias">
                                           <img class="Pacote-Propriedades__Item-Img" src="/img/calendar.png">
-                                          <p> 10 Diárias</p>
+                                          <p>
+                                                <%= pack[0].diarias %> Diárias
+                                          </p>
                                     </li>
                                     <li class="Pacote-Propriedades__Item Hotel">
                                           <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
-                                          <p>Hotel</p>
-                                    </li>
-                                    <li class="Pacote-Propriedades__Item PassagemAerea">
-                                          <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
-                                          <p>Passagem Aérea</p>
-                                    </li>
-                                    <li class="Pacote-Propriedades__Item Bonus">
-                                          <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
-                                          <p>Translado e City Tour</p>
+                                          <p>Hotel <%= pack[0].nomeHotel %>
+                                          </p>
                                     </li>
 
-                                    <li class="Pacote-Propriedades__Item Destaques">
-                                          <div><img src="/img/wi-fi.png" width="34px" height="34px">
-                                                <P>Wi-Fi Grátis</P>
-                                          </div>
-                                          <div><img src="/img/drink.png" width="34px" height="34px">
-                                                <p>Café da Manhã</p>
-                                          </div>
-                                    </li>
+                                    <% if(pack[0].passagemAerea==true ){ %>
+                                          <li class="Pacote-Propriedades__Item PassagemAerea">
+                                                <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
+                                                <p>Passagem Aérea</p>
+                                          </li>
+                                          <%}%>
 
-                                    <li class="Pacote-Propriedades__Item__Valor">
-                                          <h2 class="Pacote-Propriedades__Item__Valor-Inicial">R$&nbsp;18.800,00</h2>
-                                    </li>
-                                    <li class="Pacote-Propriedades__Item__Valor">
-                                          <h1 class="Pacote-Propriedades__Item__Valor-Promocional">R$&nbsp;14.100,00</h1>
-                                          <p>em até 10x no cartão</p>
-                                    </li>
+                                                <% if (pack[0].adicional[0] ) {%>
+                                                      <li class="Pacote-Propriedades__Item Bonus">
+                                                            <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
+                                                            <p>
+                                                                  <%=pack[0].adicional[0].nomeAdicional %>
+                                                            </p>
+                                                      </li>
+                                                      <% }%>
+
+                                                            <% if (pack[0].adicional[1]) {%>
+                                                                  <li class="Pacote-Propriedades__Item Bonus">
+                                                                        <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
+                                                                        <p>
+                                                                              <%=pack[0].adicional[1].nomeAdicional %>
+                                                                        </p>
+                                                                  </li>
+                                                                  <% }%>
+                                                                        <li class="Pacote-Propriedades__Item Destaques">
+                                                                              <div><img src="/img/wi-fi.png" width="34px" height="34px">
+                                                                                    <P>Wi-Fi Grátis</P>
+                                                                              </div>
+                                                                              <div><img src="/img/drink.png" width="34px" height="34px">
+                                                                                    <p>Café da Manhã</p>
+                                                                              </div>
+                                                                        </li>
+
+                                                                        <li class="Pacote-Propriedades__Item__Valor">
+                                                                              <h2 class="Pacote-Propriedades__Item__Valor-Inicial">R$&nbsp;18.800,00</h2>
+                                                                        </li>
+                                                                        <li class="Pacote-Propriedades__Item__Valor">
+                                                                              <h1 class="Pacote-Propriedades__Item__Valor-Promocional">R$&nbsp;14.100,00</h1>
+                                                                              <p>em até 10x no cartão</p>
+                                                                        </li>
 
                               </ul>
                               <a href="../checkout" class="btao-form">
