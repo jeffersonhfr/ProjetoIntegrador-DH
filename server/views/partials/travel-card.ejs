@@ -24,7 +24,7 @@
           </li>
           <li class="Propriedade Bonus">
             <p><img alt="Icone Check" src="/assets/img/check.png" />
-              <%= pacotes[i].bonus%>
+              <%= pacotes[i]%>
             </p>
           </li>
           </li>
@@ -32,12 +32,20 @@
       <div>
         <div class="travel-card__infoPrice">
           <li class="Propriedade ValorInicial preco">
-            <h3> A partir de <span>
-                <%= valor(pack[i].preco)%>
-              </span></h3>
+
+            <% if ((pack[i].preco-((pack[i].preco * pack[i].promocaoPorcentagem)/100)==pack[i].preco )) {%>
+              <h3> A partir de <span>
+
+                </span></h3>
+              <% } else {%>
+                <h3> A partir de <span class="tachado">
+                    <%= valor(pack[i].preco)%>
+                  </span></h3>
+                <% }%>
+
           <li class="Propriedade ValorPromocional preco">
             <h1>
-              <%= valor(pack[i].preco - ((pack[i].preco) * 1,pack[i].promocaoPorcentagem))%>
+              <%=valor(pack[i].preco-((pack[i].preco * pack[i].promocaoPorcentagem)/100))%>
             </h1>
           </li>
           <h3 class="emAte">em até <%= pack[i].parcelas%>x no cartão</h3>

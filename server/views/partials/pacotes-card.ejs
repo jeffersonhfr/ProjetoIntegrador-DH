@@ -12,25 +12,44 @@
           </p>
         </li>
         <li class="Propriedade Hotel">
-          <p><img alt="Icone Check" src="img/check.png" />Hotel</p>
+          <p><img alt="Icone Check" src="img/check.png" />
+            Hotel <%= pack[i].nomeHotel %>
+          </p>
         </li>
         <li class="Propriedade PassagemAerea">
-          <p><img alt="Icone Check" src="img/check.png" />Passagem Aerea</p>
+          <% if (pack[i].passagemAerea==true ) { %>
+            <p><img alt="Icone Check" src="img/check.png" />Passagem Aérea </p>
+            <% } else {%>
+              <p><img alt="Icone Check" src="img/notcheck.png" />Passagem Aérea </p>
+              <% } %>
+
         </li>
-        <li class="Propriedade Bonus">
-          <p><img alt="Icone Check" src="img/check.png" /> Translado e City Tour</p>
-        </li>
-        <li class="Propriedade ValorInicial preco">
-          <h2> A partir de <span>
-              <%= valor(pack[i].preco)%>
-            </span></h2>
-        </li>
-        <li class="Propriedade ValorPromocional preco">
-          <h1>
-            <%= valor(pack[i].promocaoPorcentagem)%>
-          </h1>
-        </li>
-        <h2 class="emAte">em até <%= pack[i].parcelas%>x no cartão de crédito</h2>
+
+        <p><img alt="Icone Check" src="img/check.png" /> Translado e City Tour</p>
+
+        <% if ((pack[i].preco-((pack[i].preco * pack[i].promocaoPorcentagem)/100)==pack[i].preco )) {%>
+
+          <li class="Propriedade ValorInicial preco">
+            <h2> A partir de </h2>
+          </li>
+
+          <% } else {%>
+
+            <li class="Propriedade ValorInicial preco">
+              <h2> A partir de <span>
+                  <%= valor(pack[i].preco)%>
+                </span></h2>
+            </li>
+
+            <% }%>
+
+
+              <li class="Propriedade ValorPromocional preco">
+                <h1>
+                  <%=valor(pack[i].preco-((pack[i].preco * pack[i].promocaoPorcentagem)/100))%>
+                </h1>
+              </li>
+              <h2 class="emAte">em até <%= pack[i].parcelas%>x no cartão de crédito</h2>
       </ul>
     </a>
   <li>

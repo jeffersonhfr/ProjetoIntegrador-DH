@@ -11,6 +11,12 @@ module.exports = (sequelize, DataTypes) => {
         through: 'Category_Packages',
         foreignKey: 'categoryId',
       });
+
+      Package.belongsToMany(models.Addtional, {
+        as: 'adicionais',
+        through: 'Addtional_Package',
+        foreignKey: 'addtionalId',
+      });
     }
   }
 

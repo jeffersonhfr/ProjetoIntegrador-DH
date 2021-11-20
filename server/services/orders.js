@@ -1,12 +1,17 @@
 const { Order } = require('../database/models');
 
-const orderServices = {};
+const ordersServices = {};
 
-orderServices.getAllOrders = async () => {
-  const order = await Order.findAll({
-    include: [{ association: 'usuario' }, { association: 'pacote' }],
+ordersServices.getAllOrders = async () => {
+  const pedidos = await Order.findAll({
+    include: [
+      // { association: 'categoria' },
+      // { association: 'pedidos' },
+      // { association: 'pacote' },
+    ],
   });
-  return order;
+
+  return pedidos;
 };
 
-module.exports = orderServices;
+module.exports = ordersServices;

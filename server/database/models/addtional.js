@@ -3,7 +3,11 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Addtional extends Model {
     static associate(models) {
-      // define association here
+      Addtional.belongsToMany(models.Package, {
+        as: 'pacotes',
+        through: 'Addtional_Package',
+        foreignKey: 'packageId',
+      });
     }
   }
   Addtional.init(
