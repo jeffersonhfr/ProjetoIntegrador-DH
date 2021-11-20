@@ -1,8 +1,10 @@
-<% for(let i=0; i<16; i++) {%>
+<% for (let i=0; i < categorias.length; i++) { %>
   <li class="Tema">
-    <div class="Container Img" style="background-image: url(img/Aventura.jpg);">
-      <a href="/pacotes/1" style="background-color: #69C862aa">
-        <h1>Aventura</h1>
+    <div class="Container Img" style="background-image: url(<%=categorias[i].imagemCategoria %>">
+      <a href="/pacotes/?categoria=<%=categorias[i].nomeCategoria %>" style="background-color:<%=categorias[i].corCategoria%>">
+        <h1>
+          <%= categorias[i].nomeCategoria %>
+        </h1>
       </a>
     </div>
   </li>

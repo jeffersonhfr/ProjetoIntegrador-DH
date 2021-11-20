@@ -3,14 +3,15 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Addtional extends Model {
     static associate(models) {
-      Addtional.hasMany(models.Package, {
+      Addtional.belongsToMany(models.Package, {
         as: 'pacotes',
+        through: 'Addtional_Package',
       });
     }
   }
   Addtional.init(
     {
-      nomeExtra: DataTypes.STRING,
+      nomeAdicional: DataTypes.STRING,
     },
     {
       sequelize,

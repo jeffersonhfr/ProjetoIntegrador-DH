@@ -1,28 +1,59 @@
-<% for(let i=0; i<10; i++) {%>
+<% for (let i=0; i < pack.length; i++) { %>
   <li class="promo">
-    <a href="/pacotes/1">
-      <img alt="Imagem do destino" src="img/Egito.jpg" />
-      <h2 class="Propriedade Nome">Egito Histórico</h2>
+    <a href="/pacotes/<%= pack[i].id%>">
+      <img alt="Imagem do destino" src="<%= pack[i].imagemCapa%>" />
+      <h2 class="Propriedade Nome">
+        <%= pack[i].nomePacote%>
+      </h2>
       <ul class="Propriedades">
         <li class="Propriedade Hotel">
-          <p><img alt="Icone Calendario" src="img/calendar.png" />10 Diárias</p>
+          <p><img alt="Icone Calendario" src="img/calendar.png" />
+            <%= pack[i].diarias%> Diárias
+          </p>
         </li>
         <li class="Propriedade Hotel">
-          <p><img alt="Icone Check" src="img/check.png" />Hotel</p>
+          <p><img alt="Icone Check" src="img/check.png" />
+            Hotel <%= pack[i].nomeHotel %>
+          </p>
         </li>
         <li class="Propriedade PassagemAerea">
-          <p><img alt="Icone Check" src="img/check.png" />Passagem Aerea</p>
+          <% if (pack[i].passagemAerea==true ) { %>
+            <p><img alt="Icone Check" src="img/check.png" />Passagem Aérea </p>
+            <% } else {%>
+              <p><img alt="Icone Check" src="img/notcheck.png" />Passagem Aérea </p>
+              <% } %>
+
         </li>
-        <li class="Propriedade Bonus">
-          <p><img alt="Icone Check" src="img/check.png" /> Translado e City Tour</p>
-        </li>
-        <li class="Propriedade ValorInicial preco">
-          <h2> A partir de <span>R$ 18.880,00</span></h2>
-        </li>
-        <li class="Propriedade ValorPromocional preco">
-          <h1>R$ 14.100,00</h1>
-        </li>
-        <h2 class="emAte">em até 10x no cartão de crédito</h2>
+
+
+        <p><img alt="Icone Check" src="img/check.png" />
+          <%=pack[i].adicional[0].nomeAdicional %>
+        </p>
+
+
+        <% if ((pack[i].preco-((pack[i].preco * pack[i].promocaoPorcentagem)/100)==pack[i].preco )) {%>
+
+          <li class="Propriedade ValorInicial preco">
+            <h2> A partir de </h2>
+          </li>
+
+          <% } else {%>
+
+            <li class="Propriedade ValorInicial preco">
+              <h2> A partir de <span>
+                  <%= valor(pack[i].preco)%>
+                </span></h2>
+            </li>
+
+            <% }%>
+
+
+              <li class="Propriedade ValorPromocional preco">
+                <h1>
+                  <%=valor(pack[i].preco-((pack[i].preco * pack[i].promocaoPorcentagem)/100))%>
+                </h1>
+              </li>
+              <h2 class="emAte">em até <%= pack[i].parcelas%>x no cartão de crédito</h2>
       </ul>
     </a>
   <li>

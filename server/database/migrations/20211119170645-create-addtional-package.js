@@ -1,16 +1,18 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Addtionals', {
+    await queryInterface.createTable('Addtional_Packages', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      nomeExtra: {
-        allowNull: false,
-        type: Sequelize.STRING,
+      addtionalId: {
+        type: Sequelize.INTEGER,
+      },
+      packageId: {
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
@@ -23,6 +25,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Addtionals');
+    await queryInterface.dropTable('Addtional_Packages');
   },
 };

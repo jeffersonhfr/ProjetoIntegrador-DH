@@ -3,19 +3,22 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Package extends Model {
     static associate(models) {
-      Package.belongsTo(models.Category, {
-        foreignKey: 'categoryId',
-        as: 'categorias',
-      });
-      Package.belongsTo(models.Addtional, {
-        foreignKey: 'addtionalId',
-        as: 'adicionais',
-      });
       Package.hasMany(models.Order, {
-        as: 'pacote',
+        as: 'order',
+      });
+
+      Package.belongsToMany(models.Addtional, {
+        as: 'adicional',
+        through: 'Addtional_Package',
+      });
+
+      Package.belongsToMany(models.Category, {
+        as: 'categoria',
+        through: 'Category_Packages',
       });
     }
   }
+
   Package.init(
     {
       nomePacote: DataTypes.STRING,
@@ -35,8 +38,6 @@ module.exports = (sequelize, DataTypes) => {
       imagem06: DataTypes.STRING,
       sobre: DataTypes.STRING,
       pontoTuristico: DataTypes.STRING,
-      addtionalId: DataTypes.INTEGER,
-      categoryId: DataTypes.INTEGER,
     },
     {
       sequelize,
