@@ -20,15 +20,21 @@
             <p><img alt="Icone Check" src="/assets/img/check.png" /> Hotel <%= pack[i].nomeHotel %>
             </p>
           </li>
-          <li class="Propriedade PassagemAerea">
-            <p><img alt="Icone Check" src="/assets/img/check.png" />Passagem Aérea</p>
-          </li>
-          <li class="Propriedade Bonus">
-            <p><img alt="Icone Check" src="/assets/img/check.png" />
-              <%= pacotes[i]%>
-            </p>
-          </li>
-          </li>
+
+          <% if (pack[i].passagemAerea==true ) { %>
+            <p><img alt="Icone Check" src="img/check.png" />Passagem Aérea </p>
+            <% } else {%>
+              <p><img alt="Icone Check" src="img/notcheck.png" />Passagem Aérea </p>
+              <% } %>
+
+                <% if (pack[i] ) { %>
+                  <li class="Propriedade Bonus">
+                    <p><img alt="Icone Check" src="/assets/img/check.png" />
+
+                    </p>
+                  </li>
+                  <% } %>
+
       </div>
       <div>
         <div class="travel-card__infoPrice">
@@ -49,9 +55,9 @@
               <%=valor(pack[i].preco-((pack[i].preco * pack[i].promocaoPorcentagem)/100))%>
             </h1>
           </li>
-          <h3 class="emAte">em até <%= pack[i].parcelas%>x no cartão</h3>
+          <h3 class="emAte">em até <%= pack[i].parcelas%>x no cartão de crédito</h3>
         </div>
-        <a href="/pacotes/1"><button class="btao-pacote">Detalhes</button></a>
+        <a href="/pacotes/<%= pack[i].id%>"><button class="btao-pacote">Detalhes</button></a>
       </div>
       </ul>
 

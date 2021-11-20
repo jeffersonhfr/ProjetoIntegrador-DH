@@ -1,18 +1,18 @@
 const { getAllCategorias } = require('../services/categorias');
-const { getAllPacotes } = require('../services/pacotes');
 const { getAllAddtionals } = require('../services/adicionais');
+const { getAllPacotes } = require('../services/pacotes');
 
 const controller = {
   index: async (req, res, next) => {
     const categorias = await getAllCategorias();
-    const pack = await getAllPacotes();
     const add = await getAllAddtionals();
+    const pack = await getAllPacotes();
     console.log(add, pack, categorias);
     res.render('index', {
       title: '| Aproveite nossas ofertas',
+      add,
       categorias,
       pack,
-      add,
       valor: (valor) => {
         return valor.toLocaleString('pt-BR', {
           style: 'currency',

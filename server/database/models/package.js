@@ -4,18 +4,17 @@ module.exports = (sequelize, DataTypes) => {
   class Package extends Model {
     static associate(models) {
       Package.hasMany(models.Order, {
-        as: 'pacote',
-      });
-      Package.belongsToMany(models.Category, {
-        as: 'categoria',
-        through: 'Category_Packages',
-        foreignKey: 'categoryId',
+        as: 'order',
       });
 
       Package.belongsToMany(models.Addtional, {
-        as: 'adicionais',
+        as: 'adicional',
         through: 'Addtional_Package',
-        foreignKey: 'addtionalId',
+      });
+
+      Package.belongsToMany(models.Category, {
+        as: 'categoria',
+        through: 'Category_Packages',
       });
     }
   }
