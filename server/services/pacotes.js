@@ -19,4 +19,13 @@ pacotesServices.getPackagesById = async (id) => {
   return pacotes;
 };
 
+pacotesServices.getPackageOrders = async (id) => {
+  const pacotes = await Package.findAll({
+    where: { id },
+    include: [{ association: 'categoria' }, { association: 'adicional' }],
+  });
+
+  return pacotes;
+};
+
 module.exports = pacotesServices;
