@@ -24,7 +24,7 @@ module.exports = {
         type: Sequelize.DATEONLY,
       },
       cpf: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       admin: {
         type: Sequelize.BOOLEAN,
@@ -33,7 +33,7 @@ module.exports = {
         type: Sequelize.STRING,
       },
       telefone: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       cep: {
         type: Sequelize.INTEGER,
