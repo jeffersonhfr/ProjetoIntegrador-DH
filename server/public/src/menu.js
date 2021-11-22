@@ -6,8 +6,8 @@ var menuHide = document.querySelector('.header_container');
 //   menuUser.classList.toggle('mostrar-menu');
 // })
 
-window.addEventListener('click', function(e){   
-  if (document.querySelector('.menu__desk').contains(e.target)){
+window.addEventListener('click', function (e) {
+  if (document.querySelector('.menu__desk').contains(e.target)) {
     menuUser.classList.toggle('mostrar-menu');
   } else {
     menuUser.classList.remove('mostrar-menu');

@@ -40,6 +40,12 @@ const controller = {
     res.render('pacote', {
       title: '| Pacote',
       pack,
+      valor: (valor) => {
+        return valor.toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL',
+        });
+      },
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
       usuarioAvatar: req.cookies.avatar,

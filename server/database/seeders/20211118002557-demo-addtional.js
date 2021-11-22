@@ -40,6 +40,21 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          nomeAdicional: 'Wi-fi Grátis',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          nomeAdicional: 'Café da Manhã',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          nomeAdicional: 'Refeição Completa',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {},
     );

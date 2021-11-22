@@ -1,104 +1,163 @@
 <%- include('./partials/head') %>
-      <%- include('./partials/header') %>
+    <%- include('./partials/header') %>
 
-            <body>
-                  <div class='Pacote'>
-                        <article class='Pacote-TitleContainer'>
+        <body>
+            <div class='Pacote'>
+                <article class='Pacote-TitleContainer'>
 
-                              <% if (pack[0].nacional==true) {%>
-                                    <h2 class='Pacote-TitleContainer__Subtitle'>
-                                          Pacote Nacional
-                                    </h2>
-                                    <% } else {%>
+                    <% if (pack[0].nacional==true) {%>
+                        <h2 class='Pacote-TitleContainer__Subtitle'>
+                            Pacote Nacional
+                        </h2>
+                        <% } else {%>
 
-                                          <h2 class='Pacote-TitleContainer__Subtitle'>
-                                                Pacote Internacional
-                                          </h2>
-                                          <% } %>
+                            <h2 class='Pacote-TitleContainer__Subtitle'>
+                                Pacote Internacional
+                            </h2>
+                            <% } %>
 
-                                                <h1 class='Pacote-TitleContainer__Title'>
-                                                      <%= pack[0].nomePacote %>
-                                                </h1>
-                        </article>
-                        <nav class='Pacote-ImgContainer'>
-                              <%- include('./partials/travel-images') %>
-                        </nav>
-                        </ul>
-                        <aside class="info_container">
-                              <ul class="Pacote-Propriedades">
-                                    <li class="Pacote-Propriedades__Item Titulo">
-                                          <h1>
-                                                <%= pack[0].nomePacote %>
-                                          </h1>
+                                <h1 class='Pacote-TitleContainer__Title'>
+                                    <%= pack[0].nomePacote %>
+                                </h1>
+                </article>
+                <nav class='Pacote-ImgContainer'>
+                    <%- include('./partials/travel-images') %>
+                </nav>
+                </ul>
+                <aside class="info_container">
+                    <ul class="Pacote-Propriedades">
+                        <li class="Pacote-Propriedades__Item Titulo">
+                            <h1>
+                                <%= pack[0].nomePacote %>
+                            </h1>
+                        </li>
+                        <li class="Pacote-Propriedades__Item Dias">
+                            <img class="Pacote-Propriedades__Item-Img" src="/img/calendar.png">
+                            <p>
+                                <%= pack[0].diarias %> Diárias
+                            </p>
+                        </li>
+                        <li class="Pacote-Propriedades__Item Hotel">
+                            <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
+                            <p>Hotel <%= pack[0].nomeHotel %>
+                            </p>
+                        </li>
+
+                        <% if(pack[0].passagemAerea==true ){ %>
+                            <li class="Pacote-Propriedades__Item PassagemAerea">
+                                <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
+                                <p>Passagem Aérea</p>
+                            </li>
+                            <%}%>
+
+                                <% if (pack[0].adicional[0] ) {%>
+                                    <li class="Pacote-Propriedades__Item Bonus">
+                                        <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
+                                        <p>
+                                            <%=pack[0].adicional[0].nomeAdicional %>
+                                        </p>
                                     </li>
-                                    <li class="Pacote-Propriedades__Item Dias">
-                                          <img class="Pacote-Propriedades__Item-Img" src="/img/calendar.png">
-                                          <p>
-                                                <%= pack[0].diarias %> Diárias
-                                          </p>
-                                    </li>
-                                    <li class="Pacote-Propriedades__Item Hotel">
-                                          <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
-                                          <p>Hotel <%= pack[0].nomeHotel %>
-                                          </p>
-                                    </li>
+                                    <% }%>
 
-                                    <% if(pack[0].passagemAerea==true ){ %>
-                                          <li class="Pacote-Propriedades__Item PassagemAerea">
+                                        <% if (pack[0].adicional[1]) {%>
+                                            <li class="Pacote-Propriedades__Item Bonus">
                                                 <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
-                                                <p>Passagem Aérea</p>
-                                          </li>
-                                          <%}%>
+                                                <p>
+                                                    <%=pack[0].adicional[1].nomeAdicional %>
+                                                </p>
+                                            </li>
+                                            <% }%>
+                                                <% if (pack[0].adicional[2]) {%>
+                                                    <li class="Pacote-Propriedades__Item Bonus">
+                                                        <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
+                                                        <p>
+                                                            <%=pack[0].adicional[2].nomeAdicional %>
+                                                        </p>
+                                                    </li>
+                                                    <% }%>
+                                                        <% if (pack[0].adicional[3]) {%>
+                                                            <li class="Pacote-Propriedades__Item todosBonus">
+                                                                <p>
+                                                                    <a onclick="openModal()" class="link-beneficios">Veja todos os benefícios do pacote</a>
+                                                                </p>
+                                                            </li>
+                                                            <% }%>
 
-                                                <% if (pack[0].adicional[0] ) {%>
-                                                      <li class="Pacote-Propriedades__Item Bonus">
-                                                            <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
-                                                            <p>
-                                                                  <%=pack[0].adicional[0].nomeAdicional %>
-                                                            </p>
-                                                      </li>
-                                                      <% }%>
-
-                                                            <% if (pack[0].adicional[1]) {%>
-                                                                  <li class="Pacote-Propriedades__Item Bonus">
-                                                                        <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
-                                                                        <p>
-                                                                              <%=pack[0].adicional[1].nomeAdicional %>
-                                                                        </p>
-                                                                  </li>
-                                                                  <% }%>
-                                                                        <li class="Pacote-Propriedades__Item Destaques">
-                                                                              <div><img src="/img/wi-fi.png" width="34px" height="34px">
-                                                                                    <P>Wi-Fi Grátis</P>
-                                                                              </div>
-                                                                              <div><img src="/img/drink.png" width="34px" height="34px">
-                                                                                    <p>Café da Manhã</p>
-                                                                              </div>
-                                                                        </li>
-
+                                                                <% if (!(pack[0].preco-((pack[0].preco * pack[0].promocaoPorcentagem)/100)==pack[0].preco )) {%>
+                                                                    <li class="Pacote-Propriedades__Item__Valor">
+                                                                        <h2 class="Pacote-Propriedades__Item__Valor-Inicial">
+                                                                            <%= valor(pack[0].preco)%>
+                                                                        </h2>
+                                                                    </li>
+                                                                    <% } else {%>
                                                                         <li class="Pacote-Propriedades__Item__Valor">
-                                                                              <h2 class="Pacote-Propriedades__Item__Valor-Inicial">R$&nbsp;18.800,00</h2>
-                                                                        </li>
-                                                                        <li class="Pacote-Propriedades__Item__Valor">
-                                                                              <h1 class="Pacote-Propriedades__Item__Valor-Promocional">R$&nbsp;14.100,00</h1>
-                                                                              <p>em até 10x no cartão</p>
-                                                                        </li>
+                                                                            <h2 class="Pacote-Propriedades__Item__Valor-Inicial">
 
-                              </ul>
-                              <a href="../checkout" class="btao-form">
-                                    <button class="Pacote__Button-Comprar">Comprar</button>
-                              </a>
-                        </aside>
-                        <article class="Pacote-Descricao-Sobre">
-                              <h1 class="Pacote-Decricao__Titulo">Sobre o Destino</h1>
-                              <p class="Pacote-Decricao__Paragrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at consectetur massa. Cras pharetra mauris eu velit vestibulum sagittis. Praesent mollis tortor neque, at gravida est finibus ac. Praesent cursus turpis nec ultricies tincidunt. Curabitur semper volutpat nulla, eu sagittis metus. Proin in molestie dolor. Mauris varius eros dictum egestas accumsan. Curabitur mollis pharetra sapien, eget feugiat est euismod non. Mauris augue risus, dignissim sed tortor id, vehicula tristique ligula. In consequat, dolor eu placerat semper, dolor leo venenatis est, vitae eleifend metus quam ut tellus. Duis lacinia turpis id pretium fermentum. Maecenas placerat lacus eros, sed interdum felis accumsan nec. Nunc lobortis tincidunt sapien, sed iaculis tortor ultrices vel. Nunc in nibh in turpis lacinia mattis sit amet et nunc. Fusce luctus mi sit amet sollicitudin venenatis. Suspendisse ultrices nec elit sit amet lacinia.</p>
-                              <p class="Pacote-Decricao__Paragrafo">Proin vel lorem aliquet, ornare purus ac, ornare eros. Etiam non ex suscipit, pulvinar dui quis, accumsan nisi. Fusce molestie ullamcorper orci, nec pharetra nunc blandit convallis. Cras semper, mi a fermentum lobortis, leo mauris fermentum dui, et cursus quam ipsum sed diam. Sed tempor dapibus consectetur. Pellentesque feugiat mattis est ac bibendum. Morbi non quam vehicula, vehicula urna vitae, porta ipsum. Aenean posuere nisl vitae tortor finibus bibendum. Donec dapibus ultrices ultrices. Sed non posuere orci, quis dictum urna. Mauris vulputate vestibulum elit, at interdum enim commodo at. Aliquam nec condimentum odio, non sodales velit. Quisque lobortis tincidunt tortor a consequat.</p>
-                        </article>
-                        <article class="Pacote-Descricao-PontosTuristicos">
-                              <h1 class="Pacote-Decricao__Titulo">Pontos Turísticos</h1>
-                              <p class="Pacote-Decricao__Paragrafo">Proin vel lorem aliquet, ornare purus ac, ornare eros. Etiam non ex suscipit, pulvinar dui quis, accumsan nisi. Fusce molestie ullamcorper orci, nec pharetra nunc blandit convallis. Cras semper, mi a fermentum lobortis, leo mauris fermentum dui, et cursus quam ipsum sed diam. Sed tempor dapibus consectetur. Pellentesque feugiat mattis est ac bibendum. Morbi non quam vehicula, vehicula urna vitae, porta ipsum. Aenean posuere nisl vitae tortor finibus bibendum. Donec dapibus ultrices ultrices. Sed non posuere orci, quis dictum urna. Mauris vulputate vestibulum elit, at interdum enim commodo at. Aliquam nec condimentum odio, non sodales velit. Quisque lobortis tincidunt tortor a consequat.</p>
-                              <p class="Pacote-Decricao__Paragrafo">Proin vel lorem aliquet, ornare purus ac, ornare eros. Etiam non ex suscipit, pulvinar dui quis, accumsan nisi. Fusce molestie ullamcorper orci, nec pharetra nunc blandit convallis. Cras semper, mi a fermentum lobortis, leo mauris fermentum dui, et cursus quam ipsum sed diam. Sed tempor dapibus consectetur. Pellentesque feugiat mattis est ac bibendum. Morbi non quam vehicula, vehicula urna vitae, porta ipsum. Aenean posuere nisl vitae tortor finibus bibendum. Donec dapibus ultrices ultrices. Sed non posuere orci, quis dictum urna. Mauris vulputate vestibulum elit, at interdum enim commodo at. Aliquam nec condimentum odio, non sodales velit. Quisque lobortis tincidunt tortor a consequat.</p>
-                        </article>
-                  </div>
+                                                                            </h2>
+                                                                        </li>
+                                                                        <% }%>
+                                                                            <li class="Pacote-Propriedades__Item__Valor">
+                                                                                <h1 class="Pacote-Propriedades__Item__Valor-Promocional">
+                                                                                    <%=valor(pack[0].preco-((pack[0].preco * pack[0].promocaoPorcentagem)/100))%>
+                                                                                </h1>
+                                                                                <p>em até <%= (pack[0].parcelas)%>x de <%=valor((pack[0].preco-((pack[0].preco * pack[0].promocaoPorcentagem)/100))/pack[0].parcelas)%>
+                                                                                </p>
+                                                                            </li>
 
-                  <%- include('./partials/footer') %>
+                    </ul>
+                    <form action="../checkout" method="get" class="btao-form">
+                        <input type="text" value="<%= pack[0].id %>" hidden>
+                        <button type="submit" class="Pacote__Button-Comprar">Comprar</button>
+                    </form>
+                </aside>
+                <article class="Pacote-Descricao-Sobre">
+                    <h1 class="Pacote-Decricao__Titulo">Sobre o Destino</h1>
+                    <p class="Pacote-Decricao__Paragrafo">
+                        <%=pack[0].sobre%>
+                    </p>
+                </article>
+                <article class="Pacote-Descricao-PontosTuristicos">
+                    <h1 class="Pacote-Decricao__Titulo">Pontos Turísticos</h1>
+                    <p class="Pacote-Decricao__Paragrafo">
+                        <%=pack[0].pontoTuristico%>
+                    </p>
+                    </p>
+                </article>
+            </div>
+
+            <div class="modal" id="modal">
+                <div class="modal-box">
+                    <div class="btn-fecharModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg btn-fecharModal" viewBox="0 0 16 16" onclick="closeModal()">
+                            <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" />
+                            <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z" />
+                        </svg>
+                    </div>
+                    <div class="modal-conteudo">
+                        <h1 class="tituloModal">Benefícios do pacote</h1>
+
+                        <% for(let i=0; i<pack[0].adicional.length ; i++) {%>
+                            <li class="Pacote-Propriedades__Item Bonus liModal">
+                                <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
+                                <p>
+                                    <%= pack[0].adicional[i].nomeAdicional %>
+                                </p>
+                            </li>
+                            <% }%>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                function openModal() {
+                    document.getElementById('modal').classList.add('modal-active');
+                    document.body.classList.add('scrollNone');
+                }
+
+                function closeModal() {
+                    document.getElementById('modal').classList.remove('modal-active');
+                    document.body.classList.remove('scrollNone');
+                }
+            </script>
+
+            <%- include('./partials/footer') %>
