@@ -3,7 +3,7 @@ var router = express.Router();
 var checkoutContoller = require('../controllers/checkout');
 
 /* GET home page. */
-router.get('/', checkoutContoller.index);
+router.post('/', checkoutContoller.index);
 router.post('/sucesso', checkoutContoller.sucesso);
 router.get('/sucesso', checkoutContoller.sucesso);
 

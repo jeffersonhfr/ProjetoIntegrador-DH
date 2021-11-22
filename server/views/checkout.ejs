@@ -9,15 +9,19 @@
         <div class="pagamento__box">
           <div class="pagamento__box__content">
             <div class="pagamento__box__imagem">
-              <img src="assets/img/Egito.jpg" alt="" width="100%">
+              <img src="<%= idFoto %>" alt="" width="100%">
             </div>
             <div class="pagamento__box__detalhes">
               <ul>
                 <li>
-                  <h2 class="pagamento__box__detalhes__titulo">Pacote:</h2><span>Egito histórico</span>
+                  <h2 class="pagamento__box__detalhes__titulo">Pacote:</h2><span>
+                    <%= idNome %>
+                  </span>
                 </li>
                 <li>
-                  <h2 class="pagamento__box__detalhes__titulo">Valor:</h2><span>R$ 15.800,00</span>
+                  <h2 class="pagamento__box__detalhes__titulo">Valor:</h2><span>
+                    <%= valor(idValor) %>
+                  </span>
                 </li>
                 <li>
                   <h2 class="pagamento__box__detalhes__titulo pagamento__box__detalhes__titulo--pagamento">Forma de Pagamento:</h2>
