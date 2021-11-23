@@ -1,4 +1,5 @@
 const { getAllUser } = require("../services/usuarios");
+const { getUserById } = require("../services/pacotes");
 
 const controller = {
   index: async (req, res, next) => {
