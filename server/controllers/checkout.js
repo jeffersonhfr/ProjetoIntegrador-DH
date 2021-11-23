@@ -1,16 +1,17 @@
 const { getAllOrders } = require('../services/orders');
+const { getAllPackages } = require('../services/pacotes');
+const { getPackagesById } = require('../services/pacotes');
 
 const controller = {
   index: async (req, res, next) => {
-    const { idPacote, idNome, idFoto, idValor } = req.body;
-    const orders = await getAllOrders();
+    const { idPacote, idUrl } = req.body;
+    const pack = await getPackagesById(idPacote);
+    console.log(pack);
+    console.log(idUrl);
     res.render('checkout', {
       title: '| Checkout',
       idPacote,
-      idNome,
-      idFoto,
-      idValor,
-      orders,
+      pack,
       valor: (valor) => {
         return valor.toLocaleString('pt-BR', {
           style: 'currency',

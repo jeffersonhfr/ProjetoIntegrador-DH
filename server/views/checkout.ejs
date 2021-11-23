@@ -9,18 +9,18 @@
         <div class="pagamento__box">
           <div class="pagamento__box__content">
             <div class="pagamento__box__imagem">
-              <img src="<%= idFoto %>" alt="" width="100%">
+              <img src="<%= pack[0].imagemCapa %>" alt="" width="100%">
             </div>
             <div class="pagamento__box__detalhes">
               <ul>
                 <li>
                   <h2 class="pagamento__box__detalhes__titulo">Pacote:</h2><span>
-                    <%= idNome %>
+                    <%= pack[0].nomePacote %>
                   </span>
                 </li>
                 <li>
                   <h2 class="pagamento__box__detalhes__titulo">Valor:</h2><span>
-                    <%= valor(idValor) %>
+                    <%=valor(pack[0].preco-((pack[0].preco * pack[0].promocaoPorcentagem)/100))%>
                   </span>
                 </li>
                 <li>
@@ -59,16 +59,11 @@
               <label for="parcelas" class="label-checkout">Opções de Parcelas:</label><br>
               <select name="parcelas" id="parcelas">
                 <option>Em quantas parcelas deseja pagar?</option>
-                <option value="1">1x</option>
-                <option value="2">2x</option>
-                <option value="3">3x</option>
-                <option value="4">4x</option>
-                <option value="4">5x</option>
-                <option value="4">6x</option>
-                <option value="4">7x</option>
-                <option value="4">8x</option>
-                <option value="4">9x</option>
-                <option value="4">10x</option>
+                <% for (i=1; i <=pack[0].parcelas ; i++){%>
+                  <option value="<%=i%>">
+                    <%=i%>x de <%=valor((pack[0].preco-((pack[0].preco * pack[0].promocaoPorcentagem)/100))/i)%>
+                  </option>
+                  <% } %>
               </select>
             </div>
 
