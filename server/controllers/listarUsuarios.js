@@ -12,16 +12,26 @@ const controller = {
       usuarioAvatar: req.cookies.avatar,
     });
   },
-  show: (req, res, next) => {
+  show: async (req, res, next) => {
     const { id } = req.params;
-    const usuario = usuariosPlaceholder[id - 1];
+    const user = await getUserById(id);
+    console.log(user);
     res.render("usuario", {
-      title: "Usuário",
-      subtitulo: `Usuário #${id}`,
-      usuario: usuario,
+      title: "| Usuario",
+      user,
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
       usuarioAvatar: req.cookies.avatar,
+
+      // const { id } = req.params;
+      // const usuario = usuariosPlaceholder[id - 1];
+      // res.render("usuario", {
+      //   title: "Usuário",
+      //   subtitulo: `Usuário #${id}`,
+      //   usuario: usuario,
+      //   usuarioLogado: req.cookies.usuario,
+      //   usuarioAdmin: req.cookies.admin,
+      //   usuarioAvatar: req.cookies.avatar,
     });
   },
   edit: (req, res, next) => {
