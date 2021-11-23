@@ -22,25 +22,15 @@ const controller = {
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
       usuarioAvatar: req.cookies.avatar,
-
-      // const { id } = req.params;
-      // const usuario = usuariosPlaceholder[id - 1];
-      // res.render("usuario", {
-      //   title: "Usuário",
-      //   subtitulo: `Usuário #${id}`,
-      //   usuario: usuario,
-      //   usuarioLogado: req.cookies.usuario,
-      //   usuarioAdmin: req.cookies.admin,
-      //   usuarioAvatar: req.cookies.avatar,
     });
   },
-  edit: (req, res, next) => {
+  edit: async (req, res, next) => {
     const { id } = req.params;
-    const usuario = usuariosPlaceholder[id - 1];
+    const user = await getUserById(id);
     res.render("usuario-edit", {
       title: "Usuário",
       subtitulo: `Usuário #${id}`,
-      usuario: usuario,
+      user,
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
       usuarioAvatar: req.cookies.avatar,
