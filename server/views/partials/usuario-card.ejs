@@ -1,32 +1,32 @@
-<% for (let i=0; i < usuario.length; i++) { %>
+<% for (let i=0; i < user.length; i++) { %>
 
   <div class="travel-card travel-card__content">
     <div class="travel-card__imagem-box">
-      <img alt="Avatar Usuário" src="<%= usuario[i].avatar%>" class="travel-card__imagem">
+      <img alt="Avatar Usuário" src="<%= user[i].avatar%>" class="travel-card__imagem">
     </div>
     <div class="travel-card__info-box">
       <div class="travel-card__infoDesc">
         <ul class="Propriedades">
           <li class="usuario-card__propriedade"> Nome</li>
           <li class="usuario-card__dado">
-            <%= usuario[i].nome%>
+            <%= user[i].nome%>
           </li>
           <li class="usuario-card__propriedade">Email </li>
           <li class="usuario-card__dado">
-            <%= usuario[i].email%>
+            <%= user[i].email%>
           </li>
         </ul>
       </div>
     </div>
     <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
       <div class="btao-Container">
-        <a href="/visualizarUsuario/<%= usuario[i].id %>" class="btao-form">
+        <a href="/visualizarUsuario/<%= user[i].id %>" class="btao-form">
           <button class="btao-Container__btao-visualizar listarUsuarios">
             <i class="bi bi-eye-fill"></i>
           </button>
         </a>
 
-        <a href="/listarUsuarios/<%= usuario[i].id %>/editar" class="btao-form">
+        <a href="/listarUsuarios/<%= user[i].id %>/editar" class="btao-form">
           <button class="btao-Container__btao-editar listarUsuarios">
             <i class="bi bi-pencil-fill"></i>
           </button>
