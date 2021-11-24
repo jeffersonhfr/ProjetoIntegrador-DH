@@ -28,15 +28,19 @@
           <div class="container-recuperar-senha">
             <a href="/recuperarSenha">Esqueceu sua senha?
           </div>
-          <div class="container-botao-login">
-            <button class="botao-login" type="submit">ENTRAR</button>
-          </div>
-          <div class="container-cadastro">
-            <p>Ainda não é cadastrado? </p>
-          </div>
-          <div>
-            <p class="cadastro__link-cadastro"><a href="/cadastro">Cadastre-se</a></p>
-          </div>
+          <% if(locals.origem) { %>
+            <input type="text" name="origem" id="origem" value="<%= origem %>" hidden>
+
+            <% } %>
+              <div class="container-botao-login">
+                <button class="botao-login" type="submit">ENTRAR</button>
+              </div>
+              <div class="container-cadastro">
+                <p>Ainda não é cadastrado? </p>
+              </div>
+              <div>
+                <p class="cadastro__link-cadastro"><a href="/cadastro">Cadastre-se</a></p>
+              </div>
         </form>
       </div>
     </section>

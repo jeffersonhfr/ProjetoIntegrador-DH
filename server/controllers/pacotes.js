@@ -33,13 +33,15 @@ const controller = {
     });
   },
   show: async (req, res, next) => {
+    let origem = req.originalUrl;
+    console.log(origem);
     const { id } = req.params;
     const pack = await getPackagesById(id);
-    console.log(pack);
 
     res.render('pacote', {
       title: '| Pacote',
       pack,
+      origem,
       valor: (valor) => {
         return valor.toLocaleString('pt-BR', {
           style: 'currency',

@@ -106,9 +106,13 @@
 
                     </ul>
                     <form action="../checkout" method="post" class="btao-form">
-                        <input type="text" name="idPacote" id="idPacote" value="<%= pack[0].id %>" hidden>
+                        <% if(locals.origem) { %>
+                            <input type="text" name="origem" id="origem" value="<%= origem %>" hidden>
 
-                        <button type="submit" class="Pacote__Button-Comprar">Comprar</button>
+                            <% } %>
+                                <input type="text" name="idPacote" id="idPacote" value="<%= pack[0].id %>" hidden>
+
+                                <button type="submit" class="Pacote__Button-Comprar">Comprar</button>
                     </form>
                 </aside>
                 <article class="Pacote-Descricao-Sobre">
