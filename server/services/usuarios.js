@@ -7,12 +7,12 @@ usuariosServices.getAllUser = async () => {
   return users;
 };
 
-usuariosServices.getuUserById = async (id) => {
-  const usuario = await Users.findAll({
+usuariosServices.getUserById = async (id) => {
+  const users = await User.findAll({
     where: { id },
   });
 
-  return pacotes;
+  return users;
 };
 
 module.exports = usuariosServices;

@@ -1,13 +1,14 @@
-const usuariosPlaceholder = require('../data/usuariosPlaceholder.json');
+const { getUserById } = require("../services/usuarios");
 
 const controller = {
-  index: (req, res, next) => {
+  index: async (req, res, next) => {
     const { id } = req.params;
-    const usuario = usuariosPlaceholder[id - 1];
-    res.render('visualizarUsuario', {
-      title: 'Usuário',
+    const user = await getUserById(id);
+    console.log(user);
+    res.render("visualizarUsuario", {
+      title: "Usuário",
       subtitulo: `Usuário #${id}`,
-      usuario: usuario,
+      user,
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
       usuarioAvatar: req.cookies.avatar,
