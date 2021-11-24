@@ -68,6 +68,13 @@ article.Pacote-Descricao-Sobre {
     margin: 10px 0;
 }
 
+.Pacote-Propriedades__Item--addpack{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+
 .Pacote-Propriedades__Item p{
     font-size: 16px;
     color:#919191;
@@ -115,9 +122,9 @@ article.Pacote-Descricao-Sobre {
 }
 
 .Pacote-Propriedades__Item.Titulo{
-    position: absolute;
-    visibility: hidden;
-    font-weight: bold;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
 }
 
 .Pacote-Propriedades__Item__Valor{
@@ -347,6 +354,9 @@ svg.bi.bi-x-lg:hover {
         position: relative;
         visibility: visible;
         margin-bottom: 20px;
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
     }
 
     .Pacote__Button-Comprar{
