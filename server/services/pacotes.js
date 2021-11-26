@@ -28,4 +28,13 @@ pacotesServices.getPackageOrders = async (id) => {
   return pacotes;
 };
 
+pacotesServices.createPacote = async (pacote) => {
+  const created = await Package.create({ ...pacote });
+  return created;
+};
+
+pacotesServices.destroyPacote = async (id) => {
+  return await Package.destroy({ where: { id } });
+};
+
 module.exports = pacotesServices;

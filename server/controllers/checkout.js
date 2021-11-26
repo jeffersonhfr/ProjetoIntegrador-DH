@@ -1,13 +1,10 @@
-const { getAllOrders } = require('../services/orders');
-const { getAllPackages } = require('../services/pacotes');
 const { getPackagesById } = require('../services/pacotes');
+const { getAllOrders } = require('../services/orders');
 
 const controller = {
   index: async (req, res, next) => {
-    const { idPacote, idUrl } = req.body;
+    const { idPacote } = req.body;
     const pack = await getPackagesById(idPacote);
-    console.log(pack);
-    console.log(idUrl);
     res.render('checkout', {
       title: '| Checkout',
       idPacote,
@@ -23,19 +20,23 @@ const controller = {
       usuarioAvatar: req.cookies.avatar,
     });
   },
-  sucesso: (req, res, next) => {
-    const { pagamento } = req.body;
+  sucesso: async (req, res, next) => {
+    const { idPacote, pagamento } = req.body;
+    const pack = await getPackagesById(idPacote);
+    console.log(pack);
     if (pagamento === 'boleto') {
       res.render('checkout-sucesso', {
         title: '| Pacote adquirido com sucesso',
+        pack,
+        pagamento,
         usuarioLogado: req.cookies.usuario,
         usuarioAdmin: req.cookies.admin,
         usuarioAvatar: req.cookies.avatar,
-        pagamento,
       });
     } else {
       res.render('checkout-sucesso', {
         title: '| Pacote adquirido com sucesso',
+        pack,
         usuarioLogado: req.cookies.usuario,
         usuarioAdmin: req.cookies.admin,
         usuarioAvatar: req.cookies.avatar,

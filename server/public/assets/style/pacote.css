@@ -209,7 +209,34 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
     position: fixed;
     background-color: #3c3c3ccc;
     top: 0;
+    left: 0;
     display: none;
+}
+
+.modal-alert {
+    width: 80vw;
+    height: 80vh;
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    margin: 10vh 10vw;
+    display: flex;
+    align-items: center;
+}
+
+.btn-alert{
+    width: 70px;
+    background-color: #cc0000;
+}
+
+.btn-alert:hover{
+    background-color: #8b0303;
+}
+
+.btn-cancel{
+    width: 70px;
+    padding: 10px 24px;
+    margin-left: 10px;
 }
 
 .modal-active{
@@ -278,6 +305,19 @@ svg.bi.bi-x-lg:hover {
     color: #cc0000;
 }
 
+@media(min-width: 500px ){
+.modal-alert {
+    width: 350px;
+    height: 260px;
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    margin: calc((100vh - 260px)/2) calc((100% - 350px)/2);
+    display: flex;
+    align-items: center;
+}
+}
+
 @media(min-width: 992px ){
 
     .modal-box{
@@ -289,6 +329,10 @@ svg.bi.bi-x-lg:hover {
         margin: 20vh 15vw;
     }
 
+    .tituloAlert{
+        font-size: 23px !important;
+        margin: 20px 0;
+    }
     aside.info_container {
         top: 20px;
         position: sticky;

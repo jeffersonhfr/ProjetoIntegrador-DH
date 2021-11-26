@@ -1,9 +1,150 @@
 <%- include('./partials/head') %>
   <%- include('./partials/header') %>
+    <div class="container">
+      <form action="" method="POST" class='addPacote'>
+        <article class='addPacote-TitleContainer'>
+          <h1 class='addPacote-TitleContainer'>Adicionar Pacotes</h1>
+        </article>
 
-    <h1>
-      EDIT Pacotes
-    </h1>
+        <h2 class='addPacote-TitleContainer'>Adicione as imagens</h2>
+        <nav class='addPacote-ImgContainer' style='position: relative;'>
+          <ul class='addPacote-ImgContainer__Img-list'>
+            <!-- <input name="imagemCapa" id="imagemCapa" type='file' onchange='uploadPreview(event)' accept='.jpg' />
+            <input name='imagem01' id='imagem01' type='file' onchange='uploadPreview(event)' accept='.jpg' />
+            <input name='imagem02' id='imagem02' type='file' onchange='uploadPreview(event)' accept='.jpg' />
+            <input name='imagem03' id='imagem03' type='file' onchange='uploadPreview(event)' accept='.jpg' />
+            <input name='imagem04' id='imagem04' type='file' onchange='uploadPreview(event)' accept='.jpg' />
+            <input name='imagem04' id='imagem04' type='file' onchange='uploadPreview(event)' accept='.jpg' />
+            <input name='imagem05' id='imagem05' type='file' onchange='uploadPreview(event)' accept='.jpg' />
+            <input name='imagem06' id='imagem06' type='file' onchange='uploadPreview(event)' accept='.jpg' /> -->
+          </ul>
+        </nav>
+
+        <h2 class='addPacote-TitleContainer'>Adicione as informações sobre o pacote</h2>
+        <ul class="Pacote-Propriedades">
+          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
+            <label>Nome Pacote</label>
+            <input type="text" name="nomePacote" id="nomePacote" value="<%= pack[0].nomePacote %>">
+          </li>
+          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
+            <label>Nome do Hotel</label>
+            <input type="text" name="nomeHotel" id="nomeHotel" value="<%= pack[0].nomeHotel %>">
+          </li>
+          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack Titulo">
+            <label>Diárias</label>
+            <input type="number" name="diarias" id="diarias" value="<%= pack[0].diarias %>">
+          </li>
+          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
+            <label>Destino:</label>
+            <% if(pack[0].nacional==1) { %>
+              <div class="radio-box">
+                <div class="radio-opt">
+                  <input type="radio" name="nacional" id="nacional" value="1" checked> Nacional
+                </div>
+                <div class="radio-opt">
+                  <input type="radio" name="nacional" id="nacional" value="0"> Internacional
+                </div>
+              </div>
+
+              <%} else { %>
+                <div class="radio-box">
+                  <div class="radio-opt">
+                    <input type="radio" name="nacional" id="nacional" value="1"> Nacional
+                  </div>
+                  <div class="radio-opt">
+                    <input type="radio" name="nacional" id="nacional" value="0" checked> Internacional
+                  </div>
+                </div>
+                <% } %>
+          </li>
+          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
+            <label>Passagem Aérea:</label>
+
+            <% if(pack[0].passagemAerea==1) { %>
+              <div class="radio-box">
+                <div class="radio-opt">
+                  <input type="radio" name="PassagemAerea" id="PassagemAerea" value="1" checked> Sim
+                </div>
+                <div class="radio-opt">
+                  <input type="radio" name="PassagemAerea" id="PassagemAerea" value="0"> Não
+                </div>
+              </div>
+              <%} else { %>
+                <div class="radio-box">
+                  <div class="radio-opt">
+                    <input type="radio" name="PassagemAerea" id="PassagemAerea" value="1"> Sim
+                  </div>
+                  <div class="radio-opt">
+                    <input type="radio" name="PassagemAerea" id="PassagemAerea" value="0" checked> Não
+                  </div>
+                </div>
+                <% } %>
+          </li>
+        </ul>
+
+        <h2 class='addPacote-TitleContainer'>Adicione os Extras</h2>
+        <ul class="Pacote-Propriedades checkbox">
+          <% for(let i=0; i<adicionais.length ; i++) {%>
+            <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--checkbox">
+
+
+
+              <% if (adicionais[i].nomeAdicional==pack[0].adicional[i].nomeAdicional || ) {%>
+                <div class="checkbox-group">
+
+
+
+                  <input checked type="checkbox" id="<%= adicionais[i].id %>" name="adicionais" value="<%= adicionais[i].id %>">
+                  <label for="<%= adicionais[i].id %>">
+                    <%= adicionais[i].nomeAdicional %>
+                  </label>
+                </div>
+                <% } else { %>
+                  <div class="checkbox-group">
+                    <input type="checkbox" id="<%= adicionais[i].id %>" name="adicionais" value="<%= adicionais[i].id %>">
+                    <label for="<%= adicionais[i].id %>">
+                      <%= adicionais[i].nomeAdicional %>
+                    </label>
+                  </div>
+                  <% } %>
+
+            </li>
+            <% } %>
+
+        </ul>
+
+        <h2 class='addPacote-TitleContainer'>Adicione os dados financeiros</h2>
+        <ul class="Pacote-Propriedades">
+          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
+            <label>Valor do Pacote</label>
+            <input type="text" name="preco" id="preco" value="<%= pack[0].preco %>" placeholder="ex.: 19990.00 - R$ 19.990,00">
+          </li>
+          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
+            <label>Percentual de desconto</label>
+            <input type="text" name="promocaoPorcentagem" value="<%= pack[0].promocaoPorcentagem %>" id="promocaoPorcentagem" placeholder="ex. 10">
+          </li>
+          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack Titulo">
+            <label>Número máximo de parcelas</label>
+            <input type="number" name="parcelas" id="parcelas" value="<%= pack[0].parcelas %>">
+          </li>
+        </ul>
+
+        <h2 class='addPacote-TitleContainer'>Adicione as descrições sobre o pacote e local</h2>
+        <ul class="Pacote-Propriedades">
+          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
+            <label>Sobre o Destino</label>
+            <textarea name="sobre" id="sobre" cols="30" rows="10"><%= pack[0].sobre %>"</textarea>
+          </li>
+          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
+            <label>Pontos Turísticos</label>
+            <textarea name="pontoTuristico" id="pontoTuristico" cols="30" rows="10"><%= pack[0].pontoTuristico %>"</textarea>
+          </li>
+        </ul>
+
+        <button type="submit" title="Criar Pacote" class="Pacote__Button-Comprar">Cadastrar</button>
+      </form>
+    </div>
+
 
 
     <%- include('./partials/footer') %>

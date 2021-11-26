@@ -5,8 +5,15 @@ const adminMiddleware = require('../middlewares/admin');
 
 /* GET home page. */
 router.get('/', pacotesContoller.index);
+
 router.get('/adicionar', adminMiddleware, pacotesContoller.add);
+router.post('/adicionar', adminMiddleware, pacotesContoller.create);
+
 router.get('/:id', pacotesContoller.show);
+
 router.get('/:id/editar', adminMiddleware, pacotesContoller.edit);
+router.post('/:id/editar', adminMiddleware, pacotesContoller.update);
+
 router.get('/:id/delete', adminMiddleware, pacotesContoller.delete);
+router.post('/:id/delete', adminMiddleware, pacotesContoller.destroy);
 module.exports = router;
