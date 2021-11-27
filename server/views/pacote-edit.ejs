@@ -6,7 +6,7 @@
           <h1 class='addPacote-TitleContainer'>Adicionar Pacotes</h1>
         </article>
 
-        <h2 class='addPacote-TitleContainer'>Adicione as imagens</h2>
+        <!-- <h2 class='addPacote-TitleContainer'>Adicione as imagens</h2> -->
         <nav class='addPacote-ImgContainer' style='position: relative;'>
           <ul class='addPacote-ImgContainer__Img-list'>
             <!-- <input name="imagemCapa" id="imagemCapa" type='file' onchange='uploadPreview(event)' accept='.jpg' />
@@ -82,18 +82,17 @@
           </li>
         </ul>
 
+
+
+
         <h2 class='addPacote-TitleContainer'>Adicione os Extras</h2>
         <ul class="Pacote-Propriedades checkbox">
           <% for(let i=0; i<adicionais.length ; i++) {%>
             <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--checkbox">
 
-
-
-              <% if (adicionais[i].nomeAdicional==pack[0].adicional[i].nomeAdicional || ) {%>
+              <!-- Aqui viria um IF para saber se já possui aquele add ou não, ainda não está pronto -->
+              <% if (adicionais[i].nomeAdicional) {%>
                 <div class="checkbox-group">
-
-
-
                   <input checked type="checkbox" id="<%= adicionais[i].id %>" name="adicionais" value="<%= adicionais[i].id %>">
                   <label for="<%= adicionais[i].id %>">
                     <%= adicionais[i].nomeAdicional %>
@@ -133,11 +132,11 @@
         <ul class="Pacote-Propriedades">
           <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
             <label>Sobre o Destino</label>
-            <textarea name="sobre" id="sobre" cols="30" rows="10"><%= pack[0].sobre %>"</textarea>
+            <textarea name="sobre" id="sobre" cols="30" rows="10"><%= pack[0].sobre %></textarea>
           </li>
           <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
             <label>Pontos Turísticos</label>
-            <textarea name="pontoTuristico" id="pontoTuristico" cols="30" rows="10"><%= pack[0].pontoTuristico %>"</textarea>
+            <textarea name="pontoTuristico" id="pontoTuristico" cols="30" rows="10"><%= pack[0].pontoTuristico %></textarea>
           </li>
         </ul>
 
