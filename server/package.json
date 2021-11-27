@@ -5,6 +5,7 @@
   "engines": {
     "node": "14.x"
   },
+  "main": "app.js",
   "scripts": {
     "start": "nodemon ./bin/www"
   },
