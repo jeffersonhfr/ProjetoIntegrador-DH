@@ -63,19 +63,19 @@
             <% if(pack[0].passagemAerea==1) { %>
               <div class="radio-box">
                 <div class="radio-opt">
-                  <input type="radio" name="PassagemAerea" id="PassagemAerea" value="1" checked> Sim
+                  <input type="radio" name="passagemAerea" id="passagemAerea" value="1" checked> Sim
                 </div>
                 <div class="radio-opt">
-                  <input type="radio" name="PassagemAerea" id="PassagemAerea" value="0"> Não
+                  <input type="radio" name="passagemAerea" id="passagemAerea" value="0"> Não
                 </div>
               </div>
               <%} else { %>
                 <div class="radio-box">
                   <div class="radio-opt">
-                    <input type="radio" name="PassagemAerea" id="PassagemAerea" value="1"> Sim
+                    <input type="radio" name="passagemAerea" id="passagemAerea" value="1"> Sim
                   </div>
                   <div class="radio-opt">
-                    <input type="radio" name="PassagemAerea" id="PassagemAerea" value="0" checked> Não
+                    <input type="radio" name="passagemAerea" id="passagemAerea" value="0" checked> Não
                   </div>
                 </div>
                 <% } %>
@@ -85,32 +85,7 @@
 
 
 
-        <h2 class='addPacote-TitleContainer'>Adicione os Extras</h2>
-        <ul class="Pacote-Propriedades checkbox">
-          <% for(let i=0; i<adicionais.length ; i++) {%>
-            <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--checkbox">
 
-              <!-- Aqui viria um IF para saber se já possui aquele add ou não, ainda não está pronto -->
-              <% if (adicionais[i].nomeAdicional) {%>
-                <div class="checkbox-group">
-                  <input checked type="checkbox" id="<%= adicionais[i].id %>" name="adicionais" value="<%= adicionais[i].id %>">
-                  <label for="<%= adicionais[i].id %>">
-                    <%= adicionais[i].nomeAdicional %>
-                  </label>
-                </div>
-                <% } else { %>
-                  <div class="checkbox-group">
-                    <input type="checkbox" id="<%= adicionais[i].id %>" name="adicionais" value="<%= adicionais[i].id %>">
-                    <label for="<%= adicionais[i].id %>">
-                      <%= adicionais[i].nomeAdicional %>
-                    </label>
-                  </div>
-                  <% } %>
-
-            </li>
-            <% } %>
-
-        </ul>
 
         <h2 class='addPacote-TitleContainer'>Adicione os dados financeiros</h2>
         <ul class="Pacote-Propriedades">
@@ -140,7 +115,7 @@
           </li>
         </ul>
 
-        <button type="submit" title="Criar Pacote" class="Pacote__Button-Comprar">Cadastrar</button>
+        <button type="submit" title="Criar Pacote" class="Pacote__Button-Comprar">Editar</button>
       </form>
     </div>
 

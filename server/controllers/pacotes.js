@@ -3,6 +3,7 @@ const {
   createPacote,
   getPackagesById,
   destroyPacote,
+  updatePacote,
 } = require('../services/pacotes');
 
 const { getAllCategorias } = require('../services/categorias');
@@ -99,14 +100,10 @@ const controller = {
       res.status(400).send('Ops... não encontramos o seu to do');
     }
 
-    const update = await updateTodo(id, req.body);
+    const update = await updatePacote(id, req.body);
 
     if (update) {
-      const todos = await getAllTodos();
-      res.render('todos', {
-        title: `To Dos`,
-        todos,
-      });
+      res.redirect('../../pacotes');
     } else {
       res.status(500).send('Ops... deu ruim...');
     }
