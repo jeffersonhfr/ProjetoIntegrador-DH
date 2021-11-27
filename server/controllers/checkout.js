@@ -1,16 +1,14 @@
+const { getPackagesById } = require('../services/pacotes');
 const { getAllOrders } = require('../services/orders');
 
 const controller = {
   index: async (req, res, next) => {
-    const { idPacote, idNome, idFoto, idValor } = req.body;
-    const orders = await getAllOrders();
+    const { idPacote } = req.body;
+    const pack = await getPackagesById(idPacote);
     res.render('checkout', {
       title: '| Checkout',
       idPacote,
-      idNome,
-      idFoto,
-      idValor,
-      orders,
+      pack,
       valor: (valor) => {
         return valor.toLocaleString('pt-BR', {
           style: 'currency',
@@ -22,19 +20,23 @@ const controller = {
       usuarioAvatar: req.cookies.avatar,
     });
   },
-  sucesso: (req, res, next) => {
-    const { pagamento } = req.body;
+  sucesso: async (req, res, next) => {
+    const { idPacote, pagamento } = req.body;
+    const pack = await getPackagesById(idPacote);
+    console.log(pack);
     if (pagamento === 'boleto') {
       res.render('checkout-sucesso', {
         title: '| Pacote adquirido com sucesso',
+        pack,
+        pagamento,
         usuarioLogado: req.cookies.usuario,
         usuarioAdmin: req.cookies.admin,
         usuarioAvatar: req.cookies.avatar,
-        pagamento,
       });
     } else {
       res.render('checkout-sucesso', {
         title: '| Pacote adquirido com sucesso',
+        pack,
         usuarioLogado: req.cookies.usuario,
         usuarioAdmin: req.cookies.admin,
         usuarioAvatar: req.cookies.avatar,

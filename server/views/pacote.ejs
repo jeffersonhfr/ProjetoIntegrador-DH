@@ -106,11 +106,13 @@
 
                     </ul>
                     <form action="../checkout" method="post" class="btao-form">
-                        <input type="text" name="idPacote" id="idPacote" value="<%= pack[0].id %>" hidden>
-                        <input type="text" name="idNome" id="idNome" value="<%= pack[0].nomePacote %>" hidden>
-                        <input type="text" name="idFoto" id="idFoto" value="<%= pack[0].imagemCapa %>" hidden>
-                        <input type="text" name="idValor" id="idValor" value="<%=valor(pack[0].preco-((pack[0].preco * pack[0].promocaoPorcentagem)/100))%>" hidden>
-                        <button type="submit" class="Pacote__Button-Comprar">Comprar</button>
+                        <% if(locals.origem) { %>
+                            <input type="text" name="origem" id="origem" value="<%= origem %>" hidden>
+
+                            <% } %>
+                                <input type="text" name="idPacote" id="idPacote" value="<%= pack[0].id %>" hidden>
+
+                                <button type="submit" class="Pacote__Button-Comprar">Comprar</button>
                     </form>
                 </aside>
                 <article class="Pacote-Descricao-Sobre">
@@ -161,6 +163,8 @@
                     document.getElementById('modal').classList.remove('modal-active');
                     document.body.classList.remove('scrollNone');
                 }
+
+
             </script>
 
-            <%- include('./partials/footer') %>
+            <% - include('./partials/footer') %>

@@ -22,6 +22,15 @@ npm install
 ```
 
 <br>
+### Crie um Banco de dados MYSQL com nome: <br>
+
+viagem_com<br>
+<br>
+Em seguida rode os comandos no terminal:<br>
+npx sequelize-cli db:migrate<br>
+npx sequelize-cli db:seed:all
+<br>
+<br><br>
 
 ## Levantando o servidor
 
