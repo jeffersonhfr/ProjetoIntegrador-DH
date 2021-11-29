@@ -21,7 +21,7 @@ router.get('/adicionar', adminMiddleware, pacotesContoller.add);
 router.post(
   '/adicionar',
   adminMiddleware,
-  upload.single('pacotes'),
+  upload.array('pacotes', 7),
   pacotesContoller.create,
 );
 
