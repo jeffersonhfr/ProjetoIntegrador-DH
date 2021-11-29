@@ -40,28 +40,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
-      imagemCapa: {
-        allowNull: false,
-        type: Sequelize.STRING,
-      },
-      imagem01: {
-        type: Sequelize.STRING,
-      },
-      imagem02: {
-        type: Sequelize.STRING,
-      },
-      imagem03: {
-        type: Sequelize.STRING,
-      },
-      imagem04: {
-        type: Sequelize.STRING,
-      },
-      imagem05: {
-        type: Sequelize.STRING,
-      },
-      imagem06: {
-        type: Sequelize.STRING,
-      },
       sobre: {
         allowNull: false,
         type: Sequelize.TEXT,
