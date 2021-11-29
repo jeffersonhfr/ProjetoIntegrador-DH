@@ -47,13 +47,14 @@ const controller = {
     });
   },
   create: async (req, res, next) => {
-    const create = await createPacote(req.body);
 
-    if (create) {
-      res.redirect('../pacotes');
-    } else {
-      res.status(500).send('Erro ao criar seu pacote');
-    }
+    //const create = await createPacote(req.body);
+
+   // if (create) {
+    //  res.redirect('../pacotes');
+  //} else {
+  //  res.status(500).send('Erro ao criar seu pacote');
+  //  }
   },
   show: async (req, res, next) => {
     let origem = req.originalUrl;

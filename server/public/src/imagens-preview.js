@@ -1,7 +1,8 @@
-function uploadPreview(item) {
-  console.log('teste');
-
-  console.log(item.files);
+//function uploadPreview(item) {
+//  console.log('teste');
+//  let reader = new FileReader();
+//  reader.onload = function () {   
+// }
   // var noInputImgFisrt = document.querySelector('#noInputImg');
   // let inputAcess = document.querySelector('#imgInputAcess');
 
