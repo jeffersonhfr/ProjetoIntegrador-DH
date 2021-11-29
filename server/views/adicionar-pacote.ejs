@@ -1,7 +1,7 @@
 <%- include('./partials/head') %>
   <%- include('./partials/header') %>
     <div class="container">
-      <form action="" method="POST" class='addPacote'>
+      <form action="" method="POST" class='addPacote' enctype="multipart/form-data">
         <article class='addPacote-TitleContainer'>
           <h1 class='addPacote-TitleContainer'>Adicionar Pacotes</h1>
         </article>
@@ -9,14 +9,11 @@
         <!-- <h2 class='addPacote-TitleContainer'>Adicione as imagens</h2> -->
         <nav class='addPacote-ImgContainer' style='position: relative;'>
           <ul class='addPacote-ImgContainer__Img-list'>
-            <!-- <input name="imagemCapa" id="imagemCapa" type='file' onchange='uploadPreview(event)' accept='.jpg' />
-            <input name='imagem01' id='imagem01' type='file' onchange='uploadPreview(event)' accept='.jpg' />
-            <input name='imagem02' id='imagem02' type='file' onchange='uploadPreview(event)' accept='.jpg' />
-            <input name='imagem03' id='imagem03' type='file' onchange='uploadPreview(event)' accept='.jpg' />
-            <input name='imagem04' id='imagem04' type='file' onchange='uploadPreview(event)' accept='.jpg' />
-            <input name='imagem04' id='imagem04' type='file' onchange='uploadPreview(event)' accept='.jpg' />
-            <input name='imagem05' id='imagem05' type='file' onchange='uploadPreview(event)' accept='.jpg' />
-            <input name='imagem06' id='imagem06' type='file' onchange='uploadPreview(event)' accept='.jpg' /> -->
+            <input type="file" name="pacotes" accept="image/png, image/jpeg" />
+            <input type="file" name="pacotes" accept="image/png, image/jpeg" />
+            <input type="file" name="pacotes" accept="image/png, image/jpeg" />
+            <input type="file" name="pacotes" accept="image/png, image/jpeg" />
+            <input type="file" name="pacotes" accept="image/png, image/jpeg" />
           </ul>
         </nav>
         <script src="../src/imagens-preview.js"></script>

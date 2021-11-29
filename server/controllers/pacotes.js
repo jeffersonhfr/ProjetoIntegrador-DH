@@ -48,7 +48,6 @@ const controller = {
   },
   create: async (req, res, next) => {
     const create = await createPacote(req.body);
-
     if (create) {
       res.redirect('../pacotes');
     } else {
