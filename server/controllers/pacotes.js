@@ -5,6 +5,7 @@ const {
   destroyPacote,
   updatePacote,
 } = require('../services/pacotes');
+const fs = require('fs');
 
 const { getAllCategorias } = require('../services/categorias');
 const { getAllAddtionals } = require('../services/adicionais');
@@ -47,14 +48,33 @@ const controller = {
     });
   },
   create: async (req, res, next) => {
+  
+    if (req.files) {
+      console.log(req.files)
+      pacote = {}
 
-    //const create = await createPacote(req.body);
+      pacote.nomePacote = req.body.nomePacote
+      pacote.nomeHotel = req.body.nomeHotel
+      pacote.diarias = req.body.diarias
+      pacote.passagemAerea = req.body.passagemAerea
+      pacote.nacional = req.body.nacional
+      pacote.preco = req.body.preco
+      pacote.promocaoPorcentagem = req.body.promocaoPorcentagem
+      pacote.parcelas = req.body.parcelas
+      pacote.imagemCapa = '/assets/img/package/' + req.files[0].filename
+      pacote.imagem01 = '/assets/img/package/' + req.files[1].filename
+      
 
-   // if (create) {
-    //  res.redirect('../pacotes');
-  //} else {
-  //  res.status(500).send('Erro ao criar seu pacote');
-  //  }
+      const create = await createPacote(pacote);
+
+      if (create) {
+        res.redirect('../pacotes');
+      } else {
+        res.status(500).send('Erro ao criar seu pacote');
+        
+  
+      }
+    }
   },
   show: async (req, res, next) => {
     let origem = req.originalUrl;
