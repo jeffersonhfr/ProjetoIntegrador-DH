@@ -14,5 +14,14 @@ usuariosServices.getUserById = async (id) => {
 
   return users;
 };
+usuariosServices.updateUser = async (id, user) => {
+  const update = await User.update(
+    { ...user },
+    {
+      where: { id },
+    }
+  );
+  return update;
+};
 
 module.exports = usuariosServices;
