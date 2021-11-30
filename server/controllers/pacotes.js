@@ -119,11 +119,12 @@ const controller = {
       const createAdd = await createAddtionalPacote(dataAddPackage);
 
       if (createAdd) {
-        res.redirect('../pacotes');
+       // res.redirect('../pacotes');
       }
     } else {
       res.status(500).send('Erro ao criar seu pacote');
     }
+    create.reload().then(i=>console.log(i))
   },
   show: async (req, res, next) => {
     let origem = req.originalUrl;

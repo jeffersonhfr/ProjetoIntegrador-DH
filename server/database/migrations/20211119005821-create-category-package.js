@@ -2,11 +2,25 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Category_Packages', {
-      categoryId: {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      packageId: {
+      categoryId: {
+        allowNull: false,
+        references: {model: 'categories', key:'id'},
         type: Sequelize.INTEGER,
+        onUpdate: 'CASCADE',
+        onDelete:'CASCADE'
+      },
+      packageId: {
+        allowNull: false,
+        references: {model: 'packages', key:'id'},
+        type: Sequelize.INTEGER,
+        onUpdate: 'CASCADE',
+        onDelete:'CASCADE'
       },
       createdAt: {
         allowNull: false,
