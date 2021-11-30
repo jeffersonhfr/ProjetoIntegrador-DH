@@ -1,20 +1,17 @@
-const usuarios = require("../data/usuariosPlaceholder.json");
-const fs = require("fs"),
-  path = require("path"),
-  bcrypt = require("bcrypt");
+const { getAllUser } = require("../services/usuarios");
+const { getUserById } = require("../services/usuarios");
 
 const controller = {
-  index: (req, res, next) => {
+  index: async (req, res, next) => {
+    const { id } = req.cookies.usuario;
+    const user = await getUserById(id);
+    console.log(user);
     let usuarioLogado = req.cookies.usuario;
     let usuarioAdmin = req.cookies.admin;
     if (usuarioAdmin || usuarioLogado) {
       res.render("usuario", {
         title: "| " + usuarioLogado.nome,
-        usuario: usuarios.find((u) => {
-          if (u.id === usuarioLogado.id) {
-            return u;
-          }
-        }),
+        user,
         usuarioLogado: usuarioLogado,
         usuarioAdmin: usuarioAdmin,
         usuarioAvatar: req.cookies.avatar,
@@ -23,41 +20,64 @@ const controller = {
       res.redirect("../login");
     }
   },
-  edit: (req, res, next) => {
-    let usuarioLogado = req.cookies.usuario;
-    let usuario = usuarios.find((u) => {
-      if (u.id === usuarioLogado.id) {
-        return u;
-      }
+
+  show: async (req, res, next) => {
+    const { id } = req.params;
+    const user = await getUserById(id);
+    console.log(user);
+    res.render("usuario-edit", {
+      title: "| Usuario",
+      user,
+      usuarioLogado: req.cookies.usuario,
+      usuarioAdmin: req.cookies.admin,
+      usuarioAvatar: req.cookies.avatar,
     });
-
-    usuario.nome = req.body.nome;
-    usuario.email = req.body.email;
-    usuario.nascimento = req.body.nascimento;
-    usuario.telefone = req.body.telefone;
-    usuario.cpf = req.body.cpf;
-    usuario.cep = req.body.cep;
-    usuario.endereco = req.body.endereco;
-    usuario.complemento = req.body.complemento;
-    usuario.cidade = req.body.cidade;
-    usuario.estado = req.body.uf;
-    usuario.senha = bcrypt.hashSync(req.body.senha, 10);
-    usuario.modificadoEm = new Date();
-    usuarios.push(usuario);
-
-    res.redirect("../perfil");
   },
-  form_edit: (req, res, next) => {
+
+  edit: async (req, res, next) => {
+    const { id } = req.cookies.usuario;
+    const user = await getUserById(id);
+    console.log(user);
     let usuarioLogado = req.cookies.usuario;
     let usuarioAdmin = req.cookies.admin;
+    console.log(user);
+    res.render("usuario-edit", {
+      title: "Usuário",
+      subtitulo: `Usuário #${id}`,
+      user,
+      usuarioLogado: usuarioLogado,
+      usuarioAdmin: usuarioAdmin,
+      usuarioAvatar: req.cookies.avatar,
+    });
+    user.nome = req.body.nome;
+    user.email = req.body.email;
+    user.nascimento = req.body.nascimento;
+    user.telefone = req.body.telefone;
+    user.cpf = req.body.cpf;
+    user.cep = req.body.cep;
+    user.logradouro = req.body.endereco;
+    user.complemento = req.body.complemento;
+    user.localidade = req.body.cidade;
+    user.uf = req.body.uf;
+    (user.avatar = req.body.avatar), (user.modificadoEm = new Date());
+    user.push(user);
+
+    // FALTA A SENHA HASH
+
+    // res.redirect("../perfil");
+  },
+
+  form_edit: async (req, res, next) => {
+    const { id } = req.cookies.usuario;
+    const user = await getUserById(id);
+    console.log(user);
+    let usuarioLogado = req.cookies.usuario;
+    let usuarioAdmin = req.cookies.admin;
+
     if (usuarioAdmin || usuarioLogado) {
       res.render("usuario-edit", {
         title: "| " + usuarioLogado.nome,
-        usuario: usuarios.find((u) => {
-          if (u.id === usuarioLogado.id) {
-            return u;
-          }
-        }),
+        user,
         usuarioLogado: usuarioLogado,
         usuarioAdmin: usuarioAdmin,
         usuarioAvatar: req.cookies.avatar,
