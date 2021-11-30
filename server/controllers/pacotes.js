@@ -6,6 +6,8 @@ const {
   updatePacote,
 } = require('../services/pacotes');
 
+const { createAddtionalPacote } = require('../services/adicionalPacote');
+
 const { getAllCategorias } = require('../services/categorias');
 const { getAllAddtionals } = require('../services/adicionais');
 
@@ -48,10 +50,8 @@ const controller = {
   },
   create: async (req, res, next) => {
     if (req.files['capa']) {
-      console.log('0 existe');
       var imagemCapa = `/assets/img/upload/${req.files['capa'][0].filename}`;
     } else {
-      console.log('0 nao existe');
       var imagemCapa = '';
     }
 
@@ -110,8 +110,17 @@ const controller = {
     };
 
     const create = await createPacote(dataPackage);
+
     if (create) {
-      res.redirect('../pacotes');
+      const dataAddPackage = {
+        addtionalId: req.body.adicionalteste,
+        packageId: create.id,
+      };
+      const createAdd = await createAddtionalPacote(dataAddPackage);
+
+      if (createAdd) {
+        res.redirect('../pacotes');
+      }
     } else {
       res.status(500).send('Erro ao criar seu pacote');
     }
