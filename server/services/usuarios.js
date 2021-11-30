@@ -23,5 +23,9 @@ usuariosServices.updateUser = async (id, user) => {
   );
   return update;
 };
+usuariosServices.createUser = async (user) => {
+  const create = await User.create({ ...user });
+  return create;
+};
 
 module.exports = usuariosServices;
