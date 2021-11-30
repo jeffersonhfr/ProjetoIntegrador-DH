@@ -1,4 +1,4 @@
-const { getAllUser } = require("../services/usuarios");
+const { getAllUser, updateUser } = require("../services/usuarios");
 const { getUserById } = require("../services/usuarios");
 
 const controller = {
@@ -21,48 +21,39 @@ const controller = {
     }
   },
 
-  show: async (req, res, next) => {
-    const { id } = req.params;
-    const user = await getUserById(id);
-    console.log(user);
-    res.render("usuario-edit", {
-      title: "| Usuario",
-      user,
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
-  },
+  // show: async (req, res, next) => {
+  //   const { id } = req.params;
+  //   const user = await getUserById(id);
+  //   console.log(user);
+  //   res.render("usuario-edit", {
+  //     title: "| Usuario",
+  //     user,
+  //     usuarioLogado: req.cookies.usuario,
+  //     usuarioAdmin: req.cookies.admin,
+  //     usuarioAvatar: req.cookies.avatar,
+  //   });
+  // },
 
   edit: async (req, res, next) => {
     const { id } = req.cookies.usuario;
-    const user = await getUserById(id);
-    console.log(user);
+    const update = await updateUser(id, req.body);
+    // console.log(user);
     let usuarioLogado = req.cookies.usuario;
     let usuarioAdmin = req.cookies.admin;
-    console.log(user);
     res.render("usuario-edit", {
       title: "Usuário",
       subtitulo: `Usuário #${id}`,
-      user,
       usuarioLogado: usuarioLogado,
       usuarioAdmin: usuarioAdmin,
       usuarioAvatar: req.cookies.avatar,
     });
-    user.nome = req.body.nome;
-    user.email = req.body.email;
-    user.nascimento = req.body.nascimento;
-    user.telefone = req.body.telefone;
-    user.cpf = req.body.cpf;
-    user.cep = req.body.cep;
-    user.logradouro = req.body.endereco;
-    user.complemento = req.body.complemento;
-    user.localidade = req.body.cidade;
-    user.uf = req.body.uf;
-    (user.avatar = req.body.avatar), (user.modificadoEm = new Date());
-    user.push(user);
+    if (update) {
+      res.redirect("../perfil");
+    } else {
+      res.status(500).send("Ops... deu ruim...");
+    }
 
-    // FALTA A SENHA HASH
+    // FALTA A SENHA HASH?
 
     // res.redirect("../perfil");
   },
