@@ -1,5 +1,5 @@
 const { Package } = require('../database/models');
-
+const { deleteImages, getAllImages} = require('./package_images')
 const pacotesServices = {};
 
 pacotesServices.getAllPackages = async () => {
@@ -49,7 +49,13 @@ pacotesServices.updatePacote = async (id, pacote) => {
 };
 
 pacotesServices.destroyPacote = async (id) => {
-  return await Package.destroy({ where: { id } });
+ // pacotesServices.getPackagesById(id).package_images.foreach(async (img) => await deleteImages(img.id));
+  
+  return await pacotesServices.getPackagesById(id)
+    .then(i => i.package_images.foreach(async (img) => await deleteImages(img.id)))
+    .then(i => Package.destroy(
+      { where: { id } }
+    ));
 };
 
 module.exports = pacotesServices;

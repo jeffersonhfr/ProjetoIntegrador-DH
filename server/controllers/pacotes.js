@@ -82,7 +82,7 @@ const controller = {
       if (create) {
         res.redirect('../pacotes');
         
-        })
+        
       } else {
         res.status(500).send('Erro ao criar seu pacote');
         
