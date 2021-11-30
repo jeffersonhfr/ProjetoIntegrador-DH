@@ -6,18 +6,23 @@ pacotesServices.getAllPackages = async () => {
   const pacotes = await Package.findAll({
     include: [{ association: 'categoria' }, { association: 'adicional' }],
   });
-
+  
   return pacotes;
 };
 
 pacotesServices.getPackagesById = async (id) => {
   const pacotes = await Package.findAll({
     where: { id },
-    include: [{ association: 'categoria' }, { association: 'adicional' }],
+    include: [{ association: 'categoria' }, { association: 'package_images' }],
   });
 
   return pacotes;
 };
+pacotesServices.getPackagesByName = async (name) => {
+  return await Package.findAll({
+    where: {nomePacote : name}
+  })
+}
 
 pacotesServices.getPackageOrders = async (id) => {
   const pacotes = await Package.findAll({
@@ -37,7 +42,7 @@ pacotesServices.updatePacote = async (id, pacote) => {
   const updated = await Package.update(
     { ...pacote },
     {
-      where: { id },
+      where: { id }
     },
   );
   return updated;

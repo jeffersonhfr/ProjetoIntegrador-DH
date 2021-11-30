@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         as: 'order',
       });
       Package.hasMany(models.package_image, {
-        as: 'package_image'
+        as: 'package_images'
       }
         );
 

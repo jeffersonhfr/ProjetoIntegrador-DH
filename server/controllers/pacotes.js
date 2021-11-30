@@ -4,7 +4,11 @@ const {
   getPackagesById,
   destroyPacote,
   updatePacote,
+  getPackagesByName
 } = require('../services/pacotes');
+const {
+  createImages
+} = require('../services/package_images');
 const fs = require('fs');
 
 const { getAllCategorias } = require('../services/categorias');
@@ -50,7 +54,7 @@ const controller = {
   create: async (req, res, next) => {
   
     if (req.files) {
-      console.log(req.files)
+  
       pacote = {}
 
       pacote.nomePacote = req.body.nomePacote
@@ -61,19 +65,30 @@ const controller = {
       pacote.preco = req.body.preco
       pacote.promocaoPorcentagem = req.body.promocaoPorcentagem
       pacote.parcelas = req.body.parcelas
-      pacote.imagemCapa = '/assets/img/package/' + req.files[0].filename
-      pacote.imagem01 = '/assets/img/package/' + req.files[1].filename
+      pacote.package_images = req.files
+
+      const create = await createPacote(pacote)
+    
+      pacote.package_images.forEach(async (element) => {
+        
+
+          const createImg = await createImages( {packageId: create.id , src: '/assets/img/package/' + element.filename })
+        return createImg;
+        
+      });
       
 
-      const create = await createPacote(pacote);
 
       if (create) {
         res.redirect('../pacotes');
+        
+        })
       } else {
         res.status(500).send('Erro ao criar seu pacote');
         
   
       }
+      
     }
   },
   show: async (req, res, next) => {

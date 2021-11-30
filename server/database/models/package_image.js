@@ -9,14 +9,16 @@ module.exports = (sequelize, DataTypes) => {
       package_image.belongsTo(models.Package, {
         foreignKey: 'packageId',
         as: 'pacote',
-      });
+      }); 
     }
   };
   package_image.init({
+    packageId: DataTypes.INTEGER,
     src: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'package_Image',
+    timestamps:true,
+    modelName: 'package_image',
   });
   return package_image;
 };

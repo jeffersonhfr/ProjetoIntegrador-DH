@@ -2,12 +2,22 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('package_Images', {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER,
+      }
+      ,
       packageId: {
+        primaryKey:true,
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
           model: 'packages',
           key: 'id',
+          onUpdate:'CASCADE',
+          onDelete:'CASCADE'
         },
       },
       src: {
