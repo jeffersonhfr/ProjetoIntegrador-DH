@@ -10,7 +10,7 @@ module.exports = {
       },
       addtionalId: {
         allowNull: false,
-        references: {model: 'additionals', key:'id'},
+        references: {model: 'addtionals', key:'id'},
         type: Sequelize.INTEGER,
         onUpdate: 'CASCADE',
         onDelete:'CASCADE'
