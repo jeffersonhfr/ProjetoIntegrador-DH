@@ -15,7 +15,7 @@
                     <h2 class="info__titulo">Nome Completo</h2>
                     <div class="info__usuario">
                         <p>
-                            <%= user.nome %>
+                            <%= user[0].nome %>
                         </p>
                         <% if(user.admin==true ) { %>
                             <div class="usuario__tag-admin">Admin</div>
@@ -25,59 +25,59 @@
                 <div class="dados-do-usuario__info email">
                     <h2 class="info__titulo">E-mail</h2>
                     <p>
-                        <%= user.email %>
+                        <%= user[0].email %>
                     </p>
 
                 </div>
                 <div class="dados-do-usuario__info nascimento">
                     <h2 class="info__titulo">Data de Nascimento</h2>
                     <p>
-                        <%= user.nascimento %>
+                        <%= user[0].nascimento %>
                     </p>
                 </div>
                 <div class="dados-do-usuario__info telefone">
                     <h2 class="info__titulo">Telefone</h2>
                     <p>
-                        <%= user.telefone %>
+                        <%= user[0].telefone %>
                     </p>
                 </div>
                 <div class="dados-do-usuario__info cpf">
                     <h2 class="info__titulo">CPF</h2>
                     <p>
-                        <%= user.cpf %>
+                        <%= user[0].cpf %>
                     </p>
 
                 </div>
                 <div class="dados-do-usuario__info cep">
                     <h2 class="info__titulo">CEP</h2>
                     <p>
-                        <%= user.cep %>
+                        <%= user[0].cep %>
                     </p>
 
                 </div>
                 <div class="dados-do-usuario__info endereco">
                     <h2 class="info__titulo">Endereço</h2>
                     <p>
-                        <%= user.endereco %>
+                        <%= user[0].logradouro %>
                     </p>
 
                 </div>
                 <div class="dados-do-usuario__info">
                     <h2 class="info__titulo">Complemento</h2>
                     <p>
-                        <%= user.complemento %>
+                        <%= user[0].complemento %>
                     </p>
                 </div>
                 <div class="dados-do-usuario__info">
                     <h2 class="info__titulo">Cidade</h2>
                     <p>
-                        <%= user.cidade %>
+                        <%= user[0].localidade %>
                     </p>
                 </div>
                 <div class="dados-do-usuario__info">
                     <h2 class="info__titulo">Estado</h2>
                     <p>
-                        <%= user.uf %>
+                        <%= user[0].uf %>
                     </p>
                 </div>
             </div>
