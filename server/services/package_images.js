@@ -13,13 +13,19 @@ imagesServices.createImages = async (images) => {
     return await package_image.create(images)
   };
 imagesServices.deleteImages = async (id) => {
-  fs.unlink(path.join(__dirname,'..', 'public',package_images.findAll({
-    where: { id }
-  }).src));
+  try {
+    fs.unlink(path.join(__dirname, '..', 'public', package_images.findAll({
+      where: { id }
+   
+    }).src))  } catch(err){
+
+    return err;
+  }
   
-  return await package_image.destroy(
+    return await package_image.destroy(
       { where: { id } }
     );
+
 }
 
 

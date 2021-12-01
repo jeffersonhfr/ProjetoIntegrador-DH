@@ -27,6 +27,7 @@ pacotesServices.getPackagesByName = async (name) => {
 pacotesServices.getPackageOrders = async (id) => {
   const pacotes = await Package.findAll({
     where: { id },
+    raw: true,
     include: [{ association: 'categoria' }, { association: 'adicional' }],
   });
 
@@ -49,13 +50,18 @@ pacotesServices.updatePacote = async (id, pacote) => {
 };
 
 pacotesServices.destroyPacote = async (id) => {
- // pacotesServices.getPackagesById(id).package_images.foreach(async (img) => await deleteImages(img.id));
+  // pacotesServices.getPackagesById(id).package_images.foreach(async (img) => await deleteImages(img.id));
   
   return await pacotesServices.getPackagesById(id)
-    .then(i => i.package_images.foreach(async (img) => await deleteImages(img.id)))
-    .then(i => Package.destroy(
+    .then(i => i[0].package_images.forEach(async (img) => {
+      try{
+      await deleteImages(img.id)}catch(err){
+        return err
+    }
+      })
+    )
+  .then(i => Package.destroy(
       { where: { id } }
-    ));
-};
-
+   ));
+}
 module.exports = pacotesServices;

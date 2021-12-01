@@ -68,28 +68,26 @@ const controller = {
       pacote.package_images = req.files
 
       const create = await createPacote(pacote)
-    
-      pacote.package_images.forEach(async (element) => {
-        
+      
 
-          const createImg = await createImages( {packageId: create.id , src: '/assets/img/package/' + element.filename })
-        return createImg;
+       const createImg = await createImages( {packageId: create.id , src: '/assets/img/package/' + element.filename })
+      return createImg;
         
-      });
+      }
       
 
 
-      if (create) {
-        res.redirect('../pacotes');
+    if (create) {
+       res.redirect('../pacotes');
         
         
-      } else {
+    } else {
         res.status(500).send('Erro ao criar seu pacote');
         
   
-      }
-      
     }
+      
+    
   },
   show: async (req, res, next) => {
     let origem = req.originalUrl;
