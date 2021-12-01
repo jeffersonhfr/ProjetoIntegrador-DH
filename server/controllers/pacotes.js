@@ -70,7 +70,7 @@ const controller = {
       const create = await createPacote(pacote)
       
 
-       const createImg = await createImages( {packageId: create.id , src: '/assets/img/package/' + element.filename })
+       const createImg = await pacote.package_images.forEach(element => createImages( {packageId: create.id , src: '/assets/img/package/' + element.filename }))
       return createImg;
         
       }
