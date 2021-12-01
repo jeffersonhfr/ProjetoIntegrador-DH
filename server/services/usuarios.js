@@ -14,6 +14,13 @@ usuariosServices.getUserById = async (id) => {
 
   return users;
 };
+usuariosServices.getUserByEmail = async (email) => {
+  const users = await User.findOne({
+    where: { email },
+  });
+
+  return users;
+};
 usuariosServices.updateUser = async (id, user) => {
   const update = await User.update(
     { ...user },
