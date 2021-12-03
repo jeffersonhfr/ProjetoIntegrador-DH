@@ -6,7 +6,7 @@
           <h1 class='addPacote-TitleContainer'>Adicionar Pacotes</h1>
         </article>
 
-        <h2 class='addPacote-TitleContainer'>Adicione as imagens</h2>
+        <!-- <h2 class='addPacote-TitleContainer'>Adicione as imagens</h2>
         <nav class='addPacote-ImgContainer' style='position: relative;'>
           <ul class='addPacote-ImgContainer__Img-list'>
 
@@ -50,7 +50,17 @@
               <h2>Imagem 06</h2>
               <img src="" id="imgpack6" width="300px" height="200px" class="img-pack">
               <input type="file" name="imagem06" accept="image/png, image/jpeg" onchange="loadFile6(event)" />
-            </li>
+            </li> -->
+        <h2 class='addPacote-TitleContainer'>Adicione as imagens</h2>
+        <nav class='addPacote-ImgContainer' style='position: relative;'>
+          <ul class='addPacote-ImgContainer__Img-list'>
+            <input name="imagem" id="imagemCapa" type='file' onchange='uploadPreview(event)' accept='.jpg' />
+            <input name='imagem' id='imagem01' type='file' onchange='uploadPreview(event)' accept='.jpg' />
+            <input name='imagem' id='imagem02' type='file' onchange='uploadPreview(event)' accept='.jpg' />
+            <input name='imagem' id='imagem03' type='file' onchange='uploadPreview(event)' accept='.jpg' />
+            <input name='imagem' id='imagem04' type='file' onchange='uploadPreview(event)' accept='.jpg' />
+            <input name='imagem' id='imagem05' type='file' onchange='uploadPreview(event)' accept='.jpg' />
+            <input name='imagem' id='imagem06' type='file' onchange='uploadPreview(event)' accept='.jpg' />
           </ul>
         </nav>
         <script src="../src/imagens-preview.js"></script>

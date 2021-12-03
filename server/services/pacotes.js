@@ -1,10 +1,14 @@
 const { Package } = require('../database/models');
-
+const { deleteImages, getAllImages } = require('./package_images');
 const pacotesServices = {};
 
 pacotesServices.getAllPackages = async () => {
   const pacotes = await Package.findAll({
-    include: [{ association: 'categoria' }, { association: 'adicional' }],
+    include: [
+      { association: 'categoria' },
+      { association: 'adicional' },
+      { association: 'package_images' },
+    ],
   });
 
   return pacotes;
@@ -13,15 +17,25 @@ pacotesServices.getAllPackages = async () => {
 pacotesServices.getPackagesById = async (id) => {
   const pacotes = await Package.findAll({
     where: { id },
-    include: [{ association: 'categoria' }, { association: 'adicional' }],
+    include: [
+      { association: 'categoria' },
+      { association: 'adicional' },
+      { association: 'package_images' },
+    ],
   });
 
   return pacotes;
+};
+pacotesServices.getPackagesByName = async (name) => {
+  return await Package.findAll({
+    where: { nomePacote: name },
+  });
 };
 
 pacotesServices.getPackageOrders = async (id) => {
   const pacotes = await Package.findAll({
     where: { id },
+    raw: true,
     include: [{ association: 'categoria' }, { association: 'adicional' }],
   });
 
@@ -44,7 +58,19 @@ pacotesServices.updatePacote = async (id, pacote) => {
 };
 
 pacotesServices.destroyPacote = async (id) => {
-  return await Package.destroy({ where: { id } });
-};
+  // pacotesServices.getPackagesById(id).package_images.foreach(async (img) => await deleteImages(img.id));
 
+  return await pacotesServices
+    .getPackagesById(id)
+    .then((i) =>
+      i[0].package_images.forEach(async (img) => {
+        try {
+          await deleteImages(img.id);
+        } catch (err) {
+          return err;
+        }
+      }),
+    )
+    .then((i) => Package.destroy({ where: { id } }));
+};
 module.exports = pacotesServices;

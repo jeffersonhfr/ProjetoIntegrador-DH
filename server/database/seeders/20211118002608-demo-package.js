@@ -14,13 +14,6 @@ module.exports = {
           preco: 18800.0,
           promocaoPorcentagem: 30,
           parcelas: 10,
-          imagemCapa: '/assets/img/Egito.jpg',
-          imagem01: '/assets/img/egito1.jpg',
-          imagem02: '/assets/img/egito2.jpg',
-          imagem03: '/assets/img/egito3.jpg',
-          imagem04: '/assets/img/egito4.jpg',
-          imagem05: '/assets/img/egito5.jpg',
-          imagem06: '/assets/img/egito6.jpg',
           sobre:
             'Com vista das Grandes Pirâmides de Gizé, o Marriott Mena House, Cairo está rodeado por 16 hectares de jardins verdes e possui spa, academia e piscina. Os quartos são decorados com móveis artesanais.Todas as acomodações no Marriott Mena House, Cairo dispõem de ar-condicionado, tecidos luxuosos, área de estar e TV LCD. Cada quarto e suíte oferece um banheiro privativo espaçoso com roupão de banho e chinelos. O café da manhã é servido na sala de refeições com vista do jardim. As opções gastronômicas incluem especialidades italianas no Restaurante Alfredo, enquanto o buffet de café da manhã diário é servido no 139 Pavilion, que também conta com coquetéis e vista inesquecível. As instalações de lazer incluem uma piscina aquecida, situada nos jardins paisagísticos. As Pirâmides de Gizé ficam a menos de 500 metros do Marriott Mena House. O concierge poderá organizar passeios de cavalos e camelos para as pirâmides. O Aeroporto do Cairo está a 30,6 km do local.Casais particularmente gostam da localização — eles deram nota 9,5 para viagem a dois.',
           pontoTuristico:
@@ -37,13 +30,6 @@ module.exports = {
           preco: 2900.0,
           promocaoPorcentagem: 5,
           parcelas: 6,
-          imagemCapa: '/assets/img/floripa.jpg',
-          imagem01: '/assets/img/floripa1.jpg',
-          imagem02: '/assets/img/floripa2.jpg',
-          imagem03: '/assets/img/floripa3.jpg',
-          imagem04: '/assets/img/floripa4.jpg',
-          imagem05: '/assets/img/floripa5.jpg',
-          imagem06: '/assets/img/floripa6.jpg',
           sobre:
             'Localizado a apenas 70 metros da Praia dos Ingleses, em Florianópolis, o Parada Beach Apart Hotel oferece apartamentos completos a 3 minutos a pé de supermercados, restaurantes, clínicas médicas e lojas. O Wi-Fi gratuito está à sua disposição. As unidades dispõem de ar-condicionado, cozinha com forno, micro-ondas e área para refeições. Uma geladeira e uma chaleira estão disponíveis. Neste apart-hotel, você pode usufruir de uma churrasqueira. O Shopping Iguatemi Florianópolis fica a 29 km do Parada Beach Apart Hotel. Casais particularmente gostam da localização — eles deram nota 9,2 para viagem a dois.',
           pontoTuristico:
@@ -60,13 +46,6 @@ module.exports = {
           preco: 22800.0,
           promocaoPorcentagem: 7,
           parcelas: 18,
-          imagemCapa: '/assets/img/paris.jpg',
-          imagem01: '/assets/img/paris1.jpg',
-          imagem02: '/assets/img/paris2.jpg',
-          imagem03: '/assets/img/paris3.jpg',
-          imagem04: '/assets/img/paris4.jpg',
-          imagem05: '/assets/img/paris5.jpg',
-          imagem06: '/assets/img/paris6.jpg',
           sobre:
             'Este hotel está situado no 8 distrito de Paris e possui quartos modernos com varanda. A propriedade oferece recepção 24 horas, balcão de turismo e serviço de bilheteria.Os quartos têm isolamento acústico, uma TV de tela plana via satélite e Wi-Fi gratuito. Além disso, todos apresentam uma decoração simples e banheiro privativo com secador de cabelo.Um buffet de café-da-manhã é servido diariamente na sala para refeições do Elysees Opera Hotel. Você pode desfrutar de uma bebida no bar enquanto lê um dos jornais fornecidos.A Estação de Metrô de Roma está a 350 m do Elysees Opera e permite o acesso ao Moulin Rouge. Já o Monceau Park fica apenas a 15 minutos a pé da propriedade. Um serviço de translado para o aeroporto está disponível mediante pedido.Esta é a parte de Paris de que os nossos hóspedes mais gostam, de acordo com avaliações independentes.Casais particularmente gostam da localização — eles deram nota 8,9 para viagem a dois.',
           pontoTuristico:
@@ -83,13 +62,6 @@ module.exports = {
           preco: 2800.0,
           promocaoPorcentagem: 0,
           parcelas: 6,
-          imagemCapa: '/assets/img/riodejaneiro.jpg',
-          imagem01: '/assets/img/riodejaneiro1.jpg',
-          imagem02: '/assets/img/riodejaneiro2.jpg',
-          imagem03: '/assets/img/riodejaneiro3.jpg',
-          imagem04: '/assets/img/riodejaneiro4.jpg',
-          imagem05: '/assets/img/riodejaneiro5.jpg',
-          imagem06: '/assets/img/riodejaneiro6.jpg',
           sobre:
             'Você se qualifica para um desconto Genius em Hotel Atlântico Travel Copacabana! Para economizar nesta acomodação, basta fazer o login. Atualmente em fase de pré-inauguração, o Hotel Atlântico Travel fica no Rio de Janeiro, a 500 metros da Praia de Copacabana e 350 metros da Estação de Metrô Siqueira Campos. Para sua comodidade, o WiFi gratuito está disponível em todas as áreas. Decorados em estilo contemporâneo, todos os quartos deste hotel 4 estrelas incluem ar-condicionado, TV de tela plana, frigobar, um banheiro privativo com chuveiro, amenidades de banho de cortesia e secador de cabelo. O Hotel Atlântico Travel Copacabana fica a 3 km da famosa Praia de Ipanema e a 6 km do Aeroporto Santos Dumont. Já o Aeroporto Internacional do Galeão está situado a 25,5 km de distância. Esta é a parte de Rio de Janeiro de que os nossos hóspedes mais gostam, de acordo com avaliações independentes. Casais particularmente gostam da localização — eles deram nota 8,9 para viagem a dois.',
           pontoTuristico:
@@ -106,13 +78,6 @@ module.exports = {
           preco: 7490.0,
           promocaoPorcentagem: 15,
           parcelas: 10,
-          imagemCapa: '/assets/img/bariloche.jpg',
-          imagem01: '/assets/img/bariloche1.jpg',
-          imagem02: '/assets/img/bariloche2.jpg',
-          imagem03: '/assets/img/bariloche3.jpg',
-          imagem04: '/assets/img/bariloche4.jpg',
-          imagem05: '/assets/img/bariloche5.jpg',
-          imagem06: '/assets/img/bariloche6.jpg',
           sobre:
             'O hotel 4 estrelas Edelweiss dispõe de quartos espaçosos e bem iluminados com vista do Lago Nahuel Huapi e das montanhas cobertas de neve. A propriedade está situada em Bariloche e oferece depósito para esquis. A acomodação fica a 25 minutos de carro da estação de esqui Catedral. O quarto tem entre 20 e 30 m² e apresenta decoração exclusiva. As unidades possuem banheiro amplo, camas confortáveis, TV de tela plana com canais a cabo e outras comodidades de luxo. O NH Bariloche Edelweiss serve buffet de café da manhã variado. O Restaurante La Tavola propõe pratos e vinhos argentinos no almoço e jantar. A acomodação disponibiliza academia e piscina coberta com uma vista incrível do lago. O spa está disponível por um custo extra e abre das 16h30 às 21h. Esta é a parte de San Carlos de Bariloche de que os nossos hóspedes mais gostam, de acordo com avaliações independentes. Casais particularmente gostam da localização — eles deram nota 9,3 para viagem a dois.',
           pontoTuristico:
@@ -129,13 +94,6 @@ module.exports = {
           preco: 12290.0,
           promocaoPorcentagem: 10,
           parcelas: 18,
-          imagemCapa: '/assets/img/disney.jpg',
-          imagem01: '/assets/img/disney1.jpg',
-          imagem02: '/assets/img/disney2.jpg',
-          imagem03: '/assets/img/disney3.jpg',
-          imagem04: '/assets/img/disney4.jpg',
-          imagem05: '/assets/img/disney5.jpg',
-          imagem06: '/assets/img/disney6.jpg',
           sobre:
             'Ocupando uma propriedade de 26 hectares, a apenas 4,8 km do Walt Disney World, este resort possui um parque aquático no local e um campo de golfe em miniatura. As acomodações são espaçosas, têm estilo de apartamento e incluem uma cozinha totalmente equipada.Os condomínios de 1 ou 2 quartos dispõem de um sofá-cama, TV de tela plana a cabo e DVD e CD players. Também incluem máquina de lavar e secadora de roupas. O Liki Tiki Village oferece quadras de tênis e basquete, academia e fliperama. O parque aquático inclui toboáguas, piscina com correnteza e área separada para crianças. O resort conta com balcão de turismo. Você também encontrará áreas para fazer churrasco e piquenique.',
           pontoTuristico:

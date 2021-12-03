@@ -4,16 +4,21 @@ const {
   getPackagesById,
   destroyPacote,
   updatePacote,
+  getPackagesByName,
 } = require('../services/pacotes');
+const { createImages } = require('../services/package_images');
+const fs = require('fs');
 
 const { createAddtionalPacote } = require('../services/adicionalPacote');
 
 const { getAllCategorias } = require('../services/categorias');
 const { getAllAddtionals } = require('../services/adicionais');
+const { getAllImages } = require('../services/package_images.js');
 
 const controller = {
   index: async (req, res, next) => {
     const pack = await getAllPackages();
+
     res.render('pacotes', {
       title: '| Pacote',
       pack,
@@ -31,8 +36,10 @@ const controller = {
   add: async (req, res, next) => {
     const categorias = await getAllCategorias();
     const adicionais = await getAllAddtionals();
+    const imagens = await getAllImages();
     console.log(categorias);
     console.log(adicionais);
+    console.log(imagens);
     res.render('adicionar-pacote', {
       title: '| Adicionar Pacote',
       categorias,
@@ -49,88 +56,44 @@ const controller = {
     });
   },
   create: async (req, res, next) => {
-    if (req.files['capa']) {
-      var imagemCapa = `/assets/img/upload/${req.files['capa'][0].filename}`;
-    } else {
-      var imagemCapa = '';
+    if (req.files) {
+      pacote = {};
+
+      pacote.nomePacote = req.body.nomePacote;
+      pacote.nomeHotel = req.body.nomeHotel;
+      pacote.diarias = req.body.diarias;
+      pacote.passagemAerea = req.body.passagemAerea;
+      pacote.nacional = req.body.nacional;
+      pacote.preco = req.body.preco;
+      pacote.promocaoPorcentagem = req.body.promocaoPorcentagem;
+      pacote.parcelas = req.body.parcelas;
+      pacote.package_images = req.files;
+
+      const create = await createPacote(pacote);
+
+      const createImg = await pacote.package_images.forEach((element) =>
+        createImages({
+          packageId: create.id,
+          src: '/assets/img/package/' + element.filename,
+        }),
+      );
+      return createImg;
     }
-
-    if (req.files['imagem01']) {
-      var imagem1 = `/assets/img/upload/${req.files['imagem01'][0].filename}`;
-    } else {
-      var imagem1 = '';
-    }
-
-    if (req.files['imagem02']) {
-      var imagem2 = `/assets/img/upload/${req.files['imagem02'][0].filename}`;
-    } else {
-      var imagem2 = '';
-    }
-
-    if (req.files['imagem03']) {
-      var imagem3 = `/assets/img/upload/${req.files['imagem03'][0].filename}`;
-    } else {
-      var imagem3 = '';
-    }
-
-    if (req.files['imagem04']) {
-      var imagem4 = `/assets/img/upload/${req.files['imagem04'][0].filename}`;
-    } else {
-      var imagem4 = '';
-    }
-
-    if (req.files['imagem05']) {
-      var imagem5 = `/assets/img/upload/${req.files['imagem05'][0].filename}`;
-    } else {
-      var imagem5 = '';
-    }
-
-    if (req.files['imagem06']) {
-      var imagem6 = `/assets/img/upload/${req.files['imagem06'][0].filename}`;
-    } else {
-      var imagem6 = '';
-    }
-
-    const dataPackage = {
-      nomePacote: req.body.nomePacote,
-      nomeHotel: req.body.nomeHotel,
-      diarias: req.body.diarias,
-      preco: req.body.preco,
-      promocaoPorcentagem: req.body.promocaoPorcentagem,
-      parcelas: req.body.parcelas,
-      imagemCapa: `${imagemCapa}`,
-      imagem01: `${imagem1}`,
-      imagem02: `${imagem2}`,
-      imagem03: `${imagem3}`,
-      imagem04: `${imagem4}`,
-      imagem05: `${imagem5}`,
-      imagem06: `${imagem6}`,
-      sobre: req.body.sobre,
-      pontoTuristico: req.body.pontoTuristico,
-    };
-
-    const create = await createPacote(dataPackage);
 
     if (create) {
-      const dataAddPackage = {
-        addtionalId: req.body.adicionalteste,
-        packageId: create.id,
-      };
-      const createAdd = await createAddtionalPacote(dataAddPackage);
-
-      if (createAdd) {
-       // res.redirect('../pacotes');
+      if (createImg) {
+        res.redirect('../pacotes');
       }
     } else {
       res.status(500).send('Erro ao criar seu pacote');
     }
-    create.reload().then(i=>console.log(i))
   },
   show: async (req, res, next) => {
     let origem = req.originalUrl;
     const { id } = req.params;
     const pack = await getPackagesById(id);
     console.log(pack);
+    console.log(pack[0].package_images);
     res.render('pacote', {
       title: '| Pacote',
       pack,

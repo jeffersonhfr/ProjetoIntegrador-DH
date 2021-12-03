@@ -17,6 +17,10 @@ module.exports = (sequelize, DataTypes) => {
         as: 'categoria',
         through: 'Category_Packages',
       });
+
+      Package.hasMany(models.package_image, {
+        as: 'package_images',
+      });
     }
   }
 
@@ -30,13 +34,7 @@ module.exports = (sequelize, DataTypes) => {
       preco: DataTypes.INTEGER,
       promocaoPorcentagem: DataTypes.INTEGER,
       parcelas: DataTypes.INTEGER,
-      imagemCapa: DataTypes.STRING,
-      imagem01: DataTypes.STRING,
-      imagem02: DataTypes.STRING,
-      imagem03: DataTypes.STRING,
-      imagem04: DataTypes.STRING,
-      imagem05: DataTypes.STRING,
-      imagem06: DataTypes.STRING,
+
       sobre: DataTypes.STRING,
       pontoTuristico: DataTypes.STRING,
     },
