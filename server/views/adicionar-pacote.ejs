@@ -84,10 +84,10 @@
             <label>Passagem Aérea:</label>
             <div class="radio-box">
               <div class="radio-opt">
-                <input type="radio" name="PassagemAerea" id="PassagemAerea" value="1"> Sim
+                <input type="radio" name="passagemAereaSim" id="passagemAerea" value="1"> Sim
               </div>
               <div class="radio-opt">
-                <input type="radio" name="PassagemAerea" id="PassagemAerea" value="0"> Não
+                <input type="radio" name="passagemAereaNao" id="passagemAerea" value="0"> Não
               </div>
             </div>
           </li>
@@ -96,16 +96,16 @@
         <h2 class='addPacote-TitleContainer'>Adicione os adicionais do pacote, se houve.</h2>
         <ul class="Pacote-Propriedades-chkbox">
 
-          <!-- for(let i=0; i<adicionais.length ; i++)  -->
-          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--checkbox">
-            <div class="checkbox-group">
-              <input type="checkbox" value="<%=adicionais[6].id%>" id="adicionalteste" name="adicionalteste">
-              <label for="CityTour">
-                <%= adicionais[6].nomeAdicional %>
-              </label>
-            </div>
-          </li>
-
+          <% for(let i=0; i<adicionais.length ; i++) {%>
+            <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--checkbox">
+              <div class="checkbox-group">
+                <input type="checkbox" value="<%=adicionais[i].id%>" id="adicionalteste<%=adicionais[i].id%>" name="adicionalteste<%=adicionais[i].id%>">
+                <label for="CityTour">
+                  <%= adicionais[i].nomeAdicional %>
+                </label>
+              </div>
+            </li>
+            <% } %>
 
         </ul>
 
