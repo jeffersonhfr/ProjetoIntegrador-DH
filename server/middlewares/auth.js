@@ -21,11 +21,10 @@ const auth = async (req, res, next) => {
       throw Error("Senha invalida!");
     }
 
-    // FILTRAMOS ALGUNS CAMPOS COM O JSON.STRINGIFY (COMO A SENHA)
-    // let usuario = user;
+    let usuario = user;
 
     // DEFINIMOS OS COOKIES USUÁRIO (OBJETO) E ADMIN (BOOLEANO)
-    res.cookie("usuario", `${user.usuario}`);
+    res.cookie("usuario", usuario);
     res.cookie("admin", `${user.admin}`);
     res.cookie("avatar", `${user.avatar}`);
 
