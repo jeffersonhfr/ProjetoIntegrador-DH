@@ -17,17 +17,17 @@ const auth = async (req, res, next) => {
     if (!user) {
       throw Error("Usuario nao encontrado!");
     }
-    if (!bcrypt.compareSync(senha, user.senha)) {
+    if (bcrypt.compareSync(senha, user.senha)) {
       throw Error("Senha invalida!");
     }
 
     // FILTRAMOS ALGUNS CAMPOS COM O JSON.STRINGIFY (COMO A SENHA)
-    let usuario = user;
+    // let usuario = user;
 
     // DEFINIMOS OS COOKIES USUÁRIO (OBJETO) E ADMIN (BOOLEANO)
-    res.cookie("usuario", usuario);
-    res.cookie("admin", `${usuario.Admin}`);
-    res.cookie("avatar", `${usuarioAvatar}`);
+    res.cookie("usuario", `${user.usuario}`);
+    res.cookie("admin", `${user.admin}`);
+    res.cookie("avatar", `${user.avatar}`);
 
     // CONTINUA PARA A PRÓXIMA ETAPA
     next();
