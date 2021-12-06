@@ -1,5 +1,6 @@
 const { getAllUser } = require("../services/usuarios");
 const { getUserById } = require("../services/usuarios");
+const { destroyUser } = require("../services/usuarios");
 const bcrypt = require("bcrypt");
 
 const controller = {
@@ -53,8 +54,18 @@ const controller = {
     user.push(user);
 
     // FALTA A SENHA HASH
-
-    // res.redirect("../perfil");
+  },
+  delete: (req, res, next) => {
+    res.redirect("../../listarUsuarios");
+  },
+  destroy: async (req, res, next) => {
+    const { id } = req.params;
+    const destroy = await destroyUser(id);
+    if (destroy) {
+      res.redirect("../../listarUsuarios");
+    } else {
+      res.status(500).send("Ops... deu ruim...");
+    }
   },
 };
 
