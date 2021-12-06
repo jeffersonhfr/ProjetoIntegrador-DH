@@ -34,5 +34,8 @@ usuariosServices.createUser = async (user) => {
   const create = await User.create({ ...user });
   return create;
 };
+usuariosServices.destroyUser = async (id) => {
+  return await User.destroy({ where: { id } });
+};
 
 module.exports = usuariosServices;
