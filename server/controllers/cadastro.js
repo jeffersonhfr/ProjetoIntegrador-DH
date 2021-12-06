@@ -19,14 +19,13 @@ const controller = {
     });
   },
   add: async (req, res, next) => {
-    const create = await createUser(req.body);
-    let user = req.body;
-    let senhaC = bcrypt.hashSync(req.body.senha, 10);
-    user.senha = senhaC;
+    const user = req.body;
+    user.senha = bcrypt.hashSync(req.body.senha, 10);
     user.criadoEm = new Date();
     user.modificadoEm = new Date();
     user.admin = false;
     user.avatar = "/assets/img/Aventura.jpg";
+    const create = await createUser(user);
     if (create) {
       res.redirect("../login");
     } else {
