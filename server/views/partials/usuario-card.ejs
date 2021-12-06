@@ -32,11 +32,11 @@
           </button>
         </a>
 
-        <a href="pacotes/1/delete" class="btao-form">
+        <form action="/listarUsuarios/<%= user[i].id %>/delete" class="btao-form" method="POST">
           <button class="btao-Container__btao-deletar listarUsuarios">
             <i class="bi bi-trash-fill"></i>
           </button>
-        </a>
+        </form>
 
       </div>
       <% } %>
