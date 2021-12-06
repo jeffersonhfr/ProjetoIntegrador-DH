@@ -1,26 +1,29 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Addtional_Packages', {
+    await queryInterface.createTable('package_Images', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      addtionalId: {
-        allowNull: false,
-        references: { model: 'addtionals', key: 'id' },
-        type: Sequelize.INTEGER,
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
-      },
       packageId: {
+      
         allowNull: false,
-        references: { model: 'packages', key: 'id' },
         type: Sequelize.INTEGER,
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
+        references: {
+          model: 'packages',
+          key: 'id',
+          onUpdate: 'CASCADE',
+          onDelete: 'CASCADE',
+        },
+      },
+      src: {
+        type: Sequelize.STRING,
+      },
+      alt: {
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,
@@ -33,6 +36,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Addtional_Packages');
+    await queryInterface.dropTable('package_Images');
   },
 };

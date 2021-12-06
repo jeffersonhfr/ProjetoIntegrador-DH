@@ -202,9 +202,11 @@ button.btao-Container__btao-visualizar.listarUsuarios:hover, button.btao-Contain
 
   img.travel-card__imagem {
     height: 100%;
+    max-height: 193px;
   }
   .travel-card__imagem-box {
     width: 300px;
+    max-height: 193px;
     overflow: hidden;
   }
 
@@ -224,7 +226,7 @@ button.btao-Container__btao-visualizar.listarUsuarios:hover, button.btao-Contain
   }
 
   .travel-card__infoDesc {
-    width: 350px;
+    width: 300px;
   }
   .btao-Container {
     flex-direction: column;
