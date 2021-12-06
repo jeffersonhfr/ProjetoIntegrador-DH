@@ -1,24 +1,24 @@
-<img src='<%= pack[0].imagemCapa %>' class='Pacote-ImgContainer__Img-first' id='imagemPrincipal'>
+<img src='<%= pack[0].package_images[0].src %>' class='Pacote-ImgContainer__Img-first' id='imagemPrincipal'>
 <ul class='Pacote-ImgContainer__Img-list'>
-  <% if (!pack[0].imagemCapa=='' ) {%>
-    <li><img src='<%= pack[0].imagemCapa %>' class='Pacote-ImgContainer__Img' onclick="document.getElementById('imagemPrincipal').src='<%= pack[0].imagemCapa %>'"></li>
+  <% if (!pack[0].package_images[0]=='' ) {%>
+    <li><img src='<%= pack[0].package_images[0].src %>' class='Pacote-ImgContainer__Img' onclick="document.getElementById('imagemPrincipal').src='<%= pack[0].package_images[0].src %>'"></li>
     <% } %>
-      <% if (!pack[0].imagem01=='' ) {%>
-        <li><img src='<%= pack[0].imagem01 %>' class='Pacote-ImgContainer__Img' onclick="document.getElementById('imagemPrincipal').src='<%= pack[0].imagem01 %>'"></li>
+      <% if (!pack[0].package_images[1]=='' ) {%>
+        <li><img src='<%= pack[0].package_images[1].src %>' class='Pacote-ImgContainer__Img' onclick="document.getElementById('imagemPrincipal').src='<%= pack[0].package_images[1].src %>'"></li>
         <% } %>
-          <% if (!pack[0].imagem02=='' ) {%>
-            <li><img src='<%= pack[0].imagem02 %>' class='Pacote-ImgContainer__Img' onclick="document.getElementById('imagemPrincipal').src='<%= pack[0].imagem02 %>'"></li>
+          <% if (!pack[0].package_images[2]=='' ) {%>
+            <li><img src='<%= pack[0].package_images[2].src %>' class='Pacote-ImgContainer__Img' onclick="document.getElementById('imagemPrincipal').src='<%= pack[0].package_images[2].src %>'"></li>
             <% } %>
-              <% if (!pack[0].imagem03=='' ) {%>
-                <li><img src='<%= pack[0].imagem03 %>' class='Pacote-ImgContainer__Img' onclick="document.getElementById('imagemPrincipal').src='<%= pack[0].imagem03 %>'"></li>
+              <% if (!pack[0].package_images[3]=='' ) {%>
+                <li><img src='<%= pack[0].package_images[3].src %>' class='Pacote-ImgContainer__Img' onclick="document.getElementById('imagemPrincipal').src='<%= pack[0].package_images[3].src %>'"></li>
                 <% } %>
-                  <% if (!pack[0].imagem04=='' ) {%>
-                    <li><img src='<%= pack[0].imagem04 %>' class='Pacote-ImgContainer__Img' onclick="document.getElementById('imagemPrincipal').src='<%= pack[0].imagem04 %>'"></li>
+                  <% if (!pack[0].package_images[4]=='' ) {%>
+                    <li><img src='<%= pack[0].package_images[4].src %>' class='Pacote-ImgContainer__Img' onclick="document.getElementById('imagemPrincipal').src='<%= pack[0].package_images[4].src %>'"></li>
                     <% } %>
-                      <% if (!pack[0].imagem05=='' ) {%>
-                        <li><img src='<%= pack[0].imagem05 %>' class='Pacote-ImgContainer__Img' onclick="document.getElementById('imagemPrincipal').src='<%= pack[0].imagem05 %>'"></li>
+                      <% if (!pack[0].package_images[5]=='' ) {%>
+                        <li><img src='<%= pack[0].package_images[5].src %>' class='Pacote-ImgContainer__Img' onclick="document.getElementById('imagemPrincipal').src='<%= pack[0].package_images[5].src %>'"></li>
                         <% } %>
-                          <% if (!pack[0].imagem06=='' ) {%>
-                            <li><img src='<%= pack[0].imagem06 %>' class='Pacote-ImgContainer__Img' onclick="document.getElementById('imagemPrincipal').src='<%= pack[0].imagem06 %>'"></li>
+                          <% if (!pack[0].package_images[6]=='' ) {%>
+                            <li><img src='<%= pack[0].package_images[6].src %>' class='Pacote-ImgContainer__Img' onclick="document.getElementById('imagemPrincipal').src='<%= pack[0].package_images[6].src %>'"></li>
                             <% } %>
 </ul>
