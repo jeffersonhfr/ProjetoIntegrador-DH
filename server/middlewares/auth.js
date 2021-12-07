@@ -17,7 +17,7 @@ const auth = async (req, res, next) => {
     if (!user) {
       throw Error("Usuario nao encontrado!");
     }
-    if (bcrypt.compareSync(senha, user.senha)) {
+    if (!bcrypt.compareSync(senha, user.senha)) {
       throw Error("Senha invalida!");
     }
 
