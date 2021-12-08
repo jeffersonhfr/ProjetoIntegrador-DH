@@ -14,6 +14,7 @@ const sobreRouter = require('./routes/sobre');
 const ajudaRouter = require('./routes/ajuda');
 const recuperarSenhaRouter = require('./routes/recuperarSenha');
 const listarUsuariosRouter = require('./routes/listarUsuarios');
+const listarCategoriaRouter = require('./routes/listarCategoria');
 const loginRouter = require('./routes/login');
 const cadastroRouter = require('./routes/cadastro');
 const historicoRouter = require('./routes/historico');
@@ -54,6 +55,7 @@ app.use('/perfil', perfilRouter);
 
 // A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
 app.use('/listarUsuarios', adminMiddleware, listarUsuariosRouter);
+app.use('/listarCategoria', adminMiddleware, listarCategoriaRouter);
 app.use('/visualizarUsuario', adminMiddleware, visualizarUsuarioRouter);
 
 // ROTAS ADMINISTRATIVAS
