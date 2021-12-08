@@ -1,0 +1,35 @@
+<%- include('./partials/head') %>
+  <%- include('./partials/header') %>
+    <div class="container">
+      <form action="" method="POST" class='addPacote' enctype="multipart/form-data">
+        <article class='addPacote-TitleContainer'>
+          <h1 class='addPacote-TitleContainer'>Adicionar Categorias</h1>
+        </article>
+
+        <h2 class='addPacote-TitleContainer'>Adicione a imagem da nova categoria</h2>
+        <nav class='addPacote-ImgContainer' style='position: relative;'>
+          <ul class='addPacote-ImgContainer__Img-list'>
+            <input name="imagem" id="imagemCapa" type='file' onchange='uploadPreview(event)' accept='.jpg' />
+          </ul>
+        </nav>
+        <script src="../src/imagens-preview.js"></script>
+
+        <h2 class='addPacote-TitleContainer'>Adicione as informações sobre a categoria</h2>
+        <ul class="Pacote-Propriedades">
+          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
+            <label>Nome da Categoria</label>
+            <input type="text" name="nomeCategoria" id="nomeCategoria">
+          </li>
+          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
+            <label>Cor da Categoria</label>
+            <input type="color" name="corCategoria" id="corCategoria">
+          </li>
+        </ul>
+
+        <button type="submit" title="Criar Pacote" class="Pacote__Button-Comprar">Cadastrar</button>
+      </form>
+    </div>
+
+
+
+    <%- include('./partials/footer') %>
