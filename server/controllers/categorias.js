@@ -1,7 +1,9 @@
-// const { createImages } = require('../services/package_images');
-// const fs = require('fs');
-
-const { getAllCategorias } = require('../services/categorias');
+const {
+  getAllCategorias,
+  createCategoria,
+  updateCategoria,
+  destroyCategoria,
+} = require('../services/categorias');
 
 const controller = {
   index: async (req, res, next) => {
@@ -16,51 +18,36 @@ const controller = {
     });
   },
   add: async (req, res, next) => {
-    // const categorias = await getAllCategorias();
-    // const adicionais = await getAllAddtionals();
-    // console.log(categorias);
-    // console.log(adicionais);
-    // res.render('adicionar-pacote', {
-    //   title: '| Adicionar Pacote',
-    //   categorias,
-    //   adicionais,
-    //   valor: (valor) => {
-    //     return valor.toLocaleString('pt-BR', {
-    //       style: 'currency',
-    //       currency: 'BRL',
-    //     });
-    //   },
-    //   usuarioLogado: req.cookies.usuario,
-    //   usuarioAdmin: req.cookies.admin,
-    //   usuarioAvatar: req.cookies.avatar,
-    // });
+    res.render('categoria-add', {
+      title: '| Adicionar Categoria',
+      usuarioLogado: req.cookies.usuario,
+      usuarioAdmin: req.cookies.admin,
+      usuarioAvatar: req.cookies.avatar,
+    });
   },
   create: async (req, res, next) => {
-    // if (req.files) {
-    //   pacote = {};
-    //   pacote.nomePacote = req.body.nomePacote;
-    //   pacote.nomeHotel = req.body.nomeHotel;
-    //   pacote.diarias = req.body.diarias;
-    //   pacote.passagemAerea = req.body.passagemAerea;
-    //   pacote.nacional = req.body.nacional;
-    //   pacote.preco = req.body.preco;
-    //   pacote.promocaoPorcentagem = req.body.promocaoPorcentagem;
-    //   pacote.parcelas = req.body.parcelas;
-    //   pacote.package_images = req.files;
-    //   const create = await createPacote(pacote);
-    //   const createImg = await pacote.package_images.forEach((element) =>
-    //     createImages({
-    //       packageId: create.id,
-    //       src: '/assets/img/package/' + element.filename,
-    //     }),
-    //   );
-    //   return createImg;
-    // }
-    // if (create) {
-    //   res.redirect('../pacotes');
-    // } else {
-    //   res.status(500).send('Erro ao criar seu pacote');
-    // }
+    console.log(req.file.filename);
+    console.log(req.body);
+
+    if (req.file) {
+      var imagemCategoria = `${req.file.filename}`;
+    } else {
+      var imagemCategoria = '';
+    }
+
+    const dataCategory = {
+      nomeCategoria: req.body.nomeCategoria,
+      corCategoria: req.body.corCategoria + 'aa',
+      imagemCategoria: imagemCategoria,
+    };
+
+    const create = await createCategoria(dataCategory);
+
+    if (create) {
+      res.redirect('../listarCategoria');
+    } else {
+      res.status(500).send('Erro ao criar sua categoria');
+    }
   },
   edit: async (req, res, next) => {
     // const { id } = req.params;
