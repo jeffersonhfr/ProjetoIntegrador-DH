@@ -38,7 +38,7 @@ const controller = {
 
     const dataCategory = {
       nomeCategoria: req.body.nomeCategoria,
-      corCategoria: req.body.corCategoria + 'aa',
+      corCategoria: req.body.corCategoria,
       imagemCategoria: imagemCategoria,
     };
 
