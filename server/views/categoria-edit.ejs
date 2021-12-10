@@ -1,32 +1,54 @@
 <%- include('./partials/head') %>
   <%- include('./partials/header') %>
     <div class="container">
-      <form action="" method="POST" class='addPacote' enctype="multipart/form-data">
+      <form action="" method="POST" class='formCategoria' enctype="multipart/form-data">
         <article class='addPacote-TitleContainer'>
-          <h1 class='addPacote-TitleContainer'>Editar Categorias</h1>
+          <h1 class='addPacote-TitleContainer'>Editar Categoria</h1>
         </article>
 
-        <h2 class='addPacote-TitleContainer'>Adicione a imagem da nova categoria</h2>
-        <nav class='addPacote-ImgContainer' style='position: relative;'>
-          <ul class='addPacote-ImgContainer__Img-list'>
-            <input name="imagem" id="imagemCapa" type='file' onchange='uploadPreview(event)' accept='.jpg' />
-          </ul>
-        </nav>
-        <script src="../src/imagens-preview.js"></script>
+        <div class="category-content-box">
+          <div class="category-box1">
+            <h2 class='addPacote-TitleContainer'>Preview</h2>
+            <ul class=" Main ViagensTematicas itemsTema">
+              <li class="Tema">
+                <div class="Container Img" style="background-image:url(/assets/img/categoria/<%=categoria[0].imagemCategoria%>) ">
+                  <a href="#" style="background-color:<%=categoria[0].corCategoria%>aa">
+                    <h1>
+                      <%=categoria[0].nomeCategoria%>
+                    </h1>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
 
-        <h2 class='addPacote-TitleContainer'>Adicione as informações sobre a categoria</h2>
-        <ul class="Pacote-Propriedades">
-          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
-            <label>Nome da Categoria</label>
-            <input type="text" name="nomeCategoria" id="nomeCategoria">
-          </li>
-          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
-            <label>Cor da Categoria</label>
-            <input type="color" name="corCategoria" id="corCategoria">
-          </li>
-        </ul>
+          <div class="category-box2">
+            <h2 class='addPacote-TitleContainer'>Adicione/edite a imagem da categoria</h2>
+            <nav class='addPacote-ImgContainer' style='position: relative;'>
+              <ul class='addPacote-ImgContainer__Img-list'>
+                <input name="imgCategoria" type='file' onchange='uploadPreview(event)' accept='.jpg' />
+              </ul>
+            </nav>
+            <script src="../src/imagens-preview.js"></script>
+
+            <h2 class='addPacote-TitleContainer'>Edite as informações da categoria</h2>
+            <ul class="Pacote-Propriedades">
+              <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
+                <label>Nome da Categoria</label>
+                <input type="text" name="nomeCategoria" id="nomeCategoria" value="<%=categoria[0].nomeCategoria%>">
+              </li>
+              <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
+                <label>Cor da Categoria</label>
+                <input type="color" name="corCategoria" id="corCategoria" value="<%=categoria[0].corCategoria%>" placeholder="<%=categoria[0].corCategoria%>" style="width: 100px;
+                height: 100px;">
+              </li>
+            </ul>
+          </div>
+        </div>
 
         <button type="submit" title="Criar Pacote" class="Pacote__Button-Comprar">Editar</button>
+
+
       </form>
     </div>
 

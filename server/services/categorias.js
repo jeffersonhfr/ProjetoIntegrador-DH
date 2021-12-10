@@ -10,6 +10,13 @@ categoriasServices.getAllCategorias = async () => {
   return categorias;
 };
 
+categoriasServices.getCategoriasById = async (id) => {
+  const categoria = await Category.findAll({
+    where: { id },
+  });
+  return categoria;
+};
+
 categoriasServices.createCategoria = async (categoria) => {
   const created = await Category.create({ ...categoria });
   return created;
