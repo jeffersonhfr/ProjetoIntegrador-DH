@@ -129,6 +129,7 @@
         width: inherit;
         justify-content: flex-start;
         height: max-content;
+        min-height: 150px;
         flex-flow: row nowrap;
         display: flex;
         border: 1px solid #d6d6d6;

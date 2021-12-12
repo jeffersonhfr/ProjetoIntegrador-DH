@@ -8,9 +8,11 @@ imagesServices.getAllImages = async (packageId) => {
     where: { packageId },
   });
 };
+
 imagesServices.createImages = async (images) => {
   return await package_image.create(images);
 };
+
 imagesServices.deleteImages = async (id) => {
   try {
     const caminho = await package_image.findAll({ where: { id }, raw: true });

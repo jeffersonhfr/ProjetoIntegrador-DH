@@ -1,4 +1,4 @@
-const { Order } = require('../database/models');
+const { Order, package_image } = require('../database/models');
 
 const ordersServices = {};
 

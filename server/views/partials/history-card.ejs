@@ -1,31 +1,29 @@
-<div class="cartoes-historico">
-  <div class="cartoes-historico cartoes-historico__content">
-    <div class="cartoes-historico__imagem-box">
-      <img alt="Imagem do destino" src="/assets/img/Egito.jpg" class="cartoes-historico__imagem">
-    </div>
-    <div class="cartoes-historico__detalhes-box">
-      <h2 class="cartoes-historico__titulo">Egito histórico</h2>
-      <h3 class="cartoes-historico__detalhes"><span>Data da Viagem:</span> 10/05/2022</h3>
-      <h3 class="cartoes-historico__detalhes"><span>Status:</span> Aguardando a Viagem</h3>
-    </div>
-    <div class="cartoes-historico__botoes-box">
-      <a href="/minhas-viagens/1"><button class="cartoes-historico__botoes">Ver Detalhes</button></a>
-    </div>
-  </div>
-</div>
+<% for (let i=0; i < orders.length; i++) { %>
 
-<div class="cartoes-historico">
-  <div class="cartoes-historico cartoes-historico__content">
-    <div class="cartoes-historico__imagem-box">
-      <img alt="Imagem do destino" src="/assets/img/Egito.jpg" class="cartoes-historico__imagem">
-    </div>
-    <div class="cartoes-historico__detalhes-box">
-      <h2 class="cartoes-historico__titulo">Egito histórico</h2>
-      <h3 class="cartoes-historico__detalhes"><span>Data da Viagem:</span> 10/05/2022</h3>
-      <h3 class="cartoes-historico__detalhes"><span>Status:</span> Finalizada</h3>
-    </div>
-    <div class="cartoes-historico__botoes-box">
-      <a href="/minhas-viagens/1"><button class="cartoes-historico__botoes">Ver Detalhes</button></a>
+
+  <div class="cartoes-historico">
+    <div class="cartoes-historico cartoes-historico__content">
+      <div class="cartoes-historico__imagem-box">
+        <img alt="Imagem do destino" src="/assets/img/Egito.jpg" class="cartoes-historico__imagem">
+      </div>
+      <div class="cartoes-historico__detalhes-box">
+        <h2 class="cartoes-historico__titulo">
+          <%= orders[i].pacote.nomePacote %>
+        </h2>
+        <h3 class="cartoes-historico__detalhes"><span>Valor da Viagem:</span>
+          <%= valor(orders[i].valor) %>
+        </h3>
+        <h3 class="cartoes-historico__detalhes"><span>Parcelado em:</span>
+          <%= orders[i].parcelamento %>x de <%= valor(orders[i].valor/orders[i].parcelamento) %>
+        </h3>
+        <h3 class="cartoes-historico__detalhes"><span>Status:</span>
+          <%= orders[i].status %>
+        </h3>
+      </div>
+      <div class="cartoes-historico__botoes-box">
+        <a href="/minhas-viagens/<%= orders[i].id %>"><button class="cartoes-historico__botoes">Ver Detalhes</button></a>
+      </div>
     </div>
   </div>
-</div>
+
+  <% } %>

@@ -122,7 +122,7 @@ const controller = {
     const { id } = req.params;
 
     if (!id) {
-      res.status(400).send('Ops... não encontramos o seu to do');
+      res.status(400).send('Ops... não encontramos o seu pacote');
     }
 
     const update = await updatePacote(id, req.body);
