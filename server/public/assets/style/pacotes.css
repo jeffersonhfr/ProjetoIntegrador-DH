@@ -158,6 +158,7 @@ button.btao-Container__btao-visualizar.listarUsuarios:hover, button.btao-Contain
   padding: 10px;
   background-color: #f6f6f6;
   transition: all 0.5s;
+  text-align: center;
 }
 
 .travel-cards__btao:hover {

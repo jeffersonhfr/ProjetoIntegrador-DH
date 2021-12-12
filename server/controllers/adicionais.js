@@ -4,13 +4,13 @@ const {
   createAddtionals,
   updateAddtionals,
   destroyAddtionals,
-} = require('../services/categorias');
+} = require('../services/adicionais');
 
 const controller = {
   index: async (req, res, next) => {
     const adicionais = await getAllAddtionals();
     console.log(adicionais);
-    res.render('categoria-list', {
+    res.render('adicional-list', {
       title: '| Listar Adicionais',
       adicionais,
       usuarioLogado: req.cookies.usuario,
