@@ -1,4 +1,14 @@
+.formAdd{
+  margin: 50px 0;
+}
 
+.nomeAdicional{
+  margin: 30px 0;
+}
+
+#nomeAdicional{
+  margin: 10px 0;
+}
 
 @media (min-width: 992px) {
 

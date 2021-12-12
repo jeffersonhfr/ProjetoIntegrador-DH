@@ -25,6 +25,8 @@
               <% } else if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
                 <li class="separador"></li>
                 <li><a href="/listarUsuarios">Gestão de Usuários</a></li>
+                <li><a href="/listarCategoria">Cadastrar Categorias</a></li>
+                <li><a href="/listarAdicional">Cadastrar Adicionais</a></li>
                 <li class="login"><a href="/logout">Logout</a></li>
                 <% } else { %>
                   <li class="login"><a href="/login">Login</a></li>
@@ -75,6 +77,8 @@
           <li><a href="/minhas-viagens">Minhas Viagens</a></li>
           <li class="separador"></li>
           <li><a href="/listarUsuarios">Gestão de Usuários</a></li>
+          <li><a href="/listarCategoria">Cadastrar Categorias</a></li>
+          <li><a href="/listarAdicional">Cadastrar Adicionais</a></li>
           <li class="login"><a href="/logout">Logout</a></li>
         </ul>
       </div>

@@ -19,7 +19,7 @@ const controller = {
     });
   },
   add: async (req, res, next) => {
-    res.render('categoria-add', {
+    res.render('adicional-add', {
       title: '| Cadastrar Adicionais',
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
@@ -27,22 +27,7 @@ const controller = {
     });
   },
   create: async (req, res, next) => {
-    console.log(req.file.filename);
-    console.log(req.body);
-
-    if (req.file) {
-      var imagemCategoria = `${req.file.filename}`;
-    } else {
-      var imagemCategoria = '';
-    }
-
-    const dataCategory = {
-      nomeCategoria: req.body.nomeCategoria,
-      corCategoria: req.body.corCategoria,
-      imagemCategoria: imagemCategoria,
-    };
-
-    const create = await createAddtionals(dataCategory);
+    const create = await createAddtionals(req.body);
 
     if (create) {
       res.redirect('../listarAdicional');
@@ -52,10 +37,10 @@ const controller = {
   },
   edit: async (req, res, next) => {
     const { id } = req.params;
-    const categoria = await getAddtionalsById(id);
-    res.render('categoria-edit', {
+    const adicional = await getAddtionalsById(id);
+    res.render('adicional-edit', {
       title: '| Editar Categoria',
-      categoria,
+      adicional,
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
       usuarioAvatar: req.cookies.avatar,
@@ -67,30 +52,11 @@ const controller = {
       res.status(400).send('Ops... não encontramos a sua categoria');
     }
 
-    if (req.file) {
-      var imagemCategoria = `${req.file.filename}`;
-      const dataCategory = {
-        nomeCategoria: req.body.nomeCategoria,
-        corCategoria: req.body.corCategoria,
-        imagemCategoria: imagemCategoria,
-      };
-      const update = await updateAddtionals(id, dataCategory);
-      if (update) {
-        res.redirect('../../listarAdicional');
-      } else {
-        res.status(500).send('Ops... deu ruim...');
-      }
+    const update = await updateAddtionals(id, req.body);
+    if (update) {
+      res.redirect('../../listarAdicional');
     } else {
-      const dataCategory = {
-        nomeCategoria: req.body.nomeCategoria,
-        corCategoria: req.body.corCategoria,
-      };
-      const update = await updateCategoria(id, dataCategory);
-      if (update) {
-        res.redirect('../../listarAdicional');
-      } else {
-        res.status(500).send('Ops... deu ruim...');
-      }
+      res.status(500).send('Ops... deu ruim...');
     }
   },
   delete: (req, res, next) => {
