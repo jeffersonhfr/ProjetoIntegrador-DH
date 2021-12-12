@@ -50,7 +50,7 @@ const controller = {
     });
   },
   create: async (req, res, next) => {
-    if (req.files) {
+   
       pacote = {};
 
       pacote.nomePacote = req.body.nomePacote;
@@ -71,8 +71,7 @@ const controller = {
           src: '/assets/img/package/' + element.filename,
         }),
       );
-      return createImg;
-    }
+    
 
     if (create) {
       res.redirect('../pacotes');

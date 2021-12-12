@@ -10,4 +10,7 @@ router.get("/:id", listarUsuariosContoller.show);
 
 router.get("/:id/editar", adminMiddleware, listarUsuariosContoller.edit); // Dados do usuário para edição
 
+router.get("/:id/delete", adminMiddleware, listarUsuariosContoller.delete);
+router.post("/:id/delete", adminMiddleware, listarUsuariosContoller.destroy);
+
 module.exports = router;
