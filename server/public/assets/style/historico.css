@@ -17,10 +17,13 @@
 
 .container-historico-null .box1 h1{
     margin: 20px 0;
+    line-height: 30px;
 }
 
 .container-historico-null .box1 h2{
     margin: 20px 0;
+    line-height: 30px;
+    font-size: 20px;
 }
 .container-historico-null .box2{
     flex: 0 1 auto;
