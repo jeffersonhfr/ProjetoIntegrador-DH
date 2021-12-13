@@ -2,6 +2,30 @@
     max-width: 775px;
 }
 
+.container-historico-null{
+    max-width: 775px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+}
+
+.container-historico-null .box1{
+    flex: 0 1 250px;
+}
+
+.container-historico-null .box1 h1{
+    margin: 20px 0;
+}
+
+.container-historico-null .box1 h2{
+    margin: 20px 0;
+}
+.container-historico-null .box2{
+    flex: 0 1 auto;
+}
+
 .title-bar{
     margin: 40px 0 10px;
     display: flex;
