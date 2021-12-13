@@ -11,6 +11,15 @@ const controller = {
     console.log('id: ' + id);
     const orders = await getAllOrdesByUserId(id);
 
+    if (orders == '') {
+      res.render('historico-null', {
+        title: '| Histórico de Viagens',
+        usuarioLogado: req.cookies.usuario,
+        usuarioAdmin: req.cookies.admin,
+        usuarioAvatar: req.cookies.avatar,
+      });
+    }
+
     const imagens = [];
     for (let order of orders) {
       let imagem = await getOneImagesById(order.PackageId);
