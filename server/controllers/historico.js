@@ -1,17 +1,21 @@
-const { getAllOrders, getOrdesById } = require('../services/orders');
+const {
+  getAllOrders,
+  getAllOrdesByUserId,
+  getOneOrdesById,
+} = require('../services/orders');
 const { getOneImagesById } = require('../services/package_images');
 
 const controller = {
   index: async (req, res, next) => {
     const { id } = req.cookies.usuario;
-    const orders = await getOrdesById(id);
-    const imagens = [];
+    console.log('id: ' + id);
+    const orders = await getAllOrdesByUserId(id);
 
+    const imagens = [];
     for (let order of orders) {
       let imagem = await getOneImagesById(order.PackageId);
       imagens.push(imagem);
     }
-    console.log(orders);
 
     res.render('historico', {
       title: '| Histórico de Viagens',
@@ -30,12 +34,20 @@ const controller = {
   },
   details: async (req, res, next) => {
     const { id } = req.params;
-    const { idUsuario } = req.cookies.usuario;
-    const orders = await getAllOrders(id, idUsuario);
-    console.log(orders[0].userId);
+    const orders = await getOneOrdesById(id);
+    const imagem = await getOneImagesById(orders[0].PackageId);
+
+    let user = req.cookies.usuario.id;
+
+    if (user !== orders[0].userId) {
+      console.log('\n\n' + 'diferente');
+      res.redirect('../minhas-viagens');
+    }
+
     res.render('historico-detalhes', {
       title: '| Histórico de Viagens',
       orders,
+      imagem,
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
       usuarioAvatar: req.cookies.avatar,

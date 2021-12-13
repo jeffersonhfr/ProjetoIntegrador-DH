@@ -10,9 +10,18 @@ ordersServices.getAllOrders = async () => {
   return pedidos;
 };
 
-ordersServices.getOrdesById = async (userId) => {
+ordersServices.getAllOrdesByUserId = async (userId) => {
   const pedidos = await Order.findAll({
     where: { userId },
+    include: [{ association: 'pacote' }, { association: 'usuario' }],
+  });
+
+  return pedidos;
+};
+
+ordersServices.getOneOrdesById = async (id) => {
+  const pedidos = await Order.findAll({
+    where: { id },
     include: [{ association: 'pacote' }, { association: 'usuario' }],
   });
 
