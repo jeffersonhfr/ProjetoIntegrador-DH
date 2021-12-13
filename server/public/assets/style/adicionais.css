@@ -1,0 +1,32 @@
+.formAdd{
+  margin: 50px 0;
+}
+
+.nomeAdicional{
+  margin: 30px 0;
+}
+
+#nomeAdicional{
+  margin: 10px 0;
+}
+
+@media (min-width: 992px) {
+
+  .add-cards {
+    margin-bottom: 20px;
+    width: initial;
+    flex-flow: row wrap;
+}
+
+  .add-card__content {
+    flex-flow: row nowrap;
+    margin: 10px;
+}
+
+  .add-card__info-box {
+    padding: 10px 0 10px 25px;
+    width: 368px;
+    box-sizing: border-box;
+    display: flex;
+  }
+}

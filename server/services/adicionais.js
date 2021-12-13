@@ -15,4 +15,30 @@ adicionaisServices.getAllAddtionals = async () => {
   return adicionais;
 };
 
+adicionaisServices.getAddtionalsById = async (id) => {
+  const categoria = await Addtional.findAll({
+    where: { id },
+  });
+  return categoria;
+};
+
+adicionaisServices.createAddtionals = async (adicional) => {
+  const created = await Addtional.create({ ...adicional });
+  return created;
+};
+
+adicionaisServices.updateAddtionals = async (id, adicional) => {
+  const updated = await Addtional.update(
+    { ...adicional },
+    {
+      where: { id },
+    },
+  );
+  return updated;
+};
+
+adicionaisServices.destroyAddtionals = async (id) => {
+  return await Addtional.destroy({ where: { id } });
+};
+
 module.exports = adicionaisServices;
