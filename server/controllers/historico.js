@@ -1,13 +1,22 @@
 const { getAllOrders, getOrdesById } = require('../services/orders');
+const { getOneImagesById } = require('../services/package_images');
 
 const controller = {
   index: async (req, res, next) => {
-    const orders = await getAllOrders();
+    const { id } = req.cookies.usuario;
+    const orders = await getOrdesById(id);
+    const imagens = [];
+
+    for (let order of orders) {
+      let imagem = await getOneImagesById(order.PackageId);
+      imagens.push(imagem);
+    }
     console.log(orders);
 
     res.render('historico', {
       title: '| Histórico de Viagens',
       orders,
+      imagens,
       valor: (valor) => {
         return valor.toLocaleString('pt-BR', {
           style: 'currency',
@@ -21,11 +30,9 @@ const controller = {
   },
   details: async (req, res, next) => {
     const { id } = req.params;
-    const orders = await getAllOrders(id);
-    console.log(orders);
-    if (!id) {
-      res.status(400).send('Ops... não encontramos o seu pacote');
-    }
+    const { idUsuario } = req.cookies.usuario;
+    const orders = await getAllOrders(id, idUsuario);
+    console.log(orders[0].userId);
     res.render('historico-detalhes', {
       title: '| Histórico de Viagens',
       orders,

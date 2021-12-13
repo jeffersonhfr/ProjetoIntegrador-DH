@@ -141,7 +141,8 @@
     }
     
     .cartoes-historico__imagem{
-        height: 110px;
+        height: 150px;
+        width: 250px;
         border-radius: 10px 0 0 10px;
     }
     

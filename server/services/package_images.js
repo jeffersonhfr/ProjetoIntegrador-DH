@@ -1,12 +1,31 @@
 const { package_image } = require('../database/models');
 const fs = require('fs');
 const path = require('path');
+const { on } = require('stream');
 const imagesServices = {};
 
 imagesServices.getAllImages = async (packageId) => {
   return await package_image.findAll({
     where: { packageId },
   });
+};
+
+imagesServices.getImagesById = async (packageId) => {
+  const pedidos = await package_image.findAll({
+    where: { packageId },
+    include: [{ association: 'pacote' }],
+  });
+
+  return pedidos;
+};
+
+imagesServices.getOneImagesById = async (packageId) => {
+  const pedidos = await package_image.findOne({
+    where: { packageId },
+    include: [{ association: 'pacote' }],
+  });
+
+  return pedidos;
 };
 
 imagesServices.createImages = async (images) => {

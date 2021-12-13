@@ -10,13 +10,13 @@ ordersServices.getAllOrders = async () => {
   return pedidos;
 };
 
-ordersServices.getOrdesById = async (id) => {
-  const pacotes = await Order.findAll({
-    where: { id },
+ordersServices.getOrdesById = async (userId) => {
+  const pedidos = await Order.findAll({
+    where: { userId },
     include: [{ association: 'pacote' }, { association: 'usuario' }],
   });
 
-  return pacotes;
+  return pedidos;
 };
 
 module.exports = ordersServices;
