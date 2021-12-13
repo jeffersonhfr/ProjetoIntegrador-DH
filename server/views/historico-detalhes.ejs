@@ -58,11 +58,18 @@
                 <p><span>Parcelado em:</span> 5x R$ 3.160,00</p>
               </li>
               <li class="Pacote-Propriedades__Item">
-                <p><span>Status:</span> Aguardando a Viagem</p>
+                <% if(!orders[0].pedidoAtivo) {%>
+                  <p><span>Status:</span> Pedido Cancelado</p>
+                  <% } else { %>
+                    <p><span>Status:</span> Aguardando a Viagem</p>
+                    <% } %>
               </li>
             </div>
           </ul>
-          <button class="Pacote__Button-Cancelar">Cancelar Compra</button>
+          <% if(orders[0].pedidoAtivo) {%>
+            <button class="Pacote__Button-Cancelar">Cancelar Compra</button>
+            <% } %>
+
         </aside>
       </div>
 

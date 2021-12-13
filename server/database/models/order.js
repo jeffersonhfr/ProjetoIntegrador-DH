@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       parcelamento: DataTypes.INTEGER,
       formaPagamento: DataTypes.STRING,
       status: DataTypes.STRING,
+      pedidoAtivo: DataTypes.BOOLEAN,
       userId: DataTypes.INTEGER,
       packageId: DataTypes.INTEGER,
     },

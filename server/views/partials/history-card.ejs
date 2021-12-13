@@ -18,7 +18,11 @@
           <%= orders[i].parcelamento %>x de <%= valor(orders[i].valor/orders[i].parcelamento) %>
         </h3>
         <h3 class="cartoes-historico__detalhes"><span>Status:</span>
-          <%= orders[i].status %>
+          <% if(!orders[i].pedidoAtivo) {%>
+            Pedido Cancelado
+            <%} else { %>
+              <%=orders[i].status %>
+                <% } %>
         </h3>
       </div>
       <div class="cartoes-historico__botoes-box">
