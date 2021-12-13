@@ -2,6 +2,33 @@
     max-width: 775px;
 }
 
+.container-historico-null{
+    max-width: 775px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+}
+
+.container-historico-null .box1{
+    flex: 0 1 250px;
+}
+
+.container-historico-null .box1 h1{
+    margin: 20px 0;
+    line-height: 30px;
+}
+
+.container-historico-null .box1 h2{
+    margin: 20px 0;
+    line-height: 30px;
+    font-size: 20px;
+}
+.container-historico-null .box2{
+    flex: 0 1 auto;
+}
+
 .title-bar{
     margin: 40px 0 10px;
     display: flex;
@@ -73,7 +100,7 @@
 
 .cartoes-historico__botoes-box {
     flex-flow: column nowrap;
-    margin: 10px 0;
+    margin: 15px 0 15px 15px;
 }
 
 .cartoes-historico__botoes {
@@ -179,7 +206,7 @@
         flex-flow: column nowrap;
         justify-content: center;
         width: 200px;
-        margin: 0px;
+        margin: 0px 30px 0 0;
     }
     
 }
