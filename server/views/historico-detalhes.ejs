@@ -26,44 +26,69 @@
                 <%=orders[0].pacote.diarias%> Diárias
               </p>
             </li>
-            <li class="Pacote-Propriedades__Item Hotel">
-              <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
-              <p>Hotel</p>
-            </li>
-            <li class="Pacote-Propriedades__Item PassagemAerea">
-              <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
-              <p>Passagem Aérea</p>
-            </li>
-            <li class="Pacote-Propriedades__Item Bonus">
-              <img class="Pacote-Propriedades__Item-Img" src="/img/check.png">
-              <p>Translado e City Tour</p>
-            </li>
 
-            <li class="Pacote-Propriedades__Item Destaques">
-              <div><img src="/img/wi-fi.png" width="34px" height="34px">
-                <P>Wi-Fi Grátis</P>
-              </div>
-              <div><img src="/img/drink.png" width="34px" height="34px">
-                <p>Café da Manhã</p>
-              </div>
-            </li>
             <div class="Pacote-Propriedades__divisao">
               <li class="Pacote-Propriedades__Item">
-                <p><span>Pacote adquirido em:</span> 10/08/2021</p>
+                <p><span>Pacote adquirido em:</span>
+                  <%= data(orders[0].createdAt) %>
+                </p>
               </li>
-              <li class="Pacote-Propriedades__Item">
-                <p><span>Valor pago:</span> R$ 15.800,00</p>
-              </li>
-              <li class="Pacote-Propriedades__Item">
-                <p><span>Parcelado em:</span> 5x R$ 3.160,00</p>
-              </li>
-              <li class="Pacote-Propriedades__Item">
-                <p><span>Status:</span> Aguardando a Viagem</p>
-              </li>
+              <% if(!orders[0].pedidoAtivo) {%>
+                <li class="Pacote-Propriedades__Item">
+                  <p><span>Pacote cancelado em:</span>
+                    <%= data(orders[0].updatedAt) %>
+                  </p>
+                </li>
+                <% } %>
+                  <li class="Pacote-Propriedades__Item">
+                    <p><span>Valor pago:</span>
+                      <%= valor(orders[0].valor) %>
+                    </p>
+                  </li>
+                  <li class="Pacote-Propriedades__Item">
+                    <p><span>Parcelado em:</span>
+                      <%= orders[0].parcelamento %>x de <%=valor(orders[0].valor /orders[0].parcelamento)%>
+                    </p>
+                  </li>
+                  <li class="Pacote-Propriedades__Item">
+                    <% if(!orders[0].pedidoAtivo) {%>
+                      <p><span>Status:</span> Pedido Cancelado</p>
+                      <% } else { %>
+                        <p><span>Status:</span> Aguardando a Viagem</p>
+                        <% } %>
+                  </li>
             </div>
           </ul>
-          <button class="Pacote__Button-Cancelar">Cancelar Compra</button>
+          <% if(orders[0].pedidoAtivo) {%>
+            <button onclick="openModal()" class="Pacote__Button-Cancelar">Cancelar Compra</button>
+            <% } %>
+
         </aside>
       </div>
+
+      <div class="modal" id="modal">
+        <div class="modal-alert">
+          <div class="modal-conteudo">
+            <h1 class="tituloModal tituloAlert">Deseja realmente sua viagem: <%= orders[0].pacote.nomePacote %>?
+            </h1>
+            <form action="./<%=orders[0].id %>/editar" method="POST">
+              <button type="submit" class="btao-pacote btn-alert">Sim</button>
+              <a onclick="closeModal()" class="btao-pacote btn-cancel">Não</a>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function openModal() {
+          document.getElementById('modal').classList.add('modal-active');
+          document.body.classList.add('scrollNone');
+        }
+
+        function closeModal() {
+          document.getElementById('modal').classList.remove('modal-active');
+          document.body.classList.remove('scrollNone');
+        }
+      </script>
 
       <%- include('./partials/footer') %>

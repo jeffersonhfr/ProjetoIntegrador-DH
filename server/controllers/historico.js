@@ -2,6 +2,7 @@ const {
   getAllOrders,
   getAllOrdesByUserId,
   getOneOrdesById,
+  updateOrder,
 } = require('../services/orders');
 const { getOneImagesById } = require('../services/package_images');
 
@@ -41,6 +42,30 @@ const controller = {
       usuarioAvatar: req.cookies.avatar,
     });
   },
+  todos: async (req, res, next) => {
+    const orders = await getAllOrders();
+
+    const imagens = [];
+    for (let order of orders) {
+      let imagem = await getOneImagesById(order.PackageId);
+      imagens.push(imagem);
+    }
+
+    res.render('historico-admin', {
+      title: '| Histórico de Viagens',
+      orders,
+      imagens,
+      valor: (valor) => {
+        return valor.toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL',
+        });
+      },
+      usuarioLogado: req.cookies.usuario,
+      usuarioAdmin: req.cookies.admin,
+      usuarioAvatar: req.cookies.avatar,
+    });
+  },
   details: async (req, res, next) => {
     const { id } = req.params;
     const orders = await getOneOrdesById(id);
@@ -52,24 +77,33 @@ const controller = {
       console.log('\n\n' + 'diferente');
       res.redirect('../minhas-viagens');
     }
-
     res.render('historico-detalhes', {
       title: '| Histórico de Viagens',
       orders,
       imagem,
+      data: (data) => {
+        let dataTimeStamp = new Date(data).toISOString();
+
+        let d = new Date(dataTimeStamp);
+        let ye = new Intl.DateTimeFormat('pt', { year: 'numeric' }).format(d);
+        let mo = new Intl.DateTimeFormat('pt', { month: 'long' }).format(d);
+        let da = new Intl.DateTimeFormat('pt', { day: '2-digit' }).format(d);
+        let ho = new Intl.DateTimeFormat('pt', { hour: '2-digit' }).format(d);
+        let mi = new Intl.DateTimeFormat('pt', { minute: '2-digit' }).format(d);
+        let datafinal = `${da}/${mo}/${ye} - ${ho}:${mi}`;
+
+        return datafinal;
+      },
+      valor: (valor) => {
+        return valor.toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL',
+        });
+      },
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin,
       usuarioAvatar: req.cookies.avatar,
     });
-  },
-  create: async (req, res, next) => {
-    const create = await createAddtionals(req.body);
-
-    if (create) {
-      res.redirect('../listarAdicional');
-    } else {
-      res.status(500).send('Erro ao criar sua categoria');
-    }
   },
   update: async (req, res, next) => {
     const { id } = req.params;
@@ -77,9 +111,14 @@ const controller = {
       res.status(400).send('Ops... não encontramos a sua categoria');
     }
 
-    const update = await updateAddtionals(id, req.body);
+    let order = {};
+    order.pedidoAtivo = 0;
+    order.status = 'Pedido Cancelado';
+
+    console.log('\n\n\n Order:' + order);
+    const update = await updateOrder(id, order);
     if (update) {
-      res.redirect('../../listarAdicional');
+      res.redirect('../../minhas-viagens');
     } else {
       res.status(500).send('Ops... deu ruim...');
     }

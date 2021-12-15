@@ -28,4 +28,19 @@ ordersServices.getOneOrdesById = async (id) => {
   return pedidos;
 };
 
+ordersServices.createOrder = async (order) => {
+  const pedidos = await Order.create({ ...order });
+  return pedidos;
+};
+
+ordersServices.updateOrder = async (id, order) => {
+  const updated = await Order.update(
+    { ...order },
+    {
+      where: { id },
+    },
+  );
+  return updated;
+};
+
 module.exports = ordersServices;

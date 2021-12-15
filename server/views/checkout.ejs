@@ -9,7 +9,8 @@
         <div class="pagamento__box">
           <div class="pagamento__box__content">
             <div class="pagamento__box__imagem">
-              <img src="<%= pack[0].imagemCapa %>" alt="" width="100%">
+              <img src="<%= pack[0].package_images[0].src %>" alt="" width="100%">
+              <input type="text" name="imagem" id="imagem" value="<%= pack[0].package_images[0].src %>" hidden>
             </div>
             <div class="pagamento__box__detalhes">
               <ul>
@@ -20,6 +21,7 @@
                 </li>
                 <li>
                   <h2 class="pagamento__box__detalhes__titulo">Valor:</h2><span>
+                    <input type="text" name="valorPago" id="valorPago" value="<%= pack[0].preco-((pack[0].preco * pack[0].promocaoPorcentagem)/100) %>" hidden>
                     <%=valor(pack[0].preco-((pack[0].preco * pack[0].promocaoPorcentagem)/100))%>
                   </span>
                 </li>
@@ -29,11 +31,11 @@
                 <li class="metodo__pagamento">
                   <div class="metodo__pagamento__item">
                     <img class="metodo__pagamento__icone" src="assets/img/boletoBancario.png" alt="Boleto Bancário">
-                    <input class="metodo__pagamento__input" type="radio" id="boletoBancario" name="pagamento" value="boleto" required="required">
+                    <input class="metodo__pagamento__input" type="radio" id="boletoBancario" name="pagamento" value="Boleto Bancário" required="required">
                     <label for="boletoBancario">Boleto Bancário</label>
                   </div>
                   <div class="metodo__pagamento__item">
-                    <input class="metodo__pagamento__input" type="radio" id="cartaoCredito" name="pagamento" value="cartao">
+                    <input class="metodo__pagamento__input" type="radio" id="cartaoCredito" name="pagamento" value="Cartão de Crédito">
                     <label for="cartaoCredito">Cartão de Crédito</label>
                     <img class="metodo__pagamento__icone" src="assets/img/cartaoCredito.png" alt="Cartão de Crédito">
                   </div>
@@ -58,7 +60,6 @@
             <div class="metodo__pagamento__cartao-itens">
               <label for="parcelas" class="label-checkout">Opções de Parcelas:</label><br>
               <select name="parcelas" id="parcelas">
-                <option>Em quantas parcelas deseja pagar?</option>
                 <% for (i=1; i <=pack[0].parcelas ; i++){%>
                   <option value="<%=i%>">
                     <%=i%>x de <%=valor((pack[0].preco-((pack[0].preco * pack[0].promocaoPorcentagem)/100))/i)%>

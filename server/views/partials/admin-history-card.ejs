@@ -14,8 +14,8 @@
         <h3 class="cartoes-historico__detalhes"><span>Valor da Viagem:</span>
           <%= valor(orders[i].valor) %>
         </h3>
-        <h3 class="cartoes-historico__detalhes"><span>Parcelado em:</span>
-          <%= orders[i].parcelamento %>x de <%= valor(orders[i].valor/orders[i].parcelamento) %>
+        <h3 class="cartoes-historico__detalhes"><span>Usuario:</span>
+          <%= orders[i].usuario.nome %> - <%= orders[i].usuario.email %>
         </h3>
         <h3 class="cartoes-historico__detalhes"><span>Status:</span>
           <% if(!orders[i].pedidoAtivo) {%>
@@ -25,9 +25,7 @@
                 <% } %>
         </h3>
       </div>
-      <div class="cartoes-historico__botoes-box">
-        <a href="/minhas-viagens/<%= orders[i].id %>"><button class="cartoes-historico__botoes">Ver Detalhes</button></a>
-      </div>
+
     </div>
   </div>
 
