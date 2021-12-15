@@ -28,4 +28,9 @@ ordersServices.getOneOrdesById = async (id) => {
   return pedidos;
 };
 
+ordersServices.createOrder = async (order) => {
+  const pedidos = await Order.create({ ...order });
+  return pedidos;
+};
+
 module.exports = ordersServices;

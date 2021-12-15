@@ -62,15 +62,6 @@ const controller = {
       usuarioAvatar: req.cookies.avatar,
     });
   },
-  create: async (req, res, next) => {
-    const create = await createAddtionals(req.body);
-
-    if (create) {
-      res.redirect('../listarAdicional');
-    } else {
-      res.status(500).send('Erro ao criar sua categoria');
-    }
-  },
   update: async (req, res, next) => {
     const { id } = req.params;
     if (!id) {

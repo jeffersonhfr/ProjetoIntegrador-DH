@@ -9,7 +9,8 @@
         <div class="pagamento__box">
           <div class="pagamento__box__content">
             <div class="pagamento__box__imagem">
-              <img src="<%= pack[0].imagemCapa %>" alt="" width="100%">
+              <img src="<%= pack[0].package_images[0].src %>" alt="" width="100%">
+              <input type="text" name="imagem" id="imagem" value="<%= pack[0].package_images[0].src %>" hidden>
             </div>
             <div class="pagamento__box__detalhes">
               <ul>
@@ -20,6 +21,7 @@
                 </li>
                 <li>
                   <h2 class="pagamento__box__detalhes__titulo">Valor:</h2><span>
+                    <input type="text" name="valorPago" id="valorPago" value="<%= pack[0].preco-((pack[0].preco * pack[0].promocaoPorcentagem)/100) %>" hidden>
                     <%=valor(pack[0].preco-((pack[0].preco * pack[0].promocaoPorcentagem)/100))%>
                   </span>
                 </li>
