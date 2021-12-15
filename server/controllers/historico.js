@@ -42,6 +42,30 @@ const controller = {
       usuarioAvatar: req.cookies.avatar,
     });
   },
+  todos: async (req, res, next) => {
+    const orders = await getAllOrders();
+
+    const imagens = [];
+    for (let order of orders) {
+      let imagem = await getOneImagesById(order.PackageId);
+      imagens.push(imagem);
+    }
+
+    res.render('historico-admin', {
+      title: '| Histórico de Viagens',
+      orders,
+      imagens,
+      valor: (valor) => {
+        return valor.toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL',
+        });
+      },
+      usuarioLogado: req.cookies.usuario,
+      usuarioAdmin: req.cookies.admin,
+      usuarioAvatar: req.cookies.avatar,
+    });
+  },
   details: async (req, res, next) => {
     const { id } = req.params;
     const orders = await getOneOrdesById(id);
