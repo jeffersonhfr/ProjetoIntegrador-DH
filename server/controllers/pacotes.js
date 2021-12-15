@@ -16,12 +16,12 @@ const { getAllAddtionals } = require('../services/adicionais');
 const controller = {
   index: async (req, res, next) => {
     const query = req.query.destino;
-    console.log('\n\n\n QUERY: ' + query.destino);
 
     if (query == 'nacional') {
       const pack = await getPackagesByDestiny(1);
       res.render('pacotes', {
         title: '| Pacote',
+        tituloPacotes: 'Pacotes Nacionais',
         pack,
         valor: (valor) => {
           return valor.toLocaleString('pt-BR', {
@@ -37,6 +37,7 @@ const controller = {
       const pack = await getPackagesByDestiny(0);
       res.render('pacotes', {
         title: '| Pacote',
+        tituloPacotes: 'Pacotes Internacionais',
         pack,
         valor: (valor) => {
           return valor.toLocaleString('pt-BR', {
@@ -52,6 +53,7 @@ const controller = {
       const pack = await getAllPackages();
       res.render('pacotes', {
         title: '| Pacote',
+        tituloPacotes: 'Nossos Pacotes',
         pack,
         valor: (valor) => {
           return valor.toLocaleString('pt-BR', {

@@ -6,8 +6,10 @@
 
       <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
         <div class="title-bar">
-          <h1>Pacotes Promocionais</h2>
-            <a href="pacotes/adicionar" class="travel-cards__btao">Adicionar Pacote</a>
+          <h1>
+            <%= tituloPacotes %>
+          </h1>
+          <a href="pacotes/adicionar" class="travel-cards__btao">Adicionar Pacote</a>
         </div>
         <% } else {%>
           <div class="title-bar">
