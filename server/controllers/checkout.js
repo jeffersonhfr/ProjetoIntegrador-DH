@@ -33,7 +33,7 @@ const controller = {
     const { idPacote, pagamento, valorPago, parcelas, imagem } = req.body;
     const user = req.cookies.usuario.id;
 
-    if (pagamento === 'boleto') {
+    if (pagamento === 'Boleto Bancário') {
       const status = 'Aguardando Pagamento';
 
       let order = {};

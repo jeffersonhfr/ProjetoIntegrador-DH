@@ -33,4 +33,14 @@ ordersServices.createOrder = async (order) => {
   return pedidos;
 };
 
+ordersServices.updateOrder = async (id, order) => {
+  const updated = await Order.update(
+    { ...order },
+    {
+      where: { id },
+    },
+  );
+  return updated;
+};
+
 module.exports = ordersServices;
