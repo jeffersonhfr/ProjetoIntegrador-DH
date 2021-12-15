@@ -14,6 +14,19 @@ pacotesServices.getAllPackages = async () => {
   return pacotes;
 };
 
+pacotesServices.getPackagesByDestiny = async (nacional) => {
+  const pacotes = await Package.findAll({
+    where: { nacional },
+    include: [
+      { association: 'categoria' },
+      { association: 'adicional' },
+      { association: 'package_images' },
+    ],
+  });
+
+  return pacotes;
+};
+
 pacotesServices.getPackagesById = async (id) => {
   const pacotes = await Package.findAll({
     where: { id },
@@ -26,6 +39,7 @@ pacotesServices.getPackagesById = async (id) => {
 
   return pacotes;
 };
+
 pacotesServices.getPackagesByName = async (name) => {
   return await Package.findAll({
     where: { nomePacote: name },
@@ -73,4 +87,5 @@ pacotesServices.destroyPacote = async (id) => {
     )
     .then((i) => Package.destroy({ where: { id } }));
 };
+
 module.exports = pacotesServices;

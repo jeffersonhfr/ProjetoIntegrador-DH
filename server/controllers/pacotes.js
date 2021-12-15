@@ -4,6 +4,7 @@ const {
   getPackagesById,
   destroyPacote,
   updatePacote,
+  getPackagesByDestiny,
   getPackagesByName,
 } = require('../services/pacotes');
 const { createImages } = require('../services/package_images');
@@ -14,20 +15,55 @@ const { getAllAddtionals } = require('../services/adicionais');
 
 const controller = {
   index: async (req, res, next) => {
-    const pack = await getAllPackages();
-    res.render('pacotes', {
-      title: '| Pacote',
-      pack,
-      valor: (valor) => {
-        return valor.toLocaleString('pt-BR', {
-          style: 'currency',
-          currency: 'BRL',
-        });
-      },
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
+    const query = req.query.destino;
+    console.log('\n\n\n QUERY: ' + query.destino);
+
+    if (query == 'nacional') {
+      const pack = await getPackagesByDestiny(1);
+      res.render('pacotes', {
+        title: '| Pacote',
+        pack,
+        valor: (valor) => {
+          return valor.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          });
+        },
+        usuarioLogado: req.cookies.usuario,
+        usuarioAdmin: req.cookies.admin,
+        usuarioAvatar: req.cookies.avatar,
+      });
+    } else if (query == 'internacional') {
+      const pack = await getPackagesByDestiny(0);
+      res.render('pacotes', {
+        title: '| Pacote',
+        pack,
+        valor: (valor) => {
+          return valor.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          });
+        },
+        usuarioLogado: req.cookies.usuario,
+        usuarioAdmin: req.cookies.admin,
+        usuarioAvatar: req.cookies.avatar,
+      });
+    } else {
+      const pack = await getAllPackages();
+      res.render('pacotes', {
+        title: '| Pacote',
+        pack,
+        valor: (valor) => {
+          return valor.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          });
+        },
+        usuarioLogado: req.cookies.usuario,
+        usuarioAdmin: req.cookies.admin,
+        usuarioAvatar: req.cookies.avatar,
+      });
+    }
   },
   add: async (req, res, next) => {
     const categorias = await getAllCategorias();
@@ -50,28 +86,26 @@ const controller = {
     });
   },
   create: async (req, res, next) => {
-   
-      pacote = {};
+    pacote = {};
 
-      pacote.nomePacote = req.body.nomePacote;
-      pacote.nomeHotel = req.body.nomeHotel;
-      pacote.diarias = req.body.diarias;
-      pacote.passagemAerea = req.body.passagemAerea;
-      pacote.nacional = req.body.nacional;
-      pacote.preco = req.body.preco;
-      pacote.promocaoPorcentagem = req.body.promocaoPorcentagem;
-      pacote.parcelas = req.body.parcelas;
-      pacote.package_images = req.files;
+    pacote.nomePacote = req.body.nomePacote;
+    pacote.nomeHotel = req.body.nomeHotel;
+    pacote.diarias = req.body.diarias;
+    pacote.passagemAerea = req.body.passagemAerea;
+    pacote.nacional = req.body.nacional;
+    pacote.preco = req.body.preco;
+    pacote.promocaoPorcentagem = req.body.promocaoPorcentagem;
+    pacote.parcelas = req.body.parcelas;
+    pacote.package_images = req.files;
 
-      const create = await createPacote(pacote);
+    const create = await createPacote(pacote);
 
-      const createImg = await pacote.package_images.forEach((element) =>
-        createImages({
-          packageId: create.id,
-          src: '/assets/img/package/' + element.filename,
-        }),
-      );
-    
+    const createImg = await pacote.package_images.forEach((element) =>
+      createImages({
+        packageId: create.id,
+        src: '/assets/img/package/' + element.filename,
+      }),
+    );
 
     if (create) {
       res.redirect('../pacotes');
