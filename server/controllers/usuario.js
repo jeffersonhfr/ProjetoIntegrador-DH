@@ -1,5 +1,6 @@
 const { getAllUser, updateUser } = require("../services/usuarios");
 const { getUserById } = require("../services/usuarios");
+const bcrypt = require("bcrypt");
 
 const controller = {
   index: async (req, res, next) => {
@@ -35,8 +36,10 @@ const controller = {
   // },
 
   edit: async (req, res, next) => {
+    const user = req.body;
+    user.senha = bcrypt.hashSync(req.body.senha, 10);
     const { id } = req.cookies.usuario;
-    const update = await updateUser(id, req.body);
+    const update = await updateUser(id, req.body, user);
     // console.log(user);
     let usuarioLogado = req.cookies.usuario;
     let usuarioAdmin = req.cookies.admin;
