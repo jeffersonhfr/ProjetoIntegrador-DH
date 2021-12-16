@@ -11,6 +11,7 @@ const fs = require('fs');
 
 const { getAllCategorias } = require('../services/categorias');
 const { getAllAddtionals } = require('../services/adicionais');
+const { createAddtionalPacote} = require('../services/adicionalPacote')
 
 const controller = {
   index: async (req, res, next) => {
@@ -61,20 +62,22 @@ const controller = {
       pacote.preco = req.body.preco;
       pacote.promocaoPorcentagem = req.body.promocaoPorcentagem;
       pacote.parcelas = req.body.parcelas;
-      pacote.package_images = req.files;
-
+      //pacote.package_images = req.files;
+    
+    console.log(req.body)
+    
       const create = await createPacote(pacote);
 
-      const createImg = await pacote.package_images.forEach((element) =>
+     /* const createImg = await pacote.package_images.forEach((element) =>
         createImages({
           packageId: create.id,
           src: '/assets/img/package/' + element.filename,
         }),
       );
-    
+*/    const createAddPacote = req.body.adicionais.forEach(async (i) => await createAddtionalPacote({ addtionalId: i,packageId : create.id }) )   
 
-    if (create) {
-      res.redirect('../pacotes');
+    if (create && createAddPacote) {
+      res.status(200).send(create);
     } else {
       res.status(500).send('Erro ao criar seu pacote');
     }
