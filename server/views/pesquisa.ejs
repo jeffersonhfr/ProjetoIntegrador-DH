@@ -3,62 +3,24 @@
 
     <div class="container container-pacotes">
       <div class="title-bar">
-        <h1>Resultados da pesquisa: Egito</h2>
-          <%- include('./partials/filtro') %>
+        <h1>
+          Resultados da pesquisa: <%= queryUp %>
+        </h1>
       </div>
       <div class="travel-cards">
-
-
-        <div class="travel-card travel-card__content">
-          <div class="travel-card__imagem-box">
-            <img src="assets/img/Egito.jpg" class="travel-card__imagem">
-          </div>
-          <div class="travel-card__info-box">
-
-            <div class="travel-card__infoDesc">
-              <h2 class="Propriedade Nome">
-                Egito Histórico
-              </h2>
-              <ul class="Propriedades">
-                <li class="Propriedade Hotel">
-                  <p><img src="/assets/img/calendar.png" />
-                    10 diárias
-                  </p>
-                </li>
-                <li class="Propriedade Hotel">
-                  <p><img src="/assets/img/check.png" /> Hotel</p>
-                </li>
-                <li class="Propriedade PassagemAerea">
-                  <p><img src="/assets/img/check.png" />Passagem Aérea</p>
-                </li>
-                <li class="Propriedade Bonus">
-                  <p><img src="/assets/img/check.png" />
-                    Translado
-                  </p>
-                </li>
-                </li>
+        <% if(locals.imagem) { %>
+          <div class="container container-historico container-historico-null" style="margin: 0 auto;">
+            <div class="box1">
+              <h1>Não encontramos nenhuma viagem para o local desejado.</h1>
+              <h2>Você pode buscar novamente, ou acessar diretamente pelo menu Nossos Pacotes e conferir nossas ofertas.</h2>
             </div>
-            <div>
-              <div class="travel-card__infoPrice">
-                <li class="Propriedade ValorInicial preco">
-                  <h3> A partir de <span>
-                      R$ 18.800,00
-                    </span></h3>
-                <li class="Propriedade ValorPromocional preco">
-                  <h1>
-                    R$ 14.000,00
-                  </h1>
-                </li>
-                <h3 class="emAte">em até 10x no cartão</h3>
-              </div>
-              <a href="/pacotes/<%pacotes.id%>"><button class="btao-pacote">Detalhes</button></a>
+            <div class="box2">
+              <img src="<%= imagem %>" width="100%" alt="">
             </div>
-            </ul>
-
           </div>
-
-
-        </div>
+          <% } else {%>
+            <%- include('./partials/travel-card') %>
+              <% } %>
       </div>
     </div>
 

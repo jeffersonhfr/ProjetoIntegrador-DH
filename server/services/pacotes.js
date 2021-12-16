@@ -1,5 +1,8 @@
 const { Package } = require('../database/models');
 const { deleteImages, getAllImages } = require('./package_images');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+
 const pacotesServices = {};
 
 pacotesServices.getAllPackages = async () => {
@@ -40,9 +43,17 @@ pacotesServices.getPackagesById = async (id) => {
   return pacotes;
 };
 
-pacotesServices.getPackagesByName = async (name) => {
+pacotesServices.getPackagesByName = async (nomePacote) => {
+  const query = `%${nomePacote}%`;
   return await Package.findAll({
-    where: { nomePacote: name },
+    where: {
+      nomePacote: { [Op.like]: query },
+    },
+    include: [
+      { association: 'categoria' },
+      { association: 'adicional' },
+      { association: 'package_images' },
+    ],
   });
 };
 
