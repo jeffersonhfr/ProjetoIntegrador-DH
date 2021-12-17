@@ -49,6 +49,22 @@ const controller = {
         usuarioAdmin: req.cookies.admin,
         usuarioAvatar: req.cookies.avatar,
       });
+    } else if (queryCategory) {
+      const pack = await getAllPackages(queryCategory);
+      res.render('pacotes', {
+        title: '| Pacote',
+        tituloPacotes: 'Nossos Pacotes',
+        pack,
+        valor: (valor) => {
+          return valor.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          });
+        },
+        usuarioLogado: req.cookies.usuario,
+        usuarioAdmin: req.cookies.admin,
+        usuarioAvatar: req.cookies.avatar,
+      });
     } else {
       const pack = await getAllPackages();
       res.render('pacotes', {

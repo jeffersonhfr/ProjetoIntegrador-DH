@@ -1,6 +1,28 @@
 const { Category } = require('../database/models');
+const { Package } = require('../database/models');
+const { Category_Package } = require('../database/models');
 
 const categoriasServices = {};
+
+categoriasServices.getPackageByCategory = async (categoryId) => {
+  const categoria = await Category_Package.findAll({
+    where: { categoryId },
+    include: [{ association: 'pacotes' }, { association: 'categorias' }],
+  });
+  return categoria;
+};
+
+// pacotesServices.getAllPackages = async () => {
+//   const pacotes = await Package.findAll({
+//     include: [
+//       { association: 'categoria' },
+//       { association: 'adicional' },
+//       { association: 'package_images' },
+//     ],
+//   });
+
+//   return pacotes;
+// };
 
 categoriasServices.getAllCategorias = async () => {
   const categorias = await Category.findAll({

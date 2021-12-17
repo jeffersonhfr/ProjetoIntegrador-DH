@@ -4,9 +4,38 @@ const {
   createCategoria,
   updateCategoria,
   destroyCategoria,
+  getPackageByCategory,
 } = require('../services/categorias');
+const {
+  getAllPackages,
+  createPacote,
+  getPackagesById,
+  destroyPacote,
+  updatePacote,
+  getPackagesByDestiny,
+  getPackagesByName,
+} = require('../services/pacotes');
 
 const controller = {
+  show: async (req, res, next) => {
+    // const query = req.query.categoria;
+    const pack = await getPackageByCategory(1);
+    console.log('\n\n PACOTES: ' + pack);
+    res.render('pacotes', {
+      title: '| Pacote',
+      tituloPacotes: 'Nossos Pacotes',
+      pack,
+      valor: (valor) => {
+        return valor.toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL',
+        });
+      },
+      usuarioLogado: req.cookies.usuario,
+      usuarioAdmin: req.cookies.admin,
+      usuarioAvatar: req.cookies.avatar,
+    });
+  },
   index: async (req, res, next) => {
     const categoria = await getAllCategorias();
     console.log(categoria);
