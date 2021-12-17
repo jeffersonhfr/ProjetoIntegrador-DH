@@ -49,7 +49,7 @@ const controller = {
         usuarioAdmin: req.cookies.admin,
         usuarioAvatar: req.cookies.avatar,
       });
-    } else if (queryCategory) {
+    } else if (query) {
       const pack = await getAllPackages(queryCategory);
       res.render('pacotes', {
         title: '| Pacote',

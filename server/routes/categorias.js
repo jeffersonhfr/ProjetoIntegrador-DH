@@ -3,6 +3,6 @@ var router = express.Router();
 var categoriasContoller = require('../controllers/categorias');
 
 /* GET home page. */
-router.get('/', categoriasContoller.show);
+// router.get('/', categoriasContoller.show);
 
 module.exports = router;
