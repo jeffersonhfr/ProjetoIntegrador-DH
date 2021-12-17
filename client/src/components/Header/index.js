@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const Header = () => {
   const [isLogado, setIsLogado] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  
 
   return (
     <header class="cabecalho">
