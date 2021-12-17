@@ -1,0 +1,88 @@
+form.addPacote {
+  margin: 50px 0;
+}
+
+h1.addPacote-TitleContainer{
+  font-family: "Epilogue", sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30px;
+  color: #3e60bf;
+}
+
+h2.addPacote-TitleContainer{
+  font-family: "Epilogue", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #202020;
+    margin: 50px 0 10px;
+}
+
+
+.addPacote-ImgContainer{
+  display: flex;
+}
+
+.radio-box{
+  display: flex;
+  flex-flow: column;
+}
+
+
+form.addPacote input[type=text], form.addPacote input[type=number], form.addPacote textarea {
+  margin: 10px 0px;
+  padding: 10px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.Pacote-Propriedades__Item--checkbox {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+}
+
+ul.addPacote-ImgContainer__Img-list {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.listagemFoto{
+  display: flex;
+  flex-flow: column wrap;
+  margin: 20px;
+}
+
+.listagemFoto input[type="file"] {
+  margin: 16px 0;
+}
+
+.img-pack{
+  object-fit:cover
+}
+
+.Pacote-Propriedades-chkbox{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@media (min-width: 680px) {
+  .Pacote-Propriedades.checkbox{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    flex-basis: 310px;
+  }
+
+  .Pacote-Propriedades__Item--checkbox {
+    display: flex;
+    flex-flow: row;
+    align-items: flex-start;
+    flex: 0 0 310px;
+}
+}

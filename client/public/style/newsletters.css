@@ -1,0 +1,208 @@
+.newsletter{
+  width: 100vw;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.newsletter__sobreposicao{
+  background-color: rgb(173 216 235 / 70%);
+  padding: 51px 0 30px;
+}
+
+.newsletter__imagem{
+  background-image: url(../img/pexels-asad-photo-maldives-3155666.jpg);
+  width: 100vw;
+  background-size: 250%;
+  background-repeat: no-repeat;
+  background-position-x: 59%;
+  background-position-y: 45%;
+}
+
+.newsletter__titulo{
+font-family: Epilogue;
+font-style: normal;
+font-weight: 600;
+font-size: 26px;
+line-height: 27px;
+text-align: center;
+color: #4D4D4D;
+}
+
+.newsletter__subtitulo{
+  text-align: center;
+  font-family: 'fonte-secundaria', sans-serif;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 17px;
+}
+
+.divisao{
+  display: none;
+}
+
+.newsletter__box{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+input#emailNews {
+  width: 220px;
+}
+
+
+.fique-por-dentro {
+  display: block;
+  background: #fff;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.16));
+  width: 100%;
+  border-radius: 30px;
+  height: auto;
+}
+
+.fique-por-dentro__form {
+  display: flex;
+  flex-flow: column nowrap;
+  }
+
+.fique-por-dentro__form__campos {
+  display: flex;
+  padding: 20px 10px 10px;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.fique-por-dentro__form__campos__itens {
+  padding: 10px 0;
+}
+
+.fique-por-dentro__form__campos__itens--primeiro {
+  margin-right: 20px;
+}
+
+.fique-por-dentro__form__campos__itens--segundo {
+  margin-right: 15px;
+}
+
+.fique-por-dentro__form__campos__itens--separador {
+  display: none;
+}
+
+.fique-por-dentro__input input {
+  color: #919191;
+  border: 0px !important;
+  outline: none;
+}
+
+.fique-por-dentro__input {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.fique-por-dentro__input #onde {
+  width: 245px;
+}
+
+.fique-por-dentro__input #quando {
+  width: 160px;
+}
+
+
+.fique-por-dentro__input #quantos {
+  width: 220px;
+}
+
+.fique-por-dentro__input label {
+  /* font-family: 'Epilogue', sans-serif; */
+  font-family: 'fonte-primaria', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.fique-por-dentro__input input {
+  font-family: 'Mukta', sans-serif;
+  font-family: 'fonte-secundaria', sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  padding: 0;
+}
+
+.fique-por-dentro__input__submit {
+  font-family: 'Epilogue', sans-serif;
+  font-family: 'fonte-primaria', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: 0px 0px 20px 20px;
+  background: #3e60bf;
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.5s;
+
+  font-size: 16px;
+        font-family: 'Mukta', sans-serif;
+        font-weight: 400;
+}
+
+.fique-por-dentro__input__submit:hover {
+  background: #1B3EA1;
+}
+
+@media (min-width: 510px) {
+  .divisao{
+    display: block;
+  }
+}
+
+@media (min-width: 720px) {
+  
+  .fique-por-dentro__form__campos {
+    justify-content: space-around;
+  }
+
+  .fique-por-dentro__form__campos__itens--separador {
+    display: block;
+  }
+}
+
+@media (min-width: 980px) {
+  .newsletter__imagem{
+    background-size: 170%;
+    background-repeat: no-repeat;
+    background-position-y: 43%;
+    background-position-x: 46%;
+    max-width: 1600px;
+  }
+
+  .fique-por-dentro {
+    width: 700px;
+    height: 80px;
+  }
+
+  .fique-por-dentro__form {
+    flex-flow: row nowrap;
+  }
+
+  .fique-por-dentro__form__campos {
+    width: 967px;
+    padding: inherit;
+  }
+
+  .fique-por-dentro__form__campos__itens {
+    padding: 20px 0;
+  }
+
+  .fique-por-dentro__form__campos__itens--primeiro {
+    margin-left: 15px;
+  }
+
+  .fique-por-dentro__input__submit {
+    border-radius: 0 30px 30px 0;
+    height: 80px;
+    width: 200px;
+  }
+}
