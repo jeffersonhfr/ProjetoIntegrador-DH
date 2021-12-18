@@ -4,6 +4,7 @@ const {
   getPackagesById,
   destroyPacote,
   updatePacote,
+  getPackagesByDestiny,
   getPackagesByName,
 } = require('../services/pacotes');
 const { createImages } = require('../services/package_images');
@@ -16,20 +17,57 @@ const { createAddtionalPacote} = require('../services/adicionalPacote')
 
 const controller = {
   index: async (req, res, next) => {
-    const pack = await getAllPackages();
-    res.render('pacotes', {
-      title: '| Pacote',
-      pack,
-      valor: (valor) => {
-        return valor.toLocaleString('pt-BR', {
-          style: 'currency',
-          currency: 'BRL',
-        });
-      },
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
+    const query = req.query.destino;
+
+    if (query == 'nacional') {
+      const pack = await getPackagesByDestiny(1);
+      res.render('pacotes', {
+        title: '| Pacote',
+        tituloPacotes: 'Pacotes Nacionais',
+        pack,
+        valor: (valor) => {
+          return valor.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          });
+        },
+        usuarioLogado: req.cookies.usuario,
+        usuarioAdmin: req.cookies.admin,
+        usuarioAvatar: req.cookies.avatar,
+      });
+    } else if (query == 'internacional') {
+      const pack = await getPackagesByDestiny(0);
+      res.render('pacotes', {
+        title: '| Pacote',
+        tituloPacotes: 'Pacotes Internacionais',
+        pack,
+        valor: (valor) => {
+          return valor.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          });
+        },
+        usuarioLogado: req.cookies.usuario,
+        usuarioAdmin: req.cookies.admin,
+        usuarioAvatar: req.cookies.avatar,
+      });
+    } else {
+      const pack = await getAllPackages();
+      res.render('pacotes', {
+        title: '| Pacote',
+        tituloPacotes: 'Nossos Pacotes',
+        pack,
+        valor: (valor) => {
+          return valor.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          });
+        },
+        usuarioLogado: req.cookies.usuario,
+        usuarioAdmin: req.cookies.admin,
+        usuarioAvatar: req.cookies.avatar,
+      });
+    }
   },
   add: async (req, res, next) => {
     const categorias = await getAllCategorias();
@@ -52,8 +90,9 @@ const controller = {
     });
   },
   create: async (req, res, next) => {
-   
-      pacote = {};
+    pacote = {};
+
+
 
       pacote.nomePacote = req.body.nomePacote;
       pacote.nomeHotel = req.body.nomeHotel;
@@ -77,6 +116,7 @@ const controller = {
       );
       const createAddPacote = req.body.adicionais.forEach(async (i) => await createAddtionalPacote({ addtionalId: i, packageId: create.id })) 
       const createCatPacote = req.body.categorias.forEach(async (i) => await createCategoriaPacote({ categoryId: i,packageId : create.id }) )       
+
 
     if (create && createAddPacote && createCatPacote) {
       res.status(200).send(create);

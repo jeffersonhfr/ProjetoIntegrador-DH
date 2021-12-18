@@ -1,9 +1,25 @@
 const { Package } = require('../database/models');
 const { deleteImages, getAllImages } = require('./package_images');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+
 const pacotesServices = {};
 
 pacotesServices.getAllPackages = async () => {
   const pacotes = await Package.findAll({
+    include: [
+      { association: 'categoria' },
+      { association: 'adicional' },
+      { association: 'package_images' },
+    ],
+  });
+
+  return pacotes;
+};
+
+pacotesServices.getPackagesByDestiny = async (nacional) => {
+  const pacotes = await Package.findAll({
+    where: { nacional },
     include: [
       { association: 'categoria' },
       { association: 'adicional' },
@@ -26,9 +42,18 @@ pacotesServices.getPackagesById = async (id) => {
 
   return pacotes;
 };
-pacotesServices.getPackagesByName = async (name) => {
+
+pacotesServices.getPackagesByName = async (nomePacote) => {
+  const query = `%${nomePacote}%`;
   return await Package.findAll({
-    where: { nomePacote: name },
+    where: {
+      nomePacote: { [Op.like]: query },
+    },
+    include: [
+      { association: 'categoria' },
+      { association: 'adicional' },
+      { association: 'package_images' },
+    ],
   });
 };
 
@@ -73,4 +98,5 @@ pacotesServices.destroyPacote = async (id) => {
     )
     .then((i) => Package.destroy({ where: { id } }));
 };
+
 module.exports = pacotesServices;
