@@ -11,7 +11,9 @@ const { createImages } = require('../services/package_images');
 const fs = require('fs');
 
 const { getAllCategorias } = require('../services/categorias');
+const { createCategoriaPacote } = require('../services/categoriaPacote')
 const { getAllAddtionals } = require('../services/adicionais');
+const { createAddtionalPacote} = require('../services/adicionalPacote')
 
 const controller = {
   index: async (req, res, next) => {
@@ -90,27 +92,34 @@ const controller = {
   create: async (req, res, next) => {
     pacote = {};
 
-    pacote.nomePacote = req.body.nomePacote;
-    pacote.nomeHotel = req.body.nomeHotel;
-    pacote.diarias = req.body.diarias;
-    pacote.passagemAerea = req.body.passagemAerea;
-    pacote.nacional = req.body.nacional;
-    pacote.preco = req.body.preco;
-    pacote.promocaoPorcentagem = req.body.promocaoPorcentagem;
-    pacote.parcelas = req.body.parcelas;
-    pacote.package_images = req.files;
 
-    const create = await createPacote(pacote);
 
-    const createImg = await pacote.package_images.forEach((element) =>
-      createImages({
-        packageId: create.id,
-        src: '/assets/img/package/' + element.filename,
-      }),
-    );
+      pacote.nomePacote = req.body.nomePacote;
+      pacote.nomeHotel = req.body.nomeHotel;
+      pacote.diarias = req.body.diarias;
+      pacote.passagemAerea = req.body.passagemAerea;
+      pacote.nacional = req.body.nacional;
+      pacote.preco = req.body.preco;
+      pacote.promocaoPorcentagem = req.body.promocaoPorcentagem;
+      pacote.parcelas = req.body.parcelas;
+      pacote.package_images = req.files;
+    
+    console.log(req.body)
+    
+      const create = await createPacote(pacote);
 
-    if (create) {
-      res.redirect('../pacotes');
+      const createImg = await pacote.package_images.forEach((element) =>
+        createImages({
+          packageId: create.id,
+          src: '/assets/img/package/' + element.filename,
+        }),
+      );
+      const createAddPacote = req.body.adicionais.forEach(async (i) => await createAddtionalPacote({ addtionalId: i, packageId: create.id })) 
+      const createCatPacote = req.body.categorias.forEach(async (i) => await createCategoriaPacote({ categoryId: i,packageId : create.id }) )       
+
+
+    if (create && createAddPacote && createCatPacote) {
+      res.status(200).send(create);
     } else {
       res.status(500).send('Erro ao criar seu pacote');
     }

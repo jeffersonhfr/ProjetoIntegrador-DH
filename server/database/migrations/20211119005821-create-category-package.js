@@ -17,7 +17,7 @@ module.exports = {
       },
       packageId: {
         allowNull: false,
-        references: { model: 'Addtionals', key: 'id' },
+        references: { model: 'packages', key: 'id' },
         type: Sequelize.INTEGER,
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',

@@ -51,11 +51,10 @@ const uploadImage = require('../middlewares/uploadImage');
 /* GET home page. */
 router.get('/', pacotesContoller.index);
 
-router.get('/adicionar', adminMiddleware, pacotesContoller.add);
+//router.get('/adicionar', adminMiddleware, pacotesContoller.add);
 // router.post('/adicionar', adminMiddleware, cpUpload, pacotesContoller.create);
 router.post(
   '/adicionar',
-  adminMiddleware,
   uploadImage.array('imagem'),
   pacotesContoller.create,
 );
