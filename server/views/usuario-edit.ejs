@@ -6,11 +6,13 @@
             <div class="perfil__container-top">
                 <h1 class="perfil__title">Meu Perfil</h1>
             </div>
-            <form class="perfil__dados-do-usuario" action="" method="POST">
+            <form class="perfil__dados-do-usuario" action="" method="POST" enctype="multipart/form-data"
+                accept="image/png, image/jpeg" name="usuarioAvatar">
 
                 <div class="dados-do-usuario__img-container">
-                    <img class="img-container__avatar" src="<%= user[0].avatar%>">
+                    <img class="img-container__avatar" src="assets/img/avatar/<%= user[0].avatar%>">
                     <button class="img-container__btn-enviar-img">Alterar Imagem</button>
+                    <input type="file" name="usuarioAvatar" id="usuarioAvatar" />
                 </div>
                 <div class="dados-do-usuario__info nome">
                     <label for="nome">
