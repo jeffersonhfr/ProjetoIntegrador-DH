@@ -26,8 +26,7 @@ const controller = {
     const { id } = req.cookies.usuario;
 
     if (req.file) {
-      // var usuarioAvatar = `${req.file.filename}`;
-      var usuarioAvatar = 'UPLOAD';
+      var usuarioAvatar = `/assets/img/avatar/${req.file.filename}`;
     } else {
       usuarioAvatar = req.cookies.avatar;
     }
