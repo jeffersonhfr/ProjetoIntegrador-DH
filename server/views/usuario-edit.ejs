@@ -6,8 +6,7 @@
             <div class="perfil__container-top">
                 <h1 class="perfil__title">Meu Perfil</h1>
             </div>
-            <form class="perfil__dados-do-usuario" action="" method="POST" enctype="multipart/form-data"
-                accept="image/png, image/jpeg" name="usuarioAvatar">
+            <form class="perfil__dados-do-usuario" action="" method="POST" enctype="multipart/form-data" accept="image/png, image/jpeg" name="usuarioAvatar">
 
                 <div class="dados-do-usuario__img-container">
                     <img class="img-container__avatar" src="assets/img/avatar/<%= user[0].avatar%>">
@@ -74,23 +73,50 @@
                     <label for="estado">
                         <h2 class="info__titulo">Estado</h2>
                     </label>
-                    <input id="estado" name="estado" type="text" value="<%= user[0].uf%>" />
+                    <input id="uf" name="uf" type="text" value="<%= user[0].uf%>" />
                 </div>
                 <div class="dados-do-usuario__info senha">
                     <label for="senha">
                         <h2 class="info__titulo">Senha</h2>
                     </label>
-                    <input id="senha" name="senha" type="password" value="" placeholder="Insira somente para troca" />
+                    <input id="senha" name="senha" type="password" onkeyup="validaSenha()" value="" placeholder="Insira somente para troca" />
                 </div>
                 <div class="dados-do-usuario__info confirmar">
                     <label for="confirmar">
                         <h2 class="info__titulo">Confirmar Senha</h2>
                     </label>
-                    <input id="confirmar" name="confirmar" type="password" value=""
-                        placeholder="Insira somente para troca" />
+                    <input id="confirmar" name="confirmar" type="password" value="" onkeyup="validaSenha()" placeholder="Insira somente para troca" />
                 </div>
-                <input class="dados-do-usuario__btn-submit" type="submit" value="Salvar Alterações">
+                <span id="mensagem-erro"></span>
+                <input class="dados-do-usuario__btn-submit" type="submit" value="Salvar Alterações" id="btnInput">
             </form>
         </main>
 
+        <script>
+            const senha = document.querySelector('#senha');
+            const confirmaSenha = document.querySelector('#confirmar');
+            const enviar = document.querySelector('#btnInput');
+            const mensagem = document.querySelector("#mensagem-erro");
+            mensagem.style.display = "none";
+            enviar.disabled = false;
+
+
+            confirmaSenha.addEventListener('onkeyup', validaSenha())
+            function validaSenha() {
+                if (senha.value == '') {
+                    enviar.disabled = false;
+                    mensagem.innerHTML = ''
+                    mensagem.style.display = "none";
+                } else if (senha.value == confirmaSenha.value) {
+                    mensagem.innerHTML = ''
+                    enviar.disabled = false;
+                    mensagem.style.display = "none";
+                } else {
+                    mensagem.style.display = "flex";
+                    mensagem.innerHTML = 'As senhas não conferem'
+                    console.log('outra senha')
+                    enviar.disabled = true;
+                }
+            }
+        </script>
         <%- include('./partials/footer') %>
