@@ -9,9 +9,11 @@
             <form class="perfil__dados-do-usuario" action="" method="POST" enctype="multipart/form-data" accept="image/png, image/jpeg" name="usuarioAvatar">
 
                 <div class="dados-do-usuario__img-container">
-                    <img class="img-container__avatar" src="assets/img/avatar/<%= user[0].avatar%>">
-                    <button class="img-container__btn-enviar-img">Alterar Imagem</button>
-                    <input type="file" name="usuarioAvatar" id="usuarioAvatar" />
+                    <img class="img-container__avatar" src="<%= user[0].avatar%>">
+                    <label class="custom-file-upload">
+                        <input type="file" name="usuarioAvatar" id="usuarioAvatar" style="display: none;" />
+                        <div class="img-container__btn-enviar-img">Alterar Imagem</div>
+                    </label>
                 </div>
                 <div class="dados-do-usuario__info nome">
                     <label for="nome">
@@ -49,7 +51,7 @@
                     <label for="cep">
                         <h2 class="info__titulo">CEP</h2>
                     </label>
-                    <input id="cep" name="cep" type="text" value="<%= user[0].cep%>" />
+                    <input id="cep" name="cep" type="number" value="<%= user[0].cep%>" />
 
                 </div>
                 <div class="dados-do-usuario__info endereco">
