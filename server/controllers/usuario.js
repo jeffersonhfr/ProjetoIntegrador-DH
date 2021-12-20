@@ -1,5 +1,6 @@
-const { getAllUser, updateUser } = require("../services/usuarios");
-const { getUserById } = require("../services/usuarios");
+const { getAllUser, updateUser } = require('../services/usuarios');
+const { getUserById } = require('../services/usuarios');
+const bcrypt = require('bcrypt');
 
 const controller = {
   index: async (req, res, next) => {
@@ -9,53 +10,68 @@ const controller = {
     let usuarioLogado = req.cookies.usuario;
     let usuarioAdmin = req.cookies.admin;
     if (usuarioAdmin || usuarioLogado) {
-      res.render("usuario", {
-        title: "| " + usuarioLogado.nome,
+      res.render('usuario', {
+        title: '| ' + usuarioLogado.nome,
         user,
         usuarioLogado: usuarioLogado,
         usuarioAdmin: usuarioAdmin,
         usuarioAvatar: req.cookies.avatar,
       });
     } else {
-      res.redirect("../login");
+      res.redirect('../login');
     }
   },
 
-  // show: async (req, res, next) => {
-  //   const { id } = req.params;
-  //   const user = await getUserById(id);
-  //   console.log(user);
-  //   res.render("usuario-edit", {
-  //     title: "| Usuario",
-  //     user,
-  //     usuarioLogado: req.cookies.usuario,
-  //     usuarioAdmin: req.cookies.admin,
-  //     usuarioAvatar: req.cookies.avatar,
-  //   });
-  // },
-
   edit: async (req, res, next) => {
     const { id } = req.cookies.usuario;
-    const update = await updateUser(id, req.body);
-    // console.log(user);
-    let usuarioLogado = req.cookies.usuario;
-    let usuarioAdmin = req.cookies.admin;
-    res.render("usuario-edit", {
-      title: "Usuário",
-      subtitulo: `Usuário #${id}`,
-      usuarioLogado: usuarioLogado,
-      usuarioAdmin: usuarioAdmin,
-      usuarioAvatar: req.cookies.avatar,
-    });
-    if (update) {
-      res.redirect("../perfil");
+
+    if (req.file) {
+      var usuarioAvatar = `/assets/img/avatar/${req.file.filename}`;
     } else {
-      res.status(500).send("Ops... deu ruim...");
+      usuarioAvatar = req.cookies.avatar;
     }
 
-    // FALTA A SENHA HASH?
+    if (req.body.senha != '') {
+      var senhaCrypto = bcrypt.hashSync(req.body.senha, 10);
+      var user = {
+        nome: req.body.nome,
+        email: req.body.email,
+        senha: senhaCrypto,
+        nascimento: req.body.nascimento,
+        cpf: req.body.cpf,
+        avatar: usuarioAvatar,
+        telefone: req.body.telefone,
+        cep: req.body.cep,
+        logradouro: req.body.endereco,
+        complemento: req.body.complemento,
+        localidade: req.body.cidade,
+        uf: req.body.uf,
+        userModificadoEm: new Date(),
+      };
+    } else {
+      var user = {
+        nome: req.body.nome,
+        email: req.body.email,
+        nascimento: req.body.nascimento,
+        cpf: req.body.cpf,
+        avatar: usuarioAvatar,
+        telefone: req.body.telefone,
+        cep: req.body.cep,
+        logradouro: req.body.endereco,
+        complemento: req.body.complemento,
+        localidade: req.body.cidade,
+        uf: req.body.uf,
+        userModificadoEm: new Date(),
+      };
+    }
 
-    // res.redirect("../perfil");
+    const update = await updateUser(id, user);
+
+    if (update) {
+      res.redirect('../perfil');
+    } else {
+      res.status(500).send('Ops... deu ruim...');
+    }
   },
 
   form_edit: async (req, res, next) => {
@@ -66,15 +82,15 @@ const controller = {
     let usuarioAdmin = req.cookies.admin;
 
     if (usuarioAdmin || usuarioLogado) {
-      res.render("usuario-edit", {
-        title: "| " + usuarioLogado.nome,
+      res.render('usuario-edit', {
+        title: '| ' + usuarioLogado.nome,
         user,
         usuarioLogado: usuarioLogado,
         usuarioAdmin: usuarioAdmin,
         usuarioAvatar: req.cookies.avatar,
       });
     } else {
-      res.redirect("../login");
+      res.redirect('../login');
     }
   },
 };

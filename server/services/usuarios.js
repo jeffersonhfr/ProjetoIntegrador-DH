@@ -1,4 +1,4 @@
-const { User } = require("../database/models");
+const { User } = require('../database/models');
 
 const usuariosServices = {};
 
@@ -26,7 +26,7 @@ usuariosServices.updateUser = async (id, user) => {
     { ...user },
     {
       where: { id },
-    }
+    },
   );
   return update;
 };
