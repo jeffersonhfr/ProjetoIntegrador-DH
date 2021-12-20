@@ -49,20 +49,6 @@ const controller = {
         uf: req.body.uf,
         userModificadoEm: new Date(),
       };
-
-      console.log('\n\n Nome:' + user.nome);
-      console.log('\n\n Email:' + user.email);
-      console.log('\n\n Senha Normal:' + req.body.senha);
-      console.log('\n\n Senha Crypto:' + user.senha);
-      console.log('\n\n Nascimento:' + user.nascimento);
-      console.log('\n\n CPF:' + user.cpf);
-      console.log('\n\n Avatar:' + user.avatar);
-      console.log('\n\n Telefone:' + user.telefone);
-      console.log('\n\n Cep:' + user.cep);
-      console.log('\n\n Logradouro:' + user.logradouro);
-      console.log('\n\n Complemento:' + user.complemento);
-      console.log('\n\n Localidade:' + user.localidade);
-      console.log('\n\n UF:' + user.uf);
     } else {
       var user = {
         nome: req.body.nome,
@@ -78,18 +64,6 @@ const controller = {
         uf: req.body.uf,
         userModificadoEm: new Date(),
       };
-
-      console.log('\n\n Nome:' + user.nome);
-      console.log('\n\n Email:' + user.email);
-      console.log('\n\n Nascimento:' + user.nascimento);
-      console.log('\n\n CPF:' + user.cpf);
-      console.log('\n\n Avatar:' + user.avatar);
-      console.log('\n\n Telefone:' + user.telefone);
-      console.log('\n\n Cep:' + user.cep);
-      console.log('\n\n Logradouro:' + user.logradouro);
-      console.log('\n\n Complemento:' + user.complemento);
-      console.log('\n\n Localidade:' + user.localidade);
-      console.log('\n\n UF:' + user.uf);
     }
 
     const update = await updateUser(id, user);
