@@ -105,6 +105,7 @@ const controller = {
       pacote.package_images = req.files;
     
     console.log(req.body.adicionais)
+    console.log(req.body.categorias)
     
       const create = await createPacote(pacote);
 

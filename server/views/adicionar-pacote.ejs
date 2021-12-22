@@ -50,6 +50,7 @@
             <div class="radio-box">
               <div class="radio-opt">
                 <input type="radio" name="PassagemAerea" id="PassagemAerea" value="1"> Sim
+                <input type="radio" name="PassagemAerea" id="PassagemAerea" value="2"> Não
               </div>
               <label for="adicionais">Adicionais</label>
 <%for (let i = 0; i< adicionais.length;i++ ){ %>
@@ -59,8 +60,19 @@
                 <input type="checkbox" name="adicionais" id="adicionais" value=<%=adicionais[i].id%>> 
                 <%=adicionais[i].nomeAdicional%>
               </div>
+              </div>
 <%}%>
-            </div>
+<label for="categorias">categorias</label>
+<%for (let i = 0; i< categorias.length;i++ ){ %>
+              
+            <div class="radio-box">
+              <div class="radio-opt">
+                <input type="checkbox" name="categorias" id="categorias" value=<%=categorias[i].id%>> 
+                <%=categorias[i].nomeCategoria%>
+              </div>
+              </div>
+<%}%>
+            
           </li>
         </ul>
 
