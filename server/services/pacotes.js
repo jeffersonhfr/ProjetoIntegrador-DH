@@ -46,7 +46,7 @@ pacotesServices.getPackagesById = async (id) => {
 pacotesServices.getPackagesByName = async (nomePacote) => {
   const query = `%${nomePacote}%`;
   return await Package.findAll({
-    where: {
+    where: { 
       nomePacote: { [Op.like]: query },
     },
     include: [
