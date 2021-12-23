@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Header = () => {
-  const [isLogado, setIsLogado] = useState(false);
+  const [isLogado, setIsLogado] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
   
 
@@ -193,7 +193,7 @@ const Header = () => {
           </>
         ) : null}
 
-        {/* <script src="/src/menu.js"></script> */}
+      
       </div>
     </header>
   );
