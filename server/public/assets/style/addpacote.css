@@ -28,6 +28,15 @@ h2.addPacote-TitleContainer{
   flex-flow: column;
 }
 
+.checkbox-div {
+  display: flex;
+  flex-flow: row wrap;
+  flex-basis: 60px;
+}
+
+.checkbox-opt {
+  margin: 10px;
+}
 
 form.addPacote input[type=text], form.addPacote input[type=number], form.addPacote textarea {
   margin: 10px 0px;
