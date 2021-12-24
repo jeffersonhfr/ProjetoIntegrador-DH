@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-
+import menuToggle from './scripts/menu'
 const Header = () => {
   const [isLogado, setIsLogado] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(true);
+  
+  let perfil = '/assets/img/Aventura.jpg'
   
 
   return (
@@ -107,12 +109,12 @@ const Header = () => {
 
               {isLogado && !isAdmin ? (
                 <>
-                  <li class="menu__desk">
+                  <li class="menu__desk" onClick={menuToggle}>
                     {' '}
                     <img
                       alt="Foto do Usuário"
                       class="menu__desk-foto"
-                      src="<%=usuarioAvatar %>"
+                      src={perfil}
                       alt="foto de perfil"
                       width="50px"
                       height="50px"
@@ -121,12 +123,12 @@ const Header = () => {
                 </>
               ) : isLogado && isAdmin ? (
                 <>
-                  <li class="menu__desk">
+                  <li class="menu__desk" onClick={menuToggle}>
                     {' '}
                     <img
                       alt="Foto do Usuário"
                       class="menu__desk-foto"
-                      src="<%= usuarioAvatar %>"
+                      src={perfil}
                       alt="foto de perfil"
                     />
                   </li>
