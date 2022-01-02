@@ -1,16 +1,16 @@
-.footer__lista__link{
+.footer__lista__link {
   text-decoration: none;
   color: #424242;
 }
 
-.footer__lista__titulo{
-  font-family: 'Epilogue';
+.footer__lista__titulo {
+  font-family: "Epilogue";
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: 14px;
   letter-spacing: 0em;
-  text-align: left;  
+  text-align: left;
   color: #424242;
 }
 
@@ -27,39 +27,38 @@ footer ul {
 }
 
 footer {
-  align-items:flex-start;
+  align-items: flex-start;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  background: #D6D6D6;
+  background: #d6d6d6;
   padding: 30px 0;
   margin-top: 30px;
-  font-family: 'Mukta', sans-serif;
+  font-family: "Mukta", sans-serif;
   font-size: 14px;
 }
 
-article.footer__lista {
+div.footer__lista {
   flex: 1 1 100%;
   justify-content: center;
   text-align: left;
   margin: 10px 0;
 }
 
-
-article.footer__lista__contato {
+div.footer__lista__contato {
   order: -1;
 }
 
-article.footer__lista__contato {
+div.footer__lista__contato {
   margin: 15px 0;
 }
 
-footer .footer__conteudo  {
+footer .footer__conteudo {
   align-items: flex-start;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  width:-webkit-fill-available;  
+  width: -webkit-fill-available;
 }
 
 section.footer__conteudo {
@@ -67,17 +66,17 @@ section.footer__conteudo {
   margin: 0 auto;
 }
 
-.footer__conteudo a{
-  border-bottom:0px solid #424242;
+.footer__conteudo a {
+  border-bottom: 0px solid #424242;
   transition: all 100ms ease-in-out;
 }
 
-.footer__conteudo a:hover{
-  border-bottom:3px solid #424242;
+.footer__conteudo a:hover {
+  border-bottom: 3px solid #424242;
 }
 
-a.footer__lista__link.social:hover{
-  border-bottom:0px;
+a.footer__lista__link.social:hover {
+  border-bottom: 0px;
 }
 
 .footer__conteudo .footer__lista .footer__lista__contato {
@@ -88,20 +87,20 @@ a.footer__lista__link.social:hover{
 }
 
 .footer__lista__contato li {
- display:inline-flex;
- justify-content: center;
+  display: inline-flex;
+  justify-content: center;
   padding: 14px;
- transition: 0.3s ease-in
+  transition: 0.3s ease-in;
 }
 
 .footer__lista__contato li:hover {
   transform: scale(1.3);
 }
 
-.copyright{
+.copyright {
   text-align: center;
   margin: 20px auto 0;
-  font-family: 'Mukta';
+  font-family: "Mukta";
   font-size: 15px;
   color: #5e5f62;
 }
@@ -119,55 +118,55 @@ a.footer__lista__link.social:hover{
     margin: 0 auto;
   }
 
-  article.footer__lista__contato {
+  div.footer__lista__contato {
     order: 0;
   }
 
   footer .footer__lista__titulo {
     text-align: left;
-  }  
-  
+  }
+
   footer {
-    align-items:flex-start;
+    align-items: flex-start;
     flex-flow: column nowrap;
     justify-content: space-between;
     padding: 40px 0;
     margin-top: 30px;
     width: 100vw;
   }
-  
-  article.footer__lista {
+
+  div.footer__lista {
     flex: 1 0;
     text-align: inherit;
     margin: 0;
   }
 
-  article.footer__lista__contato {
+  div.footer__lista__contato {
     margin: 0;
   }
 
-  footer .footer__conteudo  {
+  footer .footer__conteudo {
     align-items: flex-start;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    width:-webkit-fill-available;  
+    width: -webkit-fill-available;
   }
-  
+
   .footer__conteudo .footer__lista .footer__lista__contato {
     align-items: stretch;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
   }
-  
+
   .footer__lista__contato li {
-   display:inline-flex;
-   justify-content: center;
-   padding: 14px;
-   transition: 0.3s ease-in;
+    display: inline-flex;
+    justify-content: center;
+    padding: 14px;
+    transition: 0.3s ease-in;
   }
-  
+
   .footer__lista__contato li:hover {
     transform: scale(1.3);
   }
