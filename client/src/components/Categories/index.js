@@ -47,21 +47,21 @@ const Categories = ()=>{
 
     return <>
       
-    <div class="container">
-      <nav class="Categoria viagem-tematica">
-        <article>
-          <h1 class="title"> Viagens Temáticas</h1>
-          <h2>Separamos os melhores pacotes por temas, escolha o que faz mais o seu estilo</h2>
-        </article>
+        <div class="container">
+            <nav class="Categoria viagem-tematica">
+                <article>
+                    <h1 class="title"> Viagens Temáticas</h1>
+                    <h2>Separamos os melhores pacotes por temas, escolha o que faz mais o seu estilo</h2>
+                </article>
 
-        <div class="container container-cards">
-          <ul class=" Main ViagensTematicas itemsTema">
+                <div class="container container-cards">
+                    <ul class=" Main ViagensTematicas itemsTema">
 
-                {categorias.map((categoria)=>{
-                    < >  
-                    <Categoria {...categoria}/>
-                        </>})
-                        }
+                        {categorias.map((categoria)=>{
+                            return <>  
+                                <Categoria categoria = {categoria}/>
+                            </>})
+                            }
                     </ul>
                 </div>
 
