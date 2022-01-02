@@ -11,9 +11,9 @@ const { createImages } = require('../services/package_images');
 const fs = require('fs');
 
 const { getAllCategorias } = require('../services/categorias');
-const { createCategoriaPacote } = require('../services/categoriaPacote')
+const { createCategoriaPacote } = require('../services/categoriaPacote');
 const { getAllAddtionals } = require('../services/adicionais');
-const { createAddtionalPacote} = require('../services/adicionalPacote')
+const { createAddtionalPacote } = require('../services/adicionalPacote');
 
 const controller = {
   index: async (req, res, next) => {
@@ -92,32 +92,35 @@ const controller = {
   create: async (req, res, next) => {
     pacote = {};
 
+    pacote.nomePacote = req.body.nomePacote;
+    pacote.nomeHotel = req.body.nomeHotel;
+    pacote.diarias = req.body.diarias;
+    pacote.passagemAerea = req.body.passagemAerea;
+    pacote.nacional = req.body.nacional;
+    pacote.preco = req.body.preco;
+    pacote.promocaoPorcentagem = req.body.promocaoPorcentagem;
+    pacote.parcelas = req.body.parcelas;
+    pacote.package_images = req.files;
 
+    console.log(req.body.adicionais);
+    console.log(req.body.categorias);
 
-      pacote.nomePacote = req.body.nomePacote;
-      pacote.nomeHotel = req.body.nomeHotel;
-      pacote.diarias = req.body.diarias;
-      pacote.passagemAerea = req.body.passagemAerea;
-      pacote.nacional = req.body.nacional;
-      pacote.preco = req.body.preco;
-      pacote.promocaoPorcentagem = req.body.promocaoPorcentagem;
-      pacote.parcelas = req.body.parcelas;
-      pacote.package_images = req.files;
-    
-    console.log(req.body.adicionais)
-    console.log(req.body.categorias)
-    
-      const create = await createPacote(pacote);
+    const create = await createPacote(pacote);
 
-      const createImg = await pacote.package_images.forEach((element) =>
-        createImages({
-          packageId: create.id,
-          src: '/assets/img/package/' + element.filename,
-        }),
-      );
-      const createAddPacote = req.body.adicionais.forEach(async (i) => await createAddtionalPacote({ addtionalId: i, packageId: create.id })) 
-      const createCatPacote = req.body.categorias.forEach(async (i) => await createCategoriaPacote({ categoryId: i,packageId : create.id }) )       
-
+    const createImg = await pacote.package_images.forEach((element) =>
+      createImages({
+        packageId: create.id,
+        src: '/assets/img/package/' + element.filename,
+      }),
+    );
+    const createAddPacote = req.body.adicionais.forEach(
+      async (i) =>
+        await createAddtionalPacote({ addtionalId: i, packageId: create.id }),
+    );
+    const createCatPacote = req.body.categorias.forEach(
+      async (i) =>
+        await createCategoriaPacote({ categoryId: i, packageId: create.id }),
+    );
 
     if (create && createAddPacote && createCatPacote) {
       res.status(200).send(create);
@@ -152,7 +155,7 @@ const controller = {
     const adicionais = await getAllAddtionals();
     console.log(pack);
     console.log(categorias);
-    console.log(adicionais);
+    // console.log(adicionais);
     res.render('pacote-edit', {
       title: '| Pacote',
       pack,

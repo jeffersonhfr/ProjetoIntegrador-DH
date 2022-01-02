@@ -114,12 +114,35 @@
                 </div>
                 <% } %>
           </li>
+          <br>
+          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
+            <label for="adicionais">Adicionais</label>
+            <div class="checkbox-div">
+              <%for (let i=0; i< adicionais.length;i++ ){ %>
+                <div class="checkbox-opt">
+                  <input type="checkbox" name="adicionais" id="adicionais" value=<%=adicionais[i].id%>>
+                  <%=adicionais[i].nomeAdicional%>
+                </div>
+                <%}%>
+            </div>
+          </li>
+          <br>
+          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
+            <label for="categorias">Categorias</label>
+            <div class="checkbox-div">
+
+              <%for (let i=0; i< categorias.length;i++ ){ %>
+                <% if (pack[0].categoria[i]){%>
+                  <div class="checkbox-opt">
+                    <input type="checkbox" name="categorias" id="categorias" checked value=<%=pack[0].categoria[i].id%>>
+                    <%=pack[0].categoria[i].nomeCategoria%>
+                  </div>
+
+                  <% } %>
+                    <% } %>
+            </div>
+          </li>
         </ul>
-
-
-
-
-
 
         <h2 class='addPacote-TitleContainer'>Adicione os dados financeiros</h2>
         <ul class="Pacote-Propriedades">
