@@ -6,14 +6,14 @@ const Header = () => {
   const [isIndex,setIsIndex] = useState(true);
   
   let perfil = '/assets/img/Aventura.jpg'
-  let header = (<header class="cabecalho">
+  let header = (<header className="cabecalho">
 
-    <div class="container cabecalho__navegacao">
+    <div className="container cabecalho__navegacao">
       <a href="/">
         <div>
           <img
             alt="Logo Viagem.com"
-            class="cabecalho_logo"
+            className="cabecalho_logo"
             src="/assets/img/logo01.png"
             alt="logo"
             width="234px"
@@ -21,16 +21,16 @@ const Header = () => {
           />
         </div>
       </a>
-      <nav class="cabecalho__menu-mobile">
+      <nav className="cabecalho__menu-mobile">
         <input
-          class="cabecallho__menu-hamburguer"
+          className="cabecallho__menu-hamburguer"
           id="cabecallho__menu-hamburguer"
           type="checkbox"
         />
         <label for="cabecallho__menu-hamburguer">
-          <div class="menu-hamburguer__conteudo">
-            <span class="menu-hamburguer__icone"></span>
-            <div class="menu-hamburguer__menu-mobile">
+          <div className="menu-hamburguer__conteudo">
+            <span className="menu-hamburguer__icone"></span>
+            <div className="menu-hamburguer__menu-mobile">
               <ul>
                 <li>
                   <a href="/pacotes">Viagens Temáticas</a>
@@ -47,20 +47,20 @@ const Header = () => {
 
                 {isLogado && !isAdmin ? (
                   <>
-                    <li class="separador"></li>
+                    <li className="separador"></li>
                     <li>
                       <a href="/perfil">Meu Perfil</a>
                     </li>
                     <li>
                       <a href="/minhas-viagens">Minhas Viagens</a>
                     </li>
-                    <li class="login">
+                    <li className="login">
                       <a href="/logout">Logout</a>
                     </li>
                   </>
                 ) : isLogado && isAdmin ? (
                   <>
-                    <li class="separador"></li>
+                    <li className="separador"></li>
                     <li>
                       <a href="/listarUsuarios">Gestão de Usuários</a>
                     </li>
@@ -75,12 +75,12 @@ const Header = () => {
                     <li>
                       <a href="/listarAdicional">Cadastrar Adicionais</a>
                     </li>
-                    <li class="login">
+                    <li className="login">
                       <a href="/logout">Logout</a>
                     </li>
                   </>
                 ) : (
-                  <li class="login">
+                  <li className="login">
                     <a href="/login">Login</a>
                   </li>
                 )}
@@ -90,8 +90,8 @@ const Header = () => {
         </label>
       </nav>
 
-      <nav class="cabecalho__menu-desk">
-        <ul class="flex">
+      <nav className="cabecalho__menu-desk">
+        <ul className="flex">
           <li>
             <a href="/pacotes">Viagens Temáticas</a>
           </li>
@@ -107,11 +107,11 @@ const Header = () => {
 
           {isLogado && !isAdmin ? (
             <>
-              <li class="menu__desk" onClick={menuToggle}>
+              <li className="menu__desk" onClick={menuToggle}>
                 {' '}
                 <img
                   alt="Foto do Usuário"
-                  class="menu__desk-foto"
+                  className="menu__desk-foto"
                   src={perfil}
                   alt="foto de perfil"
                   width="50px"
@@ -121,11 +121,11 @@ const Header = () => {
             </>
           ) : isLogado && isAdmin ? (
             <>
-              <li class="menu__desk" onClick={menuToggle}>
+              <li className="menu__desk" onClick={menuToggle}>
                 {' '}
                 <img
                   alt="Foto do Usuário"
-                  class="menu__desk-foto"
+                  className="menu__desk-foto"
                   src={perfil}
                   alt="foto de perfil"
                 />
@@ -142,8 +142,8 @@ const Header = () => {
 
     {isLogado && !isAdmin ? (
       <>
-        <div class="container flex-end">
-          <div class="menu__desk-conteudo">
+        <div className="container flex-end">
+          <div className="menu__desk-conteudo">
             <ul>
               <li>
                 <a href="/perfil">Meu Perfil</a>
@@ -153,7 +153,7 @@ const Header = () => {
               
     
               </li>
-              <li class="login">
+              <li className="login">
                 <a href="/logout">Logout</a>
               </li>
             </ul>
@@ -162,8 +162,8 @@ const Header = () => {
       </>
     ) : isLogado && isAdmin ? ( 
       <>
-        <div class="container flex-end">
-          <div class="menu__desk-conteudo">
+        <div className="container flex-end">
+          <div className="menu__desk-conteudo">
             <ul>
               <li>
                 <a href="/perfil">Meu Perfil</a>
@@ -171,7 +171,7 @@ const Header = () => {
               <li>
                 <a href="/minhas-viagens">Minhas Viagens</a>
               </li>
-              <li class="separador"></li>
+              <li className="separador"></li>
               <li>
                 <a href="/listarUsuarios">Gestão de Usuários</a>
               </li>
@@ -186,7 +186,7 @@ const Header = () => {
               <li>
                 <a href="/listarAdicional">Cadastrar Adicionais</a>
               </li>
-              <li class="login">
+              <li className="login">
                 <a href="/logout">Logout</a>
               </li>
             </ul>
@@ -198,10 +198,10 @@ const Header = () => {
 </header>)
 
   return (<>
-    {isIndex ? (  <div class="cabecalho__sobreposicao">
+    {isIndex ? (  <div className="cabecalho__sobreposicao">
       {header}</div>):(<>
-      <header class="cabecalho-paginas">
-        <div class="header_container">
+      <header className="cabecalho-paginas">
+        <div className="header_container">
     
         {header}
 
