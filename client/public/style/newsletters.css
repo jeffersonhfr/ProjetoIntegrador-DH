@@ -1,16 +1,16 @@
-.newsletter{
+.newsletter {
   width: 100vw;
   max-width: 1600px;
   margin: 0 auto;
 }
 
-.newsletter__sobreposicao{
+.newsletter__sobreposicao {
   background-color: rgb(173 216 235 / 70%);
   padding: 51px 0 30px;
 }
 
-.newsletter__imagem{
-  background-image: url(../img/pexels-asad-photo-maldives-3155666.jpg);
+.newsletter__imagem {
+  background-image: url(../assets/img/pexels-asad-photo-maldives-3155666.jpg);
   width: 100vw;
   background-size: 250%;
   background-repeat: no-repeat;
@@ -18,30 +18,30 @@
   background-position-y: 45%;
 }
 
-.newsletter__titulo{
-font-family: Epilogue;
-font-style: normal;
-font-weight: 600;
-font-size: 26px;
-line-height: 27px;
-text-align: center;
-color: #4D4D4D;
+.newsletter__titulo {
+  font-family: Epilogue;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 27px;
+  text-align: center;
+  color: #4d4d4d;
 }
 
-.newsletter__subtitulo{
+.newsletter__subtitulo {
   text-align: center;
-  font-family: 'fonte-secundaria', sans-serif;
-  font-family: 'Mukta', sans-serif;
+  font-family: "fonte-secundaria", sans-serif;
+  font-family: "Mukta", sans-serif;
   font-weight: 400;
   font-size: 16px;
   margin-bottom: 17px;
 }
 
-.divisao{
+.divisao {
   display: none;
 }
 
-.newsletter__box{
+.newsletter__box {
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -50,7 +50,6 @@ color: #4D4D4D;
 input#emailNews {
   width: 220px;
 }
-
 
 .fique-por-dentro {
   display: block;
@@ -64,7 +63,7 @@ input#emailNews {
 .fique-por-dentro__form {
   display: flex;
   flex-flow: column nowrap;
-  }
+}
 
 .fique-por-dentro__form__campos {
   display: flex;
@@ -108,29 +107,28 @@ input#emailNews {
   width: 160px;
 }
 
-
 .fique-por-dentro__input #quantos {
   width: 220px;
 }
 
 .fique-por-dentro__input label {
   /* font-family: 'Epilogue', sans-serif; */
-  font-family: 'fonte-primaria', sans-serif;
+  font-family: "fonte-primaria", sans-serif;
   font-weight: 600;
   font-size: 13px;
 }
 
 .fique-por-dentro__input input {
-  font-family: 'Mukta', sans-serif;
-  font-family: 'fonte-secundaria', sans-serif;
+  font-family: "Mukta", sans-serif;
+  font-family: "fonte-secundaria", sans-serif;
   font-weight: 200;
   font-size: 16px;
   padding: 0;
 }
 
 .fique-por-dentro__input__submit {
-  font-family: 'Epilogue', sans-serif;
-  font-family: 'fonte-primaria', sans-serif;
+  font-family: "Epilogue", sans-serif;
+  font-family: "fonte-primaria", sans-serif;
   font-weight: 600;
   font-size: 13px;
   border-radius: 0px 0px 20px 20px;
@@ -144,22 +142,21 @@ input#emailNews {
   transition: all 0.5s;
 
   font-size: 16px;
-        font-family: 'Mukta', sans-serif;
-        font-weight: 400;
+  font-family: "Mukta", sans-serif;
+  font-weight: 400;
 }
 
 .fique-por-dentro__input__submit:hover {
-  background: #1B3EA1;
+  background: #1b3ea1;
 }
 
 @media (min-width: 510px) {
-  .divisao{
+  .divisao {
     display: block;
   }
 }
 
 @media (min-width: 720px) {
-  
   .fique-por-dentro__form__campos {
     justify-content: space-around;
   }
@@ -170,7 +167,7 @@ input#emailNews {
 }
 
 @media (min-width: 980px) {
-  .newsletter__imagem{
+  .newsletter__imagem {
     background-size: 170%;
     background-repeat: no-repeat;
     background-position-y: 43%;
