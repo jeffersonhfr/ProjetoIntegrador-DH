@@ -12,44 +12,44 @@
 
             <li class="listagemFoto">
               <h2>Imagem da Capa</h2>
-              <img src="<%= pack[0].imagemCapa%>" id="imgpackcapa" width="300px" height="200px" class="img-pack">
-              <input type="file" name="capa" accept="image/png, image/jpeg" onchange="loadFileCapa(event)" />
+              <img src="<%= pack[0].package_images[0].src %>" id="imagemCapa" width="300px" height="200px" class="img-pack">
+              <input type="file" name="imagem" accept='.jpg' onchange="loadFileCapa(event)" />
             </li>
 
             <li class="listagemFoto">
               <h2>Imagem 01</h2>
-              <img src="<%= pack[0].imagem01%>" width="300px" height="200px" id="imgpack1" class="img-pack ">
-              <input type="file" name="imagem01" accept="image/png, image/jpeg" onchange="loadFile1(event)" />
+              <img src="<%= pack[0].package_images[1].src %>" width="300px" height="200px" id="imagem01" class="img-pack">
+              <input type="file" name="imagem" accept='.jpg' onchange="loadFile1(event)" />
             </li>
 
             <li class="listagemFoto">
               <h2>Imagem 02</h2>
-              <img src="<%= pack[0].imagem02%>" id="imgpack2" width="300px" height="200px" class="img-pack">
-              <input type="file" name="imagem02" accept="image/png, image/jpeg" onchange="loadFile2(event)" />
+              <img src="<%= pack[0].package_images[2].src %>" id="imagem02" width="300px" height="200px" class="img-pack">
+              <input type="file" name="imagem" accept='.jpg' onchange="loadFile2(event)" />
             </li>
 
             <li class="listagemFoto">
               <h2>Imagem 03</h2>
-              <img src="<%= pack[0].imagem03%>" id="imgpack3" width="300px" height="200px" class="img-pack">
-              <input type="file" name="imagem03" accept="image/png, image/jpeg" onchange="loadFile3(event)" />
+              <img src="<%= pack[0].package_images[3].src %>" id="imagem03" width="300px" height="200px" class="img-pack">
+              <input type="file" name="imagem" accept='.jpg' onchange="loadFile3(event)" />
             </li>
 
             <li class="listagemFoto">
               <h2>Imagem 04</h2>
-              <img src="<%= pack[0].imagem04%>" id="imgpack4" width="300px" height="200px" class="img-pack">
-              <input type="file" name="imagem04" accept="image/png, image/jpeg" onchange="loadFile4(event)" />
+              <img src="<%= pack[0].package_images[4].src %>" id="imagem04" width="300px" height="200px" class="img-pack">
+              <input type="file" name="imagem" accept='.jpg' onchange="loadFile4(event)" />
             </li>
 
             <li class="listagemFoto">
               <h2>Imagem 05</h2>
-              <img src="<%= pack[0].imagem05%>" id="imgpack5" width="300px" height="200px" class="img-pack">
-              <input type="file" name="imagem05" accept="image/png, image/jpeg" onchange="loadFile5(event)" />
+              <img src="<%= pack[0].package_images[5].src %>" id="imagem05" width="300px" height="200px" class="img-pack">
+              <input type="file" name="imagem" accept='.jpg' onchange="loadFile5(event)" />
             </li>
 
             <li class="listagemFoto">
               <h2>Imagem 06</h2>
-              <img src="<%= pack[0].imagem06%>" id="imgpack6" width="300px" height="200px" class="img-pack">
-              <input type="file" name="imagem06" accept="image/png, image/jpeg" onchange="loadFile6(event)" />
+              <img src="<%= pack[0].package_images[6].src %>" id="imagem06" width="300px" height="200px" class="img-pack">
+              <input type="file" name="imagem" accept='.jpg' onchange="loadFile6(event)" />
             </li>
           </ul>
         </nav>
@@ -114,12 +114,35 @@
                 </div>
                 <% } %>
           </li>
+          <br>
+          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
+            <label for="adicionais">Adicionais</label>
+            <div class="checkbox-div">
+              <%for (let i=0; i< adicionais.length;i++ ){ %>
+                <div class="checkbox-opt">
+                  <input type="checkbox" name="adicionais" id="adicionais" value=<%=adicionais[i].id%>>
+                  <%=adicionais[i].nomeAdicional%>
+                </div>
+                <%}%>
+            </div>
+          </li>
+          <br>
+          <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
+            <label for="categorias">Categorias</label>
+            <div class="checkbox-div">
+
+              <%for (let i=0; i< categorias.length;i++ ){ %>
+                <% if (pack[0].categoria[i]){%>
+                  <div class="checkbox-opt">
+                    <input type="checkbox" name="categorias" id="categorias" checked value=<%=pack[0].categoria[i].id%>>
+                    <%=pack[0].categoria[i].nomeCategoria%>
+                  </div>
+
+                  <% } %>
+                    <% } %>
+            </div>
+          </li>
         </ul>
-
-
-
-
-
 
         <h2 class='addPacote-TitleContainer'>Adicione os dados financeiros</h2>
         <ul class="Pacote-Propriedades">

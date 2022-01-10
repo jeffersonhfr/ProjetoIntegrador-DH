@@ -1,0 +1,36 @@
+<%- include('./partials/head') %>
+  <%- include('./partials/header') %>
+
+    <div class="container container-pacotes">
+
+
+      <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
+        <div class="title-bar">
+          <h1>
+            <%= tituloPacotes %>
+          </h1>
+          <a href="pacotes/adicionar" class="travel-cards__btao">Adicionar Pacote</a>
+        </div>
+        <% } else {%>
+          <div class="title-bar">
+            <h1>Pacotes Promocionais</h2>
+              <%- include('./partials/filtro') %>
+          </div>
+          <% } %>
+            <div class="travel-cards">
+              <%- include('./partials/travel-card-cat') %>
+            </div>
+    </div>
+
+    <!-- <div class="container paginacao">
+      <a href="" class="nav-pag">
+        Anterior </a>
+      <a href="" class="nav-pag">1</a>
+      <a href="" class="nav-pag">2</a>
+      <a href="" class="nav-pag">3</a>
+      <a href="" class="nav-pag">4</a>
+      <a href="" class="nav-pag">5</a>
+      <a href="" class="nav-pag">Próxima</a>
+    </div> -->
+
+    <%- include('./partials/footer') %>

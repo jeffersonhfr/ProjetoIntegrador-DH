@@ -6,20 +6,39 @@ const {
   updatePacote,
   getPackagesByDestiny,
   getPackagesByName,
+  getPackagesByCategory,
 } = require('../services/pacotes');
 const { createImages } = require('../services/package_images');
 const fs = require('fs');
 
 const { getAllCategorias } = require('../services/categorias');
-const { createCategoriaPacote } = require('../services/categoriaPacote')
+const { createCategoriaPacote } = require('../services/categoriaPacote');
 const { getAllAddtionals } = require('../services/adicionais');
-const { createAddtionalPacote} = require('../services/adicionalPacote')
+const { createAddtionalPacote } = require('../services/adicionalPacote');
 
 const controller = {
   index: async (req, res, next) => {
     const query = req.query.destino;
+    const queryCategoria = req.query.categoria;
 
-    if (query == 'nacional') {
+    if (queryCategoria) {
+      const pack = await getPackagesByCategory(queryCategoria);
+      console.log(pack);
+      res.render('pacotes', {
+        title: '| Pacotes: ' + queryCategoria,
+        tituloPacotes: 'Pacotes por categoria: ' + queryCategoria,
+        pack,
+        valor: (valor) => {
+          return valor.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          });
+        },
+        usuarioLogado: req.cookies.usuario,
+        usuarioAdmin: req.cookies.admin,
+        usuarioAvatar: req.cookies.avatar,
+      });
+    } else if (query == 'nacional') {
       const pack = await getPackagesByDestiny(1);
       res.render('pacotes', {
         title: '| Pacote',
@@ -92,20 +111,19 @@ const controller = {
   create: async (req, res, next) => {
     pacote = {};
 
+    pacote.nomePacote = req.body.nomePacote;
+    pacote.nomeHotel = req.body.nomeHotel;
+    pacote.diarias = req.body.diarias;
+    pacote.passagemAerea = req.body.passagemAerea;
+    pacote.nacional = req.body.nacional;
+    pacote.preco = req.body.preco;
+    pacote.promocaoPorcentagem = req.body.promocaoPorcentagem;
+    pacote.parcelas = req.body.parcelas;
+    pacote.package_images = req.files;
 
+    console.log(req.body.adicionais);
+    console.log(req.body.categorias);
 
-      pacote.nomePacote = req.body.nomePacote;
-      pacote.nomeHotel = req.body.nomeHotel;
-      pacote.diarias = req.body.diarias;
-      pacote.passagemAerea = req.body.passagemAerea;
-      pacote.nacional = req.body.nacional;
-      pacote.preco = req.body.preco;
-      pacote.promocaoPorcentagem = req.body.promocaoPorcentagem;
-      pacote.parcelas = req.body.parcelas;
-      pacote.package_images = req.files;
-    
-    console.log(req.body.adicionais)
-    console.log(req.body.categorias)
     
       const create = await createPacote(pacote);
 
@@ -128,6 +146,7 @@ const controller = {
 
     } catch { 
       const createCatPacote = await createCategoriaPacote({ categoryId:req.body.categorias, packageId: create.id })
+
 
     }
     if (create) {
@@ -163,7 +182,7 @@ const controller = {
     const adicionais = await getAllAddtionals();
     console.log(pack);
     console.log(categorias);
-    console.log(adicionais);
+    // console.log(adicionais);
     res.render('pacote-edit', {
       title: '| Pacote',
       pack,
