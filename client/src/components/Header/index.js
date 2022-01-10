@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 const Header = () => {
   const [isLogado, setIsLogado] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  
 
   return (
     <header class="cabecalho">
@@ -14,8 +13,7 @@ const Header = () => {
               <img
                 alt="Logo Viagem.com"
                 class="cabecalho_logo"
-                src="/assets/img/logo01.png"
-                alt="logo"
+                src="assets/img/logo01.png"
                 width="234px"
                 height="51px"
               />

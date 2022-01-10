@@ -1,7 +1,7 @@
 
 
 .cabecalho {
-  background: url(../img/logo02.jpg) no-repeat center center;
+  background: url(/assets/img/logo02.jpg) no-repeat center center;
   width: 100vw;
   height: 280px;
   background-size: 150%;
@@ -205,7 +205,7 @@ li.logout {
   }
 
   .cabecalho {
-    background: url(../img/logo02.jpg) no-repeat center center;
+    background: url(/assets/img/logo02.jpg) no-repeat center center;
     width: 100vw;
     height: 466px;
     border: 40px;
