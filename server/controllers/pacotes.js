@@ -18,8 +18,25 @@ const { createAddtionalPacote } = require('../services/adicionalPacote');
 const controller = {
   index: async (req, res, next) => {
     const query = req.query.destino;
+    const queryCategoria = req.query.categoria;
 
-    if (query == 'nacional') {
+    if (queryCategoria) {
+      const pack = await getPackagesByDestiny(1);
+      res.render('pacotes', {
+        title: '| Pacotes: ' + queryCategoria,
+        tituloPacotes: 'Pacotes por categoria: ' + queryCategoria,
+        pack,
+        valor: (valor) => {
+          return valor.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          });
+        },
+        usuarioLogado: req.cookies.usuario,
+        usuarioAdmin: req.cookies.admin,
+        usuarioAvatar: req.cookies.avatar,
+      });
+    } else if (query == 'nacional') {
       const pack = await getPackagesByDestiny(1);
       res.render('pacotes', {
         title: '| Pacote',

@@ -13,14 +13,12 @@
         </div>
         <% } else {%>
           <div class="title-bar">
-            <h1>
-              <%= tituloPacotes %>
-            </h1>
-            <%- include('./partials/filtro') %>
+            <h1>Pacotes Promocionais</h2>
+              <%- include('./partials/filtro') %>
           </div>
           <% } %>
             <div class="travel-cards">
-              <%- include('./partials/travel-card') %>
+              <%- include('./partials/travel-card-cat') %>
             </div>
     </div>
 
