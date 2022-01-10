@@ -1,10 +1,10 @@
 import React from "react";
 import Categoria from "../Categoria";
+import CarouselButton from "../CarouselButton"
 
 
 
-
-const Categories = ()=>{
+const Categorias = ()=>{
 
     let categorias= [
         {
@@ -58,7 +58,7 @@ const Categories = ()=>{
                 <div className="container container-cards">
                     
                 
-                    
+                    <CarouselButton/>
                     <ul className=" Main ViagensTematicas itemsTema">
 
                         {categorias.map((categoria)=>{
@@ -77,4 +77,4 @@ const Categories = ()=>{
 }
 
 
-export default Categories;
+export default Categorias;
