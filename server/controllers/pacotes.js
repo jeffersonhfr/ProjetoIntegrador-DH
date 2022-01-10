@@ -6,6 +6,7 @@ const {
   updatePacote,
   getPackagesByDestiny,
   getPackagesByName,
+  getPackagesByCategory,
 } = require('../services/pacotes');
 const { createImages } = require('../services/package_images');
 const fs = require('fs');
@@ -21,7 +22,8 @@ const controller = {
     const queryCategoria = req.query.categoria;
 
     if (queryCategoria) {
-      const pack = await getPackagesByDestiny(1);
+      const pack = await getPackagesByCategory(queryCategoria);
+      console.log(pack);
       res.render('pacotes', {
         title: '| Pacotes: ' + queryCategoria,
         tituloPacotes: 'Pacotes por categoria: ' + queryCategoria,
