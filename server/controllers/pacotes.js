@@ -124,24 +124,32 @@ const controller = {
     console.log(req.body.adicionais);
     console.log(req.body.categorias);
 
-    const create = await createPacote(pacote);
+    
+      const create = await createPacote(pacote);
 
-    const createImg = await pacote.package_images.forEach((element) =>
-      createImages({
-        packageId: create.id,
-        src: '/assets/img/package/' + element.filename,
-      }),
-    );
-    const createAddPacote = req.body.adicionais.forEach(
-      async (i) =>
-        await createAddtionalPacote({ addtionalId: i, packageId: create.id }),
-    );
-    const createCatPacote = req.body.categorias.forEach(
-      async (i) =>
-        await createCategoriaPacote({ categoryId: i, packageId: create.id }),
-    );
+      const createImg = await pacote.package_images.forEach((element) =>
+        createImages({
+          packageId: create.id,
+          src: '/assets/img/package/' + element.filename,
+        }),
+      );
 
-    if (create && createAddPacote && createCatPacote) {
+    try {
+      const createAddPacote = req.body.adicionais.forEach(async (i) => await createAddtionalPacote({ addtionalId: i, packageId: create.id }))
+    } catch { 
+      const createAddPacote = await createAddtionalPacote({ addtionalId: req.body.adicionais, packageId: create.id });
+    }
+      
+      
+    try {
+      const createCatPacote = req.body.categorias.forEach(async (i) => await createCategoriaPacote({ categoryId: i, packageId: create.id }))
+
+    } catch { 
+      const createCatPacote = await createCategoriaPacote({ categoryId:req.body.categorias, packageId: create.id })
+
+
+    }
+    if (create) {
       res.status(200).send(create);
     } else {
       res.status(500).send('Erro ao criar seu pacote');
