@@ -6,7 +6,7 @@ const Header = () => {
   const [isIndex,setIsIndex] = useState(true);
   
   let perfil = '/assets/img/Aventura.jpg'
-  let header = (<header className="cabecalho">
+  let header = (<>
 
     <div className="container cabecalho__navegacao">
       <a href="/">
@@ -195,11 +195,16 @@ const Header = () => {
       </>
     ) : null}
  
-</header>)
+</>)
 
   return (<>
-    {isIndex ? (  <div className="cabecalho__sobreposicao">
-      {header}</div>):(<>
+    {isIndex ? (  
+    <header className="cabecalho">
+    <div className="cabecalho__sobreposicao">
+      {header}</div>
+      </header>
+      
+      ):(<>
       <header className="cabecalho-paginas">
         <div className="header_container">
     

@@ -5,7 +5,17 @@ import CarouselButton from "../CarouselButton"
 
 
 const Categorias = ()=>{
-
+    let buttonPrevCat={
+      position: "absolute",
+      left: "38px",
+      top: "707px"
+    }
+    let buttonNextCat={
+      position: "absolute",
+      transform: "scalex(-1)",
+      right: "38px",
+      top: "707px"
+    }
     let categorias= [
         {
           nomeCategoria: 'Neve',
@@ -58,7 +68,7 @@ const Categorias = ()=>{
                 <div className="container container-cards">
                     
                 
-                    <CarouselButton/>
+                    <CarouselButton style={buttonPrevCat} isPrev={true}/>
                     <ul className=" Main ViagensTematicas itemsTema">
 
                         {categorias.map((categoria)=>{
@@ -67,7 +77,7 @@ const Categorias = ()=>{
                             </>})
                             }
                     </ul>
-                    <button>{'>'}</button>
+                    <CarouselButton style={buttonNextCat} isPrev={false}/>
                 </div>
 
             </nav>

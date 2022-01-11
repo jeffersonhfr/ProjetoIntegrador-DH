@@ -3,7 +3,7 @@ const menuToggle = (e)=>{
 
     let menuUser = document.querySelector('.menu__desk-conteudo');
 
-        menuUser.classNameList.toggle('mostrar-menu');
+        menuUser.classList.toggle('mostrar-menu');
    
 }
 
