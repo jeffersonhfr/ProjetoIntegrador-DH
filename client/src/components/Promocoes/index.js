@@ -1,5 +1,5 @@
 import React from 'react';
-import PacoteCard from '../ViagemCard';
+import PacoteCard from '../PacotesCard';
 
 const Promocoes = () => {
   let pacotes = [
