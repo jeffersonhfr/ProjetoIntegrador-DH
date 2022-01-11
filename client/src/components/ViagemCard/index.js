@@ -32,22 +32,47 @@ const PacoteCard = ({ pacotes }) => {
                     Hotel {pacotes.nomeHotel}
                   </p>
                 </li>
-                <li className="Propriedade PassagemAerea">
-                  <p>
-                    <img alt="Icone Check" src="assets/img/check.png" />
-                    Passagem Aérea{' '}
-                  </p>
-                </li>
+
+                {pacotes.passagemAerea == true ? (
+                  <>
+                    <li className="Propriedade PassagemAerea">
+                      <p>
+                        <img alt="Icone Check" src="assets/img/check.png" />
+                        Passagem Aérea
+                      </p>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li className="Propriedade PassagemAerea">
+                      <p>
+                        <img alt="Icone Check" src="assets/img/notcheck.png" />
+                        Passagem Aérea
+                      </p>
+                    </li>
+                  </>
+                )}
+
                 <p>
                   <img alt="Icone Check" src="assets/img/check.png" />
                   {pacotes.adicionais[0].nomeAdicional}
                 </p>
 
-                <li className="Propriedade ValorInicial preco">
-                  <h2>
-                    A partir de <span> {valor(pacotes.preco)} </span>
-                  </h2>
-                </li>
+                {pacotes.promocaoPorcentagem > 0 ? (
+                  <>
+                    <li className="Propriedade ValorInicial preco">
+                      <h2>
+                        A partir de <span> {valor(pacotes.preco)} </span>
+                      </h2>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li className="Propriedade ValorInicial preco">
+                      <h2>A partir de</h2>
+                    </li>
+                  </>
+                )}
 
                 <li className="Propriedade ValorPromocional preco">
                   <h1>
