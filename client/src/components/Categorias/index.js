@@ -95,7 +95,7 @@ const Categorias = ()=>{
                 <div className="container container-cards">
                     
                 
-                    <CarouselButton style={buttonPrevCat} classe="itemsTema"/>
+                    <CarouselButton style={buttonPrevCat} classe="itemsTema" isPrev={false}/>
                     <ul className=" Main ViagensTematicas itemsTema">
 
                         {categorias.map((categoria)=>{
@@ -104,7 +104,7 @@ const Categorias = ()=>{
                             </>})
                             }
                     </ul>
-                    <CarouselButton style={buttonNextCat}  classe="itemsTema"/>
+                    <CarouselButton style={buttonNextCat}  classe="itemsTema" isPrev={true}/>
 
                 </div>
 
