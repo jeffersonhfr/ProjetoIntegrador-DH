@@ -5,7 +5,17 @@ import CarouselButton from "../CarouselButton"
 
 
 const Categorias = ()=>{
-
+    let buttonPrevCat={
+      position: "absolute",
+      left: "38px",
+      top: "707px"
+    }
+    let buttonNextCat={
+      position: "absolute",
+      transform: "scalex(-1)",
+      right: "38px",
+      top: "707px"
+    }
     let categorias= [
         {
           nomeCategoria: 'Neve',
@@ -38,8 +48,35 @@ const Categorias = ()=>{
           
         },
         {
+          nomeCategoria: 'TEste',
+          corCategoria: '#ddd55d',
+          imagemCategoria: 'historico.jpg',
+          
+        },
+        {
           nomeCategoria: 'Histórico',
-          corCategoria: '#896d15',
+          corCategoria: '#8aad55',
+          imagemCategoria: 'historico.jpg',
+          
+        },
+        {
+          nomeCategoria: 'Histórico',
+          corCategoria: '#bba553',
+          imagemCategoria: 'historico.jpg',
+          
+        },{
+          nomeCategoria: 'Histórico',
+          corCategoria: '#89aa24',
+          imagemCategoria: 'historico.jpg',
+          
+        },{
+          nomeCategoria: 'Histórico',
+          corCategoria: '#8aaa28',
+          imagemCategoria: 'historico.jpg',
+          
+        },{
+          nomeCategoria: 'Histórico',
+          corCategoria: '#8ad323',
           imagemCategoria: 'historico.jpg',
           
         }
@@ -58,7 +95,7 @@ const Categorias = ()=>{
                 <div className="container container-cards">
                     
                 
-                    <CarouselButton/>
+                    <CarouselButton style={buttonPrevCat} classe="itemsTema" isPrev={false}/>
                     <ul className=" Main ViagensTematicas itemsTema">
 
                         {categorias.map((categoria)=>{
@@ -67,7 +104,8 @@ const Categorias = ()=>{
                             </>})
                             }
                     </ul>
-                    <button>{'>'}</button>
+                    <CarouselButton style={buttonNextCat}  classe="itemsTema" isPrev={true}/>
+
                 </div>
 
             </nav>

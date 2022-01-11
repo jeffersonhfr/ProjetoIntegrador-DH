@@ -21,6 +21,9 @@ footer .footer__lista__titulo {
 footer li {
   padding: 2px 0;
 }
+footer li:hover {
+  cursor:pointer;
+}
 
 footer ul {
   margin: 12px 0 15px;
