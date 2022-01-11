@@ -7,10 +7,6 @@ const Header = () => {
   
   let perfil = '/assets/img/Aventura.jpg'
   let header = (<>
-
-  let perfil = '/assets/img/Aventura.jpg';
-  let menuHeader = (
-    <>
       <div className="container cabecalho__navegacao">
         <a href="/">
           <div>
@@ -193,87 +189,28 @@ const Header = () => {
               </ul>
             </div>
           </div>
-<<<<<<< HEAD
-        </div>
-      </>
-    ) : isLogado && isAdmin ? ( 
-      <>
-        <div className="container flex-end">
-          <div className="menu__desk-conteudo">
-            <ul>
-              <li>
-                <a href="/perfil">Meu Perfil</a>
-              </li>
-              <li>
-                <a href="/minhas-viagens">Minhas Viagens</a>
-              </li>
-              <li className="separador"></li>
-              <li>
-                <a href="/listarUsuarios">Gestão de Usuários</a>
-              </li>
-              <li>
-                <a href="/minhas-viagens/todos-pedidos">
-                  Visualizar Todos os Pedidos
-                </a>
-              </li>
-              <li>
-                <a href="/listarCategoria">Cadastrar Categorias</a>
-              </li>
-              <li>
-                <a href="/listarAdicional">Cadastrar Adicionais</a>
-              </li>
-              <li className="login">
-                <a href="/logout">Logout</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </>
-    ) : null}
- 
-</>)
-
-  return (<>
-    {isIndex ? (  
-    <header className="cabecalho">
-    <div className="cabecalho__sobreposicao">
-      {header}</div>
-      </header>
-      
-      ):(<>
-      <header className="cabecalho-paginas">
-        <div className="header_container">
-    
-        {header}
-
-        </div>
-      </header></>)}
-</>);
-}
-=======
         </>
       ) : null}
     </>
-  );
+  ); 
 
   return (
     <>
       {isIndex ? (
         <>
           <header className="cabecalho">
-            <div className="cabecalho__sobreposicao">{menuHeader}</div>
+            <div className="cabecalho__sobreposicao">{header}</div>
           </header>
         </>
       ) : (
         <>
           <header className="cabecalho-paginas">
-            <div className="header_container">{menuHeader}</div>
+            <div className="header_container">{header}</div>
           </header>
         </>
       )}
     </>
   );
-};
->>>>>>> 81bfd887e6d5912db780cc09c4d245c3b58172be
+}
 
 export default Header;
