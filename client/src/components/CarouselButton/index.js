@@ -22,7 +22,7 @@ const CarouselButton = ({style,id}) => {
         </div>
 
     </>
-
-}
+  );
+};
 
 export default CarouselButton;
