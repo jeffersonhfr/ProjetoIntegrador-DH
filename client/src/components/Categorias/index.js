@@ -48,8 +48,35 @@ const Categorias = ()=>{
           
         },
         {
+          nomeCategoria: 'TEste',
+          corCategoria: '#ddd55d',
+          imagemCategoria: 'historico.jpg',
+          
+        },
+        {
           nomeCategoria: 'Histórico',
-          corCategoria: '#896d15',
+          corCategoria: '#8aad55',
+          imagemCategoria: 'historico.jpg',
+          
+        },
+        {
+          nomeCategoria: 'Histórico',
+          corCategoria: '#bba553',
+          imagemCategoria: 'historico.jpg',
+          
+        },{
+          nomeCategoria: 'Histórico',
+          corCategoria: '#89aa24',
+          imagemCategoria: 'historico.jpg',
+          
+        },{
+          nomeCategoria: 'Histórico',
+          corCategoria: '#8aaa28',
+          imagemCategoria: 'historico.jpg',
+          
+        },{
+          nomeCategoria: 'Histórico',
+          corCategoria: '#8ad323',
           imagemCategoria: 'historico.jpg',
           
         }
@@ -68,7 +95,7 @@ const Categorias = ()=>{
                 <div className="container container-cards">
                     
                 
-                    <CarouselButton style={buttonPrevCat} isPrev={true}/>
+                    <CarouselButton style={buttonPrevCat} id="buttonPrevCat"/>
                     <ul className=" Main ViagensTematicas itemsTema">
 
                         {categorias.map((categoria)=>{
@@ -77,7 +104,8 @@ const Categorias = ()=>{
                             </>})
                             }
                     </ul>
-                    <CarouselButton style={buttonNextCat} isPrev={false}/>
+                    <CarouselButton style={buttonNextCat} id="buttonNextCat"/>
+
                 </div>
 
             </nav>

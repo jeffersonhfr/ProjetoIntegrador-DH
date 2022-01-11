@@ -14,12 +14,12 @@ const Footer = () => {
 
             {/* COLOCAR O MAP */}
             <ul>
-              <li className="footer__lista__link">Aventura</li>
-              <li className="footer__lista__link">Familia </li>
-              <li className="footer__lista__link">Histórico </li>
-              <li className="footer__lista__link">Neve </li>
-              <li className="footer__lista__link">Praia</li>
-              <li className="footer__lista__link">Romance</li>
+              <li className="footer__lista__link"><a>Aventura</a></li>
+              <li className="footer__lista__link"><a>Família</a></li>
+              <li className="footer__lista__link"><a>Histórico</a></li>
+              <li className="footer__lista__link"><a>Neve</a> </li>
+              <li className="footer__lista__link"><a>Praia</a></li>
+              <li className="footer__lista__link"><a>Romance</a></li>
             </ul>
           </div>
 
