@@ -7,12 +7,14 @@ import Home from './pages/Home';
 import Pacotes from './pages/Pacotes';
 import Pacote from './pages/Pacote';
 import Pesquisa from './pages/Pesquisa';
+import Cadastro from './pages/Cadastro';
 
 const rootElement = document.getElementById('root');
 render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/cadastro" element={<Cadastro />} />
       <Route path="/pesquisa" element={<Pesquisa />} />
       <Route path="/pacotes" element={<Pacotes />} />
       <Route path="/pacotes/:id" element={<Pacote />} />
