@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
 import Header from '../../components/Header';
-import Filtro from '../../components/Filtro';
 import TravelCard from '../../components/TravelCard';
 import Footer from '../../components/Footer';
 
-const Pacotes = () => {
-  const [isLogado, setIsLogado] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(true);
-
-  let tituloPacote = 'Nossos Pacotes';
+const Pesquisa = () => {
+  let query = 'Paris';
   let pacotes = [
     {
       id: 1,
@@ -417,20 +413,28 @@ const Pacotes = () => {
     <>
       <Header />
       <div className="container container-pacotes">
-        {isLogado && isAdmin ? (
-          <div className="title-bar">
-            <h1>{tituloPacote}</h1>
-            <a href="pacotes/adicionar" className="travel-cards__btao">
-              Adicionar Pacote
-            </a>
-          </div>
-        ) : (
-          <div className="title-bar">
-            <h1>{tituloPacote}</h1>
-            <Filtro />
-          </div>
-        )}
+        <div className="title-bar">
+          <h1>Resultados da pesquisa: {query}</h1>
+        </div>
         <div className="travel-cards">
+          {/* if */}
+          <div
+            className="container container-historico container-historico-null"
+            style={{ margin: '0 auto' }}
+          >
+            <div className="box1">
+              <h1>Não encontramos nenhuma viagem para o local desejado.</h1>
+              <h2>
+                Você pode buscar novamente, ou acessar diretamente pelo menu
+                Nossos Pacotes e conferir nossas ofertas.
+              </h2>
+            </div>
+            <div className="box2">
+              <img src="/assets/img/busca.png" width="100%" alt="" />
+            </div>
+          </div>
+          {/* if */}
+
           {pacotes.map((Pacotes) => {
             return (
               <>
@@ -446,4 +450,4 @@ const Pacotes = () => {
   );
 };
 
-export default Pacotes;
+export default Pesquisa;
