@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TravelCard = ({ usuario }) => {
+const UsuarioCard = ({ usuario }) => {
   return (
     <>
       <div className="travel-card travel-card__content">
@@ -59,4 +59,4 @@ const TravelCard = ({ usuario }) => {
     </>
   );
 };
-export default TravelCard;
+export default UsuarioCard;
