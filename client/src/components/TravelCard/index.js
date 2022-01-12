@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const TravelCard = ({ pacotes }) => {
   let valor = (valor) => {
@@ -8,15 +8,18 @@ const TravelCard = ({ pacotes }) => {
     });
   };
 
-  const openModal = () => {
-    document.getElementById('modal').classList.add('modal-active');
-    document.body.classList.add('scrollNone');
-  };
+  const [isLogado, setIsLogado] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(true);
 
-  const closeModal = () => {
-    document.getElementById('modal').classList.remove('modal-active');
-    document.body.classList.remove('scrollNone');
-  };
+  // const openModal = () => {
+  //   document.getElementById('modal').classList.add('modal-active');
+  //   document.body.classList.add('scrollNone');
+  // };
+
+  // const closeModal = () => {
+  //   document.getElementById('modal').classList.remove('modal-active');
+  //   document.body.classList.remove('scrollNone');
+  // };
 
   return (
     <>
@@ -57,70 +60,63 @@ const TravelCard = ({ pacotes }) => {
                 </p>
               )}
 
-              {pacotes.adicional[0] ? (
+              {pacotes.adicionais[0] ? (
                 <li className="Propriedade Bonus">
                   <p>
                     <img alt="Icone Check" src="/assets/img/check.png" />
-                    {pacotes.nomeAdicional}
+                    {pacotes.adicionais[0].nomeAdicional}
                   </p>
                 </li>
               ) : null}
-
-              <div>
-                <div className="travel-card__infoPrice">
-                  <li className="Propriedade ValorInicial preco">
-                    {pacotes.promocaoPorcentagem > 0 ? (
-                      <>
-                        <h3>
-                          A partir de{' '}
-                          <span className="tachado">
-                            {' '}
-                            {valor(pacotes.preco)}
-                          </span>
-                        </h3>
-                      </>
-                    ) : (
-                      <>
-                        <h3>A partir de</h3>
-                      </>
-                    )}
-                  </li>
-                  <li className="Propriedade ValorPromocional preco">
-                    <h1>
-                      {valor(
-                        pacotes.preco -
-                          (pacotes.preco * pacotes.promocaoPorcentagem) / 100,
-                      )}
-                    </h1>
-                  </li>
-                  <h3 className="emAte">
-                    em até {pacotes.parcelas}x no cartão de crédito
-                  </h3>
-                </div>
-                <a href="/pacotes/<%= pack[i].id%>">
-                  <button className="btao-pacote">Detalhes</button>
-                </a>
-              </div>
             </ul>
           </div>
-
-          {isLogado && isAdmin ? (
-            <>
-              <div className="btao-Container">
-                <a href="pacotes/<%= pack[i].id%>/editar" className="btao-form">
-                  <button className="btao-Container__btao-editar listarPacotes">
-                    <i className="bi bi-pencil-fill"></i>
-                  </button>
-                </a>
-                <a onClick={openModal()} className="btao-form">
-                  <button className="btao-Container__btao-deletar listarPacotes">
-                    <i className="bi bi-trash-fill"></i>
-                  </button>
-                </a>
-              </div>
-            </>
-          ) : null}
+          <div>
+            <div className="travel-card__infoPrice">
+              <li className="Propriedade ValorInicial preco">
+                {pacotes.promocaoPorcentagem > 0 ? (
+                  <>
+                    <h3>
+                      A partir de
+                      <span className="tachado">{valor(pacotes.preco)}</span>
+                    </h3>
+                  </>
+                ) : (
+                  <>
+                    <h3>A partir de</h3>
+                  </>
+                )}
+              </li>
+              <li className="Propriedade ValorPromocional preco">
+                <h1>
+                  {valor(
+                    pacotes.preco -
+                      (pacotes.preco * pacotes.promocaoPorcentagem) / 100,
+                  )}
+                </h1>
+              </li>
+              <h3 className="emAte">
+                em até {pacotes.parcelas}x no cartão de crédito
+              </h3>
+            </div>
+            <a href="/pacotes/<%= pack[i].id%>">
+              <button className="btao-pacote">Detalhes</button>
+            </a>
+          </div>
         </div>
+        {isLogado && isAdmin ? (
+          <div className="btao-Container">
+            <a href="pacotes/<%= pack[i].id%>/editar" className="btao-form">
+              <button className="btao-Container__btao-editar listarPacotes">
+                <i className="bi bi-pencil-fill"></i>
+              </button>
+            </a>
+            <a className="btao-form">
+              <button className="btao-Container__btao-deletar listarPacotes">
+                <i className="bi bi-trash-fill"></i>
+              </button>
+            </a>
+          </div>
+        ) : null}
       </div>
 
       <div className="modal" id="modal<%=i%>">
@@ -133,9 +129,7 @@ const TravelCard = ({ pacotes }) => {
               <button type="submit" className="btao-pacote btn-alert">
                 Sim
               </button>
-              <a onClick={closeModal()} className="btao-pacote btn-cancel">
-                Não
-              </a>
+              <a className="btao-pacote btn-cancel">Não</a>
             </form>
           </div>
         </div>
