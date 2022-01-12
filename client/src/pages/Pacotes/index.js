@@ -11,6 +11,7 @@ const Pacotes = () => {
   let tituloPacote = 'Nossos Pacotes';
   let pacotes = [
     {
+      id: 1,
       nomePacote: 'Egito Histórico',
       nomeHotel: 'Marriott Mena House',
       diarias: 10,
@@ -92,6 +93,7 @@ const Pacotes = () => {
       ],
     },
     {
+      id: 2,
       nomePacote: 'Floripa Trip',
       nomeHotel: 'Parada Beach Apart Hotel',
       diarias: 7,
@@ -148,6 +150,7 @@ const Pacotes = () => {
       ],
     },
     {
+      id: 3,
       nomePacote: 'Paris para Dois',
       nomeHotel: 'Elysees Opera',
       diarias: 20,
@@ -209,6 +212,7 @@ const Pacotes = () => {
       ],
     },
     {
+      id: 4,
       nomePacote: 'Rio 40° Graus',
       nomeHotel: 'Atlântico Travel Copacabana',
       diarias: 5,
@@ -275,6 +279,7 @@ const Pacotes = () => {
       ],
     },
     {
+      id: 5,
       nomePacote: 'Skiando em Bariloche',
       nomeHotel: 'NH Bariloche Edelweiss',
       diarias: 10,
@@ -341,6 +346,7 @@ const Pacotes = () => {
       ],
     },
     {
+      id: 6,
       nomePacote: 'Disney em Família',
       nomeHotel: 'Liki Tiki Village',
       diarias: 10,

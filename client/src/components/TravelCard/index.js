@@ -11,15 +11,15 @@ const TravelCard = ({ pacotes }) => {
   const [isLogado, setIsLogado] = useState(true);
   const [isAdmin, setIsAdmin] = useState(true);
 
-  // const openModal = () => {
-  //   document.getElementById('modal').classList.add('modal-active');
-  //   document.body.classList.add('scrollNone');
-  // };
+  const openModal = () => {
+    document.getElementById('modal').classList.add('modal-active');
+    document.body.classList.add('scrollNone');
+  };
 
-  // const closeModal = () => {
-  //   document.getElementById('modal').classList.remove('modal-active');
-  //   document.body.classList.remove('scrollNone');
-  // };
+  const closeModal = () => {
+    document.getElementById('modal').classList.remove('modal-active');
+    document.body.classList.remove('scrollNone');
+  };
 
   return (
     <>
@@ -98,19 +98,19 @@ const TravelCard = ({ pacotes }) => {
                 em até {pacotes.parcelas}x no cartão de crédito
               </h3>
             </div>
-            <a href="/pacotes/<%= pack[i].id%>">
+            <a href={'/pacotes/' + pacotes.id}>
               <button className="btao-pacote">Detalhes</button>
             </a>
           </div>
         </div>
         {isLogado && isAdmin ? (
           <div className="btao-Container">
-            <a href="pacotes/<%= pack[i].id%>/editar" className="btao-form">
+            <a href={'pacotes/' + pacotes.id + '/editar'} className="btao-form">
               <button className="btao-Container__btao-editar listarPacotes">
                 <i className="bi bi-pencil-fill"></i>
               </button>
             </a>
-            <a className="btao-form">
+            <a onClick={openModal} className="btao-form">
               <button className="btao-Container__btao-deletar listarPacotes">
                 <i className="bi bi-trash-fill"></i>
               </button>
@@ -119,17 +119,19 @@ const TravelCard = ({ pacotes }) => {
         ) : null}
       </div>
 
-      <div className="modal" id="modal<%=i%>">
+      <div className="modal" id="modal">
         <div className="modal-alert">
           <div className="modal-conteudo">
             <h1 className="tituloModal tituloAlert">
               Deseja realmente excluir {pacotes.nomePacote}?
             </h1>
-            <form action="pacotes/<%= pack[i].id%>/delete" method="POST">
+            <form action={'pacotes/' + pacotes.id + '/delete'} method="POST">
               <button type="submit" className="btao-pacote btn-alert">
                 Sim
               </button>
-              <a className="btao-pacote btn-cancel">Não</a>
+              <a onClick={closeModal} className="btao-pacote btn-cancel">
+                Não
+              </a>
             </form>
           </div>
         </div>
