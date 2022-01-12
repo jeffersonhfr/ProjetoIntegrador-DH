@@ -11,7 +11,7 @@ const NotFound = () => {
           <h1>Desculpa! Página não encontrada</h1>
           <h2>
             Mas você pode continuar navegando. Com certeza você irá achar os
-            melhores pacotes e planejar agora mesmo suas férias?
+            melhores pacotes para planejar agora mesmo suas férias.
           </h2>
         </div>
         <div class="box2">
