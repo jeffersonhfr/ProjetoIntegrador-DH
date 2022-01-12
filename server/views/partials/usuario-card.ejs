@@ -1,42 +1,42 @@
-<% for (let i=0; i < usuario.length; i++) { %>
+<% for (let i=0; i < user.length; i++) { %>
 
-  <div class="travel-card travel-card__content">
-    <div class="travel-card__imagem-box">
-      <img alt="Avatar Usuário" src="<%= usuario[i].avatar%>" class="travel-card__imagem">
+  <div className="travel-card travel-card__content">
+    <div className="travel-card__imagem-box">
+      <img alt="Avatar Usuário" src="<%= user[i].avatar%>" className="travel-card__imagem">
     </div>
-    <div class="travel-card__info-box">
-      <div class="travel-card__infoDesc">
-        <ul class="Propriedades">
-          <li class="usuario-card__propriedade"> Nome</li>
-          <li class="usuario-card__dado">
-            <%= usuario[i].nome%>
+    <div className="travel-card__info-box">
+      <div className="travel-card__infoDesc">
+        <ul className="Propriedades">
+          <li className="usuario-card__propriedade"> Nome</li>
+          <li className="usuario-card__dado">
+            <%= user[i].nome%>
           </li>
-          <li class="usuario-card__propriedade">Email </li>
-          <li class="usuario-card__dado">
-            <%= usuario[i].email%>
+          <li className="usuario-card__propriedade">Email </li>
+          <li className="usuario-card__dado">
+            <%= user[i].email%>
           </li>
         </ul>
       </div>
     </div>
     <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
-      <div class="btao-Container">
-        <a href="/visualizarUsuario/<%= usuario[i].id %>" class="btao-form">
-          <button class="btao-Container__btao-visualizar listarUsuarios">
-            <i class="bi bi-eye-fill"></i>
+      <div className="btao-Container">
+        <a href="/visualizarUsuario/<%= user[i].id %>" className="btao-form">
+          <button className="btao-Container__btao-visualizar listarUsuarios">
+            <i className="bi bi-eye-fill"></i>
           </button>
         </a>
 
-        <a href="/listarUsuarios/<%= usuario[i].id %>/editar" class="btao-form">
-          <button class="btao-Container__btao-editar listarUsuarios">
-            <i class="bi bi-pencil-fill"></i>
+        <a href="/listarUsuarios/<%= user[i].id %>/editar" className="btao-form">
+          <button className="btao-Container__btao-editar listarUsuarios">
+            <i className="bi bi-pencil-fill"></i>
           </button>
         </a>
 
-        <a href="pacotes/1/delete" class="btao-form">
-          <button class="btao-Container__btao-deletar listarUsuarios">
-            <i class="bi bi-trash-fill"></i>
+        <form action="/listarUsuarios/<%= user[i].id %>/delete" className="btao-form" method="POST">
+          <button className="btao-Container__btao-deletar listarUsuarios">
+            <i className="bi bi-trash-fill"></i>
           </button>
-        </a>
+        </form>
 
       </div>
       <% } %>

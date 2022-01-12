@@ -1,0 +1,86 @@
+:root{
+  --sm: 540px;
+  --md: 720px;
+  --lg: 960px;
+  --xl: 1140px;
+  --xxl: 1320px;
+  --space-grid: 16px;
+  --col-width-grid: 72px;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.container{
+  display: flex;
+  flex-flow: row wrap;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: flex-start;
+  gap: var(--space-grid);
+}
+
+.container-cards{
+  width: 88vw;
+  margin: 0px;
+}
+
+.flex{
+  display: flex;
+}
+
+button{
+  cursor: pointer;
+}
+
+@media (min-width: 576px) {
+  .container{
+    display: flex;
+    flex-flow: row wrap;
+    width: var(--sm);
+    margin: 0 auto;
+  }
+
+  .col12-sm, .col12-md, .col12-lg, .col12-xl, .col12-xxl{
+    margin: 0 1%;
+    display: flex;
+    flex: 1 0;
+    flex-flow: row wrap;
+  }
+
+  .col14-sm, .col14-md, .col14-lg, .col14-xl, .col14-xxl{
+    margin: 0 1%;
+    display: flex;
+    flex: 1 0;
+    flex-flow: column wrap;
+  }
+}
+
+@media (min-width: 768px) {
+  .container{
+    width: var(--md);
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .container{
+    width: var(--lg);
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container{
+    width: var(--xl);
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container{
+    width: var(--xxl);
+    margin: 0 auto;
+  }
+}

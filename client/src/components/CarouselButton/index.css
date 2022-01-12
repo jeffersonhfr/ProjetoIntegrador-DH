@@ -1,0 +1,10 @@
+div.carouselButton {
+    width: 70px;
+}
+div.carouselButton:hover {
+    background-color: #d2d2d2;
+    cursor:pointer;
+    transition: 400ms;
+}
+
+

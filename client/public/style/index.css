@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Fonte-Principal';
+    src: url('../fonts/Epilogue/Epilogue-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'Fonte-Secundaria';
+    src: url('../fonts/Mukta/Mukta-Light.ttf');
+}
+
+body{
+    overflow-x:hidden;
+    background-color: #F6F6F6;
+    font-family: 'Mukta', sans-serif;
+    line-height: 22px;
+}
+
+h1{
+    font-family: 'Epilogue', sans-serif;
+    margin-bottom: 0px;
+    font-size: 26px;
+}
+
+p{
+    font-family: 'Mukta', sans-serif;
+    margin-top:0px;
+    margin-bottom: 0px;
+    font-size: 15px;
+}
+h2{
+    font-family: 'Mukta', sans-serif;
+    margin-top:0px;
+    font-size: 16px; 
+    margin-bottom: 0px;
+    color: #919191;
+}
+h3{
+    font-family: 'Mukta', sans-serif;
+    margin-top:0px;
+    font-size: 11px; 
+    margin-bottom: 0px;
+    color: #919191;
+}
+a{
+    text-decoration:none;
+    color: black;
+}
+

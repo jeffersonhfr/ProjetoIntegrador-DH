@@ -1,7 +1,7 @@
 <div class="container cabecalho__navegacao">
   <a href="/">
     <div>
-      <img alt="Logo Viagem.com" lass="cabecalho_logo" src="/assets/img/logo01.png" alt="logo" width="234px" height="51px">
+      <img alt="Logo Viagem.com" class="cabecalho_logo" src="/assets/img/logo01.png" alt="logo" width="234px" height="51px">
     </div>
 
   </a>
@@ -13,10 +13,9 @@
         <div class="menu-hamburguer__menu-mobile">
           <ul>
             <li><a href="/pacotes">Viagens Temáticas</a></li>
-            <li><a href="/pacotes">Pacotes Promocionais</a></li>
+            <li><a href="/pacotes">Nossos Pacotes</a></li>
             <li><a href="/sobre">Sobre Nós</a></li>
             <li><a href="/ajuda">Ajuda</a></li>
-
             <% if(locals.usuarioLogado && locals.usuarioAdmin==='false' ) { %>
               <li class="separador"></li>
               <li><a href="/perfil">Meu Perfil</a></li>
@@ -25,6 +24,9 @@
               <% } else if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
                 <li class="separador"></li>
                 <li><a href="/listarUsuarios">Gestão de Usuários</a></li>
+                <li><a href="/minhas-viagens/todos-pedidos">Visualizar Todos os Pedidos</a></li>
+                <li><a href="/listarCategoria">Cadastrar Categorias</a></li>
+                <li><a href="/listarAdicional">Cadastrar Adicionais</a></li>
                 <li class="login"><a href="/logout">Logout</a></li>
                 <% } else { %>
                   <li class="login"><a href="/login">Login</a></li>
@@ -39,11 +41,11 @@
   <nav class="cabecalho__menu-desk">
     <ul class="flex">
       <li><a href="/pacotes">Viagens Temáticas</a></li>
-      <li><a href="/pacotes">Pacotes Promocionais</a></li>
+      <li><a href="/pacotes">Nossos Pacotes</a></li>
       <li><a href="/sobre">Sobre Nós</a></li>
       <li><a href="/ajuda">Ajuda</a></li>
       <% if(locals.usuarioLogado && locals.usuarioAdmin==='false' ) { %>
-        <li class="menu__desk"> <img alt="Foto do Usuário" class="menu__desk-foto" src="<%= usuarioAvatar %>" alt="foto de perfil" width="50px" height="50px">
+        <li class="menu__desk"> <img alt="Foto do Usuário" class="menu__desk-foto" src="<%=usuarioAvatar %>" alt="foto de perfil" width="50px" height="50px">
         </li>
         <!-- Menu desk admin -->
         <% } else if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
@@ -75,6 +77,9 @@
           <li><a href="/minhas-viagens">Minhas Viagens</a></li>
           <li class="separador"></li>
           <li><a href="/listarUsuarios">Gestão de Usuários</a></li>
+          <li><a href="/minhas-viagens/todos-pedidos">Visualizar Todos os Pedidos</a></li>
+          <li><a href="/listarCategoria">Cadastrar Categorias</a></li>
+          <li><a href="/listarAdicional">Cadastrar Adicionais</a></li>
           <li class="login"><a href="/logout">Logout</a></li>
         </ul>
       </div>

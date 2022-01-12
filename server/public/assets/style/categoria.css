@@ -1,0 +1,12 @@
+.formCategoria{
+  margin: 50px auto;
+}
+
+@media (min-width: 768px) {
+  .category-content-box {
+  display: flex;
+}
+
+.category-box2 {
+  margin-left: 60px;
+}}

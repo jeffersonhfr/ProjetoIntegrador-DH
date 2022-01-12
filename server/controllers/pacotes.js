@@ -3,27 +3,85 @@ const {
   createPacote,
   getPackagesById,
   destroyPacote,
+  updatePacote,
+  getPackagesByDestiny,
+  getPackagesByName,
 } = require('../services/pacotes');
+const { createImages } = require('../services/package_images');
+const fs = require('fs');
 
 const { getAllCategorias } = require('../services/categorias');
 const { getAllAddtionals } = require('../services/adicionais');
 
 const controller = {
   index: async (req, res, next) => {
-    const pack = await getAllPackages();
-    res.render('pacotes', {
-      title: '| Pacote',
-      pack,
-      valor: (valor) => {
-        return valor.toLocaleString('pt-BR', {
-          style: 'currency',
-          currency: 'BRL',
-        });
-      },
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
+    const query = req.query.destino;
+
+    if (query == 'nacional') {
+      const pack = await getPackagesByDestiny(1);
+      res.render('pacotes', {
+        title: '| Pacote',
+        tituloPacotes: 'Pacotes Nacionais',
+        pack,
+        valor: (valor) => {
+          return valor.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          });
+        },
+        usuarioLogado: req.cookies.usuario,
+        usuarioAdmin: req.cookies.admin,
+        usuarioAvatar: req.cookies.avatar,
+      });
+    } else if (query == 'internacional') {
+      const pack = await getPackagesByDestiny(0);
+      res.render('pacotes', {
+        title: '| Pacote',
+        tituloPacotes: 'Pacotes Internacionais',
+        pack,
+        valor: (valor) => {
+          return valor.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          });
+        },
+        usuarioLogado: req.cookies.usuario,
+        usuarioAdmin: req.cookies.admin,
+        usuarioAvatar: req.cookies.avatar,
+      });
+    } else if (query) {
+      const pack = await getAllPackages(queryCategory);
+      res.render('pacotes', {
+        title: '| Pacote',
+        tituloPacotes: 'Nossos Pacotes',
+        pack,
+        valor: (valor) => {
+          return valor.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          });
+        },
+        usuarioLogado: req.cookies.usuario,
+        usuarioAdmin: req.cookies.admin,
+        usuarioAvatar: req.cookies.avatar,
+      });
+    } else {
+      const pack = await getAllPackages();
+      res.render('pacotes', {
+        title: '| Pacote',
+        tituloPacotes: 'Nossos Pacotes',
+        pack,
+        valor: (valor) => {
+          return valor.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          });
+        },
+        usuarioLogado: req.cookies.usuario,
+        usuarioAdmin: req.cookies.admin,
+        usuarioAvatar: req.cookies.avatar,
+      });
+    }
   },
   add: async (req, res, next) => {
     const categorias = await getAllCategorias();
@@ -46,7 +104,26 @@ const controller = {
     });
   },
   create: async (req, res, next) => {
-    const create = await createPacote(req.body);
+    pacote = {};
+
+    pacote.nomePacote = req.body.nomePacote;
+    pacote.nomeHotel = req.body.nomeHotel;
+    pacote.diarias = req.body.diarias;
+    pacote.passagemAerea = req.body.passagemAerea;
+    pacote.nacional = req.body.nacional;
+    pacote.preco = req.body.preco;
+    pacote.promocaoPorcentagem = req.body.promocaoPorcentagem;
+    pacote.parcelas = req.body.parcelas;
+    pacote.package_images = req.files;
+
+    const create = await createPacote(pacote);
+
+    const createImg = await pacote.package_images.forEach((element) =>
+      createImages({
+        packageId: create.id,
+        src: '/assets/img/package/' + element.filename,
+      }),
+    );
 
     if (create) {
       res.redirect('../pacotes');
@@ -96,17 +173,13 @@ const controller = {
     const { id } = req.params;
 
     if (!id) {
-      res.status(400).send('Ops... não encontramos o seu to do');
+      res.status(400).send('Ops... não encontramos o seu pacote');
     }
 
-    const update = await updateTodo(id, req.body);
+    const update = await updatePacote(id, req.body);
 
     if (update) {
-      const todos = await getAllTodos();
-      res.render('todos', {
-        title: `To Dos`,
-        todos,
-      });
+      res.redirect('../../pacotes');
     } else {
       res.status(500).send('Ops... deu ruim...');
     }

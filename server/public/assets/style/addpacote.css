@@ -42,17 +42,47 @@ form.addPacote input[type=text], form.addPacote input[type=number], form.addPaco
   align-items: flex-start;
 }
 
+ul.addPacote-ImgContainer__Img-list {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.listagemFoto{
+  display: flex;
+  flex-flow: column wrap;
+  margin: 20px;
+}
+
+.listagemFoto input[type="file"] {
+  margin: 16px 0;
+}
+
+.img-pack{
+  object-fit:cover
+}
+
+.Pacote-Propriedades-chkbox{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 @media (min-width: 680px) {
   .Pacote-Propriedades.checkbox{
     display: flex;
-    flex: 1 0 100%;
     flex-flow: row wrap;
+    align-items: flex-start;
+    flex-basis: 310px;
   }
 
   .Pacote-Propriedades__Item--checkbox {
     display: flex;
     flex-flow: row;
     align-items: flex-start;
-    flex: 0 0 200px;
+    flex: 0 0 310px;
 }
 }

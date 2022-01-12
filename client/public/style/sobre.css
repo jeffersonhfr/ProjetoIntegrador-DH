@@ -1,0 +1,157 @@
+.sobre {
+  font-family: 'Epilogue', sans-serif;
+  font-weight: bold;
+  color: #4d4d4d;
+  padding: 30px 0;
+}
+
+.sobre-container{
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+
+.sobre-container__nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bt-edit{
+  color: #3e60bf;
+  border: 1px solid #3e60bf;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f6f6f6;
+  font-size: 16px;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 400;
+  min-width: 115px;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.bt-edit:hover{
+  color: #fff;
+  background-color: #3e60bf;
+}
+
+.form-edit{
+  display: flex;
+  flex-flow: column;
+  width: 90%;
+}
+
+.form-titulo{
+  margin: 10px 0px;
+  padding: 10px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.form-campos{
+  margin: 10px 0px;
+  padding: 10px;
+  width: 90%;
+  max-width: 1000px;
+}
+
+.form-textarea{
+  height: 200px;
+}
+
+.sobre label {
+  margin-top: 30px;
+}
+
+.form-btn{
+  color: #f6f6f6;
+  border: 1px solid #3E60BF;
+  border-radius: 5px;
+  padding: 10px;
+  background: #3E60BF;
+  font-size: 16px;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 400;
+  min-width: 115px;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.form-btn:hover{
+  background-color: #2a4182;
+}
+.sobre p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4D4D4D;
+  margin: 5px 0;
+  line-height: 27px;
+}
+
+.sobre h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 40px 0 30px;
+  color: #4D4D4D;
+}
+
+.sobre h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 40px 0 15px;
+  color: #4D4D4D;
+}
+
+.sobre .formulario  {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1 1 100%;
+}
+
+.btao-enviar {
+  color: #f6f6f6;
+  border: 1px solid #3E60BF;
+  border-radius: 5px;
+  padding: 10px;
+  background: #3E60BF;
+  font-size: 16px;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 400;
+  min-width: 115px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btao-enviar:hover {
+  background:#2a4182;
+}
+
+.sobre form {
+  width: 100%;
+  max-width: 600px;
+}
+
+.campos_form {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 20px 0;
+}
+
+.sobre .campos_form label {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Mukta', sans-serif;
+}
+
+.box_text label {
+  padding: 5px;
+}
+
+.campos_form input {
+  padding: 7px;
+  min-height: 30px;
+}

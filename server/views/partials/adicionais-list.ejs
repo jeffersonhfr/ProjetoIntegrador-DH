@@ -1,0 +1,57 @@
+<% for (let i=0; i < adicionais.length; i++) { %>
+
+  <div class="travel-card travel-card__content add-card__content">
+
+    <div class="travel-card__info-box add-card__info-box">
+      <div class="travel-card__infoDesc">
+        <ul class="Propriedades">
+          <li class="usuario-card__propriedade"> Nome do Adicional</li>
+          <li class="usuario-card__dado">
+            <%= adicionais[i].nomeAdicional%>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <% if(locals.usuarioLogado && locals.usuarioAdmin==='true' ) { %>
+      <div class="btao-Container">
+        <a href="listarAdicional/<%= adicionais[i].id%>/editar" class="btao-form">
+          <button class="btao-Container__btao-editar listarPacotes">
+            <i class="bi bi-pencil-fill"></i>
+          </button>
+        </a>
+        <a onclick="openModal<%=i%>()" class="btao-form">
+          <button class="btao-Container__btao-deletar listarPacotes">
+            <i class="bi bi-trash-fill"></i>
+          </button>
+        </a>
+      </div>
+      <% } %>
+  </div>
+
+
+  <div class="modal" id="modal<%=i%>">
+    <div class="modal-alert">
+      <div class="modal-conteudo">
+        <h1 class="tituloModal tituloAlert">Deseja realmente excluir <%= adicionais[i].nomeAdicional%>?
+        </h1>
+        <form action="listarAdicional/<%= adicionais[i].id%>/delete" method="POST">
+          <button type="submit" class="btao-pacote btn-alert">Sim</button>
+          <a onclick="closeModal<%=i%>()" class="btao-pacote btn-cancel">Não</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal<%=i%> () {
+      document.getElementById('modal<%=i%>').classList.add('modal-active');
+      document.body.classList.add('scrollNone');
+    }
+
+    function closeModal<%=i%> () {
+      document.getElementById('modal<%=i%>').classList.remove('modal-active');
+      document.body.classList.remove('scrollNone');
+    }
+  </script>
+
+  <% } %>

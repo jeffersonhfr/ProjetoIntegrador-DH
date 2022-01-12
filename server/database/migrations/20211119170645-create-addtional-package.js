@@ -9,10 +9,18 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       addtionalId: {
+        allowNull: false,
+        references: { model: 'addtionals', key: 'id' },
         type: Sequelize.INTEGER,
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
       packageId: {
+        allowNull: false,
+        references: { model: 'packages', key: 'id' },
         type: Sequelize.INTEGER,
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
       createdAt: {
         allowNull: false,

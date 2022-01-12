@@ -24,6 +24,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
+      pedidoAtivo: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+      },
       packageId: {
         allowNull: false,
         type: Sequelize.INTEGER,

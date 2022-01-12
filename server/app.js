@@ -10,10 +10,13 @@ const logoutRouter = require('./routes/logout');
 const indexRouter = require('./routes/index');
 const pesquisaRouter = require('./routes/pesquisa');
 const pacotesRouter = require('./routes/pacotes');
+const categoriasRouter = require('./routes/categorias');
 const sobreRouter = require('./routes/sobre');
 const ajudaRouter = require('./routes/ajuda');
 const recuperarSenhaRouter = require('./routes/recuperarSenha');
 const listarUsuariosRouter = require('./routes/listarUsuarios');
+const listarCategoriaRouter = require('./routes/listarCategoria');
+const listarAdicionaisRouter = require('./routes/listarAdicionais');
 const loginRouter = require('./routes/login');
 const cadastroRouter = require('./routes/cadastro');
 const historicoRouter = require('./routes/historico');
@@ -43,6 +46,7 @@ app.use('/', indexRouter);
 app.use('/pesquisa', pesquisaRouter);
 app.use('/logout', logoutRouter);
 app.use('/pacotes', pacotesRouter);
+app.use('/categorias', categoriasRouter);
 app.use('/sobre', sobreRouter);
 app.use('/ajuda', ajudaRouter);
 app.use('/recuperarSenha', recuperarSenhaRouter);
@@ -54,6 +58,8 @@ app.use('/perfil', perfilRouter);
 
 // A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
 app.use('/listarUsuarios', adminMiddleware, listarUsuariosRouter);
+app.use('/listarCategoria', adminMiddleware, listarCategoriaRouter);
+app.use('/listarAdicional', adminMiddleware, listarAdicionaisRouter);
 app.use('/visualizarUsuario', adminMiddleware, visualizarUsuarioRouter);
 
 // ROTAS ADMINISTRATIVAS
