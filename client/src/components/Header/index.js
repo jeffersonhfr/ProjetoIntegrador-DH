@@ -3,10 +3,10 @@ import menuToggle from './scripts/menu';
 const Header = () => {
   const [isLogado, setIsLogado] = useState(true);
   const [isAdmin, setIsAdmin] = useState(true);
-  const [isIndex,setIsIndex] = useState(true);
-  
-  let perfil = '/assets/img/Aventura.jpg'
-  let header = (<>
+
+  let perfil = '/assets/img/Aventura.jpg';
+  let header = (
+    <>
       <div className="container cabecalho__navegacao">
         <a href="/">
           <div>
@@ -192,25 +192,29 @@ const Header = () => {
         </>
       ) : null}
     </>
-  ); 
+  );
 
-  return (
-    <>
-      {isIndex ? (
+  const Render = () => {
+    const location = window.location.pathname;
+    if (location == '/') {
+      return (
         <>
           <header className="cabecalho">
             <div className="cabecalho__sobreposicao">{header}</div>
           </header>
         </>
-      ) : (
+      );
+    } else {
+      return (
         <>
           <header className="cabecalho-paginas">
             <div className="header_container">{header}</div>
           </header>
         </>
-      )}
-    </>
-  );
-}
+      );
+    }
+  };
+  return <>{Render()}</>;
+};
 
 export default Header;
