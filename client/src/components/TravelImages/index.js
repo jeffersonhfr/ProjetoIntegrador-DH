@@ -9,7 +9,7 @@ const TravelImages = ({ pacotes }) => {
         id="imagemPrincipal"
       />
       <ul className="Pacote-ImgContainer__Img-list">
-        {pacotes.package_Images[0].src != '' ? (
+        {pacotes.package_Images[0] ? (
           <>
             <li>
               <img
@@ -24,7 +24,7 @@ const TravelImages = ({ pacotes }) => {
           </>
         ) : null}
 
-        {pacotes.package_Images[1].src != '' ? (
+        {pacotes.package_Images[1] ? (
           <>
             <li>
               <img
@@ -39,7 +39,7 @@ const TravelImages = ({ pacotes }) => {
           </>
         ) : null}
 
-        {pacotes.package_Images[2].src != '' ? (
+        {pacotes.package_Images[2] ? (
           <>
             <li>
               <img
@@ -54,7 +54,7 @@ const TravelImages = ({ pacotes }) => {
           </>
         ) : null}
 
-        {pacotes.package_Images[3].src != '' ? (
+        {pacotes.package_Images[3] ? (
           <>
             <li>
               <img
@@ -69,7 +69,7 @@ const TravelImages = ({ pacotes }) => {
           </>
         ) : null}
 
-        {pacotes.package_Images[4].src != '' ? (
+        {pacotes.package_Images[4] ? (
           <>
             <li>
               <img
@@ -84,7 +84,7 @@ const TravelImages = ({ pacotes }) => {
           </>
         ) : null}
 
-        {pacotes.package_Images[5].src != '' ? (
+        {pacotes.package_Images[5] ? (
           <>
             <li>
               <img
@@ -99,7 +99,7 @@ const TravelImages = ({ pacotes }) => {
           </>
         ) : null}
 
-        {pacotes.package_Images[6].src != '' ? (
+        {pacotes.package_Images[6] ? (
           <>
             <li>
               <img
