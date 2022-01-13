@@ -20,6 +20,7 @@ import Ajuda from './pages/Ajuda'
 import AjudaEdit from './pages/AjudaEdit'
 //Para teste
 import users from './users';
+import Login from './pages/Login';
 
 
 const usuarioLogado = users[0];
@@ -44,6 +45,7 @@ render(
       <Route path="/perfil/edit"element={<PerfilEdit user={usuarioLogado}/>} />
       <Route path="/ajuda"element={<Ajuda user={usuarioLogado}/>}/>
       <Route path="/ajuda/editar"element={<AjudaEdit/>}/>
+      <Route path="/login"element={<Login erro={null}/>}/>
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>
