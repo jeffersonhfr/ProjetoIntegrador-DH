@@ -6,15 +6,15 @@ const AjudaEdit = () => {
   return (
     <>
       <Header />
-      <section class="ajuda ajuda-edit">
-        <div class="container">
-          <div class="ajuda-container">
-            <form action="" method="post" class="form-edit">
+      <section className="ajuda ajuda-edit">
+        <div className="container">
+          <div className="ajuda-container">
+            <form action="" method="post" className="form-edit">
               <label for="tituloPrincipal">Título Principal</label>
               <input
                 type="text"
                 name="tituloPrincipal"
-                class="form-titulo"
+                className="form-titulo"
                 value="tituloPrincipal"
               />
               <br />
@@ -24,13 +24,13 @@ const AjudaEdit = () => {
               <input
                 type="text"
                 name="tituloDuvidas"
-                class="form-titulo"
+                className="form-titulo"
                 value="tituloDuvidas"
               />
               <label for="textoDuvidas">
                 Texto informativo sobre as dúvidas
               </label>
-              <textarea name="textoDuvidas" class="form-campos form-textarea">
+              <textarea name="textoDuvidas" className="form-campos form-textarea">
                 textoDuvidas
               </textarea>
               <br />
@@ -40,7 +40,7 @@ const AjudaEdit = () => {
               <input
                 type="text"
                 name="tituloCancelamentos"
-                class="form-titulo"
+                className="form-titulo"
                 value=" tituloCancelamentos"
               />
               <label for="textoDuvidas">
@@ -48,7 +48,7 @@ const AjudaEdit = () => {
               </label>
               <textarea
                 name="textoCancelamentos"
-                class="form-campos form-textarea"
+                className="form-campos form-textarea"
               >
                 textoCancelamentos
               </textarea>
@@ -61,17 +61,17 @@ const AjudaEdit = () => {
               <input
                 type="text"
                 name="tituloPolítica"
-                class="form-titulo"
+                className="form-titulo"
                 value=" tituloPolítica"
               />
               <label for="textoPolítica">
                 Texto informativo sobre as políticas de privacidade
               </label>
-              <textarea name="textoPolítica" class="form-campos form-textarea">
+              <textarea name="textoPolítica" className="form-campos form-textarea">
                 textoPolítica
               </textarea>
 
-              <button type="submit" class="form-btn">
+              <button type="submit" className="form-btn">
                 Confirmar alterações
               </button>
             </form>

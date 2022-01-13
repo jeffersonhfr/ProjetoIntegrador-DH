@@ -21,7 +21,7 @@ const AdicionalList = () => {
           </div>
         )}
 
-        <div class="travel-cards">
+        <div className="travel-cards">
           <CategoriaList />
         </div>
       </section>

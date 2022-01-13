@@ -7,21 +7,21 @@ const AdicionalList = () => {
   return (
     <>
       <Header />
-      <section class="container container-pacotes">
+      <section className="container container-pacotes">
         {isLogado && isAdmin ? (
-          <div class="title-bar">
+          <div className="title-bar">
             <h1>Listagem dos Adicionais</h1>
-            <a href="listarAdicional/adicionar" class="travel-cards__btao">
+            <a href="listarAdicional/adicionar" className="travel-cards__btao">
               Cadastrar Adicional
             </a>
           </div>
         ) : (
-          <div class="title-bar">
-            <h1 class="title-bar"> Listagem dos Adicionais</h1>
+          <div className="title-bar">
+            <h1 className="title-bar"> Listagem dos Adicionais</h1>
           </div>
         )}
 
-        <div class="travel-cards add-cards">
+        <div className="travel-cards add-cards">
           <AdicionaisList />
         </div>
       </section>

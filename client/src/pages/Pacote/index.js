@@ -107,19 +107,19 @@ const Pacote = () => {
   return (
     <>
       <Header />
-      <div class="Pacote">
-        <article class="Pacote-TitleContainer">
+      <div className="Pacote">
+        <article className="Pacote-TitleContainer">
           {pack[0].nacional == true ? (
-            <h2 class="Pacote-TitleContainer__Subtitle">Pacote Nacional</h2>
+            <h2 className="Pacote-TitleContainer__Subtitle">Pacote Nacional</h2>
           ) : (
-            <h2 class="Pacote-TitleContainer__Subtitle">
+            <h2 className="Pacote-TitleContainer__Subtitle">
               Pacote Internacional
             </h2>
           )}
 
-          <h1 class="Pacote-TitleContainer__Title">{pack[0].nomePacote}</h1>
+          <h1 className="Pacote-TitleContainer__Title">{pack[0].nomePacote}</h1>
         </article>
-        <nav class="Pacote-ImgContainer">
+        <nav className="Pacote-ImgContainer">
           {pack.map((Pacotes) => {
             return (
               <>
@@ -128,83 +128,83 @@ const Pacote = () => {
             );
           })}
         </nav>
-        <aside class="info_container">
-          <ul class="Pacote-Propriedades">
-            <li class="Pacote-Propriedades__Item Titulo">
+        <aside className="info_container">
+          <ul className="Pacote-Propriedades">
+            <li className="Pacote-Propriedades__Item Titulo">
               <h1>{pack[0].nomePacote}</h1>
             </li>
-            <li class="Pacote-Propriedades__Item Dias">
+            <li className="Pacote-Propriedades__Item Dias">
               <img
-                class="Pacote-Propriedades__Item-Img"
+                className="Pacote-Propriedades__Item-Img"
                 src="/assets/img/calendar.png"
               />
               <p>{pack[0].diarias} Diárias</p>
             </li>
-            <li class="Pacote-Propriedades__Item Hotel">
+            <li className="Pacote-Propriedades__Item Hotel">
               <img
-                class="Pacote-Propriedades__Item-Img"
+                className="Pacote-Propriedades__Item-Img"
                 src="/assets/img/check.png"
               />
               <p>Hotel {pack[0].nomeHotel}</p>
             </li>
             {pack[0].passagemAerea == true ? (
-              <li class="Pacote-Propriedades__Item PassagemAerea">
+              <li className="Pacote-Propriedades__Item PassagemAerea">
                 <img
-                  class="Pacote-Propriedades__Item-Img"
+                  className="Pacote-Propriedades__Item-Img"
                   src="/assets/img/check.png"
                 />
                 <p>Passagem Aérea</p>
               </li>
             ) : null}
             {pack[0].adicional[0] ? (
-              <li class="Pacote-Propriedades__Item Bonus">
+              <li className="Pacote-Propriedades__Item Bonus">
                 <img
-                  class="Pacote-Propriedades__Item-Img"
+                  className="Pacote-Propriedades__Item-Img"
                   src="/assets/img/check.png"
                 />
                 <p>{pack[0].adicional[0].nomeAdicional}</p>
               </li>
             ) : null}
             {pack[0].adicional[1] ? (
-              <li class="Pacote-Propriedades__Item Bonus">
+              <li className="Pacote-Propriedades__Item Bonus">
                 <img
-                  class="Pacote-Propriedades__Item-Img"
+                  className="Pacote-Propriedades__Item-Img"
                   src="/assets/img/check.png"
                 />
                 <p>{pack[0].adicional[1].nomeAdicional}</p>
               </li>
             ) : null}
             {pack[0].adicional[2] ? (
-              <li class="Pacote-Propriedades__Item Bonus">
+              <li className="Pacote-Propriedades__Item Bonus">
                 <img
-                  class="Pacote-Propriedades__Item-Img"
+                  className="Pacote-Propriedades__Item-Img"
                   src="/assets/img/check.png"
                 />
                 <p>{pack[0].adicional[2].nomeAdicional}</p>
               </li>
             ) : null}
             {pack[0].adicional[3] ? (
-              <li class="Pacote-Propriedades__Item todosBonus">
+              <li className="Pacote-Propriedades__Item todosBonus">
                 <p>
-                  <a onClick={openModal} class="link-beneficios">
+                  <a onClick={openModal} className="link-beneficios">
                     Veja todos os benefícios do pacote
                   </a>
                 </p>
               </li>
             ) : null}
             {pack[0].promocaoPorcentagem > 0 ? (
-              <li class="Pacote-Propriedades__Item__Valor">
-                <h2 class="Pacote-Propriedades__Item__Valor-Inicial">
+              <li className="Pacote-Propriedades__Item__Valor">
+                <h2 className="Pacote-Propriedades__Item__Valor-Inicial">
                   {valor(pack[0].preco)}
                 </h2>
               </li>
             ) : (
-              <li class="Pacote-Propriedades__Item__Valor">
-                <h2 class="Pacote-Propriedades__Item__Valor-Inicial"> </h2>
+              <li className="Pacote-Propriedades__Item__Valor">
+                <h2 className="Pacote-Propriedades__Item__Valor-Inicial"> </h2>
               </li>
             )}
-            <li class="Pacote-Propriedades__Item__Valor">
-              <h1 class="Pacote-Propriedades__Item__Valor-Promocional">
+            <li className="Pacote-Propriedades__Item__Valor">
+              <h1 className="Pacote-Propriedades__Item__Valor-Promocional">
                 {valor(
                   pack[0].preco -
                     (pack[0].preco * pack[0].promocaoPorcentagem) / 100,
@@ -220,7 +220,7 @@ const Pacote = () => {
               </p>
             </li>
           </ul>
-          <form action="../checkout" method="post" class="btao-form">
+          <form action="../checkout" method="post" className="btao-form">
             <input
               type="text"
               name="origem"
@@ -237,30 +237,30 @@ const Pacote = () => {
               hidden
             />
 
-            <button type="submit" class="Pacote__Button-Comprar">
+            <button type="submit" className="Pacote__Button-Comprar">
               Comprar
             </button>
           </form>
         </aside>
-        <article class="Pacote-Descricao-Sobre">
-          <h1 class="Pacote-Decricao__Titulo">Sobre o Destino</h1>
-          <p class="Pacote-Decricao__Paragrafo">{pack[0].sobre}</p>
+        <article className="Pacote-Descricao-Sobre">
+          <h1 className="Pacote-Decricao__Titulo">Sobre o Destino</h1>
+          <p className="Pacote-Decricao__Paragrafo">{pack[0].sobre}</p>
         </article>
-        <article class="Pacote-Descricao-PontosTuristicos">
-          <h1 class="Pacote-Decricao__Titulo">Pontos Turísticos</h1>
-          <p class="Pacote-Decricao__Paragrafo">{pack[0].pontoTuristico}</p>
+        <article className="Pacote-Descricao-PontosTuristicos">
+          <h1 className="Pacote-Decricao__Titulo">Pontos Turísticos</h1>
+          <p className="Pacote-Decricao__Paragrafo">{pack[0].pontoTuristico}</p>
         </article>
       </div>
 
-      <div class="modal" id="modal">
-        <div class="modal-box">
-          <div class="btn-fecharModal">
+      <div className="modal" id="modal">
+        <div className="modal-box">
+          <div className="btn-fecharModal">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-x-lg btn-fecharModal"
+              className="bi bi-x-lg btn-fecharModal"
               viewBox="0 0 16 16"
               onClick={closeModal}
             >
@@ -274,15 +274,15 @@ const Pacote = () => {
               />
             </svg>
           </div>
-          <div class="modal-conteudo">
-            <h1 class="tituloModal">Benefícios do pacote</h1>
+          <div className="modal-conteudo">
+            <h1 className="tituloModal">Benefícios do pacote</h1>
 
             {pack.map((pack) => {
               return (
                 <>
-                  <li class="Pacote-Propriedades__Item Bonus liModal">
+                  <li className="Pacote-Propriedades__Item Bonus liModal">
                     <img
-                      class="Pacote-Propriedades__Item-Img"
+                      className="Pacote-Propriedades__Item-Img"
                       src="/assets/img/check.png"
                     />
                     <p>{pack.adicional.nomeAdicional}</p>

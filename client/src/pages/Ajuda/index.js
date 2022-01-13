@@ -6,14 +6,14 @@ const Ajuda = () => {
   return (
     <>
       <Header />
-      <section class="ajuda">
-        <div class="container">
-          <div class="ajuda-container">
-            <div class="ajuda-container__nav">
+      <section className="ajuda">
+        <div className="container">
+          <div className="ajuda-container">
+            <div className="ajuda-container__nav">
               <h1 id="ajuda">tituloPrincipal</h1>
 
               {isLogado && isAdmin ? (
-                <a href="/ajuda/editar" class="bt-edit">
+                <a href="/ajuda/editar" className="bt-edit">
                   Editar
                 </a>
               ) : null}
