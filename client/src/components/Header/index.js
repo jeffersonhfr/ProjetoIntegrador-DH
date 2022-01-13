@@ -28,7 +28,7 @@ const Header = ({user}) => {
             id="cabecallho__menu-hamburguer"
             type="checkbox"
           />
-          <label for="cabecallho__menu-hamburguer">
+          <label htmlFor="cabecallho__menu-hamburguer">
             <div className="menu-hamburguer__conteudo">
               <span className="menu-hamburguer__icone"></span>
               <div className="menu-hamburguer__menu-mobile">

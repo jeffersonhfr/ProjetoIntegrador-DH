@@ -40,17 +40,17 @@ const Sobre = ({ user }) => {
                     <form name="form">
 
                         <div className="campos_form">
-                            <label for="nome">Nome</label>
+                            <label htmlFor="nome">Nome</label>
                             <input id="nome" type="text" required />
                         </div>
 
                         <div className="campos_form">
-                            <label for="email">E-mail</label>
+                            <label htmlFor="email">E-mail</label>
                             <input id="email" type="email" required />
                         </div>
 
                         <div className="campos_form">
-                            <label for="mensagem">Mensagem</label>
+                            <label htmlFor="mensagem">Mensagem</label>
                             <textarea id="mensagem" name="mensagem" rows="14" cols="50"></textarea>
                         </div>
                         <div className="campos_form">

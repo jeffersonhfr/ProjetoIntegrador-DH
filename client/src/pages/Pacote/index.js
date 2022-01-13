@@ -106,7 +106,7 @@ const Pacote = () => {
   ];
   return (
     <>
-      />
+      
       <div className="Pacote">
         <article className="Pacote-TitleContainer">
           {pack[0].nacional == true ? (

@@ -10,7 +10,7 @@ const AjudaEdit = () => {
         <div className="container">
           <div className="ajuda-container">
             <form action="" method="post" className="form-edit">
-              <label for="tituloPrincipal">Título Principal</label>
+              <label htmlFor="tituloPrincipal">Título Principal</label>
               <input
                 type="text"
                 name="tituloPrincipal"
@@ -20,14 +20,14 @@ const AjudaEdit = () => {
               <br />
               <br />
 
-              <label for="tituloDuvidas">Título para dúvidas</label>
+              <label htmlFor="tituloDuvidas">Título para dúvidas</label>
               <input
                 type="text"
                 name="tituloDuvidas"
                 className="form-titulo"
                 value="tituloDuvidas"
               />
-              <label for="textoDuvidas">
+              <label htmlFor="textoDuvidas">
                 Texto informativo sobre as dúvidas
               </label>
               <textarea name="textoDuvidas" className="form-campos form-textarea">
@@ -36,14 +36,14 @@ const AjudaEdit = () => {
               <br />
               <br />
 
-              <label for="tituloCancelamentos">Título para cancelamentos</label>
+              <label htmlFor="tituloCancelamentos">Título para cancelamentos</label>
               <input
                 type="text"
                 name="tituloCancelamentos"
                 className="form-titulo"
                 value=" tituloCancelamentos"
               />
-              <label for="textoDuvidas">
+              <label htmlFor="textoDuvidas">
                 Texto informativo sobre as cancelamento
               </label>
               <textarea
@@ -55,7 +55,7 @@ const AjudaEdit = () => {
               <br />
               <br />
 
-              <label for="tituloPolítica">
+              <label htmlFor="tituloPolítica">
                 Título para as políticas de privacidade
               </label>
               <input
@@ -64,7 +64,7 @@ const AjudaEdit = () => {
                 className="form-titulo"
                 value=" tituloPolítica"
               />
-              <label for="textoPolítica">
+              <label htmlFor="textoPolítica">
                 Texto informativo sobre as políticas de privacidade
               </label>
               <textarea name="textoPolítica" className="form-campos form-textarea">

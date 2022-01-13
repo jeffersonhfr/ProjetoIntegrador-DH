@@ -61,7 +61,7 @@ const Cadastro = () => {
 
             <div className="container-aceite">
               <input type="checkbox" id="aceite" name="aceite" required />
-              <label for="aceite">
+              <label htmlFor="aceite">
                 Li e aceito os{' '}
                 <a href="/termos-de-servico" className="aceite__termos-servico">
                   {' '}
@@ -73,7 +73,7 @@ const Cadastro = () => {
 
             <div className="container-aceite">
               <input type="checkbox" id="novidades" name="novidades" />
-              <label for="novidades">
+              <label htmlFor="novidades">
                 Desejo receber as promoções, novidades e dicas.
               </label>
             </div>

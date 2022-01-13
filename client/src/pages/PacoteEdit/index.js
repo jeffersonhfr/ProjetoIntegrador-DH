@@ -136,15 +136,15 @@ let loadFile=(e)=>{console.log(e)};
         <ul className="Pacote-Propriedades">
           <li className="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
             <label>Nome Pacote</label>
-            <input type="text" name="nomePacote" id="nomePacote" value={ pacote.nomePacote }/>
+            <input type="text" name="nomePacote" id="nomePacote" readOnly value={ pacote.nomePacote }/>
           </li>
           <li className="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
             <label>Nome do Hotel</label>
-            <input type="text" name="nomeHotel" id="nomeHotel" value={ pacote.nomeHotel }/>
+            <input type="text" name="nomeHotel" id="nomeHotel" readOnly value={ pacote.nomeHotel }/>
           </li>
           <li className="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack Titulo">
             <label>Diárias</label>
-            <input type="number" name="diarias" id="diarias" value={ pacote.diarias }/>
+            <input type="number" name="diarias" id="diarias" readOnly value={ pacote.diarias }/>
           </li>
           <li className="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
             <label>Destino:</label>
@@ -152,20 +152,20 @@ let loadFile=(e)=>{console.log(e)};
             { pacote.nacional==1? 
               <div className="radio-box">
                 <div className="radio-opt">
-                  <input type="radio" name="nacional" id="nacional" value="1" defaultChecked/> Nacional
+                  <input type="radio" name="nacional" id="nacional" readOnly value="1" defaultChecked/> Nacional
                 </div>
                 <div className="radio-opt">
-                  <input type="radio" name="nacional" id="nacional" value="0"/> Internacional
+                  <input type="radio" name="nacional" id="nacional" readOnly value="0"/> Internacional
                 </div>
               </div>
 
               :
                 <div className="radio-box">
                   <div className="radio-opt">
-                    <input type="radio" name="nacional" id="nacional" value="1"/> Nacional
+                    <input type="radio" name="nacional" id="nacional" readOnly value="1"/> Nacional
                   </div>
                   <div className="radio-opt">
-                    <input type="radio" name="nacional" id="nacional" value="0" defaultChecked/> Internacional
+                    <input type="radio" name="nacional" id="nacional" readOnly value="0" defaultChecked/> Internacional
                   </div>
                 </div>
                  } 
@@ -176,19 +176,19 @@ let loadFile=(e)=>{console.log(e)};
             { pacote.passagemAerea==1?
               <div className="radio-box">
                 <div className="radio-opt">
-                  <input type="radio" name="passagemAerea" id="passagemAerea" value="1" defaultChecked/> Sim
+                  <input type="radio" name="passagemAerea" id="passagemAerea" readOnly value="1" defaultChecked/> Sim
                 </div>
                 <div className="radio-opt">
-                  <input type="radio" name="passagemAerea" id="passagemAerea" value="0"/> Não
+                  <input type="radio" name="passagemAerea" id="passagemAerea" readOnly value="0"/> Não
                 </div>
               </div>
               :
                 <div className="radio-box">
                   <div className="radio-opt">
-                    <input type="radio" name="passagemAerea" id="passagemAerea" value="1"/> Sim
+                    <input type="radio" name="passagemAerea" id="passagemAerea" readOnly value="1"/> Sim
                   </div>
                   <div className="radio-opt">
-                    <input type="radio" name="passagemAerea" id="passagemAerea" value="0" defaultChecked/> Não
+                    <input type="radio" name="passagemAerea" id="passagemAerea" readOnly value="0" defaultChecked/> Não
                   </div>
                 </div>
                  } 
@@ -196,23 +196,24 @@ let loadFile=(e)=>{console.log(e)};
        
 
           <li className="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
-            <label for="adicionais">Adicionais</label>
-            <div class="checkbox-div">
+            <label htmlFor="adicionais">Adicionais</label>
+            <div className="checkbox-div">
               {pacote.adicional.map((e)=>{
                 <div className="checkbox-opt">
-                  <input type="checkbox" name="adicionais" id="adicionais" value={e.id}/>
+                  <input type="checkbox" name="adicionais" id="adicionais" readOnly value={e.id} readOnly />
                   {e.nomeAdicional}
                 </div>
               })}
             </div>
+
           </li>
           <br/>
           <li className="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
-            <label for="categorias">Categorias</label>
-            <div class="checkbox-div">
+            <label htmlFor="categorias">Categorias</label>
+            <div className="checkbox-div">
               {pacote.categoria.map((e)=>{
-                <div class="checkbox-opt">
-                  <input type="checkbox" name="categorias" id="categorias" value={e.id}/>
+                <div className="checkbox-opt">
+                  <input type="checkbox" name="categorias" id="categorias" readOnly value={e.id}/>
                   {e.nomeCategoria}
                 </div>
               })
@@ -231,15 +232,15 @@ let loadFile=(e)=>{console.log(e)};
         <ul className="Pacote-Propriedades">
           <li className="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
             <label>Valor do Pacote</label>
-            <input type="text" name="preco" id="preco" value={ pacote.preco } placeholder="ex.: 19990.00 - R$ 19.990,00"/>
+            <input type="text" name="preco" id="preco" readOnly value={ pacote.preco } placeholder="ex.: 19990.00 - R$ 19.990,00"/>
           </li>
           <li className="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
             <label>Percentual de desconto</label>
-            <input type="text" name="promocaoPorcentagem" value={ pacote.promocaoPorcentagem } id="promocaoPorcentagem" placeholder="ex. 10"/>
+            <input type="text" name="promocaoPorcentagem" readOnly value={ pacote.promocaoPorcentagem } id="promocaoPorcentagem" placeholder="ex. 10"/>
           </li>
           <li className="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack Titulo">
             <label>Número máximo de parcelas</label>
-            <input type="number" name="parcelas" id="parcelas" value={ pacote.parcelas }/>
+            <input type="number" name="parcelas" id="parcelas" readOnly value={ pacote.parcelas }/>
           </li>
         </ul>
 
@@ -247,11 +248,11 @@ let loadFile=(e)=>{console.log(e)};
         <ul className="Pacote-Propriedades">
           <li className="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
             <label>Sobre o Destino</label>
-            <textarea name="sobre" id="sobre" cols="30" rows="10" defaultValue={ pacote.sobre} />
+            <textarea name="sobre" id="sobre" cols="30" rows="10" readOnly  defaultValue={ pacote.sobre} />
           </li>
           <li className="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
             <label>Pontos Turísticos</label>
-            <textarea name="pontoTuristico" id="pontoTuristico" cols="30" rows="10" defaultValue= {pacote.pontoTuristico} />
+            <textarea name="pontoTuristico" id="pontoTuristico" cols="30" rows="10" readOnly defaultValue= {pacote.pontoTuristico} />
           </li>
         </ul>
 
