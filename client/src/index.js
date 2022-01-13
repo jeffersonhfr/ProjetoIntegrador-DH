@@ -17,6 +17,7 @@ import Sobre from './pages/Sobre';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Ajuda from './pages/Ajuda'
+import AjudaEdit from './pages/AjudaEdit'
 //Para teste
 import users from './users';
 
@@ -42,6 +43,7 @@ render(
       <Route path="/perfil" element={<Perfil user={usuarioLogado}/>} />
       <Route path="/perfil/edit"element={<PerfilEdit user={usuarioLogado}/>} />
       <Route path="/ajuda"element={<Ajuda user={usuarioLogado}/>}/>
+      <Route path="/ajuda/editar"element={<AjudaEdit/>}/>
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>
