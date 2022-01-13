@@ -16,6 +16,7 @@ import PerfilEdit from './pages/PerfilEdit'
 
 //Para teste
 import users from './users';
+import Sobre from './pages/Sobre';
 const usuarioLogado = users[0];
 
 
@@ -31,7 +32,7 @@ render(
       <Route path="/pesquisa" element={<Pesquisa />} />
       <Route path="/pacotes" element={<Pacotes />} />
       <Route path="/pacotes/:id" element={<Pacote />} />
-      <Route path="/sobre" element={<h1>teste</h1>} />
+      <Route path="/sobre" element={<Sobre user={usuarioLogado}/>} />
       <Route path="/perfil" element={<Perfil user={usuarioLogado}/>} />
       <Route path="/perfil/edit"element={<PerfilEdit user={usuarioLogado}/>} />
       <Route path="*" element={<NotFound />} />

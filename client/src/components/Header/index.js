@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import menuToggle from './scripts/menu';
 const Header = ({user}) => {
   const [isLogado] = useState(user!=null);
-  const [isAdmin] = useState(user===1);
-  
+  const [isAdmin] = useState(user.admin===1);
+
   const location = window.location.pathname;
 
   let perfil = '/assets/img/Aventura.jpg';
