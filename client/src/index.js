@@ -10,6 +10,7 @@ import Pesquisa from './pages/Pesquisa';
 import Cadastro from './pages/Cadastro';
 import CategoriaAdd from './pages/CategoriaAdd';
 import CategoriaEdit from './pages/CategoriaEdit';
+import Perfil from './pages/Perfil';
 
 const rootElement = document.getElementById('root');
 render(
@@ -23,6 +24,7 @@ render(
       <Route path="/pacotes" element={<Pacotes />} />
       <Route path="/pacotes/:id" element={<Pacote />} />
       <Route path="/sobre" element={<h1>teste</h1>} />
+      <Route path="/perfil" element={<Perfil />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>,

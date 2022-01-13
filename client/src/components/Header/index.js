@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import menuToggle from './scripts/menu';
-const Header = () => {
-  const [isLogado, setIsLogado] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(true);
+const Header = ({user}) => {
+  const [isLogado] = useState(user!=null);
+  const [isAdmin] = useState(user===1);
+  
+  const location = window.location.pathname;
 
   let perfil = '/assets/img/Aventura.jpg';
   let header = (
@@ -111,7 +113,7 @@ const Header = () => {
                   <img
                     alt="Foto do Usuário"
                     className="menu__desk-foto"
-                    src={perfil}
+                    src={user.avatar}
                     alt="foto de perfil"
                     width="50px"
                     height="50px"
@@ -194,27 +196,18 @@ const Header = () => {
     </>
   );
 
-  const Render = () => {
-    const location = window.location.pathname;
-    if (location == '/') {
-      return (
-        <>
-          <header className="cabecalho">
-            <div className="cabecalho__sobreposicao">{header}</div>
-          </header>
-        </>
-      );
-    } else {
-      return (
-        <>
-          <header className="cabecalho-paginas">
-            <div className="header_container">{header}</div>
-          </header>
-        </>
-      );
-    }
-  };
-  return <>{Render()}</>;
+  return <>{location == '/'?
+  <>
+    <header className="cabecalho">
+    <div className="cabecalho__sobreposicao">{header}</div>
+    </header>
+  </>: 
+  <>
+    <header className="cabecalho-paginas">
+    <div className="header_container">{header}</div>
+    </header>
+  </>}
+  </>;
 };
 
 export default Header;
