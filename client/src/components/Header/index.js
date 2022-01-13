@@ -197,8 +197,8 @@ const Header = ({user}) => {
   );
 
   return <>{location == '/'?
-  <>
-    <header className="cabecalho">
+  <><header
+    className="cabecalho">
     <div className="cabecalho__sobreposicao">{header}</div>
     </header>
   </>: 

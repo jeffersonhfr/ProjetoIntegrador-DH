@@ -12,7 +12,7 @@ const Sobre = ({ user }) => {
     const {tituloPrincipal,tituloHistoria,textoHistoria} = sobrenos
 
     return <>
-        <Header user={user} />
+       
 
         <section className="sobre">
             <div className="container">
@@ -62,7 +62,7 @@ const Sobre = ({ user }) => {
             </div>
         </section>
 
-        <Footer />
+        
     </>
 }
 

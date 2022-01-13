@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 const AjudaEdit = () => {
   return (
     <>
-      <Header />
+      />
       <section className="ajuda ajuda-edit">
         <div className="container">
           <div className="ajuda-container">
@@ -78,7 +78,7 @@ const AjudaEdit = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      
     </>
   );
 };

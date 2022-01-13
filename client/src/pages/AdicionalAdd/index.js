@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 const AdicionalAdd = () => {
   return (
     <>
-      <Header />
+      />
       <div className="container">
         <form action="" method="POST" className="formAdd">
           <article className="addPacote-TitleContainer">
@@ -33,7 +33,7 @@ const AdicionalAdd = () => {
           </button>
         </form>
       </div>
-      <Footer />
+      
     </>
   );
 };

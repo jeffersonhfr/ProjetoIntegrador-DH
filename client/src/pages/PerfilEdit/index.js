@@ -6,7 +6,7 @@ import Header from '../../components/Header';
 
 const  PerfilEdit = ({user})=> {
   return <>
-  <Header user={user}/>
+  
   <main className="perfil">
             <div className="perfil__container-top">
                 <h1 className="perfil__title">Meu Perfil</h1>

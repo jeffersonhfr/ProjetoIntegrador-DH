@@ -72,7 +72,7 @@ const CategoriaEdit = () => {
   ];
   return (
     <>
-      <Header />
+      />
       <div className="container">
         <form
           action=""
@@ -172,7 +172,7 @@ const CategoriaEdit = () => {
         </form>
       </div>
 
-      <Footer />
+      
     </>
   );
 };

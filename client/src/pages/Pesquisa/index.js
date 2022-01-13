@@ -411,7 +411,7 @@ const Pesquisa = () => {
   ];
   return (
     <>
-      <Header />
+      />
       <div className="container container-pacotes">
         <div className="title-bar">
           <h1>Resultados da pesquisa: {query}</h1>
@@ -445,7 +445,7 @@ const Pesquisa = () => {
         </div>
       </div>
 
-      <Footer />
+      
     </>
   );
 };

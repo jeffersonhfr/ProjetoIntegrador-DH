@@ -6,7 +6,7 @@ import Footer from '../../components/Footer';
 const AdicionalList = () => {
   return (
     <>
-      <Header />
+      />
       <section className="container container-pacotes">
         {isLogado && isAdmin ? (
           <div className="title-bar">
@@ -26,7 +26,7 @@ const AdicionalList = () => {
         </div>
       </section>
 
-      <Footer />
+      
     </>
   );
 };

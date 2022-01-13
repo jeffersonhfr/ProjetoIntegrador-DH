@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import Header from '../../components/Header';
 import Filtro from '../../components/Filtro';
 import TravelCard from '../../components/TravelCard';
-import Footer from '../../components/Footer';
 
 const Pacotes = () => {
   const [isLogado, setIsLogado] = useState(true);
@@ -415,7 +413,7 @@ const Pacotes = () => {
   ];
   return (
     <>
-      <Header />
+     
       <div className="container container-pacotes">
         {isLogado && isAdmin ? (
           <div className="title-bar">
@@ -441,7 +439,7 @@ const Pacotes = () => {
         </div>
       </div>
 
-      <Footer />
+      
     </>
   );
 };

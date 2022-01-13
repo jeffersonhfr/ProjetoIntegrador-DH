@@ -1,11 +1,12 @@
-import React from 'react';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import React, { useState } from 'react';
 
-const Ajuda = () => {
+const Ajuda = ({user}) => {
+  const [isLogado] = useState(user!=null);
+  const [isAdmin] = useState(user.admin===1);
+
   return (
     <>
-      <Header />
+      
       <section className="ajuda">
         <div className="container">
           <div className="ajuda-container">
@@ -30,7 +31,7 @@ const Ajuda = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      
     </>
   );
 };

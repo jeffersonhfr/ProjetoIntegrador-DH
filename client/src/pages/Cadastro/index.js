@@ -7,7 +7,7 @@ import Footer from '../../components/Footer';
 const Cadastro = () => {
   return (
     <>
-      <Header />
+      />
       <section className="container-login">
         <div className="container-imagem-login">
           <img
@@ -87,7 +87,7 @@ const Cadastro = () => {
         </div>
       </section>
 
-      <Footer />
+      
     </>
   );
 };

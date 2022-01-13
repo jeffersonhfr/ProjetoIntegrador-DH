@@ -28,7 +28,7 @@ const CategoriaAdd = () => {
 
   return (
     <>
-      <Header />
+      />
       <div className="container">
         <form
           action=""
@@ -123,7 +123,7 @@ const CategoriaAdd = () => {
         </form>
       </div>
 
-      <Footer />
+      
     </>
   );
 };

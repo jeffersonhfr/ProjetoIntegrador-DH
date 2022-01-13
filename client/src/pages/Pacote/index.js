@@ -106,7 +106,7 @@ const Pacote = () => {
   ];
   return (
     <>
-      <Header />
+      />
       <div className="Pacote">
         <article className="Pacote-TitleContainer">
           {pack[0].nacional == true ? (
@@ -294,7 +294,7 @@ const Pacote = () => {
         </div>
       </div>
 
-      <Footer />
+      
     </>
   );
 };

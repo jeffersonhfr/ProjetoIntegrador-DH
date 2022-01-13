@@ -12,17 +12,23 @@ import Cadastro from './pages/Cadastro';
 import CategoriaAdd from './pages/CategoriaAdd';
 import CategoriaEdit from './pages/CategoriaEdit';
 import Perfil from './pages/Perfil';
-import PerfilEdit from './pages/PerfilEdit'
-
+import PerfilEdit from './pages/PerfilEdit';
+import Sobre from './pages/Sobre';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Ajuda from './pages/Ajuda'
 //Para teste
 import users from './users';
-import Sobre from './pages/Sobre';
+
+
 const usuarioLogado = users[0];
 
 
 const rootElement = document.getElementById('root');
 
 render(
+ <>
+ <Header user={usuarioLogado}/>
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home user={usuarioLogado}/>} />
@@ -35,8 +41,11 @@ render(
       <Route path="/sobre" element={<Sobre user={usuarioLogado}/>} />
       <Route path="/perfil" element={<Perfil user={usuarioLogado}/>} />
       <Route path="/perfil/edit"element={<PerfilEdit user={usuarioLogado}/>} />
+      <Route path="/ajuda"element={<Ajuda user={usuarioLogado}/>}/>
       <Route path="*" element={<NotFound />} />
     </Routes>
-  </BrowserRouter>,
+  </BrowserRouter>
+  <Footer/>
+  </>,
   rootElement,
 );

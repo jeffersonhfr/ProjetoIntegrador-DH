@@ -9,12 +9,12 @@ import Promocoes from '../../components/Promocoes';
 const Home = ({user}) => {
   return (
     <>
-      <Header user={user}/>
+      
       <BarraDeBusca />
       <Categorias />
       <Promocoes />
       <NewsLetter />
-      <Footer />
+      
     </>
   );
 };
