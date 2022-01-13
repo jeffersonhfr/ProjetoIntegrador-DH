@@ -6,10 +6,10 @@ import NewsLetter from '../../components/NewsLetter';
 import BarraDeBusca from '../../components/BarraDeBusca';
 import Promocoes from '../../components/Promocoes';
 
-const Home = () => {
+const Home = ({user}) => {
   return (
     <>
-      <Header />
+      <Header user={user}/>
       <BarraDeBusca />
       <Categorias />
       <Promocoes />

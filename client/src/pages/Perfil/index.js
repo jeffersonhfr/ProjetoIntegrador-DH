@@ -1,12 +1,9 @@
 import React from 'react';
+import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 
 
- const Perfil = (user)=> {
-
-
-          
-
+ const Perfil = ({user})=> {
 
   return <>
   <Header user={user}/>
@@ -102,7 +99,7 @@ import Header from '../../components/Header';
         </main>
 
   
-  
+  <Footer/>
   </>
 }
 
