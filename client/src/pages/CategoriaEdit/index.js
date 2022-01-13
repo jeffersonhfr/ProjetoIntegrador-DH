@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-const CategoriaAdd = () => {
+const CategoriaEdit = () => {
   const cardpreview = document.querySelector('#cardpreview');
   function trocarCor() {
     let colorPicker = document.querySelector('#corCategoria').value;
@@ -26,6 +26,50 @@ const CategoriaAdd = () => {
       .setAttribute('style', 'background-image: url(' + output + ')');
   };
 
+  let categoria = [
+    {
+      nomeCategoria: 'Neve',
+      corCategoria: '#d2d2d2',
+      imagemCategoria: 'Neve.jpg',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      nomeCategoria: 'Praia',
+      corCategoria: '#25abbd',
+      imagemCategoria: 'Praia.jpg',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      nomeCategoria: 'Aventura',
+      corCategoria: '#69C862',
+      imagemCategoria: 'Aventura.jpg',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      nomeCategoria: 'Romance',
+      corCategoria: '#c42e92',
+      imagemCategoria: 'Romantico.jpg',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      nomeCategoria: 'Família',
+      corCategoria: '#5b4a70',
+      imagemCategoria: 'familia.jpg',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      nomeCategoria: 'Histórico',
+      corCategoria: '#896d15',
+      imagemCategoria: 'historico.jpg',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+  ];
   return (
     <>
       <Header />
@@ -37,7 +81,7 @@ const CategoriaAdd = () => {
           enctype="multipart/form-data"
         >
           <article className="addPacote-TitleContainer">
-            <h1 className="addPacote-TitleContainer">Adicionar Categoria</h1>
+            <h1 className="addPacote-TitleContainer">Editar Categoria</h1>
           </article>
 
           <div className="category-content-box">
@@ -49,16 +93,21 @@ const CategoriaAdd = () => {
                     className="Container Img"
                     id="imgPreview"
                     style={{
-                      backgroundImage: `url("/assets/img/categoria/")`,
+                      backgroundImage:
+                        `url(/assets/img/categoria/` +
+                        categoria[0].imagemCategoria +
+                        `)`,
                     }}
                   >
                     <img id="output" />
                     <a
                       id="cardpreview"
                       href="#"
-                      style={{ backgroundColor: '#000000aa' }}
+                      style={{
+                        backgroundColor: categoria[0].corCategoria + 'aa',
+                      }}
                     >
-                      <h1 id="h1Preview">Nome Categoria</h1>
+                      <h1 id="h1Preview">{categoria[0].nomeCategoria}</h1>
                     </a>
                   </div>
                 </li>
@@ -94,8 +143,8 @@ const CategoriaAdd = () => {
                     name="nomeCategoria"
                     id="nomeCategoria"
                     onKeyup={mudarTexto}
-                    value=""
                     placeholder="Nome Categoria"
+                    value={categoria[0].nomeCategoria}
                   />
                 </li>
                 <li className="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
@@ -105,7 +154,7 @@ const CategoriaAdd = () => {
                     type="color"
                     name="corCategoria"
                     id="corCategoria"
-                    value=""
+                    value={categoria[0].corCategoria}
                     style={({ width: '100px' }, { height: '100px' })}
                   />
                 </li>
@@ -128,4 +177,4 @@ const CategoriaAdd = () => {
   );
 };
 
-export default CategoriaAdd;
+export default CategoriaEdit;

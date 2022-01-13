@@ -9,6 +9,7 @@ import Pacote from './pages/Pacote';
 import Pesquisa from './pages/Pesquisa';
 import Cadastro from './pages/Cadastro';
 import CategoriaAdd from './pages/CategoriaAdd';
+import CategoriaEdit from './pages/CategoriaEdit';
 
 const rootElement = document.getElementById('root');
 render(
@@ -17,6 +18,7 @@ render(
       <Route path="/" element={<Home />} />
       <Route path="/cadastro" element={<Cadastro />} />
       <Route path="/categoria/add" element={<CategoriaAdd />} />
+      <Route path="/categoria/:id/edit" element={<CategoriaEdit />} />
       <Route path="/pesquisa" element={<Pesquisa />} />
       <Route path="/pacotes" element={<Pacotes />} />
       <Route path="/pacotes/:id" element={<Pacote />} />
