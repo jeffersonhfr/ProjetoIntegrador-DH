@@ -21,6 +21,7 @@ import AjudaEdit from './pages/AjudaEdit'
 //Para teste
 import users from './users';
 import Login from './pages/Login';
+import PacoteEdit from './pages/PacoteEdit';
 
 
 const usuarioLogado = users[0];
@@ -40,11 +41,12 @@ render(
       <Route path="/pesquisa" element={<Pesquisa />} />
       <Route path="/pacotes" element={<Pacotes />} />
       <Route path="/pacotes/:id" element={<Pacote />} />
+      <Route path="/pacotes/:id/edit" element={<PacoteEdit/>} />
       <Route path="/sobre" element={<Sobre user={usuarioLogado}/>} />
       <Route path="/perfil" element={<Perfil user={usuarioLogado}/>} />
       <Route path="/perfil/edit"element={<PerfilEdit user={usuarioLogado}/>} />
       <Route path="/ajuda"element={<Ajuda user={usuarioLogado}/>}/>
-      <Route path="/ajuda/editar"element={<AjudaEdit/>}/>
+      <Route path="/ajuda/edit"element={<AjudaEdit/>}/>
       <Route path="/login"element={<Login erro={null}/>}/>
       <Route path="*" element={<NotFound />} />
     </Routes>
