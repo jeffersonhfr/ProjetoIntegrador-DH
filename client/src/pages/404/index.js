@@ -5,7 +5,6 @@ import Footer from '../../components/Footer';
 const NotFound = () => {
   return (
     <>
-      />
       <div className="container container-historico container-historico-null">
         <div className="box1">
           <h1>Desculpa! Página não encontrada</h1>
@@ -15,10 +14,9 @@ const NotFound = () => {
           </h2>
         </div>
         <div className="box2">
-          <img src="assets/img/404.png" width="100%" alt="" />
+          <img src="../assets/img/404.png" width="100%" alt="" />
         </div>
       </div>
-      
     </>
   );
 };
