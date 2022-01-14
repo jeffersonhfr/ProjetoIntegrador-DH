@@ -1,6 +1,7 @@
 
 import React from 'react';
-import TravelImages from '../../components/TravelImages'
+import TravelImagesEdit from '../../components/TravelImagesEdit'
+
 
 // import { Container } from './styles';
 
@@ -215,13 +216,13 @@ const PacoteEdit = () => {
     },
   ]
 
-
+  
 
   let loadFile = (e) => { console.log(e) };
 
   return <>
 
-    <div className="container">
+    <div className="container" >
       <form action="" method="POST" className='addPacote' encType="multipart/form-data">
         <article className='addPacote-TitleContainer'>
           <h1 className='addPacote-TitleContainer'>Editar Pacote</h1>
@@ -235,7 +236,7 @@ const PacoteEdit = () => {
             <nav className="Pacote-ImgContainer">
 
 
-              <TravelImages pacotes={pacote} />
+              <TravelImagesEdit pacotes={pacote} />
 
 
             </nav>

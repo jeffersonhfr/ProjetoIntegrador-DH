@@ -1,6 +1,6 @@
 import React from 'react';
-
-const TravelImages = ({ pacotes }) => {
+import remove from  './scripts/remove'
+const TravelImagesEdit = ({ pacotes }) => {
   return <>
     <img
       src={pacotes.package_Images[0].src}
@@ -11,7 +11,8 @@ const TravelImages = ({ pacotes }) => {
 
       {pacotes.package_Images.map((img)=>{return <>
       
-          <li>
+          <li className="imgLi" style={{position: "relative"}}>
+            <div className = "imgLiContent">
             <img
               src={img.src}
               className="Pacote-ImgContainer__Img"
@@ -20,6 +21,17 @@ const TravelImages = ({ pacotes }) => {
                   img.src;
               }}
             />
+            <img src='/assets/img/notcheck.png' onClick={remove} style={
+            {
+              position:"absolute",
+              zIndex:1,
+              top: "2px",
+              right: '3px',
+              width: '22px',
+              height:'auto'
+            }
+            }/>
+            </div>
           </li>
        
   
@@ -31,4 +43,4 @@ const TravelImages = ({ pacotes }) => {
   </>
 
 };
-export default TravelImages;
+export default TravelImagesEdit;
