@@ -19,9 +19,10 @@ const TravelImagesEdit = ({ pacotes }) => {
               onClick={(e) => {
                 document.getElementById('imagemPrincipal').src =
                   img.src;
-              }}
+              }} onMouseEnter={(e)=>console.log(e.target.parentElement.children[1].classList.toggle('hidde')) }
+              onMouseLeave={(e)=>console.log(e.target.parentElement.children[1].classList.toggle('hidde')) }
             />
-            <img src='/assets/img/notcheck.png' onClick={remove} style={
+            <img src='/assets/img/notcheck.png' className="hidde" onClick={remove} style={
             {
               position:"absolute",
               zIndex:1,
@@ -31,6 +32,7 @@ const TravelImagesEdit = ({ pacotes }) => {
               height:'auto'
             }
             }/>
+            
             </div>
           </li>
        
@@ -39,7 +41,13 @@ const TravelImagesEdit = ({ pacotes }) => {
       }
     
     </ul>
+      <ul id="inputList">
+        <li id="inputContainer"> {pacotes === null?
+        <input type="file" name='imagem'/>
+        
+        :null}</li>
 
+      </ul>
   </>
 
 };

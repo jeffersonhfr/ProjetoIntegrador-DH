@@ -222,7 +222,7 @@ const PacoteEdit = () => {
 
   return <>
 
-    <div className="container" >
+    <div className="container">
       <form action="" method="POST" className='addPacote' encType="multipart/form-data">
         <article className='addPacote-TitleContainer'>
           <h1 className='addPacote-TitleContainer'>Editar Pacote</h1>

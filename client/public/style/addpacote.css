@@ -1,7 +1,10 @@
 form.addPacote {
   margin: 50px 0;
 }
+.hidde{
+  display: none;
 
+}
 h1.addPacote-TitleContainer{
   font-family: "Epilogue", sans-serif;
   font-size: 26px;
