@@ -18,6 +18,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Ajuda from './pages/Ajuda'
 import AjudaEdit from './pages/AjudaEdit'
+import CheckoutSucesso from './pages/CheckoutSucesso'
 //Para teste
 import users from './users';
 import Login from './pages/Login';
@@ -48,6 +49,7 @@ render(
       <Route path="/ajuda"element={<Ajuda user={usuarioLogado}/>}/>
       <Route path="/ajuda/edit"element={<AjudaEdit/>}/>
       <Route path="/login"element={<Login erro={null}/>}/>
+      <Route path="/checkoutSucesso" element={<CheckoutSucesso />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>
