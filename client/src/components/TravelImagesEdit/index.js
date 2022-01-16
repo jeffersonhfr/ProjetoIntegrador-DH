@@ -32,7 +32,6 @@ const TravelImagesEdit = ({ pacotes }) => {
               height:'auto'
             }
             }/>
-            
             </div>
           </li>
        

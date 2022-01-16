@@ -235,10 +235,9 @@ const PacoteEdit = () => {
           <div className="listagemFoto" >
             <nav className="Pacote-ImgContainer">
 
-
               <TravelImagesEdit pacotes={pacote} />
 
-
+ 
             </nav>
 
           </div>

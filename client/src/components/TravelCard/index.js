@@ -105,7 +105,7 @@ const TravelCard = ({ pacotes }) => {
         </div>
         {isLogado && isAdmin ? (
           <div className="btao-Container">
-            <a href={'pacotes/' + pacotes.id + '/editar'} className="btao-form">
+            <a href={'pacotes/' + pacotes.id + '/edit'} className="btao-form">
               <button className="btao-Container__btao-editar listarPacotes">
                 <i className="bi bi-pencil-fill"></i>
               </button>
