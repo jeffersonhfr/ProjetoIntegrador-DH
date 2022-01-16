@@ -14,7 +14,8 @@ const CheckoutSucesso = () => {
         <div className="pagamento__box">
             <div className="pagamento__box__content">
             <div className="pagamento__box__imagem">
-                <img src="<%= imagem %>" alt="" width="100%"/>
+                <img src="<%= imagem %>" alt="" width="100%"/>  
+                {/* pegar imagem  */}
             </div>
             <div className="pagamento__box__detalhes pagamento__box__sucesso">
                 <ul>
