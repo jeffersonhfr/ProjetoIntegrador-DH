@@ -105,10 +105,8 @@ const Pacote = () => {
     },
   ];
 
-  
   return (
     <>
-      
       <div className="Pacote">
         <article className="Pacote-TitleContainer">
           {pack[0].nacional == true ? (
@@ -227,7 +225,7 @@ const Pacote = () => {
               type="text"
               name="origem"
               id="origem"
-              value="{ origem }"
+              defaultValue="{ origem }"
               hidden
             />
 
@@ -235,7 +233,7 @@ const Pacote = () => {
               type="text"
               name="idPacote"
               id="idPacote"
-              value="{ pack[0].id }"
+              defaultValue="{ pack[0].id }"
               hidden
             />
 
@@ -267,11 +265,11 @@ const Pacote = () => {
               onClick={closeModal}
             >
               <path
-                fill-rule="evenodd"
+                fill="evenodd"
                 d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"
               />
               <path
-                fill-rule="evenodd"
+                fill="evenodd"
                 d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"
               />
             </svg>
@@ -295,8 +293,6 @@ const Pacote = () => {
           </div>
         </div>
       </div>
-
-      
     </>
   );
 };

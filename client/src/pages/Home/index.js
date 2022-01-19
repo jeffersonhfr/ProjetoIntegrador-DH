@@ -6,15 +6,13 @@ import NewsLetter from '../../components/NewsLetter';
 import BarraDeBusca from '../../components/BarraDeBusca';
 import Promocoes from '../../components/Promocoes';
 
-const Home = ({user}) => {
+const Home = ({ user }) => {
   return (
     <>
-      
       <BarraDeBusca />
       <Categorias />
       <Promocoes />
       <NewsLetter />
-      
     </>
   );
 };
