@@ -21,6 +21,7 @@ const TravelImagesEdit = ({ pacotes }) => {
                   img.src;
               }} onMouseEnter={(e)=>console.log(e.target.parentElement.children[1].classList.toggle('hidde')) }
               onMouseLeave={(e)=>console.log(e.target.parentElement.children[1].classList.toggle('hidde')) }
+            
             />
             <img src='/assets/img/notcheck.png' className="hidde" onClick={remove} style={
             {
