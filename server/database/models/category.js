@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       Category.belongsToMany(models.Package, {
         as: 'pacote',
         through: 'Category_Packages',
-        foreignKey: 'packageId',
+        foreignKey: 'categoryId',
       });
     }
   }

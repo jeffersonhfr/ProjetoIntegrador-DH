@@ -55,8 +55,7 @@ router.get('/adicionar', adminMiddleware, pacotesContoller.add);
 // router.post('/adicionar', adminMiddleware, cpUpload, pacotesContoller.create);
 router.post(
   '/adicionar',
-  adminMiddleware,
-  uploadImage.array('imagem'),
+  uploadImage.array('imagem'),adminMiddleware,
   pacotesContoller.create,
 );
 

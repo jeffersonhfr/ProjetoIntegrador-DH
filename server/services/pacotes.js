@@ -1,4 +1,5 @@
 const { Package } = require('../database/models');
+const { Category_Package } = require('../database/models');
 const { deleteImages, getAllImages } = require('./package_images');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
@@ -35,6 +36,18 @@ pacotesServices.getPackagesById = async (id) => {
     where: { id },
     include: [
       { association: 'categoria' },
+      { association: 'adicional' },
+      { association: 'package_images' },
+    ],
+  });
+
+  return pacotes;
+};
+
+pacotesServices.getPackagesByCategory = async (nomeCategoria) => {
+  const pacotes = await Package.findAll({
+    include: [
+      { association: 'categoria', where: { nomeCategoria } },
       { association: 'adicional' },
       { association: 'package_images' },
     ],
