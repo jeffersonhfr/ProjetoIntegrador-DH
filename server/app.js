@@ -23,6 +23,7 @@ const historicoRouter = require('./routes/historico');
 const checkoutRouter = require('./routes/checkout');
 const perfilRouter = require('./routes/usuario');
 const adminRouter = require('./routes/admin');
+var cors = require('cors');
 
 const visualizarUsuarioRouter = require('./routes/visualizarUsuario');
 var app = express();
@@ -42,6 +43,7 @@ app.use('/fonts', express.static(__dirname + '/public/assets/fonts'));
 app.use('/img', express.static(__dirname + '/public/assets/img'));
 app.use('/src', express.static(__dirname + '/public/src'));
 
+app.use(cors());
 app.use('/', indexRouter);
 app.use('/pesquisa', pesquisaRouter);
 app.use('/logout', logoutRouter);

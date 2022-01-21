@@ -6,11 +6,11 @@ const controller = {
   index: async (req, res, next) => {
     try {
       const categorias = await getAllCategorias();
-      const pack = await getAllPackages();
+      const pacotes = await getAllPackages();
       return res.status(200).json({
         title: '| Aproveite nossas ofertas',
         categorias: categorias,
-        pack: pack,
+        pacotes: pacotes,
       });
     } catch (error) {
       console.log(error);
