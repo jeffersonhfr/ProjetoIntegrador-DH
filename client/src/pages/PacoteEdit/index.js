@@ -153,7 +153,6 @@ const PacoteEdit = () => {
       updatedAt: new Date(),
     },
   ]
-
   const adicionais = [
     {
       id: 1,
@@ -219,6 +218,7 @@ const PacoteEdit = () => {
   
 
   let loadFile = (e) => { console.log(e) };
+  let loadFileCapa= (e)=> { console.log(e) };
 
   return <>
 
@@ -232,20 +232,49 @@ const PacoteEdit = () => {
         <nav className='addPacote-ImgContainer' style={{ position: "relative" }}>
 
 
-          <div className="listagemFoto" >
-            <nav className="Pacote-ImgContainer">
-
-              <TravelImagesEdit pacotes={pacote} />
-
- 
-            </nav>
-
-          </div>
+      
           <ul className='addPacote-ImgContainer__Img-list'>
 
-            <li className="listagemFoto">
+          <li class="listagemFoto">
+              <h2>Imagem da Capa</h2>
+              <img src={pacote.package_Images[0].src} id="imgpackcapa" width="300px" height="200px" class="img-pack"/>
+              <input type="file" name="capa" accept="image/png, image/jpeg" onchange={loadFileCapa()} />
+            </li>
+
+            <li class="listagemFoto">
               <h2>Imagem 01</h2>
-              <input type="file" name="imagem" accept="image/png, image/jpeg" onChange={loadFile} style={{ display: "none" }} />
+              <img src={pacote.package_Images[0].src} width="300px" height="200px" id="imgpack1" class="img-pack "/>
+              <input type="file" name="imagem" accept="image/png, image/jpeg" onchange={loadFile()} />
+            </li>
+
+            <li class="listagemFoto">
+              <h2>Imagem 02</h2>
+              <img src={pacote.package_Images[1].src} id="imgpack2" width="300px" height="200px" class="img-pack"/>
+              <input type="file" name="imagem" accept="image/png, image/jpeg" onchange={loadFile()} />
+            </li>
+
+            <li class="listagemFoto">
+              <h2>Imagem 03</h2>
+              <img src={pacote.package_Images[2].src} id="imgpack3" width="300px" height="200px" class="img-pack"/>
+              <input type="file" name="imagem" accept="image/png, image/jpeg" onchange={loadFile()} />
+            </li>
+
+            <li class="listagemFoto">
+              <h2>Imagem 04</h2>
+              <img src={pacote.package_Images[3].src} id="imgpack4" width="300px" height="200px" class="img-pack"/>
+              <input type="file" name="imagem" accept="image/png, image/jpeg" onchange={loadFile()} />
+            </li>
+
+            <li class="listagemFoto">
+              <h2>Imagem 05</h2>
+              <img src={pacote.package_Images[4].src} id="imgpack5" width="300px" height="200px" class="img-pack"/>
+              <input type="file" name="imagem" accept="image/png, image/jpeg" onchange={loadFile()} />
+            </li>
+
+            <li class="listagemFoto">
+              <h2>Imagem 06</h2>
+              <img src={pacote.package_Images[5].src} id="imgpack6" width="300px" height="200px" class="img-pack"/>
+              <input type="file" name="imagem" accept="image/png, image/jpeg" onchange={loadFile()} />
             </li>
 
           </ul>
