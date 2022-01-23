@@ -2,38 +2,30 @@ const { getPackagesByName } = require('../services/pacotes');
 
 const controller = {
   index: async (req, res, next) => {
-    const querySearch = req.query.onde;
-    const queryUp = querySearch.toUpperCase();
-    if (!querySearch == '') {
-      const pack = await getPackagesByName(querySearch);
-      if (pack == '') {
-        res.render('pesquisa', {
-          title: '| Pesquisa',
-          pack,
-          queryUp,
-          imagem: './assets/img/busca.png',
-          usuarioLogado: req.cookies.usuario,
-          usuarioAdmin: req.cookies.admin,
-          usuarioAvatar: req.cookies.avatar,
-        });
-      } else {
-        res.render('pesquisa', {
-          title: '| Pesquisa',
-          pack,
-          queryUp,
-          valor: (valor) => {
-            return valor.toLocaleString('pt-BR', {
-              style: 'currency',
-              currency: 'BRL',
-            });
-          },
-          usuarioLogado: req.cookies.usuario,
-          usuarioAdmin: req.cookies.admin,
-          usuarioAvatar: req.cookies.avatar,
-        });
+    try {
+      const querySearch = req.query.onde;
+      const queryUp = querySearch.toUpperCase();
+      if (!querySearch == '') {
+        const pack = await getPackagesByName(querySearch);
+        if (pack == '') {
+          const imagem = './assets/img/busca.png';
+          return res.status(200).json({
+            title: '| Pesquisa',
+            pack,
+            queryUp,
+            imagem,
+          });
+        } else {
+          return res.status(200).json({
+            title: '| Pesquisa',
+            pack,
+            queryUp,
+          });
+        }
       }
-    } else {
-      res.redirect('../../pacotes');
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
     }
   },
 };
