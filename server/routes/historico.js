@@ -5,7 +5,7 @@ const adminMiddleware = require('../middlewares/admin');
 
 /* GET home page. */
 router.get('/', historicoContoller.index);
-router.get('/todos-pedidos', adminMiddleware, historicoContoller.todos);
+router.get('/todos-pedidos', historicoContoller.todos);
 router.post('/:id/editar', historicoContoller.update);
 router.get('/:id/', historicoContoller.details);
 
