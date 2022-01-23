@@ -11,7 +11,6 @@ const controller = {
           const imagem = './assets/img/busca.png';
           return res.status(200).json({
             title: '| Pesquisa',
-            pack,
             queryUp,
             imagem,
           });
@@ -22,6 +21,10 @@ const controller = {
             queryUp,
           });
         }
+      } else {
+        return res.status(200).json({
+          Mensagem: 'Campo não preenchido',
+        });
       }
     } catch (error) {
       console.log(error);
