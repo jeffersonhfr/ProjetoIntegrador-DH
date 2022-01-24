@@ -6,24 +6,24 @@ const logger = require('morgan');
 const methodOverride = require('method-override');
 
 const adminMiddleware = require('./middlewares/admin');
-const logoutRouter = require('./routes/logout');
 const indexRouter = require('./routes/index');
 const pesquisaRouter = require('./routes/pesquisa');
 const pacotesRouter = require('./routes/pacotes');
-const categoriasRouter = require('./routes/categorias');
 const sobreRouter = require('./routes/sobre');
 const ajudaRouter = require('./routes/ajuda');
-const recuperarSenhaRouter = require('./routes/recuperarSenha');
 const listarUsuariosRouter = require('./routes/listarUsuarios');
 const listarCategoriaRouter = require('./routes/listarCategoria');
 const listarAdicionaisRouter = require('./routes/listarAdicionais');
-const loginRouter = require('./routes/login');
 const cadastroRouter = require('./routes/cadastro');
 const historicoRouter = require('./routes/historico');
 const checkoutRouter = require('./routes/checkout');
 const perfilRouter = require('./routes/usuario');
-const adminRouter = require('./routes/admin');
-var cors = require('cors');
+
+// const loginRouter = require('./routes/login');
+// const recuperarSenhaRouter = require('./routes/recuperarSenha');
+// const logoutRouter = require('./routes/logout');
+
+const cors = require('cors');
 
 const visualizarUsuarioRouter = require('./routes/visualizarUsuario');
 var app = express();
@@ -44,28 +44,25 @@ app.use('/img', express.static(__dirname + '/public/assets/img'));
 app.use('/src', express.static(__dirname + '/public/src'));
 
 app.use(cors());
-app.use('/', indexRouter);
-app.use('/pesquisa', pesquisaRouter);
-app.use('/logout', logoutRouter);
-app.use('/pacotes', pacotesRouter);
-app.use('/categorias', categoriasRouter);
-app.use('/sobre', sobreRouter);
-app.use('/ajuda', ajudaRouter);
-app.use('/recuperarSenha', recuperarSenhaRouter);
-app.use('/login', loginRouter);
-app.use('/cadastro', cadastroRouter);
-app.use('/minhas-viagens', historicoRouter);
+app.use('/', indexRouter); //JSON
+app.use('/pesquisa', pesquisaRouter); //JSON
+app.use('/pacotes', pacotesRouter); //JSON
+app.use('/sobre', sobreRouter); //JSON
+app.use('/ajuda', ajudaRouter); //JSON
+app.use('/cadastro', cadastroRouter); //JSON
+app.use('/minhas-viagens', historicoRouter); //JSON
 app.use('/checkout', checkoutRouter);
 app.use('/perfil', perfilRouter);
+
+// app.use('/login', loginRouter);
+// app.use('/recuperarSenha', recuperarSenhaRouter);
+// app.use('/logout', logoutRouter);
 
 // A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
 app.use('/listarUsuarios', adminMiddleware, listarUsuariosRouter);
 app.use('/listarCategoria', adminMiddleware, listarCategoriaRouter);
 app.use('/listarAdicional', adminMiddleware, listarAdicionaisRouter);
 app.use('/visualizarUsuario', adminMiddleware, visualizarUsuarioRouter);
-
-// ROTAS ADMINISTRATIVAS
-app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
