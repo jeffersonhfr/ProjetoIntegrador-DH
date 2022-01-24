@@ -51,7 +51,7 @@ app.use('/sobre', sobreRouter); //JSON
 app.use('/ajuda', ajudaRouter); //JSON
 app.use('/cadastro', cadastroRouter); //JSON
 app.use('/minhas-viagens', historicoRouter); //JSON
-app.use('/checkout', checkoutRouter);
+app.use('/checkout', checkoutRouter); //JSON
 app.use('/perfil', perfilRouter);
 
 // app.use('/login', loginRouter);
