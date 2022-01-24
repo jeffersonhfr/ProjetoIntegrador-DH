@@ -52,17 +52,24 @@ app.use('/ajuda', ajudaRouter); //JSON
 app.use('/cadastro', cadastroRouter); //JSON
 app.use('/minhas-viagens', historicoRouter); //JSON
 app.use('/checkout', checkoutRouter); //JSON
-app.use('/perfil', perfilRouter);
+app.use('/perfil', perfilRouter); //JSON
 
 // app.use('/login', loginRouter);
 // app.use('/recuperarSenha', recuperarSenhaRouter);
 // app.use('/logout', logoutRouter);
 
 // A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
-app.use('/listarUsuarios', adminMiddleware, listarUsuariosRouter);
-app.use('/listarCategoria', adminMiddleware, listarCategoriaRouter);
-app.use('/listarAdicional', adminMiddleware, listarAdicionaisRouter);
-app.use('/visualizarUsuario', adminMiddleware, visualizarUsuarioRouter);
+app.use('/listarUsuarios', listarUsuariosRouter);
+// app.use('/listarUsuarios', adminMiddleware, listarUsuariosRouter);
+
+app.use('/listarCategoria', listarCategoriaRouter);
+// app.use('/listarCategoria', adminMiddleware, listarCategoriaRouter);
+
+app.use('/listarAdicional', listarAdicionaisRouter);
+// app.use('/listarAdicional', adminMiddleware, listarAdicionaisRouter);
+
+app.use('/visualizarUsuario', visualizarUsuarioRouter);
+// app.use('/visualizarUsuario', adminMiddleware, visualizarUsuarioRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

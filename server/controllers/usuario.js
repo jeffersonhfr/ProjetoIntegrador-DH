@@ -67,7 +67,6 @@ const controller = {
       return res.status(500).json({ message: 'Erro do servidor', error });
     }
   },
-
   form_edit: async (req, res, next) => {
     try {
       //Manual
