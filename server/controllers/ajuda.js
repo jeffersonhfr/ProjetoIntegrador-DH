@@ -16,39 +16,9 @@ let {
 
 const controller = {
   index: (req, res, next) => {
-    res.render('ajuda', {
-      title: '| Ajuda',
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-      tituloPrincipal,
-      tituloDuvidas,
-      textoDuvidas,
-      tituloCancelamentos,
-      textoCancelamentos,
-      tituloPolítica,
-      textoPolítica,
-    });
-  },
-  list: (req, res, next) => {
-    let admin = req.cookies.admin;
-    if (!admin || admin == 'false') {
-      res.render('login', {
+    try {
+      return res.status(200).json({
         title: '| Ajuda',
-        erro: 'Você não tem autorização para visualizar essa página',
-        usuarios: usuariosPlaceholder,
-        usuarioLogado: req.cookies.usuario,
-        usuarioAvatar: req.cookies.avatar,
-        usuarioAdmin: admin,
-      });
-    } else {
-      res.render('ajuda-edit', {
-        title: '| Ajuda',
-        erro: '',
-        usuarios: usuariosPlaceholder,
-        usuarioLogado: req.cookies.usuario,
-        usuarioAvatar: req.cookies.avatar,
-        usuarioAdmin: admin,
         tituloPrincipal,
         tituloDuvidas,
         textoDuvidas,
@@ -57,6 +27,36 @@ const controller = {
         tituloPolítica,
         textoPolítica,
       });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
+    }
+  },
+  list: (req, res, next) => {
+    // let admin = req.cookies.admin;
+    let admin = false;
+    try {
+      if (admin == false) {
+        return res.status(200).json({
+          title: '| Ajuda',
+          erro: 'Você não tem autorização para visualizar essa página',
+        });
+      } else {
+        return res.status(200).json({
+          title: '| Ajuda',
+          erro: '',
+          tituloPrincipal,
+          tituloDuvidas,
+          textoDuvidas,
+          tituloCancelamentos,
+          textoCancelamentos,
+          tituloPolítica,
+          textoPolítica,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
     }
   },
   update: async (req, res, next) => {
