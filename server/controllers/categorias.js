@@ -18,23 +18,26 @@ const {
 
 const controller = {
   index: async (req, res, next) => {
-    const categoria = await getAllCategorias();
-    console.log(categoria);
-    res.render('categoria-list', {
-      title: '| Listar Categoria',
-      categoria,
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
+    try {
+      const categoria = await getAllCategorias();
+      return res.status(200).json({
+        title: '| Listar Categoria',
+        categoria,
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
+    }
   },
   add: async (req, res, next) => {
-    res.render('categoria-add', {
-      title: '| Adicionar Categoria',
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
+    try {
+      return res.status(200).json({
+        title: '| Adicionar Categoria',
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
+    }
   },
   create: async (req, res, next) => {
     console.log(req.file.filename);
@@ -61,15 +64,19 @@ const controller = {
     }
   },
   edit: async (req, res, next) => {
-    const { id } = req.params;
-    const categoria = await getCategoriasById(id);
-    res.render('categoria-edit', {
-      title: '| Editar Categoria',
-      categoria,
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
+    try {
+      const id = 1;
+      // const { id } = req.params;
+
+      const categoria = await getCategoriasById(id);
+      return res.status(200).json({
+        title: '| Editar Categoria',
+        categoria,
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
+    }
   },
   update: async (req, res, next) => {
     const { id } = req.params;

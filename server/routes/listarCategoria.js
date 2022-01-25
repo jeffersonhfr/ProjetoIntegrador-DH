@@ -19,7 +19,9 @@ const upload = multer({ storage: storage });
 /* GET home page. */
 router.get('/', listarCategoriaController.index);
 
-router.get('/adicionar', adminMiddleware, listarCategoriaController.add);
+router.get('/adicionar', listarCategoriaController.add);
+// router.get('/adicionar', adminMiddleware, listarCategoriaController.add);
+
 router.post(
   '/adicionar',
   adminMiddleware,
@@ -27,7 +29,9 @@ router.post(
   listarCategoriaController.create,
 );
 
-router.get('/:id/editar', adminMiddleware, listarCategoriaController.edit);
+router.get('/:id/editar', listarCategoriaController.edit);
+// router.get('/:id/editar', adminMiddleware, listarCategoriaController.edit);
+
 router.post(
   '/:id/editar',
   adminMiddleware,
