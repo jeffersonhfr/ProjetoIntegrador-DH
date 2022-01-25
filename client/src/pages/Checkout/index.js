@@ -43,7 +43,7 @@ const Checkout = () => {
       nacional: 0,
       preco: 18800.0,
       promocaoPorcentagem: 30,
-      parcelas: 10,
+      parcelas: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       sobre:
         "Com vista das Grandes Pirâmides de Gizé, o Marriott Mena House, Cairo está rodeado por 16 hectares de jardins verdes e possui spa, academia e piscina. Os quartos são decorados com móveis artesanais.Todas as acomodações no Marriott Mena House, Cairo dispõem de ar-condicionado, tecidos luxuosos, área de estar e TV LCD. Cada quarto e suíte oferece um banheiro privativo espaçoso com roupão de banho e chinelos. O café da manhã é servido na sala de refeições com vista do jardim. As opções gastronômicas incluem especialidades italianas no Restaurante Alfredo, enquanto o buffet de café da manhã diário é servido no 139 Pavilion, que também conta com coquetéis e vista inesquecível. As instalações de lazer incluem uma piscina aquecida, situada nos jardins paisagísticos. As Pirâmides de Gizé ficam a menos de 500 metros do Marriott Mena House. O concierge poderá organizar passeios de cavalos e camelos para as pirâmides. O Aeroporto do Cairo está a 30,6 km do local.Casais particularmente gostam da localização — eles deram nota 9,5 para viagem a dois.",
       pontoTuristico:
@@ -236,11 +236,20 @@ const Checkout = () => {
                 <label className="label-checkout">Opções de Parcelas:</label>
                 <br />
                 <select name="parcelas" id="parcelas">
-                  {/* <% for (i=1; i <=pack[0].parcelas ; i++){%> */}
-                  <option defaultValue="<%=i%>">
-                    {/* <%=i%>x de <%=valor((pack[0].preco-((pack[0].preco * pack[0].promocaoPorcentagem)/100))/i)%> */}
-                  </option>
-                  {/* <% } %> */}
+                  {pacotes[0].parcelas.map((parcelas) => (
+                    <option defaultValue="parcelas">
+                      {
+                        (pacotes[0].parcelas,
+                        valor(
+                          (pacotes[0].preco -
+                            (pacotes[0].preco *
+                              pacotes[0].promocaoPorcentagem) /
+                              100) /
+                            parcelas
+                        ))
+                      }
+                    </option>
+                  ))}
                 </select>
               </div>
 
@@ -297,7 +306,7 @@ const Checkout = () => {
                 type="text"
                 name="idPacote"
                 id="idPacote"
-                defaultValue="<%= pack[0].id %>"
+                defaultValue={pacotes[0].id}
                 hidden
               />
               <button className="btao-confirmar" type="submit">
