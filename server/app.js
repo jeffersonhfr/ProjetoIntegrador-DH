@@ -68,7 +68,7 @@ app.use('/listarCategoria', listarCategoriaRouter); //JSON
 app.use('/listarAdicional', listarAdicionaisRouter); //JSON
 // app.use('/listarAdicional', adminMiddleware, listarAdicionaisRouter);
 
-app.use('/visualizarUsuario', visualizarUsuarioRouter);
+app.use('/visualizarUsuario', visualizarUsuarioRouter); //JSON
 // app.use('/visualizarUsuario', adminMiddleware, visualizarUsuarioRouter);
 
 // catch 404 and forward to error handler
