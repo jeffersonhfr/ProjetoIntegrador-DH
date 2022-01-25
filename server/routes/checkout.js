@@ -4,8 +4,13 @@ var checkoutContoller = require('../controllers/checkout');
 const loginMiddleware = require('../middlewares/login');
 
 /* GET home page. */
-router.post('/', loginMiddleware, checkoutContoller.index);
-router.post('/sucesso', loginMiddleware, checkoutContoller.sucesso);
-router.get('/sucesso', loginMiddleware, checkoutContoller.sucesso);
+router.post('/', checkoutContoller.index);
+// router.post('/', loginMiddleware, checkoutContoller.index);
+
+router.post('/sucesso', checkoutContoller.sucesso);
+// router.post('/sucesso', loginMiddleware, checkoutContoller.sucesso);
+
+router.get('/sucesso', checkoutContoller.sucesso);
+// router.get('/sucesso', loginMiddleware, checkoutContoller.sucesso);
 
 module.exports = router;
