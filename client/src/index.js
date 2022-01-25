@@ -20,6 +20,7 @@ import AjudaEdit from "./pages/AjudaEdit";
 import CheckoutSucesso from "./pages/CheckoutSucesso";
 import Checkout from "./pages/Checkout";
 import ListarUsuarios from "./pages/ListarUsuarios";
+import RecuperarSenha from "./pages/RecuperarSenha";
 //Para teste
 import users from "./users";
 import Login from "./pages/Login";
@@ -54,6 +55,7 @@ render(
         <Route path="/checkoutSucesso" element={<CheckoutSucesso />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/listarUsuarios" element={<ListarUsuarios />} />
+        <Route path="/RecuperarSenha" element={<RecuperarSenha />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
