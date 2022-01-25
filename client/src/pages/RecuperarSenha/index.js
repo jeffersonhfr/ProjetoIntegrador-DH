@@ -1,6 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
 const RecuperarSenha = () => {
+  function redireciona() {
+    const email = document.querySelector("#email");
+    if (email.value === "") {
+      return;
+    } else {
+      alert("O link de recuperação foi enviado ao seu email");
+      window.location = "http://localhost:3000/Login";
+    }
+  }
+
   let img = "../assets/img/imagem-login.jpeg";
   return (
     <>
@@ -41,7 +51,10 @@ const RecuperarSenha = () => {
               </div>
             </fieldset>
             <div class="container-botao-login">
-              {/* <button class="botao-login" type="submit" onclick=redireciona()>Enviar</button> */}
+              <button class="botao-login" type="submit" onclick={redireciona}>
+                {" "}
+                Enviar{" "}
+              </button>
             </div>
             <div class="container-cadastro">
               <p>Ainda não é cadastrado? </p>
