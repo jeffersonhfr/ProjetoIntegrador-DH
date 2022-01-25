@@ -238,16 +238,13 @@ const Checkout = () => {
                 <select name="parcelas" id="parcelas">
                   {pacotes[0].parcelas.map((parcelas) => (
                     <option defaultValue="parcelas">
-                      {
-                        (pacotes[0].parcelas,
-                        valor(
-                          (pacotes[0].preco -
-                            (pacotes[0].preco *
-                              pacotes[0].promocaoPorcentagem) /
-                              100) /
-                            parcelas
-                        ))
-                      }
+                      {parcelas} x{" "}
+                      {valor(
+                        (pacotes[0].preco -
+                          (pacotes[0].preco * pacotes[0].promocaoPorcentagem) /
+                            100) /
+                          parcelas
+                      )}
                     </option>
                   ))}
                 </select>
