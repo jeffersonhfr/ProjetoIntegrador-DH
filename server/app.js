@@ -59,10 +59,10 @@ app.use('/perfil', perfilRouter); //JSON
 // app.use('/logout', logoutRouter);
 
 // A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
-app.use('/listarUsuarios', listarUsuariosRouter);
+app.use('/listarUsuarios', listarUsuariosRouter); //JSON
 // app.use('/listarUsuarios', adminMiddleware, listarUsuariosRouter);
 
-app.use('/listarCategoria', listarCategoriaRouter);
+app.use('/listarCategoria', listarCategoriaRouter); //JSON
 // app.use('/listarCategoria', adminMiddleware, listarCategoriaRouter);
 
 app.use('/listarAdicional', listarAdicionaisRouter);
