@@ -65,7 +65,7 @@ app.use('/listarUsuarios', listarUsuariosRouter); //JSON
 app.use('/listarCategoria', listarCategoriaRouter); //JSON
 // app.use('/listarCategoria', adminMiddleware, listarCategoriaRouter);
 
-app.use('/listarAdicional', listarAdicionaisRouter);
+app.use('/listarAdicional', listarAdicionaisRouter); //JSON
 // app.use('/listarAdicional', adminMiddleware, listarAdicionaisRouter);
 
 app.use('/visualizarUsuario', visualizarUsuarioRouter);
