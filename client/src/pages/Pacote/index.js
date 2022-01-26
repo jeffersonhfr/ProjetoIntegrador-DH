@@ -306,19 +306,6 @@ const Pacote = () => {
                 </>
               );
             })}
-            {/* {adicionais.map(() => {
-              return (
-                <>
-                  <li className="Pacote-Propriedades__Item Bonus liModal">
-                    <img
-                      className="Pacote-Propriedades__Item-Img"
-                      src="/assets/img/check.png"
-                    />
-                    <p>1</p>
-                  </li>
-                </>
-              );
-            })} */}
           </div>
         </div>
       </div>
