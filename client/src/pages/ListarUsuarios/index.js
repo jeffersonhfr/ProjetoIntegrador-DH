@@ -21,13 +21,7 @@ const ListarUsuarios = () => {
         {isLogado && isAdmin ? (
           <>
             <div class="travel-cards">
-              {user.map((user) => (
-                <UsuarioCard
-                  usuario={user}
-                  isLogado={setIsLogado}
-                  isAdmin={setIsAdmin}
-                />
-              ))}
+              <UsuarioCard />
             </div>
 
             <div class="container paginacao">
