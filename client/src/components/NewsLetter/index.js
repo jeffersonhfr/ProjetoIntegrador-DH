@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 const NewsLetter = () => {
   return (
     <section className="newsletter">
       <div className="newsletter__imagem">
         <div className="newsletter__sobreposicao">
-          <div className="container" style={{ justifyContent: "center" }}>
+          <div className="container" style={{ justifyContent: 'center' }}>
             <div className="newsletter__box">
               <h2 className="newsletter__titulo"> Fique por dentro!</h2>
               <p className="newsletter__subtitulo">
@@ -17,7 +17,7 @@ const NewsLetter = () => {
                   <div className="fique-por-dentro__form__campos">
                     <div className="fique-por-dentro__form__campos__itens fique-por-dentro__form__campos__itens--primeiro">
                       <div className="fique-por-dentro__input">
-                        <label for="nome">Nome</label>
+                        <label>Nome</label>
                         <input
                           type="text"
                           id="nome"
@@ -29,7 +29,7 @@ const NewsLetter = () => {
                     <div className="fique-por-dentro__form__campos__itens fique-por-dentro__form__campos__itens divisao"></div>
                     <div className="fique-por-dentro__form__campos__itens fique-por-dentro__form__campos__itens--segundo">
                       <div className="fique-por-dentro__input">
-                        <label for="E-mail">E-mail</label>
+                        <label>E-mail</label>
                         <input
                           type="email"
                           id="emailNews"

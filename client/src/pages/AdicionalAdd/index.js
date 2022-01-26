@@ -5,15 +5,15 @@ import Footer from '../../components/Footer';
 const AdicionalAdd = () => {
   return (
     <>
-      <Header />
-      <div class="container">
-        <form action="" method="POST" class="formAdd">
-          <article class="addPacote-TitleContainer">
-            <h1 class="addPacote-TitleContainer">Cadastrar Adicional</h1>
+      />
+      <div className="container">
+        <form action="" method="POST" className="formAdd">
+          <article className="addPacote-TitleContainer">
+            <h1 className="addPacote-TitleContainer">Cadastrar Adicional</h1>
           </article>
 
-          <ul class="Pacote-Propriedades nomeAdicional">
-            <li class="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
+          <ul className="Pacote-Propriedades nomeAdicional">
+            <li className="Pacote-Propriedades__Item Pacote-Propriedades__Item--addpack">
               <label>Nome do Adicional</label>
               <input
                 type="text"
@@ -27,13 +27,13 @@ const AdicionalAdd = () => {
           <button
             type="submit"
             title="Criar Pacote"
-            class="Pacote__Button-Comprar"
+            className="Pacote__Button-Comprar"
           >
             Adicionar
           </button>
         </form>
       </div>
-      <Footer />
+      
     </>
   );
 };

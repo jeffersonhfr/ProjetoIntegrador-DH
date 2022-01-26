@@ -13,10 +13,10 @@ const PacoteCard = ({ pacotes }) => {
       {
         <>
           <li className="promo">
-            <a href="">
+            <a href={`pacotes/${pacotes.id}`}>
               <img
                 alt="Imagem do destino"
-                src={pacotes.package_Images[0].src}
+                src={pacotes.package_images[0].src}
               />
               <h2 className="Propriedade Nome">{pacotes.nomePacote}</h2>
               <ul className="Propriedades">
@@ -55,7 +55,7 @@ const PacoteCard = ({ pacotes }) => {
 
                 <p>
                   <img alt="Icone Check" src="assets/img/check.png" />
-                  {pacotes.adicionais[0].nomeAdicional}
+                  {pacotes.adicional[0].nomeAdicional}
                 </p>
 
                 {pacotes.promocaoPorcentagem > 0 ? (

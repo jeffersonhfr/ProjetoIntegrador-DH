@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import Header from '../../components/Header';
 import Filtro from '../../components/Filtro';
 import TravelCard from '../../components/TravelCard';
-import Footer from '../../components/Footer';
 
 const Pacotes = () => {
   const [isLogado, setIsLogado] = useState(true);
@@ -415,22 +413,22 @@ const Pacotes = () => {
   ];
   return (
     <>
-      <Header />
-      <div class="container container-pacotes">
+     
+      <div className="container container-pacotes">
         {isLogado && isAdmin ? (
-          <div class="title-bar">
+          <div className="title-bar">
             <h1>{tituloPacote}</h1>
-            <a href="pacotes/adicionar" class="travel-cards__btao">
+            <a href="pacotes/adicionar" className="travel-cards__btao">
               Adicionar Pacote
             </a>
           </div>
         ) : (
-          <div class="title-bar">
+          <div className="title-bar">
             <h1>{tituloPacote}</h1>
             <Filtro />
           </div>
         )}
-        <div class="travel-cards">
+        <div className="travel-cards">
           {pacotes.map((Pacotes) => {
             return (
               <>
@@ -441,7 +439,7 @@ const Pacotes = () => {
         </div>
       </div>
 
-      <Footer />
+      
     </>
   );
 };

@@ -5,80 +5,80 @@ import Footer from '../../components/Footer';
 const AjudaEdit = () => {
   return (
     <>
-      <Header />
-      <section class="ajuda ajuda-edit">
-        <div class="container">
-          <div class="ajuda-container">
-            <form action="" method="post" class="form-edit">
-              <label for="tituloPrincipal">Título Principal</label>
+      />
+      <section className="ajuda ajuda-edit">
+        <div className="container">
+          <div className="ajuda-container">
+            <form action="" method="post" className="form-edit">
+              <label htmlFor="tituloPrincipal">Título Principal</label>
               <input
                 type="text"
                 name="tituloPrincipal"
-                class="form-titulo"
+                className="form-titulo"
                 value="tituloPrincipal"
               />
               <br />
               <br />
 
-              <label for="tituloDuvidas">Título para dúvidas</label>
+              <label htmlFor="tituloDuvidas">Título para dúvidas</label>
               <input
                 type="text"
                 name="tituloDuvidas"
-                class="form-titulo"
+                className="form-titulo"
                 value="tituloDuvidas"
               />
-              <label for="textoDuvidas">
+              <label htmlFor="textoDuvidas">
                 Texto informativo sobre as dúvidas
               </label>
-              <textarea name="textoDuvidas" class="form-campos form-textarea">
+              <textarea name="textoDuvidas" className="form-campos form-textarea">
                 textoDuvidas
               </textarea>
               <br />
               <br />
 
-              <label for="tituloCancelamentos">Título para cancelamentos</label>
+              <label htmlFor="tituloCancelamentos">Título para cancelamentos</label>
               <input
                 type="text"
                 name="tituloCancelamentos"
-                class="form-titulo"
+                className="form-titulo"
                 value=" tituloCancelamentos"
               />
-              <label for="textoDuvidas">
+              <label htmlFor="textoDuvidas">
                 Texto informativo sobre as cancelamento
               </label>
               <textarea
                 name="textoCancelamentos"
-                class="form-campos form-textarea"
+                className="form-campos form-textarea"
               >
                 textoCancelamentos
               </textarea>
               <br />
               <br />
 
-              <label for="tituloPolítica">
+              <label htmlFor="tituloPolítica">
                 Título para as políticas de privacidade
               </label>
               <input
                 type="text"
                 name="tituloPolítica"
-                class="form-titulo"
+                className="form-titulo"
                 value=" tituloPolítica"
               />
-              <label for="textoPolítica">
+              <label htmlFor="textoPolítica">
                 Texto informativo sobre as políticas de privacidade
               </label>
-              <textarea name="textoPolítica" class="form-campos form-textarea">
+              <textarea name="textoPolítica" className="form-campos form-textarea">
                 textoPolítica
               </textarea>
 
-              <button type="submit" class="form-btn">
+              <button type="submit" className="form-btn">
                 Confirmar alterações
               </button>
             </form>
           </div>
         </div>
       </section>
-      <Footer />
+      
     </>
   );
 };

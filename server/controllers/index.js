@@ -4,24 +4,18 @@ const { getAllPackages } = require('../services/pacotes');
 
 const controller = {
   index: async (req, res, next) => {
-    const categorias = await getAllCategorias();
-    const add = await getAllAddtionals();
-    const pack = await getAllPackages();
-
-    res.render('index', {
-      title: '| Aproveite nossas ofertas',
-      categorias,
-      pack,
-      valor: (valor) => {
-        return valor.toLocaleString('pt-BR', {
-          style: 'currency',
-          currency: 'BRL',
-        });
-      },
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
+    try {
+      const categorias = await getAllCategorias();
+      const pacotes = await getAllPackages();
+      return res.status(200).json({
+        title: '| Aproveite nossas ofertas',
+        categorias: categorias,
+        pacotes: pacotes,
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
+    }
   },
 };
 

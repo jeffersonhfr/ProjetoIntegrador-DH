@@ -1,80 +1,61 @@
-const { getUserById } = require("../services/usuarios");
+const { getUserById } = require('../services/usuarios');
 
 const controller = {
   index: async (req, res, next) => {
-    const { id } = req.params;
-    const user = await getUserById(id);
-    console.log(user);
-    res.render("visualizarUsuario", {
-      title: "Usuário",
-      subtitulo: `Usuário #${id}`,
-      user,
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
-  },
-  show: async (req, res, next) => {
-    const { id } = req.params;
-    const user = await getUserById(id);
-    console.log(user);
-    res.render("usuario-edit", {
-      title: "| Usuario",
-      user,
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
-  },
+    try {
+      const id = 5;
+      // const { id } = req.params;
+      const user = await getUserById(id);
 
-  edit: async (req, res, next) => {
-    const { id } = req.params;
-    const user = await getUserById(id);
-    console.log(user);
-
-    res.render("usuario-edit", {
-      title: "Usuário",
-      subtitulo: `Usuário #${id}`,
-      user,
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
-    user.nome = req.body.nome;
-    user.email = req.body.email;
-    user.nascimento = req.body.nascimento;
-    user.telefone = req.body.telefone;
-    user.cpf = req.body.cpf;
-    user.cep = req.body.cep;
-    user.logradouro = req.body.endereco;
-    user.complemento = req.body.complemento;
-    user.localidade = req.body.cidade;
-    user.uf = req.body.uf;
-    (user.avatar = req.body.avatar), (user.modificadoEm = new Date());
-    user.push(user);
-
-    // FALTA A SENHA HASH
-
-    // res.redirect("../perfil");
-  },
-
-  form_edit: async (req, res, next) => {
-    const { id } = req.params;
-    const user = await getUserById(id);
-    console.log(user);
-    let usuarioLogado = req.cookies.usuario;
-    let usuarioAdmin = req.cookies.admin;
-
-    if (usuarioAdmin || usuarioLogado) {
-      res.render("usuario-edit", {
-        title: "| " + usuarioLogado.nome,
+      return res.status(200).json({
+        title: 'Usuário',
+        subtitulo: `Usuário #${id}`,
         user,
-        usuarioLogado: usuarioLogado,
-        usuarioAdmin: usuarioAdmin,
-        usuarioAvatar: req.cookies.avatar,
       });
-    } else {
-      res.redirect("../login");
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
+    }
+  },
+  edit: async (req, res, next) => {
+    try {
+      const id = 5;
+      // const { id } = req.params;
+      const user = await getUserById(id);
+
+      return res.status(200).json({
+        title: 'Usuário',
+        subtitulo: `Usuário #${id}`,
+        user,
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
+    }
+  },
+  form_edit: async (req, res, next) => {
+    try {
+      const id = 5;
+      let usuarioLogado = {};
+      usuarioLogado.nome = 'Jefferson';
+      let usuarioAdmin = true;
+
+      // const { id } = req.params;
+      // let usuarioLogado = req.cookies.usuario;
+      // let usuarioAdmin = req.cookies.admin;
+      const user = await getUserById(id);
+
+      if (usuarioAdmin || usuarioLogado) {
+        return res.status(200).json({
+          title: '| ' + usuarioLogado.nome,
+          user,
+        });
+      } else {
+        return res.status(500).json({ message: 'Erro ao enviar o formulário' });
+      }
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
     }
   },
 };

@@ -1,92 +1,92 @@
 <%- include('./partials/head') %>
-  <header class="cabecalho">
+  <div class="cabecalho">
     <div class="cabecalho__sobreposicao">
       <%- include('./partials/menu_nav.ejs') %>
     </div>
-  </header>
+    </header>
 
-  <main>
-    <div class="container" style="justify-content: center;">
-      <section class="container-busca">
-        <form class="container-busca__form" action="/pesquisa">
-          <div class="container-busca__form__campos">
-            <div class="container-busca__form__campos__itens container-busca__form__campos__itens--primeiro">
-              <div class="busca__campo">
-                <label for="onde">Para onde desejar viajar?</label>
-                <input type="text" id="onde" name="onde" placeholder="Escreva aqui o local para onde deseja ir" required />
+    <main>
+      <div class="container" style="justify-content: center;">
+        <section class="container-busca">
+          <form class="container-busca__form" action="/pesquisa">
+            <div class="container-busca__form__campos">
+              <div class="container-busca__form__campos__itens container-busca__form__campos__itens--primeiro">
+                <div class="busca__campo">
+                  <label for="onde">Para onde desejar viajar?</label>
+                  <input type="text" id="onde" name="onde" placeholder="Escreva aqui o local para onde deseja ir" required />
+                </div>
+              </div>
+
+            </div>
+            <input type="submit" value="Buscar" class="busca__campo__submit">
+          </form>
+        </section>
+      </div>
+
+      <div class="container">
+        <nav class="Categoria viagem-tematica">
+          <article>
+            <h1 class="title"> Viagens Temáticas</h1>
+            <h2>Separamos os melhores pacotes por temas, escolha o que faz mais o seu estilo</h2>
+          </article>
+
+          <div class="container container-cards">
+            <ul class=" Main ViagensTematicas itemsTema">
+              <%- include('./partials/temas-card') %>
+            </ul>
+          </div>
+
+        </nav>
+      </div>
+
+
+      <div class="container container-cards">
+        <nav class="Categoria categoria-promocional">
+          <article>
+            <h1>Pacotes Promocionais</h2>
+              <h2>Confira nossos pacotes Promocionais e embarque na sua próxima viagem :)</h2>
+          </article>
+          <ul class="Main PacotesPromocionais ExibeIcone itemsPromo">
+            <%- include('./partials/pacotes-card') %>
+          </ul>
+        </nav>
+      </div>
+
+      <section class="newsletter">
+        <div class="newsletter__imagem">
+          <div class="newsletter__sobreposicao">
+            <div class="container" style="justify-content: center;">
+              <div class="newsletter__box">
+                <h2 class="newsletter__titulo"> Fique por dentro!</h2>
+                <p class="newsletter__subtitulo"> Cadastre seus dados abaixo e fique sabendo em primeira mão das melhores ofertas para sua próxima viagem.
+                </p>
+
+                <section class="fique-por-dentro">
+                  <form class="fique-por-dentro__form">
+                    <div class="fique-por-dentro__form__campos">
+                      <div class="fique-por-dentro__form__campos__itens fique-por-dentro__form__campos__itens--primeiro">
+                        <div class="fique-por-dentro__input">
+                          <label for="nome">Nome</label>
+                          <input type="text" id="nome" name="nome" placeholder="Insira aqui o seu nome" />
+                        </div>
+                      </div>
+                      <div class="fique-por-dentro__form__campos__itens fique-por-dentro__form__campos__itens divisao">|</div>
+                      <div class="fique-por-dentro__form__campos__itens fique-por-dentro__form__campos__itens--segundo">
+                        <div class="fique-por-dentro__input">
+                          <label for="E-mail">E-mail</label>
+                          <input type="email" id="emailNews" name="email" placeholder="Insira aqui o seu melhor e-mail" />
+                        </div>
+                      </div>
+                    </div>
+                    <input type="submit" value="Enviar" class="fique-por-dentro__input__submit">
+                  </form>
+                </section>
               </div>
             </div>
-
           </div>
-          <input type="submit" value="Buscar" class="busca__campo__submit">
-        </form>
+        </div>
       </section>
-    </div>
+    </main>
 
-    <div class="container">
-      <nav class="Categoria viagem-tematica">
-        <article>
-          <h1 class="title"> Viagens Temáticas</h1>
-          <h2>Separamos os melhores pacotes por temas, escolha o que faz mais o seu estilo</h2>
-        </article>
-
-        <div class="container container-cards">
-          <ul class=" Main ViagensTematicas itemsTema">
-            <%- include('./partials/temas-card') %>
-          </ul>
-        </div>
-
-      </nav>
-    </div>
-
-
-    <div class="container container-cards">
-      <nav class="Categoria categoria-promocional">
-        <article>
-          <h1>Pacotes Promocionais</h2>
-            <h2>Confira nossos pacotes Promocionais e embarque na sua próxima viagem :)</h2>
-        </article>
-        <ul class="Main PacotesPromocionais ExibeIcone itemsPromo">
-          <%- include('./partials/pacotes-card') %>
-        </ul>
-      </nav>
-    </div>
-
-    <section class="newsletter">
-      <div class="newsletter__imagem">
-        <div class="newsletter__sobreposicao">
-          <div class="container" style="justify-content: center;">
-            <div class="newsletter__box">
-              <h2 class="newsletter__titulo"> Fique por dentro!</h2>
-              <p class="newsletter__subtitulo"> Cadastre seus dados abaixo e fique sabendo em primeira mão das melhores ofertas para sua próxima viagem.
-              </p>
-
-              <section class="fique-por-dentro">
-                <form class="fique-por-dentro__form">
-                  <div class="fique-por-dentro__form__campos">
-                    <div class="fique-por-dentro__form__campos__itens fique-por-dentro__form__campos__itens--primeiro">
-                      <div class="fique-por-dentro__input">
-                        <label for="nome">Nome</label>
-                        <input type="text" id="nome" name="nome" placeholder="Insira aqui o seu nome" />
-                      </div>
-                    </div>
-                    <div class="fique-por-dentro__form__campos__itens fique-por-dentro__form__campos__itens divisao">|</div>
-                    <div class="fique-por-dentro__form__campos__itens fique-por-dentro__form__campos__itens--segundo">
-                      <div class="fique-por-dentro__input">
-                        <label for="E-mail">E-mail</label>
-                        <input type="email" id="emailNews" name="email" placeholder="Insira aqui o seu melhor e-mail" />
-                      </div>
-                    </div>
-                  </div>
-                  <input type="submit" value="Enviar" class="fique-por-dentro__input__submit">
-                </form>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <script src="src/carrossel.js"></script>
-  <%- include('./partials/footer') %>
+    <script src="src/carrossel.js"></script>
+    <%- include('./partials/footer') %>

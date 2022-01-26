@@ -6,81 +6,69 @@ const {
   updatePacote,
   getPackagesByDestiny,
   getPackagesByName,
+  getPackagesByCategory,
 } = require('../services/pacotes');
 const { createImages } = require('../services/package_images');
 const fs = require('fs');
 
 const { getAllCategorias } = require('../services/categorias');
+const { createCategoriaPacote } = require('../services/categoriaPacote');
 const { getAllAddtionals } = require('../services/adicionais');
+const { createAddtionalPacote } = require('../services/adicionalPacote');
 
 const controller = {
   index: async (req, res, next) => {
     const query = req.query.destino;
+    const queryCategoria = req.query.categoria;
 
-    if (query == 'nacional') {
-      const pack = await getPackagesByDestiny(1);
-      res.render('pacotes', {
-        title: '| Pacote',
-        tituloPacotes: 'Pacotes Nacionais',
-        pack,
-        valor: (valor) => {
-          return valor.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-          });
-        },
-        usuarioLogado: req.cookies.usuario,
-        usuarioAdmin: req.cookies.admin,
-        usuarioAvatar: req.cookies.avatar,
-      });
+    if (queryCategoria) {
+      try {
+        const pacotes = await getPackagesByCategory(queryCategoria);
+        return res.status(200).json({
+          title: '| Pacotes: ' + queryCategoria,
+          tituloPacotes: 'Pacotes por categoria: ' + queryCategoria,
+          pacotes: pacotes,
+        });
+      } catch (error) {
+        console.log(error);
+        return res.status(500).json({ message: 'Erro do servidor', error });
+      }
+    } else if (query == 'nacional') {
+      try {
+        const pacotes = await getPackagesByDestiny(1);
+        return res.status(200).json({
+          title: '| Pacote',
+          tituloPacotes: 'Pacotes Nacionais',
+          pacotes: pacotes,
+        });
+      } catch (error) {
+        console.log(error);
+        return res.status(500).json({ message: 'Erro do servidor', error });
+      }
     } else if (query == 'internacional') {
-      const pack = await getPackagesByDestiny(0);
-      res.render('pacotes', {
-        title: '| Pacote',
-        tituloPacotes: 'Pacotes Internacionais',
-        pack,
-        valor: (valor) => {
-          return valor.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-          });
-        },
-        usuarioLogado: req.cookies.usuario,
-        usuarioAdmin: req.cookies.admin,
-        usuarioAvatar: req.cookies.avatar,
-      });
-    } else if (query) {
-      const pack = await getAllPackages(queryCategory);
-      res.render('pacotes', {
-        title: '| Pacote',
-        tituloPacotes: 'Nossos Pacotes',
-        pack,
-        valor: (valor) => {
-          return valor.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-          });
-        },
-        usuarioLogado: req.cookies.usuario,
-        usuarioAdmin: req.cookies.admin,
-        usuarioAvatar: req.cookies.avatar,
-      });
+      try {
+        const pacotes = await getPackagesByDestiny(0);
+        return res.status(200).json({
+          title: '| Pacote',
+          tituloPacotes: 'Pacotes Internacionais',
+          pacotes: pacotes,
+        });
+      } catch (error) {
+        console.log(error);
+        return res.status(500).json({ message: 'Erro do servidor', error });
+      }
     } else {
-      const pack = await getAllPackages();
-      res.render('pacotes', {
-        title: '| Pacote',
-        tituloPacotes: 'Nossos Pacotes',
-        pack,
-        valor: (valor) => {
-          return valor.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-          });
-        },
-        usuarioLogado: req.cookies.usuario,
-        usuarioAdmin: req.cookies.admin,
-        usuarioAvatar: req.cookies.avatar,
-      });
+      try {
+        const pacotes = await getAllPackages();
+        return res.status(200).json({
+          title: '| Pacote',
+          tituloPacotes: 'Nossos Pacotes',
+          pacotes: pacotes,
+        });
+      } catch (error) {
+        console.log(error);
+        return res.status(500).json({ message: 'Erro do servidor', error });
+      }
     }
   },
   add: async (req, res, next) => {
@@ -132,24 +120,19 @@ const controller = {
     }
   },
   show: async (req, res, next) => {
-    let origem = req.originalUrl;
-    const { id } = req.params;
-    const pack = await getPackagesById(id);
-    console.log(pack);
-    res.render('pacote', {
-      title: '| Pacote',
-      pack,
-      origem,
-      valor: (valor) => {
-        return valor.toLocaleString('pt-BR', {
-          style: 'currency',
-          currency: 'BRL',
-        });
-      },
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
+    try {
+      let origem = req.originalUrl;
+      const { id } = req.params;
+      const pacote = await getPackagesById(id);
+      return res.status(200).json({
+        title: '| Pacote',
+        pacote,
+        origem,
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
+    }
   },
   edit: async (req, res, next) => {
     const { id } = req.params;

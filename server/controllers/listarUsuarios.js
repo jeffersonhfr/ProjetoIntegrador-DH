@@ -1,70 +1,127 @@
-const { getAllUser } = require("../services/usuarios");
-const { getUserById } = require("../services/usuarios");
-const { destroyUser } = require("../services/usuarios");
-const bcrypt = require("bcrypt");
+const { getAllUser, updateUser, destroyUser } = require('../services/usuarios');
+const { getUserById } = require('../services/usuarios');
+const bcrypt = require('bcrypt');
 
 const controller = {
   index: async (req, res, next) => {
-    const user = await getAllUser();
-    res.render("listarUsuarios", {
-      title: "Usuário",
-      subtitulo: `Usuário`,
-      user,
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
+    try {
+      const user = await getAllUser();
+
+      return res.status(200).json({
+        title: 'Usuário',
+        subtitulo: `Usuário`,
+        user,
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
+    }
   },
   show: async (req, res, next) => {
-    const { id } = req.params;
-    const user = await getUserById(id);
-    console.log(user);
-    res.render("usuario-edit", {
-      title: "| Usuario",
-      user,
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
+    try {
+      const id = 5;
+      // const { id } = req.params;
+
+      const user = await getUserById(id);
+
+      return res.status(200).json({
+        title: '| Usuario',
+        user,
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
+    }
+  },
+  form_edit: async (req, res, next) => {
+    try {
+      const id = 5;
+      let usuarioAdmin = user[0].admin;
+      let usuarioLogado = true;
+      const usuarioAvatar = user[0].avatar;
+
+      // const { id } = req.params;
+      // let usuarioLogado = req.cookies.usuario;
+      // let usuarioAdmin = req.cookies.admin;
+      // const usuarioAvatar = user[0].avatar;
+
+      const user = await getUserById(id);
+      if (usuarioAdmin || usuarioLogado) {
+        return res.status(200).json({
+          title: '| Editar usuário',
+          user,
+          usuarioLogado,
+          usuarioAdmin,
+          usuarioAvatar,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
+    }
   },
   edit: async (req, res, next) => {
-    const { id } = req.params;
-    const user = await getUserById(id);
-    console.log(user);
+    const id = req.body.idUsuario;
 
-    res.render("usuario-edit", {
-      title: "Usuário",
-      subtitulo: `Usuário #${id}`,
-      user,
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
-    user.nome = req.body.nome;
-    user.email = req.body.email;
-    user.nascimento = req.body.nascimento;
-    user.telefone = req.body.telefone;
-    user.cpf = req.body.cpf;
-    user.cep = req.body.cep;
-    user.logradouro = req.body.endereco;
-    user.complemento = req.body.complemento;
-    user.localidade = req.body.cidade;
-    user.uf = req.body.uf;
-    (user.avatar = req.body.avatar), (user.modificadoEm = new Date());
-    user.push(user);
+    const usuario = await getUserById(id);
+    if (req.file) {
+      var usuarioAvatar = `/assets/img/avatar/${req.file.filename}`;
+    } else {
+      usuarioAvatar = usuario.avatar;
+    }
 
-    // FALTA A SENHA HASH
+    if (req.body.senha != '') {
+      var senhaCrypto = bcrypt.hashSync(req.body.senha, 10);
+      var user = {
+        nome: req.body.nome,
+        email: req.body.email,
+        senha: senhaCrypto,
+        nascimento: req.body.nascimento,
+        cpf: req.body.cpf,
+        avatar: usuarioAvatar,
+        telefone: req.body.telefone,
+        cep: req.body.cep,
+        logradouro: req.body.endereco,
+        complemento: req.body.complemento,
+        localidade: req.body.cidade,
+        uf: req.body.uf,
+        userModificadoEm: new Date(),
+      };
+    } else {
+      var user = {
+        nome: req.body.nome,
+        email: req.body.email,
+        nascimento: req.body.nascimento,
+        cpf: req.body.cpf,
+        avatar: usuarioAvatar,
+        telefone: req.body.telefone,
+        cep: req.body.cep,
+        logradouro: req.body.endereco,
+        complemento: req.body.complemento,
+        localidade: req.body.cidade,
+        uf: req.body.uf,
+        userModificadoEm: new Date(),
+      };
+    }
+
+    const update = await updateUser(id, user);
+
+    if (update) {
+      res.redirect('../../listarUsuarios');
+    } else {
+      res.status(500).send('Ops... deu ruim...');
+    }
   },
   delete: (req, res, next) => {
-    res.redirect("../../listarUsuarios");
+    res.redirect('../../listarUsuarios');
   },
   destroy: async (req, res, next) => {
     const { id } = req.params;
     const destroy = await destroyUser(id);
     if (destroy) {
-      res.redirect("../../listarUsuarios");
+      res.redirect('../../listarUsuarios');
     } else {
-      res.status(500).send("Ops... deu ruim...");
+      res.status(500).send('Ops... deu ruim...');
     }
   },
 };

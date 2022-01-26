@@ -8,23 +8,26 @@ const {
 
 const controller = {
   index: async (req, res, next) => {
-    const adicionais = await getAllAddtionals();
-    console.log(adicionais);
-    res.render('adicional-list', {
-      title: '| Listar Adicionais',
-      adicionais,
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
+    try {
+      const adicionais = await getAllAddtionals();
+      return res.status(200).json({
+        title: '| Listar Adicionais',
+        adicionais,
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
+    }
   },
   add: async (req, res, next) => {
-    res.render('adicional-add', {
-      title: '| Cadastrar Adicionais',
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
+    try {
+      return res.status(200).json({
+        title: '| Cadastrar Adicionais',
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
+    }
   },
   create: async (req, res, next) => {
     const create = await createAddtionals(req.body);
@@ -36,8 +39,22 @@ const controller = {
     }
   },
   edit: async (req, res, next) => {
-    const { id } = req.params;
-    const adicional = await getAddtionalsById(id);
+    try {
+      //manual
+      const id = 1;
+
+      // const { id } = req.params;
+      const adicional = await getAddtionalsById(id);
+
+      return res.status(200).json({
+        title: '| Editar Categoria',
+        adicional,
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
+    }
+
     res.render('adicional-edit', {
       title: '| Editar Categoria',
       adicional,
