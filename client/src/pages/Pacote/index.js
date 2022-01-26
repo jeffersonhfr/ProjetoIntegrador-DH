@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactLoading from 'react-loading';
 import { useParams } from 'react-router-dom';
 import TravelImages from '../../components/TravelImages';
+import AdicionaisPacote from '../../components/AdicionaisPacote';
 
 const Pacote = () => {
   function openModal() {
@@ -94,7 +95,6 @@ const Pacote = () => {
   const [pacote, setPacote] = useState();
 
   const { id } = useParams();
-  console.log(id);
   const apiURL = 'http://localhost:3333/pacotes/' + id;
   useEffect(() => {
     fetch(apiURL)
@@ -102,11 +102,13 @@ const Pacote = () => {
       .then((res) =>
         setTimeout(() => {
           setPacote(res.pacote[0]);
-        }, 2000),
+        }, 1500),
       );
   }, []);
 
   console.log(pacote);
+  const pacotes = [pacote];
+  console.log(pacotes);
 
   return !pacote ? (
     <>
@@ -141,7 +143,7 @@ const Pacote = () => {
           <h1 className="Pacote-TitleContainer__Title">{pacote.nomePacote}</h1>
         </article>
         <nav className="Pacote-ImgContainer">
-          {pack.map((Pacote) => {
+          {pacotes.map((Pacote) => {
             return (
               <>
                 <TravelImages pacote={Pacote} />
@@ -297,17 +299,10 @@ const Pacote = () => {
           </div>
           <div className="modal-conteudo">
             <h1 className="tituloModal">Benefícios do pacote</h1>
-
-            {pack.map((pack) => {
+            {pacotes.map((Pacote) => {
               return (
                 <>
-                  <li className="Pacote-Propriedades__Item Bonus liModal">
-                    <img
-                      className="Pacote-Propriedades__Item-Img"
-                      src="/assets/img/check.png"
-                    />
-                    <p>{pack.adicional.nomeAdicional}</p>
-                  </li>
+                  <AdicionaisPacote pacote={Pacote} />
                 </>
               );
             })}
