@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactLoading from 'react-loading';
 import { useParams } from 'react-router-dom';
 import TravelImages from '../../components/TravelImages';
+import AdicionaisPacote from '../../components/AdicionaisPacote';
 
 const Pacote = () => {
   function openModal() {
@@ -107,8 +108,6 @@ const Pacote = () => {
 
   console.log(pacote);
   const pacotes = [pacote];
-  const adicionais = [pacote.adicional];
-  console.log(adicionais);
   console.log(pacotes);
 
   return !pacote ? (
@@ -300,6 +299,13 @@ const Pacote = () => {
           </div>
           <div className="modal-conteudo">
             <h1 className="tituloModal">Benefícios do pacote</h1>
+            {pacotes.map((Pacote) => {
+              return (
+                <>
+                  <AdicionaisPacote pacote={Pacote} />
+                </>
+              );
+            })}
             {/* {adicionais.map(() => {
               return (
                 <>
