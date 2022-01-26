@@ -19,7 +19,7 @@ const historicoRouter = require('./routes/historico');
 const checkoutRouter = require('./routes/checkout');
 const perfilRouter = require('./routes/usuario');
 
-// const loginRouter = require('./routes/login');
+ const loginRouter = require('./routes/login');
 // const recuperarSenhaRouter = require('./routes/recuperarSenha');
 // const logoutRouter = require('./routes/logout');
 
@@ -54,7 +54,7 @@ app.use('/minhas-viagens', historicoRouter); //JSON
 app.use('/checkout', checkoutRouter); //JSON
 app.use('/perfil', perfilRouter); //JSON
 
-// app.use('/login', loginRouter);
+ app.use('/login', loginRouter);
 // app.use('/recuperarSenha', recuperarSenhaRouter);
 // app.use('/logout', logoutRouter);
 
