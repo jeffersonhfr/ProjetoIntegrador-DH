@@ -120,24 +120,19 @@ const controller = {
     }
   },
   show: async (req, res, next) => {
-    let origem = req.originalUrl;
-    const { id } = req.params;
-    const pack = await getPackagesById(id);
-    console.log(pack);
-    res.render('pacote', {
-      title: '| Pacote',
-      pack,
-      origem,
-      valor: (valor) => {
-        return valor.toLocaleString('pt-BR', {
-          style: 'currency',
-          currency: 'BRL',
-        });
-      },
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
-      usuarioAvatar: req.cookies.avatar,
-    });
+    try {
+      let origem = req.originalUrl;
+      const { id } = req.params;
+      const pacote = await getPackagesById(id);
+      return res.status(200).json({
+        title: '| Pacote',
+        pacote,
+        origem,
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: 'Erro do servidor', error });
+    }
   },
   edit: async (req, res, next) => {
     const { id } = req.params;

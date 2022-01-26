@@ -13,7 +13,7 @@ const PacoteCard = ({ pacotes }) => {
       {
         <>
           <li className="promo">
-            <a href="">
+            <a href={`pacotes/${pacotes.id}`}>
               <img
                 alt="Imagem do destino"
                 src={pacotes.package_images[0].src}
