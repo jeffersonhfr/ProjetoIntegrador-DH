@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import menuToggle from './scripts/menu';
-const Header = ({user}) => {
-  const [isLogado] = useState(user!=null);
-  const [isAdmin] = useState(user.admin===1);
+const Header = ({ user }) => {
+  const [isLogado] = useState(user != null);
+  const [isAdmin] = useState(user.admin === 1);
 
   const location = window.location.pathname;
 
@@ -196,18 +196,23 @@ const Header = ({user}) => {
     </>
   );
 
-  return <>{location == '/'?
-  <><header
-    className="cabecalho">
-    <div className="cabecalho__sobreposicao">{header}</div>
-    </header>
-  </>: 
-  <>
-    <header className="cabecalho-paginas">
-    <div className="header_container">{header}</div>
-    </header>
-  </>}
-  </>;
+  return (
+    <>
+      {location == '/' ? (
+        <>
+          <header className="cabecalho">
+            <div className="cabecalho__sobreposicao">{header}</div>
+          </header>
+        </>
+      ) : (
+        <>
+          <header className="cabecalho-paginas">
+            <div className="header_container">{header}</div>
+          </header>
+        </>
+      )}
+    </>
+  );
 };
 
 export default Header;

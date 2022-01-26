@@ -1,6 +1,8 @@
 import React from 'react';
 
 const UsuarioCard = ({ usuario }) => {
+  const isLogado = true;
+  const isAdmin = true;
   return (
     <>
       <div className="travel-card travel-card__content">
