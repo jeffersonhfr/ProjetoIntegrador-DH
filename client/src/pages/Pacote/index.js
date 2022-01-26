@@ -94,7 +94,6 @@ const Pacote = () => {
   const [pacote, setPacote] = useState();
 
   const { id } = useParams();
-  console.log(id);
   const apiURL = 'http://localhost:3333/pacotes/' + id;
   useEffect(() => {
     fetch(apiURL)
@@ -102,11 +101,15 @@ const Pacote = () => {
       .then((res) =>
         setTimeout(() => {
           setPacote(res.pacote[0]);
-        }, 2000),
+        }, 1500),
       );
   }, []);
 
   console.log(pacote);
+  const pacotes = [pacote];
+  const adicionais = [pacote.adicional];
+  console.log(adicionais);
+  console.log(pacotes);
 
   return !pacote ? (
     <>
@@ -141,7 +144,7 @@ const Pacote = () => {
           <h1 className="Pacote-TitleContainer__Title">{pacote.nomePacote}</h1>
         </article>
         <nav className="Pacote-ImgContainer">
-          {pack.map((Pacote) => {
+          {pacotes.map((Pacote) => {
             return (
               <>
                 <TravelImages pacote={Pacote} />
@@ -297,8 +300,7 @@ const Pacote = () => {
           </div>
           <div className="modal-conteudo">
             <h1 className="tituloModal">Benefícios do pacote</h1>
-
-            {pack.map((pack) => {
+            {/* {adicionais.map(() => {
               return (
                 <>
                   <li className="Pacote-Propriedades__Item Bonus liModal">
@@ -306,11 +308,11 @@ const Pacote = () => {
                       className="Pacote-Propriedades__Item-Img"
                       src="/assets/img/check.png"
                     />
-                    <p>{pack.adicional.nomeAdicional}</p>
+                    <p>1</p>
                   </li>
                 </>
               );
-            })}
+            })} */}
           </div>
         </div>
       </div>
