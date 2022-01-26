@@ -14,23 +14,22 @@ const controller = {
       });
     } catch (error) {
       console.log(error);
-      return res.status(500).json({ message: 'Erro do servidor', error });
+      return res.status(500).json({ message: 'Erro do servidor' });
     }
   },
   show: async (req, res, next) => {
     try {
-      const id = 5;
-      // const { id } = req.params;
+    
+      const { id } = req.params;
 
       const user = await getUserById(id);
+      if(!user)
+        return res.status(404).send({erro:"Usuário não encontrado!"});
 
-      return res.status(200).json({
-        title: '| Usuario',
-        user,
-      });
+      return res.status(200).send(user);
     } catch (error) {
       console.log(error);
-      return res.status(500).json({ message: 'Erro do servidor', error });
+      return res.status(500).json({ message: 'Erro do servidor' });
     }
   },
   form_edit: async (req, res, next) => {
@@ -47,7 +46,7 @@ const controller = {
 
       const user = await getUserById(id);
       if (usuarioAdmin || usuarioLogado) {
-        return res.status(200).json({
+        return res.status(200).send({
           title: '| Editar usuário',
           user,
           usuarioLogado,
@@ -57,7 +56,7 @@ const controller = {
       }
     } catch (error) {
       console.log(error);
-      return res.status(500).json({ message: 'Erro do servidor', error });
+      return res.status(500).send({ message: 'Erro do servidor', error });
     }
   },
   edit: async (req, res, next) => {
