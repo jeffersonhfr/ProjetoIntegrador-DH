@@ -6,17 +6,6 @@ const UsuarioCard = ({ usuario }) => {
   const isAdmin = true;
   const [user, setUser] = useState([]);
 
-  // const { id } = useParams();
-  // const apiURL = "http://localhost:3333/visualizarUsuario/:" + id;
-  // useEffect(() => {
-  //   fetch(apiURL)
-  //     .then((res) => res.json())
-  //     .then((res) =>
-  //       setTimeout(() => {
-  //         setUser(res.user);
-  //       })
-  //     );
-  // }, []);
   useEffect(() => {
     fetch("http://localhost:3333/listarUsuarios")
       .then((res) => res.json())
@@ -48,17 +37,14 @@ const UsuarioCard = ({ usuario }) => {
           {isLogado && isAdmin ? (
             <>
               <div className="btao-Container">
-                <a
-                  href="/visualizarUsuario/<%= user[i].id %>"
-                  className="btao-form"
-                >
+                <a href={"/visualizarUsuario/" + user.id} className="btao-form">
                   <button className="btao-Container__btao-visualizar listarUsuarios">
                     <i className="bi bi-eye-fill"></i>
                   </button>
                 </a>
 
                 <a
-                  href="/listarUsuarios/<%= user[i].id %>/editar"
+                  href={"/visualizarUsuario/" + user.id + "/editar"}
                   className="btao-form"
                 >
                   <button className="btao-Container__btao-editar listarUsuarios">
@@ -67,7 +53,7 @@ const UsuarioCard = ({ usuario }) => {
                 </a>
 
                 <form
-                  action="/listarUsuarios/<%= user[i].id %>/delete"
+                  action={"/visualizarUsuario/" + user.id + "/delete"}
                   className="btao-form"
                   method="POST"
                 >
