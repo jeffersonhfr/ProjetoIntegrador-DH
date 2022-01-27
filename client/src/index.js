@@ -1,34 +1,35 @@
-import { render } from 'react-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { render } from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Páginas
-import NotFound from './pages/404';
-import Home from './pages/Home';
-import Pacotes from './pages/Pacotes';
-import Pacote from './pages/Pacote';
-import Pesquisa from './pages/Pesquisa';
-import Cadastro from './pages/Cadastro';
-import CategoriaAdd from './pages/CategoriaAdd';
-import CategoriaEdit from './pages/CategoriaEdit';
-import Perfil from './pages/Perfil';
-import PerfilEdit from './pages/PerfilEdit';
-import Sobre from './pages/Sobre';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Ajuda from './pages/Ajuda';
-import AjudaEdit from './pages/AjudaEdit';
-import CheckoutSucesso from './pages/CheckoutSucesso';
-import Checkout from './pages/Checkout';
-import ListarUsuarios from './pages/ListarUsuarios';
-import RecuperarSenha from './pages/RecuperarSenha';
+import NotFound from "./pages/404";
+import Home from "./pages/Home";
+import Pacotes from "./pages/Pacotes";
+import Pacote from "./pages/Pacote";
+import Pesquisa from "./pages/Pesquisa";
+import Cadastro from "./pages/Cadastro";
+import CategoriaAdd from "./pages/CategoriaAdd";
+import CategoriaEdit from "./pages/CategoriaEdit";
+import Perfil from "./pages/Perfil";
+import PerfilEdit from "./pages/PerfilEdit";
+import Sobre from "./pages/Sobre";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Ajuda from "./pages/Ajuda";
+import AjudaEdit from "./pages/AjudaEdit";
+import CheckoutSucesso from "./pages/CheckoutSucesso";
+import Checkout from "./pages/Checkout";
+import ListarUsuarios from "./pages/ListarUsuarios";
+import VisualizarUsuario from "./pages/VisualizarUsuario";
+import RecuperarSenha from "./pages/RecuperarSenha";
 //Para teste
-import users from './users';
-import Login from './pages/Login';
-import PacoteEdit from './pages/PacoteEdit';
+import users from "./users";
+import Login from "./pages/Login";
+import PacoteEdit from "./pages/PacoteEdit";
 
 const usuarioLogado = users[0];
 
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 
 render(
   <>
@@ -56,10 +57,12 @@ render(
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/listarUsuarios" element={<ListarUsuarios />} />
         <Route path="/RecuperarSenha" element={<RecuperarSenha />} />
+        <Route path="/VisualizarUsuario/:id" element={<VisualizarUsuario />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
     <Footer />
   </>,
-  rootElement,
+  rootElement
 );
