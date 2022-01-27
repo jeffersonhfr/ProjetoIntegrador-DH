@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import auth from '../../storage/auth';
 
 import menuToggle from './scripts/menu';
-const Header = () => {
+const HeaderHome = () => {
   const [token, setToken] = useState();
 
   useEffect(() => {
     const tokenAux = auth.getToken();
+
     if (tokenAux) setToken(tokenAux);
   }, []);
 
@@ -14,8 +15,8 @@ const Header = () => {
 
   let header = (
     <>
-      <header className="cabecalho-paginas">
-        <div className="header_container">
+      <header className="cabecalho">
+        <div className="cabecalho__sobreposicao">
           <div className="container cabecalho__navegacao">
             <a href="/">
               <div>
@@ -208,4 +209,4 @@ const Header = () => {
   return <>{header}</>;
 };
 
-export default Header;
+export default HeaderHome;
