@@ -6,6 +6,17 @@ const UsuarioCard = ({ usuario }) => {
   const isAdmin = true;
   const [user, setUser] = useState([]);
 
+  const openModal = () => {
+    document.getElementById("modal").classList.add("modal-active");
+    document.body.classList.add("scrollNone");
+  };
+
+  function closeModal() {
+    document.getElementById("modal").classList.remove("modal-active");
+    document.body.classList.remove("scrollNone");
+  }
+  const { id } = useParams();
+
   useEffect(() => {
     fetch("http://localhost:3333/listarUsuarios")
       .then((res) => res.json())
@@ -44,7 +55,7 @@ const UsuarioCard = ({ usuario }) => {
                 </a>
 
                 <a
-                  href={"/visualizarUsuario/" + user.id + "/editar"}
+                  href={"/visualizarEdit/" + user.id + "/editar"}
                   className="btao-form"
                 >
                   <button className="btao-Container__btao-editar listarUsuarios">
@@ -52,15 +63,35 @@ const UsuarioCard = ({ usuario }) => {
                   </button>
                 </a>
 
-                <form
-                  action={"/visualizarUsuario/" + user.id + "/delete"}
-                  className="btao-form"
-                  method="POST"
-                >
+                <a onClick={openModal} className="btao-form">
                   <button className="btao-Container__btao-deletar listarUsuarios">
                     <i className="bi bi-trash-fill"></i>
                   </button>
-                </form>
+                </a>
+
+                <div className="modal" id="modal">
+                  <div className="modal-alert">
+                    <div className="modal-conteudo">
+                      <h1 className="tituloModal tituloAlert">
+                        Deseja realmente excluir {user.nome}?
+                      </h1>
+                      <form
+                        action={"/listarUsuarios/" + id + "/delete"}
+                        method="POST"
+                      >
+                        <button type="submit" className="btao-pacote btn-alert">
+                          Sim
+                        </button>
+                        <a
+                          onClick={closeModal}
+                          className="btao-pacote btn-cancel"
+                        >
+                          Não
+                        </a>
+                      </form>
+                    </div>
+                  </div>
+                </div>
               </div>
             </>
           ) : null}
