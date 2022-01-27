@@ -1,11 +1,10 @@
-import React from 'react';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import React from "react";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const AdicionarPacote = () => {
   return (
     <>
-      />
       <div className="container">
         <form
           action=""
@@ -111,7 +110,7 @@ const AdicionarPacote = () => {
                     name="PassagemAerea"
                     id="PassagemAerea"
                     value="1"
-                  />{' '}
+                  />{" "}
                   Sim
                 </div>
                 <div className="radio-opt">
@@ -120,7 +119,7 @@ const AdicionarPacote = () => {
                     name="PassagemAerea"
                     id="PassagemAerea"
                     value="0"
-                  />{' '}
+                  />{" "}
                   Não
                 </div>
               </div>
@@ -183,7 +182,6 @@ const AdicionarPacote = () => {
           </button>
         </form>
       </div>
-      
     </>
   );
 };

@@ -1,12 +1,11 @@
-import React from 'react';
-import Header from '../../components/Header';
-import AdicionaisList from '../../components/AdicionaisList';
-import Footer from '../../components/Footer';
+import React from "react";
+import Header from "../../components/Header";
+import AdicionaisList from "../../components/AdicionaisList";
+import Footer from "../../components/Footer";
 
 const AdicionalList = () => {
   return (
     <>
-      />
       <section className="container container-pacotes">
         {isLogado && isAdmin ? (
           <div className="title-bar">
@@ -25,7 +24,6 @@ const AdicionalList = () => {
           <AdicionaisList />
         </div>
       </section>
-      
     </>
   );
 };

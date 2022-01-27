@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Categoria from "../Categoria";
 
 const Footer = () => {
   let facebook = "/assets/img/facebook.png";
   let instagram = "/assets/img/instagram.png";
   let twitter = "/assets//img/twitter.png";
+
+  const [categoria, setcategoria] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3333/listarCategoria")
+      .then((res) => res.json())
+      .then((res) => setcategoria(res.categoria));
+  }, []);
 
   return (
     <footer>
@@ -12,22 +21,23 @@ const Footer = () => {
           <div className="footer__lista">
             <h5 className="footer__lista__titulo">Viagens Temáticas</h5>
 
-            {/* COLOCAR O MAP */}
-            <ul>
-              <li className="footer__lista__link"><a>Aventura</a></li>
-              <li className="footer__lista__link"><a>Família</a></li>
-              <li className="footer__lista__link"><a>Histórico</a></li>
-              <li className="footer__lista__link"><a>Neve</a> </li>
-              <li className="footer__lista__link"><a>Praia</a></li>
-              <li className="footer__lista__link"><a>Romance</a></li>
-            </ul>
+            {categoria.map((categoria) => (
+              <li className="footer__lista__link">
+                <a href="/pacotes?destino=nacional">
+                  {categoria.nomeCategoria}
+                </a>
+              </li>
+            ))}
           </div>
 
           <div className="footer__lista">
             <h5 className="footer__lista__titulo">Nossos Pacotes</h5>
             <ul>
               <li>
-                <a href="/pacotes?destino=nacional" className="footer__lista__link">
+                <a
+                  href="/pacotes?destino=nacional"
+                  className="footer__lista__link"
+                >
                   Pacotes Nacionais
                 </a>
               </li>
@@ -83,7 +93,9 @@ const Footer = () => {
           </div>
 
           <div className="footer__lista__contato">
-            <h5 className="footer__lista__titulo">Siga as nossas redes sociais</h5>
+            <h5 className="footer__lista__titulo">
+              Siga as nossas redes sociais
+            </h5>
             <ul>
               <li>
                 <a
@@ -115,7 +127,10 @@ const Footer = () => {
               </li>
 
               <li>
-                <a href="http://twitter.com" className="footer__lista__link social">
+                <a
+                  href="http://twitter.com"
+                  className="footer__lista__link social"
+                >
                   <img
                     alt="twitter"
                     src={twitter}
