@@ -1,11 +1,10 @@
-import React from 'react';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import React from "react";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const AdicionalAdd = () => {
   return (
     <>
-      />
       <div className="container">
         <form action="" method="POST" className="formAdd">
           <article className="addPacote-TitleContainer">
@@ -33,7 +32,6 @@ const AdicionalAdd = () => {
           </button>
         </form>
       </div>
-      
     </>
   );
 };

@@ -1,34 +1,33 @@
-import React, { useState } from 'react';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import React, { useState } from "react";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const CategoriaAdd = () => {
-  const cardpreview = document.querySelector('#cardpreview');
+  const cardpreview = document.querySelector("#cardpreview");
   function trocarCor() {
-    let colorPicker = document.querySelector('#corCategoria').value;
-    let corSelecionada = colorPicker + 'aa';
+    let colorPicker = document.querySelector("#corCategoria").value;
+    let corSelecionada = colorPicker + "aa";
     cardpreview.style.background = corSelecionada;
   }
 
-  const h1Preview = document.querySelector('#h1Preview');
-  const nomeCategoria = document.querySelector('#nomeCategoria');
+  const h1Preview = document.querySelector("#h1Preview");
+  const nomeCategoria = document.querySelector("#nomeCategoria");
   function mudarTexto() {
     h1Preview.innerText = nomeCategoria.value;
   }
 
   var loadFile = function (e) {
-    var output = document.getElementById('imgPreview');
+    var output = document.getElementById("imgPreview");
     output = URL.createObjectURL(e.target.files[0]);
     console.log(output);
 
     document
-      .getElementById('imgPreview')
-      .setAttribute('style', 'background-image: url(' + output + ')');
+      .getElementById("imgPreview")
+      .setAttribute("style", "background-image: url(" + output + ")");
   };
 
   return (
     <>
-      />
       <div className="container">
         <form
           action=""
@@ -56,7 +55,7 @@ const CategoriaAdd = () => {
                     <a
                       id="cardpreview"
                       href="#"
-                      style={{ backgroundColor: '#000000aa' }}
+                      style={{ backgroundColor: "#000000aa" }}
                     >
                       <h1 id="h1Preview">Nome Categoria</h1>
                     </a>
@@ -71,7 +70,7 @@ const CategoriaAdd = () => {
               </h2>
               <nav
                 className="addPacote-ImgContainer"
-                style={{ position: 'relative' }}
+                style={{ position: "relative" }}
               >
                 <ul className="addPacote-ImgContainer__Img-list">
                   <input
@@ -106,7 +105,7 @@ const CategoriaAdd = () => {
                     name="corCategoria"
                     id="corCategoria"
                     value=""
-                    style={({ width: '100px' }, { height: '100px' })}
+                    style={({ width: "100px" }, { height: "100px" })}
                   />
                 </li>
               </ul>
@@ -122,8 +121,6 @@ const CategoriaAdd = () => {
           </button>
         </form>
       </div>
-
-      
     </>
   );
 };
