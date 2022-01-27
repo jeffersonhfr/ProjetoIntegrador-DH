@@ -21,6 +21,7 @@ import CheckoutSucesso from "./pages/CheckoutSucesso";
 import Checkout from "./pages/Checkout";
 import ListarUsuarios from "./pages/ListarUsuarios";
 import VisualizarUsuario from "./pages/VisualizarUsuario";
+import VisualizarEdit from "./pages/VisualizarEdit";
 import RecuperarSenha from "./pages/RecuperarSenha";
 //Para teste
 import users from "./users";
@@ -58,6 +59,7 @@ render(
         <Route path="/listarUsuarios" element={<ListarUsuarios />} />
         <Route path="/RecuperarSenha" element={<RecuperarSenha />} />
         <Route path="/VisualizarUsuario/:id" element={<VisualizarUsuario />} />
+        <Route path="/VisualizarEdit/:id/editar" element={<VisualizarEdit />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
