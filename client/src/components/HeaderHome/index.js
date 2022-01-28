@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import auth from '../../storage/auth';
 import userStorage from '../../storage/user';
 import menuToggle from './scripts/menu';
@@ -21,6 +22,7 @@ const HeaderHome = () => {
   const handleLogout = () => {
     auth.removeToken();
     userStorage.removeUser();
+    window.location.reload();
   };
 
   let header = (
@@ -28,7 +30,7 @@ const HeaderHome = () => {
       <header className="cabecalho">
         <div className="cabecalho__sobreposicao">
           <div className="container cabecalho__navegacao">
-            <a href="/">
+            <Link to="/">
               <div>
                 <img
                   alt="Logo Viagem.com"
@@ -39,7 +41,7 @@ const HeaderHome = () => {
                   height="51px"
                 />
               </div>
-            </a>
+            </Link>
             <nav className="cabecalho__menu-mobile">
               <input
                 className="cabecallho__menu-hamburguer"
@@ -52,60 +54,62 @@ const HeaderHome = () => {
                   <div className="menu-hamburguer__menu-mobile">
                     <ul>
                       <li>
-                        <a href="/pacotes">Viagens Temáticas</a>
+                        <Link to="/pacotes">Viagens Temáticas</Link>
                       </li>
                       <li>
-                        <a href="/pacotes">Nossos Pacotes</a>
+                        <Link to="/pacotes">Nossos Pacotes</Link>
                       </li>
                       <li>
-                        <a href="/sobre">Sobre Nós</a>
+                        <Link to="/sobre">Sobre Nós</Link>
                       </li>
                       <li>
-                        <a href="/ajuda">Ajuda</a>
+                        <Link to="/ajuda">Ajuda</Link>
                       </li>
 
                       {token ? (
                         <>
                           <li className="separador"></li>
                           <li>
-                            <a href="/perfil">Meu Perfil</a>
+                            <Link to="/perfil">Meu Perfil</Link>
                           </li>
                           <li>
-                            <a href="/minhas-viagens">Minhas Viagens</a>
+                            <Link to="/minhas-viagens">Minhas Viagens</Link>
                           </li>
 
                           {user?.admin && (
                             <>
                               <li className="separador"></li>
                               <li>
-                                <a href="/listarUsuarios">Gestão de Usuários</a>
+                                <Link to="/listarUsuarios">
+                                  Gestão de Usuários
+                                </Link>
                               </li>
                               <li>
-                                <a href="/minhas-viagens/todos-pedidos">
+                                <Link to="/minhas-viagens/todos-pedidos">
                                   Visualizar Todos os Pedidos
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a href="/listarCategoria">
+                                <Link to="/listarCategoria">
                                   Cadastrar Categorias
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a href="/listarAdicional">
+                                <Link to="/listarAdicional">
                                   Cadastrar Adicionais
-                                </a>
+                                </Link>
                               </li>
                             </>
                           )}
                           <li className="login">
-                            <a href="" onClick={handleLogout}>
+                            <Link to="" onClick={handleLogout}>
                               Logout
-                            </a>
+                            </Link>
                           </li>
                         </>
                       ) : (
                         <li className="login">
-                          <a href="/login">Login</a>
+                          <Link to="/login">Login</Link>
                         </li>
                       )}
                     </ul>
@@ -117,16 +121,16 @@ const HeaderHome = () => {
             <nav className="cabecalho__menu-desk">
               <ul className="flex">
                 <li>
-                  <a href="/pacotes">Viagens Temáticas</a>
+                  <Link to="/pacotes">Viagens Temáticas</Link>
                 </li>
                 <li>
-                  <a href="/pacotes">Nossos Pacotes</a>
+                  <Link to="/pacotes">Nossos Pacotes</Link>
                 </li>
                 <li>
-                  <a href="/sobre">Sobre Nós</a>
+                  <Link to="/sobre">Sobre Nós</Link>
                 </li>
                 <li>
-                  <a href="/ajuda">Ajuda</a>
+                  <Link to="/ajuda">Ajuda</Link>
                 </li>
 
                 {token ? (
@@ -144,7 +148,7 @@ const HeaderHome = () => {
                   </>
                 ) : (
                   <li>
-                    <a href="/login">Login</a>
+                    <Link to="/login">Login</Link>
                   </li>
                 )}
               </ul>
@@ -157,35 +161,39 @@ const HeaderHome = () => {
                 <div className="menu__desk-conteudo">
                   <ul>
                     <li>
-                      <a href="/perfil">Meu Perfil</a>
+                      <Link to="/perfil">Meu Perfil</Link>
                     </li>
                     <li>
-                      <a href="/minhas-viagens">Minhas Viagens</a>
+                      <Link to="/minhas-viagens">Minhas Viagens</Link>
                     </li>
 
                     {user?.admin && (
                       <>
                         <li className="separador"></li>
                         <li>
-                          <a href="/listarUsuarios">Gestão de Usuários</a>
+                          <Link to="/listarUsuarios">Gestão de Usuários</Link>
                         </li>
                         <li>
-                          <a href="/minhas-viagens/todos-pedidos">
+                          <Link to="/minhas-viagens/todos-pedidos">
                             Visualizar Todos os Pedidos
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a href="/listarCategoria">Cadastrar Categorias</a>
+                          <Link to="/listarCategoria">
+                            Cadastrar Categorias
+                          </Link>
                         </li>
                         <li>
-                          <a href="/listarAdicional">Cadastrar Adicionais</a>
+                          <Link to="/listarAdicional">
+                            Cadastrar Adicionais
+                          </Link>
                         </li>
                       </>
                     )}
                     <li className="login">
-                      <a href="" onClick={handleLogout}>
+                      <Link to="" onClick={handleLogout}>
                         Logout
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
