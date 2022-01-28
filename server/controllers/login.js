@@ -19,10 +19,10 @@ const controller = {
           res.status(400).send("Usuario nao encontrado!");
         }
         if (!bcrypt.compareSync(senha, user.senha)) {
-         res.status(400).sen("Senha incorreta!")
+         res.status(400).send("Senha incorreta!")
         }
        
-        const token = jwt.sign({id:user.id},secret);
+        const token = jwt.sign({id:user.id,admin:(user.admin)},secret);
         res.cookie("token",token);
         user.senha = undefined; 
     
