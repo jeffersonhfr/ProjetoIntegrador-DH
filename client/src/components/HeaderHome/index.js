@@ -3,7 +3,7 @@ import auth from '../../storage/auth';
 import userStorage from '../../storage/user';
 import menuToggle from './scripts/menu';
 
-const Header = () => {
+const HeaderHome = () => {
   const [token, setToken] = useState();
   const [user, setUser] = useState();
 
@@ -20,8 +20,8 @@ const Header = () => {
 
   let header = (
     <>
-      <header className="cabecalho-paginas">
-        <div className="header_container">
+      <header className="cabecalho">
+        <div className="cabecalho__sobreposicao">
           <div className="container cabecalho__navegacao">
             <a href="/">
               <div>
@@ -191,4 +191,4 @@ const Header = () => {
   return <>{header}</>;
 };
 
-export default Header;
+export default HeaderHome;

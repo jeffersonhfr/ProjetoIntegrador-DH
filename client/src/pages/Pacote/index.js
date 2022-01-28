@@ -3,6 +3,8 @@ import ReactLoading from 'react-loading';
 import { useParams } from 'react-router-dom';
 import TravelImages from '../../components/TravelImages';
 import AdicionaisPacote from '../../components/AdicionaisPacote';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 const Pacote = () => {
   function openModal() {
@@ -21,76 +23,6 @@ const Pacote = () => {
       currency: 'BRL',
     });
   };
-
-  let pack = [
-    {
-      package_images: [
-        {
-          src: '/assets/img/package/Egito.jpg',
-        },
-        {
-          src: '/assets/img/package/Egito1.jpg',
-        },
-        {
-          src: '/assets/img/package/Egito2.jpg',
-        },
-        {
-          src: '/assets/img/package/Egito3.jpg',
-        },
-        {
-          src: '/assets/img/package/Egito4.jpg',
-        },
-        {
-          src: '/assets/img/package/Egito5.jpg',
-        },
-        {
-          src: '/assets/img/package/Egito6.jpg',
-        },
-      ],
-      adicional: [
-        {
-          nomeAdicional: 'City Tour',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: 'Hotel com Piscina Aquecida',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: 'Jantar no Palácio Real',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: 'Entradas para Museus',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: 'Passeio de Camelo',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: 'Wi-fi Grátis',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: 'Café da Manhã',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: 'Refeição Completa',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-      ],
-    },
-  ];
 
   const [pacote, setPacote] = useState();
 
@@ -112,6 +44,7 @@ const Pacote = () => {
 
   return !pacote ? (
     <>
+      <Header />
       <div
         style={{
           display: 'flex',
@@ -127,9 +60,11 @@ const Pacote = () => {
           width={120}
         />
       </div>
+      <Footer />
     </>
   ) : (
     <>
+      <Header />
       <div className="Pacote">
         <article className="Pacote-TitleContainer">
           {pacote.nacional == true ? (
@@ -309,6 +244,7 @@ const Pacote = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
