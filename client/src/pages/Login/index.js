@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import verSenha from './scripts/ver-senha';
 import auth from '../../storage/auth';
 import user from '../../storage/user';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 // import { Container } from './styles';
 
 const Login = ({ erro }) => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const [loginError, setloginError] = useState('');
   const handleSubmit = async (e) => {
-    console.log('clicou');
     e.preventDefault();
     try {
       let res = await fetch('http://localhost:3333/login', {
@@ -21,17 +23,19 @@ const Login = ({ erro }) => {
         body: JSON.stringify({ email, senha }),
       });
       res = await res.json();
-      console.log(res);
       auth.setToken(res.token);
       user.setUser(res.user);
-      window.location.reload();
+      window.location.href = '/';
+      // window.location.reload();
     } catch (error) {
-      console.log(error);
+      // console.log(error);
+      setloginError('Login ou senha inválida!');
     }
   };
 
   return (
     <>
+      <Header />
       <section className="container-login">
         <div className="container-imagem-login">
           <img
@@ -44,6 +48,7 @@ const Login = ({ erro }) => {
         </div>
 
         <div className="container-formulario-login">
+          <div class="container-formulario-login__erro">{loginError}</div>
           <form id="formulario-login" onSubmit={handleSubmit}>
             {erro != null ? (
               <div className="container-formulario-login__erro">{erro}</div>
@@ -101,6 +106,7 @@ const Login = ({ erro }) => {
           </form>
         </div>
       </section>
+      <Footer />
     </>
   );
 };
