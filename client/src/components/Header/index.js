@@ -1,16 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import auth from '../../storage/auth';
-
+import userStorage from '../../storage/user';
 import menuToggle from './scripts/menu';
+
 const Header = () => {
   const [token, setToken] = useState();
+  const [user, setUser] = useState();
 
   useEffect(() => {
     const tokenAux = auth.getToken();
-    if (tokenAux) setToken(tokenAux);
+    const userAux = userStorage.getUser();
+    if (tokenAux) {
+      setToken(tokenAux);
+    }
+    if (userAux) {
+      setUser(userAux);
+    }
   }, []);
-
-  const isAdmin = true;
 
   let header = (
     <>
@@ -53,7 +59,7 @@ const Header = () => {
                         <a href="/ajuda">Ajuda</a>
                       </li>
 
-                      {token && !isAdmin ? (
+                      {token ? (
                         <>
                           <li className="separador"></li>
                           <li>
@@ -62,27 +68,30 @@ const Header = () => {
                           <li>
                             <a href="/minhas-viagens">Minhas Viagens</a>
                           </li>
-                          <li className="login">
-                            <a href="/logout">Logout</a>
-                          </li>
-                        </>
-                      ) : token && isAdmin ? (
-                        <>
-                          <li className="separador"></li>
-                          <li>
-                            <a href="/listarUsuarios">Gestão de Usuários</a>
-                          </li>
-                          <li>
-                            <a href="/minhas-viagens/todos-pedidos">
-                              Visualizar Todos os Pedidos
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/listarCategoria">Cadastrar Categorias</a>
-                          </li>
-                          <li>
-                            <a href="/listarAdicional">Cadastrar Adicionais</a>
-                          </li>
+
+                          {user?.admin && (
+                            <>
+                              <li className="separador"></li>
+                              <li>
+                                <a href="/listarUsuarios">Gestão de Usuários</a>
+                              </li>
+                              <li>
+                                <a href="/minhas-viagens/todos-pedidos">
+                                  Visualizar Todos os Pedidos
+                                </a>
+                              </li>
+                              <li>
+                                <a href="/listarCategoria">
+                                  Cadastrar Categorias
+                                </a>
+                              </li>
+                              <li>
+                                <a href="/listarAdicional">
+                                  Cadastrar Adicionais
+                                </a>
+                              </li>
+                            </>
+                          )}
                           <li className="login">
                             <a href="/logout">Logout</a>
                           </li>
@@ -113,29 +122,16 @@ const Header = () => {
                   <a href="/ajuda">Ajuda</a>
                 </li>
 
-                {token && !isAdmin ? (
+                {token ? (
                   <>
                     <li className="menu__desk" onClick={menuToggle}>
-                      {' '}
                       <img
                         alt="Foto do Usuário"
                         className="menu__desk-foto"
-                        // src={user.avatar}
+                        src={user.avatar}
                         alt="foto de perfil"
                         width="50px"
                         height="50px"
-                      />
-                    </li>
-                  </>
-                ) : token && isAdmin ? (
-                  <>
-                    <li className="menu__desk" onClick={menuToggle}>
-                      {' '}
-                      <img
-                        alt="Foto do Usuário"
-                        className="menu__desk-foto"
-                        // src={perfil}
-                        alt="foto de perfil"
                       />
                     </li>
                   </>
@@ -148,7 +144,7 @@ const Header = () => {
             </nav>
           </div>
 
-          {token && isAdmin ? (
+          {token && (
             <>
               <div className="container flex-end">
                 <div className="menu__desk-conteudo">
@@ -159,6 +155,26 @@ const Header = () => {
                     <li>
                       <a href="/minhas-viagens">Minhas Viagens</a>
                     </li>
+
+                    {user?.admin && (
+                      <>
+                        <li className="separador"></li>
+                        <li>
+                          <a href="/listarUsuarios">Gestão de Usuários</a>
+                        </li>
+                        <li>
+                          <a href="/minhas-viagens/todos-pedidos">
+                            Visualizar Todos os Pedidos
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/listarCategoria">Cadastrar Categorias</a>
+                        </li>
+                        <li>
+                          <a href="/listarAdicional">Cadastrar Adicionais</a>
+                        </li>
+                      </>
+                    )}
                     <li className="login">
                       <a href="/logout">Logout</a>
                     </li>
@@ -166,40 +182,7 @@ const Header = () => {
                 </div>
               </div>
             </>
-          ) : token ? (
-            <>
-              <div className="container flex-end">
-                <div className="menu__desk-conteudo">
-                  <ul>
-                    <li>
-                      <a href="/perfil">Meu Perfil</a>
-                    </li>
-                    <li>
-                      <a href="/minhas-viagens">Minhas Viagens</a>
-                    </li>
-                    <li className="separador"></li>
-                    <li>
-                      <a href="/listarUsuarios">Gestão de Usuários</a>
-                    </li>
-                    <li>
-                      <a href="/minhas-viagens/todos-pedidos">
-                        Visualizar Todos os Pedidos
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/listarCategoria">Cadastrar Categorias</a>
-                    </li>
-                    <li>
-                      <a href="/listarAdicional">Cadastrar Adicionais</a>
-                    </li>
-                    <li className="login">
-                      <a href="/logout">Logout</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </>
-          ) : null}
+          )}
         </div>
       </header>
     </>

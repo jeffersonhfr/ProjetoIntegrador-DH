@@ -47,24 +47,6 @@ const Routes = () => {
     if (userAux) {
       setUser(userAux);
     }
-
-    // fetch('http://localhost:3333/check-login', {
-    //   method: 'post',
-    //   headers: {
-    //     Accept: 'application/json',
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({ token: tokenAux }),
-    // })
-    //   .then((res) => res.json())
-    //   .then((res) => {
-    //     console.log(res);
-    //     if (!res.error) {
-    //       setToken(tokenAux);
-    //     } else {
-    //       auth.removeToken();
-    //     }
-    //   });
   }, []);
 
   return (
