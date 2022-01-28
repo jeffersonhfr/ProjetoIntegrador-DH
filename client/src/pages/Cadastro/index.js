@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import Header from '../../components/Header';
-import Filtro from '../../components/Filtro';
-import TravelCard from '../../components/TravelCard';
-import Footer from '../../components/Footer';
+import React, { useState } from "react";
+import Header from "../../components/Header";
+import Filtro from "../../components/Filtro";
+import TravelCard from "../../components/TravelCard";
+import Footer from "../../components/Footer";
 
 const Cadastro = () => {
   return (
     <>
-      />
       <section className="container-login">
         <div className="container-imagem-login">
           <img
@@ -62,12 +61,12 @@ const Cadastro = () => {
             <div className="container-aceite">
               <input type="checkbox" id="aceite" name="aceite" required />
               <label htmlFor="aceite">
-                Li e aceito os{' '}
+                Li e aceito os{" "}
                 <a href="/termos-de-servico" className="aceite__termos-servico">
-                  {' '}
+                  {" "}
                   Termos e condições
-                </a>{' '}
-                de serviço{' '}
+                </a>{" "}
+                de serviço{" "}
               </label>
             </div>
 
@@ -86,8 +85,6 @@ const Cadastro = () => {
           </form>
         </div>
       </section>
-
-      
     </>
   );
 };
