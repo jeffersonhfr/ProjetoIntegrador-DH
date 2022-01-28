@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ReactLoading from 'react-loading';
 import { useParams } from 'react-router-dom';
-import TravelImages from '../../components/TravelImages';
 import AdicionaisPacote from '../../components/AdicionaisPacote';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import TravelImages from '../../components/TravelImages';
 
 const Pacote = () => {
   function openModal() {
@@ -34,7 +32,7 @@ const Pacote = () => {
       .then((res) =>
         setTimeout(() => {
           setPacote(res.pacote[0]);
-        }, 1500),
+        }, 1000),
       );
   }, []);
 
@@ -44,7 +42,6 @@ const Pacote = () => {
 
   return !pacote ? (
     <>
-      <Header />
       <div
         style={{
           display: 'flex',
@@ -60,11 +57,9 @@ const Pacote = () => {
           width={120}
         />
       </div>
-      <Footer />
     </>
   ) : (
     <>
-      <Header />
       <div className="Pacote">
         <article className="Pacote-TitleContainer">
           {pacote.nacional == true ? (
@@ -244,7 +239,6 @@ const Pacote = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

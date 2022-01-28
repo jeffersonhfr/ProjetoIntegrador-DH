@@ -35,7 +35,6 @@ const Login = ({ erro }) => {
 
   return (
     <>
-      <Header />
       <section className="container-login">
         <div className="container-imagem-login">
           <img
@@ -106,7 +105,6 @@ const Login = ({ erro }) => {
           </form>
         </div>
       </section>
-      <Footer />
     </>
   );
 };

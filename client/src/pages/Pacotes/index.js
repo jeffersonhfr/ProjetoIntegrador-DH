@@ -1,10 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Filtro from '../../components/Filtro';
 import TravelCard from '../../components/TravelCard';
+import auth from '../../storage/auth';
+import userStorage from '../../storage/user';
 
 const Pacotes = () => {
-  const [isLogado, setIsLogado] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(true);
+  const [token, setToken] = useState();
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    const tokenAux = auth.getToken();
+    const userAux = userStorage.getUser();
+    if (tokenAux) {
+      setToken(tokenAux);
+    }
+    if (userAux) {
+      setUser(userAux);
+    }
+  }, []);
 
   let tituloPacote = 'Nossos Pacotes';
   let pacotes = [
@@ -413,21 +427,25 @@ const Pacotes = () => {
   ];
   return (
     <>
-     
       <div className="container container-pacotes">
-        {isLogado && isAdmin ? (
-          <div className="title-bar">
-            <h1>{tituloPacote}</h1>
-            <a href="pacotes/adicionar" className="travel-cards__btao">
-              Adicionar Pacote
-            </a>
-          </div>
+        {token && user?.admin ? (
+          <>
+            <div className="title-bar">
+              <h1>{tituloPacote}</h1>
+              <Link to="./adicionar" className="travel-cards__btao">
+                Adicionar Pacote
+              </Link>
+            </div>
+          </>
         ) : (
-          <div className="title-bar">
-            <h1>{tituloPacote}</h1>
-            <Filtro />
-          </div>
+          <>
+            <div className="title-bar">
+              <h1>{tituloPacote}</h1>
+              <Filtro />
+            </div>
+          </>
         )}
+
         <div className="travel-cards">
           {pacotes.map((Pacotes) => {
             return (
@@ -438,8 +456,6 @@ const Pacotes = () => {
           })}
         </div>
       </div>
-
-      
     </>
   );
 };

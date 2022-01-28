@@ -9,12 +9,10 @@ import HeaderHome from '../../components/HeaderHome';
 const Home = () => {
   return (
     <>
-      <HeaderHome />
       <BarraDeBusca />
       <Categorias />
       <Promocoes />
       <NewsLetter />
-      <Footer />
     </>
   );
 };
