@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import Categoria from "../Categoria";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   let facebook = "/assets/img/facebook.png";
@@ -9,7 +9,7 @@ const Footer = () => {
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3333")
+    fetch("http://localhost:3333/listarCategoria")
       .then((res) => res.json())
       .then((res) => setCategorias(res.categorias));
   }, []);
@@ -22,9 +22,9 @@ const Footer = () => {
 
             {categorias.map((categorias) => (
               <li className="footer__lista__link">
-                <a href="/pacotes?destino=nacional">
-                  {categorias.nomeCategoria}
-                </a>
+                <Link to="/pacotes?destino=nacional">
+                  {categoria.nomeCategoria}
+                </Link>
               </li>
             ))}
           </div>
@@ -33,20 +33,20 @@ const Footer = () => {
             <h5 className="footer__lista__titulo">Nossos Pacotes</h5>
             <ul>
               <li>
-                <a
-                  href="/pacotes?destino=nacional"
+                <Link
+                  to="/pacotes?destino=nacional"
                   className="footer__lista__link"
                 >
                   Pacotes Nacionais
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/pacotes?destino=internacional"
+                <Link
+                  to="/pacotes?destino=internacional"
                   className="footer__lista__link"
                 >
                   Pacotes Internacionais
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -55,14 +55,14 @@ const Footer = () => {
             <h5 className="footer__lista__titulo">Sobre Nós</h5>
             <ul>
               <li>
-                <a href="/sobre#historia" className="footer__lista__link">
+                <Link to="/sobre#historia" className="footer__lista__link">
                   História da Empresa
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/sobre#fale" className="footer__lista__link">
+                <Link to="/sobre#fale" className="footer__lista__link">
                   Fale conosco
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -71,22 +71,22 @@ const Footer = () => {
             <h5 className="footer__lista__titulo">Ajuda</h5>
             <ul>
               <li>
-                <a href="/ajuda#duvidas" className="footer__lista__link">
+                <Link to="/ajuda#duvidas" className="footer__lista__link">
                   Dúvidas Frequentes
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/ajuda#cancelamentos" className="footer__lista__link">
+                <Link to="/ajuda#cancelamentos" className="footer__lista__link">
                   Cancelamentos
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/ajuda#politica-privacidade"
+                <Link
+                  to="/ajuda#politica-privacidade"
                   className="footer__lista__link"
                 >
                   Políticas de Privacidade
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -97,8 +97,8 @@ const Footer = () => {
             </h5>
             <ul>
               <li>
-                <a
-                  href="http://facebook.com"
+                <Link
+                  to="http://facebook.com"
                   className="footer__lista__link social"
                 >
                   <img
@@ -108,11 +108,11 @@ const Footer = () => {
                     width="40px"
                     height="40px"
                   />
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="http://integram.com"
+                <Link
+                  to="http://integram.com"
                   className="footer__lista__link social"
                 >
                   <img
@@ -122,12 +122,12 @@ const Footer = () => {
                     width="40px"
                     height="40px"
                   />
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
-                  href="http://twitter.com"
+                <Link
+                  to="http://twitter.com"
                   className="footer__lista__link social"
                 >
                   <img
@@ -137,7 +137,7 @@ const Footer = () => {
                     width="40px"
                     height="40px"
                   />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

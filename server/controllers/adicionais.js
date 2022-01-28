@@ -32,12 +32,12 @@ const controller = {
     try{
     const { id } = req.params;
     if (await getAddtionalsById(id) == null)
-      return res.status(404).send("essse adicional não existe!");
+      return res.status(404).send({message: "essse adicional não existe!"});
      await updateAddtionals(id, req.body);
     
     return res.status(204).send()
     }catch(erro){
-      return res.status(500).send('Erro do servidor');
+      return res.status(500).send({message: 'Erro do servidor'});
     }
   },
   destroy: async (req, res, next) => {
@@ -46,12 +46,12 @@ const controller = {
       const { id } = req.params;
       const destroy = await destroyAddtionals(id);
       if (await getAddtionalsById(id) == null)
-        return res.status(404).send("essse adicional não existe!");
+        return res.status(404).send({message: "essse adicional não existe!"});
     
       return res.status(204).send();
 
     }catch(err){
-      res.status(500).send({erro:'Ops... deu ruim...'});
+      res.status(500).send({message:'Ops... deu ruim...'});
     }
     }
 };

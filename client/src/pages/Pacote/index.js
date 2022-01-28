@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ReactLoading from "react-loading";
 import { useParams } from "react-router-dom";
-import TravelImages from "../../components/TravelImages";
 import AdicionaisPacote from "../../components/AdicionaisPacote";
+import TravelImages from "../../components/TravelImages";
 
 const Pacote = () => {
   function openModal() {
@@ -32,7 +32,7 @@ const Pacote = () => {
       .then((res) =>
         setTimeout(() => {
           setPacote(res.pacote[0]);
-        }, 1500)
+        }, 1000)
       );
   }, []);
 

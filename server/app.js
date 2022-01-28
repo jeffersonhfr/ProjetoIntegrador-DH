@@ -55,10 +55,9 @@ app.use('/checkout', checkoutRouter); //JSON
 app.use('/perfil', perfilRouter); //JSON
 
  app.use('/login', loginRouter);
-// app.use('/recuperarSenha', recuperarSenhaRouter);
-// app.use('/logout', logoutRouter);
+ //app.use('/recuperarSenha', recuperarSenhaRouter);
+ //app.use('/logout', logoutRouter);
 
-// A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
 app.use('/usuarios', listarUsuariosRouter); //JSON
 // app.use('/listarUsuarios', adminMiddleware, listarUsuariosRouter);
 
