@@ -36,9 +36,7 @@ const Pacote = () => {
       );
   }, []);
 
-  console.log(pacote);
   const pacotes = [pacote];
-  console.log(pacotes);
 
   return !pacote ? (
     <>

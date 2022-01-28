@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const TravelCard = ({ pacotes }) => {
+const TravelCard = ({ pacotes, token, user }) => {
   let valor = (valor) => {
     return valor.toLocaleString('pt-BR', {
       style: 'currency',
       currency: 'BRL',
     });
   };
-
-  const [isLogado, setIsLogado] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(true);
 
   const openModal = () => {
     document.getElementById('modal').classList.add('modal-active');
@@ -29,7 +26,7 @@ const TravelCard = ({ pacotes }) => {
           <img
             className="travel-card__imagem"
             alt="Imagem do destino"
-            src={pacotes.package_Images[0].src}
+            src={pacotes.package_images[0].src}
           />
         </div>
         <div className="travel-card__info-box">
@@ -61,14 +58,14 @@ const TravelCard = ({ pacotes }) => {
                 </p>
               )}
 
-              {pacotes.adicionais[0] ? (
+              {pacotes.adicional[0] && (
                 <li className="Propriedade Bonus">
                   <p>
                     <img alt="Icone Check" src="/assets/img/check.png" />
-                    {pacotes.adicionais[0].nomeAdicional}
+                    {pacotes.adicional[0].nomeAdicional}
                   </p>
                 </li>
-              ) : null}
+              )}
             </ul>
           </div>
           <div>
@@ -104,7 +101,8 @@ const TravelCard = ({ pacotes }) => {
             </Link>
           </div>
         </div>
-        {isLogado && isAdmin ? (
+
+        {token && user?.admin && (
           <div className="btao-Container">
             <Link to={'./' + pacotes.id + '/edit'} className="btao-form">
               <button className="btao-Container__btao-editar listarPacotes">
@@ -117,7 +115,7 @@ const TravelCard = ({ pacotes }) => {
               </button>
             </a>
           </div>
-        ) : null}
+        )}
       </div>
 
       <div className="modal" id="modal">
