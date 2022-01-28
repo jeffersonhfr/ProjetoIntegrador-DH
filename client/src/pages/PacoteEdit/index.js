@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-import TravelImagesEdit from "../../components/TravelImagesEdit";
+import TravelImagesEdit from '../../components/TravelImagesEdit';
 
 // import { Container } from './styles';
 
@@ -16,14 +16,14 @@ const PacoteEdit = () => {
   const [pacote, setPacote] = useState();
 
   const { id } = useParams();
-  const apiURL = "http://localhost:3333/pacotes/" + id;
+  const apiURL = 'http://localhost:3333/pacotes/' + id;
   useEffect(() => {
     fetch(apiURL)
       .then((res) => res.json())
       .then((res) =>
         setTimeout(() => {
           setPacote(res.pacote[0]);
-        })
+        }),
       );
   }, []);
 
@@ -47,7 +47,7 @@ const PacoteEdit = () => {
 
           <nav
             className="addPacote-ImgContainer"
-            style={{ position: "relative" }}
+            style={{ position: 'relative' }}
           >
             <ul className="addPacote-ImgContainer__Img-list">
               <li class="listagemFoto">
@@ -218,7 +218,7 @@ const PacoteEdit = () => {
                       readOnly
                       value="1"
                       defaultChecked
-                    />{" "}
+                    />{' '}
                     Nacional
                   </div>
                   <div className="radio-opt">
@@ -228,7 +228,7 @@ const PacoteEdit = () => {
                       id="nacional"
                       readOnly
                       value="0"
-                    />{" "}
+                    />{' '}
                     Internacional
                   </div>
                 </div>
@@ -241,7 +241,7 @@ const PacoteEdit = () => {
                       id="nacional"
                       readOnly
                       value="1"
-                    />{" "}
+                    />{' '}
                     Nacional
                   </div>
                   <div className="radio-opt">
@@ -252,7 +252,7 @@ const PacoteEdit = () => {
                       readOnly
                       value="0"
                       defaultChecked
-                    />{" "}
+                    />{' '}
                     Internacional
                   </div>
                 </div>
@@ -271,7 +271,7 @@ const PacoteEdit = () => {
                       readOnly
                       value="1"
                       defaultChecked
-                    />{" "}
+                    />{' '}
                     Sim
                   </div>
                   <div className="radio-opt">
@@ -281,7 +281,7 @@ const PacoteEdit = () => {
                       id="passagemAerea"
                       readOnly
                       value="0"
-                    />{" "}
+                    />{' '}
                     Não
                   </div>
                 </div>
@@ -294,7 +294,7 @@ const PacoteEdit = () => {
                       id="passagemAerea"
                       readOnly
                       value="1"
-                    />{" "}
+                    />{' '}
                     Sim
                   </div>
                   <div className="radio-opt">
@@ -305,7 +305,7 @@ const PacoteEdit = () => {
                       readOnly
                       value="0"
                       defaultChecked
-                    />{" "}
+                    />{' '}
                     Não
                   </div>
                 </div>
@@ -351,7 +351,7 @@ const PacoteEdit = () => {
                 {pacotes.categoria.map((e) => {
                   return (
                     <div className="checkbox-opt">
-                      {" "}
+                      {' '}
                       {pacotes.categoria.find((i) => i.id === e.id) ? (
                         <input
                           type="checkbox"

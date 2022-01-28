@@ -4,21 +4,7 @@ import auth from '../../storage/auth';
 import userStorage from '../../storage/user';
 import menuToggle from './scripts/menu';
 
-const Header = () => {
-  const [token, setToken] = useState();
-  const [user, setUser] = useState();
-
-  useEffect(() => {
-    const tokenAux = auth.getToken();
-    const userAux = userStorage.getUser();
-    if (tokenAux) {
-      setToken(tokenAux);
-    }
-    if (userAux) {
-      setUser(userAux);
-    }
-  }, []);
-
+const Header = ({ tokenAdmin, tokenUser }) => {
   const handleLogout = () => {
     userStorage.removeUser();
     auth.removeToken();
@@ -66,7 +52,7 @@ const Header = () => {
                         <Link to="/ajuda">Ajuda</Link>
                       </li>
 
-                      {token ? (
+                      {tokenAdmin ? (
                         <>
                           <li className="separador"></li>
                           <li>
@@ -76,7 +62,7 @@ const Header = () => {
                             <Link to="/minhas-viagens">Minhas Viagens</Link>
                           </li>
 
-                          {user?.admin && (
+                          {tokenUser?.admin && (
                             <>
                               <li className="separador"></li>
                               <li>
@@ -133,13 +119,13 @@ const Header = () => {
                   <Link to="/ajuda">Ajuda</Link>
                 </li>
 
-                {token ? (
+                {tokenAdmin ? (
                   <>
                     <li className="menu__desk" onClick={menuToggle}>
                       <img
                         alt="Foto do Usuário"
                         className="menu__desk-foto"
-                        src={user.avatar}
+                        src={tokenUser.avatar}
                         alt="foto de perfil"
                         width="50px"
                         height="50px"
@@ -155,7 +141,7 @@ const Header = () => {
             </nav>
           </div>
 
-          {token && (
+          {tokenAdmin && (
             <>
               <div className="container flex-end">
                 <div className="menu__desk-conteudo">
@@ -167,7 +153,7 @@ const Header = () => {
                       <Link to="/minhas-viagens">Minhas Viagens</Link>
                     </li>
 
-                    {user?.admin && (
+                    {tokenUser?.admin && (
                       <>
                         <li className="separador"></li>
                         <li>

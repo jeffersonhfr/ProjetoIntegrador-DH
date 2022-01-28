@@ -1,26 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import ReactLoading from 'react-loading';
+import { Link } from 'react-router-dom';
 import Filtro from '../../components/Filtro';
 import TravelCard from '../../components/TravelCard';
-import auth from '../../storage/auth';
-import userStorage from '../../storage/user';
 
-const Pacotes = () => {
-  const [token, setToken] = useState();
-  const [user, setUser] = useState();
-
-  useEffect(() => {
-    const tokenAux = auth.getToken();
-    const userAux = userStorage.getUser();
-    if (tokenAux) {
-      setToken(tokenAux);
-    }
-    if (userAux) {
-      setUser(userAux);
-    }
-  }, []);
-
+const Pacotes = ({ token, user }) => {
   const [pacotes, setPacotes] = useState();
   const [tituloPacote, setTituloPacote] = useState('');
   useEffect(() => {
@@ -29,7 +13,6 @@ const Pacotes = () => {
       .then((res) =>
         setTimeout(() => {
           setPacotes(res.pacotes);
-          console.log(pacotes);
           setTituloPacote(res.tituloPacotes);
         }, 1000),
       );

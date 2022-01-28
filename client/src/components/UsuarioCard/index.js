@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 const UsuarioCard = ({ usuario }) => {
   const isLogado = true;
@@ -7,18 +7,18 @@ const UsuarioCard = ({ usuario }) => {
   const [user, setUser] = useState([]);
 
   const openModal = () => {
-    document.getElementById("modal").classList.add("modal-active");
-    document.body.classList.add("scrollNone");
+    document.getElementById('modal').classList.add('modal-active');
+    document.body.classList.add('scrollNone');
   };
 
   function closeModal() {
-    document.getElementById("modal").classList.remove("modal-active");
-    document.body.classList.remove("scrollNone");
+    document.getElementById('modal').classList.remove('modal-active');
+    document.body.classList.remove('scrollNone');
   }
   const { id } = useParams();
 
   useEffect(() => {
-    fetch("http://localhost:3333/listarUsuarios")
+    fetch('http://localhost:3333/Usuarios')
       .then((res) => res.json())
       .then((res) => setUser(res.user));
   }, []);
@@ -48,14 +48,14 @@ const UsuarioCard = ({ usuario }) => {
           {isLogado && isAdmin ? (
             <>
               <div className="btao-Container">
-                <a href={"/visualizarUsuario/" + user.id} className="btao-form">
+                <a href={'/visualizarUsuario/' + user.id} className="btao-form">
                   <button className="btao-Container__btao-visualizar listarUsuarios">
                     <i className="bi bi-eye-fill"></i>
                   </button>
                 </a>
 
                 <a
-                  href={"/visualizarEdit/" + user.id + "/editar"}
+                  href={'/visualizarEdit/' + user.id + '/editar'}
                   className="btao-form"
                 >
                   <button className="btao-Container__btao-editar listarUsuarios">
@@ -76,7 +76,7 @@ const UsuarioCard = ({ usuario }) => {
                         Deseja realmente excluir {user.nome}?
                       </h1>
                       <form
-                        action={"/listarUsuarios/" + id + "/delete"}
+                        action={'/listarUsuarios/' + id + '/delete'}
                         method="POST"
                       >
                         <button type="submit" className="btao-pacote btn-alert">

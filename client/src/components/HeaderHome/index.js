@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import auth from '../../storage/auth';
 import userStorage from '../../storage/user';
 import menuToggle from './scripts/menu';
 
-const HeaderHome = () => {
-  const [token, setToken] = useState();
-  const [user, setUser] = useState();
-
-  useEffect(() => {
-    const tokenAux = auth.getToken();
-    const userAux = userStorage.getUser();
-    if (tokenAux) {
-      setToken(tokenAux);
-    }
-    if (userAux) {
-      setUser(userAux);
-    }
-  }, []);
-
+const HeaderHome = ({ tokenAdmin, tokenUser }) => {
   const handleLogout = () => {
     auth.removeToken();
     userStorage.removeUser();
@@ -66,7 +52,7 @@ const HeaderHome = () => {
                         <Link to="/ajuda">Ajuda</Link>
                       </li>
 
-                      {token ? (
+                      {tokenAdmin ? (
                         <>
                           <li className="separador"></li>
                           <li>
@@ -76,7 +62,7 @@ const HeaderHome = () => {
                             <Link to="/minhas-viagens">Minhas Viagens</Link>
                           </li>
 
-                          {user?.admin && (
+                          {tokenUser?.admin && (
                             <>
                               <li className="separador"></li>
                               <li>
@@ -133,13 +119,13 @@ const HeaderHome = () => {
                   <Link to="/ajuda">Ajuda</Link>
                 </li>
 
-                {token ? (
+                {tokenAdmin ? (
                   <>
                     <li className="menu__desk" onClick={menuToggle}>
                       <img
                         alt="Foto do Usuário"
                         className="menu__desk-foto"
-                        src={user.avatar}
+                        src={tokenUser.avatar}
                         alt="foto de perfil"
                         width="50px"
                         height="50px"
@@ -155,7 +141,7 @@ const HeaderHome = () => {
             </nav>
           </div>
 
-          {token && (
+          {tokenAdmin && (
             <>
               <div className="container flex-end">
                 <div className="menu__desk-conteudo">
@@ -167,7 +153,7 @@ const HeaderHome = () => {
                       <Link to="/minhas-viagens">Minhas Viagens</Link>
                     </li>
 
-                    {user?.admin && (
+                    {tokenUser?.admin && (
                       <>
                         <li className="separador"></li>
                         <li>

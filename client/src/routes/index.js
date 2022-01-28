@@ -11,6 +11,7 @@ import userStorage from '../storage/user';
 // Páginas
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import CategoriaList from '../components/CategoriaList';
 import NotFound from '../pages/404';
 import Home from '../pages/Home';
 import Pacotes from '../pages/Pacotes';
@@ -37,17 +38,17 @@ import HeaderHome from '../components/HeaderHome';
 import ScrollToTop from '../components/ScrollToTop';
 
 const Routes = () => {
-  const [token, setToken] = useState();
-  const [user, setUser] = useState();
+  const [tokenAdmin, setTokenAdmin] = useState();
+  const [tokenUser, setTokenUser] = useState();
 
   useEffect(() => {
     const tokenAux = auth.getToken();
     const userAux = userStorage.getUser();
     if (tokenAux) {
-      setToken(tokenAux);
+      setTokenAdmin(tokenAux);
     }
     if (userAux) {
-      setUser(userAux);
+      setTokenUser(userAux);
     }
   }, []);
 
@@ -55,65 +56,195 @@ const Routes = () => {
     <BrowserRouter>
       <ScrollToTop>
         <RoutesDOM>
-          {token && (
+          {tokenAdmin && (
             <>
-              {user?.admin && (
+              {tokenUser?.admin && (
                 <>
                   <Route
                     path="/categoria/add"
-                    element={[<Header />, <CategoriaAdd />]}
+                    element={[
+                      <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+                      <CategoriaAdd
+                        tokenAdmin={tokenAdmin}
+                        tokenUser={tokenUser}
+                      />,
+                    ]}
                   />
                   <Route
                     path="/categoria/:id/edit"
-                    element={[<Header />, <CategoriaEdit />]}
+                    element={[
+                      <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+                      <CategoriaEdit
+                        tokenAdmin={tokenAdmin}
+                        tokenUser={tokenUser}
+                      />,
+                    ]}
                   />
                   <Route
                     path="/pacotes/:id/edit"
-                    element={[<Header />, <PacoteEdit />]}
+                    element={[
+                      <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+                      <PacoteEdit
+                        tokenAdmin={tokenAdmin}
+                        tokenUser={tokenUser}
+                      />,
+                    ]}
                   />
                   <Route
                     path="/ajuda/edit"
-                    element={[<Header />, <AjudaEdit />]}
+                    element={[
+                      <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+                      <AjudaEdit
+                        tokenAdmin={tokenAdmin}
+                        tokenUser={tokenUser}
+                      />,
+                    ]}
                   />
                   <Route
                     path="/VisualizarUsuario/:id"
-                    element={[<Header />, <VisualizarUsuario />]}
+                    element={[
+                      <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+                      <VisualizarUsuario
+                        tokenAdmin={tokenAdmin}
+                        tokenUser={tokenUser}
+                      />,
+                    ]}
                   />
                   <Route
                     path="/VisualizarEdit/:id/editar"
-                    element={[<Header />, <VisualizarEdit />]}
+                    element={[
+                      <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+                      <VisualizarEdit
+                        tokenAdmin={tokenAdmin}
+                        tokenUser={tokenUser}
+                      />,
+                    ]}
                   />
                   <Route
                     path="/listarUsuarios"
-                    element={[<Header />, <ListarUsuarios />]}
+                    element={[
+                      <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+                      <ListarUsuarios
+                        tokenAdmin={tokenAdmin}
+                        tokenUser={tokenUser}
+                      />,
+                    ]}
+                  />
+                  <Route
+                    path="/listarCategoria"
+                    element={[
+                      <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+                      <CategoriaList
+                        tokenAdmin={tokenAdmin}
+                        tokenUser={tokenUser}
+                      />,
+                    ]}
                   />
                 </>
               )}
-              <Route path="/perfil" element={[<Header />, <Perfil />]} />
+              <Route
+                path="/perfil"
+                element={[
+                  <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+                  <Perfil tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+                ]}
+              />
               <Route
                 path="/perfil/edit"
-                element={[<Header />, <PerfilEdit />]}
+                element={[
+                  <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+                  <PerfilEdit tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+                ]}
               />
               <Route
                 path="/checkoutSucesso"
-                element={[<Header />, <CheckoutSucesso />]}
+                element={[
+                  <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+                  <CheckoutSucesso
+                    tokenAdmin={tokenAdmin}
+                    tokenUser={tokenUser}
+                  />,
+                ]}
               />
-              <Route path="/checkout" element={[<Header />, <Checkout />]} />
+              <Route
+                path="/checkout"
+                element={[
+                  <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+                  <Checkout tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+                ]}
+              />
             </>
           )}
-          <Route path="/login" element={[<Header />, <Login />]} />
-          <Route path="/cadastro" element={[<Header />, <Cadastro />]} />
-          <Route path="/pesquisa" element={[<Header />, <Pesquisa />]} />
-          <Route path="/pacotes" element={[<Header />, <Pacotes />]} />
-          <Route path="/pacotes/:id" element={[<Header />, <Pacote />]} />
-          <Route path="/sobre" element={[<Header />, <Sobre />]} />
-          <Route path="/ajuda" element={[<Header />, <Ajuda />]} />
+          <Route
+            path="/login"
+            element={[
+              <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+              <Login tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+            ]}
+          />
+          <Route
+            path="/cadastro"
+            element={[
+              <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+              <Cadastro />,
+            ]}
+          />
+          <Route
+            path="/pesquisa"
+            element={[
+              <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+              <Pesquisa />,
+            ]}
+          />
+          <Route
+            path="/pacotes"
+            element={[
+              <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+              <Pacotes tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+            ]}
+          />
+          <Route
+            path="/pacotes/:id"
+            element={[
+              <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+              <Pacote tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+            ]}
+          />
+          <Route
+            path="/sobre"
+            element={[
+              <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+              <Sobre tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+            ]}
+          />
+          <Route
+            path="/ajuda"
+            element={[
+              <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+              <Ajuda token={tokenAdmin} user={tokenUser} />,
+            ]}
+          />
           <Route
             path="/RecuperarSenha"
-            element={[<Header />, <RecuperarSenha />]}
+            element={[
+              <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+              <RecuperarSenha />,
+            ]}
           />
-          <Route path="/" element={[<HeaderHome />, <Home />]} />
-          <Route path="*" element={[<Header />, <NotFound />]} />
+          <Route
+            path="/"
+            element={[
+              <HeaderHome tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+              <Home tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+            ]}
+          />
+          <Route
+            path="*"
+            element={[
+              <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
+              <NotFound />,
+            ]}
+          />
         </RoutesDOM>
         <Footer />
       </ScrollToTop>

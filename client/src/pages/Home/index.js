@@ -1,12 +1,10 @@
 import React from 'react';
+import BarraDeBusca from '../../components/BarraDeBusca';
 import Categorias from '../../components/Categorias';
 import NewsLetter from '../../components/NewsLetter';
-import BarraDeBusca from '../../components/BarraDeBusca';
 import Promocoes from '../../components/Promocoes';
-import Footer from '../../components/Footer';
-import HeaderHome from '../../components/HeaderHome';
 
-const Home = () => {
+const Home = ({ tokenAdmin, tokenUser }) => {
   return (
     <>
       <BarraDeBusca />

@@ -1,6 +1,9 @@
 import React from 'react';
 
 const CategoriaList = ({ categoria }) => {
+  const isLogado = true;
+  const isAdmin = true;
+
   let valor = (valor) => {
     return valor.toLocaleString('pt-BR', {
       style: 'currency',
