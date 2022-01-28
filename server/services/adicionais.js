@@ -16,7 +16,7 @@ adicionaisServices.getAllAddtionals = async () => {
 };
 
 adicionaisServices.getAddtionalsById = async (id) => {
-  const categoria = await Addtional.findAll({
+  const categoria = await Addtional.findOne({
     where: { id },
   });
   return categoria;
