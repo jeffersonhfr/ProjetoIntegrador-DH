@@ -18,6 +18,11 @@ const Header = () => {
     }
   }, []);
 
+  const handleLogout = () => {
+    userStorage.removeUser();
+    auth.removeToken();
+  };
+
   let header = (
     <>
       <header className="cabecalho-paginas">
@@ -93,7 +98,9 @@ const Header = () => {
                             </>
                           )}
                           <li className="login">
-                            <a href="/logout">Logout</a>
+                            <a href="" onClick={handleLogout}>
+                              Logout
+                            </a>
                           </li>
                         </>
                       ) : (
@@ -176,7 +183,9 @@ const Header = () => {
                       </>
                     )}
                     <li className="login">
-                      <a href="/logout">Logout</a>
+                      <a href="" onClick={handleLogout}>
+                        Logout
+                      </a>
                     </li>
                   </ul>
                 </div>

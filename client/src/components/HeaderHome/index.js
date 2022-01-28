@@ -18,6 +18,11 @@ const HeaderHome = () => {
     }
   }, []);
 
+  const handleLogout = () => {
+    auth.removeToken();
+    userStorage.removeUser();
+  };
+
   let header = (
     <>
       <header className="cabecalho">
@@ -93,7 +98,9 @@ const HeaderHome = () => {
                             </>
                           )}
                           <li className="login">
-                            <a href="/logout">Logout</a>
+                            <a href="" onClick={handleLogout}>
+                              Logout
+                            </a>
                           </li>
                         </>
                       ) : (
@@ -176,7 +183,9 @@ const HeaderHome = () => {
                       </>
                     )}
                     <li className="login">
-                      <a href="/logout">Logout</a>
+                      <a href="" onClick={handleLogout}>
+                        Logout
+                      </a>
                     </li>
                   </ul>
                 </div>
