@@ -23,7 +23,7 @@ const VisualizarUsuario = () => {
         <div className="perfil__container-top">
           <h1 className="perfil__title">Meu Perfil</h1>
           <div className="perfil__btn-editar">
-            <a href={"/visualizarUsuario/" + user.id + "/editar"}>Editar</a>
+            <a href={"/visualizarEdit/" + user.id + "/editar"}>Editar</a>
           </div>
         </div>
         <div className="perfil__dados-do-usuario">
