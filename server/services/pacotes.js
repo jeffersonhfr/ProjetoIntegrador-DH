@@ -32,7 +32,7 @@ pacotesServices.getPackagesByDestiny = async (nacional) => {
 };
 
 pacotesServices.getPackagesById = async (id) => {
-  const pacotes = await Package.findAll({
+  const pacotes = await Package.findOne({
     where: { id },
     include: [
       { association: 'categoria' },
