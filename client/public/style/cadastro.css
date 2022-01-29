@@ -70,6 +70,14 @@ section.fundo {
   padding: 0px 8px;
   color: #919191;
 }
+.formulario-login__dados .bi-eye {
+  position: absolute;
+  font-size: 14px;
+  left: 250px;
+  padding: 0px 8px;
+  color: #919191;
+}
+
 .container-recuperar-senha {
   color: #919191;
   text-align: center;
@@ -151,6 +159,19 @@ img.imagem-login {
   border-left-width: 0;
   border-color: #bcbcbc;
 }
+.formulario-login__dados input[type="password"] {
+  font-family: "Mukta", sans-serif;
+  width: 275px;
+  margin: 5px 0;
+  margin-top: 2px;
+  margin-bottom: 17px;
+  border-style: solid;
+  border-bottom-width: 1px;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-color: #bcbcbc;
+}
 
 .formulario-login__dados input[type="email"] {
   font-family: "Mukta", sans-serif;
@@ -163,19 +184,6 @@ img.imagem-login {
   border-right-width: 0;
   border-left-width: 0;
   border-color: #bcbcbc;
-}
-
-.formulario-login__dados input[type="password"] {
-  font-family: "Mukta", sans-serif;
-  border-style: solid;
-  border-bottom-width: 1px;
-  border-top-width: 0;
-  border-right-width: 0;
-  border-left-width: 0;
-  border-color: #bcbcbc;
-  margin-bottom: 20px;
-  margin-right: 11px;
-  width: 130px;
 }
 
 input.senha-login {
@@ -250,6 +258,13 @@ p.cadastro__link-cadastro {
     color: #919191;
   }
   .formulario-login__dados .bi-eye-slash {
+    position: absolute;
+    font-size: 14px;
+    left: 300px;
+    padding: 0px 8px;
+    color: #919191;
+  }
+  .formulario-login__dados .bi-eye {
     position: absolute;
     font-size: 14px;
     left: 300px;

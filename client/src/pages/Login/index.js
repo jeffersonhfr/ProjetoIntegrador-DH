@@ -1,35 +1,37 @@
-import React, { useState } from 'react';
-import verSenha from './scripts/ver-senha';
-import auth from '../../storage/auth';
-import user from '../../storage/user';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import React, { useState } from "react";
+import verSenha from "./scripts/ver-senha";
+import auth from "../../storage/auth";
+import user from "../../storage/user";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 // import { Container } from './styles';
 
 const Login = ({ erro }) => {
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-  const [loginError, setloginError] = useState('');
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [verSenha, setVerSenha] = useState(false);
+
+  const [loginError, setloginError] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch('http://localhost:3333/login', {
-        method: 'post',
+      let res = await fetch("http://localhost:3333/login", {
+        method: "post",
         headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, senha }),
       });
       res = await res.json();
       auth.setToken(res.token);
       user.setUser(res.user);
-      window.location.href = '/';
+      window.location.href = "/";
       // window.location.reload();
     } catch (error) {
       // console.log(error);
-      setloginError('Login ou senha inválida!');
+      setloginError("Login ou senha inválida!");
     }
   };
 
@@ -66,7 +68,7 @@ const Login = ({ erro }) => {
               </div>
               <div className="formulario-login__dados">
                 <input
-                  type="password"
+                  type={verSenha ? "text" : "password"}
                   className="login__senha"
                   id="senha"
                   placeholder="Senha"
@@ -75,9 +77,9 @@ const Login = ({ erro }) => {
                   required
                 />
                 <i
-                  className="bi bi-eye-slash"
+                  className={verSenha ? "bi-eye" : "bi bi-eye-slash"}
                   id="togglePassword"
-                  onClick={verSenha}
+                  onClick={() => setVerSenha(!verSenha)}
                 ></i>
               </div>
             </fieldset>
