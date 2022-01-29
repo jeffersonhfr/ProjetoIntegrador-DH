@@ -5,20 +5,22 @@ const controller = {
     const jwt = require('jsonwebtoken');
     const { secret } = require('../config/auth.json');
     try {
-      res.clearCookie('token');
-
+      res.clearCookie('usuario');
+        
       const { email, senha } = await req.body;
-
+      if(!email)
+      return res.status(400).send({message: "campo email vazio"})
+      if(!senha)
+        return res.status(400).send({message: "campo senha vazio"})
+      
       const user = await getUserByEmail(email);
-      console.log(user);
 
-      if (!user) {
-        res.status(400).send('Usuario nao encontrado!');
-      }
-      if (!bcrypt.compareSync(senha, user.senha)) {
-        res.status(400).send('Senha incorreta!');
-      }
-
+      if (!user) 
+       return res.status(400).send('Usuario nao encontrado!');
+      
+      if (!bcrypt.compareSync(senha, user.senha)) 
+        return res.status(400).send('Senha incorreta!');
+      
       const token = jwt.sign({ id: user.id, admin: user.admin }, secret);
       res.cookie('token', token);
       user.senha = undefined;
@@ -32,7 +34,7 @@ const controller = {
     }
   },
   logout: (req, res, next) => {
-    res.clearCookie('token').status(200).send('sucesso');
+    res.clearCookie('usuario').clearCookie('admin').redirect('../../');
   },
 };
 

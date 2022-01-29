@@ -16,7 +16,7 @@ const controller = {
       if(!user)
         return res.status(404).send({message: "Esse usuário não existe"});
 
-      return res.status(200).json(user);
+      return res.status(200).json({user});
       
     } catch (error) {
       console.log(error);
@@ -39,7 +39,7 @@ const controller = {
       return res.status(204).send();
     } catch (error) {
       console.log(error);
-      return res.status(500).json({ message: "Erro do servidor", error });
+      return res.status(500).json({ message: "Erro do servidor" });
     }
   }
 };
