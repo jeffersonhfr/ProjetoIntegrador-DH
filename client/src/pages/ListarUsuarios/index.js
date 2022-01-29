@@ -1,17 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import UsuarioCard from '../../components/UsuarioCard';
-import isLogado from '../../components/UsuarioCard';
+import React, { useState, useEffect } from "react";
+import UsuarioCard from "../../components/UsuarioCard";
 
-const ListarUsuarios = () => {
-  const [isLogado, setIsLogado] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(true);
-
+const ListarUsuarios = ({ tokenUser, tokenAdmin }) => {
   return (
     <>
       <section class="container container-pacotes">
         <h1 class="title-bar"> Listagem de usuários </h1>
 
-        {isLogado && isAdmin ? (
+        {tokenAdmin ? (
           <>
             <div class="travel-cards">
               <UsuarioCard />
