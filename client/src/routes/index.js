@@ -221,7 +221,7 @@ const Routes = () => {
             path="/ajuda"
             element={[
               <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
-              <Ajuda token={tokenAdmin} user={tokenUser} />,
+              <Ajuda tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
             ]}
           />
           <Route

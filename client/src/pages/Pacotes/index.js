@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Filtro from '../../components/Filtro';
 import TravelCard from '../../components/TravelCard';
 
-const Pacotes = ({ token, user }) => {
+const Pacotes = ({ tokenAdmin, tokenUser }) => {
   const [pacotes, setPacotes] = useState();
   const [tituloPacote, setTituloPacote] = useState('');
   useEffect(() => {
@@ -39,7 +39,7 @@ const Pacotes = ({ token, user }) => {
   ) : (
     <>
       <div className="container container-pacotes">
-        {token && user?.admin ? (
+        {tokenAdmin && tokenUser?.admin ? (
           <>
             <div className="title-bar">
               <h1>{tituloPacote}</h1>
@@ -61,7 +61,11 @@ const Pacotes = ({ token, user }) => {
           {pacotes.map((Pacotes) => {
             return (
               <>
-                <TravelCard pacotes={Pacotes} token={token} user={user} />
+                <TravelCard
+                  pacotes={Pacotes}
+                  token={tokenAdmin}
+                  user={tokenUser}
+                />
               </>
             );
           })}
