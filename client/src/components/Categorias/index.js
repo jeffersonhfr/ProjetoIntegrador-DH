@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import Categoria from '../Categoria';
 import CarouselButton from '../CarouselButton';
+import { api } from '../../api';
 
 const Categorias = () => {
   let buttonPrevCat = {
@@ -19,9 +20,11 @@ const Categorias = () => {
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3333/categorias')
-      .then((res) => res.json())
-      .then((res) => setCategorias(res.categorias));
+   
+
+    api.get('/categorias').then((res)=>setCategorias(res.data.categorias)).catch(err => console.log(err));
+        
+
   }, []);
 
   return (
