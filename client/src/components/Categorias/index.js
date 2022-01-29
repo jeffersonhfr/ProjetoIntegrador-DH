@@ -19,7 +19,7 @@ const Categorias = () => {
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3333')
+    fetch('http://localhost:3333/categorias')
       .then((res) => res.json())
       .then((res) => setCategorias(res.categorias));
   }, []);

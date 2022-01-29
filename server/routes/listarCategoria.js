@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-router.get('/',adminMiddleware, listarCategoriaController.index);
+router.get('/', listarCategoriaController.index);
 router.post(
   '/adicionar',
   adminMiddleware,
@@ -31,6 +31,10 @@ router.put(
   listarCategoriaController.update,
 );
 
-router.delete('/:id/delete', adminMiddleware, listarCategoriaController.destroy);
+router.delete(
+  '/:id/delete',
+  adminMiddleware,
+  listarCategoriaController.destroy,
+);
 
 module.exports = router;

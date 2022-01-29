@@ -1,38 +1,38 @@
-import React, { useEffect, useState } from "react";
-import ReactLoading from "react-loading";
-import { useParams } from "react-router-dom";
-import AdicionaisPacote from "../../components/AdicionaisPacote";
-import TravelImages from "../../components/TravelImages";
+import React, { useEffect, useState } from 'react';
+import ReactLoading from 'react-loading';
+import { useParams } from 'react-router-dom';
+import AdicionaisPacote from '../../components/AdicionaisPacote';
+import TravelImages from '../../components/TravelImages';
 
 const Pacote = () => {
   function openModal() {
-    document.getElementById("modal").classList.add("modal-active");
-    document.body.classList.add("scrollNone");
+    document.getElementById('modal').classList.add('modal-active');
+    document.body.classList.add('scrollNone');
   }
 
   function closeModal() {
-    document.getElementById("modal").classList.remove("modal-active");
-    document.body.classList.remove("scrollNone");
+    document.getElementById('modal').classList.remove('modal-active');
+    document.body.classList.remove('scrollNone');
   }
 
   let valor = (valor) => {
-    return valor.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL",
+    return valor.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
     });
   };
 
   const [pacote, setPacote] = useState();
 
   const { id } = useParams();
-  const apiURL = "http://localhost:3333/pacotes/" + id;
+  const apiURL = 'http://localhost:3333/pacotes/' + id;
   useEffect(() => {
     fetch(apiURL)
       .then((res) => res.json())
       .then((res) =>
         setTimeout(() => {
-          setPacote(res.pacote[0]);
-        }, 1000)
+          setPacote(res.pacote);
+        }, 1000),
       );
   }, []);
 
@@ -42,15 +42,15 @@ const Pacote = () => {
     <>
       <div
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
           height: 300,
         }}
       >
         <ReactLoading
-          type={"bars"}
-          color={"#3E60BF"}
+          type={'bars'}
+          color={'#3E60BF'}
           height={120}
           width={120}
         />
@@ -158,15 +158,15 @@ const Pacote = () => {
               <h1 className="Pacote-Propriedades__Item__Valor-Promocional">
                 {valor(
                   pacote.preco -
-                    (pacote.preco * pacote.promocaoPorcentagem) / 100
+                    (pacote.preco * pacote.promocaoPorcentagem) / 100,
                 )}
               </h1>
               <p>
-                em até {pacote.parcelas}x de{" "}
+                em até {pacote.parcelas}x de{' '}
                 {valor(
                   (pacote.preco -
                     (pacote.preco * pacote.promocaoPorcentagem) / 100) /
-                    pacote.parcelas
+                    pacote.parcelas,
                 )}
               </p>
             </li>
