@@ -5,7 +5,7 @@ const Promocoes = () => {
   const [pacotes, setPacotes] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3333')
+    fetch('http://localhost:3333/pacotes')
       .then((res) => res.json())
       .then((res) => setPacotes(res.pacotes));
   }, []);

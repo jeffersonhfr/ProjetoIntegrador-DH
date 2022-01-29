@@ -32,6 +32,10 @@ router.put(
   listarCategoriaController.update,
 );
 
-router.delete('/:id/delete', adminMiddleware, listarCategoriaController.destroy);
+router.delete(
+  '/:id/delete',
+  adminMiddleware,
+  listarCategoriaController.destroy,
+);
 
 module.exports = router;
