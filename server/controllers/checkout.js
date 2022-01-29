@@ -23,7 +23,7 @@ const controller = {
     try {
 
       const { idPacote, pagamento, valorPago, parcelas, imagem } = req.body;
-      const user = 4;
+      const user = req.userId;
 
       if (pagamento === 'Boleto Bancário') {
         const status = 'Aguardando Pagamento';
