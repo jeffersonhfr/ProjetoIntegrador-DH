@@ -5,8 +5,7 @@ const controller = {
     const jwt = require('jsonwebtoken');
     const { secret } = require('../config/auth.json');
     try {
-      res.clearCookie('usuario');
-      res.clearCookie('admin');
+      res.clearCookie('token');
 
       const { email, senha } = await req.body;
 
@@ -33,7 +32,7 @@ const controller = {
     }
   },
   logout: (req, res, next) => {
-    res.clearCookie('usuario').clearCookie('admin').redirect('../../');
+    res.clearCookie('token').status(200).send('sucesso');
   },
 };
 

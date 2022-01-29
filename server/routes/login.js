@@ -6,6 +6,6 @@ const redirecionar = require('../middlewares/redirect');
 
 // ROTAS DE LOGIN
 
-router.post('/', loginContoller.login); // Execução de login
+router.post('/', loginContoller.login); 
 
 module.exports = router;

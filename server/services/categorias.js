@@ -11,7 +11,7 @@ categoriasServices.getAllCategorias = async () => {
 };
 
 categoriasServices.getCategoriasById = async (id) => {
-  const categoria = await Category.findAll({
+  const categoria = await Category.findOne({
     where: { id },
   });
   return categoria;

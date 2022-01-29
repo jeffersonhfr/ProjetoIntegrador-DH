@@ -6,7 +6,6 @@ const logger = require('morgan');
 const methodOverride = require('method-override');
 
 const adminMiddleware = require('./middlewares/admin');
-const indexRouter = require('./routes/index');
 const pesquisaRouter = require('./routes/pesquisa');
 const pacotesRouter = require('./routes/pacotes');
 const sobreRouter = require('./routes/sobre');
@@ -44,7 +43,6 @@ app.use('/img', express.static(__dirname + '/public/assets/img'));
 app.use('/src', express.static(__dirname + '/public/src'));
 
 app.use(cors());
-app.use('/', indexRouter); //JSON
 app.use('/pesquisa', pesquisaRouter); //JSON
 app.use('/pacotes', pacotesRouter); //JSON
 app.use('/sobre', sobreRouter); //JSON
