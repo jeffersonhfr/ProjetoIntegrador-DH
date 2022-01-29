@@ -167,8 +167,9 @@ const Checkout = (testvalue) => {
             <div
               className={isBoleto ? 'mostrar' : 'metodo__pagamento__boleto'}
             ></div>
-            <hr className={isHr ? 'mostrar' : 'metodo__pagamento__divisao'} />
+
             <div className={isCartao ? 'mostrar' : 'metodo__pagamento__cartao'}>
+              <hr />
               <div className="cartao__dados">
                 <div className="metodo__pagamento__cartao-itens">
                   <label className="label-checkout">Nome no Cartão:</label>
