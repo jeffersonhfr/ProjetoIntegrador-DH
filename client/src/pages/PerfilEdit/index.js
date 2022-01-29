@@ -61,7 +61,7 @@ const PerfilEdit = ({ tokenUser }) => {
       );
       res = await res.json();
       //   auth.setToken(res.token);
-      window.location.href = "/";
+      window.location.href = "/perfil";
     } catch (error) {
       console.log(error);
     }
