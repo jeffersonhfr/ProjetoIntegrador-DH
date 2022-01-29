@@ -12,10 +12,8 @@ const login = async (req, res, next) => {
 
    
     jwt.verify(authtoken,secret,(err,decoded)=>{
-        if(err)
-            return res.status(401).send({ message: 'Você não tem permissão para acessar essa página!' });
         req.userId = decoded.id;
-        req.isAdmin = decoded.admin
+        req.isAdmin = decoded.admin;
         next();
     });
 } catch (err) {
