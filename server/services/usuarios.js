@@ -1,4 +1,4 @@
-const { User } = require('../database/models');
+const { User } = require("../database/models");
 
 const usuariosServices = {};
 
@@ -8,7 +8,7 @@ usuariosServices.getAllUser = async () => {
 };
 
 usuariosServices.getUserById = async (id) => {
-  const users = await User.findOne({
+  const users = await User.findAll({
     where: { id },
   });
 
@@ -26,7 +26,7 @@ usuariosServices.updateUser = async (id, user) => {
     { ...user },
     {
       where: { id },
-    },
+    }
   );
   return update;
 };
