@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Footer from "../../components/Footer";
 
-const VisualizarUsuario = ({}) => {
-  const isLogado = true;
-  const isAdmin = true;
+const VisualizarUsuario = () => {
   const [user, setUser] = useState([]);
 
   const { id } = useParams();
@@ -21,7 +19,6 @@ const VisualizarUsuario = ({}) => {
   console.log(user);
   return (
     <>
-      {/* {user.map((user) => ( */}
       <main className="perfil">
         <div className="perfil__container-top">
           <h1 className="perfil__title">Meu Perfil</h1>
@@ -80,8 +77,6 @@ const VisualizarUsuario = ({}) => {
           </div>
         </div>
       </main>
-      {/* ))} */}
-
       <Footer />
     </>
   );
