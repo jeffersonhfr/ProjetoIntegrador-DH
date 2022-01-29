@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactLoading from 'react-loading';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import AdicionaisPacote from '../../components/AdicionaisPacote';
 import TravelImages from '../../components/TravelImages';
 
@@ -32,12 +32,11 @@ const Pacote = () => {
       .then((res) =>
         setTimeout(() => {
           setPacote(res.pacote);
-        }, 1000),
+        }, 400),
       );
   }, []);
-
   const pacotes = [pacote];
-
+  const idPacote = pacote?.id;
   return !pacote ? (
     <>
       <div
@@ -171,27 +170,22 @@ const Pacote = () => {
               </p>
             </li>
           </ul>
-          <form action="../checkout" method="post" className="btao-form">
-            <input
-              type="text"
-              name="origem"
-              id="origem"
-              defaultValue="{ origem }"
-              hidden
-            />
 
-            <input
-              type="text"
-              name="idPacote"
-              id="idPacote"
-              defaultValue="{ pacote.id }"
-              hidden
-            />
+          <input
+            type="text"
+            name="idPacote"
+            id="idPacote"
+            defaultValue={pacote.id}
+            hidden
+          />
 
-            <button type="submit" className="Pacote__Button-Comprar">
-              Comprar
-            </button>
-          </form>
+          <Link
+            className="Pacote__Button-Comprar"
+            to="../../checkout"
+            state={{ pacoteId: pacote.id }}
+          >
+            Comprar
+          </Link>
         </aside>
         <article className="Pacote-Descricao-Sobre">
           <h1 className="Pacote-Decricao__Titulo">Sobre o Destino</h1>

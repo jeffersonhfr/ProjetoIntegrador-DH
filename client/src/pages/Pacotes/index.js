@@ -14,7 +14,7 @@ const Pacotes = ({ tokenAdmin, tokenUser }) => {
         setTimeout(() => {
           setPacotes(res.pacotes);
           setTituloPacote(res.tituloPacotes);
-        }, 1000),
+        }, 800),
       );
   }, []);
 

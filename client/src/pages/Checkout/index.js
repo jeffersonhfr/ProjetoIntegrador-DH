@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import ReactLoading from 'react-loading';
+import Parcelamento from '../../components/parcelamento';
 
-const Checkout = () => {
+const Checkout = (testvalue) => {
   let valor = (valor) => {
-    return valor.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL",
+    return valor.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
     });
   };
   const [isCartao, setCartao] = useState(false);
@@ -16,6 +19,7 @@ const Checkout = () => {
     setBoleto(false);
     setHr(false);
   };
+
   const checkoutBoleto = () => {
     setBoleto(true);
     setCartao(false);
@@ -23,101 +27,59 @@ const Checkout = () => {
   };
 
   function addBoleto() {
-    document.querySelector("#nomecartao").required = false;
-    document.querySelector("#numerocartao").required = false;
-    document.querySelector("#parcelas").required = false;
+    document.querySelector('#nomecartao').required = false;
+    document.querySelector('#numerocartao').required = false;
+    document.querySelector('#parcelas').required = false;
   }
 
   function addCartao() {
-    document.querySelector("#nomecartao").required = true;
-    document.querySelector("#numerocartao").required = true;
-    document.querySelector("#parcelas").required = true;
+    document.querySelector('#nomecartao').required = true;
+    document.querySelector('#numerocartao').required = true;
+    document.querySelector('#parcelas').required = true;
   }
 
-  let pacotes = [
-    {
-      nomePacote: "Egito Histórico",
-      nomeHotel: "Marriott Mena House",
-      diarias: 10,
-      passagemAerea: 1,
-      nacional: 0,
-      preco: 18800.0,
-      promocaoPorcentagem: 30,
-      parcelas: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      sobre:
-        "Com vista das Grandes Pirâmides de Gizé, o Marriott Mena House, Cairo está rodeado por 16 hectares de jardins verdes e possui spa, academia e piscina. Os quartos são decorados com móveis artesanais.Todas as acomodações no Marriott Mena House, Cairo dispõem de ar-condicionado, tecidos luxuosos, área de estar e TV LCD. Cada quarto e suíte oferece um banheiro privativo espaçoso com roupão de banho e chinelos. O café da manhã é servido na sala de refeições com vista do jardim. As opções gastronômicas incluem especialidades italianas no Restaurante Alfredo, enquanto o buffet de café da manhã diário é servido no 139 Pavilion, que também conta com coquetéis e vista inesquecível. As instalações de lazer incluem uma piscina aquecida, situada nos jardins paisagísticos. As Pirâmides de Gizé ficam a menos de 500 metros do Marriott Mena House. O concierge poderá organizar passeios de cavalos e camelos para as pirâmides. O Aeroporto do Cairo está a 30,6 km do local.Casais particularmente gostam da localização — eles deram nota 9,5 para viagem a dois.",
-      pontoTuristico:
-        "Para quem procura por experiências marcantes e inesquecíveis durante as férias uma  viagem para o Egito é a resposta. O país localizado no nordeste da África possui uma história riquíssima e monumentos grandiosos – não à toa está presente em quase todos os livros de história.O Egito fica a mais de 10 mil quilômetros de distância do Brasil, os voos saindo de São Paulo costumam ter pelo menos uma escala e a viagem mais rápida demora cerca de 17h 30m. Como a conexão é feita em cidades como Istambul e Dubai, muitos turistas aproveitam para conhecê-las também.No país africano as principais cidades a serem visitadas são a capital Cairo, Luxor, Aswan e Sharm el Sheikh. Cada uma delas possui características particulares e pontos turísticos de visita obrigatória que vão além de templos e sarcófagos. Conheça alguns deles. Pirâmides de Gizé (Cairo) Essa é o ponto turístico mais conhecido do Cairo e de todo o Egito. Um dos mais antigos monumentos, o conjunto Pirâmides de Gizé fica a 18 km da capital e o acesso é fácil. Agências de turismo oferecem passeios diurnos e noturnos, esse último inclui um espetáculo de luzes e som. As principais pirâmides em que faraós foram mumificados e sepultados são as de Quéops, Quéfren e Miquerinos. A primeira é a maior delas, com 140 metros de altura e 230 metros de base. Além delas, a Grande Esfinge chama atenção. Khan el-Khalili Bazaar (Cairo) A antiga área comercial fica no coração de Cairo e é um grande bazar a céu aberto que reúne cafés, restaurantes e lojas de especiarias, joias, tecidos, artesanatos, perfumes, alimentos, entre outros. Além de ser uma forma de mergulhar na cultura local, visitar as ruelas do Khan el-Khalili Bazaar também é viver a história, já que o local, fundado no século XIV, transformou Cairo em um centro importante do comércio ao permitir comerciantes estrangeiros exporem suas mercadorias. O Khan el-Khalili Bazaar está incluso em vários pacotes de turismo oferecidos por agências – inclusive, essa é a melhor forma de conhecer o local sem se perder. O pacote da Memphis Tours, por exemplo, disponibiliza guias que falam a língua portuguesa, o que torna o passeio ainda mais proveitoso.",
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      package_Images: [
-        {
-          src: "/assets/img/package/Egito.jpg",
-        },
-        {
-          src: "/assets/img/package/Egito1.jpg",
-        },
-        {
-          src: "/assets/img/package/Egito2.jpg",
-        },
-        {
-          src: "/assets/img/package/Egito3.jpg",
-        },
-        {
-          src: "/assets/img/package/Egito4.jpg",
-        },
-        {
-          src: "/assets/img/package/Egito5.jpg",
-        },
-        {
-          src: "/assets/img/package/Egito6.jpg",
-        },
-      ],
-      adicional: [
-        {
-          nomeAdicional: "City Tour",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: "Hotel com Piscina Aquecida",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: "Jantar no Palácio Real",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: "Entradas para Museus",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: "Passeio de Camelo",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: "Wi-fi Grátis",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: "Café da Manhã",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: "Refeição Completa",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-      ],
-    },
-  ];
-  return (
+  const [pacote, setPacote] = useState();
+  const pacotes = [pacote];
+
+  const location = useLocation();
+  const { pacoteId } = location.state;
+  const apiURL = 'http://localhost:3333/pacotes/' + pacoteId;
+
+  useEffect(() => {
+    fetch(apiURL)
+      .then((res) => res.json())
+      .then((res) =>
+        setTimeout(() => {
+          setPacote(res.pacote);
+          console.log(res.pacote);
+        }, 400),
+      );
+  }, []);
+
+  const parcelas = [];
+  for (let i = 0; i < pacote?.parcelas; i++) {
+    parcelas.push(i);
+  }
+
+  return !pacote ? (
+    <>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: 300,
+        }}
+      >
+        <ReactLoading
+          type={'bars'}
+          color={'#3E60BF'}
+          height={120}
+          width={120}
+        />
+      </div>
+    </>
+  ) : (
     <>
       <main className="container container-checkout">
         <div className="titulo-checkout">
@@ -127,18 +89,7 @@ const Checkout = () => {
           <div className="pagamento__box">
             <div className="pagamento__box__content">
               <div className="pagamento__box__imagem">
-                <img
-                  src={pacotes[0].package_Images[0].src}
-                  alt=""
-                  width="100%"
-                />
-                <input
-                  type="text"
-                  name="imagem"
-                  id="imagem"
-                  defaultValue={pacotes[0].package_Images[0].src}
-                  hidden
-                />
+                <img src={pacote.package_images[0].src} alt="" width="100%" />
               </div>
               <div className="pagamento__box__detalhes">
                 <ul>
@@ -146,7 +97,7 @@ const Checkout = () => {
                     <h2 className="pagamento__box__detalhes__titulo">
                       Pacote:
                     </h2>
-                    <span>{pacotes[0].nomePacote}</span>
+                    <span>{pacote.nomePacote}</span>
                   </li>
                   <li>
                     <h2 className="pagamento__box__detalhes__titulo">Valor:</h2>
@@ -156,16 +107,14 @@ const Checkout = () => {
                         name="valorPago"
                         id="valorPago"
                         defaultValue={
-                          pacotes[0].preco -
-                          (pacotes[0].preco * pacotes[0].promocaoPorcentagem) /
-                            100
+                          pacote.preco -
+                          (pacote.preco * pacote.promocaoPorcentagem) / 100
                         }
                         hidden
                       />
                       {valor(
-                        pacotes[0].preco -
-                          (pacotes[0].preco * pacotes[0].promocaoPorcentagem) /
-                            100
+                        pacote.preco -
+                          (pacote.preco * pacote.promocaoPorcentagem) / 100,
                       )}
                     </span>
                   </li>
@@ -216,40 +165,41 @@ const Checkout = () => {
             </div>
 
             <div
-              className={isBoleto ? "mostrar" : "metodo__pagamento__boleto"}
+              className={isBoleto ? 'mostrar' : 'metodo__pagamento__boleto'}
             ></div>
-            <hr className={isHr ? "mostrar" : "metodo__pagamento__divisao"} />
-            <div className={isCartao ? "mostrar" : "metodo__pagamento__cartao"}>
-              <div className="metodo__pagamento__cartao-itens">
-                <label className="label-checkout">Nome no Cartão:</label>
-                <br />
-                <input type="text" id="nomecartao" name="nomecartao" />
-              </div>
+            <hr className={isHr ? 'mostrar' : 'metodo__pagamento__divisao'} />
+            <div className={isCartao ? 'mostrar' : 'metodo__pagamento__cartao'}>
+              <div className="cartao__dados">
+                <div className="metodo__pagamento__cartao-itens">
+                  <label className="label-checkout">Nome no Cartão:</label>
+                  <br />
+                  <input type="text" id="nomecartao" name="nomecartao" />
+                </div>
 
-              <div className="metodo__pagamento__cartao-itens">
-                <label className="label-checkout">Número do Cartão:</label>
-                <br />
-                <input type="number" id="numerocartao" name="numerocartao" />
-              </div>
+                <div className="metodo__pagamento__cartao-itens">
+                  <label className="label-checkout">Número do Cartão:</label>
+                  <br />
+                  <input type="number" id="numerocartao" name="numerocartao" />
+                </div>
 
-              <div className="metodo__pagamento__cartao-itens">
-                <label className="label-checkout">Opções de Parcelas:</label>
-                <br />
-                <select name="parcelas" id="parcelas">
-                  {pacotes[0].parcelas.map((parcelas) => (
-                    <option defaultValue="parcelas">
-                      {parcelas} x{" "}
-                      {valor(
-                        (pacotes[0].preco -
-                          (pacotes[0].preco * pacotes[0].promocaoPorcentagem) /
-                            100) /
-                          parcelas
-                      )}
-                    </option>
-                  ))}
-                </select>
-              </div>
+                <div className="metodo__pagamento__cartao-itens">
+                  <label className="label-checkout">Opções de Parcelas:</label>
+                  <br />
 
+                  <select name="parcelas" id="parcelas">
+                    {parcelas.map(function (parcela, i) {
+                      return (
+                        <Parcelamento
+                          obj={parcela}
+                          key={i}
+                          parcelaN={i}
+                          pacote={pacote}
+                        />
+                      );
+                    })}
+                  </select>
+                </div>
+              </div>
               <div className="metodo__pagamento__cartao-itens">
                 <label className="label-checkout">Validade (MM/AA):</label>
                 <br />
@@ -303,7 +253,7 @@ const Checkout = () => {
                 type="text"
                 name="idPacote"
                 id="idPacote"
-                defaultValue={pacotes[0].id}
+                defaultValue={pacote.id}
                 hidden
               />
               <button className="btao-confirmar" type="submit">

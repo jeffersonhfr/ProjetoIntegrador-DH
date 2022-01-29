@@ -2,26 +2,27 @@ const { getPackagesById } = require('../services/pacotes');
 const { createOrder } = require('../services/orders');
 
 const controller = {
-  index: async (req, res, next) => {
-    try {
-      const { idPacote } = req.body;
-      
-      const pack = await getPackagesById(idPacote);
+  // index: async (req, res, next) => {
+  //   try {
+  //     const { idPacote } = req.body;
+  //     console.log(idPacote);
+  //     const pack = await getPackagesById(idPacote);
 
-      if(!pack)
-        return res.status(404).send({message:"Esse pacote não existe ou não está mais disponível"});
+  //     if (!pack)
+  //       return res.status(404).send({
+  //         message: 'Esse pacote não existe ou não está mais disponível',
+  //       });
 
-      return res.status(200).json({
-        pack
-      });
-    } catch (error) {
-      console.log(error);
-      return res.status(500).json({ message: 'Erro do servidor'});
-    }
-  },
+  //     return res.status(200).json({
+  //       pack,
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //     return res.status(500).json({ message: 'Erro do servidor' });
+  //   }
+  // },
   sucesso: async (req, res, next) => {
     try {
-
       const { idPacote, pagamento, valorPago, parcelas, imagem } = req.body;
       const user = req.userId;
 
@@ -39,12 +40,11 @@ const controller = {
 
         const addOrder = await createOrder(order);
 
-          return res.status(200).json({
-            order,
-            pagamento,
-            imagem,
-          });
-
+        return res.status(200).json({
+          order,
+          pagamento,
+          imagem,
+        });
       } else {
         let status = 'Pagamento Aprovado';
         let order = {};
@@ -57,15 +57,14 @@ const controller = {
         order.userId = user;
         const addOrder = await createOrder(order);
 
-          return res.status(200).json({
-            order,
-            imagem,});
-  
-        
+        return res.status(200).json({
+          order,
+          imagem,
+        });
       }
     } catch (error) {
       console.log(error);
-      return res.status(500).json({ message: 'Erro do servidor'});
+      return res.status(500).json({ message: 'Erro do servidor' });
     }
   },
 };

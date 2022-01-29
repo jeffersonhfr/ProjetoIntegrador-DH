@@ -5,7 +5,10 @@ const loginMiddleware = require('../middlewares/login');
 
 /* GET home page. */
 
-router.post('/', loginMiddleware, checkoutContoller.index);
-router.post('/sucesso', loginMiddleware, checkoutContoller.sucesso);
+// router.post('/', checkoutContoller.index);
+router.post('/sucesso', checkoutContoller.sucesso);
+
+// router.post('/', loginMiddleware, checkoutContoller.index);
+// router.post('/sucesso', loginMiddleware, checkoutContoller.sucesso);
 
 module.exports = router;
