@@ -14,14 +14,12 @@ const admin = async (req, res, next) => {
     jwt.verify(authtoken,secret,(err,decoded)=>{
 
         if(!decoded.admin)
-          return res.status(403).send({ message: 'Você não tem permissão para acessar essa página!' })
-
-
+          return res.status(403).send({ message: 'Você não tem permissão para acessar essa página!' });
 
         if(err)
-            return res.status(401).send({ message: 'Você não tem permissão para acessar essa página!' });
+          return res.status(403).send({ message: 'Você não tem permissão para acessar essa página!' });
         req.userId = decoded.id;
-        req.isAdmin = decoded.admin
+        req.isAdmin = decoded.admin;
 
         
         next();

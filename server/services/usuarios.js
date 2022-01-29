@@ -8,7 +8,7 @@ usuariosServices.getAllUser = async () => {
 };
 
 usuariosServices.getUserById = async (id) => {
-  const users = await User.findAll({
+  const users = await User.findOne({
     where: { id },
   });
 

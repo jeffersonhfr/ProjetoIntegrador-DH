@@ -5,6 +5,7 @@ const adminMiddleware = require('../middlewares/admin');
 // const uploadCategory = require('../middlewares/uploadCategory');
 
 const multer = require('multer');
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './public/assets/img/categoria');
@@ -16,7 +17,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-router.get('/',adminMiddleware, listarCategoriaController.index);
+router.get('/', listarCategoriaController.index);
 router.post(
   '/adicionar',
   adminMiddleware,
