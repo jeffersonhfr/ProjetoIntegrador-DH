@@ -4,12 +4,12 @@ var listarAdicionaisController = require('../controllers/adicionais');
 const adminMiddleware = require('../middlewares/admin');
 
 
-router.get('/', listarAdicionaisController.index);
+router.get('/',adminMiddleware, listarAdicionaisController.index);
 
-router.post('/adicionar',  listarAdicionaisController.create);
+router.post('/adicionar',adminMiddleware,  listarAdicionaisController.create);
 
-router.put('/:id/editar',  listarAdicionaisController.update);
+router.put('/:id/editar',adminMiddleware,  listarAdicionaisController.update);
 
-router.delete('/:id',  listarAdicionaisController.destroy);
+router.delete('/:id',adminMiddleware,  listarAdicionaisController.destroy);
 
 module.exports = router;
