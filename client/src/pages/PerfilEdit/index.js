@@ -35,27 +35,30 @@ const PerfilEdit = ({ tokenUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch("http://localhost:3333/visualizarUsuario/" + id, {
-        method: "post",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          senha,
-          confirmarSenha,
-          uf,
-          localidade,
-          complemento,
-          nascimento,
-          logradouro,
-          cep,
-          cpf,
-          telefone,
-          nome,
-        }),
-      });
+      let res = await fetch(
+        "http://localhost:3333/visualizarUsuario/" + id + "/edit",
+        {
+          method: "put",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            senha,
+            confirmarSenha,
+            uf,
+            localidade,
+            complemento,
+            nascimento,
+            logradouro,
+            cep,
+            cpf,
+            telefone,
+            nome,
+          }),
+        }
+      );
       res = await res.json();
       //   auth.setToken(res.token);
       window.location.href = "/";
