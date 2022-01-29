@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import auth from "../../storage/auth";
+import { api } from "../../api";
 const Perfil = ({ tokenUser }) => {
   const [user, setUser] = useState([]);
   const id = tokenUser.id;
 
-  const apiURL = "http://localhost:3333/visualizarUsuario/" + id;
   useEffect(() => {
-    fetch(apiURL)
-      .then((res) => res.json())
-      .then((res) =>
-        setTimeout(() => {
-          setUser(res.user[0]);
-        })
-      );
+    api.get(`/visualizarUsuario/${id}`,{},{headers: {Authorization:'Bearer '+auth.getToken}}).then(res=>setUser(res.data.user)).catch(err=>console.log(err));
+    
   }, []);
   console.log(user);
   return (

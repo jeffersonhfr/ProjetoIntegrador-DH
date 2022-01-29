@@ -4,6 +4,8 @@ import auth from "../../storage/auth";
 import user from "../../storage/user";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import { api } from "../../api";
+
 
 // import { Container } from './styles';
 
@@ -16,19 +18,25 @@ const Login = ({ erro }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch("http://localhost:3333/login", {
-        method: "post",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, senha }),
-      });
-      res = await res.json();
-      auth.setToken(res.token);
-      user.setUser(res.user);
+      //let res = await fetch("http://localhost:3333/login", {
+     //   method: "post",
+      ///  headers: {
+       //   Accept: "application/json",
+       //   "Content-Type": "application/json",
+       // },
+     //   body: JSON.stringify({ email, senha }),
+     /// });
+     ///res = await res.json();
+     api.post('/login',{email,senha}).then((res)=>{
+      
+      auth.setToken(res.data.token);
+      user.setUser(res.data.user);
       window.location.href = "/";
+    }).catch(err => console.log(err));
+      api.defaults.headers.Authorization= 'Bearer '+ auth.getToken()
+      console.log(api.defaults.headers)
       // window.location.reload();
+      
     } catch (error) {
       // console.log(error);
       setloginError("Login ou senha inválida!");
