@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import auth from "../../storage/auth";
-
+import user from "../../storage/user";
 const PerfilEdit = ({ tokenUser }) => {
   const [user, setUser] = useState([]);
   const [email, setEmail] = useState("");
@@ -26,6 +26,17 @@ const PerfilEdit = ({ tokenUser }) => {
       .then((res) =>
         setTimeout(() => {
           setUser(res.user);
+          setEmail(res.user.email);
+          setNome(res.user.nome);
+          setTelefone(res.user.telefone);
+          setCpf(res.user.cpf);
+          setCep(res.user.cep);
+          setLogradouro(res.user.logradouro);
+          setNascimento(res.user.nascimento);
+          setComplemento(res.user.complemento);
+          setLocalidade(res.user.localidade);
+          setUf(res.user.uf);
+          setSenha(res.user.senha);
         })
       );
   }, []);
@@ -59,7 +70,7 @@ const PerfilEdit = ({ tokenUser }) => {
           }),
         }
       );
-      res = await res.json();
+      //res = await res.json();
       //   auth.setToken(res.token);
       window.location.href = "/perfil";
     } catch (error) {

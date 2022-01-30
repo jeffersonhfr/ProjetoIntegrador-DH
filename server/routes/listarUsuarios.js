@@ -11,6 +11,6 @@ router.get('/:id', listarUsuariosContoller.show);
 router.get('/:id/editar', listarUsuariosContoller.edit); 
 //router.get("/:id/editar", listarUsuariosContoller.edit); 
 router.get('/:id/delete', adminMiddleware, listarUsuariosContoller.delete);
-router.post('/:id/delete', adminMiddleware, listarUsuariosContoller.destroy);
+router.delete('/:id/delete', adminMiddleware, listarUsuariosContoller.destroy);
 
 module.exports = router;

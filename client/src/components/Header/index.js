@@ -8,7 +8,7 @@ const Header = ({ tokenAdmin, tokenUser }) => {
   const handleLogout = () => {
     userStorage.removeUser();
     auth.removeToken();
-    window.location.reload();
+    window.location.href('/');
   };
 
   let header = (

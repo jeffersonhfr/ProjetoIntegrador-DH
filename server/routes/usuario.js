@@ -16,7 +16,7 @@ const upload = multer({ storage: storage });
 
 router.get('/', usuarioController.index);
 router.get('/edit', usuarioController.form_edit);
-router.post('/edit', upload.single('usuarioAvatar'), usuarioController.edit);
+router.put('/edit', upload.single('usuarioAvatar'), usuarioController.edit);
 
 // console.log(storage.filename);
 
