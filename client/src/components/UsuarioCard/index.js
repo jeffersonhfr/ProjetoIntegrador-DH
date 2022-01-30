@@ -1,27 +1,49 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-const UsuarioCard = ({ usuario }) => {
+const UsuarioCard = () => {
   const isLogado = true;
   const isAdmin = true;
   const [user, setUser] = useState([]);
 
   const openModal = () => {
-    document.getElementById('modal').classList.add('modal-active');
-    document.body.classList.add('scrollNone');
+    document.getElementById("modal").classList.add("modal-active");
+    document.body.classList.add("scrollNone");
   };
 
   function closeModal() {
-    document.getElementById('modal').classList.remove('modal-active');
-    document.body.classList.remove('scrollNone');
+    document.getElementById("modal").classList.remove("modal-active");
+    document.body.classList.remove("scrollNone");
   }
-  const { id } = useParams();
+  // const { id } = useParams();
 
+  // percorrer usuarios
   useEffect(() => {
-    fetch('http://localhost:3333/Usuarios')
+    fetch("http://localhost:3333/usuarios")
       .then((res) => res.json())
       .then((res) => setUser(res.user));
   }, []);
+
+  // Delete
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      let res = await fetch(
+        "http://localhost:3333/usuarios/" + id + "/delete",
+        {
+          method: "delete",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      window.location.href = "/listarUsuarios/";
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -48,14 +70,14 @@ const UsuarioCard = ({ usuario }) => {
           {isLogado && isAdmin ? (
             <>
               <div className="btao-Container">
-                <a href={'/visualizarUsuario/' + user.id} className="btao-form">
+                <a href={"/visualizarUsuario/" + user.id} className="btao-form">
                   <button className="btao-Container__btao-visualizar listarUsuarios">
                     <i className="bi bi-eye-fill"></i>
                   </button>
                 </a>
 
                 <a
-                  href={'/visualizarEdit/' + user.id + '/editar'}
+                  href={"/visualizarEdit/" + user.id + "/editar"}
                   className="btao-form"
                 >
                   <button className="btao-Container__btao-editar listarUsuarios">
@@ -73,11 +95,11 @@ const UsuarioCard = ({ usuario }) => {
                   <div className="modal-alert">
                     <div className="modal-conteudo">
                       <h1 className="tituloModal tituloAlert">
-                        Deseja realmente excluir {user.nome}?
+                        Deseja realmente excluir {user.nome} ?{user.id}
                       </h1>
                       <form
-                        action={'/listarUsuarios/' + id + '/delete'}
-                        method="POST"
+                        onSubmit={handleSubmit}
+                        // action={"usuarios/" + user.id + "/delete"}
                       >
                         <button type="submit" className="btao-pacote btn-alert">
                           Sim

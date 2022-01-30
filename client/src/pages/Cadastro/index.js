@@ -32,17 +32,17 @@ const Cadastro = () => {
       console.log(error);
     }
   };
-  function validacao(e) {
-    e.preventDefault();
-    var senha1 = document.getElementById("senha");
-    var senha2 = document.getElementById("confimar-senha");
-    senha2.addEventListener("blur", () => {
-      if (senha1 !== senha2) {
-        e.stopPropagation();
-        alert("As Senhas não conferem!");
-      }
-    });
-  }
+  // function validacao(e) {
+  //   e.preventDefault();
+  //   var senha1 = document.getElementById("senha");
+  //   var senha2 = document.getElementById("confimar-senha");
+  //   senha2.addEventListener("blur", () => {
+  //     if (senha1 !== senha2) {
+  //       e.stopPropagation();
+  //       alert("As Senhas não conferem!");
+  //     }
+  //   });
+  // }
 
   // function validacao2() {
   //   var senha1 = document.getElementById("senha");
@@ -122,7 +122,7 @@ const Cadastro = () => {
                   placeholder="Confirmar senha:"
                   value={confirmarSenha}
                   onChange={(e) => setCofirmarSenha(e.target.value)}
-                  onBlur={validacao}
+                  // onBlur={validacao}
                   required
                 />
               </div>
