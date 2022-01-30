@@ -15,7 +15,7 @@ const UsuarioCard = () => {
     document.getElementById("modal").classList.remove("modal-active");
     document.body.classList.remove("scrollNone");
   }
-  // const { id } = useParams();
+  const { id } = useParams();
 
   // percorrer usuarios
   useEffect(() => {
