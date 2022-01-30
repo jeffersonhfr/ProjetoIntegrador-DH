@@ -39,9 +39,9 @@ const Header = ({ tokenAdmin, tokenUser }) => {
                   <span className="menu-hamburguer__icone"></span>
                   <div className="menu-hamburguer__menu-mobile">
                     <ul>
-                      <li>
+                      {/* <li>
                         <Link to="/pacotes">Viagens Temáticas</Link>
-                      </li>
+                      </li> */}
                       <li>
                         <Link to="/pacotes">Nossos Pacotes</Link>
                       </li>
@@ -106,9 +106,9 @@ const Header = ({ tokenAdmin, tokenUser }) => {
 
             <nav className="cabecalho__menu-desk">
               <ul className="flex">
-                <li>
+                {/* <li>
                   <Link to="/pacotes">Viagens Temáticas</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/pacotes">Nossos Pacotes</Link>
                 </li>
