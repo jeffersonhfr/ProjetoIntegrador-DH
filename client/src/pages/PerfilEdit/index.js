@@ -25,7 +25,7 @@ const PerfilEdit = ({ tokenUser }) => {
       .then((res) => res.json())
       .then((res) =>
         setTimeout(() => {
-          setUser(res.user[0]);
+          setUser(res.user);
         })
       );
   }, []);
