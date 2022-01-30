@@ -4,21 +4,18 @@ const controller = {
   index: async (req, res, next) => {
     try {
       const querySearch = req.query.onde;
-      const queryUp = querySearch.toUpperCase();
       if (!querySearch == '') {
-        const pack = await getPackagesByName(querySearch);
-        if (pack == '') {
+        const pacotes = await getPackagesByName(querySearch);
+        if (pacotes == '') {
           const imagem = './assets/img/busca.png';
           return res.status(200).json({
             title: '| Pesquisa',
-            queryUp,
-            imagem,
+            pacotes,
           });
         } else {
           return res.status(200).json({
             title: '| Pesquisa',
-            pack,
-            queryUp,
+            pacotes,
           });
         }
       } else {

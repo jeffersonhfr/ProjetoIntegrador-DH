@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Routes, Route, useParams } from 'react-router-dom';
 
 const Footer = () => {
-  let facebook = "/assets/img/facebook.png";
-  let instagram = "/assets/img/instagram.png";
-  let twitter = "/assets//img/twitter.png";
+  let facebook = '/assets/img/facebook.png';
+  let instagram = '/assets/img/instagram.png';
+  let twitter = '/assets//img/twitter.png';
 
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3333/categorias")
+    fetch('http://localhost:3333/categorias')
       .then((res) => res.json())
       .then((res) => setCategorias(res.categorias));
   }, []);
@@ -23,9 +24,9 @@ const Footer = () => {
 
             {categorias.map((categorias) => (
               <li className="footer__lista__link">
-                <Link to="/pacotes?destino=nacional">
+                <a href={`/pacotes/?categoria=${categorias.nomeCategoria}`}>
                   {categorias.nomeCategoria}
-                </Link>
+                </a>
               </li>
             ))}
           </div>
