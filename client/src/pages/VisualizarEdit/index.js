@@ -25,7 +25,18 @@ const VisualizarEdit = () => {
       .then((res) => res.json())
       .then((res) =>
         setTimeout(() => {
-          setUser(res.user[0]);
+          setUser(res.user);
+          setEmail(res.user.email);
+          setNome(res.user.nome);
+          setTelefone(res.user.telefone);
+          setCpf(res.user.cpf);
+          setCep(res.user.cep);
+          setLogradouro(res.user.logradouro);
+          setNascimento(res.user.nascimento);
+          setComplemento(res.user.complemento);
+          setLocalidade(res.user.localidade);
+          setUf(res.user.uf);
+          setSenha(res.user.senha);
         })
       );
   }, []);
@@ -59,7 +70,6 @@ const VisualizarEdit = () => {
           }),
         }
       );
-      res = await res.json();
       window.location.href = "/visualizarUsuario/" + id;
     } catch (error) {
       console.log(error);
