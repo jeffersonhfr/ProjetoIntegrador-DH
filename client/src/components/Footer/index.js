@@ -35,20 +35,20 @@ const Footer = () => {
             <h5 className="footer__lista__titulo">Nossos Pacotes</h5>
             <ul>
               <li>
-                <Link
-                  to="/pacotes?destino=nacional"
+                <a
+                  href="/pacotes?destino=nacional"
                   className="footer__lista__link"
                 >
                   Pacotes Nacionais
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="/pacotes?destino=internacional"
+                <a
+                  href="/pacotes?destino=internacional"
                   className="footer__lista__link"
                 >
                   Pacotes Internacionais
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
