@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import ReactLoading from 'react-loading';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Filtro from '../../components/Filtro';
 import TravelCard from '../../components/TravelCard';
 
 const Pacotes = ({ tokenAdmin, tokenUser }) => {
+  function useQuery() {
+    const { search } = useLocation();
+    return search;
+  }
+  let query = useQuery();
+  console.log(query);
+
   const [pacotes, setPacotes] = useState();
   const [tituloPacote, setTituloPacote] = useState('');
   useEffect(() => {
-    fetch('http://localhost:3333/pacotes')
+    fetch('http://localhost:3333/pacotes' + query)
       .then((res) => res.json())
       .then((res) =>
         setTimeout(() => {
