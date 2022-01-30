@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Footer from "../../components/Footer";
 
 const VisualizarUsuario = () => {
   const [user, setUser] = useState([]);
@@ -12,7 +11,7 @@ const VisualizarUsuario = () => {
       .then((res) => res.json())
       .then((res) =>
         setTimeout(() => {
-          setUser(res.user[0]);
+          setUser(res.user);
         })
       );
   }, []);
@@ -77,7 +76,6 @@ const VisualizarUsuario = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 };
