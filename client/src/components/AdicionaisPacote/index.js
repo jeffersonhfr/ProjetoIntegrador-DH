@@ -1,11 +1,13 @@
 import React from 'react';
 
-const AdicionaisPacote = ({ pacote }) => {
+const AdicionaisPacote = ({ pacote, indexAdicionais }) => {
   return (
     <>
-      {pacote.adicional.map((adicional) => {
+      {indexAdicionais}
+      {pacote.adicional.map((adicional, indexAdicionaisItens) => {
         return (
           <>
+            {indexAdicionaisItens}
             <li className="Pacote-Propriedades__Item Bonus liModal">
               <img
                 className="Pacote-Propriedades__Item-Img"

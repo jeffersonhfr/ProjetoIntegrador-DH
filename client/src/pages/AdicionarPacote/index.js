@@ -1,11 +1,8 @@
 import React from 'react';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 
 const AdicionarPacote = () => {
   return (
     <>
-      />
       <div className="container">
         <form
           action=""
@@ -183,7 +180,6 @@ const AdicionarPacote = () => {
           </button>
         </form>
       </div>
-      
     </>
   );
 };

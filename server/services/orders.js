@@ -11,7 +11,7 @@ ordersServices.getAllOrders = async () => {
 };
 
 ordersServices.getAllOrdesByUserId = async (userId) => {
-  const pedidos = await Order.findAll({
+  const pedidos = await Order.findOne({
     where: { userId },
     include: [{ association: 'pacote' }, { association: 'usuario' }],
   });
@@ -20,7 +20,7 @@ ordersServices.getAllOrdesByUserId = async (userId) => {
 };
 
 ordersServices.getOneOrdesById = async (id) => {
-  const pedidos = await Order.findAll({
+  const pedidos = await Order.findOne({
     where: { id },
     include: [{ association: 'pacote' }, { association: 'usuario' }],
   });

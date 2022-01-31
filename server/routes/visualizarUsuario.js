@@ -1,11 +1,12 @@
 var express = require("express");
 var router = express.Router();
 var visualizarUsuarioContoller = require("../controllers/visualizarUsuario");
-const adminMiddleware = require("../middlewares/admin");
+const loginMiddleware = require("../middlewares/login");
 
-/* GET home page. */
-router.get("/:id", visualizarUsuarioContoller.index);
-router.get("/:id/edit", visualizarUsuarioContoller.form_edit);
-router.put("/:id/edit", visualizarUsuarioContoller.edit);
+
+
+router.get("/:id",loginMiddleware, visualizarUsuarioContoller.index);
+
+router.put("/:id/edit",loginMiddleware, visualizarUsuarioContoller.edit);
 
 module.exports = router;

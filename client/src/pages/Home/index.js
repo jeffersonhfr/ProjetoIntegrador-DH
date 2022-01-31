@@ -1,10 +1,10 @@
 import React from 'react';
+import BarraDeBusca from '../../components/BarraDeBusca';
 import Categorias from '../../components/Categorias';
 import NewsLetter from '../../components/NewsLetter';
-import BarraDeBusca from '../../components/BarraDeBusca';
 import Promocoes from '../../components/Promocoes';
 
-const Home = ({ user }) => {
+const Home = ({ tokenAdmin, tokenUser }) => {
   return (
     <>
       <BarraDeBusca />

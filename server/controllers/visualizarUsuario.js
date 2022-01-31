@@ -1,63 +1,47 @@
-const { getUserById } = require('../services/usuarios');
+const { getUserById,updateUser } = require("../services/usuarios");
 
 const controller = {
   index: async (req, res, next) => {
     try {
-      const id = 5;
-      // const { id } = req.params;
+      const { id } = req.params;
       const user = await getUserById(id);
+      
+      if(req.userId!=id){
+        console.log(req.isAdmin)
+        if(!req.isAdmin){
+          return res.status(403).send({ message: 'Você não tem permissão para acessar essa página!' });}
+      }
+      
 
-      return res.status(200).json({
-        title: 'Usuário',
-        subtitulo: `Usuário #${id}`,
-        user,
-      });
+      if(!user)
+        return res.status(404).send({message: "Esse usuário não existe"});
+
+      return res.status(200).json({user});
+      
     } catch (error) {
       console.log(error);
-      return res.status(500).json({ message: 'Erro do servidor', error });
+      return res.status(500).json({ message: "Erro do servidor"});
     }
   },
   edit: async (req, res, next) => {
     try {
-      const id = 5;
-      // const { id } = req.params;
-      const user = await getUserById(id);
-
-      return res.status(200).json({
-        title: 'Usuário',
-        subtitulo: `Usuário #${id}`,
-        user,
-      });
-    } catch (error) {
-      console.log(error);
-      return res.status(500).json({ message: 'Erro do servidor', error });
-    }
-  },
-  form_edit: async (req, res, next) => {
-    try {
-      const id = 5;
-      let usuarioLogado = {};
-      usuarioLogado.nome = 'Jefferson';
-      let usuarioAdmin = true;
-
-      // const { id } = req.params;
-      // let usuarioLogado = req.cookies.usuario;
-      // let usuarioAdmin = req.cookies.admin;
-      const user = await getUserById(id);
-
-      if (usuarioAdmin || usuarioLogado) {
-        return res.status(200).json({
-          title: '| ' + usuarioLogado.nome,
-          user,
-        });
-      } else {
-        return res.status(500).json({ message: 'Erro ao enviar o formulário' });
+      const { id } = req.params;
+       if(req.userId!=id){
+        console.log(req.isAdmin)
+        if(!req.isAdmin){
+          return res.status(403).send({ message: 'Você não tem permissão para acessar essa página!' });}
       }
+      const user = await getUserById(id);
+      if(!user){
+        return res.status(404).send({message: "Esse usuário não existe"})
+      }
+      const update = await updateUser(id,req.body);
+      return res.status(204).send();
     } catch (error) {
       console.log(error);
-      return res.status(500).json({ message: 'Erro do servidor', error });
+      return res.status(500).json({ message: "Erro do servidor" });
     }
-  },
+  }
 };
 
 module.exports = controller;

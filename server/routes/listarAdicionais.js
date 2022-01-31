@@ -3,19 +3,13 @@ var router = express.Router();
 var listarAdicionaisController = require('../controllers/adicionais');
 const adminMiddleware = require('../middlewares/admin');
 
-/* GET home page. */
-router.get('/', listarAdicionaisController.index);
 
-router.get('/adicionar', listarAdicionaisController.add);
-// router.get('/adicionar', adminMiddleware, listarAdicionaisController.add);
+router.get('/',adminMiddleware, listarAdicionaisController.index);
 
-router.post('/adicionar', adminMiddleware, listarAdicionaisController.create);
+router.post('/adicionar',adminMiddleware,  listarAdicionaisController.create);
 
-router.get('/:id/editar', listarAdicionaisController.edit);
-// router.get('/:id/editar', adminMiddleware, listarAdicionaisController.edit);
+router.put('/:id/editar',adminMiddleware,  listarAdicionaisController.update);
 
-router.post('/:id/editar', adminMiddleware, listarAdicionaisController.update);
-
-router.post('/:id/delete', adminMiddleware, listarAdicionaisController.destroy);
+router.delete('/:id',adminMiddleware,  listarAdicionaisController.destroy);
 
 module.exports = router;

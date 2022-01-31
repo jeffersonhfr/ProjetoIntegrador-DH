@@ -4,7 +4,6 @@ const { getUserByEmail } = require("../services/usuarios");
 
 const auth = async (req, res, next) => {
   try {
-    // LIMPEZA DE COOKIES
     res.clearCookie("usuario");
     res.clearCookie("admin");
 

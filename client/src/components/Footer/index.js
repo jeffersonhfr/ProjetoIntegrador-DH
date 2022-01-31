@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Routes, Route, useParams } from 'react-router-dom';
 
 const Footer = () => {
-  let facebook = "/assets/img/facebook.png";
-  let instagram = "/assets/img/instagram.png";
-  let twitter = "/assets//img/twitter.png";
+  let facebook = '/assets/img/facebook.png';
+  let instagram = '/assets/img/instagram.png';
+  let twitter = '/assets//img/twitter.png';
+
+  const [categorias, setCategorias] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3333/categorias')
+      .then((res) => res.json())
+      .then((res) => setCategorias(res.categorias));
+  }, []);
 
   return (
     <footer>
@@ -11,15 +21,17 @@ const Footer = () => {
         <section className="footer__conteudo">
           <div className="footer__lista">
             <h5 className="footer__lista__titulo">Viagens Temáticas</h5>
-
-            {/* COLOCAR O MAP */}
             <ul>
-              <li className="footer__lista__link"><a>Aventura</a></li>
-              <li className="footer__lista__link"><a>Família</a></li>
-              <li className="footer__lista__link"><a>Histórico</a></li>
-              <li className="footer__lista__link"><a>Neve</a> </li>
-              <li className="footer__lista__link"><a>Praia</a></li>
-              <li className="footer__lista__link"><a>Romance</a></li>
+              {categorias.map((categorias, idx) => (
+                <li className="footer__lista__link" key={idx}>
+                  <a
+                    href={`/pacotes/?categoria=${categorias.nomeCategoria}`}
+                    key={idx}
+                  >
+                    {categorias.nomeCategoria}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -27,7 +39,10 @@ const Footer = () => {
             <h5 className="footer__lista__titulo">Nossos Pacotes</h5>
             <ul>
               <li>
-                <a href="/pacotes?destino=nacional" className="footer__lista__link">
+                <a
+                  href="/pacotes?destino=nacional"
+                  className="footer__lista__link"
+                >
                   Pacotes Nacionais
                 </a>
               </li>
@@ -46,14 +61,14 @@ const Footer = () => {
             <h5 className="footer__lista__titulo">Sobre Nós</h5>
             <ul>
               <li>
-                <a href="/sobre#historia" className="footer__lista__link">
+                <Link to="/sobre#historia" className="footer__lista__link">
                   História da Empresa
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/sobre#fale" className="footer__lista__link">
+                <Link to="/sobre#fale" className="footer__lista__link">
                   Fale conosco
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -62,32 +77,34 @@ const Footer = () => {
             <h5 className="footer__lista__titulo">Ajuda</h5>
             <ul>
               <li>
-                <a href="/ajuda#duvidas" className="footer__lista__link">
+                <Link to="/ajuda#duvidas" className="footer__lista__link">
                   Dúvidas Frequentes
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/ajuda#cancelamentos" className="footer__lista__link">
+                <Link to="/ajuda#cancelamentos" className="footer__lista__link">
                   Cancelamentos
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/ajuda#politica-privacidade"
+                <Link
+                  to="/ajuda#politica-privacidade"
                   className="footer__lista__link"
                 >
                   Políticas de Privacidade
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
 
           <div className="footer__lista__contato">
-            <h5 className="footer__lista__titulo">Siga as nossas redes sociais</h5>
+            <h5 className="footer__lista__titulo">
+              Siga as nossas redes sociais
+            </h5>
             <ul>
               <li>
-                <a
-                  href="http://facebook.com"
+                <Link
+                  to="http://facebook.com"
                   className="footer__lista__link social"
                 >
                   <img
@@ -97,11 +114,11 @@ const Footer = () => {
                     width="40px"
                     height="40px"
                   />
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="http://integram.com"
+                <Link
+                  to="http://integram.com"
                   className="footer__lista__link social"
                 >
                   <img
@@ -111,11 +128,14 @@ const Footer = () => {
                     width="40px"
                     height="40px"
                   />
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="http://twitter.com" className="footer__lista__link social">
+                <Link
+                  to="http://twitter.com"
+                  className="footer__lista__link social"
+                >
                   <img
                     alt="twitter"
                     src={twitter}
@@ -123,7 +143,7 @@ const Footer = () => {
                     width="40px"
                     height="40px"
                   />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

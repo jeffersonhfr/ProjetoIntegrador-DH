@@ -1,11 +1,10 @@
-import React from 'react';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import React from "react";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const AjudaEdit = () => {
   return (
     <>
-      />
       <section className="ajuda ajuda-edit">
         <div className="container">
           <div className="ajuda-container">
@@ -30,13 +29,18 @@ const AjudaEdit = () => {
               <label htmlFor="textoDuvidas">
                 Texto informativo sobre as dúvidas
               </label>
-              <textarea name="textoDuvidas" className="form-campos form-textarea">
+              <textarea
+                name="textoDuvidas"
+                className="form-campos form-textarea"
+              >
                 textoDuvidas
               </textarea>
               <br />
               <br />
 
-              <label htmlFor="tituloCancelamentos">Título para cancelamentos</label>
+              <label htmlFor="tituloCancelamentos">
+                Título para cancelamentos
+              </label>
               <input
                 type="text"
                 name="tituloCancelamentos"
@@ -67,7 +71,10 @@ const AjudaEdit = () => {
               <label htmlFor="textoPolítica">
                 Texto informativo sobre as políticas de privacidade
               </label>
-              <textarea name="textoPolítica" className="form-campos form-textarea">
+              <textarea
+                name="textoPolítica"
+                className="form-campos form-textarea"
+              >
                 textoPolítica
               </textarea>
 
@@ -78,7 +85,6 @@ const AjudaEdit = () => {
           </div>
         </div>
       </section>
-      
     </>
   );
 };

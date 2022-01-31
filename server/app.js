@@ -6,7 +6,6 @@ const logger = require('morgan');
 const methodOverride = require('method-override');
 
 const adminMiddleware = require('./middlewares/admin');
-const indexRouter = require('./routes/index');
 const pesquisaRouter = require('./routes/pesquisa');
 const pacotesRouter = require('./routes/pacotes');
 const sobreRouter = require('./routes/sobre');
@@ -19,7 +18,7 @@ const historicoRouter = require('./routes/historico');
 const checkoutRouter = require('./routes/checkout');
 const perfilRouter = require('./routes/usuario');
 
-// const loginRouter = require('./routes/login');
+ const loginRouter = require('./routes/login');
 // const recuperarSenhaRouter = require('./routes/recuperarSenha');
 // const logoutRouter = require('./routes/logout');
 
@@ -44,7 +43,6 @@ app.use('/img', express.static(__dirname + '/public/assets/img'));
 app.use('/src', express.static(__dirname + '/public/src'));
 
 app.use(cors());
-app.use('/', indexRouter); //JSON
 app.use('/pesquisa', pesquisaRouter); //JSON
 app.use('/pacotes', pacotesRouter); //JSON
 app.use('/sobre', sobreRouter); //JSON
@@ -54,18 +52,17 @@ app.use('/minhas-viagens', historicoRouter); //JSON
 app.use('/checkout', checkoutRouter); //JSON
 app.use('/perfil', perfilRouter); //JSON
 
-// app.use('/login', loginRouter);
-// app.use('/recuperarSenha', recuperarSenhaRouter);
-// app.use('/logout', logoutRouter);
+ app.use('/login', loginRouter);
+ //app.use('/recuperarSenha', recuperarSenhaRouter);
+ //app.use('/logout', logoutRouter);
 
-// A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
-app.use('/listarUsuarios', listarUsuariosRouter); //JSON
+app.use('/usuarios', listarUsuariosRouter); //JSON
 // app.use('/listarUsuarios', adminMiddleware, listarUsuariosRouter);
 
-app.use('/listarCategoria', listarCategoriaRouter); //JSON
+app.use('/categorias', listarCategoriaRouter); //JSON
 // app.use('/listarCategoria', adminMiddleware, listarCategoriaRouter);
 
-app.use('/listarAdicional', listarAdicionaisRouter); //JSON
+app.use('/adicionais', listarAdicionaisRouter); //JSON
 // app.use('/listarAdicional', adminMiddleware, listarAdicionaisRouter);
 
 app.use('/visualizarUsuario', visualizarUsuarioRouter); //JSON

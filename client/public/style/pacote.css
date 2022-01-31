@@ -165,6 +165,7 @@ h1.Pacote-Propriedades__Item__Valor-Promocional {
     font-weight: 400;
     min-width: 115px;
     text-align: center;
+    display: block;
 }
 
 .Pacote-Propriedades__Item.Destaques{

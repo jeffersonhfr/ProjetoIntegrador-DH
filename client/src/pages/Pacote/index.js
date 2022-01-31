@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ReactLoading from 'react-loading';
-import { useParams } from 'react-router-dom';
-import TravelImages from '../../components/TravelImages';
+import { Link, useParams } from 'react-router-dom';
 import AdicionaisPacote from '../../components/AdicionaisPacote';
+import TravelImages from '../../components/TravelImages';
 
 const Pacote = () => {
   function openModal() {
@@ -22,76 +22,6 @@ const Pacote = () => {
     });
   };
 
-  let pack = [
-    {
-      package_images: [
-        {
-          src: '/assets/img/package/Egito.jpg',
-        },
-        {
-          src: '/assets/img/package/Egito1.jpg',
-        },
-        {
-          src: '/assets/img/package/Egito2.jpg',
-        },
-        {
-          src: '/assets/img/package/Egito3.jpg',
-        },
-        {
-          src: '/assets/img/package/Egito4.jpg',
-        },
-        {
-          src: '/assets/img/package/Egito5.jpg',
-        },
-        {
-          src: '/assets/img/package/Egito6.jpg',
-        },
-      ],
-      adicional: [
-        {
-          nomeAdicional: 'City Tour',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: 'Hotel com Piscina Aquecida',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: 'Jantar no Palácio Real',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: 'Entradas para Museus',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: 'Passeio de Camelo',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: 'Wi-fi Grátis',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: 'Café da Manhã',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          nomeAdicional: 'Refeição Completa',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-      ],
-    },
-  ];
-
   const [pacote, setPacote] = useState();
 
   const { id } = useParams();
@@ -101,15 +31,12 @@ const Pacote = () => {
       .then((res) => res.json())
       .then((res) =>
         setTimeout(() => {
-          setPacote(res.pacote[0]);
-        }, 1500),
+          setPacote(res.pacote);
+        }, 400),
       );
   }, []);
-
-  console.log(pacote);
   const pacotes = [pacote];
-  console.log(pacotes);
-
+  const idPacote = pacote?.id;
   return !pacote ? (
     <>
       <div
@@ -143,10 +70,10 @@ const Pacote = () => {
           <h1 className="Pacote-TitleContainer__Title">{pacote.nomePacote}</h1>
         </article>
         <nav className="Pacote-ImgContainer">
-          {pacotes.map((Pacote) => {
+          {pacotes.map((Pacote, idx) => {
             return (
               <>
-                <TravelImages pacote={Pacote} />
+                <TravelImages pacote={Pacote} key={idx} />
               </>
             );
           })}
@@ -243,27 +170,22 @@ const Pacote = () => {
               </p>
             </li>
           </ul>
-          <form action="../checkout" method="post" className="btao-form">
-            <input
-              type="text"
-              name="origem"
-              id="origem"
-              defaultValue="{ origem }"
-              hidden
-            />
 
-            <input
-              type="text"
-              name="idPacote"
-              id="idPacote"
-              defaultValue="{ pacote.id }"
-              hidden
-            />
+          <input
+            type="text"
+            name="idPacote"
+            id="idPacote"
+            defaultValue={pacote.id}
+            hidden
+          />
 
-            <button type="submit" className="Pacote__Button-Comprar">
-              Comprar
-            </button>
-          </form>
+          <Link
+            className="Pacote__Button-Comprar"
+            to="../../checkout"
+            state={{ pacoteId: pacote.id }}
+          >
+            Comprar
+          </Link>
         </aside>
         <article className="Pacote-Descricao-Sobre">
           <h1 className="Pacote-Decricao__Titulo">Sobre o Destino</h1>
@@ -299,10 +221,10 @@ const Pacote = () => {
           </div>
           <div className="modal-conteudo">
             <h1 className="tituloModal">Benefícios do pacote</h1>
-            {pacotes.map((Pacote) => {
+            {pacotes.map((Pacote, indexAdicionais) => {
               return (
                 <>
-                  <AdicionaisPacote pacote={Pacote} />
+                  <AdicionaisPacote pacote={Pacote} key={indexAdicionais} />
                 </>
               );
             })}

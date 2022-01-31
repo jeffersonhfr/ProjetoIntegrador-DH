@@ -70,6 +70,14 @@ section.fundo {
   padding: 0px 8px;
   color: #919191;
 }
+.formulario-login__dados .bi-eye {
+  position: absolute;
+  font-size: 14px;
+  left: 250px;
+  padding: 0px 8px;
+  color: #919191;
+}
+
 .container-recuperar-senha {
   color: #919191;
   text-align: center;
@@ -250,6 +258,13 @@ p.cadastro__link-cadastro {
     color: #919191;
   }
   .formulario-login__dados .bi-eye-slash {
+    position: absolute;
+    font-size: 14px;
+    left: 300px;
+    padding: 0px 8px;
+    color: #919191;
+  }
+  .formulario-login__dados .bi-eye {
     position: absolute;
     font-size: 14px;
     left: 300px;
