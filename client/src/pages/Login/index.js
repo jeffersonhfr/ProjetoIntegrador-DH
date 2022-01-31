@@ -1,38 +1,39 @@
-import React, { useState } from 'react';
-import verSenha from './scripts/ver-senha';
-import auth from '../../storage/auth';
-import user from '../../storage/user';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import React, { useState } from "react";
+import verSenha from "./scripts/ver-senha";
+import auth from "../../storage/auth";
+import user from "../../storage/user";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 // import { Container } from './styles';
 
 const Login = ({ erro }) => {
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-  const [loginError, setloginError] = useState('');
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [verSenha, setVerSenha] = useState(false);
+
+  const [loginError, setloginError] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch('http://localhost:3333/login', {
-        method: 'post',
+      let res = await fetch("http://localhost:3333/login", {
+        method: "post",
         headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, senha }),
       });
       res = await res.json();
       auth.setToken(res.token);
       user.setUser(res.user);
-      window.location.href = '/';
+      window.location.href = "/";
       // window.location.reload();
     } catch (error) {
       // console.log(error);
-      setloginError('Login ou senha inválida!');
+      setloginError("Login ou senha inválida!");
     }
   };
-
   return (
     <>
       <section className="container-login">
@@ -45,7 +46,6 @@ const Login = ({ erro }) => {
             height="290px"
           />
         </div>
-
         <div className="container-formulario-login">
           <div class="container-formulario-login__erro">{loginError}</div>
           <form id="formulario-login" onSubmit={handleSubmit}>
@@ -66,29 +66,26 @@ const Login = ({ erro }) => {
               </div>
               <div className="formulario-login__dados">
                 <input
-                  type="password"
+                  type={verSenha ? "text" : "password"}
                   className="login__senha"
                   id="senha"
                   placeholder="Senha"
-                  value={senha}
-                  onChange={(e) => setSenha(e.target.value)}
                   required
                 />
                 <i
-                  className="bi bi-eye-slash"
+                  className={verSenha ? "bi-eye" : "bi bi-eye-slash"}
                   id="togglePassword"
-                  onClick={verSenha}
+                  onClick={() => setVerSenha(!verSenha)}
                 ></i>
               </div>
             </fieldset>
-
             <div className="container-recuperar-senha">
               <a href="/recuperarSenha">Esqueceu sua senha?</a>
             </div>
             {/*origem?
-            <input type="text" name="origem" id="origem" value="<%= origem %>" hidden/>
-            :null
-           */}
+<input type="text" name="origem" id="origem" value="<%= origem %>" hidden/>
+:null
+*/}
             <div className="container-botao-login">
               <button className="botao-login" type="submit">
                 ENTRAR
@@ -108,5 +105,4 @@ const Login = ({ erro }) => {
     </>
   );
 };
-
 export default Login;
