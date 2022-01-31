@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import ReactLoading from 'react-loading';
 import Parcelamento from '../../components/parcelamento';
 
-const Checkout = (testvalue) => {
+const Checkout = ({ tokenUser }) => {
   let valor = (valor) => {
     return valor.toLocaleString('pt-BR', {
       style: 'currency',
@@ -18,29 +18,17 @@ const Checkout = (testvalue) => {
     setCartao(true);
     setBoleto(false);
     setHr(false);
+    setPagamento('Cartão de Crédito');
   };
 
   const checkoutBoleto = () => {
     setBoleto(true);
     setCartao(false);
     setHr(true);
+    setPagamento('Boleto Bancário');
   };
 
-  function addBoleto() {
-    document.querySelector('#nomecartao').required = false;
-    document.querySelector('#numerocartao').required = false;
-    document.querySelector('#parcelas').required = false;
-  }
-
-  function addCartao() {
-    document.querySelector('#nomecartao').required = true;
-    document.querySelector('#numerocartao').required = true;
-    document.querySelector('#parcelas').required = true;
-  }
-
   const [pacote, setPacote] = useState();
-  const pacotes = [pacote];
-
   const location = useLocation();
   const { pacoteId } = location.state;
   const apiURL = 'http://localhost:3333/pacotes/' + pacoteId;
@@ -56,11 +44,43 @@ const Checkout = (testvalue) => {
       );
   }, []);
 
-  const parcelas = [];
+  const parcelasArr = [];
   for (let i = 0; i < pacote?.parcelas; i++) {
-    parcelas.push(i);
+    parcelasArr.push(i);
   }
 
+  setTimeout(() => {
+    setValorPago(
+      pacote.preco - (pacote.preco * pacote.promocaoPorcentagem) / 100,
+    );
+  }, 500);
+
+  const [pagamento, setPagamento] = useState('');
+  const [valorPago, setValorPago] = useState();
+  const [parcela, setParcela] = useState(1);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      let res = await fetch('http://localhost:3333/checkout/sucesso', {
+        method: 'post',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          idPacote: pacoteId,
+          pagamento: pagamento,
+          valorPago: valorPago,
+          parcelas: parcela,
+          userId: tokenUser.id,
+        }),
+      });
+      window.location.href = './checkout/sucesso';
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return !pacote ? (
     <>
       <div
@@ -85,7 +105,8 @@ const Checkout = (testvalue) => {
         <div className="titulo-checkout">
           <h1>Minha Compra</h1>
         </div>
-        <form action="/checkout/sucesso" method="POST">
+
+        <form onSubmit={handleSubmit}>
           <div className="pagamento__box">
             <div className="pagamento__box__content">
               <div className="pagamento__box__imagem">
@@ -102,16 +123,6 @@ const Checkout = (testvalue) => {
                   <li>
                     <h2 className="pagamento__box__detalhes__titulo">Valor:</h2>
                     <span>
-                      <input
-                        type="text"
-                        name="valorPago"
-                        id="valorPago"
-                        defaultValue={
-                          pacote.preco -
-                          (pacote.preco * pacote.promocaoPorcentagem) / 100
-                        }
-                        hidden
-                      />
                       {valor(
                         pacote.preco -
                           (pacote.preco * pacote.promocaoPorcentagem) / 100,
@@ -137,7 +148,7 @@ const Checkout = (testvalue) => {
                         name="pagamento"
                         defaultValue="Boleto Bancário"
                         required="required"
-                        onClick={addBoleto}
+                        value="Boleto Bancário"
                         onClick={checkoutBoleto}
                       />
                       <label>Boleto Bancário</label>
@@ -149,7 +160,7 @@ const Checkout = (testvalue) => {
                         id="cartaoCredito"
                         name="pagamento"
                         defaultValue="Cartão de Crédito"
-                        onClick={addCartao}
+                        value="Cartão de Crédito"
                         onClick={checkoutCartao}
                       />
                       <label> Cartão de Crédito </label>
@@ -188,14 +199,16 @@ const Checkout = (testvalue) => {
                   <br />
 
                   <select name="parcelas" id="parcelas">
-                    {parcelas.map(function (parcela, i) {
+                    {parcelasArr.map(function (parcela, i) {
                       return (
-                        <Parcelamento
-                          obj={parcela}
-                          key={i}
-                          parcelaN={i}
-                          pacote={pacote}
-                        />
+                        <>
+                          <Parcelamento
+                            obj={parcela}
+                            key={i}
+                            parcelaN={i}
+                            pacote={pacote}
+                          />
+                        </>
                       );
                     })}
                   </select>
@@ -250,18 +263,8 @@ const Checkout = (testvalue) => {
               </div>
             </div>
             <div className="pagamento__confirmacao">
-              <input
-                type="text"
-                name="idPacote"
-                id="idPacote"
-                defaultValue={pacote.id}
-                hidden
-              />
-              <button className="btao-confirmar" type="submit">
-                Confirmar Pedido
-              </button>
+              <button className="btao-confirmar">Confirmar Pedido</button>
             </div>
-            <script src="./scripts/checkoutScript"></script>
           </div>
         </form>
       </main>
