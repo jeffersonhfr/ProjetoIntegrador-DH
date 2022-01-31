@@ -29,16 +29,13 @@ const UsuarioCard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch(
-        "http://localhost:3333/usuarios/" + id + "/delete",
-        {
-          method: "delete",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      let res = await fetch("http://localhost:3333/usuarios/3/delete", {
+        method: "delete",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
       window.location.href = "/listarUsuarios/";
     } catch (error) {
       console.log(error);
@@ -95,7 +92,7 @@ const UsuarioCard = () => {
                   <div className="modal-alert">
                     <div className="modal-conteudo">
                       <h1 className="tituloModal tituloAlert">
-                        Deseja realmente excluir {user.nome} ?{user.id}
+                        Deseja realmente excluir esse usuário?
                       </h1>
                       <form
                         onSubmit={handleSubmit}
