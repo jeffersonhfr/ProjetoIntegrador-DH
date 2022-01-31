@@ -8,10 +8,23 @@ const Parcelamento = ({ parcela, i, parcelaN, pacote }) => {
     });
   };
   const parcelaNumero = parcelaN + 1;
+
+  const onTrigger = (event) => {
+    this.props.parentCallback('Data from child');
+    console.log('teste');
+    console.log('teste');
+    console.log('teste');
+    event.preventDefault();
+  };
+
   return (
     <>
       {
-        <option defaultValue="parcelas">
+        <option
+          defaultValue="parcelas"
+          value={parcelaNumero}
+          onClick={onTrigger}
+        >
           {parcelaNumero} x {''}
           {valor(
             (pacote.preco - (pacote.preco * pacote.promocaoPorcentagem) / 100) /

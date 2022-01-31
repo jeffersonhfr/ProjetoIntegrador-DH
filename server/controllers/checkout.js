@@ -1,30 +1,9 @@
-const { getPackagesById } = require('../services/pacotes');
 const { createOrder } = require('../services/orders');
 
 const controller = {
-  // index: async (req, res, next) => {
-  //   try {
-  //     const { idPacote } = req.body;
-  //     console.log(idPacote);
-  //     const pack = await getPackagesById(idPacote);
-
-  //     if (!pack)
-  //       return res.status(404).send({
-  //         message: 'Esse pacote não existe ou não está mais disponível',
-  //       });
-
-  //     return res.status(200).json({
-  //       pack,
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //     return res.status(500).json({ message: 'Erro do servidor' });
-  //   }
-  // },
   sucesso: async (req, res, next) => {
     try {
-      const { idPacote, pagamento, valorPago, parcelas, imagem } = req.body;
-      const user = req.userId;
+      const { idPacote, pagamento, valorPago, parcelas, userId } = req.body;
 
       if (pagamento === 'Boleto Bancário') {
         const status = 'Aguardando Pagamento';
@@ -36,14 +15,13 @@ const controller = {
         order.status = status;
         order.pedidoAtivo = 1;
         order.packageId = idPacote;
-        order.userId = user;
+        order.userId = userId;
 
         const addOrder = await createOrder(order);
 
         return res.status(200).json({
           order,
           pagamento,
-          imagem,
         });
       } else {
         let status = 'Pagamento Aprovado';
@@ -54,12 +32,11 @@ const controller = {
         order.status = status;
         order.pedidoAtivo = 1;
         order.packageId = idPacote;
-        order.userId = user;
+        order.userId = userId;
         const addOrder = await createOrder(order);
 
         return res.status(200).json({
           order,
-          imagem,
         });
       }
     } catch (error) {

@@ -157,7 +157,7 @@ const Routes = () => {
                 ]}
               />
               <Route
-                path="/checkoutSucesso"
+                path="/checkout/sucesso"
                 element={[
                   <Header tokenAdmin={tokenAdmin} tokenUser={tokenUser} />,
                   <CheckoutSucesso

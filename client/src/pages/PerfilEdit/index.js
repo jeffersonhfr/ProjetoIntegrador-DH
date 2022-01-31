@@ -1,25 +1,22 @@
-import React, { useState, useEffect } from "react";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
-import auth from "../../storage/auth";
-import user from "../../storage/user";
+import React, { useEffect, useState } from 'react';
+import Footer from '../../components/Footer';
 const PerfilEdit = ({ tokenUser }) => {
   const [user, setUser] = useState([]);
-  const [email, setEmail] = useState("");
-  const [nome, setNome] = useState("");
-  const [telefone, setTelefone] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [cep, setCep] = useState("");
-  const [logradouro, setLogradouro] = useState("");
-  const [nascimento, setNascimento] = useState("");
-  const [complemento, setComplemento] = useState("");
-  const [localidade, setLocalidade] = useState("");
-  const [uf, setUf] = useState("");
-  const [senha, setSenha] = useState("");
-  const [confirmarSenha, setCofirmarSenha] = useState("");
+  const [email, setEmail] = useState('');
+  const [nome, setNome] = useState('');
+  const [telefone, setTelefone] = useState('');
+  const [cpf, setCpf] = useState('');
+  const [cep, setCep] = useState('');
+  const [logradouro, setLogradouro] = useState('');
+  const [nascimento, setNascimento] = useState('');
+  const [complemento, setComplemento] = useState('');
+  const [localidade, setLocalidade] = useState('');
+  const [uf, setUf] = useState('');
+  const [senha, setSenha] = useState('');
+  const [confirmarSenha, setCofirmarSenha] = useState('');
 
   const id = tokenUser.id;
-  const apiURL = "http://localhost:3333/visualizarUsuario/" + id;
+  const apiURL = 'http://localhost:3333/visualizarUsuario/' + id;
   useEffect(() => {
     fetch(apiURL)
       .then((res) => res.json())
@@ -37,7 +34,7 @@ const PerfilEdit = ({ tokenUser }) => {
           setLocalidade(res.user.localidade);
           setUf(res.user.uf);
           setSenha(res.user.senha);
-        })
+        }),
       );
   }, []);
 
@@ -47,12 +44,12 @@ const PerfilEdit = ({ tokenUser }) => {
     e.preventDefault();
     try {
       let res = await fetch(
-        "http://localhost:3333/visualizarUsuario/" + id + "/edit",
+        'http://localhost:3333/visualizarUsuario/' + id + '/edit',
         {
-          method: "put",
+          method: 'put',
           headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify({
             email,
@@ -68,11 +65,11 @@ const PerfilEdit = ({ tokenUser }) => {
             telefone,
             nome,
           }),
-        }
+        },
       );
       //res = await res.json();
       //   auth.setToken(res.token);
-      window.location.href = "/perfil";
+      window.location.href = '/perfil';
     } catch (error) {
       console.log(error);
     }
