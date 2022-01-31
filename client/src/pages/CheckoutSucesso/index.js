@@ -85,17 +85,17 @@ let pacotes = [
 ];
 
 const CheckoutSucesso = () => {
-  const [data, setData] = useState();
+  // const [data, setData] = useState();
 
-  useEffect(() => {
-    const dataAux = datas.getData();
-    if (dataAux) {
-      setData(dataAux);
-    }
-  }, []);
-  console.log(data);
-  data.json.Parse;
-  console.log(data.imagem);
+  // useEffect(() => {
+  //   const dataAux = datas.getData();
+  //   if (dataAux) {
+  //     setData(dataAux);
+  //   }
+  // }, []);
+  // console.log(data);
+  // data.json.Parse;
+  // console.log(data.imagem);
 
   return (
     <>
