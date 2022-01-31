@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import Header from "../../components/Header";
-import Filtro from "../../components/Filtro";
-import TravelCard from "../../components/TravelCard";
-import Footer from "../../components/Footer";
+
+import validator from "validator";
 
 const Cadastro = () => {
   const [nome, setNome] = useState("");
@@ -32,20 +30,25 @@ const Cadastro = () => {
       console.log(error);
     }
   };
-  // function validacao(e) {
-  //   e.preventDefault();
-  //   var senha1 = document.getElementById("senha");
-  //   var senha2 = document.getElementById("confimar-senha");
-  //   senha2.addEventListener("blur", () => {
-  //     if (senha1 !== senha2) {
-  //       e.stopPropagation();
-  //       alert("As Senhas não conferem!");
-  //     }
-  //   });
-  // }
+  function validacao(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var senha1 = document.getElementById("senha");
+    var senha2 = document.getElementById("confimar-senha");
+    senha2.addEventListener("blur", () => {
+      if (senha1.value !== senha2.value) {
+        alert("As Senhas não conferem!");
+      }
+      e.stopPropagation();
+    });
+  }
 
-  // function validacao2() {
+  // function validacao2(e) {
+  //   e.preventDefault();
+
+  //   e.stopPropagation();
   //   var senha1 = document.getElementById("senha");
+
   //   var regex =
   //     /^(?=(?:.*?[A-Z]){1})(?=(?:.*?[0-9]){1})(?=(?:.*?[!@#$%*()_+^&}{:;?.]){1})(?!.*\s)[0-9a-zA-Z!@#$%;*(){}_+^&]*$/;
 
@@ -64,6 +67,26 @@ const Cadastro = () => {
   //     return true;
   //   });
   // }
+
+  // const [errorMessage, setErrorMessage] = useState("");
+
+  // const validate = (value) => {
+  //   if (
+  //     validator.isStrongPassword(value, {
+  //       minLength: 6,
+  //       // minLowercase: 1,
+  //       // minUppercase: 1,
+  //       minNumbers: 1,
+  //       minSymbols: 1,
+  //     })
+  //   ) {
+  //     setErrorMessage("Senha forte!");
+  //   } else {
+  //     setErrorMessage(
+  //       "Sua senha não é forte, sua senha tem que ter: minimo 6 digitos, 1 simblo e um número"
+  //     );
+  //   }
+  // };
 
   return (
     <>
@@ -111,20 +134,29 @@ const Cadastro = () => {
                   id="senha"
                   name="senha"
                   placeholder="Senha:"
-                  value={senha}
                   onChange={(e) => setSenha(e.target.value)}
-                  // onBlur={validacao2}
+                  // onMouseLeave={validacao2}
                   required
                 />
                 <input
                   type="password"
                   id="confimar-senha"
                   placeholder="Confirmar senha:"
-                  value={confirmarSenha}
                   onChange={(e) => setCofirmarSenha(e.target.value)}
-                  // onBlur={validacao}
+                  // onChange={(e) => validate(e.target.value)}
+                  onMouseLeave={validacao}
                   required
-                />
+                />{" "}
+                {/* <br />
+                <p
+                  style={{
+                    color: "red",
+                  }}
+                >
+                  {" "}
+                  <br />
+                  {errorMessage} */}
+                {/* </p> */}
               </div>
             </fieldset>
 
