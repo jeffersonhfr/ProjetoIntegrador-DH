@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import datas from '../../storage/data';
 let pacotes = [
   {
     nomePacote: 'Egito Histórico',
@@ -85,6 +85,18 @@ let pacotes = [
 ];
 
 const CheckoutSucesso = () => {
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    const dataAux = datas.getData();
+    if (dataAux) {
+      setData(dataAux);
+    }
+  }, []);
+  console.log(data);
+  data.json.Parse;
+  console.log(data.imagem);
+
   return (
     <>
       <main className="container container-checkout">

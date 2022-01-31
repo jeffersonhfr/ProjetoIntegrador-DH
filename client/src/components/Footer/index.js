@@ -21,14 +21,18 @@ const Footer = () => {
         <section className="footer__conteudo">
           <div className="footer__lista">
             <h5 className="footer__lista__titulo">Viagens Temáticas</h5>
-
-            {categorias.map((categorias) => (
-              <li className="footer__lista__link">
-                <a href={`/pacotes/?categoria=${categorias.nomeCategoria}`}>
-                  {categorias.nomeCategoria}
-                </a>
-              </li>
-            ))}
+            <ul>
+              {categorias.map((categorias, idx) => (
+                <li className="footer__lista__link" key={idx}>
+                  <a
+                    href={`/pacotes/?categoria=${categorias.nomeCategoria}`}
+                    key={idx}
+                  >
+                    {categorias.nomeCategoria}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="footer__lista">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import ReactLoading from 'react-loading';
+import { useLocation } from 'react-router-dom';
 import Parcelamento from '../../components/parcelamento';
 
 const Checkout = ({ tokenUser }) => {
@@ -28,6 +28,9 @@ const Checkout = ({ tokenUser }) => {
     setPagamento('Boleto Bancário');
   };
 
+  const [pagamento, setPagamento] = useState('');
+  const [valorPago, setValorPago] = useState();
+  const [parcela, setParcela] = useState(1);
   const [pacote, setPacote] = useState();
   const location = useLocation();
   const { pacoteId } = location.state;
@@ -39,7 +42,6 @@ const Checkout = ({ tokenUser }) => {
       .then((res) =>
         setTimeout(() => {
           setPacote(res.pacote);
-          console.log(res.pacote);
         }, 400),
       );
   }, []);
@@ -54,10 +56,6 @@ const Checkout = ({ tokenUser }) => {
       pacote.preco - (pacote.preco * pacote.promocaoPorcentagem) / 100,
     );
   }, 500);
-
-  const [pagamento, setPagamento] = useState('');
-  const [valorPago, setValorPago] = useState();
-  const [parcela, setParcela] = useState(1);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -76,11 +74,17 @@ const Checkout = ({ tokenUser }) => {
           userId: tokenUser.id,
         }),
       });
+      const data = {
+        imagem: pacote.package_images[0].src,
+        pagamento: pagamento,
+      };
+      localStorage.setItem('checkout', JSON.stringify(data));
       window.location.href = './checkout/sucesso';
     } catch (error) {
       console.log(error);
     }
   };
+
   return !pacote ? (
     <>
       <div

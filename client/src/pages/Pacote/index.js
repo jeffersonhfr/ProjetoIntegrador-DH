@@ -70,10 +70,10 @@ const Pacote = () => {
           <h1 className="Pacote-TitleContainer__Title">{pacote.nomePacote}</h1>
         </article>
         <nav className="Pacote-ImgContainer">
-          {pacotes.map((Pacote) => {
+          {pacotes.map((Pacote, idx) => {
             return (
               <>
-                <TravelImages pacote={Pacote} />
+                <TravelImages pacote={Pacote} key={idx} />
               </>
             );
           })}
@@ -221,10 +221,10 @@ const Pacote = () => {
           </div>
           <div className="modal-conteudo">
             <h1 className="tituloModal">Benefícios do pacote</h1>
-            {pacotes.map((Pacote) => {
+            {pacotes.map((Pacote, indexAdicionais) => {
               return (
                 <>
-                  <AdicionaisPacote pacote={Pacote} />
+                  <AdicionaisPacote pacote={Pacote} key={indexAdicionais} />
                 </>
               );
             })}

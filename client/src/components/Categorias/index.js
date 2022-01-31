@@ -20,11 +20,10 @@ const Categorias = () => {
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
-   
-
-    api.get('/categorias').then((res)=>setCategorias(res.data.categorias)).catch(err => console.log(err));
-        
-
+    api
+      .get('/categorias')
+      .then((res) => setCategorias(res.data.categorias))
+      .catch((err) => console.log(err));
   }, []);
 
   return (
